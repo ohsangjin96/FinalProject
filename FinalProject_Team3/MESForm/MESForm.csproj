@@ -76,5 +76,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FProjectDAC\FProjectDAC.csproj">
+      <Project>{40009510-2bda-49be-80d2-ad951bd2e543}</Project>
+      <Name>FProjectDAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FProjectVO\FProjectVO.csproj">
+      <Project>{be32a89f-587f-492c-9e6b-c6ea07abb975}</Project>
+      <Name>FProjectVO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
