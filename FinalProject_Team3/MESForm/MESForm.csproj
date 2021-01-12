@@ -54,7 +54,9 @@
     <Compile Include="BaseForms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForms\Form1.Designer.cs" />
+    <Compile Include="BaseForms\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\frmBaseList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,7 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\ExcelExportImport.cs" />
-    <EmbeddedResource Include="BaseForms\Form1.resx" />
+    <EmbeddedResource Include="BaseForms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
