@@ -54,14 +54,8 @@
     <Compile Include="BaseForms\frmBaseList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForms\frmBaseList.Designer.cs">
+    <Compile Include="BaseForms\frmBaseList.designer.cs">
       <DependentUpon>frmBaseList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaseForms\frmBaseList2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForms\frmBaseList2.Designer.cs">
-      <DependentUpon>frmBaseList2.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\frmBaseListDetail.cs">
       <SubType>Form</SubType>
@@ -69,17 +63,29 @@
     <Compile Include="BaseForms\frmBaseListDetail.Designer.cs">
       <DependentUpon>frmBaseListDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\frmDetail.cs">
+    <Compile Include="BaseForms\frmBaseListList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForms\frmDetail.Designer.cs">
-      <DependentUpon>frmDetail.cs</DependentUpon>
+    <Compile Include="BaseForms\frmBaseListList.Designer.cs">
+      <DependentUpon>frmBaseListList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForms\frmPopUp_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\frmPopUp_1.Designer.cs">
+      <DependentUpon>frmPopUp_1.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\frmPopup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\frmPopup.Designer.cs">
       <DependentUpon>frmPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForms\frmPopUp_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\frmPopUp_2.Designer.cs">
+      <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -91,6 +97,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\ExcelExportImport.cs" />
+    <EmbeddedResource Include="BaseForms\frmBaseList.resx">
+      <DependentUpon>frmBaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\frmBaseListDetail.resx">
+      <DependentUpon>frmBaseListDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\frmBaseListList.resx">
+      <DependentUpon>frmBaseListList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\frmPopup.resx">
+      <DependentUpon>frmPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\frmPopUp_1.resx">
+      <DependentUpon>frmPopUp_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
+      <DependentUpon>frmPopUp_2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MESForm.BaseForms
 {
-    public partial class frmBaseList2 : Form
+    public partial class frmBaseListList : Form
     {
-        public frmBaseList2()
+        public frmBaseListList()
         {
             InitializeComponent();
         }

@@ -56,7 +56,7 @@ namespace MESForm
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 88);
+            this.panel1.Size = new System.Drawing.Size(958, 95);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -68,9 +68,9 @@ namespace MESForm
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 88);
+            this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 469);
+            this.panel2.Size = new System.Drawing.Size(238, 508);
             this.panel2.TabIndex = 2;
             // 
             // panel5
@@ -78,18 +78,18 @@ namespace MESForm
             this.panel5.Controls.Add(this.button7);
             this.panel5.Controls.Add(this.button8);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 360);
+            this.panel5.Location = new System.Drawing.Point(0, 389);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(238, 80);
+            this.panel5.Size = new System.Drawing.Size(238, 87);
             this.panel5.TabIndex = 5;
             // 
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(0, 40);
+            this.button7.Location = new System.Drawing.Point(0, 43);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(238, 40);
+            this.button7.Size = new System.Drawing.Size(238, 43);
             this.button7.TabIndex = 2;
             this.button7.Text = "영업단가";
             this.button7.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace MESForm
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Location = new System.Drawing.Point(0, 0);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(238, 40);
+            this.button8.Size = new System.Drawing.Size(238, 43);
             this.button8.TabIndex = 1;
             this.button8.Text = "자재단가";
             this.button8.UseVisualStyleBackColor = true;
@@ -110,9 +110,9 @@ namespace MESForm
             this.button11.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button11.Dock = System.Windows.Forms.DockStyle.Top;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(0, 320);
+            this.button11.Location = new System.Drawing.Point(0, 346);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(238, 40);
+            this.button11.Size = new System.Drawing.Size(238, 43);
             this.button11.TabIndex = 4;
             this.button11.Text = "단가관리";
             this.button11.UseVisualStyleBackColor = false;
@@ -122,18 +122,18 @@ namespace MESForm
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 240);
+            this.panel4.Location = new System.Drawing.Point(0, 259);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(238, 80);
+            this.panel4.Size = new System.Drawing.Size(238, 87);
             this.panel4.TabIndex = 3;
             // 
             // button9
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(0, 40);
+            this.button9.Location = new System.Drawing.Point(0, 43);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(238, 40);
+            this.button9.Size = new System.Drawing.Size(238, 43);
             this.button9.TabIndex = 2;
             this.button9.Text = "BOM";
             this.button9.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@ namespace MESForm
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(238, 40);
+            this.button10.Size = new System.Drawing.Size(238, 43);
             this.button10.TabIndex = 1;
             this.button10.Text = "품목관리";
             this.button10.UseVisualStyleBackColor = true;
@@ -154,9 +154,9 @@ namespace MESForm
             this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(0, 200);
+            this.button6.Location = new System.Drawing.Point(0, 216);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(238, 40);
+            this.button6.Size = new System.Drawing.Size(238, 43);
             this.button6.TabIndex = 2;
             this.button6.Text = "품목관리";
             this.button6.UseVisualStyleBackColor = false;
@@ -168,18 +168,18 @@ namespace MESForm
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 40);
+            this.panel3.Location = new System.Drawing.Point(0, 43);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(238, 160);
+            this.panel3.Size = new System.Drawing.Size(238, 173);
             this.panel3.TabIndex = 1;
             // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(0, 120);
+            this.button5.Location = new System.Drawing.Point(0, 129);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(238, 40);
+            this.button5.Size = new System.Drawing.Size(238, 43);
             this.button5.TabIndex = 4;
             this.button5.Text = "BOR";
             this.button5.UseVisualStyleBackColor = true;
@@ -188,9 +188,9 @@ namespace MESForm
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(0, 80);
+            this.button4.Location = new System.Drawing.Point(0, 86);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(238, 40);
+            this.button4.Size = new System.Drawing.Size(238, 43);
             this.button4.TabIndex = 3;
             this.button4.Text = "업체관리";
             this.button4.UseVisualStyleBackColor = true;
@@ -199,9 +199,9 @@ namespace MESForm
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(0, 40);
+            this.button3.Location = new System.Drawing.Point(0, 43);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(238, 40);
+            this.button3.Size = new System.Drawing.Size(238, 43);
             this.button3.TabIndex = 2;
             this.button3.Text = "설비관리";
             this.button3.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@ namespace MESForm
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 40);
+            this.button2.Size = new System.Drawing.Size(238, 43);
             this.button2.TabIndex = 1;
             this.button2.Text = "공장관리";
             this.button2.UseVisualStyleBackColor = true;
@@ -224,18 +224,19 @@ namespace MESForm
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 40);
+            this.button1.Size = new System.Drawing.Size(238, 43);
             this.button1.TabIndex = 0;
             this.button1.Text = "자원관리";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 557);
+            this.ClientSize = new System.Drawing.Size(958, 603);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Text = "Form1";

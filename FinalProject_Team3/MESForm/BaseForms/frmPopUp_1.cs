@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MESForm.BaseForms
 {
-    public partial class frmDetail : Form
+    public partial class frmPopUp_1 : Form
     {
-        public frmDetail()
+        public frmPopUp_1()
         {
             InitializeComponent();
         }
