@@ -29,7 +29,7 @@ namespace MESForm.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlSelect = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -41,24 +41,24 @@ namespace MESForm.BaseForms
             this.btnDel = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlSelect
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnInquiry);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 38);
-            this.panel1.TabIndex = 0;
+            this.pnlSelect.BackColor = System.Drawing.Color.White;
+            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.label2);
+            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.label1);
+            this.pnlSelect.Controls.Add(this.btnInquiry);
+            this.pnlSelect.Location = new System.Drawing.Point(12, 12);
+            this.pnlSelect.Name = "pnlSelect";
+            this.pnlSelect.Size = new System.Drawing.Size(976, 38);
+            this.pnlSelect.TabIndex = 0;
             // 
             // comboBox1
             // 
@@ -173,7 +173,7 @@ namespace MESForm.BaseForms
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
-            // frmBaseList1
+            // frmBaseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,13 +185,13 @@ namespace MESForm.BaseForms
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.dgvList);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSelect);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmBaseList1";
+            this.Name = "frmBaseList";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSelect.ResumeLayout(false);
+            this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
@@ -199,7 +199,7 @@ namespace MESForm.BaseForms
 
         #endregion
 
-        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.Panel pnlSelect;
         protected System.Windows.Forms.Button btnInquiry;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label2;

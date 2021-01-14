@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MESForm.PopUp
+namespace MESForm.BaseForms
 {
-    public partial class test01 : Form
+    public partial class frmPopUp_3 : Form
     {
-        public test01()
+        public frmPopUp_3()
         {
             InitializeComponent();
         }
