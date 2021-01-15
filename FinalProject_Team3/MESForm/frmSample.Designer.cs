@@ -56,6 +56,7 @@ namespace MESForm
             this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Name = "frmSample";
             this.Text = "샘플 화면";
+            this.Load += new System.EventHandler(this.frmSample_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);
