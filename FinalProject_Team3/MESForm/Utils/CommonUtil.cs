@@ -57,6 +57,7 @@ namespace MESForm.Utils
         }
         #endregion
 
+        #region 이미지 <-> byte
         public static byte[] ImageToByte(Image img)
         {
             ImageConverter converter = new ImageConverter();
@@ -68,8 +69,9 @@ namespace MESForm.Utils
             TypeConverter tc = TypeDescriptor.GetConverter(typeof(Bitmap));
             return (Bitmap)(tc.ConvertFrom(data));
         }
+        #endregion
 
-        #region 그리드뷰 버튼 바인딩 메서드
+        #region 데이터그리드뷰 버튼 생성
         public static void DgvButtonBinding(string headText, string name, string text, DataGridView dgv)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();

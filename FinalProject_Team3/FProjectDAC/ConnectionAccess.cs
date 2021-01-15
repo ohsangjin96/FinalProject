@@ -18,14 +18,14 @@ namespace FProjectDAC
             {
                 string strConn = string.Empty;
                 XmlDocument configXml = new XmlDocument();
-                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Sample_DEV.xml";
+                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Connect_DEV.xml";
                 configXml.Load(path);
 
                 XmlNodeList addNodes = configXml.SelectNodes("configuration/settings/add");
 
                 foreach(XmlNode node in addNodes)
                 {
-                    if (node.Attributes["key"].InnerText == "MyDB")
+                    if (node.Attributes["key"].InnerText == "FpDB")
                     {
                         strConn = (node.ChildNodes[0]).InnerText;
                         //AES enc = new AES();

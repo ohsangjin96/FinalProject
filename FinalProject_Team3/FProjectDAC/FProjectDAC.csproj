@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\EncrytLibrary.dll" />
-    <Content Include="Sample_DEV.xml" />
+    <Content Include="Connect_DEV.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

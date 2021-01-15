@@ -79,5 +79,95 @@ namespace MESForm.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   정말 삭제하시겠습니까?과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string DataDeleteCheck {
+            get {
+                return ResourceManager.GetString("DataDeleteCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   삭제가 완료되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string DataDeleteYes {
+            get {
+                return ResourceManager.GetString("DataDeleteYes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   저장이 완료되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string DataSave {
+            get {
+                return ResourceManager.GetString("DataSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   조회할 데이터가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrNotData {
+            get {
+                return ResourceManager.GetString("ErrNotData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   필수 입력사항을 확인해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrNotEntered {
+            get {
+                return ResourceManager.GetString("ErrNotEntered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   이미 등록된 @@코드입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrValCode {
+            get {
+                return ResourceManager.GetString("ErrValCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   이미 등록된 @@명입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrValName {
+            get {
+                return ResourceManager.GetString("ErrValName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   발주가 취소되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string OrderCancle {
+            get {
+                return ResourceManager.GetString("OrderCancle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   발주를 취소하시겠습니까?과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string OrderCancleCheck {
+            get {
+                return ResourceManager.GetString("OrderCancleCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   발주 신청이 완료되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string OrderComplete {
+            get {
+                return ResourceManager.GetString("OrderComplete", resourceCulture);
+            }
+        }
     }
 }

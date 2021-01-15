@@ -10,6 +10,7 @@ namespace FProjectDAC
 {
     public class SampleDAC : ConnectionAccess
     {
+        // Sample DAC
         string strConn;
         SqlConnection conn;
         public SampleDAC()

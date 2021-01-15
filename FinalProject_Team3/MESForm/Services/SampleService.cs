@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MESForm.Services
 {
-    public class SampleService
+    public class SampleService  
     {
         // 데이터 조회
         public List<SampleVO> GetSampleList()
