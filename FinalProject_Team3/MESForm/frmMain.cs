@@ -77,5 +77,13 @@ namespace MESForm
             }
         }
         #endregion
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmSample frm = new frmSample();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

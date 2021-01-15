@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FProjectVO
 {
-    public class Class1
+    public class SampleVO
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
