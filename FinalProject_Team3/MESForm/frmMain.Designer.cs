@@ -31,6 +31,7 @@ namespace MESForm
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -57,11 +58,12 @@ namespace MESForm
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 95);
+            this.panel1.Size = new System.Drawing.Size(989, 95);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button12);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.button11);
             this.panel2.Controls.Add(this.panel4);
@@ -71,8 +73,21 @@ namespace MESForm
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 508);
+            this.panel2.Size = new System.Drawing.Size(238, 569);
             this.panel2.TabIndex = 2;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Location = new System.Drawing.Point(0, 476);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(238, 43);
+            this.button12.TabIndex = 6;
+            this.button12.Text = "생산계획";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panel5
             // 
@@ -238,20 +253,20 @@ namespace MESForm
             this.tabForms.Location = new System.Drawing.Point(238, 95);
             this.tabForms.Name = "tabForms";
             this.tabForms.SelectedIndex = 0;
-            this.tabForms.Size = new System.Drawing.Size(720, 23);
+            this.tabForms.Size = new System.Drawing.Size(751, 23);
             this.tabForms.TabIndex = 4;
             this.tabForms.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.tabForms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 603);
+            this.ClientSize = new System.Drawing.Size(989, 664);
             this.Controls.Add(this.tabForms);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Text = "Form1";
@@ -285,6 +300,7 @@ namespace MESForm
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button11;
         private CustomControls.custTabControl tabForms;
+        private System.Windows.Forms.Button button12;
     }
 }
 

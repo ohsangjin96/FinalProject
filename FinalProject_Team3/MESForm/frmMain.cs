@@ -85,5 +85,13 @@ namespace MESForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ProductPlan frm = new ProductPlan();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }
