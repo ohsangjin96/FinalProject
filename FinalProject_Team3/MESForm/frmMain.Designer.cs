@@ -57,7 +57,7 @@ namespace MESForm
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 95);
+            this.panel1.Size = new System.Drawing.Size(1239, 95);
             this.panel1.TabIndex = 1;
             // 
             // panel2
@@ -238,7 +238,7 @@ namespace MESForm
             this.tabForms.Location = new System.Drawing.Point(238, 95);
             this.tabForms.Name = "tabForms";
             this.tabForms.SelectedIndex = 0;
-            this.tabForms.Size = new System.Drawing.Size(720, 23);
+            this.tabForms.Size = new System.Drawing.Size(1001, 23);
             this.tabForms.TabIndex = 4;
             this.tabForms.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.tabForms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
@@ -247,7 +247,7 @@ namespace MESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 603);
+            this.ClientSize = new System.Drawing.Size(1239, 603);
             this.Controls.Add(this.tabForms);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

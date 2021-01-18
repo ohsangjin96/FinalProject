@@ -34,7 +34,6 @@ namespace MESForm.BaseForms
             this.btnDel2 = new System.Windows.Forms.Button();
             this.btnMod2 = new System.Windows.Forms.Button();
             this.btnReg2 = new System.Windows.Forms.Button();
-            this.dgvList1 = new System.Windows.Forms.DataGridView();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,15 +44,26 @@ namespace MESForm.BaseForms
             this.btnDel1 = new System.Windows.Forms.Button();
             this.btnMod1 = new System.Windows.Forms.Button();
             this.btnReg1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList1)).BeginInit();
+            this.dgvList1 = new System.Windows.Forms.DataGridView();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(913, 78);
+            this.btnRefresh.Location = new System.Drawing.Point(914, 78);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 13;
@@ -63,7 +73,7 @@ namespace MESForm.BaseForms
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(751, 78);
+            this.btnExcel.Location = new System.Drawing.Point(752, 78);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 12;
@@ -73,7 +83,7 @@ namespace MESForm.BaseForms
             // btnDel2
             // 
             this.btnDel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel2.Location = new System.Drawing.Point(832, 78);
+            this.btnDel2.Location = new System.Drawing.Point(833, 78);
             this.btnDel2.Name = "btnDel2";
             this.btnDel2.Size = new System.Drawing.Size(75, 23);
             this.btnDel2.TabIndex = 11;
@@ -83,7 +93,7 @@ namespace MESForm.BaseForms
             // btnMod2
             // 
             this.btnMod2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod2.Location = new System.Drawing.Point(670, 78);
+            this.btnMod2.Location = new System.Drawing.Point(671, 78);
             this.btnMod2.Name = "btnMod2";
             this.btnMod2.Size = new System.Drawing.Size(75, 23);
             this.btnMod2.TabIndex = 10;
@@ -93,27 +103,12 @@ namespace MESForm.BaseForms
             // btnReg2
             // 
             this.btnReg2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg2.Location = new System.Drawing.Point(589, 78);
+            this.btnReg2.Location = new System.Drawing.Point(590, 78);
             this.btnReg2.Name = "btnReg2";
             this.btnReg2.Size = new System.Drawing.Size(75, 23);
             this.btnReg2.TabIndex = 9;
             this.btnReg2.Text = "등록";
             this.btnReg2.UseVisualStyleBackColor = true;
-            // 
-            // dgvList1
-            // 
-            this.dgvList1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvList1.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvList1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList1.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList1.Location = new System.Drawing.Point(13, 107);
-            this.dgvList1.Name = "dgvList1";
-            this.dgvList1.RowTemplate.Height = 23;
-            this.dgvList1.Size = new System.Drawing.Size(484, 581);
-            this.dgvList1.TabIndex = 8;
             // 
             // pnlSelect
             // 
@@ -187,10 +182,10 @@ namespace MESForm.BaseForms
             this.dgvList2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList2.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList2.Location = new System.Drawing.Point(503, 107);
+            this.dgvList2.Location = new System.Drawing.Point(3, 0);
             this.dgvList2.Name = "dgvList2";
             this.dgvList2.RowTemplate.Height = 23;
-            this.dgvList2.Size = new System.Drawing.Size(485, 581);
+            this.dgvList2.Size = new System.Drawing.Size(481, 584);
             this.dgvList2.TabIndex = 17;
             // 
             // btnDel1
@@ -223,30 +218,86 @@ namespace MESForm.BaseForms
             this.btnReg1.Text = "등록";
             this.btnReg1.UseVisualStyleBackColor = true;
             // 
+            // dgvList1
+            // 
+            this.dgvList1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvList1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvList1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList1.GridColor = System.Drawing.Color.DimGray;
+            this.dgvList1.Location = new System.Drawing.Point(12, 3);
+            this.dgvList1.Name = "dgvList1";
+            this.dgvList1.RowTemplate.Height = 23;
+            this.dgvList1.Size = new System.Drawing.Size(485, 581);
+            this.dgvList1.TabIndex = 8;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnRefresh);
+            this.splitContainer1.Panel1.Controls.Add(this.btnReg1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnExcel);
+            this.splitContainer1.Panel1.Controls.Add(this.btnMod1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDel2);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDel1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnMod2);
+            this.splitContainer1.Panel1.Controls.Add(this.pnlSelect);
+            this.splitContainer1.Panel1.Controls.Add(this.btnReg2);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(1000, 700);
+            this.splitContainer1.SplitterDistance = 103;
+            this.splitContainer1.TabIndex = 21;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dgvList1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dgvList2);
+            this.splitContainer2.Size = new System.Drawing.Size(1000, 593);
+            this.splitContainer2.SplitterDistance = 500;
+            this.splitContainer2.TabIndex = 18;
+            // 
             // frmBaseListList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.Controls.Add(this.btnDel1);
-            this.Controls.Add(this.btnMod1);
-            this.Controls.Add(this.btnReg1);
-            this.Controls.Add(this.dgvList2);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.btnDel2);
-            this.Controls.Add(this.btnMod2);
-            this.Controls.Add(this.btnReg2);
-            this.Controls.Add(this.dgvList1);
-            this.Controls.Add(this.pnlSelect);
+            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaseListList";
             this.Text = "frmBaseListList";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList1)).EndInit();
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,7 +309,6 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Button btnDel2;
         protected System.Windows.Forms.Button btnMod2;
         protected System.Windows.Forms.Button btnReg2;
-        protected System.Windows.Forms.DataGridView dgvList1;
         protected System.Windows.Forms.Panel pnlSelect;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label2;
@@ -269,5 +319,8 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Button btnDel1;
         protected System.Windows.Forms.Button btnMod1;
         protected System.Windows.Forms.Button btnReg1;
+        protected System.Windows.Forms.DataGridView dgvList1;
+        protected System.Windows.Forms.SplitContainer splitContainer1;
+        protected System.Windows.Forms.SplitContainer splitContainer2;
     }
 }
