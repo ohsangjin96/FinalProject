@@ -45,6 +45,7 @@ namespace MESForm.BaseForms
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,9 +164,9 @@ namespace MESForm.BaseForms
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 107);
+            this.panel1.Location = new System.Drawing.Point(12, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 581);
+            this.panel1.Size = new System.Drawing.Size(976, 583);
             this.panel1.TabIndex = 8;
             // 
             // splitContainer1
@@ -182,6 +183,10 @@ namespace MESForm.BaseForms
             this.splitContainer1.Panel1.Controls.Add(this.btnExcel);
             this.splitContainer1.Panel1.Controls.Add(this.btnMod);
             this.splitContainer1.Panel1.Controls.Add(this.btnDel);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1000, 700);
             this.splitContainer1.SplitterDistance = 101;
             this.splitContainer1.TabIndex = 9;
@@ -192,7 +197,6 @@ namespace MESForm.BaseForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlSelect);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -202,6 +206,7 @@ namespace MESForm.BaseForms
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
