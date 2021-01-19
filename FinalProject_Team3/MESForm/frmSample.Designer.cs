@@ -29,7 +29,13 @@ namespace MESForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.newDataGridViewControl1 = new MESForm.UserControls.NewDataGridViewControl();
             this.pnlSelect.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInquiry
@@ -38,35 +44,54 @@ namespace MESForm
             // 
             // comboBox1
             // 
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.Text = "나이";
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(31, 15);
+            this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.Text = "이름";
             // 
-            // btnRefresh
+            // panel1
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(913, 56);
+            this.panel1.Controls.Add(this.newDataGridViewControl1);
+            // 
+            // splitContainer1
+            // 
+            // 
+            // newDataGridViewControl1
+            // 
+            this.newDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.newDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.newDataGridViewControl1.Name = "newDataGridViewControl1";
+            this.newDataGridViewControl1.Size = new System.Drawing.Size(976, 583);
+            this.newDataGridViewControl1.TabIndex = 0;
             // 
             // frmSample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1000, 808);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Name = "frmSample";
             this.Text = "샘플 화면";
             this.Load += new System.EventHandler(this.frmSample_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private UserControls.NewDataGridViewControl newDataGridViewControl1;
     }
 }

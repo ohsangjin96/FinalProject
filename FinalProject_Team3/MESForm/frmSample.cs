@@ -18,8 +18,8 @@ namespace MESForm
 
         private void frmSample_Load(object sender, EventArgs e)
         {
-            SampleService service = new SampleService();
-            service.GetSampleList();
+            //SampleService service = new SampleService();
+            //service.GetSampleList();
         }
     }
 }
