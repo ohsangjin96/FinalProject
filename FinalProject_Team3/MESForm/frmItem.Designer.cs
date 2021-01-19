@@ -89,13 +89,13 @@
             this.pnlSelect.Location = new System.Drawing.Point(-1, 1);
             this.pnlSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(1516, 153);
+            this.pnlSelect.Size = new System.Drawing.Size(1490, 153);
             this.pnlSelect.TabIndex = 1;
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(1215, 115);
+            this.comboBox4.Location = new System.Drawing.Point(1182, 112);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(183, 25);
@@ -104,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1142, 120);
+            this.label5.Location = new System.Drawing.Point(1109, 117);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 29;
@@ -113,7 +113,7 @@
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(1215, 10);
+            this.comboBox5.Location = new System.Drawing.Point(1182, 7);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(183, 25);
@@ -122,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1142, 16);
+            this.label6.Location = new System.Drawing.Point(1109, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 27;
@@ -203,7 +203,7 @@
             // comboBox8
             // 
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(1215, 61);
+            this.comboBox8.Location = new System.Drawing.Point(1182, 58);
             this.comboBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(183, 25);
@@ -212,7 +212,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1142, 67);
+            this.label9.Location = new System.Drawing.Point(1109, 64);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 17);
             this.label9.TabIndex = 17;
@@ -261,7 +261,7 @@
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnInquiry.Location = new System.Drawing.Point(1427, 119);
+            this.btnInquiry.Location = new System.Drawing.Point(1401, 119);
             this.btnInquiry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(86, 33);
@@ -272,7 +272,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(1428, 214);
+            this.btnRefresh.Location = new System.Drawing.Point(1402, 214);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(86, 33);
@@ -283,7 +283,7 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(1243, 214);
+            this.btnExcel.Location = new System.Drawing.Point(1217, 214);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(86, 33);
@@ -294,7 +294,7 @@
             // btnDel
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(1335, 214);
+            this.btnDel.Location = new System.Drawing.Point(1309, 214);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(86, 33);
@@ -305,7 +305,7 @@
             // btnMod
             // 
             this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Location = new System.Drawing.Point(1150, 214);
+            this.btnMod.Location = new System.Drawing.Point(1124, 214);
             this.btnMod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(86, 33);
@@ -316,7 +316,7 @@
             // btnReg
             // 
             this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(1057, 214);
+            this.btnReg.Location = new System.Drawing.Point(1031, 214);
             this.btnReg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(86, 33);
@@ -338,7 +338,7 @@
             this.dgvList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1512, 366);
+            this.dgvList.Size = new System.Drawing.Size(1486, 366);
             this.dgvList.TabIndex = 7;
             // 
             // label10
@@ -369,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1517, 628);
+            this.ClientSize = new System.Drawing.Size(1491, 628);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnRefresh);
