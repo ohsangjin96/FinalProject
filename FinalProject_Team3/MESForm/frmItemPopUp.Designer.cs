@@ -126,7 +126,7 @@
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(399, 494);
+            this.btnCancel.Location = new System.Drawing.Point(411, 494);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 33);
