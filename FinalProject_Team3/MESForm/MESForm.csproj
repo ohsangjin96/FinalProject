@@ -94,6 +94,18 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItem.Designer.cs">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItemPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItemPopUp.Designer.cs">
+      <DependentUpon>frmItemPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItem.resx">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItemPopUp.resx">
+      <DependentUpon>frmItemPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
