@@ -38,24 +38,29 @@ namespace MESForm
             // 
             // comboBox1
             // 
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
             // 
             // label2
             // 
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.Text = "나이";
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.Text = "이름";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(913, 56);
             // 
             // frmSample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1000, 808);
             this.Name = "frmSample";
             this.Text = "샘플 화면";
+            this.Load += new System.EventHandler(this.frmSample_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.ResumeLayout(false);

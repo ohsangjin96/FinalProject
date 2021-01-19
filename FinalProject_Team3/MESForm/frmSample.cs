@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,12 @@ namespace MESForm
         public frmSample()
         {
             InitializeComponent();
+        }
+
+        private void frmSample_Load(object sender, EventArgs e)
+        {
+            SampleService service = new SampleService();
+            service.GetSampleList();
         }
     }
 }

@@ -65,7 +65,7 @@ namespace MESForm.BaseForms
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(339, 9);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 4;
             // 
             // label2
@@ -73,7 +73,7 @@ namespace MESForm.BaseForms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(275, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
@@ -89,7 +89,7 @@ namespace MESForm.BaseForms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
@@ -99,7 +99,7 @@ namespace MESForm.BaseForms
             this.btnInquiry.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
             this.btnInquiry.Location = new System.Drawing.Point(889, 8);
             this.btnInquiry.Name = "btnInquiry";
@@ -175,7 +175,7 @@ namespace MESForm.BaseForms
             // 
             // frmBaseList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1000, 700);
@@ -186,7 +186,7 @@ namespace MESForm.BaseForms
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.pnlSelect);
-            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaseList";
             this.Text = "Form1";
@@ -198,19 +198,18 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-
-        protected System.Windows.Forms.Panel pnlSelect;
-        protected System.Windows.Forms.Button btnInquiry;
-        protected System.Windows.Forms.ComboBox comboBox1;
-        protected System.Windows.Forms.Label label2;
-        protected System.Windows.Forms.TextBox textBox1;
-        protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.DataGridView dgvList;
-        protected System.Windows.Forms.Button btnReg;
-        protected System.Windows.Forms.Button btnMod;
-        protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Button btnExcel;
-        protected System.Windows.Forms.Button btnRefresh;
+        public System.Windows.Forms.DataGridView dgvList;
+        public System.Windows.Forms.Panel pnlSelect;
+        public System.Windows.Forms.Button btnInquiry;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnReg;
+        public System.Windows.Forms.Button btnMod;
+        public System.Windows.Forms.Button btnDel;
+        public System.Windows.Forms.Button btnExcel;
+        public System.Windows.Forms.Button btnRefresh;
     }
 }
 

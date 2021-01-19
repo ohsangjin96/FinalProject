@@ -1,7 +1,7 @@
 ﻿
 namespace MESForm
 {
-    partial class ProductPlan
+    partial class WorkOrder
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -78,18 +78,16 @@ namespace MESForm
             // 
             // comboBox2
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(102, 50);
+            this.comboBox2.Location = new System.Drawing.Point(102, 58);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(149, 23);
             this.comboBox2.TabIndex = 10;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 53);
+            this.label5.Location = new System.Drawing.Point(14, 61);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 9;
@@ -253,22 +251,22 @@ namespace MESForm
             // 
             this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(364, 50);
+            this.comboBox3.Location = new System.Drawing.Point(364, 58);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(149, 23);
-            this.comboBox3.TabIndex = 14;
+            this.comboBox3.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 53);
+            this.label6.Location = new System.Drawing.Point(299, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 15);
-            this.label6.TabIndex = 13;
+            this.label6.TabIndex = 11;
             this.label6.Text = "공정";
             // 
-            // ProductPlan
+            // WorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -283,9 +281,9 @@ namespace MESForm
             this.Controls.Add(this.pnlSelect);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProductPlan";
-            this.Text = "생산계획";
-            this.Load += new System.EventHandler(this.ProductPlan_Load);
+            this.Name = "WorkOrder";
+            this.Text = "작업지시";
+            this.Load += new System.EventHandler(this.WorkOrder_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();

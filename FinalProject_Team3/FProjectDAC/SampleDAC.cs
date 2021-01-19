@@ -16,6 +16,8 @@ namespace FProjectDAC
         public SampleDAC()
         {
             strConn = this.ConnectionString;
+            EncrytLibrary.AES aes = new EncrytLibrary.AES();
+            strConn = aes.AESDecrypt256(strConn);
             conn = new SqlConnection(strConn);
             conn.Open();
         }

@@ -93,5 +93,21 @@ namespace MESForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            WorkOrder frm = new WorkOrder();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            frmMatrialOut frm = new frmMatrialOut();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }
