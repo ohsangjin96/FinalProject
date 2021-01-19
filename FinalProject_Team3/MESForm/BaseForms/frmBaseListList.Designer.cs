@@ -300,7 +300,7 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Button btnReg1;
         protected System.Windows.Forms.SplitContainer splitContainer1;
         protected System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.Panel panel2;
     }
 }

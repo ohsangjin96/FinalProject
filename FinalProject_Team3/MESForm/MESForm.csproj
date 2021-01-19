@@ -94,6 +94,30 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBOR.designer.cs">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompany.designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacility.designer.cs">
+      <DependentUpon>frmFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactory.designer.cs">
+      <DependentUpon>frmFactory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +148,48 @@
     <Compile Include="frmSample.Designer.cs">
       <DependentUpon>frmSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\BORPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\BORPopUp.designer.cs">
+      <DependentUpon>BORPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CommonCodePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CommonCodePopUp.designer.cs">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CommonPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CommonPopUp.Designer.cs">
+      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CompanyPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CompanyPopUp.designer.cs">
+      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FactoryPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FactoryPopUp.Designer.cs">
+      <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +199,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SampleService.cs" />
+    <Compile Include="UserControls\NewDataGridViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NewDataGridViewControl.Designer.cs">
+      <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\ExcelExportImport.cs" />
     <Compile Include="WorkOrder.cs">
@@ -159,6 +231,18 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBOR.resx">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacility.resx">
+      <DependentUpon>frmFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactory.resx">
+      <DependentUpon>frmFactory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +258,27 @@
     <EmbeddedResource Include="frmSample.resx">
       <DependentUpon>frmSample.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\BORPopUp.resx">
+      <DependentUpon>BORPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CommonCodePopUp.resx">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CommonPopUp.resx">
+      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
+      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
+      <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductPlan.resx">
       <DependentUpon>ProductPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +292,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\NewDataGridViewControl.resx">
+      <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WorkOrder.resx">
       <DependentUpon>WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,9 +321,7 @@
       <Name>FProjectVO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PopUp\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\close_black.png" />
   </ItemGroup>
