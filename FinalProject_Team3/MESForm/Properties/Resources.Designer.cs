@@ -63,6 +63,16 @@ namespace MESForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Close {
+            get {
+                object obj = ResourceManager.GetObject("Close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap close_black {
             get {
                 object obj = ResourceManager.GetObject("close_black", resourceCulture);
@@ -140,16 +150,6 @@ namespace MESForm.Properties {
         internal static string ErrValName {
             get {
                 return ResourceManager.GetString("ErrValName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap KakaoTalk_20210119_153251977 {
-            get {
-                object obj = ResourceManager.GetObject("KakaoTalk_20210119_153251977", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
