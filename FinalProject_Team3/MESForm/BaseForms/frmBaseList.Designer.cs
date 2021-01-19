@@ -40,13 +40,14 @@ namespace MESForm.BaseForms
             this.btnDel = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgvList1 = new System.Windows.Forms.DataGridView();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -69,7 +70,7 @@ namespace MESForm.BaseForms
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(339, 9);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 4;
             // 
             // label2
@@ -77,7 +78,7 @@ namespace MESForm.BaseForms
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(275, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "label2";
             // 
@@ -93,7 +94,7 @@ namespace MESForm.BaseForms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(41, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
@@ -103,7 +104,7 @@ namespace MESForm.BaseForms
             this.btnInquiry.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
             this.btnInquiry.Location = new System.Drawing.Point(889, 8);
             this.btnInquiry.Name = "btnInquiry";
@@ -162,13 +163,6 @@ namespace MESForm.BaseForms
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 583);
-            this.panel1.TabIndex = 8;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -186,20 +180,32 @@ namespace MESForm.BaseForms
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvList1);
             this.splitContainer1.Size = new System.Drawing.Size(1000, 700);
             this.splitContainer1.SplitterDistance = 101;
             this.splitContainer1.TabIndex = 9;
             // 
+            // dgvList1
+            // 
+            this.dgvList1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvList1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList1.GridColor = System.Drawing.Color.White;
+            this.dgvList1.Location = new System.Drawing.Point(12, 3);
+            this.dgvList1.Name = "dgvList1";
+            this.dgvList1.RowTemplate.Height = 23;
+            this.dgvList1.Size = new System.Drawing.Size(985, 589);
+            this.dgvList1.TabIndex = 0;
+            // 
             // frmBaseList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.pnlSelect);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaseList";
             this.Text = "Form1";
@@ -209,6 +215,7 @@ namespace MESForm.BaseForms
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,8 +233,8 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Button btnDel;
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnRefresh;
-        protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dgvList1;
     }
 }
 
