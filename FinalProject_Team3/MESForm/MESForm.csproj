@@ -154,6 +154,138 @@
     <Compile Include="frmShiftInfo.Designer.cs">
       <DependentUpon>frmShiftInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Han\frmCurrentOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmCurrentOrder.Designer.cs">
+      <DependentUpon>frmCurrentOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmCurrentProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmCurrentProcess.Designer.cs">
+      <DependentUpon>frmCurrentProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmCurrentSR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmCurrentSR.Designer.cs">
+      <DependentUpon>frmCurrentSR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmCurrentWMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmCurrentWMaterial.Designer.cs">
+      <DependentUpon>frmCurrentWMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmCurrentWStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmCurrentWStock.Designer.cs">
+      <DependentUpon>frmCurrentWStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmD_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmD_Plan.Designer.cs">
+      <DependentUpon>frmD_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmExamine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmExamine.Designer.cs">
+      <DependentUpon>frmExamine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmMConfine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmMConfine.Designer.cs">
+      <DependentUpon>frmMConfine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmMC_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmMC_Request.Designer.cs">
+      <DependentUpon>frmMC_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmMT_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmMT_Plan.Designer.cs">
+      <DependentUpon>frmMT_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmPO.Designer.cs">
+      <DependentUpon>frmPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmPOUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmPOUpload.Designer.cs">
+      <DependentUpon>frmPOUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmProcessMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmProcessMove.Designer.cs">
+      <DependentUpon>frmProcessMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmReg_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmReg_Order.Designer.cs">
+      <DependentUpon>frmReg_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmWMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmWMaterial.Designer.cs">
+      <DependentUpon>frmWMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\frmWStandby.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\frmWStandby.Designer.cs">
+      <DependentUpon>frmWStandby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupD_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupD_Plan.Designer.cs">
+      <DependentUpon>popupD_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupOrder.Designer.cs">
+      <DependentUpon>popupOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupPOUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupPOUpload.Designer.cs">
+      <DependentUpon>popupPOUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupP_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupP_Plan.Designer.cs">
+      <DependentUpon>popupP_Plan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupSO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupSO.Designer.cs">
+      <DependentUpon>popupSO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupStockHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupStockHistory.Designer.cs">
+      <DependentUpon>popupStockHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\frmShiftInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +500,72 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmShiftSchedule.resx">
       <DependentUpon>frmShiftSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmCurrentOrder.resx">
+      <DependentUpon>frmCurrentOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmCurrentProcess.resx">
+      <DependentUpon>frmCurrentProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmCurrentSR.resx">
+      <DependentUpon>frmCurrentSR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmCurrentWMaterial.resx">
+      <DependentUpon>frmCurrentWMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmCurrentWStock.resx">
+      <DependentUpon>frmCurrentWStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmD_Plan.resx">
+      <DependentUpon>frmD_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmExamine.resx">
+      <DependentUpon>frmExamine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmMConfine.resx">
+      <DependentUpon>frmMConfine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmMC_Request.resx">
+      <DependentUpon>frmMC_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmMT_Plan.resx">
+      <DependentUpon>frmMT_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmPO.resx">
+      <DependentUpon>frmPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmPOUpload.resx">
+      <DependentUpon>frmPOUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmProcessMove.resx">
+      <DependentUpon>frmProcessMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmReg_Order.resx">
+      <DependentUpon>frmReg_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmWMaterial.resx">
+      <DependentUpon>frmWMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\frmWStandby.resx">
+      <DependentUpon>frmWStandby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupD_Plan.resx">
+      <DependentUpon>popupD_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupOrder.resx">
+      <DependentUpon>popupOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupPOUpload.resx">
+      <DependentUpon>popupPOUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupP_Plan.resx">
+      <DependentUpon>popupP_Plan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupSO.resx">
+      <DependentUpon>popupSO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupStockHistory.resx">
+      <DependentUpon>popupStockHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmMaterialCostPopUp.resx">
       <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
