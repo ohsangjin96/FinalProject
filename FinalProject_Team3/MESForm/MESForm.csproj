@@ -88,11 +88,143 @@
     <Compile Include="BaseForms\frmPopUp_2.Designer.cs">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\custDataGridViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\custDataGridViewControl.designer.cs">
+      <DependentUpon>custDataGridViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\custTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuthority.Designer.cs">
+      <DependentUpon>frmAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBOM.Designer.cs">
+      <DependentUpon>frmBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBOR.designer.cs">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompany.designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacility.designer.cs">
+      <DependentUpon>frmFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactory.designer.cs">
+      <DependentUpon>frmFactory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItem.Designer.cs">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialCost.Designer.cs">
+      <DependentUpon>frmMaterialCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiftInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiftInfo.Designer.cs">
+      <DependentUpon>frmShiftInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmShiftInfoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmShiftInfoPopUp.Designer.cs">
+      <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiftSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiftSchedule.Designer.cs">
+      <DependentUpon>frmShiftSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmShiftschedulePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmShiftschedulePopUp.Designer.cs">
+      <DependentUpon>frmShiftschedulePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmMaterialCostPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmMaterialCostPopUp.Designer.cs">
+      <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaleCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaleCost.Designer.cs">
+      <DependentUpon>frmSaleCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmSaleCostPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmSaleCostPopUp.Designer.cs">
+      <DependentUpon>frmSaleCostPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmSignUpPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmSignUpPopUp.Designer.cs">
+      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmBOMPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmBOMPopUp.Designer.cs">
+      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmCreateGroupPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmCreateGroupPopUp.Designer.cs">
+      <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmGroupAuthorityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmGroupAuthorityPopUp.Designer.cs">
+      <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmLoginPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmLoginPopUp.Designer.cs">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmItemPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmItemPopUp.Designer.cs">
+      <DependentUpon>frmItemPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -100,15 +232,81 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMatrialOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMatrialOut.Designer.cs">
+      <DependentUpon>frmMatrialOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSample.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSample.Designer.cs">
       <DependentUpon>frmSample.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\BORPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\BORPopUp.designer.cs">
+      <DependentUpon>BORPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CommonCodePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CommonCodePopUp.designer.cs">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CommonPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CommonPopUp.Designer.cs">
+      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CompanyPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CompanyPopUp.designer.cs">
+      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FactoryPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FactoryPopUp.Designer.cs">
+      <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmUserAuthorityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmUserAuthorityPopUp.Designer.cs">
+      <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductPlan.Designer.cs">
+      <DependentUpon>ProductPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SampleService.cs" />
+    <Compile Include="ShipmentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShipmentManager.Designer.cs">
+      <DependentUpon>ShipmentManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NewDataGridViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +315,12 @@
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\ExcelExportImport.cs" />
+    <Compile Include="WorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForms\frmBaseList.resx">
       <DependentUpon>frmBaseList.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,11 +339,104 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAuthority.resx">
+      <DependentUpon>frmAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBOM.resx">
+      <DependentUpon>frmBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBOR.resx">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacility.resx">
+      <DependentUpon>frmFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactory.resx">
+      <DependentUpon>frmFactory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItem.resx">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialCost.resx">
+      <DependentUpon>frmMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiftInfo.resx">
+      <DependentUpon>frmShiftInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiftSchedule.resx">
+      <DependentUpon>frmShiftSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmMaterialCostPopUp.resx">
+      <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaleCost.resx">
+      <DependentUpon>frmSaleCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmSaleCostPopUp.resx">
+      <DependentUpon>frmSaleCostPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmBOMPopUp.resx">
+      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmCreateGroupPopUp.resx">
+      <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmGroupAuthorityPopUp.resx">
+      <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmLoginPopUp.resx">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmItemPopUp.resx">
+      <DependentUpon>frmItemPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMatrialOut.resx">
+      <DependentUpon>frmMatrialOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSample.resx">
       <DependentUpon>frmSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\BORPopUp.resx">
+      <DependentUpon>BORPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CommonCodePopUp.resx">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CommonPopUp.resx">
+      <DependentUpon>CommonPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
+      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
+      <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmShiftInfoPopUp.resx">
+      <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmShiftschedulePopUp.resx">
+      <DependentUpon>frmShiftschedulePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmSignUpPopUp.resx">
+      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
+      <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductPlan.resx">
+      <DependentUpon>ProductPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,8 +448,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShipmentManager.resx">
+      <DependentUpon>ShipmentManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\NewDataGridViewControl.resx">
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkOrder.resx">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,13 +481,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PopUp\" />
+    <None Include="Resources\Login.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_black.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menubar_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

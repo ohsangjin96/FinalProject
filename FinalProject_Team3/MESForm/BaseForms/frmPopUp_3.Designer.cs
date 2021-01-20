@@ -52,11 +52,11 @@ namespace MESForm.BaseForms
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -293,29 +293,6 @@ namespace MESForm.BaseForms
             this.panel2.Size = new System.Drawing.Size(755, 408);
             this.panel2.TabIndex = 56;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(110, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 21);
-            this.textBox3.TabIndex = 64;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "label2";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(354, 18);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(125, 21);
-            this.textBox9.TabIndex = 66;
-            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(601, 52);
@@ -332,7 +309,30 @@ namespace MESForm.BaseForms
             this.label12.TabIndex = 67;
             this.label12.Text = "label12";
             // 
-            // frmPopUp_1
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(354, 18);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(125, 21);
+            this.textBox9.TabIndex = 66;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(110, 18);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(125, 21);
+            this.textBox3.TabIndex = 64;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "label2";
+            // 
+            // frmPopUp_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,7 +343,7 @@ namespace MESForm.BaseForms
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmPopUp_1";
+            this.Name = "frmPopUp_3";
             this.Text = "frmPop1";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -354,7 +354,6 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.TextBox textBox9;
         protected System.Windows.Forms.TextBox textBox3;
         protected System.Windows.Forms.Label label2;
@@ -382,5 +381,6 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Label label3;
         protected System.Windows.Forms.Panel pnlTop;
         protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Panel panel2;
     }
 }

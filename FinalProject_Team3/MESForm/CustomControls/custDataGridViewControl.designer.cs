@@ -1,7 +1,7 @@
 ﻿
-namespace POPForm
+namespace MESForm.CustomControls
 {
-    partial class Form1
+    partial class custDataGridViewControl
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -21,7 +21,7 @@ namespace POPForm
             base.Dispose(disposing);
         }
 
-        #region Windows Form 디자이너에서 생성한 코드
+        #region 구성 요소 디자이너에서 생성한 코드
 
         /// <summary>
         /// 디자이너 지원에 필요한 메서드입니다. 
@@ -29,13 +29,9 @@ namespace POPForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            components = new System.ComponentModel.Container();
         }
 
         #endregion
     }
 }
-

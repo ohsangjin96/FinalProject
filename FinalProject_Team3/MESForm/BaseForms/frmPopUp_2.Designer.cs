@@ -30,6 +30,9 @@ namespace MESForm.BaseForms
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -51,9 +54,6 @@ namespace MESForm.BaseForms
             this.label14 = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -91,6 +91,27 @@ namespace MESForm.BaseForms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(520, 300);
             this.panel2.TabIndex = 60;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(117, 158);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(125, 21);
+            this.textBox10.TabIndex = 64;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(117, 123);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(125, 21);
+            this.textBox11.TabIndex = 63;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(117, 18);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(125, 21);
+            this.textBox8.TabIndex = 62;
             // 
             // label2
             // 
@@ -268,27 +289,6 @@ namespace MESForm.BaseForms
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(117, 18);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 21);
-            this.textBox8.TabIndex = 62;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(117, 158);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 21);
-            this.textBox10.TabIndex = 64;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(117, 123);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 21);
-            this.textBox11.TabIndex = 63;
-            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -339,8 +339,6 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.TextBox textBox10;
         protected System.Windows.Forms.TextBox textBox11;
         protected System.Windows.Forms.TextBox textBox8;
@@ -367,5 +365,6 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btnCancel;
         protected System.Windows.Forms.Button btnSave;
+        protected System.Windows.Forms.Panel panel2;
     }
 }

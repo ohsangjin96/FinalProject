@@ -18,6 +18,31 @@ namespace MESForm
             InitializeComponent();
         }
 
+        /// <summary>
+        /// MDI 자식폼 구현
+        /// </summary>
+        /// <typeparam name="T">자식폼</typeparam>
+        private void OpenCreateForm<T>() where T : Form, new()
+        {
+            Cursor currentCursor = this.Cursor;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(T))
+                {
+                    form.Activate();
+                    custTab.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
+                    return;
+                }
+            }
+
+            this.Cursor = Cursors.WaitCursor;
+            T frm = new T();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            this.Cursor = currentCursor;
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
 
@@ -27,21 +52,21 @@ namespace MESForm
         private void frmMain_MdiChildActivate(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild == null)
-                tabForms.Visible = false;
+                custTab.Visible = false;
             else
             {
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "             ");
-                    tp.Parent = tabForms;
+                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "                                     ");
+                    tp.Parent = custTab;
                     tp.Tag = this.ActiveMdiChild;
-                    tabForms.SelectedTab = tp;
+                    custTab.SelectedTab = tp;
 
                     this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
                     this.ActiveMdiChild.Tag = tp;
                 }
 
-                if (!tabForms.Visible) tabForms.Visible = true;
+                if (!custTab.Visible) custTab.Visible = true;
             }
         }
 
@@ -52,17 +77,17 @@ namespace MESForm
 
         private void tabForms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabForms.SelectedTab != null && tabForms.SelectedTab.Tag != null)
+            if (custTab.SelectedTab != null && custTab.SelectedTab.Tag != null)
             {
-                (tabForms.SelectedTab.Tag as Form).Select();
+                (custTab.SelectedTab.Tag as Form).Select();
             }
         }
 
         private void tabForms_MouseDown(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i < tabForms.TabPages.Count; i++)
+            for (var i = 0; i < custTab.TabPages.Count; i++)
             {
-                var tabRect = tabForms.GetTabRect(i);
+                var tabRect = custTab.GetTabRect(i);
                 var closeImage = Properties.Resources.close_black;
                 var imageRect = new Rectangle(
                     (tabRect.Right - closeImage.Width),
@@ -78,9 +103,81 @@ namespace MESForm
         }
         #endregion
 
-        private void button2_Click(object sender, EventArgs e)
+        #region 자원관리
+
+        private void btnFactory_Click(object sender, EventArgs e)
         {
-            frmSample frm = new frmSample();
+            OpenCreateForm<frmFactory>();
+        }
+
+        private void btnFacility_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<frmFacility>();
+        }
+
+        private void btnCompany_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<frmCompany>();
+        }
+
+        private void btnBOR_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<frmBOR>();
+        }
+
+        #endregion
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ProductPlan frm = new ProductPlan();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            WorkOrder frm = new WorkOrder();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            frmMatrialOut frm = new frmMatrialOut();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            frmBOM frm = new frmBOM();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            frmItem frm = new frmItem();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)//자재단가
+        {
+            frmMaterialCost frm = new frmMaterialCost();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)//영업단가
+        {
+            frmSaleCost frm = new frmSaleCost();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();

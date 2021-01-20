@@ -36,10 +36,10 @@ namespace MESForm.BaseForms
             this.label1 = new System.Windows.Forms.Label();
             this.btnInquiry = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlSelect.SuspendLayout();
@@ -115,17 +115,37 @@ namespace MESForm.BaseForms
             // btnReg
             // 
             this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(589, 75);
+            this.btnReg.Location = new System.Drawing.Point(589, 3);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(75, 23);
             this.btnReg.TabIndex = 2;
             this.btnReg.Text = "등록";
             this.btnReg.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(913, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "새로고침";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcel.Location = new System.Drawing.Point(751, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExcel.TabIndex = 5;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            // 
             // btnMod
             // 
             this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Location = new System.Drawing.Point(670, 75);
+            this.btnMod.Location = new System.Drawing.Point(670, 3);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(75, 23);
             this.btnMod.TabIndex = 3;
@@ -135,38 +155,21 @@ namespace MESForm.BaseForms
             // btnDel
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(832, 75);
+            this.btnDel.Location = new System.Drawing.Point(832, 3);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 4;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // btnExcel
-            // 
-            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(751, 75);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnExcel.TabIndex = 5;
-            this.btnExcel.Text = "엑셀";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(913, 75);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 6;
-            this.btnRefresh.Text = "새로고침";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 0);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(12, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 583);
+            this.panel1.Size = new System.Drawing.Size(976, 599);
             this.panel1.TabIndex = 8;
             // 
             // splitContainer1
@@ -178,18 +181,19 @@ namespace MESForm.BaseForms
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnReg);
-            this.splitContainer1.Panel1.Controls.Add(this.btnRefresh);
-            this.splitContainer1.Panel1.Controls.Add(this.btnExcel);
-            this.splitContainer1.Panel1.Controls.Add(this.btnMod);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDel);
+            this.splitContainer1.Panel1.Controls.Add(this.pnlSelect);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnRefresh);
+            this.splitContainer1.Panel2.Controls.Add(this.btnReg);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Panel2.Controls.Add(this.btnDel);
+            this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
+            this.splitContainer1.Panel2.Controls.Add(this.btnMod);
             this.splitContainer1.Size = new System.Drawing.Size(1000, 700);
-            this.splitContainer1.SplitterDistance = 101;
-            this.splitContainer1.TabIndex = 9;
+            this.splitContainer1.SplitterDistance = 53;
+            this.splitContainer1.TabIndex = 10;
             // 
             // frmBaseList
             // 
@@ -197,9 +201,8 @@ namespace MESForm.BaseForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.Controls.Add(this.pnlSelect);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaseList";
             this.Text = "Form1";
@@ -214,19 +217,19 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-
+        protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel pnlSelect;
-        protected System.Windows.Forms.Button btnInquiry;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Button btnInquiry;
         protected System.Windows.Forms.Button btnReg;
+        protected System.Windows.Forms.Button btnRefresh;
+        protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnMod;
         protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Button btnExcel;
-        protected System.Windows.Forms.Button btnRefresh;
-        protected System.Windows.Forms.Panel panel1;
+        
         protected System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

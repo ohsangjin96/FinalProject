@@ -196,7 +196,7 @@ namespace MESForm.BaseForms
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // frmPopup
+            // frmPopup_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,7 +207,7 @@ namespace MESForm.BaseForms
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmPopup";
+            this.Name = "frmPopup_1";
             this.Text = "frmPopup";
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
@@ -218,8 +218,6 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnl;
         protected System.Windows.Forms.TextBox textBox10;
         protected System.Windows.Forms.TextBox textBox11;
         protected System.Windows.Forms.TextBox textBox8;
@@ -234,5 +232,6 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btnCancel;
         protected System.Windows.Forms.Button btnSave;
+        protected System.Windows.Forms.Panel pnl;
     }
 }
