@@ -142,6 +142,60 @@
     <Compile Include="frmItem.Designer.cs">
       <DependentUpon>frmItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaterialCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialCost.Designer.cs">
+      <DependentUpon>frmMaterialCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiftInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiftInfo.Designer.cs">
+      <DependentUpon>frmShiftInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmShiftInfoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmShiftInfoPopUp.Designer.cs">
+      <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShiftSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShiftSchedule.Designer.cs">
+      <DependentUpon>frmShiftSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmShiftschedulePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmShiftschedulePopUp.Designer.cs">
+      <DependentUpon>frmShiftschedulePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmMaterialCostPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmMaterialCostPopUp.Designer.cs">
+      <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSaleCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSaleCost.Designer.cs">
+      <DependentUpon>frmSaleCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmSaleCostPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmSaleCostPopUp.Designer.cs">
+      <DependentUpon>frmSaleCostPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmSignUpPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmSignUpPopUp.Designer.cs">
+      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\frmBOMPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +360,24 @@
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialCost.resx">
+      <DependentUpon>frmMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiftInfo.resx">
+      <DependentUpon>frmShiftInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShiftSchedule.resx">
+      <DependentUpon>frmShiftSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmMaterialCostPopUp.resx">
+      <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSaleCost.resx">
+      <DependentUpon>frmSaleCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmSaleCostPopUp.resx">
+      <DependentUpon>frmSaleCostPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmBOMPopUp.resx">
       <DependentUpon>frmBOMPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +422,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmShiftInfoPopUp.resx">
+      <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmShiftschedulePopUp.resx">
+      <DependentUpon>frmShiftschedulePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmSignUpPopUp.resx">
+      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
       <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
@@ -410,6 +491,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menubar_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

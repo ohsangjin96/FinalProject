@@ -150,5 +150,21 @@ namespace MESForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            frmBOM frm = new frmBOM();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            frmItem frm = new frmItem();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

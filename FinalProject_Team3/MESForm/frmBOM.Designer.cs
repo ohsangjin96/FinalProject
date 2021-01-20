@@ -45,6 +45,8 @@
             this.btnReg = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,6 +57,8 @@
             this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.SystemColors.Window;
+            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.label3);
             this.pnlSelect.Controls.Add(this.dateTimePicker1);
             this.pnlSelect.Controls.Add(this.comboBox3);
             this.pnlSelect.Controls.Add(this.label4);
@@ -70,7 +74,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(75, 45);
+            this.dateTimePicker1.Location = new System.Drawing.Point(75, 26);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
             this.dateTimePicker1.TabIndex = 25;
@@ -78,7 +82,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(787, 48);
+            this.comboBox3.Location = new System.Drawing.Point(748, 27);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(212, 25);
@@ -87,24 +91,24 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(712, 53);
+            this.label4.Location = new System.Drawing.Point(673, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 23;
-            this.label4.Text = "품목유형";
+            this.label4.Text = "전개방식";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 51);
+            this.label2.Location = new System.Drawing.Point(11, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 21;
-            this.label2.Text = "규격";
+            this.label2.Text = "기준일자";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(430, 45);
+            this.textBox1.Location = new System.Drawing.Point(398, 28);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(212, 25);
@@ -113,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(357, 51);
+            this.label1.Location = new System.Drawing.Point(325, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 17);
             this.label1.TabIndex = 1;
@@ -186,7 +190,7 @@
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(86, 33);
             this.btnMod.TabIndex = 35;
-            this.btnMod.Text = "수정";
+            this.btnMod.Text = "복사";
             this.btnMod.UseVisualStyleBackColor = true;
             // 
             // btnReg
@@ -228,6 +232,24 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 40;
             this.pictureBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1079, 29);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(97, 25);
+            this.comboBox1.TabIndex = 27;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1004, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "사용유무";
             // 
             // frmBOM
             // 
@@ -275,5 +297,7 @@
         protected System.Windows.Forms.Button btnReg;
         protected System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.PictureBox pictureBox1;
+        protected System.Windows.Forms.ComboBox comboBox1;
+        protected System.Windows.Forms.Label label3;
     }
 }
