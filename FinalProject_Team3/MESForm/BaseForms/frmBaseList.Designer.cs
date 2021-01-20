@@ -191,10 +191,10 @@ namespace MESForm.BaseForms
             this.dgvList1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList1.GridColor = System.Drawing.Color.White;
-            this.dgvList1.Location = new System.Drawing.Point(12, 3);
+            this.dgvList1.Location = new System.Drawing.Point(3, 3);
             this.dgvList1.Name = "dgvList1";
             this.dgvList1.RowTemplate.Height = 23;
-            this.dgvList1.Size = new System.Drawing.Size(985, 589);
+            this.dgvList1.Size = new System.Drawing.Size(994, 589);
             this.dgvList1.TabIndex = 0;
             // 
             // frmBaseList

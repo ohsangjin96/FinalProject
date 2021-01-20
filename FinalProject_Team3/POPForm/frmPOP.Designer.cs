@@ -727,9 +727,9 @@ namespace POPForm
             this.panel5.Controls.Add(this.label38);
             this.panel5.Controls.Add(this.label39);
             this.panel5.Controls.Add(this.label40);
-            this.panel5.Location = new System.Drawing.Point(3, 231);
+            this.panel5.Location = new System.Drawing.Point(6, 231);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(894, 108);
+            this.panel5.Size = new System.Drawing.Size(891, 108);
             this.panel5.TabIndex = 58;
             // 
             // label32
@@ -771,7 +771,7 @@ namespace POPForm
             this.button7.BackColor = System.Drawing.SystemColors.Highlight;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(814, 65);
+            this.button7.Location = new System.Drawing.Point(811, 65);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(76, 40);
             this.button7.TabIndex = 51;
@@ -784,7 +784,7 @@ namespace POPForm
             this.button8.BackColor = System.Drawing.SystemColors.Highlight;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button8.Location = new System.Drawing.Point(727, 65);
+            this.button8.Location = new System.Drawing.Point(724, 65);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(76, 40);
             this.button8.TabIndex = 50;
@@ -796,7 +796,7 @@ namespace POPForm
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label35.Location = new System.Drawing.Point(722, 18);
+            this.label35.Location = new System.Drawing.Point(719, 18);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(23, 27);
             this.label35.TabIndex = 5;
@@ -807,7 +807,7 @@ namespace POPForm
             this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label36.Location = new System.Drawing.Point(835, 18);
+            this.label36.Location = new System.Drawing.Point(832, 18);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(44, 27);
             this.label36.TabIndex = 4;
@@ -818,7 +818,7 @@ namespace POPForm
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label37.Location = new System.Drawing.Point(751, 18);
+            this.label37.Location = new System.Drawing.Point(748, 18);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(66, 27);
             this.label37.TabIndex = 3;
@@ -829,7 +829,7 @@ namespace POPForm
             this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label38.Location = new System.Drawing.Point(665, 18);
+            this.label38.Location = new System.Drawing.Point(662, 18);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(44, 27);
             this.label38.TabIndex = 2;
@@ -840,7 +840,7 @@ namespace POPForm
             this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label39.Location = new System.Drawing.Point(581, 18);
+            this.label39.Location = new System.Drawing.Point(578, 18);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(66, 27);
             this.label39.TabIndex = 1;

@@ -73,7 +73,7 @@ namespace MESForm
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 569);
+            this.panel2.Size = new System.Drawing.Size(238, 577);
             this.panel2.TabIndex = 2;
             // 
             // button12
@@ -262,7 +262,7 @@ namespace MESForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 603);
+            this.ClientSize = new System.Drawing.Size(958, 672);
             this.Controls.Add(this.tabForms);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
