@@ -100,10 +100,6 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBOM.cs" />
-    <Compile Include="frmBOM.Designer.cs">
-      <DependentUpon>frmBOM.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,9 +248,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBOM.resx">
-      <DependentUpon>frmBOM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBOR.resx">
       <DependentUpon>frmBOR.cs</DependentUpon>
