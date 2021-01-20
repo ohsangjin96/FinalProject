@@ -100,6 +100,12 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuthority.Designer.cs">
+      <DependentUpon>frmAuthority.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,24 @@
     </Compile>
     <Compile Include="frmItem.Designer.cs">
       <DependentUpon>frmItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmBOMPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmBOMPopUp.Designer.cs">
+      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmCreateGroupPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmCreateGroupPopUp.Designer.cs">
+      <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmGroupAuthorityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmGroupAuthorityPopUp.Designer.cs">
+      <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\frmLoginPopUp.cs">
       <SubType>Form</SubType>
@@ -202,6 +226,12 @@
     <Compile Include="PopUp\FactoryPopUp.Designer.cs">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\frmUserAuthorityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmUserAuthorityPopUp.Designer.cs">
+      <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +279,9 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAuthority.resx">
+      <DependentUpon>frmAuthority.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBOR.resx">
       <DependentUpon>frmBOR.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +296,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmBOMPopUp.resx">
+      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmCreateGroupPopUp.resx">
+      <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmGroupAuthorityPopUp.resx">
+      <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmLoginPopUp.resx">
       <DependentUpon>frmLoginPopUp.cs</DependentUpon>
@@ -299,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
+      <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductPlan.resx">
       <DependentUpon>ProductPlan.cs</DependentUpon>

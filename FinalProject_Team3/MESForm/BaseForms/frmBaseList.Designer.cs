@@ -229,7 +229,7 @@ namespace MESForm.BaseForms
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnMod;
         protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Panel panel1;
+        
         protected System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
