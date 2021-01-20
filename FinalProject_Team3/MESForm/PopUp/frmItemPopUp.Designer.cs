@@ -154,10 +154,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = global::MESForm.Properties.Resources.close_black;
-            this.button1.Location = new System.Drawing.Point(745, 4);
+            this.button1.Location = new System.Drawing.Point(778, 4);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 41);
+            this.button1.Size = new System.Drawing.Size(25, 30);
             this.button1.TabIndex = 103;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

@@ -1,6 +1,6 @@
 ﻿namespace MESForm.PopUp
 {
-    partial class frmSignUp
+    partial class frmSignUpPopUp
     {
         /// <summary>
         /// Required designer variable.
@@ -32,26 +32,28 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.cboDept = new System.Windows.Forms.ComboBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPwdCheck = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.btnIDCheck = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnJoin = new System.Windows.Forms.Button();
+            this.txtX = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.txtX);
             this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -97,22 +99,22 @@
             this.label42.TabIndex = 153;
             this.label42.Text = "관리자ID";
             // 
-            // textBox28
+            // txtID
             // 
-            this.textBox28.Location = new System.Drawing.Point(127, 85);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(138, 21);
-            this.textBox28.TabIndex = 152;
+            this.txtID.Location = new System.Drawing.Point(127, 85);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(138, 21);
+            this.txtID.TabIndex = 152;
             // 
-            // comboBox16
+            // cboDept
             // 
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(127, 290);
-            this.comboBox16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(89, 20);
-            this.comboBox16.TabIndex = 151;
+            this.cboDept.FormattingEnabled = true;
+            this.cboDept.Location = new System.Drawing.Point(127, 290);
+            this.cboDept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboDept.Name = "cboDept";
+            this.cboDept.Size = new System.Drawing.Size(89, 20);
+            this.cboDept.TabIndex = 151;
             // 
             // label46
             // 
@@ -136,13 +138,13 @@
             this.label2.TabIndex = 155;
             this.label2.Text = "이름";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 208);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 21);
-            this.textBox1.TabIndex = 154;
+            this.txtName.Location = new System.Drawing.Point(127, 208);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(138, 21);
+            this.txtName.TabIndex = 154;
             // 
             // label3
             // 
@@ -155,13 +157,13 @@
             this.label3.TabIndex = 157;
             this.label3.Text = "Email";
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(127, 249);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 21);
-            this.textBox2.TabIndex = 156;
+            this.txtEmail.Location = new System.Drawing.Point(127, 249);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(225, 21);
+            this.txtEmail.TabIndex = 156;
             // 
             // label4
             // 
@@ -174,14 +176,14 @@
             this.label4.TabIndex = 159;
             this.label4.Text = "비밀번호 확인";
             // 
-            // textBox3
+            // txtPwdCheck
             // 
-            this.textBox3.Location = new System.Drawing.Point(127, 167);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 21);
-            this.textBox3.TabIndex = 158;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.txtPwdCheck.Location = new System.Drawing.Point(127, 167);
+            this.txtPwdCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPwdCheck.Name = "txtPwdCheck";
+            this.txtPwdCheck.Size = new System.Drawing.Size(138, 21);
+            this.txtPwdCheck.TabIndex = 158;
+            this.txtPwdCheck.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -194,30 +196,30 @@
             this.label5.TabIndex = 161;
             this.label5.Text = "비밀번호";
             // 
-            // textBox4
+            // txtPwd
             // 
-            this.textBox4.Location = new System.Drawing.Point(127, 126);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 21);
-            this.textBox4.TabIndex = 160;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.txtPwd.Location = new System.Drawing.Point(127, 126);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(138, 21);
+            this.txtPwd.TabIndex = 160;
+            this.txtPwd.UseSystemPasswordChar = true;
             // 
-            // btnSave
+            // btnIDCheck
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(271, 85);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(63, 22);
-            this.btnSave.TabIndex = 162;
-            this.btnSave.Text = "중복확인";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnIDCheck.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnIDCheck.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnIDCheck.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnIDCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIDCheck.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnIDCheck.ForeColor = System.Drawing.Color.White;
+            this.btnIDCheck.Location = new System.Drawing.Point(271, 85);
+            this.btnIDCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnIDCheck.Name = "btnIDCheck";
+            this.btnIDCheck.Size = new System.Drawing.Size(63, 22);
+            this.btnIDCheck.TabIndex = 162;
+            this.btnIDCheck.Text = "중복확인";
+            this.btnIDCheck.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
@@ -232,45 +234,60 @@
             this.btnCancel.TabIndex = 164;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.XorCancle_Click);
             // 
-            // button2
+            // btnJoin
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(208, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 23);
-            this.button2.TabIndex = 163;
-            this.button2.Text = "가입";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnJoin.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnJoin.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnJoin.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnJoin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJoin.ForeColor = System.Drawing.Color.White;
+            this.btnJoin.Location = new System.Drawing.Point(208, 335);
+            this.btnJoin.Name = "btnJoin";
+            this.btnJoin.Size = new System.Drawing.Size(70, 23);
+            this.btnJoin.TabIndex = 163;
+            this.btnJoin.Text = "가입";
+            this.btnJoin.UseVisualStyleBackColor = false;
             // 
-            // frmSignUp
+            // txtX
+            // 
+            this.txtX.BackColor = System.Drawing.SystemColors.Highlight;
+            this.txtX.FlatAppearance.BorderSize = 0;
+            this.txtX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtX.ForeColor = System.Drawing.Color.Transparent;
+            this.txtX.Image = global::MESForm.Properties.Resources.close_black;
+            this.txtX.Location = new System.Drawing.Point(330, 9);
+            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(22, 23);
+            this.txtX.TabIndex = 105;
+            this.txtX.UseVisualStyleBackColor = false;
+            this.txtX.Click += new System.EventHandler(this.XorCancle_Click);
+            // 
+            // frmSignUpPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 367);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnJoin);
+            this.Controls.Add(this.btnIDCheck);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPwdCheck);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label42);
-            this.Controls.Add(this.textBox28);
-            this.Controls.Add(this.comboBox16);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.cboDept);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmSignUp";
+            this.Name = "frmSignUpPopUp";
             this.Text = "frmSignUp";
             this.Load += new System.EventHandler(this.frmSignUp_Load);
             this.pnlTop.ResumeLayout(false);
@@ -286,19 +303,20 @@
         private System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.ComboBox comboBox16;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ComboBox cboDept;
         protected System.Windows.Forms.Label label46;
         protected System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         protected System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
         protected System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPwdCheck;
         protected System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        protected System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtPwd;
+        protected System.Windows.Forms.Button btnIDCheck;
         protected System.Windows.Forms.Button btnCancel;
-        protected System.Windows.Forms.Button button2;
+        protected System.Windows.Forms.Button btnJoin;
+        private System.Windows.Forms.Button txtX;
     }
 }

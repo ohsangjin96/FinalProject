@@ -1,5 +1,4 @@
-﻿using MESForm.PopUp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,21 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MESForm
+namespace MESForm.PopUp
 {
-    public partial class frmLoginPopUp : Form
+    public partial class frmSignUpPopUp : Form
     {
-        public frmLoginPopUp()
+        public frmSignUpPopUp()
         {
             InitializeComponent();
         }
 
-       
-
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void frmSignUp_Load(object sender, EventArgs e)
         {
-            frmSignUpPopUp frm = new frmSignUpPopUp();
-            frm.ShowDialog();
+
         }
 
         //x , 취소버튼 클릭 시 이벤트

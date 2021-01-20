@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace MESForm.PopUp
 {
-    public partial class frmSignUp : Form
+    public partial class frmCreateGroupPopUp : Form
     {
-        public frmSignUp()
+        public frmCreateGroupPopUp()
         {
             InitializeComponent();
-        }
-
-        private void frmSignUp_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)//취소 버튼
-        {
-            this.Close();
         }
     }
 }
