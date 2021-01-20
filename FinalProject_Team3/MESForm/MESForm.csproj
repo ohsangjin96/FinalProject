@@ -202,10 +202,6 @@
     <Compile Include="PopUp\FactoryPopUp.Designer.cs">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmSignUp.cs" />
-    <Compile Include="PopUp\frmSignUp.Designer.cs">
-      <DependentUpon>frmSignUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,9 +299,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmSignUp.resx">
-      <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductPlan.resx">
       <DependentUpon>ProductPlan.cs</DependentUpon>
