@@ -124,10 +124,16 @@
     <Compile Include="frmItem.Designer.cs">
       <DependentUpon>frmItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmItemPopUp.cs">
+    <Compile Include="PopUp\frmLoginPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmItemPopUp.Designer.cs">
+    <Compile Include="PopUp\frmLoginPopUp.Designer.cs">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\frmItemPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmItemPopUp.Designer.cs">
       <DependentUpon>frmItemPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
@@ -190,6 +196,12 @@
     <Compile Include="PopUp\FactoryPopUp.Designer.cs">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\frmSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\frmSignUp.Designer.cs">
+      <DependentUpon>frmSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,7 +258,10 @@
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmItemPopUp.resx">
+    <EmbeddedResource Include="PopUp\frmLoginPopUp.resx">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmItemPopUp.resx">
       <DependentUpon>frmItemPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
@@ -278,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\frmSignUp.resx">
+      <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductPlan.resx">
       <DependentUpon>ProductPlan.cs</DependentUpon>
@@ -321,7 +339,9 @@
       <Name>FProjectVO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close_black.png" />
   </ItemGroup>
