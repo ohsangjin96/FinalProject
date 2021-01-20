@@ -166,5 +166,21 @@ namespace MESForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)//자재단가
+        {
+            frmMaterialCost frm = new frmMaterialCost();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)//영업단가
+        {
+            frmSaleCost frm = new frmSaleCost();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

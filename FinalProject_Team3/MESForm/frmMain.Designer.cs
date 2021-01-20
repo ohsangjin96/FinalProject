@@ -123,6 +123,7 @@ namespace MESForm
             this.button7.TabIndex = 2;
             this.button7.Text = "영업단가";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -134,6 +135,7 @@ namespace MESForm
             this.button8.TabIndex = 1;
             this.button8.Text = "자재단가";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button11
             // 
