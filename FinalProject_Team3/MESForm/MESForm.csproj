@@ -88,23 +88,17 @@
     <Compile Include="BaseForms\frmPopUp_2.Designer.cs">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\custDataGridViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\custDataGridViewControl.designer.cs">
+      <DependentUpon>custDataGridViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\custTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAuthority.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAuthority.Designer.cs">
-      <DependentUpon>frmAuthority.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBOM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBOM.Designer.cs">
-      <DependentUpon>frmBOM.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBOR.cs">
       <SubType>Form</SubType>
@@ -135,24 +129,6 @@
     </Compile>
     <Compile Include="frmItem.Designer.cs">
       <DependentUpon>frmItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\frmBOMPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmBOMPopUp.Designer.cs">
-      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\frmCreateGroupPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmCreateGroupPopUp.Designer.cs">
-      <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\frmGroupAuthorityPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmGroupAuthorityPopUp.Designer.cs">
-      <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\frmLoginPopUp.cs">
       <SubType>Form</SubType>
@@ -226,17 +202,11 @@
     <Compile Include="PopUp\FactoryPopUp.Designer.cs">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmSignUpPopUp.cs">
+    <Compile Include="PopUp\frmSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\frmSignUpPopUp.Designer.cs">
-      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\frmUserAuthorityPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmUserAuthorityPopUp.Designer.cs">
-      <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
+    <Compile Include="PopUp\frmSignUp.Designer.cs">
+      <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductPlan.cs">
       <SubType>Form</SubType>
@@ -247,6 +217,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\SampleService.cs" />
+    <Compile Include="ShipmentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShipmentManager.Designer.cs">
+      <DependentUpon>ShipmentManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NewDataGridViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -279,12 +255,6 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAuthority.resx">
-      <DependentUpon>frmAuthority.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBOM.resx">
-      <DependentUpon>frmBOM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmBOR.resx">
       <DependentUpon>frmBOR.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,15 +269,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmBOMPopUp.resx">
-      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmCreateGroupPopUp.resx">
-      <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmGroupAuthorityPopUp.resx">
-      <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmLoginPopUp.resx">
       <DependentUpon>frmLoginPopUp.cs</DependentUpon>
@@ -345,11 +306,8 @@
     <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmSignUpPopUp.resx">
-      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
-      <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\frmSignUp.resx">
+      <DependentUpon>frmSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductPlan.resx">
       <DependentUpon>ProductPlan.cs</DependentUpon>
@@ -364,6 +322,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShipmentManager.resx">
+      <DependentUpon>ShipmentManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\NewDataGridViewControl.resx">
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,7 +364,7 @@
     <None Include="Resources\close_red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menubar_16x16.png" />
+    <None Include="Resources\mainLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

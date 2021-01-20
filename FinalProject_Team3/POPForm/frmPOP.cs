@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace POPForm
 {
-    public partial class Form1 : Form
+    public partial class frmPOP : Form
     {
-        public Form1()
+        public frmPOP()
         {
             InitializeComponent();
         }
+     
     }
 }
