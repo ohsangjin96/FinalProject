@@ -202,9 +202,7 @@
     <Compile Include="PopUp\FactoryPopUp.Designer.cs">
       <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmSignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PopUp\frmSignUp.cs" />
     <Compile Include="PopUp\frmSignUp.Designer.cs">
       <DependentUpon>frmSignUp.cs</DependentUpon>
     </Compile>
