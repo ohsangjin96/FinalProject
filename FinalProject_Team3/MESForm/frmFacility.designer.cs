@@ -154,8 +154,8 @@ namespace MESForm
             // 
             // frmFacility
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1000, 808);
             this.Name = "frmFacility";
             this.Text = "설비관리";
             this.Load += new System.EventHandler(this.frmFacility_Load);

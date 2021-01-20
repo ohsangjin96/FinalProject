@@ -217,7 +217,7 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-
+        protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel pnlSelect;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label2;
