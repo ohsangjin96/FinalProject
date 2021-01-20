@@ -34,6 +34,12 @@ namespace POPForm
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
@@ -48,6 +54,7 @@ namespace POPForm
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -57,25 +64,6 @@ namespace POPForm
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -88,20 +76,33 @@ namespace POPForm
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvList
@@ -144,7 +145,7 @@ namespace POPForm
             this.dataGridView1.Location = new System.Drawing.Point(0, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(562, 309);
             this.dataGridView1.TabIndex = 40;
             // 
             // splitContainer1
@@ -163,6 +164,7 @@ namespace POPForm
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(562, 851);
@@ -181,6 +183,74 @@ namespace POPForm
             this.label4.TabIndex = 42;
             this.label4.Text = "●업무현황";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Location = new System.Drawing.Point(0, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(562, 54);
+            this.panel1.TabIndex = 43;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(221, 17);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(101, 21);
+            this.dateTimePicker2.TabIndex = 84;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label22.Location = new System.Drawing.Point(187, 8);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(28, 30);
+            this.label22.TabIndex = 82;
+            this.label22.Text = "~";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label21.Location = new System.Drawing.Point(3, 8);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(55, 30);
+            this.label21.TabIndex = 83;
+            this.label21.Text = "날짜";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(80, 17);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(101, 21);
+            this.dateTimePicker1.TabIndex = 81;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(452, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 28);
+            this.button4.TabIndex = 80;
+            this.button4.Text = "조회";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -366,6 +436,19 @@ namespace POPForm
             this.splitContainer2.SplitterDistance = 404;
             this.splitContainer2.TabIndex = 58;
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(762, 359);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(134, 40);
+            this.button3.TabIndex = 55;
+            this.button3.Text = "작업시작";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -484,232 +567,6 @@ namespace POPForm
             this.label6.Size = new System.Drawing.Size(88, 30);
             this.label6.TabIndex = 69;
             this.label6.Text = "생산량 :";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(762, 359);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 40);
-            this.button3.TabIndex = 55;
-            this.button3.Text = "작업시작";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Location = new System.Drawing.Point(0, 80);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 54);
-            this.panel1.TabIndex = 43;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(452, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 28);
-            this.button4.TabIndex = 80;
-            this.button4.Text = "조회";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(221, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(101, 21);
-            this.dateTimePicker2.TabIndex = 84;
-            // 
-            // label22
-            // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label22.Location = new System.Drawing.Point(187, 8);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(28, 30);
-            this.label22.TabIndex = 82;
-            this.label22.Text = "~";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label21.Location = new System.Drawing.Point(3, 8);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(55, 30);
-            this.label21.TabIndex = 83;
-            this.label21.Text = "날짜";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(80, 17);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 21);
-            this.dateTimePicker1.TabIndex = 81;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.SystemColors.Info;
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.label24);
-            this.panel3.Controls.Add(this.label25);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.label27);
-            this.panel3.Controls.Add(this.label28);
-            this.panel3.Controls.Add(this.label29);
-            this.panel3.Controls.Add(this.label30);
-            this.panel3.Controls.Add(this.label31);
-            this.panel3.Location = new System.Drawing.Point(6, 117);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(894, 108);
-            this.panel3.TabIndex = 58;
-            // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.Location = new System.Drawing.Point(160, 66);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(36, 27);
-            this.label23.TabIndex = 54;
-            this.label23.Text = "%";
-            // 
-            // label24
-            // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label24.Location = new System.Drawing.Point(119, 66);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(44, 27);
-            this.label24.TabIndex = 53;
-            this.label24.Text = "00";
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(20, 66);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 27);
-            this.label25.TabIndex = 52;
-            this.label25.Text = "진행률";
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(814, 65);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 40);
-            this.button5.TabIndex = 51;
-            this.button5.Text = "중지";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(727, 65);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(76, 40);
-            this.button6.TabIndex = 50;
-            this.button6.Text = "가동";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // label26
-            // 
-            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label26.Location = new System.Drawing.Point(722, 18);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(23, 27);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "/";
-            // 
-            // label27
-            // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label27.Location = new System.Drawing.Point(835, 18);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(44, 27);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "00";
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label28.Location = new System.Drawing.Point(751, 18);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 27);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "실패";
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label29.Location = new System.Drawing.Point(665, 18);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(44, 27);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "00";
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label30.Location = new System.Drawing.Point(581, 18);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(66, 27);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "성공";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label31.Location = new System.Drawing.Point(20, 18);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(129, 27);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "설비 이름";
             // 
             // panel5
             // 
@@ -856,6 +713,164 @@ namespace POPForm
             this.label40.TabIndex = 0;
             this.label40.Text = "설비 이름";
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.SystemColors.Info;
+            this.panel3.Controls.Add(this.label23);
+            this.panel3.Controls.Add(this.label24);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Controls.Add(this.label27);
+            this.panel3.Controls.Add(this.label28);
+            this.panel3.Controls.Add(this.label29);
+            this.panel3.Controls.Add(this.label30);
+            this.panel3.Controls.Add(this.label31);
+            this.panel3.Location = new System.Drawing.Point(6, 117);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(894, 108);
+            this.panel3.TabIndex = 58;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label23.Location = new System.Drawing.Point(160, 66);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(36, 27);
+            this.label23.TabIndex = 54;
+            this.label23.Text = "%";
+            // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label24.Location = new System.Drawing.Point(119, 66);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(44, 27);
+            this.label24.TabIndex = 53;
+            this.label24.Text = "00";
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label25.Location = new System.Drawing.Point(20, 66);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 27);
+            this.label25.TabIndex = 52;
+            this.label25.Text = "진행률";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(814, 65);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(76, 40);
+            this.button5.TabIndex = 51;
+            this.button5.Text = "중지";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.Location = new System.Drawing.Point(727, 65);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(76, 40);
+            this.button6.TabIndex = 50;
+            this.button6.Text = "가동";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label26.Location = new System.Drawing.Point(722, 18);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(23, 27);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "/";
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label27.Location = new System.Drawing.Point(835, 18);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(44, 27);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "00";
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label28.Location = new System.Drawing.Point(751, 18);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 27);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "실패";
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label29.Location = new System.Drawing.Point(665, 18);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(44, 27);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "00";
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label30.Location = new System.Drawing.Point(581, 18);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(66, 27);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "성공";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label31.Location = new System.Drawing.Point(20, 18);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(129, 27);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "설비 이름";
+            // 
+            // button9
+            // 
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button9.Location = new System.Drawing.Point(483, 392);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(76, 40);
+            this.button9.TabIndex = 55;
+            this.button9.Text = "실적등록";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
             // frmPOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -873,6 +888,8 @@ namespace POPForm
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -880,12 +897,10 @@ namespace POPForm
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -951,6 +966,7 @@ namespace POPForm
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button button9;
     }
 }
 
