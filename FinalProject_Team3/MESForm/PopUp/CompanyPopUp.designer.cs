@@ -63,19 +63,15 @@ namespace MESForm.PopUp
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Size = new System.Drawing.Size(785, 32);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseMove);
-            this.pnlTop.Controls.SetChildIndex(this.label1, 0);
-            this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             // 
             // label1
             // 
@@ -131,6 +127,12 @@ namespace MESForm.PopUp
             this.pnl.Controls.Add(this.label11);
             this.pnl.Controls.Add(this.label14);
             this.pnl.Size = new System.Drawing.Size(761, 358);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Location = new System.Drawing.Point(745, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dateTimePicker2
             // 
@@ -415,21 +417,6 @@ namespace MESForm.PopUp
             this.label14.TabIndex = 91;
             this.label14.Text = "업체정보";
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
-            this.btnClose.Location = new System.Drawing.Point(745, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 34);
-            this.btnClose.TabIndex = 105;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // CompanyPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -480,6 +467,5 @@ namespace MESForm.PopUp
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.Label label11;
         protected System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnClose;
     }
 }

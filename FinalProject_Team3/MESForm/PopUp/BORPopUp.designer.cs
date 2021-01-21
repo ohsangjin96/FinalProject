@@ -29,7 +29,6 @@ namespace MESForm.PopUp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClose = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -52,12 +51,9 @@ namespace MESForm.PopUp
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Size = new System.Drawing.Size(541, 32);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BORPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BORPopUp_MouseMove);
-            this.pnlTop.Controls.SetChildIndex(this.label1, 0);
-            this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             // 
             // label1
             // 
@@ -98,17 +94,8 @@ namespace MESForm.PopUp
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
             this.btnClose.Location = new System.Drawing.Point(501, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 34);
-            this.btnClose.TabIndex = 105;
-            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // comboBox4
@@ -249,11 +236,11 @@ namespace MESForm.PopUp
             this.label14.TabIndex = 69;
             this.label14.Text = "비고";
             // 
-            // BORPopUp2
+            // BORPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.ClientSize = new System.Drawing.Size(541, 350);
-            this.Name = "BORPopUp2";
+            this.Name = "BORPopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -264,8 +251,6 @@ namespace MESForm.PopUp
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
