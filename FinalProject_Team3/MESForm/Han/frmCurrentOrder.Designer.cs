@@ -272,7 +272,7 @@ namespace MESForm.Han
             // btnDateChange
             // 
             this.btnDateChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDateChange.Location = new System.Drawing.Point(957, 4);
+            this.btnDateChange.Location = new System.Drawing.Point(957, 5);
             this.btnDateChange.Name = "btnDateChange";
             this.btnDateChange.Size = new System.Drawing.Size(110, 23);
             this.btnDateChange.TabIndex = 14;
@@ -282,7 +282,7 @@ namespace MESForm.Han
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Location = new System.Drawing.Point(855, 4);
+            this.btnPrint.Location = new System.Drawing.Point(855, 5);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(96, 23);
             this.btnPrint.TabIndex = 13;
@@ -302,7 +302,7 @@ namespace MESForm.Han
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(1073, 4);
+            this.btnCancel.Location = new System.Drawing.Point(1073, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 23);
             this.btnCancel.TabIndex = 11;
@@ -312,7 +312,7 @@ namespace MESForm.Han
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(1163, 4);
+            this.btnExcel.Location = new System.Drawing.Point(1163, 5);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 10;

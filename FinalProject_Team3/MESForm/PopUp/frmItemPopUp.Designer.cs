@@ -792,6 +792,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmItemPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmItemPopUp";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

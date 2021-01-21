@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.PopUp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace MESForm
         public frmAuthority()
         {
             InitializeComponent();
+        }
+
+        private void btnUser_Auth_Click(object sender, EventArgs e)
+        {
+            frmUserAuthorityPopUp frm = new frmUserAuthorityPopUp();
+            frm.ShowDialog();
+        }
+
+        private void btnGroup_Auth_Click(object sender, EventArgs e)
+        {
+            frmGroupAuthorityPopUp frm = new frmGroupAuthorityPopUp();
+            frm.ShowDialog();
         }
     }
 }

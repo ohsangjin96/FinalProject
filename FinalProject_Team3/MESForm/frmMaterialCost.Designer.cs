@@ -40,8 +40,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnMod = new System.Windows.Forms.Button();
-            this.btnReg = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
@@ -170,7 +169,7 @@
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.btnDel.Location = new System.Drawing.Point(1060, 143);
+            this.btnDel.Location = new System.Drawing.Point(1150, 144);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(86, 33);
@@ -178,29 +177,18 @@
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // btnMod
+            // btnRegister
             // 
-            this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.btnMod.Location = new System.Drawing.Point(1152, 143);
-            this.btnMod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(86, 33);
-            this.btnMod.TabIndex = 40;
-            this.btnMod.Text = "복사";
-            this.btnMod.UseVisualStyleBackColor = true;
-            // 
-            // btnReg
-            // 
-            this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.btnReg.Location = new System.Drawing.Point(968, 143);
-            this.btnReg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(86, 33);
-            this.btnReg.TabIndex = 39;
-            this.btnReg.Text = "등록";
-            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.btnRegister.Location = new System.Drawing.Point(1058, 144);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(86, 33);
+            this.btnRegister.TabIndex = 39;
+            this.btnRegister.Text = "등록";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // pictureBox1
             // 
@@ -252,8 +240,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnMod);
-            this.Controls.Add(this.btnReg);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.pnlSelect);
             this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -282,8 +269,7 @@
         protected System.Windows.Forms.Button btnRefresh;
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Button btnMod;
-        protected System.Windows.Forms.Button btnReg;
+        protected System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.DataGridView dgvList;
