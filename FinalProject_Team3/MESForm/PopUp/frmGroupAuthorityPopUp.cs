@@ -25,7 +25,7 @@ namespace MESForm.PopUp
         private void btnGroupRegister_Click(object sender, EventArgs e)
         {
             frmCreateGroupPopUp frm = new frmCreateGroupPopUp();
-            frm.Close();
+            frm.ShowDialog();
         }
     }
 }

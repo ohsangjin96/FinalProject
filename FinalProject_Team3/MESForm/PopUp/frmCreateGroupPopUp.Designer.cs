@@ -239,6 +239,7 @@
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCreateGroupPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCreateGroup";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

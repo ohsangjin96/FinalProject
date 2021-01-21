@@ -44,6 +44,8 @@
             // 
             // pnlSelect
             // 
+            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.Controls.Add(this.txtName);
             this.pnlSelect.Controls.Add(this.label1);
@@ -126,13 +128,13 @@
             // 
             // btnUser_Auth
             // 
-            this.btnUser_Auth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUser_Auth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUser_Auth.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnUser_Auth.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnUser_Auth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser_Auth.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
             this.btnUser_Auth.ForeColor = System.Drawing.Color.White;
-            this.btnUser_Auth.Location = new System.Drawing.Point(1007, 161);
+            this.btnUser_Auth.Location = new System.Drawing.Point(1010, 157);
             this.btnUser_Auth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUser_Auth.Name = "btnUser_Auth";
             this.btnUser_Auth.Size = new System.Drawing.Size(117, 25);
@@ -143,13 +145,13 @@
             // 
             // btnGroup_Auth
             // 
-            this.btnGroup_Auth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGroup_Auth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGroup_Auth.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnGroup_Auth.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnGroup_Auth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroup_Auth.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
             this.btnGroup_Auth.ForeColor = System.Drawing.Color.White;
-            this.btnGroup_Auth.Location = new System.Drawing.Point(1130, 161);
+            this.btnGroup_Auth.Location = new System.Drawing.Point(1133, 157);
             this.btnGroup_Auth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGroup_Auth.Name = "btnGroup_Auth";
             this.btnGroup_Auth.Size = new System.Drawing.Size(117, 25);
@@ -173,7 +175,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAuthority";
-            this.Text = "frmAuthority";
+            this.Text = "권한관리";
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Auth)).EndInit();

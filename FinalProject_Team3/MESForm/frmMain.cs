@@ -226,36 +226,38 @@ namespace MESForm
 
         #endregion
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnAuthority_Click(object sender, EventArgs e)
         {
-            frmBOM frm = new frmBOM();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            OpenCreateForm<frmAuthority>();
         }
-
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)//품목
         {
-            frmItem frm = new frmItem();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+
+            OpenCreateForm<frmItem>();
+        }
+        private void button9_Click(object sender, EventArgs e)//bom
+        {
+            
+            OpenCreateForm<frmBOM>();
         }
 
         private void button8_Click(object sender, EventArgs e)//자재단가
         {
-            frmMaterialCost frm = new frmMaterialCost();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+            OpenCreateForm<frmMaterialCost>();
         }
 
         private void button7_Click(object sender, EventArgs e)//영업단가
         {
-            frmSaleCost frm = new frmSaleCost();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
+           
+            OpenCreateForm<frmSaleCost>();
+        }
+        private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
+        {
+            OpenCreateForm<frmShiftInfo>();
+        }
+        private void btnShiftSchedule_Click(object sender, EventArgs e)//shift스케줄관리
+        {
+            OpenCreateForm<frmShiftSchedule>();
         }
 
         #region 수주/계획관리
@@ -364,6 +366,9 @@ namespace MESForm
         {
             OpenCreateForm<ShipmentManager>();
         }
+
+
+
         #endregion
 
         

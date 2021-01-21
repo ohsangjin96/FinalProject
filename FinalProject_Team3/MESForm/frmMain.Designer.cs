@@ -30,6 +30,7 @@ namespace MESForm
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnAuthority = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -82,7 +83,6 @@ namespace MESForm
             this.btnFacility = new System.Windows.Forms.Button();
             this.btnFactory = new System.Windows.Forms.Button();
             this.btnResource = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.custTab = new MESForm.CustomControls.custTabControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -110,6 +110,23 @@ namespace MESForm
             this.panel1.Size = new System.Drawing.Size(1101, 95);
             this.panel1.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::MESForm.Properties.Resources.CommonCode;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(849, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 48);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "        공통코드";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // btnAuthority
             // 
             this.btnAuthority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -124,8 +141,9 @@ namespace MESForm
             this.btnAuthority.Name = "btnAuthority";
             this.btnAuthority.Size = new System.Drawing.Size(117, 48);
             this.btnAuthority.TabIndex = 1;
-            this.btnAuthority.Text = "        권한설정";
+            this.btnAuthority.Text = "        권한관리";
             this.btnAuthority.UseVisualStyleBackColor = false;
+            this.btnAuthority.Click += new System.EventHandler(this.btnAuthority_Click);
             // 
             // imgLogo
             // 
@@ -588,6 +606,7 @@ namespace MESForm
             this.btnShiftSchedule.TabIndex = 2;
             this.btnShiftSchedule.Text = "Shift 스케줄관리";
             this.btnShiftSchedule.UseVisualStyleBackColor = true;
+            this.btnShiftSchedule.Click += new System.EventHandler(this.btnShiftSchedule_Click);
             // 
             // btnShiftInfo
             // 
@@ -600,6 +619,7 @@ namespace MESForm
             this.btnShiftInfo.TabIndex = 1;
             this.btnShiftInfo.Text = "Shift 기준정보";
             this.btnShiftInfo.UseVisualStyleBackColor = true;
+            this.btnShiftInfo.Click += new System.EventHandler(this.btnShiftInfo_Click);
             // 
             // btnShift
             // 
@@ -792,23 +812,6 @@ namespace MESForm
             this.btnResource.Text = "자원관리";
             this.btnResource.UseVisualStyleBackColor = false;
             this.btnResource.Click += new System.EventHandler(this.btnResource_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::MESForm.Properties.Resources.CommonCode;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(849, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "        공통코드";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // custTab
             // 
