@@ -32,16 +32,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_Auth = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Auth)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,13 +74,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 25);
+            this.label1.Size = new System.Drawing.Size(182, 22);
             this.label1.TabIndex = 0;
-            this.label1.Text = "관리자 권한관리";
+            this.label1.Text = "그룹별 허용메뉴 관리";
             // 
             // panel1
             // 
@@ -89,15 +89,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(614, 410);
             this.panel1.TabIndex = 67;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(620, 121);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 410);
-            this.panel2.TabIndex = 68;
             // 
             // dgv_Auth
             // 
@@ -113,6 +104,31 @@
             this.dgv_Auth.RowTemplate.Height = 23;
             this.dgv_Auth.Size = new System.Drawing.Size(608, 397);
             this.dgv_Auth.TabIndex = 73;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(620, 121);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(260, 410);
+            this.panel2.TabIndex = 68;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(186, 381);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(71, 25);
+            this.btnSave.TabIndex = 75;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -132,28 +148,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
             this.label2.Location = new System.Drawing.Point(3, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 28);
+            this.label2.Size = new System.Drawing.Size(82, 22);
             this.label2.TabIndex = 69;
             this.label2.Text = "권한관리";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(186, 381);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(71, 25);
-            this.btnSave.TabIndex = 75;
-            this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -161,7 +161,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(540, 93);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -187,8 +187,8 @@
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Auth)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

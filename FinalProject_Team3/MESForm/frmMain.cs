@@ -182,5 +182,6 @@ namespace MESForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
     }
 }
