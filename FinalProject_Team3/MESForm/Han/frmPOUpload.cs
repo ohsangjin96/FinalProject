@@ -41,5 +41,11 @@ namespace MESForm.Han
         {
             DGVSetting();
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            popupPOUpload frm = new popupPOUpload();
+            frm.Show();
+        }
     }
 }

@@ -31,10 +31,10 @@ namespace MESForm.Han
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,19 @@ namespace MESForm.Han
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(976, 647);
             this.panel1.TabIndex = 13;
+            // 
+            // custDataGridViewControl1
+            // 
+            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
+            this.custDataGridViewControl1.RowTemplate.Height = 23;
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(976, 647);
+            this.custDataGridViewControl1.TabIndex = 0;
             // 
             // btnExcel
             // 
@@ -92,19 +105,7 @@ namespace MESForm.Han
             this.btnCreate.Text = "영업마스터생성";
             this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreate.UseVisualStyleBackColor = true;
-            // 
-            // custDataGridViewControl1
-            // 
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(976, 647);
-            this.custDataGridViewControl1.TabIndex = 0;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // frmPOUpload
             // 
