@@ -38,5 +38,11 @@ namespace MESForm.Han
         {
             DGVSetting();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            popupStockHistory frm = new popupStockHistory();
+            frm.Show();
+        }
     }
 }

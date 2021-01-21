@@ -33,6 +33,10 @@ namespace MESForm
             this.dgvFacilityDetail = new MESForm.CustomControls.custDataGridViewControl();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -69,19 +73,17 @@ namespace MESForm
             this.btnReg2.Location = new System.Drawing.Point(254, 3);
             this.btnReg2.Click += new System.EventHandler(this.btnReg2_Click);
             // 
-            // comboBox1
+            // pnlSelect
             // 
-            this.comboBox1.Size = new System.Drawing.Size(127, 21);
-            // 
-            // label2
-            // 
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.Text = "설비군명";
-            // 
-            // label1
-            // 
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.Text = "설비군코드";
+            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.label2);
+            this.pnlSelect.Controls.Add(this.txtCompanyCode);
+            this.pnlSelect.Controls.Add(this.label18);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label18, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyCode, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.comboBox1, 0);
             // 
             // btnInquiry
             // 
@@ -180,6 +182,41 @@ namespace MESForm
             this.label3.TabIndex = 36;
             this.label3.Text = "설비";
             // 
+            // txtCompanyCode
+            // 
+            this.txtCompanyCode.Location = new System.Drawing.Point(75, 9);
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(127, 21);
+            this.txtCompanyCode.TabIndex = 8;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(13, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 13);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "설비군코드";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(337, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(275, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "설비군명";
+            // 
             // frmFacility
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -212,5 +249,9 @@ namespace MESForm
         private CustomControls.custDataGridViewControl dgvFacilityDetail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCompanyCode;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

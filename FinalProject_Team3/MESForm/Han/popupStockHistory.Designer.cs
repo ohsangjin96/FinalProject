@@ -33,16 +33,11 @@ namespace MESForm.Han
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -52,21 +47,23 @@ namespace MESForm.Han
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(328, 522);
+            this.btnCancel.Location = new System.Drawing.Point(330, 522);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 23);
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "닫기";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(726, 32);
+            this.pnlTop.Size = new System.Drawing.Size(730, 32);
             this.pnlTop.TabIndex = 29;
             // 
             // label1
@@ -84,77 +81,58 @@ namespace MESForm.Han
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(15, 38);
+            this.panel2.Controls.Add(this.custDataGridViewControl1);
+            this.panel2.Location = new System.Drawing.Point(15, 52);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(696, 478);
+            this.panel2.Size = new System.Drawing.Size(703, 464);
             this.panel2.TabIndex = 56;
             // 
-            // dataGridView1
+            // custDataGridViewControl1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(21, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(654, 442);
-            this.dataGridView1.TabIndex = 75;
+            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
+            this.custDataGridViewControl1.RowTemplate.Height = 23;
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(703, 464);
+            this.custDataGridViewControl1.TabIndex = 0;
             // 
-            // Column1
+            // btnClose
             // 
-            this.Column1.HeaderText = "PlanID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "품명";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "품목";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "수량";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "수정일";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "카테고리";
-            this.Column6.Name = "Column6";
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(690, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 32);
+            this.btnClose.TabIndex = 107;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // popupStockHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 557);
+            this.ClientSize = new System.Drawing.Size(730, 557);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "popupStockHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "창고재고이력조회";
+            this.Load += new System.EventHandler(this.popupStockHistory_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,12 +142,7 @@ namespace MESForm.Han
         protected System.Windows.Forms.Button btnCancel;
         protected System.Windows.Forms.Panel pnlTop;
         protected System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

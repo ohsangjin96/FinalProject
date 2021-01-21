@@ -33,5 +33,11 @@ namespace MESForm.Han
         {
             DGVSetting();
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            popupP_Plan frm = new popupP_Plan();
+            frm.Show();
+        }
     }
 }

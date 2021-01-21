@@ -46,19 +46,19 @@ namespace MESForm.Han
             this.label1 = new System.Windows.Forms.Label();
             this.btnInquiry = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnDateChange = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlSelect.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -83,13 +83,13 @@ namespace MESForm.Han
             this.pnlSelect.Controls.Add(this.btnInquiry);
             this.pnlSelect.Location = new System.Drawing.Point(12, 12);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(1226, 81);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 79);
             this.pnlSelect.TabIndex = 0;
             // 
             // cboDCompany
             // 
             this.cboDCompany.FormattingEnabled = true;
-            this.cboDCompany.Location = new System.Drawing.Point(922, 48);
+            this.cboDCompany.Location = new System.Drawing.Point(922, 45);
             this.cboDCompany.Name = "cboDCompany";
             this.cboDCompany.Size = new System.Drawing.Size(197, 21);
             this.cboDCompany.TabIndex = 24;
@@ -98,7 +98,7 @@ namespace MESForm.Han
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(824, 51);
+            this.label7.Location = new System.Drawing.Point(824, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 23;
@@ -106,7 +106,7 @@ namespace MESForm.Han
             // 
             // txtOrderNum
             // 
-            this.txtOrderNum.Location = new System.Drawing.Point(508, 48);
+            this.txtOrderNum.Location = new System.Drawing.Point(508, 45);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.Size = new System.Drawing.Size(197, 21);
             this.txtOrderNum.TabIndex = 22;
@@ -115,7 +115,7 @@ namespace MESForm.Han
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(429, 51);
+            this.label6.Location = new System.Drawing.Point(429, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 14);
             this.label6.TabIndex = 21;
@@ -124,7 +124,7 @@ namespace MESForm.Han
             // cboState
             // 
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(94, 48);
+            this.cboState.Location = new System.Drawing.Point(94, 45);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(197, 21);
             this.cboState.TabIndex = 20;
@@ -133,7 +133,7 @@ namespace MESForm.Han
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(22, 51);
+            this.label5.Location = new System.Drawing.Point(22, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 14);
             this.label5.TabIndex = 19;
@@ -217,7 +217,7 @@ namespace MESForm.Han
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnInquiry.Location = new System.Drawing.Point(1139, 48);
+            this.btnInquiry.Location = new System.Drawing.Point(1139, 46);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(75, 23);
             this.btnInquiry.TabIndex = 0;
@@ -232,14 +232,28 @@ namespace MESForm.Han
             this.panel1.Controls.Add(this.custDataGridViewControl1);
             this.panel1.Location = new System.Drawing.Point(12, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1226, 557);
+            this.panel1.Size = new System.Drawing.Size(1226, 560);
             this.panel1.TabIndex = 8;
+            // 
+            // custDataGridViewControl1
+            // 
+            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
+            this.custDataGridViewControl1.RowTemplate.Height = 23;
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 560);
+            this.custDataGridViewControl1.TabIndex = 0;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -253,13 +267,13 @@ namespace MESForm.Han
             this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1250, 700);
-            this.splitContainer1.SplitterDistance = 94;
+            this.splitContainer1.SplitterDistance = 91;
             this.splitContainer1.TabIndex = 9;
             // 
             // btnDateChange
             // 
             this.btnDateChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDateChange.Location = new System.Drawing.Point(957, 4);
+            this.btnDateChange.Location = new System.Drawing.Point(957, 5);
             this.btnDateChange.Name = "btnDateChange";
             this.btnDateChange.Size = new System.Drawing.Size(110, 23);
             this.btnDateChange.TabIndex = 14;
@@ -269,7 +283,7 @@ namespace MESForm.Han
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Location = new System.Drawing.Point(855, 4);
+            this.btnPrint.Location = new System.Drawing.Point(855, 5);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(96, 23);
             this.btnPrint.TabIndex = 13;
@@ -289,7 +303,7 @@ namespace MESForm.Han
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(1073, 4);
+            this.btnCancel.Location = new System.Drawing.Point(1073, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 23);
             this.btnCancel.TabIndex = 11;
@@ -299,25 +313,12 @@ namespace MESForm.Han
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(1163, 4);
+            this.btnExcel.Location = new System.Drawing.Point(1163, 5);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 10;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.UseVisualStyleBackColor = true;
-            // 
-            // custDataGridViewControl1
-            // 
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 557);
-            this.custDataGridViewControl1.TabIndex = 0;
             // 
             // frmCurrentOrder
             // 
@@ -335,11 +336,11 @@ namespace MESForm.Han
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
 
         }

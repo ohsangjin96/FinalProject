@@ -37,10 +37,8 @@ namespace MESForm
             e.Graphics.FillRectangle(br, this.ClientRectangle);
         }
 
-        /// <summary>
-        /// MDI 자식폼 구현
-        /// </summary>
-        /// <typeparam name="T">자식폼</typeparam>
+        #region 폼 중복실행 방지
+        //Mdi 중복 방지
         private void OpenCreateForm<T>() where T : Form, new()
         {
             Cursor currentCursor = this.Cursor;
@@ -61,6 +59,7 @@ namespace MESForm
             frm.Show();
             this.Cursor = currentCursor;
         }
+        #endregion
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -201,6 +200,21 @@ namespace MESForm
             }
         }
         #endregion
+
+        //공통코드
+        private void btnCommonCode_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Tag == "CommonCodePopUp")
+                {
+                    frm.Activate();
+                    return;
+                }
+            }
+            PopUp.CommonCodePopUp pop = new PopUp.CommonCodePopUp();
+            pop.Show();
+        }
 
         #region 자원관리
 
@@ -369,8 +383,7 @@ namespace MESForm
 
 
 
-        #endregion
 
-        
+        #endregion
     }
 }

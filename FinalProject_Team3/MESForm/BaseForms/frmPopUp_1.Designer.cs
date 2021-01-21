@@ -30,21 +30,10 @@ namespace MESForm.BaseForms
         private void InitializeComponent()
         {
             this.pnl = new System.Windows.Forms.Panel();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pnl.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,100 +42,10 @@ namespace MESForm.BaseForms
             this.pnl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl.Controls.Add(this.textBox10);
-            this.pnl.Controls.Add(this.textBox11);
-            this.pnl.Controls.Add(this.textBox8);
-            this.pnl.Controls.Add(this.label2);
-            this.pnl.Controls.Add(this.label3);
-            this.pnl.Controls.Add(this.label4);
-            this.pnl.Controls.Add(this.label5);
-            this.pnl.Controls.Add(this.textBox6);
-            this.pnl.Controls.Add(this.label6);
-            this.pnl.Controls.Add(this.textBox1);
             this.pnl.Location = new System.Drawing.Point(12, 38);
             this.pnl.Name = "pnl";
             this.pnl.Size = new System.Drawing.Size(278, 196);
             this.pnl.TabIndex = 64;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(117, 158);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 21);
-            this.textBox10.TabIndex = 64;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(117, 123);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 21);
-            this.textBox11.TabIndex = 63;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(117, 18);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 21);
-            this.textBox8.TabIndex = 62;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "label5";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(117, 88);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 21);
-            this.textBox6.TabIndex = 50;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 162);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "label6";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(117, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 21);
-            this.textBox1.TabIndex = 45;
             // 
             // pnlTop
             // 
@@ -209,8 +108,6 @@ namespace MESForm.BaseForms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPopup_1";
             this.Text = "frmPopup";
-            this.pnl.ResumeLayout(false);
-            this.pnl.PerformLayout();
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
@@ -218,16 +115,6 @@ namespace MESForm.BaseForms
         }
 
         #endregion
-        protected System.Windows.Forms.TextBox textBox10;
-        protected System.Windows.Forms.TextBox textBox11;
-        protected System.Windows.Forms.TextBox textBox8;
-        protected System.Windows.Forms.Label label2;
-        protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.Label label5;
-        protected System.Windows.Forms.TextBox textBox6;
-        protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Panel pnlTop;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button btnCancel;
