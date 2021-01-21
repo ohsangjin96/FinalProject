@@ -814,7 +814,6 @@ namespace MESForm
             // 
             this.custTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.custTab.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.custTab.ItemSize = new System.Drawing.Size(100, 200);
             this.custTab.Location = new System.Drawing.Point(238, 95);
             this.custTab.Name = "custTab";
             this.custTab.SelectedIndex = 0;

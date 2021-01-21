@@ -156,10 +156,9 @@ namespace MESForm
             {
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "                           ");
+                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "                              ");
                     tp.Parent = custTab;
                     tp.Tag = this.ActiveMdiChild;
-                    //tp.Size = new Size(100, 200);
                     custTab.SelectedTab = tp;
 
                     this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
