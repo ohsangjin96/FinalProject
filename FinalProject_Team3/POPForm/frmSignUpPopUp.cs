@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POPForm
+namespace MESForm
 {
-    public partial class ResultRegist : Form
+    public partial class frmSignUpPopUp : Form
     {
-        public ResultRegist()
+        public frmSignUpPopUp()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
