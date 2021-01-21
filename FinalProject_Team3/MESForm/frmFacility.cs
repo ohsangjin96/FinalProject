@@ -44,5 +44,23 @@ namespace MESForm
         {
             DgvSetting();
         }
+
+        private void btnReg1_Click(object sender, EventArgs e)
+        {
+            PopUp.FacilityPopUp pop = new PopUp.FacilityPopUp();
+            if(pop.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void btnReg2_Click(object sender, EventArgs e)
+        {
+            PopUp.FacilityDetailPopUp pop = new PopUp.FacilityDetailPopUp();
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

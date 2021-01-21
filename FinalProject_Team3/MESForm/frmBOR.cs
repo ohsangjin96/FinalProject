@@ -38,5 +38,14 @@ namespace MESForm
         {
             DgvSetting();
         }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            PopUp.BORPopUp pop = new PopUp.BORPopUp();
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
