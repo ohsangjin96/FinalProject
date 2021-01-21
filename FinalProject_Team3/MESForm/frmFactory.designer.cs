@@ -31,14 +31,19 @@ namespace MESForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFactory));
             this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
-            this.pnlSelect.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvFactory);
             // 
             // comboBox1
             // 
@@ -56,12 +61,16 @@ namespace MESForm
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             // 
-            // panel1
+            // btnReg
             // 
-            this.panel1.Controls.Add(this.dgvFactory);
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // splitContainer1
             // 
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
             // 
             // dgvFactory
             // 
@@ -72,16 +81,22 @@ namespace MESForm
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.RowTemplate.Height = 23;
             // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
             // frmFactory
             // 
             resources.ApplyResources(this, "$this");
             this.Name = "frmFactory";
             this.Load += new System.EventHandler(this.frmFactory_Load);
+            this.panel1.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).EndInit();
@@ -91,5 +106,6 @@ namespace MESForm
 
         #endregion
         private CustomControls.custDataGridViewControl dgvFactory;
+        private System.Windows.Forms.Label label4;
     }
 }

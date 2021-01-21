@@ -41,5 +41,14 @@ namespace MESForm
         {
             DgvSetting();
         }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            PopUp.CompanyPopUp pop = new PopUp.CompanyPopUp();
+            if(pop.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }
