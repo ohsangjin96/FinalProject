@@ -21,5 +21,11 @@ namespace MESForm
         {
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmMaterialCostPopUp frm = new frmMaterialCostPopUp();
+            frm.ShowDialog();
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace MESForm.PopUp
         {
             InitializeComponent();
         }
+
+        private void XorCancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

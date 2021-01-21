@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnX = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_Auth = new System.Windows.Forms.DataGridView();
@@ -50,7 +50,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnlTop.Controls.Add(this.button1);
+            this.pnlTop.Controls.Add(this.btnX);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -59,19 +59,20 @@
             this.pnlTop.Size = new System.Drawing.Size(919, 64);
             this.pnlTop.TabIndex = 65;
             // 
-            // button1
+            // btnX
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::MESForm.Properties.Resources.close_black;
-            this.button1.Location = new System.Drawing.Point(869, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 42);
-            this.button1.TabIndex = 103;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnX.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnX.FlatAppearance.BorderSize = 0;
+            this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnX.ForeColor = System.Drawing.Color.Transparent;
+            this.btnX.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnX.Location = new System.Drawing.Point(869, 13);
+            this.btnX.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(29, 42);
+            this.btnX.TabIndex = 103;
+            this.btnX.UseVisualStyleBackColor = false;
+            this.btnX.Click += new System.EventHandler(this.btnX_Click);
             // 
             // label1
             // 
@@ -207,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmUserAuthorityPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserAuthorityPopUp";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -221,7 +223,7 @@
         #endregion
 
         protected System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnX;
         protected System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cboDept;

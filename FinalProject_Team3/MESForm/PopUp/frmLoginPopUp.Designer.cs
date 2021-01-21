@@ -133,6 +133,7 @@
             this.btnLogin.TabIndex = 145;
             this.btnLogin.Text = "로그인";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnSignUp
             // 
@@ -202,6 +203,7 @@
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLoginPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

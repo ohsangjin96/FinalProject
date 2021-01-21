@@ -16,5 +16,16 @@ namespace MESForm.PopUp
         {
             InitializeComponent();
         }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGroupRegister_Click(object sender, EventArgs e)
+        {
+            frmCreateGroupPopUp frm = new frmCreateGroupPopUp();
+            frm.Close();
+        }
     }
 }

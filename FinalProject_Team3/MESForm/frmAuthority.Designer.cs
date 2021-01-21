@@ -139,6 +139,7 @@
             this.btnUser_Auth.TabIndex = 5;
             this.btnUser_Auth.Text = "관리자 권한관리";
             this.btnUser_Auth.UseVisualStyleBackColor = false;
+            this.btnUser_Auth.Click += new System.EventHandler(this.btnUser_Auth_Click);
             // 
             // btnGroup_Auth
             // 
@@ -155,6 +156,7 @@
             this.btnGroup_Auth.TabIndex = 6;
             this.btnGroup_Auth.Text = "그룹별 권한메뉴";
             this.btnGroup_Auth.UseVisualStyleBackColor = false;
+            this.btnGroup_Auth.Click += new System.EventHandler(this.btnGroup_Auth_Click);
             // 
             // frmAuthority
             // 

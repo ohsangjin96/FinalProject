@@ -31,5 +31,12 @@ namespace MESForm
         {
             this.Close();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            frmMain frm = new frmMain();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

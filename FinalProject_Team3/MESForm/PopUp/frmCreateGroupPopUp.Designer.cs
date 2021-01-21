@@ -71,6 +71,7 @@
             this.button1.Size = new System.Drawing.Size(40, 34);
             this.button1.TabIndex = 103;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // label1
             // 
@@ -201,6 +202,7 @@
             this.btnCancel.TabIndex = 192;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // btnJoin
             // 

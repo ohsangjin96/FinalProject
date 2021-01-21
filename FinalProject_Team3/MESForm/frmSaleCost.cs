@@ -16,5 +16,11 @@ namespace MESForm
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmSaleCostPopUp frm = new frmSaleCostPopUp();
+            frm.ShowDialog();
+        }
     }
 }
