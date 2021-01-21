@@ -39,6 +39,7 @@ namespace MESForm.Han
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,6 +87,7 @@ namespace MESForm.Han
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -160,6 +162,21 @@ namespace MESForm.Han
             this.comboBox1.Size = new System.Drawing.Size(154, 21);
             this.comboBox1.TabIndex = 73;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(1132, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 32);
+            this.btnClose.TabIndex = 107;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // popupD_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -196,5 +213,6 @@ namespace MESForm.Han
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private System.Windows.Forms.Button btnClose;
     }
 }
