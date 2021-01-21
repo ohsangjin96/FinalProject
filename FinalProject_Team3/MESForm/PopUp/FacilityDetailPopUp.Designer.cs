@@ -31,6 +31,7 @@ namespace MESForm.PopUp
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -52,14 +53,14 @@ namespace MESForm.PopUp
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -73,16 +74,36 @@ namespace MESForm.PopUp
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "설비";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FacilityDetailPopUp_MouseDown);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FacilityDetailPopUp_MouseMove);
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(785, 32);
             this.pnlTop.TabIndex = 29;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FacilityDetailPopUp_MouseDown);
+            this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FacilityDetailPopUp_MouseMove);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(745, -1);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 34);
+            this.btnClose.TabIndex = 104;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -309,43 +330,19 @@ namespace MESForm.PopUp
             this.panel2.Size = new System.Drawing.Size(755, 408);
             this.panel2.TabIndex = 56;
             // 
-            // textBox2
+            // textBox5
             // 
-            this.textBox2.Location = new System.Drawing.Point(601, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 21);
-            this.textBox2.TabIndex = 69;
+            this.textBox5.Location = new System.Drawing.Point(354, 121);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(160, 21);
+            this.textBox5.TabIndex = 76;
             // 
-            // comboBox1
+            // textBox4
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(354, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 21);
-            this.comboBox1.TabIndex = 70;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(601, 53);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(125, 21);
-            this.comboBox2.TabIndex = 71;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(110, 87);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(125, 21);
-            this.comboBox4.TabIndex = 72;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(354, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 21);
-            this.textBox1.TabIndex = 73;
+            this.textBox4.Location = new System.Drawing.Point(110, 121);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(125, 21);
+            this.textBox4.TabIndex = 75;
             // 
             // comboBox5
             // 
@@ -355,19 +352,43 @@ namespace MESForm.PopUp
             this.comboBox5.Size = new System.Drawing.Size(125, 21);
             this.comboBox5.TabIndex = 74;
             // 
-            // textBox4
+            // textBox1
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 121);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 21);
-            this.textBox4.TabIndex = 75;
+            this.textBox1.Location = new System.Drawing.Point(354, 87);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 21);
+            this.textBox1.TabIndex = 73;
             // 
-            // textBox5
+            // comboBox4
             // 
-            this.textBox5.Location = new System.Drawing.Point(354, 121);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(160, 21);
-            this.textBox5.TabIndex = 76;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(110, 87);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(125, 21);
+            this.comboBox4.TabIndex = 72;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(601, 53);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(125, 21);
+            this.comboBox2.TabIndex = 71;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(354, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(125, 21);
+            this.comboBox1.TabIndex = 70;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(601, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(125, 21);
+            this.textBox2.TabIndex = 69;
             // 
             // FacilityDetailPopUp
             // 
@@ -381,6 +402,7 @@ namespace MESForm.PopUp
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FacilityDetailPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPop1";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -423,5 +445,6 @@ namespace MESForm.PopUp
         protected System.Windows.Forms.ComboBox comboBox2;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnClose;
     }
 }

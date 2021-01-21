@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace MESForm
 {
@@ -16,6 +17,24 @@ namespace MESForm
         public frmMain()
         {
             InitializeComponent();
+
+            this.panel1.Paint += Panel_Paint;
+        }
+
+        private void Panel_Paint(object sender, PaintEventArgs e)
+        {
+            Color startColor = Color.FromArgb(244, 247, 245);
+            Color middleColor = Color.FromArgb(60, 75, 140);
+            Color endColor = Color.FromArgb(12, 30, 107);
+
+            LinearGradientBrush br = new LinearGradientBrush(this.panel1.ClientRectangle, Color.White, Color.White, 0, false);
+
+            ColorBlend cb = new ColorBlend();
+            cb.Positions = new[] { 0, 1 / 2f, 1 };
+            cb.Colors = new[] { startColor, middleColor, endColor };
+            br.InterpolationColors = cb;
+            br.RotateTransform(45);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
         }
 
         /// <summary>
@@ -45,8 +64,88 @@ namespace MESForm
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            HideSubMenu();
         }
+
+        #region 상위 버튼 클릭
+        private void btnResource_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlResource);
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlProduct);
+        }
+
+        private void btnSaleCost_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlSaleCost);
+        }
+
+        private void btnShift_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlShift);
+        }
+
+        private void btnOrderPlan_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlOrderPlan);
+        }
+
+        private void btnOrderProduction_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlOrderProduction);
+        }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlPurchase);
+        }
+
+        private void btnProcess_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlProcess);
+        }
+
+        private void btnProcessRegister_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlProcessRegister);
+        }
+
+        private void btnShipment_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(pnlShipment);
+        }
+        #endregion
+
+        #region 하위메뉴 숨기기
+        private void HideSubMenu()
+        {
+            pnlResource.Visible = false;
+            pnlSaleCost.Visible = false;
+            pnlShift.Visible = false;
+            pnlProduct.Visible = false;
+            pnlOrderPlan.Visible = false;
+            pnlOrderProduction.Visible = false;
+            pnlPurchase.Visible = false;
+            pnlProcess.Visible = false;
+            pnlProcessRegister.Visible = false;
+            pnlShipment.Visible = false;
+        }
+
+        // 선택한 메뉴의 하위메뉴 보이기
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+        #endregion
 
         #region 탭 관련 이벤트
         private void frmMain_MdiChildActivate(object sender, EventArgs e)
@@ -57,7 +156,7 @@ namespace MESForm
             {
                 if (this.ActiveMdiChild.Tag == null)
                 {
-                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "                                     ");
+                    TabPage tp = new TabPage(this.ActiveMdiChild.Text + "                              ");
                     tp.Parent = custTab;
                     tp.Tag = this.ActiveMdiChild;
                     custTab.SelectedTab = tp;
@@ -266,5 +365,7 @@ namespace MESForm
             OpenCreateForm<ShipmentManager>();
         }
         #endregion
+
+        
     }
 }

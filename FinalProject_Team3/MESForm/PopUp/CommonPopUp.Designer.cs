@@ -30,6 +30,7 @@ namespace MESForm.PopUp
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReg = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -46,24 +47,42 @@ namespace MESForm.PopUp
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlCommonCode = new System.Windows.Forms.Panel();
-            this.gboInsert = new System.Windows.Forms.GroupBox();
             this.dgvCommonCode = new MESForm.CustomControls.custDataGridViewControl();
+            this.gboInsert = new System.Windows.Forms.GroupBox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.pnlCommonCode.SuspendLayout();
-            this.gboInsert.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).BeginInit();
+            this.gboInsert.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(470, 32);
             this.pnlTop.TabIndex = 68;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CommonPopUp_MouseDown);
+            this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CommonPopUp_MouseMove);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(430, -1);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 34);
+            this.btnClose.TabIndex = 104;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -226,6 +245,19 @@ namespace MESForm.PopUp
             this.pnlCommonCode.Size = new System.Drawing.Size(446, 306);
             this.pnlCommonCode.TabIndex = 79;
             // 
+            // dgvCommonCode
+            // 
+            this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCommonCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCommonCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
+            this.dgvCommonCode.Name = "dgvCommonCode";
+            this.dgvCommonCode.RowTemplate.Height = 23;
+            this.dgvCommonCode.Size = new System.Drawing.Size(446, 306);
+            this.dgvCommonCode.TabIndex = 0;
+            // 
             // gboInsert
             // 
             this.gboInsert.Controls.Add(this.comboBox1);
@@ -243,19 +275,6 @@ namespace MESForm.PopUp
             this.gboInsert.Size = new System.Drawing.Size(443, 160);
             this.gboInsert.TabIndex = 75;
             this.gboInsert.TabStop = false;
-            // 
-            // dgvCommonCode
-            // 
-            this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCommonCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCommonCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
-            this.dgvCommonCode.Name = "dgvCommonCode";
-            this.dgvCommonCode.RowTemplate.Height = 23;
-            this.dgvCommonCode.Size = new System.Drawing.Size(446, 306);
-            this.dgvCommonCode.TabIndex = 0;
             // 
             // CommonPopUp
             // 
@@ -278,9 +297,9 @@ namespace MESForm.PopUp
             this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.pnlCommonCode.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.gboInsert.ResumeLayout(false);
             this.gboInsert.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +325,6 @@ namespace MESForm.PopUp
         private System.Windows.Forms.Panel pnlCommonCode;
         private CustomControls.custDataGridViewControl dgvCommonCode;
         private System.Windows.Forms.GroupBox gboInsert;
+        private System.Windows.Forms.Button btnClose;
     }
 }

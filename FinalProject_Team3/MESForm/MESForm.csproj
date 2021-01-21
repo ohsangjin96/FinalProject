@@ -382,12 +382,6 @@
     <Compile Include="PopUp\BORPopUp.designer.cs">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\CommonCodePopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\CommonCodePopUp.designer.cs">
-      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopUp\CommonPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -603,9 +597,6 @@
     <EmbeddedResource Include="PopUp\BORPopUp.resx">
       <DependentUpon>BORPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CommonCodePopUp.resx">
-      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\CommonPopUp.resx">
       <DependentUpon>CommonPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +683,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menubar_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Authority.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CommonCode.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
