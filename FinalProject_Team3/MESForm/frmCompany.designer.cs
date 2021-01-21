@@ -32,14 +32,19 @@ namespace MESForm
             this.label18 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgvCompany = new MESForm.CustomControls.custDataGridViewControl();
-            this.pnlSelect.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvCompany);
             // 
             // pnlSelect
             // 
@@ -55,8 +60,8 @@ namespace MESForm
             // 
             // comboBox1
             // 
-            this.comboBox1.Location = new System.Drawing.Point(596, 10);
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
+            this.comboBox1.Location = new System.Drawing.Point(599, 9);
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
             // 
             // label2
             // 
@@ -71,17 +76,21 @@ namespace MESForm
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             // 
-            // panel1
+            // btnReg
             // 
-            this.panel1.Controls.Add(this.dgvCompany);
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // splitContainer1
             // 
             // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(529, 13);
+            this.label18.Location = new System.Drawing.Point(537, 13);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(51, 13);
             this.label18.TabIndex = 5;
@@ -89,7 +98,7 @@ namespace MESForm
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(326, 10);
+            this.textBox2.Location = new System.Drawing.Point(339, 9);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(127, 21);
             this.textBox2.TabIndex = 6;
@@ -107,6 +116,16 @@ namespace MESForm
             this.dgvCompany.Size = new System.Drawing.Size(976, 599);
             this.dgvCompany.TabIndex = 15;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(12, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 14);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "업체관리";
+            // 
             // frmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -114,11 +133,12 @@ namespace MESForm
             this.Name = "frmCompany";
             this.Text = "업체관리";
             this.Load += new System.EventHandler(this.frmCompany_Load);
+            this.panel1.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
@@ -130,5 +150,6 @@ namespace MESForm
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label18;
         private CustomControls.custDataGridViewControl dgvCompany;
+        private System.Windows.Forms.Label label4;
     }
 }
