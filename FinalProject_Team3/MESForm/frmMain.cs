@@ -202,6 +202,13 @@ namespace MESForm
         }
         #endregion
 
+        //공통코드
+        private void btnCommonCode_Click(object sender, EventArgs e)
+        {
+            PopUp.CommonPopUp pop = new PopUp.CommonPopUp();
+            pop.Show();
+        }
+
         #region 자원관리
 
         private void btnFactory_Click(object sender, EventArgs e)
@@ -369,8 +376,7 @@ namespace MESForm
 
 
 
-        #endregion
 
-        
+        #endregion
     }
 }

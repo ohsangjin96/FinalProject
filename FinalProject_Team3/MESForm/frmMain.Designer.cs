@@ -30,7 +30,7 @@ namespace MESForm
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCommonCode = new System.Windows.Forms.Button();
             this.btnAuthority = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -101,7 +101,7 @@ namespace MESForm
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCommonCode);
             this.panel1.Controls.Add(this.btnAuthority);
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -110,22 +110,23 @@ namespace MESForm
             this.panel1.Size = new System.Drawing.Size(1101, 95);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // btnCommonCode
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::MESForm.Properties.Resources.CommonCode;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(849, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 48);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "        공통코드";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCommonCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCommonCode.BackColor = System.Drawing.Color.Transparent;
+            this.btnCommonCode.FlatAppearance.BorderSize = 0;
+            this.btnCommonCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCommonCode.ForeColor = System.Drawing.Color.White;
+            this.btnCommonCode.Image = global::MESForm.Properties.Resources.CommonCode;
+            this.btnCommonCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCommonCode.Location = new System.Drawing.Point(849, 25);
+            this.btnCommonCode.Name = "btnCommonCode";
+            this.btnCommonCode.Size = new System.Drawing.Size(117, 48);
+            this.btnCommonCode.TabIndex = 2;
+            this.btnCommonCode.Text = "        공통코드";
+            this.btnCommonCode.UseVisualStyleBackColor = false;
+            this.btnCommonCode.Click += new System.EventHandler(this.btnCommonCode_Click);
             // 
             // btnAuthority
             // 
@@ -913,7 +914,7 @@ namespace MESForm
         private System.Windows.Forms.Button btnShift;
         private System.Windows.Forms.Panel pnlShipment;
         private System.Windows.Forms.Button btnAuthority;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCommonCode;
     }
 }
 

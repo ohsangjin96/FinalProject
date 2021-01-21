@@ -47,13 +47,13 @@ namespace MESForm.PopUp
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlCommonCode = new System.Windows.Forms.Panel();
-            this.dgvCommonCode = new MESForm.CustomControls.custDataGridViewControl();
             this.gboInsert = new System.Windows.Forms.GroupBox();
+            this.dgvCommonCode = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.pnlCommonCode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).BeginInit();
             this.gboInsert.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -245,19 +245,6 @@ namespace MESForm.PopUp
             this.pnlCommonCode.Size = new System.Drawing.Size(446, 306);
             this.pnlCommonCode.TabIndex = 79;
             // 
-            // dgvCommonCode
-            // 
-            this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCommonCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCommonCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
-            this.dgvCommonCode.Name = "dgvCommonCode";
-            this.dgvCommonCode.RowTemplate.Height = 23;
-            this.dgvCommonCode.Size = new System.Drawing.Size(446, 306);
-            this.dgvCommonCode.TabIndex = 0;
-            // 
             // gboInsert
             // 
             this.gboInsert.Controls.Add(this.comboBox1);
@@ -276,6 +263,19 @@ namespace MESForm.PopUp
             this.gboInsert.TabIndex = 75;
             this.gboInsert.TabStop = false;
             // 
+            // dgvCommonCode
+            // 
+            this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCommonCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCommonCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
+            this.dgvCommonCode.Name = "dgvCommonCode";
+            this.dgvCommonCode.RowTemplate.Height = 23;
+            this.dgvCommonCode.Size = new System.Drawing.Size(446, 306);
+            this.dgvCommonCode.TabIndex = 0;
+            // 
             // CommonPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -291,15 +291,16 @@ namespace MESForm.PopUp
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CommonPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CommonPopUp";
             this.Load += new System.EventHandler(this.CommonPopUp_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.pnlCommonCode.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.gboInsert.ResumeLayout(false);
             this.gboInsert.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.ResumeLayout(false);
 
         }
