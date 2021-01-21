@@ -42,6 +42,7 @@ namespace MESForm.Han
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnl.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +140,7 @@ namespace MESForm.Han
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -186,6 +188,21 @@ namespace MESForm.Han
             this.btnUpload.Text = "영업마스터 Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(262, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 32);
+            this.btnClose.TabIndex = 107;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // popupPOUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -223,5 +240,6 @@ namespace MESForm.Han
         protected System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.DateTimePicker dtpPlan;
         private System.Windows.Forms.Button btnFile;
+        private System.Windows.Forms.Button btnClose;
     }
 }
