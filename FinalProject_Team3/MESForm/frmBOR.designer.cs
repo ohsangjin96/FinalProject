@@ -30,10 +30,13 @@ namespace MESForm
         private void InitializeComponent()
         {
             this.dgvBOR = new MESForm.CustomControls.custDataGridViewControl();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -41,39 +44,27 @@ namespace MESForm
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBOR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.custDataGridViewControl1);
             this.panel1.Controls.Add(this.dgvBOR);
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.textBox2);
-            this.pnlSelect.Controls.Add(this.label3);
+            this.pnlSelect.Controls.Add(this.txtCompanyName);
+            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.label2);
+            this.pnlSelect.Controls.Add(this.label1);
+            this.pnlSelect.Controls.Add(this.txtCompanyCode);
+            this.pnlSelect.Controls.Add(this.label18);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label18, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox1, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
             this.pnlSelect.Controls.SetChildIndex(this.comboBox1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox2, 0);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Size = new System.Drawing.Size(127, 21);
-            // 
-            // label2
-            // 
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.Text = "공정";
-            // 
-            // label1
-            // 
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.Text = "품목";
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyName, 0);
             // 
             // btnInquiry
             // 
@@ -103,22 +94,6 @@ namespace MESForm
             this.dgvBOR.Size = new System.Drawing.Size(976, 599);
             this.dgvBOR.TabIndex = 12;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(537, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "설비";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(599, 9);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 21);
-            this.textBox2.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -129,18 +104,57 @@ namespace MESForm
             this.label4.TabIndex = 9;
             this.label4.Text = "BOR";
             // 
-            // custDataGridViewControl1
+            // comboBox1
             // 
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(976, 599);
-            this.custDataGridViewControl1.TabIndex = 13;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(337, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(537, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "설비";
+            // 
+            // txtCompanyName
+            // 
+            this.txtCompanyName.Location = new System.Drawing.Point(599, 9);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(127, 21);
+            this.txtCompanyName.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(275, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "공정";
+            // 
+            // txtCompanyCode
+            // 
+            this.txtCompanyCode.Location = new System.Drawing.Point(75, 9);
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(127, 21);
+            this.txtCompanyCode.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(13, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(29, 13);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "품목";
             // 
             // frmBOR
             // 
@@ -158,16 +172,18 @@ namespace MESForm
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBOR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private CustomControls.custDataGridViewControl dgvBOR;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private System.Windows.Forms.TextBox txtCompanyName;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCompanyCode;
+        private System.Windows.Forms.Label label18;
     }
 }

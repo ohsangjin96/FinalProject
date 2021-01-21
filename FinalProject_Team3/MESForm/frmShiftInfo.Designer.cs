@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnInquiry = new System.Windows.Forms.Button();
-            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.dgvShift = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.pnlSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,20 +118,20 @@
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
             // 
-            // dgvList
+            // dgvShift
             // 
-            this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvShift.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList.Location = new System.Drawing.Point(-46, 130);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1533, 459);
-            this.dgvList.TabIndex = 55;
+            this.dgvShift.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShift.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShift.GridColor = System.Drawing.Color.DimGray;
+            this.dgvShift.Location = new System.Drawing.Point(-4, 130);
+            this.dgvShift.Name = "dgvShift";
+            this.dgvShift.RowTemplate.Height = 23;
+            this.dgvShift.Size = new System.Drawing.Size(1444, 438);
+            this.dgvShift.TabIndex = 55;
             // 
             // pictureBox1
             // 
@@ -207,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1442, 568);
             this.Controls.Add(this.pnlSelect);
-            this.Controls.Add(this.dgvList);
+            this.Controls.Add(this.dgvShift);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcel);
@@ -218,9 +218,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmShiftInfo";
             this.Text = "SHIFT기준정보";
+            this.Load += new System.EventHandler(this.frmShiftInfo_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,7 +235,7 @@
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Button btnInquiry;
-        protected System.Windows.Forms.DataGridView dgvList;
+        protected System.Windows.Forms.DataGridView dgvShift;
         private System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.Button btnExcel;

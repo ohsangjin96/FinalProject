@@ -45,10 +45,10 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.dgvBom = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,20 +220,20 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // dgvList
+            // dgvBom
             // 
-            this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvBom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList.Location = new System.Drawing.Point(-31, 137);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1268, 389);
-            this.dgvList.TabIndex = 33;
+            this.dgvBom.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBom.GridColor = System.Drawing.Color.DimGray;
+            this.dgvBom.Location = new System.Drawing.Point(-31, 137);
+            this.dgvBom.Name = "dgvBom";
+            this.dgvBom.RowTemplate.Height = 23;
+            this.dgvBom.Size = new System.Drawing.Size(1268, 389);
+            this.dgvBom.TabIndex = 33;
             // 
             // pictureBox1
             // 
@@ -259,15 +259,16 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.dgvList);
+            this.Controls.Add(this.dgvBom);
             this.Controls.Add(this.pnlSelect);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBOM";
             this.Text = "BOM";
+            this.Load += new System.EventHandler(this.frmBOM_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,7 +291,7 @@
         protected System.Windows.Forms.Button btnDel;
         protected System.Windows.Forms.Button btnCopy;
         protected System.Windows.Forms.Button btnRegister;
-        protected System.Windows.Forms.DataGridView dgvList;
+        protected System.Windows.Forms.DataGridView dgvBom;
         private System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label3;
