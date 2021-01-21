@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMaterialCost));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -43,10 +45,10 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.dgvMCost = new System.Windows.Forms.DataGridView();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMCost)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -213,28 +215,44 @@
             this.label10.TabIndex = 44;
             this.label10.Text = "자재단가관리";
             // 
-            // dgvList
+            // dgvMCost
             // 
-            this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvMCost.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList.Location = new System.Drawing.Point(1, 184);
-            this.dgvList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1438, 504);
-            this.dgvList.TabIndex = 46;
+            this.dgvMCost.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMCost.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMCost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMCost.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMCost.GridColor = System.Drawing.Color.DimGray;
+            this.dgvMCost.Location = new System.Drawing.Point(1, 184);
+            this.dgvMCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMCost.Name = "dgvMCost";
+            this.dgvMCost.RowTemplate.Height = 23;
+            this.dgvMCost.Size = new System.Drawing.Size(1438, 504);
+            this.dgvMCost.TabIndex = 46;
             // 
             // frmMaterialCost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1442, 690);
-            this.Controls.Add(this.dgvList);
+            this.Controls.Add(this.dgvMCost);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnRefresh);
@@ -247,10 +265,11 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmMaterialCost";
             this.Text = "자재단가";
+            this.Load += new System.EventHandler(this.frmMaterialCost_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMCost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +291,6 @@
         protected System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.Label label10;
-        protected System.Windows.Forms.DataGridView dgvList;
+        protected System.Windows.Forms.DataGridView dgvMCost;
     }
 }
