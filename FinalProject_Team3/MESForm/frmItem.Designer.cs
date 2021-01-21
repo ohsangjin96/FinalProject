@@ -87,169 +87,177 @@
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.btnInquiry);
             this.pnlSelect.Location = new System.Drawing.Point(-1, 1);
-            this.pnlSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(1490, 153);
+            this.pnlSelect.Size = new System.Drawing.Size(1304, 117);
             this.pnlSelect.TabIndex = 1;
             // 
             // comboBox4
             // 
+            this.comboBox4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(1182, 112);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox4.Location = new System.Drawing.Point(1034, 86);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(183, 25);
+            this.comboBox4.Size = new System.Drawing.Size(161, 21);
             this.comboBox4.TabIndex = 30;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1109, 117);
+            this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label5.Location = new System.Drawing.Point(970, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 29;
             this.label5.Text = "사용유무";
             // 
             // comboBox5
             // 
+            this.comboBox5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(1182, 7);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox5.Location = new System.Drawing.Point(1034, 5);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(183, 25);
+            this.comboBox5.Size = new System.Drawing.Size(161, 21);
             this.comboBox5.TabIndex = 28;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1109, 13);
+            this.label6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label6.Location = new System.Drawing.Point(970, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
+            this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 27;
             this.label6.Text = "발주업체";
             // 
             // comboBox6
             // 
+            this.comboBox6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(690, 113);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox6.Location = new System.Drawing.Point(604, 86);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(183, 25);
+            this.comboBox6.Size = new System.Drawing.Size(161, 21);
             this.comboBox6.TabIndex = 26;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(617, 119);
+            this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label7.Location = new System.Drawing.Point(540, 91);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "출고창고";
             // 
             // comboBox3
             // 
+            this.comboBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(86, 57);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox3.Location = new System.Drawing.Point(75, 44);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(186, 25);
+            this.comboBox3.Size = new System.Drawing.Size(163, 21);
             this.comboBox3.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 62);
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label4.Location = new System.Drawing.Point(13, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 23;
             this.label4.Text = "품목유형";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(86, 105);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Location = new System.Drawing.Point(75, 80);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 25);
+            this.comboBox1.Size = new System.Drawing.Size(163, 21);
             this.comboBox1.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 110);
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label2.Location = new System.Drawing.Point(13, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 21;
             this.label2.Text = "규격";
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(690, 62);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox2.Location = new System.Drawing.Point(604, 47);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(183, 25);
+            this.comboBox2.Size = new System.Drawing.Size(161, 21);
             this.comboBox2.TabIndex = 20;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(617, 68);
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label3.Location = new System.Drawing.Point(540, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "입고창고";
             // 
             // comboBox8
             // 
+            this.comboBox8.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(1182, 58);
-            this.comboBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox8.Location = new System.Drawing.Point(1034, 44);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(183, 25);
+            this.comboBox8.Size = new System.Drawing.Size(161, 21);
             this.comboBox8.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1109, 64);
+            this.label9.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label9.Location = new System.Drawing.Point(970, 49);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 17);
+            this.label9.Size = new System.Drawing.Size(51, 13);
             this.label9.TabIndex = 17;
             this.label9.Text = "납품업체";
             // 
             // comboBox7
             // 
+            this.comboBox7.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(690, 4);
-            this.comboBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox7.Location = new System.Drawing.Point(604, 3);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(183, 25);
+            this.comboBox7.Size = new System.Drawing.Size(161, 21);
             this.comboBox7.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(617, 10);
+            this.label8.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label8.Location = new System.Drawing.Point(540, 8);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 17);
+            this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "담당자";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 13);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.textBox1.Location = new System.Drawing.Point(75, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 25);
+            this.textBox1.Size = new System.Drawing.Size(163, 21);
             this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 18);
+            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label1.Location = new System.Drawing.Point(13, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "품목";
             // 
@@ -259,12 +267,11 @@
             this.btnInquiry.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnInquiry.Location = new System.Drawing.Point(1401, 119);
-            this.btnInquiry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnInquiry.Location = new System.Drawing.Point(1226, 91);
             this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(86, 33);
+            this.btnInquiry.Size = new System.Drawing.Size(75, 25);
             this.btnInquiry.TabIndex = 0;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
@@ -272,10 +279,9 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(1402, 214);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefresh.Location = new System.Drawing.Point(1227, 164);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(86, 33);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 25);
             this.btnRefresh.TabIndex = 12;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -283,10 +289,9 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(1217, 214);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExcel.Location = new System.Drawing.Point(1065, 164);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(86, 33);
+            this.btnExcel.Size = new System.Drawing.Size(75, 25);
             this.btnExcel.TabIndex = 11;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.UseVisualStyleBackColor = true;
@@ -294,10 +299,9 @@
             // btnDel
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(1309, 214);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Location = new System.Drawing.Point(1145, 164);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(86, 33);
+            this.btnDel.Size = new System.Drawing.Size(75, 25);
             this.btnDel.TabIndex = 10;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -305,10 +309,9 @@
             // btnMod
             // 
             this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Location = new System.Drawing.Point(1124, 214);
-            this.btnMod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMod.Location = new System.Drawing.Point(984, 164);
             this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(86, 33);
+            this.btnMod.Size = new System.Drawing.Size(75, 25);
             this.btnMod.TabIndex = 9;
             this.btnMod.Text = "수정";
             this.btnMod.UseVisualStyleBackColor = true;
@@ -316,10 +319,9 @@
             // btnReg
             // 
             this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(1031, 214);
-            this.btnReg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReg.Location = new System.Drawing.Point(902, 164);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(86, 33);
+            this.btnReg.Size = new System.Drawing.Size(75, 25);
             this.btnReg.TabIndex = 8;
             this.btnReg.Text = "등록";
             this.btnReg.UseVisualStyleBackColor = true;
@@ -334,20 +336,19 @@
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList.Location = new System.Drawing.Point(2, 248);
-            this.dgvList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvList.Location = new System.Drawing.Point(2, 190);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1486, 366);
+            this.dgvList.Size = new System.Drawing.Size(1300, 379);
             this.dgvList.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(31, 214);
+            this.label10.Font = new System.Drawing.Font("나눔스퀘어OTF", 14F);
+            this.label10.Location = new System.Drawing.Point(27, 164);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 25);
+            this.label10.Size = new System.Drawing.Size(78, 21);
             this.label10.TabIndex = 31;
             this.label10.Text = "품목정보";
             // 
@@ -356,10 +357,9 @@
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 214);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 164);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(27, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -367,9 +367,9 @@
             // 
             // frmItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 628);
+            this.ClientSize = new System.Drawing.Size(1305, 570);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnRefresh);
@@ -379,9 +379,8 @@
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.pnlSelect);
-            this.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmItem";
             this.Text = "품목관리";
             this.pnlSelect.ResumeLayout(false);

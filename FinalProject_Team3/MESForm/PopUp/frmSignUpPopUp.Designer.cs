@@ -55,6 +55,7 @@
             this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTop.Name = "pnlTop";
@@ -66,6 +67,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = global::MESForm.Properties.Resources.close_black;
             this.button1.Location = new System.Drawing.Point(337, 9);
@@ -78,27 +80,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.Size = new System.Drawing.Size(82, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "회원가입";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label40.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
             this.label40.ForeColor = System.Drawing.Color.Black;
             this.label40.Location = new System.Drawing.Point(49, 73);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(73, 17);
+            this.label40.Size = new System.Drawing.Size(78, 17);
             this.label40.TabIndex = 155;
             this.label40.Text = "안전재고량";
             // 
             // textBox26
             // 
+            this.textBox26.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.textBox26.Location = new System.Drawing.Point(152, 69);
             this.textBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox26.Name = "textBox26";
@@ -107,70 +110,72 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(152, 340);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 20);
+            this.comboBox1.Size = new System.Drawing.Size(138, 21);
             this.comboBox1.TabIndex = 181;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label37.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
             this.label37.ForeColor = System.Drawing.Color.Black;
             this.label37.Location = new System.Drawing.Point(49, 289);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(43, 17);
+            this.label37.Size = new System.Drawing.Size(44, 17);
             this.label37.TabIndex = 180;
             this.label37.Text = "EMail";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(49, 343);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(36, 17);
             this.label2.TabIndex = 182;
             this.label2.Text = "부서";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(49, 235);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 17);
+            this.label3.Size = new System.Drawing.Size(36, 17);
             this.label3.TabIndex = 183;
             this.label3.Text = "이름";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(49, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
+            this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 184;
             this.label4.Text = "비밀번호확인";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(49, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 185;
             this.label5.Text = "비밀번호";
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.textBox1.Location = new System.Drawing.Point(152, 231);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
@@ -179,6 +184,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.textBox2.Location = new System.Drawing.Point(152, 285);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
@@ -187,6 +193,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.textBox3.Location = new System.Drawing.Point(152, 177);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
@@ -195,6 +202,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.textBox4.Location = new System.Drawing.Point(152, 123);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
@@ -207,6 +215,7 @@
             this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(296, 69);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -222,8 +231,9 @@
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(101, 377);
+            this.button2.Location = new System.Drawing.Point(104, 377);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 33);
@@ -237,8 +247,9 @@
             this.btnCancel.BackColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(187, 377);
+            this.btnCancel.Location = new System.Drawing.Point(190, 377);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 33);
