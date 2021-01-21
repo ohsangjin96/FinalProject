@@ -77,6 +77,7 @@ namespace MESForm
             this.btnFactory = new System.Windows.Forms.Button();
             this.btnResource = new System.Windows.Forms.Button();
             this.custTab = new MESForm.CustomControls.custTabControl();
+            this.label41 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -92,6 +93,7 @@ namespace MESForm
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label41);
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -140,7 +142,7 @@ namespace MESForm
             // 
             this.btnShipmentManager.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShipmentManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShipmentManager.Location = new System.Drawing.Point(0, 1552);
+            this.btnShipmentManager.Location = new System.Drawing.Point(0, 1509);
             this.btnShipmentManager.Name = "btnShipmentManager";
             this.btnShipmentManager.Size = new System.Drawing.Size(221, 43);
             this.btnShipmentManager.TabIndex = 17;
@@ -153,7 +155,7 @@ namespace MESForm
             this.btnShipment.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnShipment.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShipment.Location = new System.Drawing.Point(0, 1509);
+            this.btnShipment.Location = new System.Drawing.Point(0, 1466);
             this.btnShipment.Name = "btnShipment";
             this.btnShipment.Size = new System.Drawing.Size(221, 43);
             this.btnShipment.TabIndex = 16;
@@ -670,6 +672,19 @@ namespace MESForm
             this.custTab.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.custTab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
             // 
+            // label41
+            // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label41.Font = new System.Drawing.Font("나눔스퀘어OTF", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label41.Location = new System.Drawing.Point(238, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(863, 95);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "* * * * MES 프로그램 * * * *";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -750,6 +765,7 @@ namespace MESForm
         private System.Windows.Forms.Button btnProcessMove;
         private System.Windows.Forms.Button btnShipment;
         private System.Windows.Forms.Button btnShipmentManager;
+        private System.Windows.Forms.Label label41;
     }
 }
 
