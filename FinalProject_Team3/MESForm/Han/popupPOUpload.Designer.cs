@@ -185,7 +185,7 @@ namespace MESForm.Han
             this.btnUpload.Text = "영업마스터 Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
             // 
-            // h02_popupPOUpload
+            // popupPOUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,7 +196,8 @@ namespace MESForm.Han
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h02_popupPOUpload";
+            this.Name = "popupPOUpload";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPopup";
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();

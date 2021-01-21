@@ -174,7 +174,7 @@ namespace MESForm.Han
             this.dtpS_R.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpS_R.Location = new System.Drawing.Point(94, 15);
             this.dtpS_R.Name = "dtpS_R";
-            this.dtpS_R.Size = new System.Drawing.Size(131, 21);
+            this.dtpS_R.Size = new System.Drawing.Size(197, 21);
             this.dtpS_R.TabIndex = 2;
             // 
             // label1

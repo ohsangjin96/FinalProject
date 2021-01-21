@@ -63,6 +63,16 @@ namespace MESForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Authority {
+            get {
+                object obj = ResourceManager.GetObject("Authority", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Close {
             get {
                 object obj = ResourceManager.GetObject("Close", resourceCulture);
@@ -86,6 +96,16 @@ namespace MESForm.Properties {
         internal static System.Drawing.Bitmap close_red {
             get {
                 object obj = ResourceManager.GetObject("close_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap CommonCode {
+            get {
+                object obj = ResourceManager.GetObject("CommonCode", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

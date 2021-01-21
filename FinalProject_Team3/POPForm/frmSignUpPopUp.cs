@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MESForm.PopUp
+namespace MESForm
 {
-    public partial class CommonCodePopUp : Form
+    public partial class frmSignUpPopUp : Form
     {
-        public CommonCodePopUp()
+        public frmSignUpPopUp()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

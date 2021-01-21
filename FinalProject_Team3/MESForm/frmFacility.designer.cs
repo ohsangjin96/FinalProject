@@ -31,6 +31,8 @@ namespace MESForm
         {
             this.dgvFacility = new MESForm.CustomControls.custDataGridViewControl();
             this.dgvFacilityDetail = new MESForm.CustomControls.custDataGridViewControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -65,20 +67,16 @@ namespace MESForm
             // btnReg2
             // 
             this.btnReg2.Location = new System.Drawing.Point(254, 3);
+            this.btnReg2.Click += new System.EventHandler(this.btnReg2_Click);
             // 
             // comboBox1
             // 
-            this.comboBox1.Location = new System.Drawing.Point(332, 10);
             this.comboBox1.Size = new System.Drawing.Size(127, 21);
             // 
             // label2
             // 
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.Text = "설비군명";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(81, 8);
             // 
             // label1
             // 
@@ -100,6 +98,7 @@ namespace MESForm
             // btnReg1
             // 
             this.btnReg1.Location = new System.Drawing.Point(93, 3);
+            this.btnReg1.Click += new System.EventHandler(this.btnReg1_Click);
             // 
             // splitContainer1
             // 
@@ -114,17 +113,26 @@ namespace MESForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.None;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.label4);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.label3);
+            this.splitContainer2.Size = new System.Drawing.Size(1000, 729);
             this.splitContainer2.SplitterDistance = 331;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvFacility);
-            this.panel1.Size = new System.Drawing.Size(316, 581);
+            this.panel1.Size = new System.Drawing.Size(316, 676);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvFacilityDetail);
-            this.panel2.Size = new System.Drawing.Size(650, 581);
+            this.panel2.Size = new System.Drawing.Size(650, 676);
             // 
             // dgvFacility
             // 
@@ -136,7 +144,7 @@ namespace MESForm
             this.dgvFacility.Location = new System.Drawing.Point(0, 0);
             this.dgvFacility.Name = "dgvFacility";
             this.dgvFacility.RowTemplate.Height = 23;
-            this.dgvFacility.Size = new System.Drawing.Size(316, 581);
+            this.dgvFacility.Size = new System.Drawing.Size(316, 676);
             this.dgvFacility.TabIndex = 4;
             // 
             // dgvFacilityDetail
@@ -149,13 +157,33 @@ namespace MESForm
             this.dgvFacilityDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvFacilityDetail.Name = "dgvFacilityDetail";
             this.dgvFacilityDetail.RowTemplate.Height = 23;
-            this.dgvFacilityDetail.Size = new System.Drawing.Size(650, 581);
+            this.dgvFacilityDetail.Size = new System.Drawing.Size(650, 676);
             this.dgvFacilityDetail.TabIndex = 45;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(12, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 14);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "설비군";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(13, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 14);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "설비";
             // 
             // frmFacility
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1000, 808);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Name = "frmFacility";
             this.Text = "설비관리";
             this.Load += new System.EventHandler(this.frmFacility_Load);
@@ -166,7 +194,9 @@ namespace MESForm
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -180,5 +210,7 @@ namespace MESForm
         #endregion
         private CustomControls.custDataGridViewControl dgvFacility;
         private CustomControls.custDataGridViewControl dgvFacilityDetail;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

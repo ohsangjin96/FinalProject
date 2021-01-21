@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace MESForm.Han
         public frmMT_Plan()
         {
             InitializeComponent();
+        }
+
+        private void DGVSetting()
+        {
+            CommonUtil.SetInitGridView(custDataGridViewControl1);
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "a");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "b");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "c");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "카테고리", "d");
+        }
+
+        private void frmMT_Plan_Load(object sender, EventArgs e)
+        {
+            DGVSetting();
         }
     }
 }

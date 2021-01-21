@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel %282%29">
+      <HintPath>..\..\..\..\..\..\Downloads\Microsoft.Office.Interop.Excel (2).dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\qkfka\Desktop\구디\파일\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,16 +55,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="custDataGridViewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="custDataGridViewControl.designer.cs">
+      <DependentUpon>custDataGridViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginPopUp.Designer.cs">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPOP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPOP.Designer.cs">
       <DependentUpon>frmPOP.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSignUpPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSignUpPopUp.Designer.cs">
+      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultCheck.Designer.cs">
+      <DependentUpon>ResultCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\CommonUtil.cs" />
+    <Compile Include="Utils\ExcelExportImport.cs" />
+    <EmbeddedResource Include="frmLoginPopUp.resx">
+      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPOP.resx">
       <DependentUpon>frmPOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSignUpPopUp.resx">
+      <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,7 +106,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResultCheck.resx">
+      <DependentUpon>ResultCheck.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +123,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menubar_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

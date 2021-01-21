@@ -32,14 +32,19 @@ namespace MESForm
             this.dgvBOR = new MESForm.CustomControls.custDataGridViewControl();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.pnlSelect.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBOR)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvBOR);
             // 
             // pnlSelect
             // 
@@ -55,12 +60,12 @@ namespace MESForm
             // 
             // comboBox1
             // 
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
             // 
             // label2
             // 
             this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.Text = "골정";
+            this.label2.Text = "공정";
             // 
             // label1
             // 
@@ -71,12 +76,16 @@ namespace MESForm
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             // 
-            // panel1
+            // btnReg
             // 
-            this.panel1.Controls.Add(this.dgvBOR);
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // splitContainer1
             // 
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
             // 
             // dgvBOR
             // 
@@ -107,6 +116,16 @@ namespace MESForm
             this.textBox2.Size = new System.Drawing.Size(127, 21);
             this.textBox2.TabIndex = 6;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(12, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 14);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "BOR";
+            // 
             // frmBOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -114,11 +133,12 @@ namespace MESForm
             this.Name = "frmBOR";
             this.Text = "BOR";
             this.Load += new System.EventHandler(this.frmBOR_Load);
+            this.panel1.ResumeLayout(false);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBOR)).EndInit();
@@ -130,5 +150,6 @@ namespace MESForm
         private CustomControls.custDataGridViewControl dgvBOR;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

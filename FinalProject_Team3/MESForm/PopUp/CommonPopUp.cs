@@ -13,6 +13,8 @@ namespace MESForm.PopUp
 {
     public partial class CommonPopUp : Form
     {
+        private Point mousePoint;
+
         bool bRegCheck = true;
         public CommonPopUp()
         {
@@ -61,6 +63,25 @@ namespace MESForm.PopUp
                 bRegCheck = true;
             }
                 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CommonPopUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            mousePoint = new Point(e.X, e.Y);
+        }
+
+        private void CommonPopUp_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            {
+                Location = new Point(this.Left - (mousePoint.X - e.X),
+                    this.Top - (mousePoint.Y - e.Y));
+            }
         }
     }
 }

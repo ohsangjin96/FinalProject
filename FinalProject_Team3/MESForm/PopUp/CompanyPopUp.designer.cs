@@ -1,5 +1,5 @@
 ﻿
-namespace FP.PopUp
+namespace MESForm.PopUp
 {
     partial class CompanyPopUp
     {
@@ -32,6 +32,7 @@ namespace FP.PopUp
             this.txtConditions = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -55,19 +56,19 @@ namespace FP.PopUp
             this.btnSave = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -89,12 +90,30 @@ namespace FP.PopUp
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(785, 32);
             this.pnlTop.TabIndex = 57;
+            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseDown);
+            this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseMove);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(745, -1);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 34);
+            this.btnClose.TabIndex = 104;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -105,6 +124,8 @@ namespace FP.PopUp
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "업체정보";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseDown);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseMove);
             // 
             // label12
             // 
@@ -341,42 +362,65 @@ namespace FP.PopUp
             this.panel2.Size = new System.Drawing.Size(755, 359);
             this.panel2.TabIndex = 60;
             // 
-            // label13
+            // dateTimePicker2
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(513, 124);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 13);
-            this.label13.TabIndex = 69;
-            this.label13.Text = "창고유무";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(354, 155);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(125, 21);
+            this.dateTimePicker2.TabIndex = 81;
             // 
-            // label15
+            // dateTimePicker1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(266, 158);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 13);
-            this.label15.TabIndex = 70;
-            this.label15.Text = "거래종료일";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 155);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(125, 21);
+            this.dateTimePicker1.TabIndex = 80;
             // 
-            // label16
+            // textBox12
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(513, 158);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 13);
-            this.label16.TabIndex = 71;
-            this.label16.Text = "수정자";
+            this.textBox12.Location = new System.Drawing.Point(110, 189);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(166, 21);
+            this.textBox12.TabIndex = 79;
             // 
-            // label17
+            // textBox11
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 158);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 72;
-            this.label17.Text = "거래시작일";
+            this.textBox11.Location = new System.Drawing.Point(601, 155);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(125, 21);
+            this.textBox11.TabIndex = 78;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(601, 87);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(125, 21);
+            this.textBox10.TabIndex = 77;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(354, 87);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(125, 21);
+            this.textBox8.TabIndex = 76;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(601, 120);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(125, 21);
+            this.comboBox2.TabIndex = 75;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(354, 121);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(125, 21);
+            this.comboBox1.TabIndex = 74;
             // 
             // label18
             // 
@@ -387,65 +431,42 @@ namespace FP.PopUp
             this.label18.TabIndex = 73;
             this.label18.Text = "수정날짜";
             // 
-            // comboBox1
+            // label17
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(354, 121);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 21);
-            this.comboBox1.TabIndex = 74;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(19, 158);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 72;
+            this.label17.Text = "거래시작일";
             // 
-            // comboBox2
+            // label16
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(601, 120);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(125, 21);
-            this.comboBox2.TabIndex = 75;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(513, 158);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 13);
+            this.label16.TabIndex = 71;
+            this.label16.Text = "수정자";
             // 
-            // textBox8
+            // label15
             // 
-            this.textBox8.Location = new System.Drawing.Point(354, 87);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 21);
-            this.textBox8.TabIndex = 76;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(266, 158);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 13);
+            this.label15.TabIndex = 70;
+            this.label15.Text = "거래종료일";
             // 
-            // textBox10
+            // label13
             // 
-            this.textBox10.Location = new System.Drawing.Point(601, 87);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 21);
-            this.textBox10.TabIndex = 77;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(601, 155);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 21);
-            this.textBox11.TabIndex = 78;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(110, 189);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(166, 21);
-            this.textBox12.TabIndex = 79;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 155);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 21);
-            this.dateTimePicker1.TabIndex = 80;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(354, 155);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(125, 21);
-            this.dateTimePicker2.TabIndex = 81;
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(513, 124);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 13);
+            this.label13.TabIndex = 69;
+            this.label13.Text = "창고유무";
             // 
             // CompanyPopUp
             // 
@@ -459,6 +480,7 @@ namespace FP.PopUp
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CompanyPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompanyPopUp";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -509,5 +531,6 @@ namespace FP.PopUp
         protected System.Windows.Forms.Label label16;
         protected System.Windows.Forms.Label label15;
         protected System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnClose;
     }
 }
