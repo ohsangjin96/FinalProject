@@ -32,6 +32,10 @@ namespace MESForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFactory));
             this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -45,17 +49,17 @@ namespace MESForm
             // 
             this.panel1.Controls.Add(this.dgvFactory);
             // 
-            // comboBox1
+            // pnlSelect
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
+            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.label2);
+            this.pnlSelect.Controls.Add(this.txtCompanyCode);
+            this.pnlSelect.Controls.Add(this.label18);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label18, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyCode, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.comboBox1, 0);
             // 
             // btnInquiry
             // 
@@ -86,6 +90,27 @@ namespace MESForm
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // txtCompanyCode
+            // 
+            resources.ApplyResources(this.txtCompanyCode, "txtCompanyCode");
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
             // frmFactory
             // 
             resources.ApplyResources(this, "$this");
@@ -107,5 +132,9 @@ namespace MESForm
         #endregion
         private CustomControls.custDataGridViewControl dgvFactory;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCompanyCode;
+        private System.Windows.Forms.Label label18;
     }
 }

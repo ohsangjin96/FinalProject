@@ -286,6 +286,42 @@
     <Compile Include="Han\popupStockHistory.Designer.cs">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\BORPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\BORPopUp.Designer.cs">
+      <DependentUpon>BORPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CommonCodePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CommonCodePopUp.Designer.cs">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\CompanyPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\CompanyPopUp.Designer.cs">
+      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\FactoryPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\FactoryPopUp.Designer.cs">
+      <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\frmShiftInfoPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,42 +411,6 @@
     </Compile>
     <Compile Include="frmSample.Designer.cs">
       <DependentUpon>frmSample.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\BORPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\BORPopUp.designer.cs">
-      <DependentUpon>BORPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\CommonPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\CommonPopUp.Designer.cs">
-      <DependentUpon>CommonPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\CompanyPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\CompanyPopUp.designer.cs">
-      <DependentUpon>CompanyPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\FacilityDetailPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\FacilityDetailPopUp.Designer.cs">
-      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\FacilityPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\FacilityPopUp.Designer.cs">
-      <DependentUpon>FacilityPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\FactoryPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\FactoryPopUp.Designer.cs">
-      <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\frmUserAuthorityPopUp.cs">
       <SubType>Form</SubType>
@@ -561,6 +561,24 @@
     <EmbeddedResource Include="Han\popupStockHistory.resx">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\BORPopUp.resx">
+      <DependentUpon>BORPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CommonCodePopUp.resx">
+      <DependentUpon>CommonCodePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
+      <DependentUpon>CompanyPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
+      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
+      <DependentUpon>FacilityPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
+      <DependentUpon>FactoryPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmMaterialCostPopUp.resx">
       <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -593,24 +611,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSample.resx">
       <DependentUpon>frmSample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\BORPopUp.resx">
-      <DependentUpon>BORPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CommonPopUp.resx">
-      <DependentUpon>CommonPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\CompanyPopUp.resx">
-      <DependentUpon>CompanyPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityDetailPopUp.resx">
-      <DependentUpon>FacilityDetailPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FacilityPopUp.resx">
-      <DependentUpon>FacilityPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\FactoryPopUp.resx">
-      <DependentUpon>FactoryPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmShiftInfoPopUp.resx">
       <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>

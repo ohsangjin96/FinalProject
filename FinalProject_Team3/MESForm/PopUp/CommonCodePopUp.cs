@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MESForm.PopUp
 {
-    public partial class CommonPopUp : Form
+    public partial class CommonCodePopUp : MESForm.BaseForms.frmPopup_1
     {
         private Point mousePoint;
 
         bool bRegCheck = true;
-        public CommonPopUp()
+
+        public CommonCodePopUp()
         {
             InitializeComponent();
         }
@@ -30,13 +29,13 @@ namespace MESForm.PopUp
             CommonUtil.AddGridTextColumn(dgvCommonCode, "순서", "Common_Seq");
         }
 
-        private void CommonPopUp_Load(object sender, EventArgs e)
+        private void CommonCodePopUp_Load(object sender, EventArgs e)
         {
             gboInsert.Visible = false;
             btnSave.Visible = false;
             btnCancel.Visible = false;
-            pnlCommonCode.Location = gboInsert.Location;
-            pnlCommonCode.Size = new Size(446, 515);
+            pnl.Location = gboInsert.Location;
+            pnl.Size = new Size(446, 515);
             DgvSetting();
         }
 
@@ -48,8 +47,8 @@ namespace MESForm.PopUp
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 this.Size = new Size(470, 603);
-                pnlCommonCode.Location = new Point(12, 285);
-                pnlCommonCode.Size = new Size(446, 306);
+                pnl.Location = new Point(12, 285);
+                pnl.Size = new Size(446, 306);
                 bRegCheck = false;
             }
             else
@@ -58,11 +57,10 @@ namespace MESForm.PopUp
                 gboInsert.Visible = false;
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
-                pnlCommonCode.Location = gboInsert.Location;
-                pnlCommonCode.Size = new Size(446, 515);
+                pnl.Location = gboInsert.Location;
+                pnl.Size = new Size(446, 515);
                 bRegCheck = true;
             }
-                
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -70,12 +68,12 @@ namespace MESForm.PopUp
             this.Close();
         }
 
-        private void CommonPopUp_MouseDown(object sender, MouseEventArgs e)
+        private void CommonCodePopUp_MouseDown(object sender, MouseEventArgs e)
         {
             mousePoint = new Point(e.X, e.Y);
         }
 
-        private void CommonPopUp_MouseMove(object sender, MouseEventArgs e)
+        private void CommonCodePopUp_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
             {
