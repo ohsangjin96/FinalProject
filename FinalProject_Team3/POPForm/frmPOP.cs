@@ -12,10 +12,21 @@ namespace POPForm
 {
     public partial class frmPOP : Form
     {
+        frmLoginPopUp login;
         public frmPOP()
         {
             InitializeComponent();
         }
-     
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ResultCheck frm = new ResultCheck();
+            frm.Show();
+        }
+
+        private void frmPOP_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }
