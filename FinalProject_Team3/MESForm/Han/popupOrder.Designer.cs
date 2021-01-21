@@ -239,7 +239,7 @@ namespace MESForm.Han
             this.Column11.HeaderText = "발주수량";
             this.Column11.Name = "Column11";
             // 
-            // h10_popupOrder
+            // popupOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,8 +250,7 @@ namespace MESForm.Han
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h10_popupOrder";
-            this.Tag = "발주";
+            this.Name = "popupOrder";
             this.Text = "발주";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

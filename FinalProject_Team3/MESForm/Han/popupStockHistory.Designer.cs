@@ -139,7 +139,7 @@ namespace MESForm.Han
             this.Column6.HeaderText = "카테고리";
             this.Column6.Name = "Column6";
             // 
-            // h16_popupStockHistory
+            // popupStockHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,8 +149,7 @@ namespace MESForm.Han
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h16_popupStockHistory";
-            this.Tag = "창고재고이력조회";
+            this.Name = "popupStockHistory";
             this.Text = "창고재고이력조회";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
