@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.PopUp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace MESForm
         public frmLoginPopUp()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            frmSignUpPopUp frm = new frmSignUpPopUp();
+            frm.ShowDialog();
+        }
+
+        //x , 취소버튼 클릭 시 이벤트
+        private void XorCancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

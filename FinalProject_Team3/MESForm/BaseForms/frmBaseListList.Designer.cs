@@ -61,7 +61,7 @@ namespace MESForm.BaseForms
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(913, 75);
+            this.btnRefresh.Location = new System.Drawing.Point(409, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 13;
@@ -71,7 +71,7 @@ namespace MESForm.BaseForms
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(751, 75);
+            this.btnExcel.Location = new System.Drawing.Point(247, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 12;
@@ -81,7 +81,7 @@ namespace MESForm.BaseForms
             // btnDel2
             // 
             this.btnDel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel2.Location = new System.Drawing.Point(832, 75);
+            this.btnDel2.Location = new System.Drawing.Point(328, 3);
             this.btnDel2.Name = "btnDel2";
             this.btnDel2.Size = new System.Drawing.Size(75, 23);
             this.btnDel2.TabIndex = 11;
@@ -91,7 +91,7 @@ namespace MESForm.BaseForms
             // btnMod2
             // 
             this.btnMod2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod2.Location = new System.Drawing.Point(670, 75);
+            this.btnMod2.Location = new System.Drawing.Point(166, 3);
             this.btnMod2.Name = "btnMod2";
             this.btnMod2.Size = new System.Drawing.Size(75, 23);
             this.btnMod2.TabIndex = 10;
@@ -101,7 +101,7 @@ namespace MESForm.BaseForms
             // btnReg2
             // 
             this.btnReg2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg2.Location = new System.Drawing.Point(589, 75);
+            this.btnReg2.Location = new System.Drawing.Point(85, 3);
             this.btnReg2.Name = "btnReg2";
             this.btnReg2.Size = new System.Drawing.Size(75, 23);
             this.btnReg2.TabIndex = 9;
@@ -174,7 +174,7 @@ namespace MESForm.BaseForms
             // btnDel1
             // 
             this.btnDel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel1.Location = new System.Drawing.Point(422, 75);
+            this.btnDel1.Location = new System.Drawing.Point(422, 3);
             this.btnDel1.Name = "btnDel1";
             this.btnDel1.Size = new System.Drawing.Size(75, 23);
             this.btnDel1.TabIndex = 20;
@@ -184,7 +184,7 @@ namespace MESForm.BaseForms
             // btnMod1
             // 
             this.btnMod1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod1.Location = new System.Drawing.Point(341, 75);
+            this.btnMod1.Location = new System.Drawing.Point(341, 3);
             this.btnMod1.Name = "btnMod1";
             this.btnMod1.Size = new System.Drawing.Size(75, 23);
             this.btnMod1.TabIndex = 19;
@@ -194,7 +194,7 @@ namespace MESForm.BaseForms
             // btnReg1
             // 
             this.btnReg1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg1.Location = new System.Drawing.Point(260, 75);
+            this.btnReg1.Location = new System.Drawing.Point(260, 3);
             this.btnReg1.Name = "btnReg1";
             this.btnReg1.Size = new System.Drawing.Size(75, 23);
             this.btnReg1.TabIndex = 18;
@@ -210,21 +210,13 @@ namespace MESForm.BaseForms
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnRefresh);
-            this.splitContainer1.Panel1.Controls.Add(this.btnReg1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnExcel);
-            this.splitContainer1.Panel1.Controls.Add(this.btnMod1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDel2);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDel1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnMod2);
             this.splitContainer1.Panel1.Controls.Add(this.pnlSelect);
-            this.splitContainer1.Panel1.Controls.Add(this.btnReg2);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1000, 700);
-            this.splitContainer1.SplitterDistance = 101;
+            this.splitContainer1.SplitterDistance = 53;
             this.splitContainer1.TabIndex = 21;
             // 
             // splitContainer2
@@ -235,27 +227,41 @@ namespace MESForm.BaseForms
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnMod1);
+            this.splitContainer2.Panel1.Controls.Add(this.btnDel1);
+            this.splitContainer2.Panel1.Controls.Add(this.btnReg1);
             this.splitContainer2.Panel1.Controls.Add(this.panel1);
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.btnRefresh);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
-            this.splitContainer2.Size = new System.Drawing.Size(1000, 595);
+            this.splitContainer2.Panel2.Controls.Add(this.btnExcel);
+            this.splitContainer2.Panel2.Controls.Add(this.btnMod2);
+            this.splitContainer2.Panel2.Controls.Add(this.btnReg2);
+            this.splitContainer2.Panel2.Controls.Add(this.btnDel2);
+            this.splitContainer2.Size = new System.Drawing.Size(1000, 643);
             this.splitContainer2.SplitterDistance = 500;
             this.splitContainer2.TabIndex = 18;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 0);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(12, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 581);
+            this.panel1.Size = new System.Drawing.Size(485, 611);
             this.panel1.TabIndex = 34;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(3, 0);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Location = new System.Drawing.Point(3, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(481, 581);
+            this.panel2.Size = new System.Drawing.Size(481, 597);
             this.panel2.TabIndex = 35;
             // 
             // frmBaseListList

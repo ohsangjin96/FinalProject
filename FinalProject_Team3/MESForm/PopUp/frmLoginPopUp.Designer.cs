@@ -30,19 +30,23 @@
         {
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtX = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.txtX);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -61,13 +65,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "로그인";
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(43, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 21);
-            this.textBox1.TabIndex = 65;
+            this.txtID.BackColor = System.Drawing.SystemColors.Control;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtID.Location = new System.Drawing.Point(43, 98);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(185, 14);
+            this.txtID.TabIndex = 65;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label45
             // 
@@ -91,73 +97,110 @@
             this.label2.TabIndex = 143;
             this.label2.Text = "Password";
             // 
-            // textBox2
+            // txtPwd
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Location = new System.Drawing.Point(43, 175);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 21);
-            this.textBox2.TabIndex = 144;
+            this.txtPwd.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPwd.Location = new System.Drawing.Point(43, 175);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(185, 14);
+            this.txtPwd.TabIndex = 144;
+            this.txtPwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(43, 213);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 46);
-            this.button1.TabIndex = 145;
-            this.button1.Text = "로그인";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogin.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold);
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(43, 213);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(185, 46);
+            this.btnLogin.TabIndex = 145;
+            this.btnLogin.Text = "로그인";
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
-            // btnSave
+            // btnSignUp
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(76, 266);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 33);
-            this.btnSave.TabIndex = 146;
-            this.btnSave.Text = "회원가입";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSignUp.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSignUp.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignUp.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSignUp.ForeColor = System.Drawing.Color.White;
+            this.btnSignUp.Location = new System.Drawing.Point(76, 266);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(91, 33);
+            this.btnSignUp.TabIndex = 146;
+            this.btnSignUp.Text = "회원가입";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // btnCancel
+            // btnExit
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(173, 266);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(52, 33);
-            this.btnCancel.TabIndex = 147;
-            this.btnCancel.Text = "종료";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnExit.BackColor = System.Drawing.SystemColors.GrayText;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(173, 266);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(52, 33);
+            this.btnExit.TabIndex = 147;
+            this.btnExit.Text = "종료";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.XorCancle_Click);
             // 
-            // frmLogin
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.Location = new System.Drawing.Point(41, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 10);
+            this.label3.TabIndex = 148;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Location = new System.Drawing.Point(41, 199);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(187, 10);
+            this.label4.TabIndex = 149;
+            // 
+            // txtX
+            // 
+            this.txtX.BackColor = System.Drawing.SystemColors.Highlight;
+            this.txtX.FlatAppearance.BorderSize = 0;
+            this.txtX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtX.ForeColor = System.Drawing.Color.Transparent;
+            this.txtX.Image = global::MESForm.Properties.Resources.close_black;
+            this.txtX.Location = new System.Drawing.Point(231, 9);
+            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(22, 23);
+            this.txtX.TabIndex = 104;
+            this.txtX.UseVisualStyleBackColor = false;
+            this.txtX.Click += new System.EventHandler(this.XorCancle_Click);
+            // 
+            // frmLoginPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(265, 323);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPwd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label45);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLogin";
+            this.Name = "frmLoginPopUp";
             this.Text = "frmLogin";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -170,12 +213,15 @@
 
         protected System.Windows.Forms.Panel pnlTop;
         protected System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtID;
         protected System.Windows.Forms.Label label45;
         protected System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        protected System.Windows.Forms.Button btnSave;
-        protected System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.Button btnLogin;
+        protected System.Windows.Forms.Button btnSignUp;
+        protected System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button txtX;
     }
 }

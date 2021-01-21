@@ -8,23 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MESForm.PopUp
+namespace MESForm
 {
-    public partial class frmSignUp : Form
+    public partial class frmMaterialCost : Form
     {
-        public frmSignUp()
+        public frmMaterialCost()
         {
             InitializeComponent();
         }
 
-        private void frmSignUp_Load(object sender, EventArgs e)
+        private void btnExcel_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)//취소 버튼
-        {
-            this.Close();
         }
     }
 }
