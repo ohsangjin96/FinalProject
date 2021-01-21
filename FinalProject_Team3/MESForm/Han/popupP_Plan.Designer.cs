@@ -210,7 +210,7 @@ namespace MESForm.Han
             this.cboPlanID.Size = new System.Drawing.Size(154, 21);
             this.cboPlanID.TabIndex = 73;
             // 
-            // h07_popupP_Plan
+            // popupP_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,8 +221,8 @@ namespace MESForm.Han
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h07_popupP_Plan";
-            this.Tag = "생산계획생성";
+            this.Name = "popupP_Plan";
+            this.Tag = "";
             this.Text = "생산계획생성";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

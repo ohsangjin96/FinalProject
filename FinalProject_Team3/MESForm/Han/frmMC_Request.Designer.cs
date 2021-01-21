@@ -498,7 +498,7 @@ namespace MESForm.Han
             this.Column23.HeaderText = "사유";
             this.Column23.Name = "Column23";
             // 
-            // h17_frmMR_Request
+            // frmMC_Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -508,8 +508,7 @@ namespace MESForm.Han
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h17_frmMR_Request";
-            this.Tag = "자재불출요청";
+            this.Name = "frmMC_Request";
             this.Text = "자재불출요청";
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();

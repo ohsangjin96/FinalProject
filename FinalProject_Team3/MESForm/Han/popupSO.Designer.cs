@@ -48,6 +48,8 @@ namespace MESForm.Han
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -60,8 +62,6 @@ namespace MESForm.Han
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -288,6 +288,24 @@ namespace MESForm.Han
             this.panel2.Size = new System.Drawing.Size(513, 368);
             this.panel2.TabIndex = 56;
             // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(110, 222);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(125, 22);
+            this.comboBox7.TabIndex = 79;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.Location = new System.Drawing.Point(19, 226);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 14);
+            this.label15.TabIndex = 78;
+            this.label15.Text = "발주구분";
+            // 
             // comboBox6
             // 
             this.comboBox6.FormattingEnabled = true;
@@ -387,25 +405,7 @@ namespace MESForm.Han
             this.label2.TabIndex = 63;
             this.label2.Text = "고객WO";
             // 
-            // comboBox7
-            // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(110, 222);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(125, 22);
-            this.comboBox7.TabIndex = 79;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.Location = new System.Drawing.Point(19, 226);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 14);
-            this.label15.TabIndex = 78;
-            this.label15.Text = "발주구분";
-            // 
-            // h04_popupSO
+            // popupSO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -416,8 +416,7 @@ namespace MESForm.Han
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h04_popupSO";
-            this.Tag = "S/O";
+            this.Name = "popupSO";
             this.Text = "S/O";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

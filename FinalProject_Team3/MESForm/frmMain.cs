@@ -127,30 +127,6 @@ namespace MESForm
 
         #endregion
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-            ProductPlan frm = new ProductPlan();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            WorkOrder frm = new WorkOrder();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            frmMatrialOut frm = new frmMatrialOut();
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             frmBOM frm = new frmBOM();
@@ -182,5 +158,113 @@ namespace MESForm
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        #region 수주/계획관리
+        private void btnPOUpload_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmPOUpload>();
+        }
+
+        private void btnPO_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmPO>();
+        }
+
+        private void btnDemand_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmD_Plan>();
+        }
+
+        #endregion
+
+        #region 수주/생산관리
+        private void btnM_Take_Plan_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmMT_Plan>();
+        }
+
+        private void btnProduction_Plan_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<ProductPlan>();
+        }
+        #endregion
+
+        #region 구매관리
+        private void btnROrder_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmReg_Order>();
+        }
+
+        private void btnCurrentOrder_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmCurrentOrder>();
+        }
+
+        private void btnWStandby_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmWStandby>();
+        }
+
+        private void btnExamine_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmExamine>();
+        }
+
+        private void btnWMaterial_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmWMaterial>();
+        }
+
+        private void btnCurrentWM_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmCurrentWMaterial>();
+        }
+
+        private void btnCurrentWS_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmCurrentWStock>();
+        }
+
+        private void btnCurrentSR_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmCurrentSR>();
+        }
+
+        private void btnMC_Request_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmMC_Request>();
+        }
+
+        private void btnMConfine_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmMConfine>();
+        }
+        #endregion
+
+        #region 공정관리
+        private void btnWorkOrder_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<WorkOrder>();
+        }
+
+        private void btnCurrentProcess_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmCurrentProcess>();
+        }
+        #endregion
+        
+        #region 공정등록
+        private void btnProcessMove_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<Han.frmProcessMove>();
+        }
+        #endregion
+
+        #region 출하관리
+        private void btnShipmentManager_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<ShipmentManager>();
+        }
+        #endregion
     }
 }

@@ -364,7 +364,7 @@ namespace MESForm.Han
             this.label4.TabIndex = 7;
             this.label4.Text = "자재재고현황";
             // 
-            // h15_frmCurrentSWarehouse
+            // frmCurrentWStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -374,8 +374,7 @@ namespace MESForm.Han
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h15_frmCurrentSWarehouse";
-            this.Tag = "자재재고현황";
+            this.Name = "frmCurrentWStock";
             this.Text = "자재재고현황";
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();

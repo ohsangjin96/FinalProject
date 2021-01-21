@@ -30,6 +30,12 @@ namespace MESForm.Han
         private void InitializeComponent()
         {
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.cboDCompany = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboState = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboCompany = new System.Windows.Forms.ComboBox();
@@ -62,12 +68,6 @@ namespace MESForm.Han
             this.btnPrint = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cboState = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtOrderNum = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboDCompany = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,6 +101,59 @@ namespace MESForm.Han
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(976, 81);
             this.pnlSelect.TabIndex = 0;
+            // 
+            // cboDCompany
+            // 
+            this.cboDCompany.FormattingEnabled = true;
+            this.cboDCompany.Location = new System.Drawing.Point(735, 48);
+            this.cboDCompany.Name = "cboDCompany";
+            this.cboDCompany.Size = new System.Drawing.Size(121, 21);
+            this.cboDCompany.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Location = new System.Drawing.Point(660, 51);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 14);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "납품업체";
+            // 
+            // txtOrderNum
+            // 
+            this.txtOrderNum.Location = new System.Drawing.Point(475, 48);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(131, 21);
+            this.txtOrderNum.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(394, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 14);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "발주번호";
+            // 
+            // cboState
+            // 
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Location = new System.Drawing.Point(94, 48);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(231, 21);
+            this.cboState.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(22, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 14);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "상태";
             // 
             // txtItem
             // 
@@ -370,60 +423,7 @@ namespace MESForm.Han
             this.btnCancel.Text = "발주취소";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // cboState
-            // 
-            this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(94, 48);
-            this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(231, 21);
-            this.cboState.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(22, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 14);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "상태";
-            // 
-            // txtOrderNum
-            // 
-            this.txtOrderNum.Location = new System.Drawing.Point(475, 48);
-            this.txtOrderNum.Name = "txtOrderNum";
-            this.txtOrderNum.Size = new System.Drawing.Size(131, 21);
-            this.txtOrderNum.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(394, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 14);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "발주번호";
-            // 
-            // cboDCompany
-            // 
-            this.cboDCompany.FormattingEnabled = true;
-            this.cboDCompany.Location = new System.Drawing.Point(735, 48);
-            this.cboDCompany.Name = "cboDCompany";
-            this.cboDCompany.Size = new System.Drawing.Size(121, 21);
-            this.cboDCompany.TabIndex = 24;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(660, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 14);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "납품업체";
-            // 
-            // h11_frmCurrentOrder
+            // frmCurrentOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -433,8 +433,8 @@ namespace MESForm.Han
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h11_frmCurrentOrder";
-            this.Tag = "발주현황";
+            this.Name = "frmCurrentOrder";
+            
             this.Text = "발주현황";
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
