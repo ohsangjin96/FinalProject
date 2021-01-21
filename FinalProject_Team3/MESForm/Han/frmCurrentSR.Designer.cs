@@ -337,7 +337,7 @@ namespace MESForm.Han
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
-            // h19_frmCurrentSR
+            // frmCurrentSR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,8 +347,8 @@ namespace MESForm.Han
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "h19_frmCurrentSR";
-            this.Tag = "입출고현황";
+            this.Name = "frmCurrentSR";
+            this.Tag = "";
             this.Text = "입출고현황";
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();

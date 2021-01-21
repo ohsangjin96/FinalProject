@@ -239,7 +239,7 @@ namespace MESForm.Han
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPOUpload";
-            this.Tag = "영업마스터업로드(PO)";
+            this.Tag = "";
             this.Text = "영업마스터업로드(PO)";
             this.Load += new System.EventHandler(this.frmPOUpload_Load);
             this.panel1.ResumeLayout(false);

@@ -250,8 +250,8 @@ namespace MESForm.Han
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReg_Order";
-            this.Tag = "정규발주";
-            this.Text = "Form1";
+            this.Tag = "";
+            this.Text = "정규발주";
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.panel1.ResumeLayout(false);
