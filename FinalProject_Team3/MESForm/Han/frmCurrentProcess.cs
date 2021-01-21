@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,27 @@ namespace MESForm.Han
         public frmCurrentProcess()
         {
             InitializeComponent();
+        }
+
+        private void DGVSetting()
+        {
+            CommonUtil.SetInitGridView(custDataGridViewControl1);
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "선택", "a");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "창고코드", "b");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "창고", "c");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "e");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목타입", "f");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "규격", "g");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "재고량", "h");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "단위", "i");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "관리등급", "j");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "비고", "k");
+        }
+
+        private void frmCurrentProcess_Load(object sender, EventArgs e)
+        {
+            DGVSetting();
         }
     }
 }

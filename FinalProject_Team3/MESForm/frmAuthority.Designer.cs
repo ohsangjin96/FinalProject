@@ -51,23 +51,25 @@
             this.pnlSelect.Location = new System.Drawing.Point(1, 3);
             this.pnlSelect.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(1248, 122);
+            this.pnlSelect.Size = new System.Drawing.Size(1248, 72);
             this.pnlSelect.TabIndex = 1;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(77, 44);
+            this.txtName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.txtName.Location = new System.Drawing.Point(76, 17);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(145, 25);
+            this.txtName.Size = new System.Drawing.Size(145, 21);
             this.txtName.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 47);
+            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF", 11F);
+            this.label1.Location = new System.Drawing.Point(3, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "관리자명";
             // 
@@ -77,9 +79,9 @@
             this.btnLookUp.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLookUp.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnLookUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLookUp.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLookUp.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.btnLookUp.ForeColor = System.Drawing.Color.White;
-            this.btnLookUp.Location = new System.Drawing.Point(228, 44);
+            this.btnLookUp.Location = new System.Drawing.Point(227, 14);
             this.btnLookUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLookUp.Name = "btnLookUp";
             this.btnLookUp.Size = new System.Drawing.Size(71, 25);
@@ -115,10 +117,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(43, 155);
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
+            this.label2.Location = new System.Drawing.Point(43, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 28);
+            this.label2.Size = new System.Drawing.Size(82, 22);
             this.label2.TabIndex = 5;
             this.label2.Text = "권한관리";
             // 
@@ -128,7 +130,7 @@
             this.btnUser_Auth.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnUser_Auth.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnUser_Auth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser_Auth.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnUser_Auth.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
             this.btnUser_Auth.ForeColor = System.Drawing.Color.White;
             this.btnUser_Auth.Location = new System.Drawing.Point(1007, 161);
             this.btnUser_Auth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -144,7 +146,7 @@
             this.btnGroup_Auth.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnGroup_Auth.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnGroup_Auth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroup_Auth.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnGroup_Auth.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
             this.btnGroup_Auth.ForeColor = System.Drawing.Color.White;
             this.btnGroup_Auth.Location = new System.Drawing.Point(1130, 161);
             this.btnGroup_Auth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
