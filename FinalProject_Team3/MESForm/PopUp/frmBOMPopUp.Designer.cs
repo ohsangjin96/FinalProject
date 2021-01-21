@@ -85,6 +85,7 @@
             this.button1.Size = new System.Drawing.Size(25, 33);
             this.button1.TabIndex = 103;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // label1
             // 
@@ -128,6 +129,7 @@
             this.btnCancel.TabIndex = 68;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // label55
             // 
@@ -394,6 +396,7 @@
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBOMPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBOMPopUp";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();

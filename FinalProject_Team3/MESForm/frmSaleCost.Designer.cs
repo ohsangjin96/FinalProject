@@ -43,8 +43,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnMod = new System.Windows.Forms.Button();
-            this.btnReg = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,32 +195,23 @@
             // btnDel
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(928, 110);
+            this.btnDel.Location = new System.Drawing.Point(1009, 111);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 25);
             this.btnDel.TabIndex = 50;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // btnMod
+            // btnRegister
             // 
-            this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Location = new System.Drawing.Point(1009, 110);
-            this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(75, 25);
-            this.btnMod.TabIndex = 49;
-            this.btnMod.Text = "복사";
-            this.btnMod.UseVisualStyleBackColor = true;
-            // 
-            // btnReg
-            // 
-            this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(848, 110);
-            this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(75, 25);
-            this.btnReg.TabIndex = 48;
-            this.btnReg.Text = "등록";
-            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Location = new System.Drawing.Point(929, 111);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 25);
+            this.btnRegister.TabIndex = 48;
+            this.btnRegister.Text = "등록";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // frmSaleCost
             // 
@@ -235,8 +225,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnMod);
-            this.Controls.Add(this.btnReg);
+            this.Controls.Add(this.btnRegister);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSaleCost";
@@ -266,7 +255,6 @@
         protected System.Windows.Forms.Button btnRefresh;
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Button btnMod;
-        protected System.Windows.Forms.Button btnReg;
+        protected System.Windows.Forms.Button btnRegister;
     }
 }

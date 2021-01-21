@@ -16,5 +16,17 @@ namespace MESForm
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmShiftInfoPopUp frm = new frmShiftInfoPopUp();
+            frm.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmShiftInfoPopUp frm = new frmShiftInfoPopUp();
+            frm.ShowDialog();
+        }
     }
 }

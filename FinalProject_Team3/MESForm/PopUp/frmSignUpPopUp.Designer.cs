@@ -280,6 +280,7 @@
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSignUpPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "회원가입";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
