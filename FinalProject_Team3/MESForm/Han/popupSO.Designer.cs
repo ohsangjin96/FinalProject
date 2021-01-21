@@ -109,6 +109,7 @@ namespace MESForm.Han
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
