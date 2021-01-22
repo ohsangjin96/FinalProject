@@ -123,7 +123,6 @@
       <DependentUpon>frmCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Yu\frmFacility.cs" />
-    <Compile Include="frmBOR.cs" />
     <Compile Include="Form\Yu\frmFacility.Designer.cs">
       <DependentUpon>frmFacility.cs</DependentUpon>
     </Compile>
@@ -536,9 +535,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAuthority.resx">
       <DependentUpon>frmAuthority.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBOR.resx">
-      <DependentUpon>frmBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Yu\frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
