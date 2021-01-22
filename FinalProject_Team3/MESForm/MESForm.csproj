@@ -298,6 +298,60 @@
     <Compile Include="Han\popupStockHistory.Designer.cs">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\PopUpBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpBOM.Designer.cs">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpCreateGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpCreateGroup.Designer.cs">
+      <DependentUpon>PopUpCreateGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpGroupAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpGroupAuthority.Designer.cs">
+      <DependentUpon>PopUpGroupAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpItem.Designer.cs">
+      <DependentUpon>PopUpItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpMaterialCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpMaterialCost.Designer.cs">
+      <DependentUpon>PopUpMaterialCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpSaleCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpSaleCost.Designer.cs">
+      <DependentUpon>PopUpSaleCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpShiftInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpShiftInfo.Designer.cs">
+      <DependentUpon>PopUpShiftInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpSignUp.Designer.cs">
+      <DependentUpon>PopUpSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpUserAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpUserAuthority.Designer.cs">
+      <DependentUpon>PopUpUserAuthority.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\BORPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -575,6 +629,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupStockHistory.resx">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpBOM.resx">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpCreateGroup.resx">
+      <DependentUpon>PopUpCreateGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpGroupAuthority.resx">
+      <DependentUpon>PopUpGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpItem.resx">
+      <DependentUpon>PopUpItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpMaterialCost.resx">
+      <DependentUpon>PopUpMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpSaleCost.resx">
+      <DependentUpon>PopUpSaleCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpShiftInfo.resx">
+      <DependentUpon>PopUpShiftInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpSignUp.resx">
+      <DependentUpon>PopUpSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpUserAuthority.resx">
+      <DependentUpon>PopUpUserAuthority.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\BORPopUp.resx">
       <DependentUpon>BORPopUp.cs</DependentUpon>
