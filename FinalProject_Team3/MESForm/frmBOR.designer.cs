@@ -49,6 +49,7 @@ namespace MESForm
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvBOR);
+            this.panel1.Size = new System.Drawing.Size(976, 561);
             // 
             // pnlSelect
             // 
@@ -58,6 +59,7 @@ namespace MESForm
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.txtCompanyCode);
             this.pnlSelect.Controls.Add(this.label18);
+            this.pnlSelect.Size = new System.Drawing.Size(976, 80);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label18, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtCompanyCode, 0);
@@ -69,6 +71,7 @@ namespace MESForm
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnInquiry.Location = new System.Drawing.Point(889, 48);
             // 
             // btnReg
             // 
@@ -80,6 +83,8 @@ namespace MESForm
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Size = new System.Drawing.Size(1000, 754);
+            this.splitContainer1.SplitterDistance = 96;
             // 
             // dgvBOR
             // 
@@ -91,14 +96,14 @@ namespace MESForm
             this.dgvBOR.Location = new System.Drawing.Point(0, 0);
             this.dgvBOR.Name = "dgvBOR";
             this.dgvBOR.RowTemplate.Height = 23;
-            this.dgvBOR.Size = new System.Drawing.Size(976, 599);
+            this.dgvBOR.Size = new System.Drawing.Size(976, 561);
             this.dgvBOR.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(12, 7);
+            this.label4.Location = new System.Drawing.Point(12, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 14);
             this.label4.TabIndex = 9;
@@ -107,16 +112,16 @@ namespace MESForm
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(337, 9);
+            this.comboBox1.Location = new System.Drawing.Point(337, 10);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.Size = new System.Drawing.Size(127, 22);
             this.comboBox1.TabIndex = 16;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(537, 13);
+            this.label2.Location = new System.Drawing.Point(537, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 15;
@@ -124,16 +129,16 @@ namespace MESForm
             // 
             // txtCompanyName
             // 
-            this.txtCompanyName.Location = new System.Drawing.Point(599, 9);
+            this.txtCompanyName.Location = new System.Drawing.Point(599, 10);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(127, 21);
+            this.txtCompanyName.Size = new System.Drawing.Size(127, 22);
             this.txtCompanyName.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(275, 13);
+            this.label1.Location = new System.Drawing.Point(275, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 13;
@@ -141,16 +146,16 @@ namespace MESForm
             // 
             // txtCompanyCode
             // 
-            this.txtCompanyCode.Location = new System.Drawing.Point(75, 9);
+            this.txtCompanyCode.Location = new System.Drawing.Point(75, 10);
             this.txtCompanyCode.Name = "txtCompanyCode";
-            this.txtCompanyCode.Size = new System.Drawing.Size(127, 21);
+            this.txtCompanyCode.Size = new System.Drawing.Size(127, 22);
             this.txtCompanyCode.TabIndex = 12;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(13, 13);
+            this.label18.Location = new System.Drawing.Point(13, 14);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(29, 13);
             this.label18.TabIndex = 11;
@@ -158,8 +163,8 @@ namespace MESForm
             // 
             // frmBOR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(1000, 754);
             this.Name = "frmBOR";
             this.Text = "BOR";
             this.Load += new System.EventHandler(this.frmBOR_Load);

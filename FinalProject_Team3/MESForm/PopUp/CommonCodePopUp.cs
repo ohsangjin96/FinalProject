@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MESForm.PopUp
 {
-    public partial class CommonCodePopUp : MESForm.BaseForms.frmPopup_1
+    public partial class CommonCodePopUp : MESForm.BaseForms.frmPopup
     {
         private Point mousePoint;
 
@@ -35,7 +35,7 @@ namespace MESForm.PopUp
             btnSave.Visible = false;
             btnCancel.Visible = false;
             pnl.Location = gboInsert.Location;
-            pnl.Size = new Size(446, 515);
+            pnl.Size = new Size(446, 555);
             DgvSetting();
         }
 
@@ -46,9 +46,8 @@ namespace MESForm.PopUp
                 gboInsert.Visible = true;
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
-                this.Size = new Size(470, 603);
-                pnl.Location = new Point(12, 285);
-                pnl.Size = new Size(446, 306);
+                pnl.Location = new Point(12, 308);
+                pnl.Size = new Size(446, 329);
                 bRegCheck = false;
             }
             else
@@ -58,14 +57,9 @@ namespace MESForm.PopUp
                 btnSave.Visible = false;
                 btnCancel.Visible = false;
                 pnl.Location = gboInsert.Location;
-                pnl.Size = new Size(446, 515);
+                pnl.Size = new Size(446, 555);
                 bRegCheck = true;
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void CommonCodePopUp_MouseDown(object sender, MouseEventArgs e)
