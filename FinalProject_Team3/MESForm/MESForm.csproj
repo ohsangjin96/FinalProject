@@ -433,6 +433,12 @@
     <Compile Include="ShipmentManager.Designer.cs">
       <DependentUpon>ShipmentManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateTimePicker.Designer.cs">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NewDataGridViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -440,7 +446,6 @@
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
-    <Compile Include="Utils\ExcelExportImport.cs" />
     <Compile Include="WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -639,6 +644,9 @@
     </Compile>
     <EmbeddedResource Include="ShipmentManager.resx">
       <DependentUpon>ShipmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DateTimePicker.resx">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\NewDataGridViewControl.resx">
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
