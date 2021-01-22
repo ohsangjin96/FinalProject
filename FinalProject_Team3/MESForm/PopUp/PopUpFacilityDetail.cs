@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace MESForm.PopUp
 {
-    public partial class CompanyPopUp : MESForm.BaseForms.frmPopup
+    public partial class PopUpFacilityDetail : MESForm.BaseForms.frmPopup
     {
         private Point mousePoint;
 
-        public CompanyPopUp()
+        public PopUpFacilityDetail()
         {
             InitializeComponent();
         }
@@ -22,12 +22,12 @@ namespace MESForm.PopUp
             this.Close();
         }
 
-        private void CompanyPopUp_MouseDown(object sender, MouseEventArgs e)
+        private void FacilityDetailPopUp_MouseDown(object sender, MouseEventArgs e)
         {
             mousePoint = new Point(e.X, e.Y);
         }
 
-        private void CompanyPopUp_MouseMove(object sender, MouseEventArgs e)
+        private void FacilityDetailPopUp_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
             {

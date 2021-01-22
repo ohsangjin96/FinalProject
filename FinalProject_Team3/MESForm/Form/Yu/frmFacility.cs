@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MESForm
 {
-    public partial class frmFacility : MESForm.BaseForms.frmBaseListList
+    public partial class frmFacility : MESForm.BaseForms.frmBaseLists
     {
         public frmFacility()
         {
@@ -47,8 +47,8 @@ namespace MESForm
 
         private void btnReg1_Click(object sender, EventArgs e)
         {
-            PopUp.FacilityPopUp pop = new PopUp.FacilityPopUp();
-            if(pop.ShowDialog() == DialogResult.OK)
+            PopUp.PopUpFacility pop = new PopUp.PopUpFacility();
+            if (pop.ShowDialog() == DialogResult.OK)
             {
 
             }
@@ -56,7 +56,7 @@ namespace MESForm
 
         private void btnReg2_Click(object sender, EventArgs e)
         {
-            PopUp.FacilityDetailPopUp pop = new PopUp.FacilityDetailPopUp();
+            PopUp.PopUpFacilityDetail pop = new PopUp.PopUpFacilityDetail();
             if (pop.ShowDialog() == DialogResult.OK)
             {
 

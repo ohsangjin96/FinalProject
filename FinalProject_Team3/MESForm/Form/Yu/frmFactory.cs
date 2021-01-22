@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MESForm
 {
-    public partial class frmFactory : MESForm.BaseForms.frmBaseList
+    public partial class frmFactory : MESForm.BaseForms.frmBaseLists
     {
         public frmFactory()
         {
@@ -34,7 +34,6 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use"); // 13
             CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "Factory_Amender"); // 14
             CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate"); // 15
-
         }
 
         private void frmFactory_Load(object sender, EventArgs e)
@@ -44,8 +43,8 @@ namespace MESForm
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            PopUp.FactoryPopUp pop = new PopUp.FactoryPopUp();
-            if(pop.ShowDialog() == DialogResult.OK)
+            PopUp.PopUpFactory pop = new PopUp.PopUpFactory();
+            if (pop.ShowDialog() == DialogResult.OK)
             {
 
             }

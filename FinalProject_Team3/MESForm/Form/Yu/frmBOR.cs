@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MESForm
 {
-    public partial class frmBOR : MESForm.BaseForms.frmBaseList
+    public partial class frmBOR : MESForm.BaseForms.frmBaseLists
     {
         public frmBOR()
         {
@@ -41,7 +41,7 @@ namespace MESForm
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            PopUp.BORPopUp pop = new PopUp.BORPopUp();
+            PopUp.PopUpBOR pop = new PopUp.PopUpBOR();
             if (pop.ShowDialog() == DialogResult.OK)
             {
 

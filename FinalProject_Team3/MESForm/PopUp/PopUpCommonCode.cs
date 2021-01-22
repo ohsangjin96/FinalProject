@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace MESForm.PopUp
 {
-    public partial class CommonCodePopUp : MESForm.BaseForms.frmPopup
+    public partial class PopUpCommonCode : MESForm.BaseForms.frmPopup
     {
         private Point mousePoint;
 
         bool bRegCheck = true;
 
-        public CommonCodePopUp()
+        public PopUpCommonCode()
         {
             InitializeComponent();
         }

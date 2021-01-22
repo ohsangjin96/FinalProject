@@ -173,6 +173,20 @@ namespace MESForm
             ((sender as Form).Tag as TabPage).Dispose();
         }
 
+        private void 모든탭닫기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            custTab.TabPages.Clear();
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Dispose();
+            }
+        }
+
+        private void 닫기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Close();
+        }
+
         private void tabForms_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (custTab.SelectedTab != null && custTab.SelectedTab.Tag != null)
@@ -183,6 +197,18 @@ namespace MESForm
 
         private void tabForms_MouseDown(object sender, MouseEventArgs e)
         {
+            // 마우스 우클릭시 해당 탭 페이지 선택
+            if (e.Button == MouseButtons.Right)
+            {
+                for (int i = 0; i < custTab.TabPages.Count; i++)
+                {
+                    Rectangle r = custTab.GetTabRect(i);
+                    if (r.Contains(e.Location))
+                    {
+                        custTab.SelectedIndex = i;
+                    }
+                }
+            }
             for (var i = 0; i < custTab.TabPages.Count; i++)
             {
                 var tabRect = custTab.GetTabRect(i);
@@ -192,10 +218,13 @@ namespace MESForm
                     tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
                     closeImage.Width,
                     closeImage.Height);
-                if (imageRect.Contains(e.Location))
+                if(e.Button == MouseButtons.Left) //  x버튼 마우스 왼쪽 클릭때만 닫기
                 {
-                    this.ActiveMdiChild.Close();
-                    break;
+                    if (imageRect.Contains(e.Location))
+                    {
+                        this.ActiveMdiChild.Close();
+                        break;
+                    }
                 }
             }
         }
@@ -212,7 +241,7 @@ namespace MESForm
                     return;
                 }
             }
-            PopUp.CommonCodePopUp pop = new PopUp.CommonCodePopUp();
+            PopUp.PopUpCommonCode pop = new PopUp.PopUpCommonCode();
             pop.Show();
         }
 
