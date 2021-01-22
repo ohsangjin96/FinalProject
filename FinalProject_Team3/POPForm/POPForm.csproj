@@ -88,7 +88,6 @@
       <DependentUpon>ResultCheck.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
-    <Compile Include="Utils\ExcelExportImport.cs" />
     <EmbeddedResource Include="frmLoginPopUp.resx">
       <DependentUpon>frmLoginPopUp.cs</DependentUpon>
     </EmbeddedResource>

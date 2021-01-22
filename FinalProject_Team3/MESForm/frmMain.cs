@@ -212,7 +212,7 @@ namespace MESForm
                     return;
                 }
             }
-            PopUp.CommonCodePopUp pop = new PopUp.CommonCodePopUp();
+            PopUp.PopUpCommonCode pop = new PopUp.PopUpCommonCode();
             pop.Show();
         }
 
@@ -300,7 +300,7 @@ namespace MESForm
 
         private void btnProduction_Plan_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<ProductPlan>();
+            OpenCreateForm<ProductPlan1>();
         }
         #endregion
 
