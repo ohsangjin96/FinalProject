@@ -54,23 +54,23 @@ namespace MESForm
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(578, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(612, 3);
             // 
             // btnExcel
             // 
-            this.btnExcel.Location = new System.Drawing.Point(416, 3);
+            this.btnExcel.Location = new System.Drawing.Point(450, 3);
             // 
             // btnDel2
             // 
-            this.btnDel2.Location = new System.Drawing.Point(497, 3);
+            this.btnDel2.Location = new System.Drawing.Point(531, 3);
             // 
             // btnMod2
             // 
-            this.btnMod2.Location = new System.Drawing.Point(335, 3);
+            this.btnMod2.Location = new System.Drawing.Point(369, 3);
             // 
             // btnReg2
             // 
-            this.btnReg2.Location = new System.Drawing.Point(254, 3);
+            this.btnReg2.Location = new System.Drawing.Point(288, 3);
             this.btnReg2.Click += new System.EventHandler(this.btnReg2_Click);
             // 
             // pnlSelect
@@ -91,15 +91,15 @@ namespace MESForm
             // 
             // btnDel1
             // 
-            this.btnDel1.Location = new System.Drawing.Point(253, 3);
+            this.btnDel1.Location = new System.Drawing.Point(219, 3);
             // 
             // btnMod1
             // 
-            this.btnMod1.Location = new System.Drawing.Point(174, 3);
+            this.btnMod1.Location = new System.Drawing.Point(140, 3);
             // 
             // btnReg1
             // 
-            this.btnReg1.Location = new System.Drawing.Point(93, 3);
+            this.btnReg1.Location = new System.Drawing.Point(59, 3);
             this.btnReg1.Click += new System.EventHandler(this.btnReg1_Click);
             // 
             // splitContainer1
@@ -124,29 +124,31 @@ namespace MESForm
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Size = new System.Drawing.Size(1000, 729);
-            this.splitContainer2.SplitterDistance = 331;
+            this.splitContainer2.SplitterDistance = 297;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvFacility);
-            this.panel1.Size = new System.Drawing.Size(316, 676);
+            this.panel1.Size = new System.Drawing.Size(282, 676);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvFacilityDetail);
-            this.panel2.Size = new System.Drawing.Size(650, 676);
+            this.panel2.Size = new System.Drawing.Size(684, 676);
             // 
             // dgvFacility
             // 
+            this.dgvFacility.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFacility.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacility.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFacility.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFacility.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFacility.Location = new System.Drawing.Point(0, 0);
             this.dgvFacility.Name = "dgvFacility";
             this.dgvFacility.RowTemplate.Height = 23;
-            this.dgvFacility.Size = new System.Drawing.Size(316, 676);
+            this.dgvFacility.Size = new System.Drawing.Size(282, 676);
             this.dgvFacility.TabIndex = 4;
             // 
             // dgvFacilityDetail
@@ -159,7 +161,7 @@ namespace MESForm
             this.dgvFacilityDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvFacilityDetail.Name = "dgvFacilityDetail";
             this.dgvFacilityDetail.RowTemplate.Height = 23;
-            this.dgvFacilityDetail.Size = new System.Drawing.Size(650, 676);
+            this.dgvFacilityDetail.Size = new System.Drawing.Size(684, 676);
             this.dgvFacilityDetail.TabIndex = 45;
             // 
             // label4

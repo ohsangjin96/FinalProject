@@ -41,19 +41,15 @@ namespace MESForm.PopUp
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Size = new System.Drawing.Size(322, 32);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FacilityPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FacilityPopUp_MouseMove);
-            this.pnlTop.Controls.SetChildIndex(this.label1, 0);
-            this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             // 
             // label1
             // 
@@ -86,6 +82,12 @@ namespace MESForm.PopUp
             this.pnl.Controls.Add(this.label6);
             this.pnl.Controls.Add(this.textBox1);
             this.pnl.Size = new System.Drawing.Size(298, 336);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Location = new System.Drawing.Point(282, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // textBox2
             // 
@@ -184,21 +186,6 @@ namespace MESForm.PopUp
             this.textBox1.Size = new System.Drawing.Size(125, 21);
             this.textBox1.TabIndex = 73;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
-            this.btnClose.Location = new System.Drawing.Point(282, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 34);
-            this.btnClose.TabIndex = 106;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FacilityPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -227,6 +214,5 @@ namespace MESForm.PopUp
         protected System.Windows.Forms.TextBox textBox6;
         protected System.Windows.Forms.Label label6;
         protected System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -287,7 +287,7 @@ namespace MESForm.Han
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCurrentProcess";
-            this.Text = "공정현황";
+            this.Text = "공정재고현황";
             this.Load += new System.EventHandler(this.frmCurrentProcess_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();

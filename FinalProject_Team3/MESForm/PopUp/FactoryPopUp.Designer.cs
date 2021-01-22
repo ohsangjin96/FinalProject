@@ -59,19 +59,15 @@ namespace MESForm.PopUp
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Size = new System.Drawing.Size(541, 32);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FactoryPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FactoryPopUp_MouseMove);
-            this.pnlTop.Controls.SetChildIndex(this.label1, 0);
-            this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             // 
             // label1
             // 
@@ -123,6 +119,12 @@ namespace MESForm.PopUp
             this.pnl.Controls.Add(this.label10);
             this.pnl.Controls.Add(this.label14);
             this.pnl.Size = new System.Drawing.Size(517, 362);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Location = new System.Drawing.Point(501, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // comboBox8
             // 
@@ -379,26 +381,11 @@ namespace MESForm.PopUp
             this.label14.TabIndex = 89;
             this.label14.Text = "자재차감";
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
-            this.btnClose.Location = new System.Drawing.Point(501, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 34);
-            this.btnClose.TabIndex = 106;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // FactoryPopUp2
+            // FactoryPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.ClientSize = new System.Drawing.Size(541, 452);
-            this.Name = "FactoryPopUp2";
+            this.Name = "FactoryPopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -440,6 +427,5 @@ namespace MESForm.PopUp
         protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnClose;
     }
 }
