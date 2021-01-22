@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShiftSchedule));
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnInquiry = new System.Windows.Forms.Button();
-            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.dgvShift = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +67,44 @@
             this.pnlSelect.Name = "pnlSelect";
             this.pnlSelect.Size = new System.Drawing.Size(1440, 43);
             this.pnlSelect.TabIndex = 56;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label3.Location = new System.Drawing.Point(34, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "적용일자";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.label2.Location = new System.Drawing.Point(280, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "~";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.dateTimePicker2.Location = new System.Drawing.Point(89, 10);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(168, 21);
+            this.dateTimePicker2.TabIndex = 27;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.dateTimePicker1.Location = new System.Drawing.Point(310, 10);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 21);
+            this.dateTimePicker1.TabIndex = 26;
             // 
             // label1
             // 
@@ -123,21 +161,21 @@
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
             // 
-            // dgvList
+            // dgvShift
             // 
-            this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvShift.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList.Location = new System.Drawing.Point(1, 97);
-            this.dgvList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1440, 470);
-            this.dgvList.TabIndex = 63;
+            this.dgvShift.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShift.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShift.GridColor = System.Drawing.Color.DimGray;
+            this.dgvShift.Location = new System.Drawing.Point(1, 97);
+            this.dgvShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvShift.Name = "dgvShift";
+            this.dgvShift.RowTemplate.Height = 23;
+            this.dgvShift.Size = new System.Drawing.Size(1440, 470);
+            this.dgvShift.TabIndex = 63;
             // 
             // pictureBox1
             // 
@@ -174,51 +212,13 @@
             this.btnExcel.Text = "엑셀";
             this.btnExcel.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(310, 10);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 21);
-            this.dateTimePicker1.TabIndex = 26;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.dateTimePicker2.Location = new System.Drawing.Point(89, 10);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(168, 21);
-            this.dateTimePicker2.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.label2.Location = new System.Drawing.Point(280, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "~";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.label3.Location = new System.Drawing.Point(34, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "적용일자";
-            // 
             // frmShiftSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1442, 568);
             this.Controls.Add(this.pnlSelect);
-            this.Controls.Add(this.dgvList);
+            this.Controls.Add(this.dgvShift);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcel);
@@ -226,9 +226,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmShiftSchedule";
             this.Text = "SHIFT스케줄관리";
+            this.Load += new System.EventHandler(this.frmShiftSchedule_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -244,7 +245,7 @@
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Button btnInquiry;
-        protected System.Windows.Forms.DataGridView dgvList;
+        protected System.Windows.Forms.DataGridView dgvShift;
         private System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.Button btnExcel;

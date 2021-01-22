@@ -42,20 +42,6 @@ namespace MESForm
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            // 
-            // label2
-            // 
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.Text = "나이";
-            // 
-            // label1
-            // 
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.Text = "이름";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.newDataGridViewControl1);

@@ -33,6 +33,10 @@ namespace MESForm
             this.dgvFacilityDetail = new MESForm.CustomControls.custDataGridViewControl();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -50,38 +54,36 @@ namespace MESForm
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(578, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(612, 3);
             // 
             // btnExcel
             // 
-            this.btnExcel.Location = new System.Drawing.Point(416, 3);
+            this.btnExcel.Location = new System.Drawing.Point(450, 3);
             // 
             // btnDel2
             // 
-            this.btnDel2.Location = new System.Drawing.Point(497, 3);
+            this.btnDel2.Location = new System.Drawing.Point(531, 3);
             // 
             // btnMod2
             // 
-            this.btnMod2.Location = new System.Drawing.Point(335, 3);
+            this.btnMod2.Location = new System.Drawing.Point(369, 3);
             // 
             // btnReg2
             // 
-            this.btnReg2.Location = new System.Drawing.Point(254, 3);
+            this.btnReg2.Location = new System.Drawing.Point(288, 3);
             this.btnReg2.Click += new System.EventHandler(this.btnReg2_Click);
             // 
-            // comboBox1
+            // pnlSelect
             // 
-            this.comboBox1.Size = new System.Drawing.Size(127, 21);
-            // 
-            // label2
-            // 
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.Text = "설비군명";
-            // 
-            // label1
-            // 
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.Text = "설비군코드";
+            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.label2);
+            this.pnlSelect.Controls.Add(this.txtCompanyCode);
+            this.pnlSelect.Controls.Add(this.label18);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label18, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyCode, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.comboBox1, 0);
             // 
             // btnInquiry
             // 
@@ -89,15 +91,15 @@ namespace MESForm
             // 
             // btnDel1
             // 
-            this.btnDel1.Location = new System.Drawing.Point(253, 3);
+            this.btnDel1.Location = new System.Drawing.Point(219, 3);
             // 
             // btnMod1
             // 
-            this.btnMod1.Location = new System.Drawing.Point(174, 3);
+            this.btnMod1.Location = new System.Drawing.Point(140, 3);
             // 
             // btnReg1
             // 
-            this.btnReg1.Location = new System.Drawing.Point(93, 3);
+            this.btnReg1.Location = new System.Drawing.Point(59, 3);
             this.btnReg1.Click += new System.EventHandler(this.btnReg1_Click);
             // 
             // splitContainer1
@@ -122,29 +124,31 @@ namespace MESForm
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Size = new System.Drawing.Size(1000, 729);
-            this.splitContainer2.SplitterDistance = 331;
+            this.splitContainer2.SplitterDistance = 297;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvFacility);
-            this.panel1.Size = new System.Drawing.Size(316, 676);
+            this.panel1.Size = new System.Drawing.Size(282, 676);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvFacilityDetail);
-            this.panel2.Size = new System.Drawing.Size(650, 676);
+            this.panel2.Size = new System.Drawing.Size(684, 676);
             // 
             // dgvFacility
             // 
+            this.dgvFacility.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFacility.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacility.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFacility.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFacility.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFacility.Location = new System.Drawing.Point(0, 0);
             this.dgvFacility.Name = "dgvFacility";
             this.dgvFacility.RowTemplate.Height = 23;
-            this.dgvFacility.Size = new System.Drawing.Size(316, 676);
+            this.dgvFacility.Size = new System.Drawing.Size(282, 676);
             this.dgvFacility.TabIndex = 4;
             // 
             // dgvFacilityDetail
@@ -157,7 +161,7 @@ namespace MESForm
             this.dgvFacilityDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvFacilityDetail.Name = "dgvFacilityDetail";
             this.dgvFacilityDetail.RowTemplate.Height = 23;
-            this.dgvFacilityDetail.Size = new System.Drawing.Size(650, 676);
+            this.dgvFacilityDetail.Size = new System.Drawing.Size(684, 676);
             this.dgvFacilityDetail.TabIndex = 45;
             // 
             // label4
@@ -179,6 +183,41 @@ namespace MESForm
             this.label3.Size = new System.Drawing.Size(31, 14);
             this.label3.TabIndex = 36;
             this.label3.Text = "설비";
+            // 
+            // txtCompanyCode
+            // 
+            this.txtCompanyCode.Location = new System.Drawing.Point(75, 9);
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(127, 21);
+            this.txtCompanyCode.TabIndex = 8;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Location = new System.Drawing.Point(13, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 13);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "설비군코드";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(337, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(275, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "설비군명";
             // 
             // frmFacility
             // 
@@ -212,5 +251,9 @@ namespace MESForm
         private CustomControls.custDataGridViewControl dgvFacilityDetail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCompanyCode;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

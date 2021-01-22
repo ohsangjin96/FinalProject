@@ -229,6 +229,7 @@ namespace MESForm.Han
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -253,6 +254,7 @@ namespace MESForm.Han
             this.button3.Tag = "-창고재고이력조회팝업";
             this.button3.Text = "이력조회";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -285,7 +287,7 @@ namespace MESForm.Han
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCurrentProcess";
-            this.Text = "공정현황";
+            this.Text = "공정재고현황";
             this.Load += new System.EventHandler(this.frmCurrentProcess_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();

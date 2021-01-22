@@ -43,19 +43,20 @@ namespace MESForm.Han
             this.btnInquiry = new System.Windows.Forms.Button();
             this.btnExcel1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.custDataGridViewControl2 = new MESForm.CustomControls.custDataGridViewControl();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnExcel2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
-            this.custDataGridViewControl2 = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlSelect.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -64,7 +65,6 @@ namespace MESForm.Han
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,9 +212,23 @@ namespace MESForm.Han
             this.panel1.Size = new System.Drawing.Size(1226, 260);
             this.panel1.TabIndex = 8;
             // 
+            // custDataGridViewControl1
+            // 
+            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
+            this.custDataGridViewControl1.RowTemplate.Height = 23;
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 260);
+            this.custDataGridViewControl1.TabIndex = 0;
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -292,6 +306,19 @@ namespace MESForm.Han
             this.panel2.Size = new System.Drawing.Size(1223, 251);
             this.panel2.TabIndex = 9;
             // 
+            // custDataGridViewControl2
+            // 
+            this.custDataGridViewControl2.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custDataGridViewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl2.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl2.Name = "custDataGridViewControl2";
+            this.custDataGridViewControl2.RowTemplate.Height = 23;
+            this.custDataGridViewControl2.Size = new System.Drawing.Size(1223, 251);
+            this.custDataGridViewControl2.TabIndex = 0;
+            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -322,32 +349,6 @@ namespace MESForm.Han
             this.label5.TabIndex = 10;
             this.label5.Text = "자재불출";
             // 
-            // custDataGridViewControl1
-            // 
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 260);
-            this.custDataGridViewControl1.TabIndex = 0;
-            // 
-            // custDataGridViewControl2
-            // 
-            this.custDataGridViewControl2.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.custDataGridViewControl2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl2.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl2.Name = "custDataGridViewControl2";
-            this.custDataGridViewControl2.RowTemplate.Height = 23;
-            this.custDataGridViewControl2.Size = new System.Drawing.Size(1223, 251);
-            this.custDataGridViewControl2.TabIndex = 0;
-            // 
             // frmMC_Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -364,6 +365,7 @@ namespace MESForm.Han
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -374,7 +376,6 @@ namespace MESForm.Han
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl2)).EndInit();
             this.ResumeLayout(false);
 

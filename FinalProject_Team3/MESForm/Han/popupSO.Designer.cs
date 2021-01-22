@@ -62,6 +62,7 @@ namespace MESForm.Han
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@ namespace MESForm.Han
             this.btnCancel.TabIndex = 44;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -232,6 +234,7 @@ namespace MESForm.Han
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -405,6 +408,21 @@ namespace MESForm.Han
             this.label2.TabIndex = 63;
             this.label2.Text = "고객WO";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnClose.Location = new System.Drawing.Point(503, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(40, 32);
+            this.btnClose.TabIndex = 106;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // popupSO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -461,5 +479,6 @@ namespace MESForm.Han
         protected System.Windows.Forms.Label label13;
         protected System.Windows.Forms.ComboBox comboBox7;
         protected System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnClose;
     }
 }
