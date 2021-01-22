@@ -281,7 +281,7 @@ namespace MESForm
         private void button9_Click(object sender, EventArgs e)//bom
         {
             
-            OpenCreateForm<frmBOM1>();
+           
         }
 
         private void button8_Click(object sender, EventArgs e)//자재단가
