@@ -1,7 +1,7 @@
 ﻿
 namespace MESForm.Han
 {
-    partial class frmMC_Request
+    partial class frmMR_Request
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.

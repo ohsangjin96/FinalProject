@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmMC_Request : Form
+    public partial class frmMR_Request : Form
     {
-        public frmMC_Request()
+        public frmMR_Request()
         {
             InitializeComponent();
         }

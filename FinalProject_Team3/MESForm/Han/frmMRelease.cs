@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmMConfine : Form
+    public partial class frmMRelease : Form
     {
-        public frmMConfine()
+        public frmMRelease()
         {
             InitializeComponent();
         }
