@@ -14,15 +14,15 @@ using MESForm.Services;
 
 namespace MESForm
 {
-    public partial class frmLoginPopUp : Form
+    public partial class PopUpLogin : Form
     {
         public LoginVO Info { get; set; }
-        public frmLoginPopUp()
+        public PopUpLogin()
         {
             InitializeComponent();
         }
 
-       
+
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
@@ -39,37 +39,45 @@ namespace MESForm
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //유효성 체크
-            if (string.IsNullOrEmpty(txtID.Text)&&string.IsNullOrEmpty(txtPwd.Text))
+            if (string.IsNullOrEmpty(txtID.Text) && string.IsNullOrEmpty(txtPwd.Text))
             {
                 MessageBox.Show("아이디와 비밀번호를 입력하여 주십시오.");
                 return;
             }
-            LoginService service = new LoginService();
-            List<LoginVO> Login = service.LoginInfo(txtID.Text, txtPwd.Text);
+            //vo 객채 생성
+            //LoginVO vo = new LoginVO();
+            //vo.User_ID = txtID.Text;
+            //vo.User_Pwd = txtPwd.Text;
 
-            if (Login != null) //로그인 정보 일치
+
+
+            else //로그인 정보 일치
             {
-                foreach (var item in Login)
+                LoginService service = new LoginService();
+                List<LoginVO> Login = service.LoginInfo(txtID.Text, txtPwd.Text);
+                if (Login != null)
                 {
-                    Info = new LoginVO();
-                    Info.User_ID = item.User_ID;
-                    Info.User_Pwd = item.User_Pwd;
-                    Info.User_Name = item.User_Name;
-                    Info.User_Email = item.User_Email;
-                    Info.User_Dept = item.User_Dept;
+                    foreach (var item in Login)
+                    {
+                        Info = new LoginVO();
+                        Info.User_ID = item.User_ID;
+                        Info.User_Pwd = item.User_Pwd;
+                        Info.User_Name = item.User_Name;
+                        Info.User_Email = item.User_Email;
+                        Info.User_Dept = item.User_Dept;
+                    }
+                    MessageBox.Show($"{Info.User_Name}님 환영합니다.");
+
+                    frmMain frm = new frmMain();
+                    frm.Show();
+                    this.Hide();
                 }
-                MessageBox.Show($"{Info.User_Name}님 환영합니다.");
-
-                frmMain frm = new frmMain();
-                frm.Show();
-                this.Hide();
+                else
+                {
+                    //로그인 정보 불일치
+                    MessageBox.Show("일치하는 회원 정보가 없습니다.");
+                }
             }
-            else
-            {
-                //로그인 정보 불일치
-                MessageBox.Show("일치하는 회원 정보가 없습니다.");
-            }
-
 
         }
     }

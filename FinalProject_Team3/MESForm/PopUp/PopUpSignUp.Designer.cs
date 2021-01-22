@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnIdCheck = new System.Windows.Forms.Button();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.txtPwdCheck = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboDept = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(197, 375);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -65,77 +66,78 @@
             // 
             // pnl
             // 
-            this.pnl.Controls.Add(this.button1);
-            this.pnl.Controls.Add(this.textBox4);
-            this.pnl.Controls.Add(this.textBox3);
-            this.pnl.Controls.Add(this.textBox2);
-            this.pnl.Controls.Add(this.textBox1);
+            this.pnl.Controls.Add(this.btnIdCheck);
+            this.pnl.Controls.Add(this.txtPwd);
+            this.pnl.Controls.Add(this.txtPwdCheck);
+            this.pnl.Controls.Add(this.txtEmail);
+            this.pnl.Controls.Add(this.txtName);
             this.pnl.Controls.Add(this.label5);
             this.pnl.Controls.Add(this.label4);
             this.pnl.Controls.Add(this.label3);
             this.pnl.Controls.Add(this.label2);
-            this.pnl.Controls.Add(this.comboBox1);
+            this.pnl.Controls.Add(this.cboDept);
             this.pnl.Controls.Add(this.label37);
             this.pnl.Controls.Add(this.label40);
-            this.pnl.Controls.Add(this.textBox26);
+            this.pnl.Controls.Add(this.txtID);
             this.pnl.Size = new System.Drawing.Size(364, 323);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(348, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button1
+            // btnIdCheck
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(273, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 22);
-            this.button1.TabIndex = 203;
-            this.button1.Text = "중복확인";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnIdCheck.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnIdCheck.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnIdCheck.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnIdCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIdCheck.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.btnIdCheck.ForeColor = System.Drawing.Color.White;
+            this.btnIdCheck.Location = new System.Drawing.Point(273, 15);
+            this.btnIdCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnIdCheck.Name = "btnIdCheck";
+            this.btnIdCheck.Size = new System.Drawing.Size(66, 22);
+            this.btnIdCheck.TabIndex = 203;
+            this.btnIdCheck.Text = "중복확인";
+            this.btnIdCheck.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // txtPwd
             // 
-            this.textBox4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox4.Location = new System.Drawing.Point(129, 69);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 22);
-            this.textBox4.TabIndex = 202;
+            this.txtPwd.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtPwd.Location = new System.Drawing.Point(129, 69);
+            this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(138, 22);
+            this.txtPwd.TabIndex = 202;
             // 
-            // textBox3
+            // txtPwdCheck
             // 
-            this.textBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox3.Location = new System.Drawing.Point(129, 123);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 22);
-            this.textBox3.TabIndex = 201;
+            this.txtPwdCheck.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtPwdCheck.Location = new System.Drawing.Point(129, 123);
+            this.txtPwdCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPwdCheck.Name = "txtPwdCheck";
+            this.txtPwdCheck.Size = new System.Drawing.Size(138, 22);
+            this.txtPwdCheck.TabIndex = 201;
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox2.Location = new System.Drawing.Point(129, 231);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(210, 22);
-            this.textBox2.TabIndex = 200;
+            this.txtEmail.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtEmail.Location = new System.Drawing.Point(129, 231);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(210, 22);
+            this.txtEmail.TabIndex = 200;
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox1.Location = new System.Drawing.Point(129, 177);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 22);
-            this.textBox1.TabIndex = 199;
+            this.txtName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtName.Location = new System.Drawing.Point(129, 177);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(138, 22);
+            this.txtName.TabIndex = 199;
             // 
             // label5
             // 
@@ -181,15 +183,15 @@
             this.label2.TabIndex = 195;
             this.label2.Text = "부서";
             // 
-            // comboBox1
+            // cboDept
             // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(129, 286);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 22);
-            this.comboBox1.TabIndex = 194;
+            this.cboDept.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboDept.FormattingEnabled = true;
+            this.cboDept.Location = new System.Drawing.Point(129, 286);
+            this.cboDept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboDept.Name = "cboDept";
+            this.cboDept.Size = new System.Drawing.Size(138, 22);
+            this.cboDept.TabIndex = 194;
             // 
             // label37
             // 
@@ -213,14 +215,14 @@
             this.label40.TabIndex = 192;
             this.label40.Text = "아이디";
             // 
-            // textBox26
+            // txtID
             // 
-            this.textBox26.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox26.Location = new System.Drawing.Point(129, 15);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(138, 22);
-            this.textBox26.TabIndex = 191;
+            this.txtID.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtID.Location = new System.Drawing.Point(129, 15);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(138, 22);
+            this.txtID.TabIndex = 191;
             // 
             // PopUpSignUp
             // 
@@ -238,18 +240,18 @@
 
         #endregion
 
-        protected System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        protected System.Windows.Forms.Button btnIdCheck;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.TextBox txtPwdCheck;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtName;
         protected System.Windows.Forms.Label label5;
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.Label label3;
         protected System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboDept;
         protected System.Windows.Forms.Label label37;
         protected System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

@@ -101,6 +101,7 @@
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(357, 393);
+            this.btnCancel.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // btnSave
             // 
@@ -171,6 +172,7 @@
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(668, 0);
+            this.btnClose.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // comboBox8
             // 
@@ -729,6 +731,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(708, 441);
             this.Name = "PopUpItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
