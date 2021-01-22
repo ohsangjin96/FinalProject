@@ -118,12 +118,11 @@
     <Compile Include="Form\Yu\frmBOR.Designer.cs">
       <DependentUpon>frmBOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBOM.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Form\Yu\frmCompany.cs" />
+    <Compile Include="Form\Yu\frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBOM.Designer.cs">
-      <DependentUpon>frmBOM.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Form\Yu\frmFacility.cs" />
     <Compile Include="frmBOR.cs" />
     <Compile Include="Form\Yu\frmFacility.Designer.cs">
       <DependentUpon>frmFacility.cs</DependentUpon>
@@ -140,29 +139,11 @@
     <Compile Include="frmAuthority.Designer.cs">
       <DependentUpon>frmAuthority.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBOM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBOM.Designer.cs">
-      <DependentUpon>frmBOM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmItem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmItem.Designer.cs">
-      <DependentUpon>FrmItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmItem1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmItem1.Designer.cs">
       <DependentUpon>frmItem1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMaterialCost.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMaterialCost.Designer.cs">
-      <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMaterialCost1.cs">
       <SubType>Form</SubType>
@@ -176,29 +157,11 @@
     <Compile Include="frmProductPlan.Designer.cs">
       <DependentUpon>frmProductPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSaleCost.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSaleCost.Designer.cs">
-      <DependentUpon>FrmSaleCost.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmShiftInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmShiftInfo.Designer.cs">
-      <DependentUpon>FrmShiftInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmShiftInfo1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmShiftInfo1.Designer.cs">
       <DependentUpon>frmShiftInfo1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmShiftSchedule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmShiftSchedule.Designer.cs">
-      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmCurrentOrder.cs">
       <SubType>Form</SubType>
@@ -540,6 +503,7 @@
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
+    <Compile Include="Utils\ExcelExportImport.cs" />
     <Compile Include="WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -567,11 +531,11 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Yu\frmBOR.resx">
+      <DependentUpon>frmBOR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAuthority.resx">
       <DependentUpon>frmAuthority.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBOM.resx">
-      <DependentUpon>frmBOM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBOR.resx">
       <DependentUpon>frmBOR.cs</DependentUpon>
@@ -585,8 +549,8 @@
     <EmbeddedResource Include="Form\Yu\frmFactory.resx">
       <DependentUpon>frmFactory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmItem.resx">
-      <DependentUpon>frmItem.cs</DependentUpon>
+    <EmbeddedResource Include="frmItem1.resx">
+      <DependentUpon>frmItem1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialCost1.resx">
       <DependentUpon>frmMaterialCost1.cs</DependentUpon>
