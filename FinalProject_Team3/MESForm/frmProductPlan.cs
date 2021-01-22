@@ -14,5 +14,15 @@ namespace MESForm
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlSelect_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
