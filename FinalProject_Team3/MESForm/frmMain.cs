@@ -247,31 +247,31 @@ namespace MESForm
         private void button10_Click(object sender, EventArgs e)//품목
         {
 
-            OpenCreateForm<frmItem>();
+            OpenCreateForm<frmItem1>();
         }
         private void button9_Click(object sender, EventArgs e)//bom
         {
             
-            OpenCreateForm<frmBOM>();
+            OpenCreateForm<frmBOM1>();
         }
 
         private void button8_Click(object sender, EventArgs e)//자재단가
         {
-            OpenCreateForm<frmMaterialCost>();
+            OpenCreateForm<frmMaterialCost1>();
         }
 
         private void button7_Click(object sender, EventArgs e)//영업단가
         {
            
-            OpenCreateForm<frmSaleCost>();
+            OpenCreateForm<frmSaleCost1>();
         }
         private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
         {
-            OpenCreateForm<frmShiftInfo>();
+            OpenCreateForm<frmShiftInfo1>();
         }
         private void btnShiftSchedule_Click(object sender, EventArgs e)//shift스케줄관리
         {
-            OpenCreateForm<frmShiftSchedule>();
+            OpenCreateForm<frmShiftSchedule1>();
         }
 
         #region 수주/계획관리
