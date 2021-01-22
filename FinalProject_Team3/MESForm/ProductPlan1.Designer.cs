@@ -1,7 +1,7 @@
 ﻿
 namespace MESForm
 {
-    partial class ProductPlan
+    partial class ProductPlan1
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
