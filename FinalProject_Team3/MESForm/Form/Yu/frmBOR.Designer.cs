@@ -41,10 +41,6 @@ namespace MESForm
             this.label10 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -53,41 +49,37 @@ namespace MESForm
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.comboBox3);
-            this.pnlSelect.Controls.Add(this.label12);
-            this.pnlSelect.Controls.Add(this.comboBox4);
-            this.pnlSelect.Controls.Add(this.label13);
             this.pnlSelect.Controls.Add(this.textBox9);
             this.pnlSelect.Controls.Add(this.label11);
             this.pnlSelect.Controls.Add(this.textBox8);
             this.pnlSelect.Controls.Add(this.label10);
             this.pnlSelect.Controls.Add(this.textBox7);
             this.pnlSelect.Controls.Add(this.label9);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
             this.pnlSelect.Controls.SetChildIndex(this.label9, 0);
             this.pnlSelect.Controls.SetChildIndex(this.textBox7, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label10, 0);
             this.pnlSelect.Controls.SetChildIndex(this.textBox8, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label11, 0);
             this.pnlSelect.Controls.SetChildIndex(this.textBox9, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.label13, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox4, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.label12, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox3, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 163);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 101);
             this.lblFormName1.Size = new System.Drawing.Size(47, 21);
             this.lblFormName1.Text = "BOR";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvBOR);
+            this.pnlItem.Location = new System.Drawing.Point(12, 141);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 546);
             // 
             // panel1
             // 
@@ -96,6 +88,7 @@ namespace MESForm
             this.panel1.Controls.Add(this.custButtonControl2);
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Location = new System.Drawing.Point(670, 94);
             // 
             // dgvBOR
             // 
@@ -106,7 +99,7 @@ namespace MESForm
             this.dgvBOR.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvBOR.Location = new System.Drawing.Point(0, 0);
             this.dgvBOR.Name = "dgvBOR";
-            this.dgvBOR.Size = new System.Drawing.Size(1226, 484);
+            this.dgvBOR.Size = new System.Drawing.Size(1226, 546);
             this.dgvBOR.TabIndex = 0;
             // 
             // btnReg
@@ -192,7 +185,7 @@ namespace MESForm
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(154, 37);
+            this.textBox7.Location = new System.Drawing.Point(130, 27);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(191, 22);
             this.textBox7.TabIndex = 34;
@@ -201,15 +194,15 @@ namespace MESForm
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(51, 40);
+            this.label9.Location = new System.Drawing.Point(30, 30);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 14);
+            this.label9.Size = new System.Drawing.Size(31, 14);
             this.label9.TabIndex = 33;
-            this.label9.Text = "label9";
+            this.label9.Text = "품목";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(569, 37);
+            this.textBox8.Location = new System.Drawing.Point(545, 27);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(191, 22);
             this.textBox8.TabIndex = 36;
@@ -218,15 +211,15 @@ namespace MESForm
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(466, 40);
+            this.label10.Location = new System.Drawing.Point(445, 30);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 14);
+            this.label10.Size = new System.Drawing.Size(31, 14);
             this.label10.TabIndex = 35;
-            this.label10.Text = "label10";
+            this.label10.Text = "공정";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(984, 37);
+            this.textBox9.Location = new System.Drawing.Point(960, 27);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(191, 22);
             this.textBox9.TabIndex = 38;
@@ -235,47 +228,11 @@ namespace MESForm
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(881, 40);
+            this.label11.Location = new System.Drawing.Point(860, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 14);
+            this.label11.Size = new System.Drawing.Size(31, 14);
             this.label11.TabIndex = 37;
-            this.label11.Text = "label11";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(569, 78);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(191, 22);
-            this.comboBox3.TabIndex = 42;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(466, 81);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 14);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "label12";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(154, 78);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(191, 22);
-            this.comboBox4.TabIndex = 40;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.Location = new System.Drawing.Point(51, 81);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 14);
-            this.label13.TabIndex = 39;
-            this.label13.Text = "label13";
+            this.label11.Text = "설비";
             // 
             // frmBOR
             // 
@@ -302,10 +259,6 @@ namespace MESForm
         private CustomControls.custButtonControl custButtonControl2;
         private CustomControls.custButtonControl custButtonControl1;
         private CustomControls.custButtonControl btnRefresh;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox8;

@@ -35,23 +35,45 @@ namespace MESForm
             this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
+            this.lblFactoryGrade = new System.Windows.Forms.Label();
+            this.txtFactoryCode = new System.Windows.Forms.TextBox();
+            this.lblFactoryCode = new System.Windows.Forms.Label();
+            this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlSelect
+            // 
+            this.pnlSelect.Controls.Add(this.cboFactoryGrade);
+            this.pnlSelect.Controls.Add(this.lblFactoryGrade);
+            this.pnlSelect.Controls.Add(this.txtFactoryCode);
+            this.pnlSelect.Controls.Add(this.lblFactoryCode);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtFactoryCode, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.lblFactoryGrade, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboFactoryGrade, 0);
+            // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 163);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 101);
+            this.lblFormName1.Size = new System.Drawing.Size(78, 21);
+            this.lblFormName1.Text = "공장관리";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvFactory);
+            this.pnlItem.Location = new System.Drawing.Point(12, 141);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 546);
             // 
             // panel1
             // 
@@ -60,6 +82,7 @@ namespace MESForm
             this.panel1.Controls.Add(this.custButtonControl2);
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Location = new System.Drawing.Point(670, 94);
             // 
             // dgvFactory
             // 
@@ -70,7 +93,7 @@ namespace MESForm
             this.dgvFactory.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFactory.Location = new System.Drawing.Point(0, 0);
             this.dgvFactory.Name = "dgvFactory";
-            this.dgvFactory.Size = new System.Drawing.Size(1226, 484);
+            this.dgvFactory.Size = new System.Drawing.Size(1226, 546);
             this.dgvFactory.TabIndex = 0;
             // 
             // btnReg
@@ -154,6 +177,41 @@ namespace MESForm
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
+            // lblFactoryGrade
+            // 
+            this.lblFactoryGrade.AutoSize = true;
+            this.lblFactoryGrade.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFactoryGrade.Location = new System.Drawing.Point(445, 30);
+            this.lblFactoryGrade.Name = "lblFactoryGrade";
+            this.lblFactoryGrade.Size = new System.Drawing.Size(43, 14);
+            this.lblFactoryGrade.TabIndex = 25;
+            this.lblFactoryGrade.Text = "시설군";
+            // 
+            // txtFactoryCode
+            // 
+            this.txtFactoryCode.Location = new System.Drawing.Point(130, 27);
+            this.txtFactoryCode.Name = "txtFactoryCode";
+            this.txtFactoryCode.Size = new System.Drawing.Size(191, 22);
+            this.txtFactoryCode.TabIndex = 24;
+            // 
+            // lblFactoryCode
+            // 
+            this.lblFactoryCode.AutoSize = true;
+            this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFactoryCode.Location = new System.Drawing.Point(30, 30);
+            this.lblFactoryCode.Name = "lblFactoryCode";
+            this.lblFactoryCode.Size = new System.Drawing.Size(55, 14);
+            this.lblFactoryCode.TabIndex = 23;
+            this.lblFactoryCode.Text = "시설코드";
+            // 
+            // cboFactoryGrade
+            // 
+            this.cboFactoryGrade.FormattingEnabled = true;
+            this.cboFactoryGrade.Location = new System.Drawing.Point(545, 27);
+            this.cboFactoryGrade.Name = "cboFactoryGrade";
+            this.cboFactoryGrade.Size = new System.Drawing.Size(191, 22);
+            this.cboFactoryGrade.TabIndex = 29;
+            // 
             // frmFactory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -162,6 +220,7 @@ namespace MESForm
             this.Text = "공장관리";
             this.Load += new System.EventHandler(this.frmFactory_Load);
             this.pnlSelect.ResumeLayout(false);
+            this.pnlSelect.PerformLayout();
             this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).EndInit();
@@ -178,5 +237,9 @@ namespace MESForm
         private CustomControls.custButtonControl custButtonControl2;
         private CustomControls.custButtonControl custButtonControl1;
         private CustomControls.custButtonControl btnRefresh;
+        private System.Windows.Forms.Label lblFactoryGrade;
+        private System.Windows.Forms.TextBox txtFactoryCode;
+        private System.Windows.Forms.Label lblFactoryCode;
+        private System.Windows.Forms.ComboBox cboFactoryGrade;
     }
 }

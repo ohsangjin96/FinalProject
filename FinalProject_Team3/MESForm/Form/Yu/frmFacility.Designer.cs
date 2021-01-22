@@ -51,13 +51,20 @@ namespace MESForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacilityDetail)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlSelect
+            // 
+            this.pnlSelect.Location = new System.Drawing.Point(12, 107);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 12);
+            this.pnlSelect.Visible = false;
+            // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnInquiry.Location = new System.Drawing.Point(1154, -34);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 163);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 19);
             this.lblFormName1.Text = "설비군";
             // 
             // pnlItem
@@ -65,7 +72,8 @@ namespace MESForm
             this.pnlItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlItem.Controls.Add(this.dgvFacility);
-            this.pnlItem.Size = new System.Drawing.Size(410, 484);
+            this.pnlItem.Location = new System.Drawing.Point(12, 59);
+            this.pnlItem.Size = new System.Drawing.Size(410, 628);
             // 
             // panel1
             // 
@@ -74,12 +82,13 @@ namespace MESForm
             this.panel1.Controls.Add(this.custButtonControl2);
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnRefresh);
+            this.panel1.Location = new System.Drawing.Point(670, 12);
             // 
             // lblFormName2
             // 
             this.lblFormName2.AutoSize = true;
             this.lblFormName2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFormName2.Location = new System.Drawing.Point(433, 163);
+            this.lblFormName2.Location = new System.Drawing.Point(433, 19);
             this.lblFormName2.Name = "lblFormName2";
             this.lblFormName2.Size = new System.Drawing.Size(44, 21);
             this.lblFormName2.TabIndex = 21;
@@ -171,7 +180,7 @@ namespace MESForm
             this.panel2.Controls.Add(this.btnReg1);
             this.panel2.Controls.Add(this.custButtonControl5);
             this.panel2.Controls.Add(this.custButtonControl6);
-            this.panel2.Location = new System.Drawing.Point(142, 156);
+            this.panel2.Location = new System.Drawing.Point(142, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 41);
             this.panel2.TabIndex = 22;
@@ -234,7 +243,7 @@ namespace MESForm
             this.dgvFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFacility.Location = new System.Drawing.Point(0, 0);
             this.dgvFacility.Name = "dgvFacility";
-            this.dgvFacility.Size = new System.Drawing.Size(410, 484);
+            this.dgvFacility.Size = new System.Drawing.Size(410, 628);
             this.dgvFacility.TabIndex = 0;
             // 
             // pnlItem2
@@ -243,9 +252,9 @@ namespace MESForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlItem2.Controls.Add(this.dgvFacilityDetail);
-            this.pnlItem2.Location = new System.Drawing.Point(437, 203);
+            this.pnlItem2.Location = new System.Drawing.Point(437, 59);
             this.pnlItem2.Name = "pnlItem2";
-            this.pnlItem2.Size = new System.Drawing.Size(801, 484);
+            this.pnlItem2.Size = new System.Drawing.Size(801, 628);
             this.pnlItem2.TabIndex = 20;
             // 
             // dgvFacilityDetail
@@ -258,7 +267,7 @@ namespace MESForm
             this.dgvFacilityDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvFacilityDetail.Name = "dgvFacilityDetail";
             this.dgvFacilityDetail.RowTemplate.Height = 23;
-            this.dgvFacilityDetail.Size = new System.Drawing.Size(801, 484);
+            this.dgvFacilityDetail.Size = new System.Drawing.Size(801, 628);
             this.dgvFacilityDetail.TabIndex = 0;
             // 
             // frmFacility
@@ -271,12 +280,12 @@ namespace MESForm
             this.Name = "frmFacility";
             this.Text = "설비관리";
             this.Load += new System.EventHandler(this.frmFacility_Load);
+            this.Controls.SetChildIndex(this.pnlSelect, 0);
             this.Controls.SetChildIndex(this.pnlItem2, 0);
             this.Controls.SetChildIndex(this.lblFormName2, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.pnlItem, 0);
-            this.Controls.SetChildIndex(this.pnlSelect, 0);
             this.Controls.SetChildIndex(this.lblFormName1, 0);
             this.pnlSelect.ResumeLayout(false);
             this.pnlItem.ResumeLayout(false);
