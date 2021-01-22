@@ -230,7 +230,7 @@ namespace MESForm
 
         private void btnCompany_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmCompany>();
+            OpenCreateForm<frmCompany2>();
         }
 
         private void btnBOR_Click(object sender, EventArgs e)

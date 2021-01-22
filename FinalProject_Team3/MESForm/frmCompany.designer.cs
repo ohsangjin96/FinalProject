@@ -31,7 +31,7 @@ namespace MESForm
         {
             this.label18 = new System.Windows.Forms.Label();
             this.txtCompanyCode = new System.Windows.Forms.TextBox();
-            this.dgvCompany = new MESForm.CustomControls.custDataGridViewControl();
+            this.dgvCompany2 = new MESForm.CustomControls.custDataGridViewControl();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
@@ -43,12 +43,12 @@ namespace MESForm
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgvCompany);
+            this.panel1.Controls.Add(this.dgvCompany2);
             // 
             // pnlSelect
             // 
@@ -100,16 +100,16 @@ namespace MESForm
             // 
             // dgvCompany
             // 
-            this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompany.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCompany.Location = new System.Drawing.Point(0, 0);
-            this.dgvCompany.Name = "dgvCompany";
-            this.dgvCompany.RowTemplate.Height = 23;
-            this.dgvCompany.Size = new System.Drawing.Size(976, 599);
-            this.dgvCompany.TabIndex = 15;
+            this.dgvCompany2.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCompany2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCompany2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompany2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCompany2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCompany2.Location = new System.Drawing.Point(0, 0);
+            this.dgvCompany2.Name = "dgvCompany";
+            this.dgvCompany2.RowTemplate.Height = 23;
+            this.dgvCompany2.Size = new System.Drawing.Size(976, 599);
+            this.dgvCompany2.TabIndex = 15;
             // 
             // label4
             // 
@@ -171,7 +171,7 @@ namespace MESForm
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompany2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -179,7 +179,7 @@ namespace MESForm
         #endregion
         private System.Windows.Forms.TextBox txtCompanyCode;
         private System.Windows.Forms.Label label18;
-        private CustomControls.custDataGridViewControl dgvCompany;
+        private CustomControls.custDataGridViewControl dgvCompany2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCompanyName;
         private System.Windows.Forms.Label label1;

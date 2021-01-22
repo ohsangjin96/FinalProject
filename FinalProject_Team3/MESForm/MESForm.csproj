@@ -112,6 +112,12 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\Yu\frmCompany2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Yu\frmCompany2.Designer.cs">
+      <DependentUpon>frmCompany2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAuthority.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -480,6 +486,9 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Yu\frmCompany2.resx">
+      <DependentUpon>frmCompany2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAuthority.resx">
       <DependentUpon>frmAuthority.cs</DependentUpon>
     </EmbeddedResource>
@@ -708,5 +717,6 @@
   <ItemGroup>
     <None Include="Resources\close_white.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -43,9 +43,9 @@ namespace MESForm.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.Controls.Add(this.btnInquiry);
-            this.pnlSelect.Location = new System.Drawing.Point(12, 13);
+            this.pnlSelect.Location = new System.Drawing.Point(12, 14);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(976, 137);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 136);
             this.pnlSelect.TabIndex = 16;
             // 
             // btnInquiry
@@ -56,9 +56,9 @@ namespace MESForm.BaseForms
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnInquiry.Location = new System.Drawing.Point(904, 95);
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 90);
             this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(64, 34);
+            this.btnInquiry.Size = new System.Drawing.Size(64, 37);
             this.btnInquiry.TabIndex = 0;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
@@ -67,7 +67,7 @@ namespace MESForm.BaseForms
             // 
             this.lblFormName1.AutoSize = true;
             this.lblFormName1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFormName1.Location = new System.Drawing.Point(12, 170);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 176);
             this.lblFormName1.Name = "lblFormName1";
             this.lblFormName1.Size = new System.Drawing.Size(61, 21);
             this.lblFormName1.TabIndex = 18;
@@ -78,30 +78,30 @@ namespace MESForm.BaseForms
             this.pnlItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlItem.Location = new System.Drawing.Point(12, 200);
+            this.pnlItem.Location = new System.Drawing.Point(12, 203);
             this.pnlItem.Name = "pnlItem";
-            this.pnlItem.Size = new System.Drawing.Size(976, 488);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 484);
             this.pnlItem.TabIndex = 17;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(420, 156);
+            this.panel1.Location = new System.Drawing.Point(670, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 38);
+            this.panel1.Size = new System.Drawing.Size(568, 41);
             this.panel1.TabIndex = 19;
             // 
             // frmBaseLists
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.ClientSize = new System.Drawing.Size(1250, 700);
             this.Controls.Add(this.lblFormName1);
             this.Controls.Add(this.pnlSelect);
             this.Controls.Add(this.pnlItem);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaseLists";
             this.Text = "frmBaseLists2";
