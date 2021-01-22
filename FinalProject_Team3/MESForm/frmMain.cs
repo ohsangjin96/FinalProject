@@ -347,12 +347,12 @@ namespace MESForm
 
         private void btnMC_Request_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<Han.frmMC_Request>();
+            OpenCreateForm<Han.frmMR_Request>();
         }
 
         private void btnMConfine_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<Han.frmMConfine>();
+            OpenCreateForm<Han.frmMRelease>();
         }
         #endregion
 

@@ -208,17 +208,17 @@
     <Compile Include="Han\frmExamine.Designer.cs">
       <DependentUpon>frmExamine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Han\frmMConfine.cs">
+    <Compile Include="Han\frmMRelease.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Han\frmMConfine.Designer.cs">
-      <DependentUpon>frmMConfine.cs</DependentUpon>
+    <Compile Include="Han\frmMRelease.Designer.cs">
+      <DependentUpon>frmMRelease.cs</DependentUpon>
     </Compile>
-    <Compile Include="Han\frmMC_Request.cs">
+    <Compile Include="Han\frmMR_Request.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Han\frmMC_Request.Designer.cs">
-      <DependentUpon>frmMC_Request.cs</DependentUpon>
+    <Compile Include="Han\frmMR_Request.Designer.cs">
+      <DependentUpon>frmMR_Request.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmMT_Plan.cs">
       <SubType>Form</SubType>
@@ -531,11 +531,11 @@
     <EmbeddedResource Include="Han\frmExamine.resx">
       <DependentUpon>frmExamine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Han\frmMConfine.resx">
-      <DependentUpon>frmMConfine.cs</DependentUpon>
+    <EmbeddedResource Include="Han\frmMRelease.resx">
+      <DependentUpon>frmMRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Han\frmMC_Request.resx">
-      <DependentUpon>frmMC_Request.cs</DependentUpon>
+    <EmbeddedResource Include="Han\frmMR_Request.resx">
+      <DependentUpon>frmMR_Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmMT_Plan.resx">
       <DependentUpon>frmMT_Plan.cs</DependentUpon>
