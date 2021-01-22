@@ -1,7 +1,7 @@
 ﻿
 namespace MESForm.PopUp
 {
-    partial class FacilityPopUp
+    partial class PopUpFacility
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
