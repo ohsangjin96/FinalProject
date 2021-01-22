@@ -37,6 +37,11 @@
       <HintPath>..\..\..\..\..\..\Downloads\Microsoft.Office.Interop.Excel (2).dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Users\qkfka\Desktop\구디\파일\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -138,8 +143,7 @@
     <None Include="Resources\mainLogo1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Exit.jpg" />
-    <None Include="Resources\다운로드-_1_.jpg" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

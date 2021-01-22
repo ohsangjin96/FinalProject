@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace MESForm.Han
         public popupP_Plan()
         {
             InitializeComponent();
+        }
+        private void DGVSetting()
+        {
+            CommonUtil.SetInitGridView(custDataGridViewControl1);
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "날짜", "a");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량", "b");
+        }
+
+        private void popupP_Plan_Load(object sender, EventArgs e)
+        {
+            DGVSetting();
         }
     }
 }

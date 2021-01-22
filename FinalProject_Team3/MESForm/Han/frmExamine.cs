@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace MESForm.Han
         public frmExamine()
         {
             InitializeComponent();
+        }
+
+        private void DGVSetting()
+        {
+            CommonUtil.SetInitGridView(custDataGridViewControl1);
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "번호", "a");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "검사일", "b");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "업체명", "c");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "e");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "규격", "f");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "최종결과", "g");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품수량", "h");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "불량수량", "i");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "비고", "j");
+        }
+
+        private void frmExamine_Load(object sender, EventArgs e)
+        {
+            DGVSetting();
         }
     }
 }

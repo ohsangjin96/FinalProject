@@ -30,18 +30,21 @@ namespace MESForm
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCommonCode = new System.Windows.Forms.Button();
+            this.btnAuthority = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlShipment = new System.Windows.Forms.Panel();
             this.btnShipmentManager = new System.Windows.Forms.Button();
             this.btnShipment = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.pnlProcessRegister = new System.Windows.Forms.Panel();
             this.btnProcessMove = new System.Windows.Forms.Button();
             this.btnProcessRegister = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pnlProcess = new System.Windows.Forms.Panel();
             this.btnCurrentProcess = new System.Windows.Forms.Button();
             this.btnWorkOrder = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlPurchase = new System.Windows.Forms.Panel();
             this.btnMConfine = new System.Windows.Forms.Button();
             this.btnMC_Request = new System.Windows.Forms.Button();
             this.btnCurrentSR = new System.Windows.Forms.Button();
@@ -53,47 +56,53 @@ namespace MESForm
             this.btnCurrentOrder = new System.Windows.Forms.Button();
             this.btnROrder = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlOrderProduction = new System.Windows.Forms.Panel();
             this.btnProduction_Plan = new System.Windows.Forms.Button();
             this.btnM_Take_Plan = new System.Windows.Forms.Button();
             this.btnOrderProduction = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnlOrderPlan = new System.Windows.Forms.Panel();
             this.btnDemand = new System.Windows.Forms.Button();
             this.btnPO = new System.Windows.Forms.Button();
             this.btnPOUpload = new System.Windows.Forms.Button();
             this.btnOrderPlan = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlShift = new System.Windows.Forms.Panel();
+            this.btnShiftSchedule = new System.Windows.Forms.Button();
+            this.btnShiftInfo = new System.Windows.Forms.Button();
+            this.btnShift = new System.Windows.Forms.Button();
+            this.pnlSaleCost = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSaleCost = new System.Windows.Forms.Button();
+            this.pnlProduct = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlResource = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.btnCompany = new System.Windows.Forms.Button();
             this.btnFacility = new System.Windows.Forms.Button();
             this.btnFactory = new System.Windows.Forms.Button();
             this.btnResource = new System.Windows.Forms.Button();
             this.custTab = new MESForm.CustomControls.custTabControl();
-            this.label41 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlShipment.SuspendLayout();
+            this.pnlProcessRegister.SuspendLayout();
+            this.pnlProcess.SuspendLayout();
+            this.pnlPurchase.SuspendLayout();
+            this.pnlOrderProduction.SuspendLayout();
+            this.pnlOrderPlan.SuspendLayout();
+            this.pnlShift.SuspendLayout();
+            this.pnlSaleCost.SuspendLayout();
+            this.pnlProduct.SuspendLayout();
+            this.pnlResource.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label41);
+            this.panel1.Controls.Add(this.btnCommonCode);
+            this.panel1.Controls.Add(this.btnAuthority);
             this.panel1.Controls.Add(this.imgLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -101,8 +110,45 @@ namespace MESForm
             this.panel1.Size = new System.Drawing.Size(1101, 95);
             this.panel1.TabIndex = 1;
             // 
+            // btnCommonCode
+            // 
+            this.btnCommonCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCommonCode.BackColor = System.Drawing.Color.Transparent;
+            this.btnCommonCode.FlatAppearance.BorderSize = 0;
+            this.btnCommonCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCommonCode.ForeColor = System.Drawing.Color.White;
+            this.btnCommonCode.Image = global::MESForm.Properties.Resources.CommonCode;
+            this.btnCommonCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCommonCode.Location = new System.Drawing.Point(849, 25);
+            this.btnCommonCode.Name = "btnCommonCode";
+            this.btnCommonCode.Size = new System.Drawing.Size(117, 48);
+            this.btnCommonCode.TabIndex = 2;
+            this.btnCommonCode.Text = "        공통코드";
+            this.btnCommonCode.UseVisualStyleBackColor = false;
+            this.btnCommonCode.Click += new System.EventHandler(this.btnCommonCode_Click);
+            // 
+            // btnAuthority
+            // 
+            this.btnAuthority.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAuthority.BackColor = System.Drawing.Color.Transparent;
+            this.btnAuthority.FlatAppearance.BorderSize = 0;
+            this.btnAuthority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuthority.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAuthority.ForeColor = System.Drawing.Color.White;
+            this.btnAuthority.Image = global::MESForm.Properties.Resources.Authority;
+            this.btnAuthority.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAuthority.Location = new System.Drawing.Point(972, 25);
+            this.btnAuthority.Name = "btnAuthority";
+            this.btnAuthority.Size = new System.Drawing.Size(117, 48);
+            this.btnAuthority.TabIndex = 1;
+            this.btnAuthority.Text = "        권한관리";
+            this.btnAuthority.UseVisualStyleBackColor = false;
+            this.btnAuthority.Click += new System.EventHandler(this.btnAuthority_Click);
+            // 
             // imgLogo
             // 
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgLogo.Image = global::MESForm.Properties.Resources.mainLogo;
             this.imgLogo.Location = new System.Drawing.Point(0, 0);
             this.imgLogo.Name = "imgLogo";
@@ -114,35 +160,49 @@ namespace MESForm
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.Controls.Add(this.btnShipmentManager);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pnlShipment);
             this.panel2.Controls.Add(this.btnShipment);
-            this.panel2.Controls.Add(this.panel10);
+            this.panel2.Controls.Add(this.pnlProcessRegister);
             this.panel2.Controls.Add(this.btnProcessRegister);
-            this.panel2.Controls.Add(this.panel9);
+            this.panel2.Controls.Add(this.pnlProcess);
             this.panel2.Controls.Add(this.btnProcess);
-            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Controls.Add(this.pnlPurchase);
             this.panel2.Controls.Add(this.btnPurchase);
-            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.pnlOrderProduction);
             this.panel2.Controls.Add(this.btnOrderProduction);
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.pnlOrderPlan);
             this.panel2.Controls.Add(this.btnOrderPlan);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.button11);
-            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.pnlShift);
+            this.panel2.Controls.Add(this.btnShift);
+            this.panel2.Controls.Add(this.pnlSaleCost);
+            this.panel2.Controls.Add(this.btnSaleCost);
+            this.panel2.Controls.Add(this.pnlProduct);
             this.panel2.Controls.Add(this.btnProduct);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pnlResource);
             this.panel2.Controls.Add(this.btnResource);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(238, 673);
             this.panel2.TabIndex = 2;
             // 
+            // pnlShipment
+            // 
+            this.pnlShipment.Controls.Add(this.btnShipmentManager);
+            this.pnlShipment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlShipment.Location = new System.Drawing.Point(0, 1639);
+            this.pnlShipment.Name = "pnlShipment";
+            this.pnlShipment.Size = new System.Drawing.Size(221, 43);
+            this.pnlShipment.TabIndex = 18;
+            // 
             // btnShipmentManager
             // 
             this.btnShipmentManager.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShipmentManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShipmentManager.Location = new System.Drawing.Point(0, 1509);
+            this.btnShipmentManager.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnShipmentManager.Location = new System.Drawing.Point(0, 0);
             this.btnShipmentManager.Name = "btnShipmentManager";
             this.btnShipmentManager.Size = new System.Drawing.Size(221, 43);
             this.btnShipmentManager.TabIndex = 17;
@@ -155,26 +215,29 @@ namespace MESForm
             this.btnShipment.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnShipment.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnShipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShipment.Location = new System.Drawing.Point(0, 1466);
+            this.btnShipment.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnShipment.Location = new System.Drawing.Point(0, 1596);
             this.btnShipment.Name = "btnShipment";
             this.btnShipment.Size = new System.Drawing.Size(221, 43);
             this.btnShipment.TabIndex = 16;
             this.btnShipment.Text = "출하관리";
             this.btnShipment.UseVisualStyleBackColor = false;
+            this.btnShipment.Click += new System.EventHandler(this.btnShipment_Click);
             // 
-            // panel10
+            // pnlProcessRegister
             // 
-            this.panel10.Controls.Add(this.btnProcessMove);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 1423);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(221, 43);
-            this.panel10.TabIndex = 15;
+            this.pnlProcessRegister.Controls.Add(this.btnProcessMove);
+            this.pnlProcessRegister.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlProcessRegister.Location = new System.Drawing.Point(0, 1553);
+            this.pnlProcessRegister.Name = "pnlProcessRegister";
+            this.pnlProcessRegister.Size = new System.Drawing.Size(221, 43);
+            this.pnlProcessRegister.TabIndex = 15;
             // 
             // btnProcessMove
             // 
             this.btnProcessMove.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcessMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcessMove.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProcessMove.Location = new System.Drawing.Point(0, 0);
             this.btnProcessMove.Name = "btnProcessMove";
             this.btnProcessMove.Size = new System.Drawing.Size(221, 43);
@@ -188,27 +251,30 @@ namespace MESForm
             this.btnProcessRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnProcessRegister.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcessRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcessRegister.Location = new System.Drawing.Point(0, 1380);
+            this.btnProcessRegister.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProcessRegister.Location = new System.Drawing.Point(0, 1510);
             this.btnProcessRegister.Name = "btnProcessRegister";
             this.btnProcessRegister.Size = new System.Drawing.Size(221, 43);
             this.btnProcessRegister.TabIndex = 10;
             this.btnProcessRegister.Text = "공정등록";
             this.btnProcessRegister.UseVisualStyleBackColor = false;
+            this.btnProcessRegister.Click += new System.EventHandler(this.btnProcessRegister_Click);
             // 
-            // panel9
+            // pnlProcess
             // 
-            this.panel9.Controls.Add(this.btnCurrentProcess);
-            this.panel9.Controls.Add(this.btnWorkOrder);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 1294);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(221, 86);
-            this.panel9.TabIndex = 14;
+            this.pnlProcess.Controls.Add(this.btnCurrentProcess);
+            this.pnlProcess.Controls.Add(this.btnWorkOrder);
+            this.pnlProcess.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlProcess.Location = new System.Drawing.Point(0, 1424);
+            this.pnlProcess.Name = "pnlProcess";
+            this.pnlProcess.Size = new System.Drawing.Size(221, 86);
+            this.pnlProcess.TabIndex = 14;
             // 
             // btnCurrentProcess
             // 
             this.btnCurrentProcess.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCurrentProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCurrentProcess.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCurrentProcess.Location = new System.Drawing.Point(0, 43);
             this.btnCurrentProcess.Name = "btnCurrentProcess";
             this.btnCurrentProcess.Size = new System.Drawing.Size(221, 43);
@@ -221,6 +287,7 @@ namespace MESForm
             // 
             this.btnWorkOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWorkOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkOrder.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWorkOrder.Location = new System.Drawing.Point(0, 0);
             this.btnWorkOrder.Name = "btnWorkOrder";
             this.btnWorkOrder.Size = new System.Drawing.Size(221, 43);
@@ -234,35 +301,38 @@ namespace MESForm
             this.btnProcess.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnProcess.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Location = new System.Drawing.Point(0, 1251);
+            this.btnProcess.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnProcess.Location = new System.Drawing.Point(0, 1381);
             this.btnProcess.Name = "btnProcess";
             this.btnProcess.Size = new System.Drawing.Size(221, 43);
             this.btnProcess.TabIndex = 9;
             this.btnProcess.Text = "공정관리";
             this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
-            // panel8
+            // pnlPurchase
             // 
-            this.panel8.Controls.Add(this.btnMConfine);
-            this.panel8.Controls.Add(this.btnMC_Request);
-            this.panel8.Controls.Add(this.btnCurrentSR);
-            this.panel8.Controls.Add(this.btnCurrentWS);
-            this.panel8.Controls.Add(this.btnCurrentWM);
-            this.panel8.Controls.Add(this.btnWMaterial);
-            this.panel8.Controls.Add(this.btnExamine);
-            this.panel8.Controls.Add(this.btnWStandby);
-            this.panel8.Controls.Add(this.btnCurrentOrder);
-            this.panel8.Controls.Add(this.btnROrder);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 821);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(221, 430);
-            this.panel8.TabIndex = 13;
+            this.pnlPurchase.Controls.Add(this.btnMConfine);
+            this.pnlPurchase.Controls.Add(this.btnMC_Request);
+            this.pnlPurchase.Controls.Add(this.btnCurrentSR);
+            this.pnlPurchase.Controls.Add(this.btnCurrentWS);
+            this.pnlPurchase.Controls.Add(this.btnCurrentWM);
+            this.pnlPurchase.Controls.Add(this.btnWMaterial);
+            this.pnlPurchase.Controls.Add(this.btnExamine);
+            this.pnlPurchase.Controls.Add(this.btnWStandby);
+            this.pnlPurchase.Controls.Add(this.btnCurrentOrder);
+            this.pnlPurchase.Controls.Add(this.btnROrder);
+            this.pnlPurchase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPurchase.Location = new System.Drawing.Point(0, 951);
+            this.pnlPurchase.Name = "pnlPurchase";
+            this.pnlPurchase.Size = new System.Drawing.Size(221, 430);
+            this.pnlPurchase.TabIndex = 13;
             // 
             // btnMConfine
             // 
             this.btnMConfine.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMConfine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMConfine.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMConfine.Location = new System.Drawing.Point(0, 387);
             this.btnMConfine.Name = "btnMConfine";
             this.btnMConfine.Size = new System.Drawing.Size(221, 43);
@@ -275,6 +345,7 @@ namespace MESForm
             // 
             this.btnMC_Request.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMC_Request.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMC_Request.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnMC_Request.Location = new System.Drawing.Point(0, 344);
             this.btnMC_Request.Name = "btnMC_Request";
             this.btnMC_Request.Size = new System.Drawing.Size(221, 43);
@@ -287,6 +358,7 @@ namespace MESForm
             // 
             this.btnCurrentSR.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCurrentSR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCurrentSR.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCurrentSR.Location = new System.Drawing.Point(0, 301);
             this.btnCurrentSR.Name = "btnCurrentSR";
             this.btnCurrentSR.Size = new System.Drawing.Size(221, 43);
@@ -299,6 +371,7 @@ namespace MESForm
             // 
             this.btnCurrentWS.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCurrentWS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCurrentWS.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCurrentWS.Location = new System.Drawing.Point(0, 258);
             this.btnCurrentWS.Name = "btnCurrentWS";
             this.btnCurrentWS.Size = new System.Drawing.Size(221, 43);
@@ -311,6 +384,7 @@ namespace MESForm
             // 
             this.btnCurrentWM.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCurrentWM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCurrentWM.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCurrentWM.Location = new System.Drawing.Point(0, 215);
             this.btnCurrentWM.Name = "btnCurrentWM";
             this.btnCurrentWM.Size = new System.Drawing.Size(221, 43);
@@ -323,6 +397,7 @@ namespace MESForm
             // 
             this.btnWMaterial.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWMaterial.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWMaterial.Location = new System.Drawing.Point(0, 172);
             this.btnWMaterial.Name = "btnWMaterial";
             this.btnWMaterial.Size = new System.Drawing.Size(221, 43);
@@ -335,6 +410,7 @@ namespace MESForm
             // 
             this.btnExamine.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnExamine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExamine.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExamine.Location = new System.Drawing.Point(0, 129);
             this.btnExamine.Name = "btnExamine";
             this.btnExamine.Size = new System.Drawing.Size(221, 43);
@@ -347,6 +423,7 @@ namespace MESForm
             // 
             this.btnWStandby.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnWStandby.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWStandby.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnWStandby.Location = new System.Drawing.Point(0, 86);
             this.btnWStandby.Name = "btnWStandby";
             this.btnWStandby.Size = new System.Drawing.Size(221, 43);
@@ -359,6 +436,7 @@ namespace MESForm
             // 
             this.btnCurrentOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCurrentOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCurrentOrder.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCurrentOrder.Location = new System.Drawing.Point(0, 43);
             this.btnCurrentOrder.Name = "btnCurrentOrder";
             this.btnCurrentOrder.Size = new System.Drawing.Size(221, 43);
@@ -371,6 +449,7 @@ namespace MESForm
             // 
             this.btnROrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnROrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnROrder.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnROrder.Location = new System.Drawing.Point(0, 0);
             this.btnROrder.Name = "btnROrder";
             this.btnROrder.Size = new System.Drawing.Size(221, 43);
@@ -384,27 +463,30 @@ namespace MESForm
             this.btnPurchase.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPurchase.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPurchase.Location = new System.Drawing.Point(0, 778);
+            this.btnPurchase.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPurchase.Location = new System.Drawing.Point(0, 908);
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(221, 43);
             this.btnPurchase.TabIndex = 8;
             this.btnPurchase.Text = "구매관리";
             this.btnPurchase.UseVisualStyleBackColor = false;
+            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             // 
-            // panel7
+            // pnlOrderProduction
             // 
-            this.panel7.Controls.Add(this.btnProduction_Plan);
-            this.panel7.Controls.Add(this.btnM_Take_Plan);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 692);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(221, 86);
-            this.panel7.TabIndex = 12;
+            this.pnlOrderProduction.Controls.Add(this.btnProduction_Plan);
+            this.pnlOrderProduction.Controls.Add(this.btnM_Take_Plan);
+            this.pnlOrderProduction.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOrderProduction.Location = new System.Drawing.Point(0, 822);
+            this.pnlOrderProduction.Name = "pnlOrderProduction";
+            this.pnlOrderProduction.Size = new System.Drawing.Size(221, 86);
+            this.pnlOrderProduction.TabIndex = 12;
             // 
             // btnProduction_Plan
             // 
             this.btnProduction_Plan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProduction_Plan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduction_Plan.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProduction_Plan.Location = new System.Drawing.Point(0, 43);
             this.btnProduction_Plan.Name = "btnProduction_Plan";
             this.btnProduction_Plan.Size = new System.Drawing.Size(221, 43);
@@ -417,6 +499,7 @@ namespace MESForm
             // 
             this.btnM_Take_Plan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnM_Take_Plan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnM_Take_Plan.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnM_Take_Plan.Location = new System.Drawing.Point(0, 0);
             this.btnM_Take_Plan.Name = "btnM_Take_Plan";
             this.btnM_Take_Plan.Size = new System.Drawing.Size(221, 43);
@@ -430,28 +513,31 @@ namespace MESForm
             this.btnOrderProduction.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnOrderProduction.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrderProduction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderProduction.Location = new System.Drawing.Point(0, 649);
+            this.btnOrderProduction.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOrderProduction.Location = new System.Drawing.Point(0, 779);
             this.btnOrderProduction.Name = "btnOrderProduction";
             this.btnOrderProduction.Size = new System.Drawing.Size(221, 43);
             this.btnOrderProduction.TabIndex = 7;
             this.btnOrderProduction.Text = "수주/생산관리";
             this.btnOrderProduction.UseVisualStyleBackColor = false;
+            this.btnOrderProduction.Click += new System.EventHandler(this.btnOrderProduction_Click);
             // 
-            // panel6
+            // pnlOrderPlan
             // 
-            this.panel6.Controls.Add(this.btnDemand);
-            this.panel6.Controls.Add(this.btnPO);
-            this.panel6.Controls.Add(this.btnPOUpload);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 519);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(221, 130);
-            this.panel6.TabIndex = 11;
+            this.pnlOrderPlan.Controls.Add(this.btnDemand);
+            this.pnlOrderPlan.Controls.Add(this.btnPO);
+            this.pnlOrderPlan.Controls.Add(this.btnPOUpload);
+            this.pnlOrderPlan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOrderPlan.Location = new System.Drawing.Point(0, 649);
+            this.pnlOrderPlan.Name = "pnlOrderPlan";
+            this.pnlOrderPlan.Size = new System.Drawing.Size(221, 130);
+            this.pnlOrderPlan.TabIndex = 11;
             // 
             // btnDemand
             // 
             this.btnDemand.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDemand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDemand.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDemand.Location = new System.Drawing.Point(0, 86);
             this.btnDemand.Name = "btnDemand";
             this.btnDemand.Size = new System.Drawing.Size(221, 43);
@@ -464,6 +550,7 @@ namespace MESForm
             // 
             this.btnPO.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPO.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPO.Location = new System.Drawing.Point(0, 43);
             this.btnPO.Name = "btnPO";
             this.btnPO.Size = new System.Drawing.Size(221, 43);
@@ -476,6 +563,7 @@ namespace MESForm
             // 
             this.btnPOUpload.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPOUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPOUpload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPOUpload.Location = new System.Drawing.Point(0, 0);
             this.btnPOUpload.Name = "btnPOUpload";
             this.btnPOUpload.Size = new System.Drawing.Size(221, 43);
@@ -489,27 +577,80 @@ namespace MESForm
             this.btnOrderPlan.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnOrderPlan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrderPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderPlan.Location = new System.Drawing.Point(0, 476);
+            this.btnOrderPlan.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOrderPlan.Location = new System.Drawing.Point(0, 606);
             this.btnOrderPlan.Name = "btnOrderPlan";
             this.btnOrderPlan.Size = new System.Drawing.Size(221, 43);
             this.btnOrderPlan.TabIndex = 6;
             this.btnOrderPlan.Text = "수주/계획관리";
             this.btnOrderPlan.UseVisualStyleBackColor = false;
+            this.btnOrderPlan.Click += new System.EventHandler(this.btnOrderPlan_Click);
             // 
-            // panel5
+            // pnlShift
             // 
-            this.panel5.Controls.Add(this.button7);
-            this.panel5.Controls.Add(this.button8);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 389);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(221, 87);
-            this.panel5.TabIndex = 5;
+            this.pnlShift.Controls.Add(this.btnShiftSchedule);
+            this.pnlShift.Controls.Add(this.btnShiftInfo);
+            this.pnlShift.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlShift.Location = new System.Drawing.Point(0, 519);
+            this.pnlShift.Name = "pnlShift";
+            this.pnlShift.Size = new System.Drawing.Size(221, 87);
+            this.pnlShift.TabIndex = 20;
+            // 
+            // btnShiftSchedule
+            // 
+            this.btnShiftSchedule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnShiftSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShiftSchedule.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnShiftSchedule.Location = new System.Drawing.Point(0, 43);
+            this.btnShiftSchedule.Name = "btnShiftSchedule";
+            this.btnShiftSchedule.Size = new System.Drawing.Size(221, 43);
+            this.btnShiftSchedule.TabIndex = 2;
+            this.btnShiftSchedule.Text = "Shift 스케줄관리";
+            this.btnShiftSchedule.UseVisualStyleBackColor = true;
+            this.btnShiftSchedule.Click += new System.EventHandler(this.btnShiftSchedule_Click);
+            // 
+            // btnShiftInfo
+            // 
+            this.btnShiftInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnShiftInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShiftInfo.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnShiftInfo.Location = new System.Drawing.Point(0, 0);
+            this.btnShiftInfo.Name = "btnShiftInfo";
+            this.btnShiftInfo.Size = new System.Drawing.Size(221, 43);
+            this.btnShiftInfo.TabIndex = 1;
+            this.btnShiftInfo.Text = "Shift 기준정보";
+            this.btnShiftInfo.UseVisualStyleBackColor = true;
+            this.btnShiftInfo.Click += new System.EventHandler(this.btnShiftInfo_Click);
+            // 
+            // btnShift
+            // 
+            this.btnShift.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShift.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShift.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnShift.Location = new System.Drawing.Point(0, 476);
+            this.btnShift.Name = "btnShift";
+            this.btnShift.Size = new System.Drawing.Size(221, 43);
+            this.btnShift.TabIndex = 19;
+            this.btnShift.Text = "근무관리";
+            this.btnShift.UseVisualStyleBackColor = false;
+            this.btnShift.Click += new System.EventHandler(this.btnShift_Click);
+            // 
+            // pnlSaleCost
+            // 
+            this.pnlSaleCost.Controls.Add(this.button7);
+            this.pnlSaleCost.Controls.Add(this.button8);
+            this.pnlSaleCost.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSaleCost.Location = new System.Drawing.Point(0, 389);
+            this.pnlSaleCost.Name = "pnlSaleCost";
+            this.pnlSaleCost.Size = new System.Drawing.Size(221, 87);
+            this.pnlSaleCost.TabIndex = 5;
             // 
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button7.Location = new System.Drawing.Point(0, 43);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(221, 43);
@@ -522,6 +663,7 @@ namespace MESForm
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Top;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button8.Location = new System.Drawing.Point(0, 0);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(221, 43);
@@ -530,32 +672,35 @@ namespace MESForm
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button11
+            // btnSaleCost
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(0, 346);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(221, 43);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "단가관리";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnSaleCost.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSaleCost.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaleCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaleCost.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSaleCost.Location = new System.Drawing.Point(0, 346);
+            this.btnSaleCost.Name = "btnSaleCost";
+            this.btnSaleCost.Size = new System.Drawing.Size(221, 43);
+            this.btnSaleCost.TabIndex = 4;
+            this.btnSaleCost.Text = "단가관리";
+            this.btnSaleCost.UseVisualStyleBackColor = false;
+            this.btnSaleCost.Click += new System.EventHandler(this.btnSaleCost_Click);
             // 
-            // panel4
+            // pnlProduct
             // 
-            this.panel4.Controls.Add(this.button9);
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 259);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(221, 87);
-            this.panel4.TabIndex = 3;
+            this.pnlProduct.Controls.Add(this.button9);
+            this.pnlProduct.Controls.Add(this.button10);
+            this.pnlProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlProduct.Location = new System.Drawing.Point(0, 259);
+            this.pnlProduct.Name = "pnlProduct";
+            this.pnlProduct.Size = new System.Drawing.Size(221, 87);
+            this.pnlProduct.TabIndex = 3;
             // 
             // button9
             // 
             this.button9.Dock = System.Windows.Forms.DockStyle.Top;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.Location = new System.Drawing.Point(0, 43);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(221, 43);
@@ -568,6 +713,7 @@ namespace MESForm
             // 
             this.button10.Dock = System.Windows.Forms.DockStyle.Top;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(221, 43);
@@ -581,29 +727,32 @@ namespace MESForm
             this.btnProduct.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduct.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnProduct.Location = new System.Drawing.Point(0, 216);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(221, 43);
             this.btnProduct.TabIndex = 2;
             this.btnProduct.Text = "품목관리";
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
-            // panel3
+            // pnlResource
             // 
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.btnCompany);
-            this.panel3.Controls.Add(this.btnFacility);
-            this.panel3.Controls.Add(this.btnFactory);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(221, 173);
-            this.panel3.TabIndex = 1;
+            this.pnlResource.Controls.Add(this.button5);
+            this.pnlResource.Controls.Add(this.btnCompany);
+            this.pnlResource.Controls.Add(this.btnFacility);
+            this.pnlResource.Controls.Add(this.btnFactory);
+            this.pnlResource.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlResource.Location = new System.Drawing.Point(0, 43);
+            this.pnlResource.Name = "pnlResource";
+            this.pnlResource.Size = new System.Drawing.Size(221, 173);
+            this.pnlResource.TabIndex = 1;
             // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button5.Location = new System.Drawing.Point(0, 129);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(221, 43);
@@ -616,6 +765,7 @@ namespace MESForm
             // 
             this.btnCompany.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCompany.Location = new System.Drawing.Point(0, 86);
             this.btnCompany.Name = "btnCompany";
             this.btnCompany.Size = new System.Drawing.Size(221, 43);
@@ -628,6 +778,7 @@ namespace MESForm
             // 
             this.btnFacility.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFacility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFacility.Location = new System.Drawing.Point(0, 43);
             this.btnFacility.Name = "btnFacility";
             this.btnFacility.Size = new System.Drawing.Size(221, 43);
@@ -640,6 +791,7 @@ namespace MESForm
             // 
             this.btnFactory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFactory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFactory.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFactory.Location = new System.Drawing.Point(0, 0);
             this.btnFactory.Name = "btnFactory";
             this.btnFactory.Size = new System.Drawing.Size(221, 43);
@@ -653,12 +805,14 @@ namespace MESForm
             this.btnResource.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnResource.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnResource.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResource.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnResource.Location = new System.Drawing.Point(0, 0);
             this.btnResource.Name = "btnResource";
             this.btnResource.Size = new System.Drawing.Size(221, 43);
             this.btnResource.TabIndex = 0;
             this.btnResource.Text = "자원관리";
             this.btnResource.UseVisualStyleBackColor = false;
+            this.btnResource.Click += new System.EventHandler(this.btnResource_Click);
             // 
             // custTab
             // 
@@ -672,19 +826,6 @@ namespace MESForm
             this.custTab.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.custTab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
             // 
-            // label41
-            // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label41.Font = new System.Drawing.Font("나눔스퀘어OTF", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label41.Location = new System.Drawing.Point(238, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(863, 95);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "* * * * MES 프로그램 * * * *";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -696,21 +837,23 @@ namespace MESForm
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
-            this.Text = "Form1";
+            this.Text = "SmartMOM - made by GDC6 / Team3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pnlShipment.ResumeLayout(false);
+            this.pnlProcessRegister.ResumeLayout(false);
+            this.pnlProcess.ResumeLayout(false);
+            this.pnlPurchase.ResumeLayout(false);
+            this.pnlOrderProduction.ResumeLayout(false);
+            this.pnlOrderPlan.ResumeLayout(false);
+            this.pnlShift.ResumeLayout(false);
+            this.pnlSaleCost.ResumeLayout(false);
+            this.pnlProduct.ResumeLayout(false);
+            this.pnlResource.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -720,19 +863,19 @@ namespace MESForm
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnResource;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlProduct;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btnProduct;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlResource;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnCompany;
         private System.Windows.Forms.Button btnFacility;
         private System.Windows.Forms.Button btnFactory;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlSaleCost;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnSaleCost;
         private CustomControls.custTabControl custTab;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Button btnPurchase;
@@ -740,14 +883,14 @@ namespace MESForm
         private System.Windows.Forms.Button btnOrderPlan;
         private System.Windows.Forms.Button btnProcess;
         private System.Windows.Forms.Button btnProcessRegister;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlOrderPlan;
         private System.Windows.Forms.Button btnPO;
         private System.Windows.Forms.Button btnPOUpload;
         private System.Windows.Forms.Button btnDemand;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlOrderProduction;
         private System.Windows.Forms.Button btnProduction_Plan;
         private System.Windows.Forms.Button btnM_Take_Plan;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel pnlPurchase;
         private System.Windows.Forms.Button btnWStandby;
         private System.Windows.Forms.Button btnCurrentOrder;
         private System.Windows.Forms.Button btnROrder;
@@ -755,17 +898,23 @@ namespace MESForm
         private System.Windows.Forms.Button btnCurrentWM;
         private System.Windows.Forms.Button btnCurrentSR;
         private System.Windows.Forms.Button btnCurrentWS;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel pnlProcess;
         private System.Windows.Forms.Button btnWorkOrder;
         private System.Windows.Forms.Button btnMC_Request;
         private System.Windows.Forms.Button btnMConfine;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnlProcessRegister;
         private System.Windows.Forms.Button btnCurrentProcess;
         private System.Windows.Forms.Button btnExamine;
         private System.Windows.Forms.Button btnProcessMove;
         private System.Windows.Forms.Button btnShipment;
         private System.Windows.Forms.Button btnShipmentManager;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Panel pnlShift;
+        private System.Windows.Forms.Button btnShiftSchedule;
+        private System.Windows.Forms.Button btnShiftInfo;
+        private System.Windows.Forms.Button btnShift;
+        private System.Windows.Forms.Panel pnlShipment;
+        private System.Windows.Forms.Button btnAuthority;
+        private System.Windows.Forms.Button btnCommonCode;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MESForm.PopUp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace MESForm
         public frmBOM()
         {
             InitializeComponent();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmBOMPopUp frm = new frmBOMPopUp();
+            frm.ShowDialog();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            frmBOMPopUp frm = new frmBOMPopUp();
+            frm.ShowDialog();
         }
     }
 }

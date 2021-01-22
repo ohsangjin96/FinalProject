@@ -40,8 +40,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnMod = new System.Windows.Forms.Button();
-            this.btnReg = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.pnlSelect.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -177,27 +177,29 @@
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // btnMod
+            // btnUpdate
             // 
-            this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.btnMod.Location = new System.Drawing.Point(1262, 97);
-            this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(86, 27);
-            this.btnMod.TabIndex = 49;
-            this.btnMod.Text = "복사";
-            this.btnMod.UseVisualStyleBackColor = true;
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.btnUpdate.Location = new System.Drawing.Point(1262, 97);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(86, 27);
+            this.btnUpdate.TabIndex = 49;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnReg
+            // btnRegister
             // 
-            this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
-            this.btnReg.Location = new System.Drawing.Point(1078, 97);
-            this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(86, 27);
-            this.btnReg.TabIndex = 48;
-            this.btnReg.Text = "등록";
-            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
+            this.btnRegister.Location = new System.Drawing.Point(1078, 97);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(86, 27);
+            this.btnRegister.TabIndex = 48;
+            this.btnRegister.Text = "등록";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // frmShiftInfo
             // 
@@ -210,8 +212,8 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnMod);
-            this.Controls.Add(this.btnReg);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnRegister);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmShiftInfo";
@@ -237,8 +239,8 @@
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Button btnMod;
-        protected System.Windows.Forms.Button btnReg;
+        protected System.Windows.Forms.Button btnUpdate;
+        protected System.Windows.Forms.Button btnRegister;
         protected System.Windows.Forms.Label label1;
     }
 }

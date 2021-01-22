@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnX = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_Auth = new System.Windows.Forms.DataGridView();
@@ -37,7 +37,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGroupRegister = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Auth)).BeginInit();
@@ -48,7 +48,7 @@
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnlTop.Controls.Add(this.button1);
+            this.pnlTop.Controls.Add(this.btnX);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -57,19 +57,20 @@
             this.pnlTop.Size = new System.Drawing.Size(880, 64);
             this.pnlTop.TabIndex = 66;
             // 
-            // button1
+            // btnX
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::MESForm.Properties.Resources.close_black;
-            this.button1.Location = new System.Drawing.Point(851, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 30);
-            this.button1.TabIndex = 103;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnX.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnX.FlatAppearance.BorderSize = 0;
+            this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnX.ForeColor = System.Drawing.Color.Transparent;
+            this.btnX.Image = global::MESForm.Properties.Resources.close_black;
+            this.btnX.Location = new System.Drawing.Point(851, 15);
+            this.btnX.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.btnX.Name = "btnX";
+            this.btnX.Size = new System.Drawing.Size(29, 30);
+            this.btnX.TabIndex = 103;
+            this.btnX.UseVisualStyleBackColor = false;
+            this.btnX.Click += new System.EventHandler(this.btnX_Click);
             // 
             // label1
             // 
@@ -155,34 +156,36 @@
             this.label2.TabIndex = 69;
             this.label2.Text = "권한관리";
             // 
-            // button2
+            // btnGroupRegister
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(540, 93);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 25);
-            this.button2.TabIndex = 76;
-            this.button2.Text = "그룹등록";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGroupRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGroupRegister.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnGroupRegister.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnGroupRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGroupRegister.Font = new System.Drawing.Font("나눔스퀘어OTF", 10F);
+            this.btnGroupRegister.ForeColor = System.Drawing.Color.White;
+            this.btnGroupRegister.Location = new System.Drawing.Point(540, 93);
+            this.btnGroupRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGroupRegister.Name = "btnGroupRegister";
+            this.btnGroupRegister.Size = new System.Drawing.Size(71, 25);
+            this.btnGroupRegister.TabIndex = 76;
+            this.btnGroupRegister.Text = "그룹등록";
+            this.btnGroupRegister.UseVisualStyleBackColor = false;
+            this.btnGroupRegister.Click += new System.EventHandler(this.btnGroupRegister_Click);
             // 
             // frmGroupAuthorityPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 533);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGroupRegister);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGroupAuthorityPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGroupAuthorityPopUp";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -198,7 +201,7 @@
         #endregion
 
         protected System.Windows.Forms.Panel pnlTop;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnX;
         protected System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -206,6 +209,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Button btnSave;
-        protected System.Windows.Forms.Button button2;
+        protected System.Windows.Forms.Button btnGroupRegister;
     }
 }

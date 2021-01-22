@@ -43,8 +43,8 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnMod = new System.Windows.Forms.Button();
-            this.btnReg = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlSelect.SuspendLayout();
@@ -198,25 +198,27 @@
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // btnMod
+            // btnCopy
             // 
-            this.btnMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMod.Location = new System.Drawing.Point(919, 111);
-            this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(75, 25);
-            this.btnMod.TabIndex = 35;
-            this.btnMod.Text = "복사";
-            this.btnMod.UseVisualStyleBackColor = true;
+            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopy.Location = new System.Drawing.Point(919, 111);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(75, 25);
+            this.btnCopy.TabIndex = 35;
+            this.btnCopy.Text = "복사";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // btnReg
+            // btnRegister
             // 
-            this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(837, 111);
-            this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(75, 25);
-            this.btnReg.TabIndex = 34;
-            this.btnReg.Text = "등록";
-            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegister.Location = new System.Drawing.Point(837, 111);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(75, 25);
+            this.btnRegister.TabIndex = 34;
+            this.btnRegister.Text = "등록";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // dgvList
             // 
@@ -255,8 +257,8 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnMod);
-            this.Controls.Add(this.btnReg);
+            this.Controls.Add(this.btnCopy);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.pnlSelect);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
@@ -286,8 +288,8 @@
         protected System.Windows.Forms.Button btnRefresh;
         protected System.Windows.Forms.Button btnExcel;
         protected System.Windows.Forms.Button btnDel;
-        protected System.Windows.Forms.Button btnMod;
-        protected System.Windows.Forms.Button btnReg;
+        protected System.Windows.Forms.Button btnCopy;
+        protected System.Windows.Forms.Button btnRegister;
         protected System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.PictureBox pictureBox1;
         protected System.Windows.Forms.ComboBox comboBox1;

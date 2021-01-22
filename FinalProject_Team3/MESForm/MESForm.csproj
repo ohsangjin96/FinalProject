@@ -684,5 +684,11 @@
   <ItemGroup>
     <None Include="Resources\menubar_16x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Authority.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CommonCode.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
