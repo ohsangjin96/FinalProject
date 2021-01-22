@@ -112,24 +112,28 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Yu\frmBOR.cs">
+    <Compile Include="frmBOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Yu\frmBOR.Designer.cs">
+    <Compile Include="frmBOR.Designer.cs">
       <DependentUpon>frmBOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Yu\frmCompany.cs" />
-    <Compile Include="Form\Yu\frmCompany.Designer.cs">
-      <DependentUpon>frmCompany.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Yu\frmFacility.cs" />
-    <Compile Include="Form\Yu\frmFacility.Designer.cs">
-      <DependentUpon>frmFacility.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Yu\frmFactory.cs">
+    <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Yu\frmFactory.Designer.cs">
+    <Compile Include="frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacility.Designer.cs">
+      <DependentUpon>frmFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactory.Designer.cs">
       <DependentUpon>frmFactory.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAuthority.cs">
@@ -530,19 +534,19 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Yu\frmBOR.resx">
+    <EmbeddedResource Include="frmBOR.resx">
       <DependentUpon>frmBOR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAuthority.resx">
       <DependentUpon>frmAuthority.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Yu\frmCompany.resx">
+    <EmbeddedResource Include="frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Yu\frmFacility.resx">
+    <EmbeddedResource Include="frmFacility.resx">
       <DependentUpon>frmFacility.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Yu\frmFactory.resx">
+    <EmbeddedResource Include="frmFactory.resx">
       <DependentUpon>frmFactory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmItem1.resx">
