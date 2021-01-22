@@ -209,9 +209,9 @@
             this.label40.ForeColor = System.Drawing.Color.Black;
             this.label40.Location = new System.Drawing.Point(26, 19);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 14);
+            this.label40.Size = new System.Drawing.Size(43, 14);
             this.label40.TabIndex = 192;
-            this.label40.Text = "안전재고량";
+            this.label40.Text = "아이디";
             // 
             // textBox26
             // 
