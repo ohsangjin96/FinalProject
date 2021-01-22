@@ -55,7 +55,7 @@ namespace MESForm.BaseForms
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(422, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 31;
             this.button1.Text = "삭제";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@ namespace MESForm.BaseForms
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(341, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 30;
             this.button2.Text = "수정";
             this.button2.UseVisualStyleBackColor = true;
@@ -75,7 +75,7 @@ namespace MESForm.BaseForms
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Location = new System.Drawing.Point(260, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 25);
             this.button3.TabIndex = 29;
             this.button3.Text = "등록";
             this.button3.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@ namespace MESForm.BaseForms
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.Location = new System.Drawing.Point(409, 3);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 25);
             this.btnRefresh.TabIndex = 27;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -96,9 +96,9 @@ namespace MESForm.BaseForms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.Controls.Add(this.btnInquiry);
-            this.pnlSelect.Location = new System.Drawing.Point(12, 12);
+            this.pnlSelect.Location = new System.Drawing.Point(12, 13);
             this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(976, 38);
+            this.pnlSelect.Size = new System.Drawing.Size(976, 41);
             this.pnlSelect.TabIndex = 21;
             // 
             // btnInquiry
@@ -107,11 +107,10 @@ namespace MESForm.BaseForms
             this.btnInquiry.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnInquiry.Location = new System.Drawing.Point(889, 8);
+            this.btnInquiry.Location = new System.Drawing.Point(889, 9);
             this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(75, 23);
+            this.btnInquiry.Size = new System.Drawing.Size(75, 25);
             this.btnInquiry.TabIndex = 0;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = false;
@@ -122,9 +121,9 @@ namespace MESForm.BaseForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDetail.Location = new System.Drawing.Point(3, 32);
+            this.pnlDetail.Location = new System.Drawing.Point(3, 34);
             this.pnlDetail.Name = "pnlDetail";
-            this.pnlDetail.Size = new System.Drawing.Size(481, 599);
+            this.pnlDetail.Size = new System.Drawing.Size(481, 596);
             this.pnlDetail.TabIndex = 32;
             // 
             // panel1
@@ -132,9 +131,9 @@ namespace MESForm.BaseForms
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(12, 32);
+            this.panel1.Location = new System.Drawing.Point(12, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 599);
+            this.panel1.Size = new System.Drawing.Size(485, 596);
             this.panel1.TabIndex = 33;
             // 
             // splitContainer1
@@ -178,11 +177,11 @@ namespace MESForm.BaseForms
             // 
             // frmBaseListDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaseListDetail";
             this.Text = "frmBaseListDetail";

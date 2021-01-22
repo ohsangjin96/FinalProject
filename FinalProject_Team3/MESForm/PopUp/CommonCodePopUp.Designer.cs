@@ -29,7 +29,6 @@ namespace MESForm.PopUp
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCommonCode = new MESForm.CustomControls.custDataGridViewControl();
             this.gboInsert = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,60 +42,46 @@ namespace MESForm.PopUp
             this.label7 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
+            this.dgvCommonCode = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).BeginInit();
             this.gboInsert.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Size = new System.Drawing.Size(470, 32);
-            this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CommonCodePopUp_MouseDown);
-            this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CommonCodePopUp_MouseMove);
+            this.pnlTop.Size = new System.Drawing.Size(470, 40);
             // 
             // label1
             // 
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.Text = "공통코드 관리";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CommonCodePopUp_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CommonCodePopUp_MouseMove);
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(242, 239);
+            this.btnCancel.Location = new System.Drawing.Point(242, 260);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(166, 239);
+            this.btnSave.Location = new System.Drawing.Point(166, 260);
             // 
             // pnl
             // 
             this.pnl.Controls.Add(this.dgvCommonCode);
-            this.pnl.Location = new System.Drawing.Point(12, 285);
-            this.pnl.Size = new System.Drawing.Size(446, 306);
+            this.pnl.Location = new System.Drawing.Point(12, 308);
+            this.pnl.Size = new System.Drawing.Size(446, 329);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(430, 0);
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // dgvCommonCode
-            // 
-            this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCommonCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCommonCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
-            this.dgvCommonCode.Name = "dgvCommonCode";
-            this.dgvCommonCode.RowTemplate.Height = 23;
-            this.dgvCommonCode.Size = new System.Drawing.Size(446, 306);
-            this.dgvCommonCode.TabIndex = 1;
             // 
             // gboInsert
             // 
@@ -110,27 +95,27 @@ namespace MESForm.PopUp
             this.gboInsert.Controls.Add(this.label8);
             this.gboInsert.Controls.Add(this.textBox8);
             this.gboInsert.Controls.Add(this.label7);
-            this.gboInsert.Location = new System.Drawing.Point(15, 76);
+            this.gboInsert.Location = new System.Drawing.Point(12, 82);
             this.gboInsert.Name = "gboInsert";
-            this.gboInsert.Size = new System.Drawing.Size(443, 160);
+            this.gboInsert.Size = new System.Drawing.Size(446, 172);
             this.gboInsert.TabIndex = 78;
             this.gboInsert.TabStop = false;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 94);
+            this.comboBox1.Location = new System.Drawing.Point(135, 101);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 21);
+            this.comboBox1.Size = new System.Drawing.Size(173, 22);
             this.comboBox1.TabIndex = 74;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(44, 27);
+            this.label6.Location = new System.Drawing.Point(44, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.Size = new System.Drawing.Size(31, 14);
             this.label6.TabIndex = 52;
             this.label6.Text = "코드";
             // 
@@ -140,34 +125,34 @@ namespace MESForm.PopUp
             this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(333, 57);
+            this.button2.Location = new System.Drawing.Point(333, 61);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 23);
+            this.button2.Size = new System.Drawing.Size(70, 25);
             this.button2.TabIndex = 73;
             this.button2.Text = "중복체크";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 58);
+            this.textBox1.Location = new System.Drawing.Point(135, 62);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 21);
+            this.textBox1.Size = new System.Drawing.Size(173, 22);
             this.textBox1.TabIndex = 45;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(135, 130);
+            this.numericUpDown1.Location = new System.Drawing.Point(135, 140);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(68, 21);
+            this.numericUpDown1.Size = new System.Drawing.Size(68, 22);
             this.numericUpDown1.TabIndex = 72;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(44, 132);
+            this.label9.Location = new System.Drawing.Point(44, 142);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.Size = new System.Drawing.Size(31, 14);
             this.label9.TabIndex = 32;
             this.label9.Text = "순서";
             // 
@@ -177,9 +162,9 @@ namespace MESForm.PopUp
             this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(333, 22);
+            this.button1.Location = new System.Drawing.Point(333, 24);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
+            this.button1.Size = new System.Drawing.Size(70, 25);
             this.button1.TabIndex = 71;
             this.button1.Text = "중복체크";
             this.button1.UseVisualStyleBackColor = false;
@@ -187,35 +172,35 @@ namespace MESForm.PopUp
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 97);
+            this.label8.Location = new System.Drawing.Point(44, 104);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.Size = new System.Drawing.Size(55, 14);
             this.label8.TabIndex = 31;
             this.label8.Text = "상위코드";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(135, 23);
+            this.textBox8.Location = new System.Drawing.Point(135, 25);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(173, 21);
+            this.textBox8.Size = new System.Drawing.Size(173, 22);
             this.textBox8.TabIndex = 62;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(44, 62);
+            this.label7.Location = new System.Drawing.Point(44, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 30;
             this.label7.Text = "코드이름";
             // 
             // btnDel
             // 
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(383, 47);
+            this.btnDel.Location = new System.Drawing.Point(383, 51);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.Size = new System.Drawing.Size(75, 25);
             this.btnDel.TabIndex = 77;
             this.btnDel.Text = "삭제";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -223,18 +208,31 @@ namespace MESForm.PopUp
             // btnReg
             // 
             this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(303, 47);
+            this.btnReg.Location = new System.Drawing.Point(303, 51);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(75, 23);
+            this.btnReg.Size = new System.Drawing.Size(75, 25);
             this.btnReg.TabIndex = 76;
             this.btnReg.Text = "등록";
             this.btnReg.UseVisualStyleBackColor = true;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
+            // dgvCommonCode
+            // 
+            this.dgvCommonCode.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCommonCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCommonCode.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCommonCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCommonCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvCommonCode.Location = new System.Drawing.Point(0, 0);
+            this.dgvCommonCode.Name = "dgvCommonCode";
+            this.dgvCommonCode.RowTemplate.Height = 23;
+            this.dgvCommonCode.Size = new System.Drawing.Size(446, 329);
+            this.dgvCommonCode.TabIndex = 1;
+            // 
             // CommonCodePopUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(470, 603);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(470, 649);
             this.Controls.Add(this.gboInsert);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnReg);
@@ -252,17 +250,15 @@ namespace MESForm.PopUp
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.gboInsert.ResumeLayout(false);
             this.gboInsert.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private CustomControls.custDataGridViewControl dgvCommonCode;
         private System.Windows.Forms.GroupBox gboInsert;
         private System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label6;
@@ -276,5 +272,6 @@ namespace MESForm.PopUp
         protected System.Windows.Forms.Label label7;
         protected System.Windows.Forms.Button btnDel;
         protected System.Windows.Forms.Button btnReg;
+        private CustomControls.custDataGridViewControl dgvCommonCode;
     }
 }

@@ -70,23 +70,35 @@
     <Compile Include="BaseForms\frmBaseListList.Designer.cs">
       <DependentUpon>frmBaseListList.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaseForms\frmBaseLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForms\frmBaseLists.Designer.cs">
+      <DependentUpon>frmBaseLists.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForms\frmPopUp_3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\frmPopUp_3.Designer.cs">
       <DependentUpon>frmPopUp_3.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseForms\frmPopup_1.cs">
+    <Compile Include="BaseForms\frmPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaseForms\frmPopup_1.Designer.cs">
-      <DependentUpon>frmPopup_1.cs</DependentUpon>
+    <Compile Include="BaseForms\frmPopup.Designer.cs">
+      <DependentUpon>frmPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForms\frmPopUp_2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BaseForms\frmPopUp_2.Designer.cs">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\custButtonControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\custButtonControl.Designer.cs">
+      <DependentUpon>custButtonControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\custDataGridViewControl.cs">
       <SubType>Component</SubType>
@@ -461,8 +473,11 @@
     <EmbeddedResource Include="BaseForms\frmBaseListList.resx">
       <DependentUpon>frmBaseListList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaseForms\frmPopup_1.resx">
-      <DependentUpon>frmPopup_1.cs</DependentUpon>
+    <EmbeddedResource Include="BaseForms\frmBaseLists.resx">
+      <DependentUpon>frmBaseLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForms\frmPopup.resx">
+      <DependentUpon>frmPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForms\frmPopUp_3.resx">
       <DependentUpon>frmPopUp_3.cs</DependentUpon>
@@ -697,6 +712,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CommonCode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

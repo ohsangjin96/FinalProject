@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace MESForm.PopUp
 {
-    public partial class FacilityPopUp : MESForm.BaseForms.frmPopup_1
+    public partial class FacilityPopUp : MESForm.BaseForms.frmPopup
     {
         private Point mousePoint;
 
