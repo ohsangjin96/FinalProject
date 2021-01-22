@@ -29,6 +29,8 @@ namespace POPForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOP));
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,6 +45,7 @@ namespace POPForm
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label41 = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -92,6 +95,7 @@ namespace POPForm
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -100,6 +104,7 @@ namespace POPForm
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -122,7 +127,7 @@ namespace POPForm
             this.dgvList.Location = new System.Drawing.Point(0, 129);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(562, 299);
+            this.dgvList.Size = new System.Drawing.Size(562, 296);
             this.dgvList.TabIndex = 2;
             // 
             // label1
@@ -150,7 +155,7 @@ namespace POPForm
             this.dataGridView1.Location = new System.Drawing.Point(0, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(562, 312);
             this.dataGridView1.TabIndex = 40;
             // 
             // splitContainer1
@@ -174,7 +179,7 @@ namespace POPForm
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer1.Size = new System.Drawing.Size(562, 851);
-            this.splitContainer1.SplitterDistance = 411;
+            this.splitContainer1.SplitterDistance = 408;
             this.splitContainer1.TabIndex = 42;
             // 
             // label4
@@ -265,7 +270,7 @@ namespace POPForm
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.Location = new System.Drawing.Point(480, 392);
+            this.button10.Location = new System.Drawing.Point(480, 395);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(76, 40);
             this.button10.TabIndex = 56;
@@ -280,7 +285,7 @@ namespace POPForm
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.Location = new System.Drawing.Point(386, 392);
+            this.button9.Location = new System.Drawing.Point(386, 395);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(76, 40);
             this.button9.TabIndex = 55;
@@ -289,6 +294,7 @@ namespace POPForm
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label41);
             this.panel2.Controls.Add(this.imgLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -297,11 +303,24 @@ namespace POPForm
             this.panel2.Size = new System.Drawing.Size(1465, 68);
             this.panel2.TabIndex = 44;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.Image = global::POPForm.Properties.Resources.다운로드__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(1361, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label41
             // 
             this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label41.BackColor = System.Drawing.Color.White;
             this.label41.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label41.Location = new System.Drawing.Point(238, 0);
             this.label41.Name = "label41";
@@ -493,7 +512,7 @@ namespace POPForm
             this.splitContainer2.Panel2.Controls.Add(this.panel3);
             this.splitContainer2.Panel2.Controls.Add(this.panel4);
             this.splitContainer2.Size = new System.Drawing.Size(903, 847);
-            this.splitContainer2.SplitterDistance = 404;
+            this.splitContainer2.SplitterDistance = 402;
             this.splitContainer2.TabIndex = 58;
             // 
             // button3
@@ -502,7 +521,7 @@ namespace POPForm
             this.button3.BackColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(762, 359);
+            this.button3.Location = new System.Drawing.Point(762, 357);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 40);
             this.button3.TabIndex = 55;
@@ -918,6 +937,12 @@ namespace POPForm
             this.label31.TabIndex = 0;
             this.label31.Text = "설비 이름";
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "다운로드-_1_.jpg");
+            // 
             // frmPOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -926,6 +951,7 @@ namespace POPForm
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPOP";
             this.Text = "POP프로그램";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -939,6 +965,7 @@ namespace POPForm
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1020,6 +1047,8 @@ namespace POPForm
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

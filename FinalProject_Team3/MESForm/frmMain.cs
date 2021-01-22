@@ -300,7 +300,7 @@ namespace MESForm
 
         private void btnProduction_Plan_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<ProductPlan>();
+            OpenCreateForm<ProductPlan1>();
         }
         #endregion
 
@@ -347,12 +347,12 @@ namespace MESForm
 
         private void btnMC_Request_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<Han.frmMC_Request>();
+            OpenCreateForm<Han.frmMR_Request>();
         }
 
         private void btnMConfine_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<Han.frmMConfine>();
+            OpenCreateForm<Han.frmMRelease>();
         }
         #endregion
 

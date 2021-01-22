@@ -166,6 +166,12 @@
     <Compile Include="frmMaterialCost.Designer.cs">
       <DependentUpon>frmMaterialCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductPlan.Designer.cs">
+      <DependentUpon>frmProductPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShiftInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,17 +220,17 @@
     <Compile Include="Han\frmExamine.Designer.cs">
       <DependentUpon>frmExamine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Han\frmMConfine.cs">
+    <Compile Include="Han\frmMRelease.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Han\frmMConfine.Designer.cs">
-      <DependentUpon>frmMConfine.cs</DependentUpon>
+    <Compile Include="Han\frmMRelease.Designer.cs">
+      <DependentUpon>frmMRelease.cs</DependentUpon>
     </Compile>
-    <Compile Include="Han\frmMC_Request.cs">
+    <Compile Include="Han\frmMR_Request.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Han\frmMC_Request.Designer.cs">
-      <DependentUpon>frmMC_Request.cs</DependentUpon>
+    <Compile Include="Han\frmMR_Request.Designer.cs">
+      <DependentUpon>frmMR_Request.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmMT_Plan.cs">
       <SubType>Form</SubType>
@@ -303,6 +309,60 @@
     </Compile>
     <Compile Include="Han\popupStockHistory.Designer.cs">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpBOM.Designer.cs">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpCreateGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpCreateGroup.Designer.cs">
+      <DependentUpon>PopUpCreateGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpGroupAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpGroupAuthority.Designer.cs">
+      <DependentUpon>PopUpGroupAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpItem.Designer.cs">
+      <DependentUpon>PopUpItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpMaterialCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpMaterialCost.Designer.cs">
+      <DependentUpon>PopUpMaterialCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpSaleCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpSaleCost.Designer.cs">
+      <DependentUpon>PopUpSaleCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpShiftInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpShiftInfo.Designer.cs">
+      <DependentUpon>PopUpShiftInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpSignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpSignUp.Designer.cs">
+      <DependentUpon>PopUpSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PopUpUserAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpUserAuthority.Designer.cs">
+      <DependentUpon>PopUpUserAuthority.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\BORPopUp.cs">
       <SubType>Form</SubType>
@@ -418,12 +478,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMatrialOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMatrialOut.Designer.cs">
-      <DependentUpon>frmMatrialOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -436,11 +490,11 @@
     <Compile Include="PopUp\frmUserAuthorityPopUp.Designer.cs">
       <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductPlan.cs">
+    <Compile Include="ProductPlan1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductPlan.Designer.cs">
-      <DependentUpon>ProductPlan.cs</DependentUpon>
+    <Compile Include="ProductPlan1.Designer.cs">
+      <DependentUpon>ProductPlan1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -451,6 +505,12 @@
     <Compile Include="ShipmentManager.Designer.cs">
       <DependentUpon>ShipmentManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateTimePicker.Designer.cs">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\NewDataGridViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -458,7 +518,6 @@
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
-    <Compile Include="Utils\ExcelExportImport.cs" />
     <Compile Include="WorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +572,9 @@
     <EmbeddedResource Include="frmMaterialCost.resx">
       <DependentUpon>frmMaterialCost.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProductPlan.resx">
+      <DependentUpon>frmProductPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmShiftInfo.resx">
       <DependentUpon>frmShiftInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,11 +602,11 @@
     <EmbeddedResource Include="Han\frmExamine.resx">
       <DependentUpon>frmExamine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Han\frmMConfine.resx">
-      <DependentUpon>frmMConfine.cs</DependentUpon>
+    <EmbeddedResource Include="Han\frmMRelease.resx">
+      <DependentUpon>frmMRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Han\frmMC_Request.resx">
-      <DependentUpon>frmMC_Request.cs</DependentUpon>
+    <EmbeddedResource Include="Han\frmMR_Request.resx">
+      <DependentUpon>frmMR_Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmMT_Plan.resx">
       <DependentUpon>frmMT_Plan.cs</DependentUpon>
@@ -584,6 +646,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupStockHistory.resx">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpBOM.resx">
+      <DependentUpon>PopUpBOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpCreateGroup.resx">
+      <DependentUpon>PopUpCreateGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpGroupAuthority.resx">
+      <DependentUpon>PopUpGroupAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpItem.resx">
+      <DependentUpon>PopUpItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpMaterialCost.resx">
+      <DependentUpon>PopUpMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpSaleCost.resx">
+      <DependentUpon>PopUpSaleCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpShiftInfo.resx">
+      <DependentUpon>PopUpShiftInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpSignUp.resx">
+      <DependentUpon>PopUpSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PopUpUserAuthority.resx">
+      <DependentUpon>PopUpUserAuthority.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\BORPopUp.resx">
       <DependentUpon>BORPopUp.cs</DependentUpon>
@@ -630,9 +719,6 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMatrialOut.resx">
-      <DependentUpon>frmMatrialOut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSample.resx">
       <DependentUpon>frmSample.cs</DependentUpon>
     </EmbeddedResource>
@@ -648,8 +734,8 @@
     <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
       <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductPlan.resx">
-      <DependentUpon>ProductPlan.cs</DependentUpon>
+    <EmbeddedResource Include="ProductPlan1.resx">
+      <DependentUpon>ProductPlan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -663,6 +749,9 @@
     </Compile>
     <EmbeddedResource Include="ShipmentManager.resx">
       <DependentUpon>ShipmentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DateTimePicker.resx">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\NewDataGridViewControl.resx">
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>

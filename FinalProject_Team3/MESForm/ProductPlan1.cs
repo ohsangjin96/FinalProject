@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MESForm
 {
-    public partial class ProductPlan : Form
+    public partial class ProductPlan1 : Form
     {
-        public ProductPlan()
+        public ProductPlan1()
         {
             InitializeComponent();
         }
