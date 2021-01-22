@@ -160,6 +160,12 @@
     <Compile Include="frmMaterialCost.Designer.cs">
       <DependentUpon>frmMaterialCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductPlan.Designer.cs">
+      <DependentUpon>frmProductPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShiftInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,12 +418,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMatrialOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMatrialOut.Designer.cs">
-      <DependentUpon>frmMatrialOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,11 +430,11 @@
     <Compile Include="PopUp\frmUserAuthorityPopUp.Designer.cs">
       <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductPlan.cs">
+    <Compile Include="ProductPlan1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductPlan.Designer.cs">
-      <DependentUpon>ProductPlan.cs</DependentUpon>
+    <Compile Include="ProductPlan1.Designer.cs">
+      <DependentUpon>ProductPlan1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -508,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialCost.resx">
       <DependentUpon>frmMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductPlan.resx">
+      <DependentUpon>frmProductPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShiftInfo.resx">
       <DependentUpon>frmShiftInfo.cs</DependentUpon>
@@ -626,9 +629,6 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMatrialOut.resx">
-      <DependentUpon>frmMatrialOut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSample.resx">
       <DependentUpon>frmSample.cs</DependentUpon>
     </EmbeddedResource>
@@ -644,8 +644,8 @@
     <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
       <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductPlan.resx">
-      <DependentUpon>ProductPlan.cs</DependentUpon>
+    <EmbeddedResource Include="ProductPlan1.resx">
+      <DependentUpon>ProductPlan1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
