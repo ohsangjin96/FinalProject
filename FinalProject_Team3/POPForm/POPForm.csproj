@@ -61,11 +61,11 @@
     <Compile Include="custDataGridViewControl.designer.cs">
       <DependentUpon>custDataGridViewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoginPopUp.cs">
+    <Compile Include="PopUpLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoginPopUp.Designer.cs">
-      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    <Compile Include="PopUpLogin.Designer.cs">
+      <DependentUpon>PopUpLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPOP.cs">
       <SubType>Form</SubType>
@@ -87,9 +87,15 @@
     <Compile Include="ResultCheck.Designer.cs">
       <DependentUpon>ResultCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Machin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Machin.Designer.cs">
+      <DependentUpon>Machin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
-    <EmbeddedResource Include="frmLoginPopUp.resx">
-      <DependentUpon>frmLoginPopUp.cs</DependentUpon>
+    <EmbeddedResource Include="PopUpLogin.resx">
+      <DependentUpon>PopUpLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPOP.resx">
       <DependentUpon>frmPOP.cs</DependentUpon>
@@ -109,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="ResultCheck.resx">
       <DependentUpon>ResultCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Machin.resx">
+      <DependentUpon>Machin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -143,6 +152,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FProjectDAC\FProjectDAC.csproj">
+      <Project>{40009510-2bda-49be-80d2-ad951bd2e543}</Project>
+      <Name>FProjectDAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FProjectVO\FProjectVO.csproj">
+      <Project>{be32a89f-587f-492c-9e6b-c6ea07abb975}</Project>
+      <Name>FProjectVO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MESForm\MESForm.csproj">
+      <Project>{d9ff87b0-3ace-4d31-90c8-56ce2670a544}</Project>
+      <Name>MESForm</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

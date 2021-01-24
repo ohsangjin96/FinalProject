@@ -12,7 +12,7 @@ using System.Resources;
 using FProjectVO;
 using MESForm.Services;
 
-namespace MESForm
+namespace POPForm
 {
     public partial class PopUpLogin : Form
     {
@@ -21,6 +21,7 @@ namespace MESForm
         {
             InitializeComponent();
         }
+
 
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -67,7 +68,7 @@ namespace MESForm
                     }
                     MessageBox.Show($"{Info.User_Name}님 환영합니다.");
 
-                    frmMain frm = new frmMain();
+                    frmPOP frm = new frmPOP();
                     frm.Show();
                     this.Hide();
                 }
@@ -81,3 +82,4 @@ namespace MESForm
         }
     }
 }
+

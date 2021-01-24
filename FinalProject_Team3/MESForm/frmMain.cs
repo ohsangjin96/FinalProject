@@ -329,7 +329,7 @@ namespace MESForm
 
         private void btnProduction_Plan_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<ProductPlan1>();
+            OpenCreateForm<frmProductPlan>();
         }
         #endregion
 
