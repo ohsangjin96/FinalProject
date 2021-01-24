@@ -30,5 +30,26 @@ namespace MESForm.Utils
             cbo.ValueMember = "Common_Name";
             cbo.DataSource = list;
         }
+
+        public static void DeptBind(ComboBox cbo, List<CommonCodeVO> list, string displayMember)
+        {
+            list = (from a in list
+                    where a.Common_Parent == "dept000"
+                    select a).ToList();
+
+            //if (blankItem)
+            //{
+            //    CommonCodeVO blank = new CommonCodeVO
+            //    {
+            //        Common_Code = blankText,
+            //        Common_Name = ""
+            //    };
+
+            //    list.Insert(0, blank);
+            //}
+            cbo.DisplayMember = displayMember;
+            cbo.ValueMember = "Common_Name";
+            cbo.DataSource = list;
+        }
     }
 }

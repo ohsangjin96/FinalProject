@@ -57,12 +57,16 @@
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(197, 375);
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(121, 375);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "가입";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
@@ -85,7 +89,6 @@
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(348, 0);
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnIdCheck
             // 
@@ -99,9 +102,10 @@
             this.btnIdCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIdCheck.Name = "btnIdCheck";
             this.btnIdCheck.Size = new System.Drawing.Size(66, 22);
-            this.btnIdCheck.TabIndex = 203;
+            this.btnIdCheck.TabIndex = 2;
             this.btnIdCheck.Text = "중복확인";
             this.btnIdCheck.UseVisualStyleBackColor = false;
+            this.btnIdCheck.Click += new System.EventHandler(this.btnIdCheck_Click);
             // 
             // txtPwd
             // 
@@ -110,7 +114,8 @@
             this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(138, 22);
-            this.txtPwd.TabIndex = 202;
+            this.txtPwd.TabIndex = 3;
+            this.txtPwd.Tag = "비밀번호";
             // 
             // txtPwdCheck
             // 
@@ -119,7 +124,8 @@
             this.txtPwdCheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPwdCheck.Name = "txtPwdCheck";
             this.txtPwdCheck.Size = new System.Drawing.Size(138, 22);
-            this.txtPwdCheck.TabIndex = 201;
+            this.txtPwdCheck.TabIndex = 4;
+            this.txtPwdCheck.Tag = "비밀번호확인";
             // 
             // txtEmail
             // 
@@ -128,7 +134,8 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(210, 22);
-            this.txtEmail.TabIndex = 200;
+            this.txtEmail.TabIndex = 6;
+            this.txtEmail.Tag = "이메일";
             // 
             // txtName
             // 
@@ -137,13 +144,14 @@
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(138, 22);
-            this.txtName.TabIndex = 199;
+            this.txtName.TabIndex = 5;
+            this.txtName.Tag = "이름";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(26, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 14);
@@ -154,7 +162,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(26, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 14);
@@ -165,7 +173,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(26, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 14);
@@ -176,7 +184,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(26, 289);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 14);
@@ -191,7 +199,8 @@
             this.cboDept.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboDept.Name = "cboDept";
             this.cboDept.Size = new System.Drawing.Size(138, 22);
-            this.cboDept.TabIndex = 194;
+            this.cboDept.TabIndex = 7;
+            this.cboDept.Tag = "부서";
             // 
             // label37
             // 
@@ -208,7 +217,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label40.ForeColor = System.Drawing.Color.Black;
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label40.Location = new System.Drawing.Point(26, 19);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(43, 14);
@@ -222,7 +231,8 @@
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(138, 22);
-            this.txtID.TabIndex = 191;
+            this.txtID.TabIndex = 1;
+            this.txtID.Tag = "아이디";
             // 
             // PopUpSignUp
             // 
@@ -230,6 +240,7 @@
             this.ClientSize = new System.Drawing.Size(388, 423);
             this.Name = "PopUpSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PopUpSignUp_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);

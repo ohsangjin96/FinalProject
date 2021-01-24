@@ -454,11 +454,11 @@
     <Compile Include="PopUp\frmGroupAuthorityPopUp.Designer.cs">
       <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\PopUpLogin.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PopUp\PopUpLogin.Designer.cs">
-      <DependentUpon>PopUpLogin.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\frmItemPopUp.cs">
       <SubType>Form</SubType>
@@ -492,6 +492,7 @@
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\Product_PlanService.cs" />
     <Compile Include="Services\SampleService.cs" />
+    <Compile Include="Services\SignUpService.cs" />
     <Compile Include="ShipmentManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -702,8 +703,8 @@
     <EmbeddedResource Include="PopUp\frmGroupAuthorityPopUp.resx">
       <DependentUpon>frmGroupAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\PopUpLogin.resx">
-      <DependentUpon>PopUpLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmItemPopUp.resx">
       <DependentUpon>frmItemPopUp.cs</DependentUpon>

@@ -25,7 +25,7 @@ namespace MESForm
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            frmSignUpPopUp frm = new frmSignUpPopUp();
+            PopUpSignUp frm = new PopUpSignUp();
             frm.ShowDialog();
         }
 
