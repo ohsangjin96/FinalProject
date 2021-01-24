@@ -192,6 +192,9 @@
     <value>사용 가능한 @@입니다.</value>
     <comment>ex) 사용 가능한 이름입니다.</comment>
   </data>
+  <data name="SaveSignUp" xml:space="preserve">
+    <value>가입완료</value>
+  </data>
   <data name="SaveSuccess" xml:space="preserve">
     <value>저장이 완료되었습니다.</value>
   </data>

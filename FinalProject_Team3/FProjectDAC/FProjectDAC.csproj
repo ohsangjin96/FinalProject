@@ -57,6 +57,7 @@
     <Compile Include="Product_PlanDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleDAC.cs" />
+    <Compile Include="SignUpDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FProjectVO\FProjectVO.csproj">
