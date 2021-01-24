@@ -1,4 +1,4 @@
-﻿namespace MESForm
+﻿namespace POPForm
 {
     partial class frmSignUpPopUp
     {

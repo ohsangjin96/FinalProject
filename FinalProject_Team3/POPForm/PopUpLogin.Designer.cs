@@ -1,6 +1,6 @@
 ﻿namespace POPForm
 {
-    partial class frmLoginPopUp
+    partial class PopUpLogin
     {
         /// <summary>
         /// Required designer variable.

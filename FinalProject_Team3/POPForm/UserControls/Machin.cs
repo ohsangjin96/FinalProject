@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace POPForm
+namespace POPForm.UserControls
 {
-    public partial class frmSignUpPopUp : Form
+    public partial class Machin : UserControl
     {
-        public frmSignUpPopUp()
+        public Machin()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
