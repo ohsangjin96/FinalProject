@@ -123,27 +123,45 @@ namespace MESForm.Properties {
         /// <summary>
         ///   정말 삭제하시겠습니까?과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DataDeleteCheck {
+        internal static string DeleteCheck {
             get {
-                return ResourceManager.GetString("DataDeleteCheck", resourceCulture);
+                return ResourceManager.GetString("DeleteCheck", resourceCulture);
             }
         }
         
         /// <summary>
         ///   삭제가 완료되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DataDeleteYes {
+        internal static string DeleteSuccess {
             get {
-                return ResourceManager.GetString("DataDeleteYes", resourceCulture);
+                return ResourceManager.GetString("DeleteSuccess", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   저장이 완료되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   이미 등록된 @@입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string DataSave {
+        internal static string ErrAlreadyReg {
             get {
-                return ResourceManager.GetString("DataSave", resourceCulture);
+                return ResourceManager.GetString("ErrAlreadyReg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   삭제를 실패하였습니다. 다시 확인해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrDeleteSuccess {
+            get {
+                return ResourceManager.GetString("ErrDeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   @@ 입력해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrEmptyText {
+            get {
+                return ResourceManager.GetString("ErrEmptyText", resourceCulture);
             }
         }
         
@@ -166,20 +184,11 @@ namespace MESForm.Properties {
         }
         
         /// <summary>
-        ///   이미 등록된 @@코드입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   검색할 데이터를 선택해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string ErrValCode {
+        internal static string ErrSelecDgvData {
             get {
-                return ResourceManager.GetString("ErrValCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   이미 등록된 @@명입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        internal static string ErrValName {
-            get {
-                return ResourceManager.GetString("ErrValName", resourceCulture);
+                return ResourceManager.GetString("ErrSelecDgvData", resourceCulture);
             }
         }
         
@@ -237,6 +246,24 @@ namespace MESForm.Properties {
         internal static string OrderComplete {
             get {
                 return ResourceManager.GetString("OrderComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   사용 가능한 @@입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string RegTrue {
+            get {
+                return ResourceManager.GetString("RegTrue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   저장이 완료되었습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string SaveSuccess {
+            get {
+                return ResourceManager.GetString("SaveSuccess", resourceCulture);
             }
         }
     }

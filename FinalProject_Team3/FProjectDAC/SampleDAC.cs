@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FProjectDAC
 {
-    public class SampleDAC : ConnectionAccess
+    public class SampleDAC : ConnectionAccess, IDisposable
     {
         // Sample DAC
         string strConn;
@@ -22,6 +22,11 @@ namespace FProjectDAC
             conn.Open();
         }
 
+        public void Dispose()
+        {
+            conn.Close();
+        }
+
         // 데이터 조회
         public List<SampleVO> GetSampleList()
         {
@@ -32,7 +37,7 @@ namespace FProjectDAC
                                     from Sample";
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<SampleVO> list = Helper.DataReaderMapToList<SampleVO>(reader);
-                conn.Close();
+
                 return list;
             }
         }
@@ -52,7 +57,6 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Age", vo.Age);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
-                    conn.Close();
 
                     return iRowAffect > 0;
                 }
@@ -78,7 +82,6 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Name", vo.Name);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
-                    conn.Close();
 
                     return iRowAffect > 0;
                 }
@@ -103,7 +106,6 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@CustNum", id);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
-                    conn.Close();
 
                     if (iRowAffect > 0)
                         return true;

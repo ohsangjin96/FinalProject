@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MESForm
 {
-    public partial class frmCompany : MESForm.BaseForms.frmBaseList
+    public partial class frmCompany : MESForm.BaseForms.frmBaseLists
     {
         public frmCompany()
         {
@@ -23,6 +23,7 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvCompany, "업체이름", "COM_Name");
             CommonUtil.AddGridTextColumn(dgvCompany, "업체유형", "COM_Type");
             CommonUtil.AddGridTextColumn(dgvCompany, "대표자명", "COM_CEO");
+            CommonUtil.AddGridTextColumn(dgvCompany, "사업자등록번호", "Com_CNum", 120);
             CommonUtil.AddGridTextColumn(dgvCompany, "업종", "COM_Category");
             CommonUtil.AddGridTextColumn(dgvCompany, "업태", "COM_Conditions");
             CommonUtil.AddGridTextColumn(dgvCompany, "담당자", "COM_Charge");
@@ -44,8 +45,8 @@ namespace MESForm
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            PopUp.CompanyPopUp pop = new PopUp.CompanyPopUp();
-            if(pop.ShowDialog() == DialogResult.OK)
+            PopUp.PopUpCompany pop = new PopUp.PopUpCompany();
+            if (pop.ShowDialog() == DialogResult.OK)
             {
 
             }
