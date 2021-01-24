@@ -414,5 +414,11 @@ namespace MESForm
 
 
         #endregion
+
+        //x 누르면 프로그램 종료
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

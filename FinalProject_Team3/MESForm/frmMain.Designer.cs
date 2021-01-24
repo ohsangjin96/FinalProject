@@ -84,10 +84,10 @@ namespace MESForm
             this.btnFacility = new System.Windows.Forms.Button();
             this.btnFactory = new System.Windows.Forms.Button();
             this.btnResource = new System.Windows.Forms.Button();
-            this.custTab = new MESForm.CustomControls.custTabControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.모든탭닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.custTab = new MESForm.CustomControls.custTabControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -825,6 +825,28 @@ namespace MESForm
             this.btnResource.UseVisualStyleBackColor = false;
             this.btnResource.Click += new System.EventHandler(this.btnResource_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.모든탭닫기ToolStripMenuItem,
+            this.닫기ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(157, 48);
+            // 
+            // 모든탭닫기ToolStripMenuItem
+            // 
+            this.모든탭닫기ToolStripMenuItem.Name = "모든탭닫기ToolStripMenuItem";
+            this.모든탭닫기ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.모든탭닫기ToolStripMenuItem.Text = "모든 탭 닫기(&L)";
+            this.모든탭닫기ToolStripMenuItem.Click += new System.EventHandler(this.모든탭닫기ToolStripMenuItem_Click);
+            // 
+            // 닫기ToolStripMenuItem
+            // 
+            this.닫기ToolStripMenuItem.Name = "닫기ToolStripMenuItem";
+            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.닫기ToolStripMenuItem.Text = "닫기(&C)";
+            this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
+            // 
             // custTab
             // 
             this.custTab.ContextMenuStrip = this.contextMenuStrip1;
@@ -837,28 +859,6 @@ namespace MESForm
             this.custTab.TabIndex = 4;
             this.custTab.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.custTab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.모든탭닫기ToolStripMenuItem,
-            this.닫기ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
-            // 
-            // 모든탭닫기ToolStripMenuItem
-            // 
-            this.모든탭닫기ToolStripMenuItem.Name = "모든탭닫기ToolStripMenuItem";
-            this.모든탭닫기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.모든탭닫기ToolStripMenuItem.Text = "모든 탭 닫기(&L)";
-            this.모든탭닫기ToolStripMenuItem.Click += new System.EventHandler(this.모든탭닫기ToolStripMenuItem_Click);
-            // 
-            // 닫기ToolStripMenuItem
-            // 
-            this.닫기ToolStripMenuItem.Name = "닫기ToolStripMenuItem";
-            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.닫기ToolStripMenuItem.Text = "닫기(&C)";
-            this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -873,6 +873,7 @@ namespace MESForm
             this.Name = "frmMain";
             this.Text = "SmartMOM - made by GDC6 / Team3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.panel1.ResumeLayout(false);

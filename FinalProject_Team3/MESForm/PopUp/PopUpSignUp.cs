@@ -55,6 +55,11 @@ namespace MESForm
                 MessageBox.Show(errMsgText);
                 return;
             }
+            //비밀번호 일치 여부
+            if (txtPwd.Text.Trim()!=txtPwdCheck.Text.Trim())
+            {
+                MessageBox.Show("비밀번호가 일치하지 않습니다.");
+            }
             //중복확인을 안 하였을 경우
             if (btnIdCheck.Visible == true)
             {

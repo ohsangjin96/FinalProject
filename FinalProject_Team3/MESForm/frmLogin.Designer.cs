@@ -121,6 +121,7 @@
             this.txtPwd.Size = new System.Drawing.Size(185, 14);
             this.txtPwd.TabIndex = 144;
             this.txtPwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPwd.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
@@ -185,7 +186,7 @@
             this.label4.Size = new System.Drawing.Size(187, 11);
             this.label4.TabIndex = 149;
             // 
-            // frmLoginPopUp
+            // PopUpLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +203,7 @@
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLoginPopUp";
+            this.Name = "PopUpLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.pnlTop.ResumeLayout(false);

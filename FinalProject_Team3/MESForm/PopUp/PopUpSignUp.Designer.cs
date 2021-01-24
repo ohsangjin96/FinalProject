@@ -116,6 +116,7 @@
             this.txtPwd.Size = new System.Drawing.Size(138, 22);
             this.txtPwd.TabIndex = 3;
             this.txtPwd.Tag = "비밀번호";
+            this.txtPwd.UseSystemPasswordChar = true;
             // 
             // txtPwdCheck
             // 
@@ -126,6 +127,7 @@
             this.txtPwdCheck.Size = new System.Drawing.Size(138, 22);
             this.txtPwdCheck.TabIndex = 4;
             this.txtPwdCheck.Tag = "비밀번호확인";
+            this.txtPwdCheck.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
