@@ -10,6 +10,11 @@ namespace MESForm.Services
 {
     public class SignUpService
     {
+        public void Dispose()
+        {
+            SignUpDAC dac = new SignUpDAC();
+            dac.Dispose();
+        }
         public bool RegisterSignUp(SignUpVO vo)
         {
             SignUpDAC dac = new SignUpDAC();

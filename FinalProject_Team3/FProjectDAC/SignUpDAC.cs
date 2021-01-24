@@ -21,7 +21,10 @@ namespace FProjectDAC
             conn.Open();
 
         }
-
+        public void Dispose()
+        {
+            conn.Close();
+        }
         public bool IDCheck(string id)
         {
             using (SqlCommand cmd = new SqlCommand())

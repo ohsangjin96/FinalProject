@@ -21,6 +21,10 @@ namespace FProjectDAC
             conn.Open();
 
         }
+        public void Dispose()
+        {
+            conn.Close();
+        }
         public List<LoginVO> LoginInfo(string id, string pwd)
         {
             using (SqlCommand cmd = new SqlCommand())

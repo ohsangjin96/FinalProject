@@ -34,6 +34,7 @@ namespace MESForm
         private void btnIdCheck_Click(object sender, EventArgs e)//중복확인
         {
             bool bFlag = service.IDCheck(txtID.Text);
+            service.Dispose();
             if (bFlag == true)
             {
                 //ErrAlreadyReg
@@ -78,7 +79,7 @@ namespace MESForm
             //서비스에 vo 전달해서 db에 저장
             
             bool bFlag = service.RegisterSignUp(vo);
-
+            service.Dispose();
             if (bFlag==true)
             {
                 MessageBox.Show(Properties.Resources.SaveSignUp);

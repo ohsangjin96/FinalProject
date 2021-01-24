@@ -29,19 +29,14 @@
         private void InitializeComponent()
         {
             this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -49,16 +44,8 @@
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -84,8 +71,13 @@
             this.textBox31 = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.textBox32 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -100,30 +92,28 @@
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(357, 393);
+            this.btnCancel.Location = new System.Drawing.Point(355, 373);
             this.btnCancel.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(281, 393);
+            this.btnSave.Location = new System.Drawing.Point(279, 373);
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.numericUpDown2);
+            this.pnl.Controls.Add(this.numericUpDown1);
+            this.pnl.Controls.Add(this.textBox3);
             this.pnl.Controls.Add(this.comboBox8);
-            this.pnl.Controls.Add(this.comboBox7);
             this.pnl.Controls.Add(this.comboBox6);
             this.pnl.Controls.Add(this.comboBox5);
-            this.pnl.Controls.Add(this.comboBox4);
             this.pnl.Controls.Add(this.comboBox3);
-            this.pnl.Controls.Add(this.comboBox2);
-            this.pnl.Controls.Add(this.comboBox1);
             this.pnl.Controls.Add(this.textBox2);
             this.pnl.Controls.Add(this.textBox1);
             this.pnl.Controls.Add(this.label2);
             this.pnl.Controls.Add(this.comboBox12);
             this.pnl.Controls.Add(this.label29);
-            this.pnl.Controls.Add(this.label30);
             this.pnl.Controls.Add(this.label31);
             this.pnl.Controls.Add(this.label32);
             this.pnl.Controls.Add(this.label33);
@@ -131,16 +121,8 @@
             this.pnl.Controls.Add(this.textBox20);
             this.pnl.Controls.Add(this.textBox21);
             this.pnl.Controls.Add(this.textBox22);
-            this.pnl.Controls.Add(this.label35);
-            this.pnl.Controls.Add(this.textBox23);
             this.pnl.Controls.Add(this.label36);
-            this.pnl.Controls.Add(this.label37);
-            this.pnl.Controls.Add(this.label38);
-            this.pnl.Controls.Add(this.comboBox13);
             this.pnl.Controls.Add(this.label39);
-            this.pnl.Controls.Add(this.label40);
-            this.pnl.Controls.Add(this.textBox26);
-            this.pnl.Controls.Add(this.textBox27);
             this.pnl.Controls.Add(this.label41);
             this.pnl.Controls.Add(this.label42);
             this.pnl.Controls.Add(this.label43);
@@ -166,7 +148,7 @@
             this.pnl.Controls.Add(this.textBox31);
             this.pnl.Controls.Add(this.label55);
             this.pnl.Controls.Add(this.textBox32);
-            this.pnl.Size = new System.Drawing.Size(684, 341);
+            this.pnl.Size = new System.Drawing.Size(684, 321);
             // 
             // btnClose
             // 
@@ -183,20 +165,11 @@
             this.comboBox8.Size = new System.Drawing.Size(121, 22);
             this.comboBox8.TabIndex = 242;
             // 
-            // comboBox7
-            // 
-            this.comboBox7.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(556, 109);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 22);
-            this.comboBox7.TabIndex = 241;
-            // 
             // comboBox6
             // 
             this.comboBox6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(556, 179);
+            this.comboBox6.Location = new System.Drawing.Point(328, 131);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(121, 22);
             this.comboBox6.TabIndex = 240;
@@ -210,41 +183,14 @@
             this.comboBox5.Size = new System.Drawing.Size(121, 22);
             this.comboBox5.TabIndex = 239;
             // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(89, 155);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 22);
-            this.comboBox4.TabIndex = 238;
-            // 
             // comboBox3
             // 
             this.comboBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(89, 203);
+            this.comboBox3.Location = new System.Drawing.Point(556, 134);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 22);
             this.comboBox3.TabIndex = 237;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(328, 206);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 22);
-            this.comboBox2.TabIndex = 236;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(328, 157);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 235;
             // 
             // textBox2
             // 
@@ -257,7 +203,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox1.Location = new System.Drawing.Point(89, 243);
+            this.textBox1.Location = new System.Drawing.Point(89, 223);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(577, 93);
@@ -268,7 +214,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(8, 243);
+            this.label2.Location = new System.Drawing.Point(8, 223);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 14);
             this.label2.TabIndex = 232;
@@ -278,7 +224,7 @@
             // 
             this.comboBox12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(556, 203);
+            this.comboBox12.Location = new System.Drawing.Point(89, 179);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(121, 22);
             this.comboBox12.TabIndex = 231;
@@ -288,29 +234,18 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(468, 203);
+            this.label29.Location = new System.Drawing.Point(8, 179);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(55, 14);
             this.label29.TabIndex = 230;
             this.label29.Text = "발주방식";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(231, 207);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(43, 14);
-            this.label30.TabIndex = 229;
-            this.label30.Text = "대그룹";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label31.Location = new System.Drawing.Point(8, 201);
+            this.label31.Location = new System.Drawing.Point(468, 133);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(55, 14);
             this.label31.TabIndex = 228;
@@ -321,7 +256,7 @@
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label32.Location = new System.Drawing.Point(468, 179);
+            this.label32.Location = new System.Drawing.Point(231, 131);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(55, 14);
             this.label32.TabIndex = 227;
@@ -332,7 +267,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(8, 177);
+            this.label33.Location = new System.Drawing.Point(231, 155);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(43, 14);
             this.label33.TabIndex = 226;
@@ -343,7 +278,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(231, 182);
+            this.label34.Location = new System.Drawing.Point(468, 157);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(43, 14);
             this.label34.TabIndex = 225;
@@ -352,7 +287,7 @@
             // textBox20
             // 
             this.textBox20.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox20.Location = new System.Drawing.Point(328, 181);
+            this.textBox20.Location = new System.Drawing.Point(556, 158);
             this.textBox20.Name = "textBox20";
             this.textBox20.ReadOnly = true;
             this.textBox20.Size = new System.Drawing.Size(121, 22);
@@ -361,7 +296,7 @@
             // textBox21
             // 
             this.textBox21.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox21.Location = new System.Drawing.Point(89, 179);
+            this.textBox21.Location = new System.Drawing.Point(328, 155);
             this.textBox21.Name = "textBox21";
             this.textBox21.ReadOnly = true;
             this.textBox21.Size = new System.Drawing.Size(121, 22);
@@ -375,111 +310,34 @@
             this.textBox22.Size = new System.Drawing.Size(121, 22);
             this.textBox22.TabIndex = 222;
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(468, 155);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(55, 14);
-            this.label35.TabIndex = 221;
-            this.label35.Text = "환산수량";
-            // 
-            // textBox23
-            // 
-            this.textBox23.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox23.Location = new System.Drawing.Point(556, 155);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(121, 22);
-            this.textBox23.TabIndex = 220;
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label36.ForeColor = System.Drawing.Color.Black;
-            this.label36.Location = new System.Drawing.Point(8, 153);
+            this.label36.Location = new System.Drawing.Point(8, 155);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(43, 14);
             this.label36.TabIndex = 219;
             this.label36.Text = "담당자";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label37.ForeColor = System.Drawing.Color.Black;
-            this.label37.Location = new System.Drawing.Point(231, 158);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(55, 14);
-            this.label37.TabIndex = 218;
-            this.label37.Text = "환산단위";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label38.ForeColor = System.Drawing.Color.Black;
-            this.label38.Location = new System.Drawing.Point(468, 132);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(55, 14);
-            this.label38.TabIndex = 217;
-            this.label38.Text = "관리등급";
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(556, 132);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(121, 22);
-            this.comboBox13.TabIndex = 216;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label39.ForeColor = System.Drawing.Color.Black;
-            this.label39.Location = new System.Drawing.Point(8, 129);
+            this.label39.Location = new System.Drawing.Point(8, 131);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(67, 14);
             this.label39.TabIndex = 215;
-            this.label39.Text = "표준불출량";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label40.ForeColor = System.Drawing.Color.Black;
-            this.label40.Location = new System.Drawing.Point(231, 133);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 14);
-            this.label40.TabIndex = 214;
-            this.label40.Text = "안전재고량";
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox26.Location = new System.Drawing.Point(328, 132);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(121, 22);
-            this.textBox26.TabIndex = 213;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox27.Location = new System.Drawing.Point(89, 131);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(121, 22);
-            this.textBox27.TabIndex = 212;
+            this.label39.Text = "안전재고량";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(8, 106);
+            this.label41.Location = new System.Drawing.Point(8, 107);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(55, 14);
             this.label41.TabIndex = 211;
@@ -490,7 +348,7 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label42.ForeColor = System.Drawing.Color.Black;
-            this.label42.Location = new System.Drawing.Point(231, 109);
+            this.label42.Location = new System.Drawing.Point(231, 107);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(67, 14);
             this.label42.TabIndex = 210;
@@ -501,7 +359,7 @@
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(468, 108);
+            this.label43.Location = new System.Drawing.Point(468, 109);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(67, 14);
             this.label43.TabIndex = 209;
@@ -520,7 +378,7 @@
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label44.ForeColor = System.Drawing.Color.Black;
-            this.label44.Location = new System.Drawing.Point(468, 84);
+            this.label44.Location = new System.Drawing.Point(468, 85);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(55, 14);
             this.label44.TabIndex = 207;
@@ -540,7 +398,7 @@
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(8, 82);
+            this.label45.Location = new System.Drawing.Point(8, 83);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(55, 14);
             this.label45.TabIndex = 205;
@@ -560,7 +418,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label46.ForeColor = System.Drawing.Color.Black;
-            this.label46.Location = new System.Drawing.Point(231, 84);
+            this.label46.Location = new System.Drawing.Point(231, 83);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(55, 14);
             this.label46.TabIndex = 203;
@@ -580,7 +438,7 @@
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label47.Location = new System.Drawing.Point(8, 58);
+            this.label47.Location = new System.Drawing.Point(8, 59);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(79, 14);
             this.label47.TabIndex = 201;
@@ -591,7 +449,7 @@
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label48.Location = new System.Drawing.Point(231, 60);
+            this.label48.Location = new System.Drawing.Point(231, 59);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(79, 14);
             this.label48.TabIndex = 200;
@@ -726,16 +584,60 @@
             this.textBox32.Size = new System.Drawing.Size(121, 22);
             this.textBox32.TabIndex = 188;
             // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.textBox3.Location = new System.Drawing.Point(89, 155);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 22);
+            this.textBox3.TabIndex = 243;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(90, 132);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(121, 22);
+            this.numericUpDown1.TabIndex = 244;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(556, 109);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(121, 22);
+            this.numericUpDown2.TabIndex = 245;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // PopUpItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(708, 441);
+            this.ClientSize = new System.Drawing.Size(708, 410);
             this.Name = "PopUpItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -743,19 +645,14 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox12;
         protected System.Windows.Forms.Label label29;
-        protected System.Windows.Forms.Label label30;
         protected System.Windows.Forms.Label label31;
         protected System.Windows.Forms.Label label32;
         protected System.Windows.Forms.Label label33;
@@ -763,16 +660,8 @@
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox22;
-        protected System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox23;
         protected System.Windows.Forms.Label label36;
-        protected System.Windows.Forms.Label label37;
-        protected System.Windows.Forms.Label label38;
-        private System.Windows.Forms.ComboBox comboBox13;
         protected System.Windows.Forms.Label label39;
-        protected System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
         protected System.Windows.Forms.Label label41;
         protected System.Windows.Forms.Label label42;
         protected System.Windows.Forms.Label label43;
@@ -798,5 +687,8 @@
         private System.Windows.Forms.TextBox textBox31;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

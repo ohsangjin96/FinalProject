@@ -46,6 +46,7 @@
     <Compile Include="CompanyVO.cs" />
     <Compile Include="FacilityVO.cs" />
     <Compile Include="FactoryVO.cs" />
+    <Compile Include="ItemVO.cs" />
     <Compile Include="LoginVO.cs" />
     <Compile Include="OrderVO.cs" />
     <Compile Include="Product_PlanVO.cs" />

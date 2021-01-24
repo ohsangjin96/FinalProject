@@ -283,7 +283,7 @@ namespace MESForm
         private void button10_Click(object sender, EventArgs e)//품목
         {
 
-            OpenCreateForm<frmItem1>();
+            OpenCreateForm<FrmITEM>();
         }
         private void button9_Click(object sender, EventArgs e)//bom
         {

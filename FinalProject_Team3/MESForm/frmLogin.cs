@@ -54,6 +54,7 @@ namespace MESForm
             {
                 LoginService service = new LoginService();
                 List<LoginVO> Login = service.LoginInfo(txtID.Text, txtPwd.Text);
+                service.Dispose();
                 if (Login != null)
                 {
                     foreach (var item in Login)

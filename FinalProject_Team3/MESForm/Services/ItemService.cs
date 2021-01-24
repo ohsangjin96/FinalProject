@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace MESForm.Services
 {
-    public class LoginService
+    public class ItemService
     {
         public void Dispose()
         {
-            LoginDAC dac = new LoginDAC();
+            ItemDAC dac = new ItemDAC();
             dac.Dispose();
         }
-        public List<LoginVO> LoginInfo(string id, string pwd)
+        public List<ItemVO> GetItemAllList()
         {
-            LoginDAC dac = new LoginDAC();
-            return dac.LoginInfo(id, pwd);
+            ItemDAC dac = new ItemDAC();
+            return dac.GetItemAllList();
         }
     }
 }
