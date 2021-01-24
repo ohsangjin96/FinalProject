@@ -57,7 +57,6 @@ namespace MESForm.PopUp
         private void btnReg_Click(object sender, EventArgs e)
         {
             txtCode.Enabled = true;
-            nudSeq.Enabled = true;
             btnCodeVal.Visible = true;
             updateMode = false;
 
@@ -84,42 +83,55 @@ namespace MESForm.PopUp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CommonCodeVO vo = new CommonCodeVO
+            if (!updateMode && btnCodeVal.Enabled)
             {
-                Common_Code = txtCode.Text,
-                Common_Name = txtCodeName.Text,
-                Common_Parent = cboParentCode.Text,
-                Common_Seq = (int)nudSeq.Value
-            };
-
-            CommonCodeService service = new CommonCodeService();
-            bool result;
-
-            if (updateMode)
-            {
-                if (txtCode.Text == "")
-                {
-                    MessageBox.Show(Properties.Resources.ErrSelecDgvData);
-                    return;
-                }
-                result = service.UpdateCommonCode(vo);
+                MessageBox.Show(Properties.Resources.ErrValCheck);
+                return;
             }
-            else
-                result = service.InsertCommonCode(vo);
 
-            service.Dispose();
-
-            if (result)
+            try
             {
-                MessageBox.Show(Properties.Resources.SaveSuccess);
-                LoadData();
+                CommonCodeVO vo = new CommonCodeVO
+                {
+                    Common_Code = txtCode.Text,
+                    Common_Name = txtCodeName.Text,
+                    Common_Parent = cboParentCode.Text,
+                    Common_Seq = (int)nudSeq.Value
+                };
+
+                CommonCodeService service = new CommonCodeService();
+                bool result;
+
+                if (updateMode)
+                {
+                    if (txtCode.Text == "")
+                    {
+                        MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "코드를"));
+                        return;
+                    }
+                    string orgPname = Convert.ToString(dgvCommonCode[2, dgvCommonCode.CurrentRow.Index].Value);
+                    result = service.UpdateCommonCode(vo);
+                }
+                else
+                    result = service.InsertCommonCode(vo);
+
+                service.Dispose();
+
+                if (result)
+                {
+                    MessageBox.Show(Properties.Resources.SaveSuccess);
+                    LoadData();
+                }
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             txtCode.Enabled = updateMode;
-            nudSeq.Enabled = updateMode;
             btnCodeVal.Visible = updateMode;
 
             if(!updateMode)
@@ -144,10 +156,17 @@ namespace MESForm.PopUp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if(txtCode.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "코드를"));
+                return;
+            }
+
             try
             {
                 CommonCodeService service = new CommonCodeService();
-                bool result = service.DeleteCommonCode(txtCodeName.Text, cboParentCode.Text);
+                bool result = service.DeleteCommonCode(txtCode.Text);
+                service.Dispose();
 
                 if (result)
                 {
@@ -157,7 +176,7 @@ namespace MESForm.PopUp
                 else
                     MessageBox.Show(Properties.Resources.ErrDeleteSuccess);
             }
-            catch (Exception err)
+            catch(Exception err)
             {
                 MessageBox.Show(err.Message);
             }
@@ -187,6 +206,7 @@ namespace MESForm.PopUp
             }
 
             bool result = service.IsCodeValied(txtCode.Text);
+            service.Dispose();
 
             if (result)
             {
@@ -200,8 +220,6 @@ namespace MESForm.PopUp
                 txtCode.Focus();
                 txtCode.SelectAll();
             }
-            
-            service.Dispose();
         }
 
         private void textBox_TextChanged(object sender, EventArgs e)
@@ -216,6 +234,7 @@ namespace MESForm.PopUp
             {
                 CommonCodeService service = new CommonCodeService();
                 int idx = service.GetSeqValue(cboParentCode.Text);
+                service.Dispose();
                 nudSeq.Value = idx + 1;
             }
         }
@@ -224,11 +243,11 @@ namespace MESForm.PopUp
         {
             txtCode.Text = dgvCommonCode[0, e.RowIndex].Value.ToString();
             txtCodeName.Text = dgvCommonCode[1, e.RowIndex].Value.ToString();
+
             if (Convert.ToString(dgvCommonCode[2, e.RowIndex].Value) == "")
                 cboParentCode.SelectedIndex = 0;
             else
                 cboParentCode.Text = Convert.ToString(dgvCommonCode[2, e.RowIndex].Value);
-            nudSeq.Text = dgvCommonCode[3, e.RowIndex].Value.ToString();
         }
     }
 }

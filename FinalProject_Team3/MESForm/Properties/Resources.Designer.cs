@@ -166,7 +166,7 @@ namespace MESForm.Properties {
         }
         
         /// <summary>
-        ///   조회할 데이터가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   해당하는 @@ 찾지 못했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string ErrNotData {
             get {
@@ -184,11 +184,29 @@ namespace MESForm.Properties {
         }
         
         /// <summary>
+        ///   조회할 데이터가 없습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrNotSelectData {
+            get {
+                return ResourceManager.GetString("ErrNotSelectData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   검색할 데이터를 선택해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string ErrSelecDgvData {
             get {
                 return ResourceManager.GetString("ErrSelecDgvData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   중복 확인을 해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrValCheck {
+            get {
+                return ResourceManager.GetString("ErrValCheck", resourceCulture);
             }
         }
         

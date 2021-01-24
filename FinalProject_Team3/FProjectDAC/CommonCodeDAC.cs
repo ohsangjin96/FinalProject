@@ -69,17 +69,24 @@ namespace FProjectDAC
         // 공통코드 수정
         public bool UpdateCommonCode(CommonCodeVO vo)
         {
+            if (IsCodeValied(vo.Common_Code))
+            {
+                throw new Exception("해당하는 코드를 찾지 못했습니다.");
+            }
+
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"update CommonCode set Common_Name = @Common_Name, Common_Parent = @Common_Parent
+                    cmd.CommandText = @"update CommonCode set Common_Name = @Common_Name, Common_Parent = @Common_Parent, 
+                                               Common_Seq = @Common_Seq
                                         where Common_Code = @Common_Code";
-
+                    
+                    cmd.Parameters.AddWithValue("@Common_Code", vo.Common_Code);
                     cmd.Parameters.AddWithValue("@Common_Name", vo.Common_Name);
                     cmd.Parameters.AddWithValue("@Common_Parent", (vo.Common_Parent == "미선택") ? DBNull.Value : (object)vo.Common_Parent);
-                    cmd.Parameters.AddWithValue("@Common_Code", vo.Common_Code);
+                    cmd.Parameters.AddWithValue("@Common_Seq", vo.Common_Seq);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
 
@@ -93,18 +100,21 @@ namespace FProjectDAC
         }
 
         // 공통코드 삭제
-        public bool DeleteCommonCode(string name, string pname)
+        public bool DeleteCommonCode(string code)
         {
+            if (IsCodeValied(code))
+            {
+                throw new Exception("해당하는 코드를 찾지 못했습니다.");
+            }
+
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"SP_DeleteCommonCode";
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandText = @"delete CommonCode where Common_Code = @Common_Code";
 
-                    cmd.Parameters.AddWithValue("@Common_Name", name);
-                    cmd.Parameters.AddWithValue("@Common_Parent", pname);
+                    cmd.Parameters.AddWithValue("@Common_Code", code);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
 
@@ -164,10 +174,14 @@ namespace FProjectDAC
             {
                 cmd.Connection = conn;
                 if (pname == "미선택")
-                    cmd.CommandText = @"select count(*) from CommonCode where Common_Parent is null";
+                    cmd.CommandText = @"select top 1 Common_Seq from CommonCode
+                                        where Common_Parent is null
+                                        order by Common_Seq desc";
                 else
                 {
-                    cmd.CommandText = @"select count(*) from CommonCode where Common_Parent = @Common_Parent";
+                    cmd.CommandText = @"select top 1 Common_Seq from CommonCode
+                                        where Common_Parent = @Common_Parent
+                                        order by Common_Seq desc";
                     cmd.Parameters.AddWithValue("@Common_Parent", pname);
                 }
 

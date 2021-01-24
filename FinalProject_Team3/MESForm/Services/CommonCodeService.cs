@@ -38,10 +38,10 @@ namespace MESForm.Services
         }
 
         // 삭제
-        public bool DeleteCommonCode(string name, string pname)
+        public bool DeleteCommonCode(string code)
         {
             CommonCodeDAC dac = new CommonCodeDAC();
-            return dac.DeleteCommonCode(name, pname);
+            return dac.DeleteCommonCode(code);
         }
 
         // 코드 중복확인
