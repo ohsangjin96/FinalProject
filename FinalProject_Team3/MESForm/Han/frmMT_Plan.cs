@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmMT_Plan : Form
+    public partial class frmMT_Plan : BaseForms.frmBaseLists
     {
         public frmMT_Plan()
         {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmMRelease : Form
+    public partial class frmMRelease : BaseForms.frmBaseLists
     {
         public frmMRelease()
         {

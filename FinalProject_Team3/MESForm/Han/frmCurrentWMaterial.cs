@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmCurrentWMaterial : Form
+    public partial class frmCurrentWMaterial : BaseForms.frmBaseLists
     {
         public frmCurrentWMaterial()
         {

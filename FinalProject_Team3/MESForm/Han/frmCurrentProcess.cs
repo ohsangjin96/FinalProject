@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmCurrentProcess : Form
+    public partial class frmCurrentProcess : BaseForms.frmBaseLists
     {
         public frmCurrentProcess()
         {

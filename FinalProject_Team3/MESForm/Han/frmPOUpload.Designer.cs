@@ -29,36 +29,91 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCreate = new MESForm.CustomControls.custButtonControl();
+            this.btnFrmDownload = new MESForm.CustomControls.custButtonControl();
+            this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnDownload = new System.Windows.Forms.Button();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.pnlSelect.SuspendLayout();
+            this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // pnlSelect
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(31, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 14);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "영업마스터업로드(PO)";
+            this.pnlSelect.Location = new System.Drawing.Point(633, 12);
+            this.pnlSelect.Size = new System.Drawing.Size(24, 22);
+            this.pnlSelect.Visible = false;
+            // 
+            // btnInquiry
+            // 
+            this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnInquiry.Location = new System.Drawing.Point(-48, -24);
+            // 
+            // lblFormName1
+            // 
+            this.lblFormName1.Location = new System.Drawing.Point(12, 35);
+            this.lblFormName1.Size = new System.Drawing.Size(183, 21);
+            this.lblFormName1.Text = "영업마스터업로드(PO)";
+            // 
+            // pnlItem
+            // 
+            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
+            this.pnlItem.Location = new System.Drawing.Point(12, 59);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 628);
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.custDataGridViewControl1);
-            this.panel1.Location = new System.Drawing.Point(12, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 647);
-            this.panel1.TabIndex = 13;
+            this.panel1.Controls.Add(this.btnExcel);
+            this.panel1.Controls.Add(this.btnFrmDownload);
+            this.panel1.Controls.Add(this.btnCreate);
+            this.panel1.Location = new System.Drawing.Point(670, 12);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCreate.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Location = new System.Drawing.Point(206, 5);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(130, 32);
+            this.btnCreate.TabIndex = 0;
+            this.btnCreate.Text = "영업마스터생성";
+            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnFrmDownload
+            // 
+            this.btnFrmDownload.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnFrmDownload.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFrmDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFrmDownload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnFrmDownload.ForeColor = System.Drawing.Color.Black;
+            this.btnFrmDownload.Location = new System.Drawing.Point(342, 5);
+            this.btnFrmDownload.Name = "btnFrmDownload";
+            this.btnFrmDownload.Size = new System.Drawing.Size(120, 32);
+            this.btnFrmDownload.TabIndex = 1;
+            this.btnFrmDownload.Text = "양식다운로드";
+            this.btnFrmDownload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFrmDownload.UseVisualStyleBackColor = false;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExcel.Location = new System.Drawing.Point(468, 5);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(100, 32);
+            this.btnExcel.TabIndex = 2;
+            this.btnExcel.Text = "엑셀등록";
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcel.UseVisualStyleBackColor = false;
             // 
             // custDataGridViewControl1
             // 
@@ -70,59 +125,21 @@ namespace MESForm.Han
             this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
             this.custDataGridViewControl1.Name = "custDataGridViewControl1";
             this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(976, 647);
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 628);
             this.custDataGridViewControl1.TabIndex = 0;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(891, 12);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(97, 23);
-            this.btnExcel.TabIndex = 11;
-            this.btnExcel.Text = "Excel등록";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDownload.Location = new System.Drawing.Point(773, 12);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(112, 23);
-            this.btnDownload.TabIndex = 10;
-            this.btnDownload.Text = "양식 다운로드";
-            this.btnDownload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDownload.UseVisualStyleBackColor = true;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreate.Location = new System.Drawing.Point(646, 12);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(121, 23);
-            this.btnCreate.TabIndex = 9;
-            this.btnCreate.Tag = "popupPOUpload_show";
-            this.btnCreate.Text = "영업마스터생성";
-            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // frmPOUpload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.btnDownload);
-            this.Controls.Add(this.btnCreate);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(1250, 700);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPOUpload";
             this.Text = "영업마스터업로드(PO)";
             this.Load += new System.EventHandler(this.frmPOUpload_Load);
+            this.pnlSelect.ResumeLayout(false);
+            this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
@@ -132,12 +149,10 @@ namespace MESForm.Han
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Panel panel1;
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
-        protected System.Windows.Forms.Button btnExcel;
-        protected System.Windows.Forms.Button btnDownload;
-        protected System.Windows.Forms.Button btnCreate;
+        private CustomControls.custButtonControl btnExcel;
+        private CustomControls.custButtonControl btnFrmDownload;
+        private CustomControls.custButtonControl btnCreate;
     }
 }
 

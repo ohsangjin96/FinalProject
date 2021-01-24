@@ -29,12 +29,6 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.lblDateQty = new System.Windows.Forms.Label();
@@ -43,90 +37,49 @@ namespace MESForm.Han
             this.label2 = new System.Windows.Forms.Label();
             this.btnInquiry = new System.Windows.Forms.Button();
             this.cboPlanID = new System.Windows.Forms.ComboBox();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlTop
+            // 
+            this.pnlTop.Size = new System.Drawing.Size(627, 40);
+            // 
+            // label1
+            // 
+            this.label1.Text = "생산계획";
+            // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(316, 523);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(70, 23);
-            this.btnCancel.TabIndex = 44;
-            this.btnCancel.Text = "취소";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Location = new System.Drawing.Point(316, 534);
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(240, 523);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(70, 23);
-            this.btnSave.TabIndex = 43;
-            this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Location = new System.Drawing.Point(240, 534);
             // 
-            // label3
+            // pnl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(18, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 14);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "PlanID";
+            this.pnl.Controls.Add(this.panel1);
+            this.pnl.Controls.Add(this.lblDateQty);
+            this.pnl.Controls.Add(this.lblPlanQty);
+            this.pnl.Controls.Add(this.label4);
+            this.pnl.Controls.Add(this.label2);
+            this.pnl.Controls.Add(this.btnInquiry);
+            this.pnl.Controls.Add(this.cboPlanID);
+            this.pnl.Controls.Add(this.label3);
+            this.pnl.Size = new System.Drawing.Size(603, 482);
             // 
-            // pnlTop
+            // btnClose
             // 
-            this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnlTop.Controls.Add(this.btnClose);
-            this.pnlTop.Controls.Add(this.label1);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(627, 32);
-            this.pnlTop.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "생산계획생성";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.lblDateQty);
-            this.panel2.Controls.Add(this.lblPlanQty);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnInquiry);
-            this.panel2.Controls.Add(this.cboPlanID);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(15, 38);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(597, 479);
-            this.panel2.TabIndex = 56;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Location = new System.Drawing.Point(587, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -134,10 +87,10 @@ namespace MESForm.Han
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.custDataGridViewControl1);
-            this.panel1.Location = new System.Drawing.Point(21, 67);
+            this.panel1.Location = new System.Drawing.Point(25, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(555, 409);
-            this.panel1.TabIndex = 80;
+            this.panel1.TabIndex = 88;
             // 
             // custDataGridViewControl1
             // 
@@ -155,20 +108,20 @@ namespace MESForm.Han
             // lblDateQty
             // 
             this.lblDateQty.AutoSize = true;
-            this.lblDateQty.Location = new System.Drawing.Point(527, 51);
+            this.lblDateQty.Location = new System.Drawing.Point(531, 46);
             this.lblDateQty.Name = "lblDateQty";
             this.lblDateQty.Size = new System.Drawing.Size(28, 13);
-            this.lblDateQty.TabIndex = 79;
+            this.lblDateQty.TabIndex = 87;
             this.lblDateQty.Text = "300";
             this.lblDateQty.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblPlanQty
             // 
             this.lblPlanQty.AutoSize = true;
-            this.lblPlanQty.Location = new System.Drawing.Point(164, 51);
+            this.lblPlanQty.Location = new System.Drawing.Point(168, 46);
             this.lblPlanQty.Name = "lblPlanQty";
             this.lblPlanQty.Size = new System.Drawing.Size(14, 13);
-            this.lblPlanQty.TabIndex = 78;
+            this.lblPlanQty.TabIndex = 86;
             this.lblPlanQty.Text = "0";
             this.lblPlanQty.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -176,66 +129,56 @@ namespace MESForm.Han
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(380, 50);
+            this.label4.Location = new System.Drawing.Point(384, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 14);
-            this.label4.TabIndex = 77;
+            this.label4.TabIndex = 85;
             this.label4.Text = "일 최대 생산량";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(19, 50);
+            this.label2.Location = new System.Drawing.Point(23, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
-            this.label2.TabIndex = 76;
+            this.label2.TabIndex = 84;
             this.label2.Text = "계획수량";
             // 
             // btnInquiry
             // 
             this.btnInquiry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInquiry.Location = new System.Drawing.Point(501, 16);
+            this.btnInquiry.Location = new System.Drawing.Point(505, 11);
             this.btnInquiry.Name = "btnInquiry";
             this.btnInquiry.Size = new System.Drawing.Size(75, 23);
-            this.btnInquiry.TabIndex = 74;
+            this.btnInquiry.TabIndex = 83;
             this.btnInquiry.Text = "조회";
             this.btnInquiry.UseVisualStyleBackColor = true;
             // 
             // cboPlanID
             // 
             this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(94, 16);
+            this.cboPlanID.Location = new System.Drawing.Point(98, 11);
             this.cboPlanID.Name = "cboPlanID";
             this.cboPlanID.Size = new System.Drawing.Size(154, 21);
-            this.cboPlanID.TabIndex = 73;
+            this.cboPlanID.TabIndex = 82;
             // 
-            // btnClose
+            // label3
             // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
-            this.btnClose.Location = new System.Drawing.Point(587, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 32);
-            this.btnClose.TabIndex = 107;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(22, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 14);
+            this.label3.TabIndex = 81;
+            this.label3.Text = "PlanID";
             // 
             // popupP_Plan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 571);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "popupP_Plan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
@@ -243,8 +186,8 @@ namespace MESForm.Han
             this.Load += new System.EventHandler(this.popupP_Plan_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnl.ResumeLayout(false);
+            this.pnl.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
@@ -252,20 +195,15 @@ namespace MESForm.Han
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        protected System.Windows.Forms.Button btnCancel;
-        protected System.Windows.Forms.Button btnSave;
-        protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Panel pnlTop;
-        protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.ComboBox cboPlanID;
-        private System.Windows.Forms.Button btnInquiry;
+
+        private System.Windows.Forms.Panel panel1;
+        private CustomControls.custDataGridViewControl custDataGridViewControl1;
         private System.Windows.Forms.Label lblDateQty;
         private System.Windows.Forms.Label lblPlanQty;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private CustomControls.custDataGridViewControl custDataGridViewControl1;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnInquiry;
+        protected System.Windows.Forms.ComboBox cboPlanID;
+        protected System.Windows.Forms.Label label3;
     }
 }

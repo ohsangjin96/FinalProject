@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class popupD_Plan : Form
+    public partial class popupD_Plan : BaseForms.frmPopup
     {
         public popupD_Plan()
         {

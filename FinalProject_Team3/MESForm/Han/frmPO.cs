@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmPO : Form
+    public partial class frmPO : BaseForms.frmBaseLists
     {
         public frmPO()
         {

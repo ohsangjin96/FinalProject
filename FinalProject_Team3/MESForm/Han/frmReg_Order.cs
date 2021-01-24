@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmReg_Order : Form
+    public partial class frmReg_Order : BaseForms.frmBaseLists
     {
         public frmReg_Order()
         {

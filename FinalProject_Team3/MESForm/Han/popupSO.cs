@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class popupSO : Form
+    public partial class popupSO : BaseForms.frmPopup
     {
         public popupSO()
         {
