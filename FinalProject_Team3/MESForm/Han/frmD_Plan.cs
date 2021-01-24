@@ -11,7 +11,7 @@ using MESForm.Utils;
 
 namespace MESForm.Han
 {
-    public partial class frmD_Plan : Form
+    public partial class frmD_Plan : BaseForms.frmBaseLists
     {
         public frmD_Plan()
         {

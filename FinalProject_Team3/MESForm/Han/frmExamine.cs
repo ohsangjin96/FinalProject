@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmExamine : Form
+    public partial class frmExamine : BaseForms.frmBaseLists
     {
         public frmExamine()
         {

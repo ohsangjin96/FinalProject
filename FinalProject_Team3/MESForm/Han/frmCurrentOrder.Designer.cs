@@ -29,7 +29,6 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlSelect = new System.Windows.Forms.Panel();
             this.cboDCompany = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtOrderNum = new System.Windows.Forms.TextBox();
@@ -40,65 +39,88 @@ namespace MESForm.Han
             this.label3 = new System.Windows.Forms.Label();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnInquiry = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnDateChange = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.btnPrint = new MESForm.CustomControls.custButtonControl();
+            this.btnDateChange = new MESForm.CustomControls.custButtonControl();
+            this.btnCancel = new MESForm.CustomControls.custButtonControl();
+            this.btnExcel = new MESForm.CustomControls.custButtonControl();
+            this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
             this.pnlSelect.SuspendLayout();
+            this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSelect.BackColor = System.Drawing.Color.White;
+            this.pnlSelect.Controls.Add(this.dateTimePicker1);
             this.pnlSelect.Controls.Add(this.cboDCompany);
-            this.pnlSelect.Controls.Add(this.label7);
-            this.pnlSelect.Controls.Add(this.txtOrderNum);
-            this.pnlSelect.Controls.Add(this.label6);
-            this.pnlSelect.Controls.Add(this.cboState);
-            this.pnlSelect.Controls.Add(this.label5);
-            this.pnlSelect.Controls.Add(this.txtItem);
-            this.pnlSelect.Controls.Add(this.label3);
-            this.pnlSelect.Controls.Add(this.cboCompany);
-            this.pnlSelect.Controls.Add(this.label8);
-            this.pnlSelect.Controls.Add(this.label2);
-            this.pnlSelect.Controls.Add(this.dtpTo);
-            this.pnlSelect.Controls.Add(this.dtpFrom);
             this.pnlSelect.Controls.Add(this.label1);
-            this.pnlSelect.Controls.Add(this.btnInquiry);
-            this.pnlSelect.Location = new System.Drawing.Point(12, 12);
-            this.pnlSelect.Name = "pnlSelect";
-            this.pnlSelect.Size = new System.Drawing.Size(1226, 79);
-            this.pnlSelect.TabIndex = 0;
+            this.pnlSelect.Controls.Add(this.label3);
+            this.pnlSelect.Controls.Add(this.label6);
+            this.pnlSelect.Controls.Add(this.txtItem);
+            this.pnlSelect.Controls.Add(this.cboCompany);
+            this.pnlSelect.Controls.Add(this.label7);
+            this.pnlSelect.Controls.Add(this.label5);
+            this.pnlSelect.Controls.Add(this.txtOrderNum);
+            this.pnlSelect.Controls.Add(this.label8);
+            this.pnlSelect.Controls.Add(this.cboState);
+            this.pnlSelect.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 108);
+            this.pnlSelect.Controls.SetChildIndex(this.cboState, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label8, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtOrderNum, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label5, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label7, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboCompany, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtItem, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label6, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboDCompany, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            // 
+            // btnInquiry
+            // 
+            this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 62);
+            // 
+            // lblFormName1
+            // 
+            this.lblFormName1.Location = new System.Drawing.Point(12, 151);
+            this.lblFormName1.Size = new System.Drawing.Size(78, 21);
+            this.lblFormName1.Text = "발주현황";
+            // 
+            // pnlItem
+            // 
+            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
+            this.pnlItem.Location = new System.Drawing.Point(12, 175);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 512);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnExcel);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnDateChange);
+            this.panel1.Controls.Add(this.btnPrint);
+            this.panel1.Location = new System.Drawing.Point(670, 128);
             // 
             // cboDCompany
             // 
+            this.cboDCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboDCompany.FormattingEnabled = true;
-            this.cboDCompany.Location = new System.Drawing.Point(922, 45);
+            this.cboDCompany.Location = new System.Drawing.Point(960, 64);
             this.cboDCompany.Name = "cboDCompany";
-            this.cboDCompany.Size = new System.Drawing.Size(197, 21);
+            this.cboDCompany.Size = new System.Drawing.Size(191, 22);
             this.cboDCompany.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(824, 48);
+            this.label7.Location = new System.Drawing.Point(860, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 23;
@@ -106,16 +128,17 @@ namespace MESForm.Han
             // 
             // txtOrderNum
             // 
-            this.txtOrderNum.Location = new System.Drawing.Point(508, 45);
+            this.txtOrderNum.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtOrderNum.Location = new System.Drawing.Point(545, 64);
             this.txtOrderNum.Name = "txtOrderNum";
-            this.txtOrderNum.Size = new System.Drawing.Size(197, 21);
+            this.txtOrderNum.Size = new System.Drawing.Size(191, 22);
             this.txtOrderNum.TabIndex = 22;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(429, 48);
+            this.label6.Location = new System.Drawing.Point(445, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 14);
             this.label6.TabIndex = 21;
@@ -123,17 +146,18 @@ namespace MESForm.Han
             // 
             // cboState
             // 
+            this.cboState.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(94, 45);
+            this.cboState.Location = new System.Drawing.Point(130, 64);
             this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(197, 21);
+            this.cboState.Size = new System.Drawing.Size(191, 22);
             this.cboState.TabIndex = 20;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(22, 48);
+            this.label5.Location = new System.Drawing.Point(30, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 14);
             this.label5.TabIndex = 19;
@@ -141,16 +165,17 @@ namespace MESForm.Han
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(922, 15);
+            this.txtItem.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtItem.Location = new System.Drawing.Point(960, 23);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(197, 21);
+            this.txtItem.Size = new System.Drawing.Size(191, 22);
             this.txtItem.TabIndex = 18;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(824, 18);
+            this.label3.Location = new System.Drawing.Point(860, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 14);
             this.label3.TabIndex = 17;
@@ -158,154 +183,32 @@ namespace MESForm.Han
             // 
             // cboCompany
             // 
+            this.cboCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(508, 15);
+            this.cboCompany.Location = new System.Drawing.Point(545, 23);
             this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(197, 21);
+            this.cboCompany.Size = new System.Drawing.Size(191, 22);
             this.cboCompany.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(429, 18);
+            this.label8.Location = new System.Drawing.Point(445, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 14);
             this.label8.TabIndex = 13;
             this.label8.Text = "업체";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "~";
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(202, 15);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(89, 21);
-            this.dtpTo.TabIndex = 3;
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(94, 15);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(88, 21);
-            this.dtpFrom.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(22, 18);
+            this.label1.Location = new System.Drawing.Point(30, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 14);
             this.label1.TabIndex = 1;
             this.label1.Text = "납기일";
-            // 
-            // btnInquiry
-            // 
-            this.btnInquiry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInquiry.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnInquiry.ForeColor = System.Drawing.Color.White;
-            this.btnInquiry.Location = new System.Drawing.Point(1139, 46);
-            this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(75, 23);
-            this.btnInquiry.TabIndex = 0;
-            this.btnInquiry.Text = "조회";
-            this.btnInquiry.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.custDataGridViewControl1);
-            this.panel1.Location = new System.Drawing.Point(12, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1226, 560);
-            this.panel1.TabIndex = 8;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnDateChange);
-            this.splitContainer1.Panel2.Controls.Add(this.btnPrint);
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.btnCancel);
-            this.splitContainer1.Panel2.Controls.Add(this.btnExcel);
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1250, 700);
-            this.splitContainer1.SplitterDistance = 91;
-            this.splitContainer1.TabIndex = 9;
-            // 
-            // btnDateChange
-            // 
-            this.btnDateChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDateChange.Location = new System.Drawing.Point(957, 5);
-            this.btnDateChange.Name = "btnDateChange";
-            this.btnDateChange.Size = new System.Drawing.Size(110, 23);
-            this.btnDateChange.TabIndex = 14;
-            this.btnDateChange.Text = "납기일자변경";
-            this.btnDateChange.UseVisualStyleBackColor = true;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Location = new System.Drawing.Point(855, 5);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(96, 23);
-            this.btnPrint.TabIndex = 13;
-            this.btnPrint.Text = "발주서출력";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(34, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 14);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "발주현황";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(1073, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 23);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "발주취소";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(1163, 5);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(75, 23);
-            this.btnExcel.TabIndex = 10;
-            this.btnExcel.Text = "엑셀";
-            this.btnExcel.UseVisualStyleBackColor = true;
             // 
             // custDataGridViewControl1
             // 
@@ -317,46 +220,100 @@ namespace MESForm.Han
             this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
             this.custDataGridViewControl1.Name = "custDataGridViewControl1";
             this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 560);
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 512);
             this.custDataGridViewControl1.TabIndex = 0;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPrint.ForeColor = System.Drawing.Color.Black;
+            this.btnPrint.Location = new System.Drawing.Point(137, 6);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(110, 32);
+            this.btnPrint.TabIndex = 0;
+            this.btnPrint.Text = "발주서출력";
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // btnDateChange
+            // 
+            this.btnDateChange.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnDateChange.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDateChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDateChange.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDateChange.ForeColor = System.Drawing.Color.Black;
+            this.btnDateChange.Location = new System.Drawing.Point(253, 6);
+            this.btnDateChange.Name = "btnDateChange";
+            this.btnDateChange.Size = new System.Drawing.Size(120, 32);
+            this.btnDateChange.TabIndex = 1;
+            this.btnDateChange.Text = "납기일자변경";
+            this.btnDateChange.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDateChange.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(379, 6);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 32);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "발주취소";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExcel.Location = new System.Drawing.Point(485, 6);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(83, 32);
+            this.btnExcel.TabIndex = 3;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcel.UseVisualStyleBackColor = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(130, 23);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(281, 28);
+            this.dateTimePicker1.TabIndex = 25;
             // 
             // frmCurrentOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1250, 700);
-            this.Controls.Add(this.pnlSelect);
-            this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCurrentOrder";
             this.Text = "발주현황";
             this.Load += new System.EventHandler(this.frmCurrentOrder_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
+            this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        protected System.Windows.Forms.Panel pnlSelect;
-        protected System.Windows.Forms.Button btnInquiry;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ComboBox cboCompany;
         protected System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.TextBox txtItem;
         protected System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboDCompany;
@@ -365,11 +322,11 @@ namespace MESForm.Han
         protected System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboState;
         protected System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnDateChange;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.Button btnCancel;
-        protected System.Windows.Forms.Button btnExcel;
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private CustomControls.custButtonControl btnExcel;
+        private CustomControls.custButtonControl btnCancel;
+        private CustomControls.custButtonControl btnDateChange;
+        private CustomControls.custButtonControl btnPrint;
+        private UserControls.DateTimePicker dateTimePicker1;
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmMR_Request : Form
+    public partial class frmMR_Request : BaseForms.frmBaseLists
     {
         public frmMR_Request()
         {

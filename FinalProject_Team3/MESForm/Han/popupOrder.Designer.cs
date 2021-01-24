@@ -29,19 +29,16 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnOrder = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.custDataGridViewControl2 = new MESForm.CustomControls.custDataGridViewControl();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnOrder = new MESForm.CustomControls.custButtonControl();
             this.pnlTop.SuspendLayout();
+            this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,78 +49,43 @@ namespace MESForm.Han
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl2)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(462, 572);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(70, 23);
-            this.btnCancel.TabIndex = 44;
-            this.btnCancel.Text = "취소";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // pnlTop
             // 
-            this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pnlTop.Controls.Add(this.btnClose);
-            this.pnlTop.Controls.Add(this.label1);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(997, 32);
-            this.pnlTop.TabIndex = 29;
+            this.pnlTop.Size = new System.Drawing.Size(997, 40);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(36, 17);
             this.label1.Text = "발주";
             // 
-            // label2
+            // btnCancel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(30, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 14);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "발주업체";
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnCancel.Location = new System.Drawing.Point(501, 583);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnOrder
+            // btnSave
             // 
-            this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrder.Location = new System.Drawing.Point(602, 15);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnOrder.TabIndex = 78;
-            this.btnOrder.Text = "발주";
-            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnSave.Location = new System.Drawing.Point(425, 583);
             // 
-            // label3
+            // pnl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(33, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 14);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "발주";
+            this.pnl.Controls.Add(this.splitContainer1);
+            this.pnl.Size = new System.Drawing.Size(973, 531);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Location = new System.Drawing.Point(957, 0);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(15, 38);
+            this.splitContainer1.Location = new System.Drawing.Point(1, 1);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -133,12 +95,12 @@ namespace MESForm.Han
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.btnOrder);
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Size = new System.Drawing.Size(970, 528);
             this.splitContainer1.SplitterDistance = 276;
-            this.splitContainer1.TabIndex = 79;
+            this.splitContainer1.TabIndex = 80;
             // 
             // panel1
             // 
@@ -164,6 +126,16 @@ namespace MESForm.Han
             this.custDataGridViewControl1.Size = new System.Drawing.Size(266, 479);
             this.custDataGridViewControl1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(12, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 14);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "발주업체";
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -188,37 +160,44 @@ namespace MESForm.Han
             this.custDataGridViewControl2.Size = new System.Drawing.Size(674, 479);
             this.custDataGridViewControl2.TabIndex = 0;
             // 
-            // btnClose
+            // label3
             // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::MESForm.Properties.Resources.close_black;
-            this.btnClose.Location = new System.Drawing.Point(957, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 32);
-            this.btnClose.TabIndex = 107;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(15, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 14);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "발주";
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnOrder.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnOrder.ForeColor = System.Drawing.Color.Black;
+            this.btnOrder.Location = new System.Drawing.Point(594, 3);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(83, 32);
+            this.btnOrder.TabIndex = 78;
+            this.btnOrder.Text = "발주";
+            this.btnOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOrder.UseVisualStyleBackColor = false;
             // 
             // popupOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 620);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "popupOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "발주";
             this.Load += new System.EventHandler(this.popupOrder_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            this.pnl.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -234,17 +213,14 @@ namespace MESForm.Han
         }
 
         #endregion
-        protected System.Windows.Forms.Button btnCancel;
-        protected System.Windows.Forms.Panel pnlTop;
-        protected System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnOrder;
+
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel2;
         private CustomControls.custDataGridViewControl custDataGridViewControl2;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label3;
+        private CustomControls.custButtonControl btnOrder;
     }
 }

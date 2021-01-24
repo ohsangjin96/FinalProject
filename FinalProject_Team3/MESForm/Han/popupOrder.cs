@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class popupOrder : Form
+    public partial class popupOrder : BaseForms.frmPopup
     {
         public popupOrder()
         {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmCurrentOrder : Form
+    public partial class frmCurrentOrder : BaseForms.frmBaseLists
     {
         public frmCurrentOrder()
         {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmPOUpload : Form
+    public partial class frmPOUpload : BaseForms.frmBaseLists
     {
         public frmPOUpload()
         {
