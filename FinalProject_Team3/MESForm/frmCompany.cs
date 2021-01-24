@@ -1,4 +1,6 @@
-﻿using MESForm.Utils;
+﻿using FProjectVO;
+using MESForm.Services;
+using MESForm.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,9 +40,18 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvCompany, "수정시간", "COM_ModdifyDate");
         }
 
+        private void LoadData()
+        {
+            CompanyService service = new CompanyService();
+            List<CompanyVO> list = service.GetCompanyList();
+            service.Dispose();
+            dgvCompany.DataSource = list;
+        }
+
         private void frmCompany_Load(object sender, EventArgs e)
         {
             DgvSetting();
+            LoadData();
         }
 
         private void btnReg_Click(object sender, EventArgs e)

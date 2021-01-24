@@ -1,4 +1,6 @@
-﻿using MESForm.Utils;
+﻿using FProjectVO;
+using MESForm.Services;
+using MESForm.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +21,6 @@ namespace MESForm
         private void DgvSetting()
         {
             CommonUtil.SetInitGridView(dgvBOR);
-            //CommonUtil.AddGridTextColumn(dgvBOR, "BOR코드", "BOR_Code");
             CommonUtil.AddGridTextColumn(dgvBOR, "품목", "Item_Code");
             CommonUtil.AddGridTextColumn(dgvBOR, "품명", "Item_Name");
             CommonUtil.AddGridTextColumn(dgvBOR, "공정", "Process_Type");
@@ -27,16 +28,26 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvBOR, "설비", "Facility_Code");
             CommonUtil.AddGridTextColumn(dgvBOR, "설비명", "Facility_Name");
             CommonUtil.AddGridTextColumn(dgvBOR, "TactTime(Sec)", "BOR_TactTime");
-            //CommonUtil.AddGridTextColumn(dgvBOR, "대기시간", "BOR_Date");
+            CommonUtil.AddGridTextColumn(dgvBOR, "대기시간", "BOR_Date");
             CommonUtil.AddGridTextColumn(dgvBOR, "우선순위", "BOR_Order");
             CommonUtil.AddGridTextColumn(dgvBOR, "수율", "BOR_Transference");
             CommonUtil.AddGridTextColumn(dgvBOR, "사용유무", "BOR_Use");
             CommonUtil.AddGridTextColumn(dgvBOR, "비고", "BOR_Note");
+            CommonUtil.AddGridTextColumn(dgvBOR, "BOR코드", "BOR_Code");
+        }
+
+        private void LoadData()
+        {
+            BORService service = new BORService();
+            List<BORVO> list = service.GetBORList();
+            service.Dispose();
+            dgvBOR.DataSource = list;
         }
 
         private void frmBOR_Load(object sender, EventArgs e)
         {
             DgvSetting();
+            LoadData();
         }
 
         private void btnReg_Click(object sender, EventArgs e)
