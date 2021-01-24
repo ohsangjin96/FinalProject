@@ -20,6 +20,10 @@ namespace MESForm
 
             this.panel1.Paint += Panel_Paint;
         }
+        #region 로그인 정보
+        public string Uname { get; set; }
+        public string Udept { get; set; }
+        #endregion
 
         private void Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -64,7 +68,10 @@ namespace MESForm
         private void frmMain_Load(object sender, EventArgs e)
         {
             HideSubMenu();
+            lblName.Text = Uname + "님";
         }
+
+       
 
         #region 상위 버튼 클릭
         private void btnResource_Click(object sender, EventArgs e)

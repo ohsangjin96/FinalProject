@@ -87,6 +87,7 @@ namespace MESForm
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.모든탭닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblName = new System.Windows.Forms.Label();
             this.custTab = new MESForm.CustomControls.custTabControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -106,6 +107,7 @@ namespace MESForm
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.btnCommonCode);
             this.panel1.Controls.Add(this.btnAuthority);
             this.panel1.Controls.Add(this.imgLogo);
@@ -146,7 +148,7 @@ namespace MESForm
             this.btnAuthority.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnAuthority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAuthority.Font = new System.Drawing.Font("나눔스퀘어OTF", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnAuthority.ForeColor = System.Drawing.Color.White;
+            this.btnAuthority.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAuthority.Image = global::MESForm.Properties.Resources.Authority;
             this.btnAuthority.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAuthority.Location = new System.Drawing.Point(972, 25);
@@ -847,6 +849,18 @@ namespace MESForm
             this.닫기ToolStripMenuItem.Text = "닫기(&C)";
             this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
             // 
+            // lblName
+            // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(1034, 9);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(31, 15);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "이름";
+            // 
             // custTab
             // 
             this.custTab.ContextMenuStrip = this.contextMenuStrip1;
@@ -877,6 +891,7 @@ namespace MESForm
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pnlShipment.ResumeLayout(false);
@@ -954,6 +969,7 @@ namespace MESForm
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 모든탭닫기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 닫기ToolStripMenuItem;
+        private System.Windows.Forms.Label lblName;
     }
 }
 

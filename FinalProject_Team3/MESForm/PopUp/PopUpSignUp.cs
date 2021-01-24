@@ -38,6 +38,7 @@ namespace MESForm
             {
                 //ErrAlreadyReg
                 MessageBox.Show(Properties.Resources.ErrAlreadyReg.Replace("@@", "아이디"));
+                txtID.Text = string.Empty;
             }
             else
             {

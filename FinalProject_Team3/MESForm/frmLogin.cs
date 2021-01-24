@@ -68,6 +68,8 @@ namespace MESForm
                     MessageBox.Show($"{Info.User_Name}님 환영합니다.");
 
                     frmMain frm = new frmMain();
+                    frm.Uname = Info.User_Name;
+                    frm.Udept = Info.User_Dept;
                     frm.Show();
                     this.Hide();
                 }
@@ -75,6 +77,8 @@ namespace MESForm
                 {
                     //로그인 정보 불일치
                     MessageBox.Show("일치하는 회원 정보가 없습니다.");
+                    txtID.Text = string.Empty;
+                    txtPwd.Text = string.Empty;
                 }
             }
 
