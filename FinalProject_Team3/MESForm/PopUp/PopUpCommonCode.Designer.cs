@@ -30,23 +30,23 @@ namespace MESForm.PopUp
         private void InitializeComponent()
         {
             this.gboInsert = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboParentCode = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txtCodeName = new System.Windows.Forms.TextBox();
+            this.nudSeq = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCodeVal = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
             this.dgvCommonCode = new MESForm.CustomControls.custDataGridViewControl();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.gboInsert.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSeq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +66,15 @@ namespace MESForm.PopUp
             this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(242, 260);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(166, 260);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
@@ -85,15 +89,14 @@ namespace MESForm.PopUp
             // 
             // gboInsert
             // 
-            this.gboInsert.Controls.Add(this.comboBox1);
+            this.gboInsert.Controls.Add(this.cboParentCode);
             this.gboInsert.Controls.Add(this.label6);
-            this.gboInsert.Controls.Add(this.button2);
-            this.gboInsert.Controls.Add(this.textBox1);
-            this.gboInsert.Controls.Add(this.numericUpDown1);
+            this.gboInsert.Controls.Add(this.txtCodeName);
+            this.gboInsert.Controls.Add(this.nudSeq);
             this.gboInsert.Controls.Add(this.label9);
-            this.gboInsert.Controls.Add(this.button1);
+            this.gboInsert.Controls.Add(this.btnCodeVal);
             this.gboInsert.Controls.Add(this.label8);
-            this.gboInsert.Controls.Add(this.textBox8);
+            this.gboInsert.Controls.Add(this.txtCode);
             this.gboInsert.Controls.Add(this.label7);
             this.gboInsert.Location = new System.Drawing.Point(12, 82);
             this.gboInsert.Name = "gboInsert";
@@ -101,13 +104,14 @@ namespace MESForm.PopUp
             this.gboInsert.TabIndex = 78;
             this.gboInsert.TabStop = false;
             // 
-            // comboBox1
+            // cboParentCode
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 22);
-            this.comboBox1.TabIndex = 74;
+            this.cboParentCode.FormattingEnabled = true;
+            this.cboParentCode.Location = new System.Drawing.Point(135, 101);
+            this.cboParentCode.Name = "cboParentCode";
+            this.cboParentCode.Size = new System.Drawing.Size(173, 22);
+            this.cboParentCode.TabIndex = 6;
+            this.cboParentCode.SelectedIndexChanged += new System.EventHandler(this.cboParentCode_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -119,32 +123,34 @@ namespace MESForm.PopUp
             this.label6.TabIndex = 52;
             this.label6.Text = "코드";
             // 
-            // button2
+            // txtCodeName
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(333, 61);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 25);
-            this.button2.TabIndex = 73;
-            this.button2.Text = "중복체크";
-            this.button2.UseVisualStyleBackColor = false;
+            this.txtCodeName.Location = new System.Drawing.Point(135, 62);
+            this.txtCodeName.Name = "txtCodeName";
+            this.txtCodeName.Size = new System.Drawing.Size(173, 22);
+            this.txtCodeName.TabIndex = 4;
             // 
-            // textBox1
+            // nudSeq
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 22);
-            this.textBox1.TabIndex = 45;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(135, 140);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(68, 22);
-            this.numericUpDown1.TabIndex = 72;
+            this.nudSeq.Location = new System.Drawing.Point(135, 140);
+            this.nudSeq.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudSeq.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSeq.Name = "nudSeq";
+            this.nudSeq.Size = new System.Drawing.Size(68, 22);
+            this.nudSeq.TabIndex = 7;
+            this.nudSeq.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
@@ -156,18 +162,19 @@ namespace MESForm.PopUp
             this.label9.TabIndex = 32;
             this.label9.Text = "순서";
             // 
-            // button1
+            // btnCodeVal
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(333, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 25);
-            this.button1.TabIndex = 71;
-            this.button1.Text = "중복체크";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCodeVal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCodeVal.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnCodeVal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCodeVal.ForeColor = System.Drawing.Color.White;
+            this.btnCodeVal.Location = new System.Drawing.Point(333, 24);
+            this.btnCodeVal.Name = "btnCodeVal";
+            this.btnCodeVal.Size = new System.Drawing.Size(70, 25);
+            this.btnCodeVal.TabIndex = 3;
+            this.btnCodeVal.Text = "중복확인";
+            this.btnCodeVal.UseVisualStyleBackColor = false;
+            this.btnCodeVal.Click += new System.EventHandler(this.btnCodeVal_Click);
             // 
             // label8
             // 
@@ -178,12 +185,13 @@ namespace MESForm.PopUp
             this.label8.TabIndex = 31;
             this.label8.Text = "상위코드";
             // 
-            // textBox8
+            // txtCode
             // 
-            this.textBox8.Location = new System.Drawing.Point(135, 25);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(173, 22);
-            this.textBox8.TabIndex = 62;
+            this.txtCode.Location = new System.Drawing.Point(135, 25);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(173, 22);
+            this.txtCode.TabIndex = 2;
+            this.txtCode.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // label7
             // 
@@ -191,27 +199,28 @@ namespace MESForm.PopUp
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label7.Location = new System.Drawing.Point(44, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 14);
+            this.label7.Size = new System.Drawing.Size(43, 14);
             this.label7.TabIndex = 30;
-            this.label7.Text = "코드이름";
+            this.label7.Text = "코드명";
             // 
-            // btnDel
+            // btnDelete
             // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.Location = new System.Drawing.Point(383, 51);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 25);
-            this.btnDel.TabIndex = 77;
-            this.btnDel.Text = "삭제";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(383, 51);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 25);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReg
             // 
             this.btnReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReg.Location = new System.Drawing.Point(303, 51);
+            this.btnReg.Location = new System.Drawing.Point(221, 51);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(75, 25);
-            this.btnReg.TabIndex = 76;
+            this.btnReg.TabIndex = 0;
             this.btnReg.Text = "등록";
             this.btnReg.UseVisualStyleBackColor = true;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
@@ -228,15 +237,28 @@ namespace MESForm.PopUp
             this.dgvCommonCode.RowTemplate.Height = 23;
             this.dgvCommonCode.Size = new System.Drawing.Size(446, 329);
             this.dgvCommonCode.TabIndex = 1;
+            this.dgvCommonCode.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCommonCode_CellDoubleClick);
             // 
-            // CommonCodePopUp
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(302, 51);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 25);
+            this.btnUpdate.TabIndex = 79;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // PopUpCommonCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(470, 649);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.gboInsert);
-            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReg);
-            this.Name = "CommonCodePopUp";
+            this.Name = "PopUpCommonCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "CommonCodePopUp";
             this.Load += new System.EventHandler(this.CommonCodePopUp_Load);
@@ -245,14 +267,15 @@ namespace MESForm.PopUp
             this.Controls.SetChildIndex(this.btnSave, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnReg, 0);
-            this.Controls.SetChildIndex(this.btnDel, 0);
+            this.Controls.SetChildIndex(this.btnDelete, 0);
             this.Controls.SetChildIndex(this.gboInsert, 0);
+            this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.gboInsert.ResumeLayout(false);
             this.gboInsert.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSeq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCommonCode)).EndInit();
             this.ResumeLayout(false);
 
@@ -260,18 +283,18 @@ namespace MESForm.PopUp
 
         #endregion
         private System.Windows.Forms.GroupBox gboInsert;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboParentCode;
         protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.Button button2;
-        protected System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        protected System.Windows.Forms.TextBox txtCodeName;
+        private System.Windows.Forms.NumericUpDown nudSeq;
         protected System.Windows.Forms.Label label9;
-        protected System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button btnCodeVal;
         protected System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.TextBox textBox8;
+        protected System.Windows.Forms.TextBox txtCode;
         protected System.Windows.Forms.Label label7;
-        protected System.Windows.Forms.Button btnDel;
+        protected System.Windows.Forms.Button btnDelete;
         protected System.Windows.Forms.Button btnReg;
         private CustomControls.custDataGridViewControl dgvCommonCode;
+        protected System.Windows.Forms.Button btnUpdate;
     }
 }

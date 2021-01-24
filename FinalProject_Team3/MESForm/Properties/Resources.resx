@@ -136,14 +136,22 @@
   <data name="CommonCode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CommonCode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DataDeleteCheck" xml:space="preserve">
+  <data name="DeleteCheck" xml:space="preserve">
     <value>정말 삭제하시겠습니까?</value>
   </data>
-  <data name="DataDeleteYes" xml:space="preserve">
+  <data name="DeleteSuccess" xml:space="preserve">
     <value>삭제가 완료되었습니다.</value>
   </data>
-  <data name="DataSave" xml:space="preserve">
-    <value>저장이 완료되었습니다.</value>
+  <data name="ErrAlreadyReg" xml:space="preserve">
+    <value>이미 등록된 @@입니다.</value>
+    <comment>ex) 이미 등록된 아이디입니다.</comment>
+  </data>
+  <data name="ErrDeleteSuccess" xml:space="preserve">
+    <value>삭제를 실패하였습니다. 다시 확인해주세요.</value>
+  </data>
+  <data name="ErrEmptyText" xml:space="preserve">
+    <value>@@ 입력해주세요.</value>
+    <comment>ex) 이름을 입력해주세요.</comment>
   </data>
   <data name="ErrNotData" xml:space="preserve">
     <value>조회할 데이터가 없습니다.</value>
@@ -151,11 +159,9 @@
   <data name="ErrNotEntered" xml:space="preserve">
     <value>필수 입력사항을 확인해주세요.</value>
   </data>
-  <data name="ErrValCode" xml:space="preserve">
-    <value>이미 등록된 @@코드입니다.</value>
-  </data>
-  <data name="ErrValName" xml:space="preserve">
-    <value>이미 등록된 @@명입니다.</value>
+  <data name="ErrSelecDgvData" xml:space="preserve">
+    <value>검색할 데이터를 선택해주세요.</value>
+    <comment>데이터 그리드뷰로 부터 값을 불러오지 않고 무언가를 실행 했을 때의 오류</comment>
   </data>
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,5 +180,12 @@
   </data>
   <data name="OrderComplete" xml:space="preserve">
     <value>발주 신청이 완료되었습니다.</value>
+  </data>
+  <data name="RegTrue" xml:space="preserve">
+    <value>사용 가능한 @@입니다.</value>
+    <comment>ex) 사용 가능한 이름입니다.</comment>
+  </data>
+  <data name="SaveSuccess" xml:space="preserve">
+    <value>저장이 완료되었습니다.</value>
   </data>
 </root>

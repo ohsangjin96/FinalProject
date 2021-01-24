@@ -1,4 +1,6 @@
-﻿using MESForm.Utils;
+﻿using FProjectVO;
+using MESForm.Services;
+using MESForm.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,10 +41,27 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "수정자", "Facility_Amender");
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "수정날짜", "Facility_ModdifyDate");
         }
+        
+        private void LoadFacilityData()
+        {
+            FacilityService service = new FacilityService();
+            List<FacilityVO> list = service.GetFacilityList();
+            service.Dispose();
+            dgvFacility.DataSource = list;
+        }
+        private void LoadFacilityDetailData()
+        {
+            FacilityService service = new FacilityService();
+            List<FacilityVO> list = service.GetFacilityDetailList();
+            service.Dispose();
+            dgvFacilityDetail.DataSource = list;
+        }
 
         private void frmFacility_Load(object sender, EventArgs e)
         {
             DgvSetting();
+            LoadFacilityData();
+            LoadFacilityDetailData();
         }
 
         private void btnReg1_Click(object sender, EventArgs e)

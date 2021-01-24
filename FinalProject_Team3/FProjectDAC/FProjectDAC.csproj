@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="FacilityDAC.cs" />
+    <Compile Include="FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="LoginDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
