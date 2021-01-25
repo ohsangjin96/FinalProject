@@ -40,7 +40,7 @@ namespace MESForm.PopUp
             list = service.GetCommonCodeList();
             dgvCommonCode.DataSource = list;
 
-            ComboBoxBinding.CommonCodeBind(cboParentCode, list, "Common_Code", true, "미선택");
+            ComboBoxBinding.CommonCodeBind(cboParentCode, list, "Common_Code", true, "선택");
         }
 
         private void CommonCodePopUp_Load(object sender, EventArgs e)

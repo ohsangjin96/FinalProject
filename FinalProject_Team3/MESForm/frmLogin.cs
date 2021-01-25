@@ -16,12 +16,12 @@ namespace MESForm
 {
     public partial class PopUpLogin : Form
     {
-        public LoginVO Info { get; set; }
+        //public LoginVO Info { get; set; }
+
         public PopUpLogin()
         {
             InitializeComponent();
         }
-
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
@@ -55,23 +55,23 @@ namespace MESForm
                 LoginService service = new LoginService();
                 List<LoginVO> Login = service.LoginInfo(txtID.Text, txtPwd.Text);
                 service.Dispose();
+
                 if (Login != null)
                 {
+                    LoginVO Info = new LoginVO();
                     foreach (var item in Login)
                     {
-                        Info = new LoginVO();
                         Info.User_ID = item.User_ID;
                         Info.User_Pwd = item.User_Pwd;
                         Info.User_Name = item.User_Name;
                         Info.User_Email = item.User_Email;
                         Info.User_Dept = item.User_Dept;
                     }
-                    MessageBox.Show($"{Info.User_Name}님 환영합니다.");
 
-                    frmMain frm = new frmMain();
-                    frm.Uname = Info.User_Name;
-                    frm.Udept = Info.User_Dept;
-                    frm.Show();
+                    frmMain frm = (frmMain)this.Owner;
+                    frm.DeptInfo = Info;
+
+                    this.DialogResult = DialogResult.OK;
                     this.Hide();
                 }
                 else
