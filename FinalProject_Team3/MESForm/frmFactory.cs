@@ -22,7 +22,7 @@ namespace MESForm
         {
             CommonUtil.SetInitGridView(dgvFactory);
             CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "Factory_Grade"); // 1
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설타입", "Factory_Type"); // 2
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "Factory_Type"); // 2
             CommonUtil.AddGridTextColumn(dgvFactory, "시설코드", "Factory_Code"); // 3
             CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "Factory_Name"); // 4
             CommonUtil.AddGridTextColumn(dgvFactory, "상위시설", "Factory_HighRank"); // 5

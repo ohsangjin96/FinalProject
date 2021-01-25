@@ -87,7 +87,7 @@ namespace POPForm
             this.dgvList.Location = new System.Drawing.Point(0, 129);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(562, 286);
+            this.dgvList.Size = new System.Drawing.Size(868, 286);
             this.dgvList.TabIndex = 2;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             // 
@@ -99,7 +99,7 @@ namespace POPForm
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, -4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(562, 85);
+            this.label1.Size = new System.Drawing.Size(868, 85);
             this.label1.TabIndex = 41;
             this.label1.Text = "●금일업무결과";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,7 +116,7 @@ namespace POPForm
             this.dataGridView1.Location = new System.Drawing.Point(0, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(868, 312);
             this.dataGridView1.TabIndex = 40;
             // 
             // splitContainer1
@@ -139,7 +139,7 @@ namespace POPForm
             this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(562, 851);
+            this.splitContainer1.Size = new System.Drawing.Size(868, 851);
             this.splitContainer1.SplitterDistance = 408;
             this.splitContainer1.TabIndex = 42;
             // 
@@ -151,7 +151,7 @@ namespace POPForm
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Location = new System.Drawing.Point(0, -5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(562, 90);
+            this.label4.Size = new System.Drawing.Size(868, 90);
             this.label4.TabIndex = 42;
             this.label4.Text = "●업무현황";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,7 +166,7 @@ namespace POPForm
             this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 54);
+            this.panel1.Size = new System.Drawing.Size(868, 54);
             this.panel1.TabIndex = 43;
             // 
             // dateTimePicker2
@@ -217,9 +217,9 @@ namespace POPForm
             this.button4.BackColor = System.Drawing.SystemColors.Highlight;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(452, 15);
+            this.button4.Location = new System.Drawing.Point(758, 8);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 28);
+            this.button4.Size = new System.Drawing.Size(104, 35);
             this.button4.TabIndex = 80;
             this.button4.Text = "조회";
             this.button4.UseVisualStyleBackColor = false;
@@ -231,7 +231,7 @@ namespace POPForm
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button10.Location = new System.Drawing.Point(480, 395);
+            this.button10.Location = new System.Drawing.Point(786, 395);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(76, 40);
             this.button10.TabIndex = 56;
@@ -246,7 +246,7 @@ namespace POPForm
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button9.Location = new System.Drawing.Point(386, 395);
+            this.button9.Location = new System.Drawing.Point(692, 395);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(76, 40);
             this.button9.TabIndex = 55;
@@ -305,7 +305,7 @@ namespace POPForm
             this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer2.Location = new System.Drawing.Point(562, 71);
+            this.splitContainer2.Location = new System.Drawing.Point(868, 71);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -321,7 +321,7 @@ namespace POPForm
             this.splitContainer2.Panel1.Controls.Add(this.lblFixedDate1);
             this.splitContainer2.Panel1.Controls.Add(this.lblItemName1);
             this.splitContainer2.Panel1.Controls.Add(this.lblAmount1);
-            this.splitContainer2.Size = new System.Drawing.Size(903, 847);
+            this.splitContainer2.Size = new System.Drawing.Size(597, 847);
             this.splitContainer2.SplitterDistance = 402;
             this.splitContainer2.TabIndex = 58;
             // 
@@ -331,12 +331,13 @@ namespace POPForm
             this.button3.BackColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(762, 357);
+            this.button3.Location = new System.Drawing.Point(456, 357);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 40);
             this.button3.TabIndex = 55;
             this.button3.Text = "작업시작";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lblID
             // 
@@ -400,7 +401,7 @@ namespace POPForm
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(901, 85);
+            this.label2.Size = new System.Drawing.Size(595, 85);
             this.label2.TabIndex = 70;
             this.label2.Text = "●업무상세보기";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

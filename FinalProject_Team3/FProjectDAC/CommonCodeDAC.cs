@@ -52,7 +52,7 @@ namespace FProjectDAC
 
                     cmd.Parameters.AddWithValue("@Common_Code", vo.Common_Code);
                     cmd.Parameters.AddWithValue("@Common_Name", vo.Common_Name);
-                    cmd.Parameters.AddWithValue("@Common_Parent", (vo.Common_Parent == "미선택") ? DBNull.Value : (object)vo.Common_Parent);
+                    cmd.Parameters.AddWithValue("@Common_Parent", (vo.Common_Parent == "선택") ? DBNull.Value : (object)vo.Common_Parent);
                     cmd.Parameters.AddWithValue("@Common_Seq", vo.Common_Seq);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
@@ -85,7 +85,7 @@ namespace FProjectDAC
                     
                     cmd.Parameters.AddWithValue("@Common_Code", vo.Common_Code);
                     cmd.Parameters.AddWithValue("@Common_Name", vo.Common_Name);
-                    cmd.Parameters.AddWithValue("@Common_Parent", (vo.Common_Parent == "미선택") ? DBNull.Value : (object)vo.Common_Parent);
+                    cmd.Parameters.AddWithValue("@Common_Parent", (vo.Common_Parent == "선택") ? DBNull.Value : (object)vo.Common_Parent);
                     cmd.Parameters.AddWithValue("@Common_Seq", vo.Common_Seq);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
@@ -173,7 +173,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                if (pname == "미선택")
+                if (pname == "선택")
                     cmd.CommandText = @"select top 1 Common_Seq from CommonCode
                                         where Common_Parent is null
                                         order by Common_Seq desc";
