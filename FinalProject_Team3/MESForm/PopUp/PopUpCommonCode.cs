@@ -109,7 +109,7 @@ namespace MESForm.PopUp
                         MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "코드를"));
                         return;
                     }
-                    string orgPname = Convert.ToString(dgvCommonCode[2, dgvCommonCode.CurrentRow.Index].Value);
+
                     result = service.UpdateCommonCode(vo);
                 }
                 else
@@ -120,6 +120,7 @@ namespace MESForm.PopUp
                 if (result)
                 {
                     MessageBox.Show(Properties.Resources.SaveSuccess);
+                    btnCodeVal.Enabled = true;
                     LoadData();
                 }
             }

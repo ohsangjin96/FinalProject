@@ -136,7 +136,6 @@ namespace MESForm.PopUp
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(745, 0);
             this.btnClose.Size = new System.Drawing.Size(40, 34);
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dateTimePicker2
             // 
@@ -144,7 +143,7 @@ namespace MESForm.PopUp
             this.dateTimePicker2.Location = new System.Drawing.Point(609, 165);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker2.TabIndex = 115;
+            this.dateTimePicker2.TabIndex = 14;
             // 
             // dateTimePicker1
             // 
@@ -152,35 +151,35 @@ namespace MESForm.PopUp
             this.dateTimePicker1.Location = new System.Drawing.Point(362, 168);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker1.TabIndex = 114;
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(362, 205);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(166, 22);
-            this.textBox12.TabIndex = 113;
+            this.textBox12.TabIndex = 16;
             // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(115, 205);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(125, 22);
-            this.textBox11.TabIndex = 112;
+            this.textBox11.TabIndex = 15;
             // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(115, 131);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(125, 22);
-            this.textBox10.TabIndex = 111;
+            this.textBox10.TabIndex = 9;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(609, 95);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(125, 22);
-            this.textBox8.TabIndex = 110;
+            this.textBox8.TabIndex = 8;
             // 
             // comboBox2
             // 
@@ -188,7 +187,7 @@ namespace MESForm.PopUp
             this.comboBox2.Location = new System.Drawing.Point(115, 168);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(125, 22);
-            this.comboBox2.TabIndex = 109;
+            this.comboBox2.TabIndex = 12;
             // 
             // comboBox1
             // 
@@ -196,7 +195,7 @@ namespace MESForm.PopUp
             this.comboBox1.Location = new System.Drawing.Point(609, 130);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(125, 22);
-            this.comboBox1.TabIndex = 108;
+            this.comboBox1.TabIndex = 11;
             // 
             // label18
             // 
@@ -249,7 +248,7 @@ namespace MESForm.PopUp
             this.txtConditions.Location = new System.Drawing.Point(115, 95);
             this.txtConditions.Name = "txtConditions";
             this.txtConditions.Size = new System.Drawing.Size(125, 22);
-            this.txtConditions.TabIndex = 102;
+            this.txtConditions.TabIndex = 6;
             // 
             // label12
             // 
@@ -265,14 +264,14 @@ namespace MESForm.PopUp
             this.txtName.Location = new System.Drawing.Point(362, 20);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(125, 22);
-            this.txtName.TabIndex = 100;
+            this.txtName.TabIndex = 1;
             // 
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(115, 20);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(125, 22);
-            this.txtCode.TabIndex = 99;
+            this.txtCode.TabIndex = 0;
             // 
             // label2
             // 
@@ -290,7 +289,7 @@ namespace MESForm.PopUp
             this.cboType.Location = new System.Drawing.Point(609, 20);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(125, 22);
-            this.cboType.TabIndex = 97;
+            this.cboType.TabIndex = 2;
             // 
             // label3
             // 
@@ -316,7 +315,7 @@ namespace MESForm.PopUp
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(619, 128);
-            this.textBox7.TabIndex = 96;
+            this.textBox7.TabIndex = 17;
             // 
             // label5
             // 
@@ -332,7 +331,7 @@ namespace MESForm.PopUp
             this.textBox6.Location = new System.Drawing.Point(362, 95);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(125, 22);
-            this.textBox6.TabIndex = 95;
+            this.textBox6.TabIndex = 7;
             // 
             // label6
             // 
@@ -358,7 +357,7 @@ namespace MESForm.PopUp
             this.textBox4.Location = new System.Drawing.Point(362, 130);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(125, 22);
-            this.textBox4.TabIndex = 94;
+            this.textBox4.TabIndex = 10;
             // 
             // label8
             // 
@@ -374,7 +373,7 @@ namespace MESForm.PopUp
             this.txtCategory.Location = new System.Drawing.Point(609, 58);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(125, 22);
-            this.txtCategory.TabIndex = 93;
+            this.txtCategory.TabIndex = 5;
             // 
             // label9
             // 
@@ -391,7 +390,7 @@ namespace MESForm.PopUp
             this.txtCEO.Location = new System.Drawing.Point(115, 57);
             this.txtCEO.Name = "txtCEO";
             this.txtCEO.Size = new System.Drawing.Size(125, 22);
-            this.txtCEO.TabIndex = 92;
+            this.txtCEO.TabIndex = 3;
             // 
             // label10
             // 
@@ -435,7 +434,7 @@ namespace MESForm.PopUp
             this.textBox1.Location = new System.Drawing.Point(362, 57);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 22);
-            this.textBox1.TabIndex = 117;
+            this.textBox1.TabIndex = 4;
             // 
             // PopUpCompany
             // 
