@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel %282%29">
       <HintPath>..\..\..\..\..\..\Downloads\Microsoft.Office.Interop.Excel (2).dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -43,7 +46,9 @@
       <HintPath>C:\Users\qkfka\Desktop\구디\파일\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,6 +99,7 @@
       <DependentUpon>Machin.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\CommonUtil.cs" />
+    <Compile Include="Utils\LoggingUtility.cs" />
     <EmbeddedResource Include="PopUpLogin.resx">
       <DependentUpon>PopUpLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +125,7 @@
     <EmbeddedResource Include="UserControls\Machin.resx">
       <DependentUpon>Machin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
