@@ -63,7 +63,38 @@ namespace MESForm
             frm.Show();
             this.Cursor = currentCursor;
         }
+
+        //값을 넘길 때
+        private bool OpenFormMdi(Type t)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.GetType() == t)
+                {
+                    form.Activate();
+                    custTab.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
+                    return true;
+                }
+            }
+            return false;
+        }
         #endregion
+
+        /// <summary>
+        /// 폼 인스턴스 생성 시 직원의 정보를 넘겨줄때 사용
+        /// </summary>
+        /// <param name="frm">값을 넘길 대상 폼</param>
+        private void FormDataPass(FrmITEM frm)
+        {
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
+        }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -464,9 +495,9 @@ namespace MESForm
             List<LoginVO> Login = service.LoginInfo(DeptInfo.User_ID, DeptInfo.User_Pwd);
             service.Dispose();
 
-            //lblName.Text = $"{DeptInfo.User_Dept} - {DeptInfo.User_Name}";
-            lblName.Text = DeptInfo.User_Name;
-            lblDept.Text = DeptInfo.User_Dept;
+            lblName.Text = $"{DeptInfo.User_Dept} - {DeptInfo.User_Name}";
+            //lblName.Text = DeptInfo.User_Name;
+            //lblDept.Text = DeptInfo.User_Dept;
             this.Show();
 
             
@@ -475,11 +506,7 @@ namespace MESForm
         private void button10_Click(object sender, EventArgs e)//품목
         {
             FrmITEM frm = new FrmITEM(DeptInfo.User_Name);
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
-            frm.Show();
-            
-            
+            FormDataPass(frm);
         }
     }
 }
