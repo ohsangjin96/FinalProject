@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -33,6 +34,7 @@ namespace MESForm
        
         private void Dgvsetting()
         {
+            CommonUtil.SetDGVDesign_Num(dgvItem);
             CommonUtil.SetInitGridView(dgvItem);
             CommonUtil.AddGridTextColumn(dgvItem, "품목유형", "ITEM_Type");
             CommonUtil.AddGridTextColumn(dgvItem, "품목", "ITEM_Code");
@@ -71,7 +73,7 @@ namespace MESForm
 
         private void ComBinding()//콤보박스 바인딩
         {
-           
+            
         }
 
         private void btnReg_Click(object sender, EventArgs e)//등록버튼
@@ -89,6 +91,21 @@ namespace MESForm
         {
             LoadData();
 
+        }
+
+        private void btnInquiry_Click(object sender, EventArgs e)//조회버튼
+        {
+            //dgvItem.DataSource = null;
+            //dgvItem.DataSource = (from All in AllList 
+            //                            where All.ITEM_Code.Contains(txtItem.Text) &&
+            //                                  All.ITME_Use.Contains(cboUseYN.Text) &&
+            //                                  All.ITEM_Order_Company.Contains(cboOrderCompany.Text) &&
+            //                                  All.ITEM_WareHouse_IN.Contains(cboWareHouseIN.Text)&&
+            //                                  All.ITEM_WareHouse_OUT.Contains(cboWareHouseOUT.Text) &&
+            //                                  All.ITEM_Delivery_Company.Contains(cboDelCompany.Text) &&
+            //                                  All.ITME_Manager.Contains(cboManager.Text) &&
+            //                                  All.ITEM_Type.Contains(cboItemType.Text)
+            //                      select All).ToList();
         }
     }
 }

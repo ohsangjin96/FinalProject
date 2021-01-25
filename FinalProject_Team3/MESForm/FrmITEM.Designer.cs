@@ -35,17 +35,17 @@
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.dgvItem = new MESForm.CustomControls.custDataGridViewControl();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
+            this.cboWareHouseOUT = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtItem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cboItemType = new System.Windows.Forms.ComboBox();
+            this.cboWareHouseIN = new System.Windows.Forms.ComboBox();
+            this.cboOrderCompany = new System.Windows.Forms.ComboBox();
+            this.cboUseYN = new System.Windows.Forms.ComboBox();
+            this.cboManager = new System.Windows.Forms.ComboBox();
+            this.cboDelCompany = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,32 +62,32 @@
             this.pnlSelect.Controls.Add(this.label7);
             this.pnlSelect.Controls.Add(this.label6);
             this.pnlSelect.Controls.Add(this.label5);
-            this.pnlSelect.Controls.Add(this.comboBox7);
-            this.pnlSelect.Controls.Add(this.comboBox6);
-            this.pnlSelect.Controls.Add(this.comboBox5);
-            this.pnlSelect.Controls.Add(this.comboBox4);
-            this.pnlSelect.Controls.Add(this.comboBox3);
-            this.pnlSelect.Controls.Add(this.comboBox2);
+            this.pnlSelect.Controls.Add(this.cboDelCompany);
+            this.pnlSelect.Controls.Add(this.cboManager);
+            this.pnlSelect.Controls.Add(this.cboUseYN);
+            this.pnlSelect.Controls.Add(this.cboOrderCompany);
+            this.pnlSelect.Controls.Add(this.cboWareHouseIN);
+            this.pnlSelect.Controls.Add(this.cboItemType);
             this.pnlSelect.Controls.Add(this.label4);
-            this.pnlSelect.Controls.Add(this.cboFactoryGrade);
+            this.pnlSelect.Controls.Add(this.cboWareHouseOUT);
             this.pnlSelect.Controls.Add(this.label3);
             this.pnlSelect.Controls.Add(this.label2);
-            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.txtItem);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtItem, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboFactoryGrade, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboWareHouseOUT, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label4, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox2, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox3, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox4, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox5, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox6, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox7, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboItemType, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboWareHouseIN, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboOrderCompany, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboUseYN, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboManager, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboDelCompany, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label5, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label6, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label7, 0);
@@ -96,6 +96,7 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -219,13 +220,13 @@
             this.label4.TabIndex = 39;
             this.label4.Text = "사용여부";
             // 
-            // cboFactoryGrade
+            // cboWareHouseOUT
             // 
-            this.cboFactoryGrade.FormattingEnabled = true;
-            this.cboFactoryGrade.Location = new System.Drawing.Point(545, 56);
-            this.cboFactoryGrade.Name = "cboFactoryGrade";
-            this.cboFactoryGrade.Size = new System.Drawing.Size(191, 21);
-            this.cboFactoryGrade.TabIndex = 38;
+            this.cboWareHouseOUT.FormattingEnabled = true;
+            this.cboWareHouseOUT.Location = new System.Drawing.Point(545, 56);
+            this.cboWareHouseOUT.Name = "cboWareHouseOUT";
+            this.cboWareHouseOUT.Size = new System.Drawing.Size(191, 21);
+            this.cboWareHouseOUT.TabIndex = 38;
             // 
             // label3
             // 
@@ -247,12 +248,12 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "출고창고";
             // 
-            // textBox1
+            // txtItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 34;
+            this.txtItem.Location = new System.Drawing.Point(130, 15);
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(191, 20);
+            this.txtItem.TabIndex = 34;
             // 
             // label1
             // 
@@ -264,53 +265,53 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "품목";
             // 
-            // comboBox2
+            // cboItemType
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(545, 97);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 21);
-            this.comboBox2.TabIndex = 41;
+            this.cboItemType.FormattingEnabled = true;
+            this.cboItemType.Location = new System.Drawing.Point(545, 97);
+            this.cboItemType.Name = "cboItemType";
+            this.cboItemType.Size = new System.Drawing.Size(191, 21);
+            this.cboItemType.TabIndex = 41;
             // 
-            // comboBox3
+            // cboWareHouseIN
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(130, 56);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(191, 21);
-            this.comboBox3.TabIndex = 42;
+            this.cboWareHouseIN.FormattingEnabled = true;
+            this.cboWareHouseIN.Location = new System.Drawing.Point(130, 56);
+            this.cboWareHouseIN.Name = "cboWareHouseIN";
+            this.cboWareHouseIN.Size = new System.Drawing.Size(191, 21);
+            this.cboWareHouseIN.TabIndex = 42;
             // 
-            // comboBox4
+            // cboOrderCompany
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(960, 15);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(191, 21);
-            this.comboBox4.TabIndex = 43;
+            this.cboOrderCompany.FormattingEnabled = true;
+            this.cboOrderCompany.Location = new System.Drawing.Point(960, 15);
+            this.cboOrderCompany.Name = "cboOrderCompany";
+            this.cboOrderCompany.Size = new System.Drawing.Size(191, 21);
+            this.cboOrderCompany.TabIndex = 43;
             // 
-            // comboBox5
+            // cboUseYN
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(545, 15);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(191, 21);
-            this.comboBox5.TabIndex = 44;
+            this.cboUseYN.FormattingEnabled = true;
+            this.cboUseYN.Location = new System.Drawing.Point(545, 15);
+            this.cboUseYN.Name = "cboUseYN";
+            this.cboUseYN.Size = new System.Drawing.Size(191, 21);
+            this.cboUseYN.TabIndex = 44;
             // 
-            // comboBox6
+            // cboManager
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(130, 97);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(191, 21);
-            this.comboBox6.TabIndex = 45;
+            this.cboManager.FormattingEnabled = true;
+            this.cboManager.Location = new System.Drawing.Point(130, 97);
+            this.cboManager.Name = "cboManager";
+            this.cboManager.Size = new System.Drawing.Size(191, 21);
+            this.cboManager.TabIndex = 45;
             // 
-            // comboBox7
+            // cboDelCompany
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(963, 57);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(191, 21);
-            this.comboBox7.TabIndex = 46;
+            this.cboDelCompany.FormattingEnabled = true;
+            this.cboDelCompany.Location = new System.Drawing.Point(963, 57);
+            this.cboDelCompany.Name = "cboDelCompany";
+            this.cboDelCompany.Size = new System.Drawing.Size(191, 21);
+            this.cboDelCompany.TabIndex = 46;
             // 
             // label5
             // 
@@ -378,20 +379,20 @@
         private CustomControls.custButtonControl btnRefresh;
         private CustomControls.custDataGridViewControl dgvItem;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboFactoryGrade;
+        private System.Windows.Forms.ComboBox cboWareHouseOUT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboDelCompany;
+        private System.Windows.Forms.ComboBox cboManager;
+        private System.Windows.Forms.ComboBox cboUseYN;
+        private System.Windows.Forms.ComboBox cboOrderCompany;
+        private System.Windows.Forms.ComboBox cboWareHouseIN;
+        private System.Windows.Forms.ComboBox cboItemType;
     }
 }

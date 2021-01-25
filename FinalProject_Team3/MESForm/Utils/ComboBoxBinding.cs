@@ -60,6 +60,12 @@ namespace MESForm.Utils
             cbo.DataSource = list;
         }
 
-        
+        public static void BindingComboBoxPart<T>(ComboBox cbo, List<T> vo, string displayMember)
+        {
+
+
+            cbo.DisplayMember = displayMember;
+            cbo.DataSource = vo;
+        }
     }
 }
