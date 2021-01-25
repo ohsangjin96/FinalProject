@@ -9,21 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using MESForm.Services;
+using FProjectVO;
 
 namespace MESForm
 {
     public partial class frmMain : Form
     {
+        public LoginVO DeptInfo { get; set; }
+
         public frmMain()
         {
             InitializeComponent();
 
             this.panel1.Paint += Panel_Paint;
         }
-        #region 로그인 정보
-        public string Uname { get; set; }
-        public string Udept { get; set; }
-        #endregion
 
         private void Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -67,8 +67,10 @@ namespace MESForm
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            LogMenu();
+
             HideSubMenu();
-            lblName.Text = Uname + "님";
         }
 
        
@@ -423,9 +425,51 @@ namespace MESForm
         #endregion
 
         //x 누르면 프로그램 종료
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("로그아웃을 하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+                == DialogResult.Yes)
+            {
+                e.Cancel = true;
+                this.Hide();
+                LogMenu();
+            }
+            else
+                e.Cancel = true;
+        }
+
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
+        }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("로그아웃을 하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+                == DialogResult.Yes)
+            {
+                this.Hide();
+                LogMenu();
+            }
+            else
+                return;
+        }
+
+        private void LogMenu()
+        {
+            PopUpLogin frm = new PopUpLogin();
+            if (frm.ShowDialog(this) != DialogResult.OK)
+            {
+                Environment.Exit(0);
+            }
+
+            LoginService service = new LoginService();
+            List<LoginVO> Login = service.LoginInfo(DeptInfo.User_ID, DeptInfo.User_Pwd);
+            service.Dispose();
+
+            lblName.Text = $"{DeptInfo.User_Dept} - {DeptInfo.User_Name}";
+            this.Show();
         }
     }
 }

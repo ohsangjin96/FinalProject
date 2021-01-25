@@ -31,6 +31,7 @@ namespace MESForm
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.btnCommonCode = new System.Windows.Forms.Button();
             this.btnAuthority = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -87,7 +88,7 @@ namespace MESForm
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.모든탭닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblName = new System.Windows.Forms.Label();
+            this.lblLogout = new System.Windows.Forms.LinkLabel();
             this.custTab = new MESForm.CustomControls.custTabControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -107,6 +108,7 @@ namespace MESForm
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblLogout);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.btnCommonCode);
             this.panel1.Controls.Add(this.btnAuthority);
@@ -116,6 +118,19 @@ namespace MESForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1101, 95);
             this.panel1.TabIndex = 1;
+            // 
+            // lblName
+            // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(797, 77);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(240, 15);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "이름";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCommonCode
             // 
@@ -130,7 +145,7 @@ namespace MESForm
             this.btnCommonCode.ForeColor = System.Drawing.Color.White;
             this.btnCommonCode.Image = global::MESForm.Properties.Resources.CommonCode;
             this.btnCommonCode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommonCode.Location = new System.Drawing.Point(849, 25);
+            this.btnCommonCode.Location = new System.Drawing.Point(858, 12);
             this.btnCommonCode.Name = "btnCommonCode";
             this.btnCommonCode.Size = new System.Drawing.Size(117, 48);
             this.btnCommonCode.TabIndex = 2;
@@ -151,7 +166,7 @@ namespace MESForm
             this.btnAuthority.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAuthority.Image = global::MESForm.Properties.Resources.Authority;
             this.btnAuthority.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAuthority.Location = new System.Drawing.Point(972, 25);
+            this.btnAuthority.Location = new System.Drawing.Point(981, 12);
             this.btnAuthority.Name = "btnAuthority";
             this.btnAuthority.Size = new System.Drawing.Size(117, 48);
             this.btnAuthority.TabIndex = 1;
@@ -849,17 +864,23 @@ namespace MESForm
             this.닫기ToolStripMenuItem.Text = "닫기(&C)";
             this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
             // 
-            // lblName
+            // lblLogout
             // 
-            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblName.AutoSize = true;
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(1034, 9);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(31, 15);
-            this.lblName.TabIndex = 3;
-            this.lblName.Text = "이름";
+            this.lblLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogout.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblLogout.ForeColor = System.Drawing.Color.Magenta;
+            this.lblLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblLogout.LinkColor = System.Drawing.Color.Violet;
+            this.lblLogout.Location = new System.Drawing.Point(1043, 77);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(55, 14);
+            this.lblLogout.TabIndex = 5;
+            this.lblLogout.TabStop = true;
+            this.lblLogout.Text = "로그아웃";
+            this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // custTab
             // 
@@ -887,6 +908,7 @@ namespace MESForm
             this.Name = "frmMain";
             this.Text = "SmartMOM - made by GDC6 / Team3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
@@ -970,6 +992,7 @@ namespace MESForm
         private System.Windows.Forms.ToolStripMenuItem 모든탭닫기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 닫기ToolStripMenuItem;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.LinkLabel lblLogout;
     }
 }
 
