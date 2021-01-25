@@ -65,7 +65,7 @@ namespace FProjectDAC
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())//품목등록 쿼리
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into
