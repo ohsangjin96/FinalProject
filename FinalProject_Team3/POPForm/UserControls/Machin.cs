@@ -12,6 +12,9 @@ namespace POPForm.UserControls
 {
     public partial class Machin : UserControl
     {
+        public string Facility { get { return lblFacility.Text; } set{lblFacility.Text=value;} }
+        public string Name { get { return lblName.Text; } set { lblName.Text = value; } }
+
         public Machin()
         {
             InitializeComponent();
