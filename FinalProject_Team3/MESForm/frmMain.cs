@@ -23,6 +23,7 @@ namespace MESForm
         #region 로그인 정보
         public string Uname { get; set; }
         public string Udept { get; set; }
+       
         #endregion
 
         private void Panel_Paint(object sender, PaintEventArgs e)
@@ -283,7 +284,11 @@ namespace MESForm
         private void button10_Click(object sender, EventArgs e)//품목
         {
 
-            OpenCreateForm<FrmITEM>();
+            FrmITEM frm = new FrmITEM(Uname);
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+       
         }
         private void button9_Click(object sender, EventArgs e)//bom
         {

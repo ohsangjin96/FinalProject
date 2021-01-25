@@ -13,12 +13,15 @@ namespace MESForm
 {
     public partial class FrmITEM : MESForm.BaseForms.frmBaseLists
     {
+        string Manager;
+
         List<ItemVO> AllList;
-        public FrmITEM()
+     
+        public FrmITEM(string  manager)
         {
             InitializeComponent();
+            Manager = manager;
         }
-
         private void FrmITEM_Load(object sender, EventArgs e)
         {
             //로드
@@ -81,13 +84,20 @@ namespace MESForm
 
         private void btnReg_Click(object sender, EventArgs e)//등록버튼
         {
-            PopUpItem pop = new PopUpItem();
+            PopUpItem pop = new PopUpItem(Manager);
+           
             pop.ShowDialog();
         }
 
         private void dgvItem_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)//열번호매기기
         {
            
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+
         }
     }
 }

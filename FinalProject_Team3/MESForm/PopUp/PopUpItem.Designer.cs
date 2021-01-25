@@ -28,56 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboWareIn = new System.Windows.Forms.ComboBox();
+            this.cboUseYN = new System.Windows.Forms.ComboBox();
+            this.cboWareOut = new System.Windows.Forms.ComboBox();
+            this.cboDisconYN = new System.Windows.Forms.ComboBox();
+            this.txtUnitQty = new System.Windows.Forms.TextBox();
+            this.txtRemark = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.cboOrderType = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.txtModifierDate = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
+            this.txtStandard = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txtReadTime = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.cboDCompany = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.cboOCompany = new System.Windows.Forms.ComboBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.comboBox17 = new System.Windows.Forms.ComboBox();
+            this.cboImportYN = new System.Windows.Forms.ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.cboProcessYN = new System.Windows.Forms.ComboBox();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.comboBox19 = new System.Windows.Forms.ComboBox();
+            this.cboUnit = new System.Windows.Forms.ComboBox();
             this.label51 = new System.Windows.Forms.Label();
-            this.comboBox21 = new System.Windows.Forms.ComboBox();
+            this.cboExportYN = new System.Windows.Forms.ComboBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.comboBox22 = new System.Windows.Forms.ComboBox();
+            this.cboIType = new System.Windows.Forms.ComboBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.txtIname = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.txtItem = new System.Windows.Forms.TextBox();
+            this.txtManager = new System.Windows.Forms.TextBox();
+            this.numSaveStock = new System.Windows.Forms.NumericUpDown();
+            this.numMinOrder = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -93,121 +93,125 @@
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(355, 373);
+            this.btnCancel.TabIndex = 21;
             this.btnCancel.Click += new System.EventHandler(this.XorCancle_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(279, 373);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
-            this.pnl.Controls.Add(this.numericUpDown2);
-            this.pnl.Controls.Add(this.numericUpDown1);
-            this.pnl.Controls.Add(this.textBox3);
-            this.pnl.Controls.Add(this.comboBox8);
-            this.pnl.Controls.Add(this.comboBox6);
-            this.pnl.Controls.Add(this.comboBox5);
-            this.pnl.Controls.Add(this.comboBox3);
-            this.pnl.Controls.Add(this.textBox2);
-            this.pnl.Controls.Add(this.textBox1);
+            this.pnl.Controls.Add(this.numMinOrder);
+            this.pnl.Controls.Add(this.numSaveStock);
+            this.pnl.Controls.Add(this.txtManager);
+            this.pnl.Controls.Add(this.cboWareIn);
+            this.pnl.Controls.Add(this.cboUseYN);
+            this.pnl.Controls.Add(this.cboWareOut);
+            this.pnl.Controls.Add(this.cboDisconYN);
+            this.pnl.Controls.Add(this.txtUnitQty);
+            this.pnl.Controls.Add(this.txtRemark);
             this.pnl.Controls.Add(this.label2);
-            this.pnl.Controls.Add(this.comboBox12);
+            this.pnl.Controls.Add(this.cboOrderType);
             this.pnl.Controls.Add(this.label29);
             this.pnl.Controls.Add(this.label31);
             this.pnl.Controls.Add(this.label32);
             this.pnl.Controls.Add(this.label33);
             this.pnl.Controls.Add(this.label34);
-            this.pnl.Controls.Add(this.textBox20);
-            this.pnl.Controls.Add(this.textBox21);
-            this.pnl.Controls.Add(this.textBox22);
+            this.pnl.Controls.Add(this.txtModifierDate);
+            this.pnl.Controls.Add(this.txtModifier);
+            this.pnl.Controls.Add(this.txtStandard);
             this.pnl.Controls.Add(this.label36);
             this.pnl.Controls.Add(this.label39);
             this.pnl.Controls.Add(this.label41);
             this.pnl.Controls.Add(this.label42);
             this.pnl.Controls.Add(this.label43);
-            this.pnl.Controls.Add(this.textBox28);
+            this.pnl.Controls.Add(this.txtReadTime);
             this.pnl.Controls.Add(this.label44);
-            this.pnl.Controls.Add(this.comboBox15);
+            this.pnl.Controls.Add(this.cboDCompany);
             this.pnl.Controls.Add(this.label45);
-            this.pnl.Controls.Add(this.comboBox16);
+            this.pnl.Controls.Add(this.cboOCompany);
             this.pnl.Controls.Add(this.label46);
-            this.pnl.Controls.Add(this.comboBox17);
+            this.pnl.Controls.Add(this.cboImportYN);
             this.pnl.Controls.Add(this.label47);
             this.pnl.Controls.Add(this.label48);
-            this.pnl.Controls.Add(this.comboBox18);
+            this.pnl.Controls.Add(this.cboProcessYN);
             this.pnl.Controls.Add(this.label49);
             this.pnl.Controls.Add(this.label50);
-            this.pnl.Controls.Add(this.comboBox19);
+            this.pnl.Controls.Add(this.cboUnit);
             this.pnl.Controls.Add(this.label51);
-            this.pnl.Controls.Add(this.comboBox21);
+            this.pnl.Controls.Add(this.cboExportYN);
             this.pnl.Controls.Add(this.label52);
             this.pnl.Controls.Add(this.label53);
-            this.pnl.Controls.Add(this.comboBox22);
+            this.pnl.Controls.Add(this.cboIType);
             this.pnl.Controls.Add(this.label54);
-            this.pnl.Controls.Add(this.textBox31);
+            this.pnl.Controls.Add(this.txtIname);
             this.pnl.Controls.Add(this.label55);
-            this.pnl.Controls.Add(this.textBox32);
+            this.pnl.Controls.Add(this.txtItem);
             this.pnl.Size = new System.Drawing.Size(684, 321);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(668, 0);
+            this.btnClose.TabIndex = 22;
             this.btnClose.Click += new System.EventHandler(this.XorCancle_Click);
             // 
-            // comboBox8
+            // cboWareIn
             // 
-            this.comboBox8.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(556, 84);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 22);
-            this.comboBox8.TabIndex = 242;
+            this.cboWareIn.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboWareIn.FormattingEnabled = true;
+            this.cboWareIn.Location = new System.Drawing.Point(556, 84);
+            this.cboWareIn.Name = "cboWareIn";
+            this.cboWareIn.Size = new System.Drawing.Size(121, 22);
+            this.cboWareIn.TabIndex = 11;
             // 
-            // comboBox6
+            // cboUseYN
             // 
-            this.comboBox6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(328, 131);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 22);
-            this.comboBox6.TabIndex = 240;
+            this.cboUseYN.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboUseYN.FormattingEnabled = true;
+            this.cboUseYN.Location = new System.Drawing.Point(328, 131);
+            this.cboUseYN.Name = "cboUseYN";
+            this.cboUseYN.Size = new System.Drawing.Size(121, 22);
+            this.cboUseYN.TabIndex = 16;
             // 
-            // comboBox5
+            // cboWareOut
             // 
-            this.comboBox5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(89, 108);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 22);
-            this.comboBox5.TabIndex = 239;
+            this.cboWareOut.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboWareOut.FormattingEnabled = true;
+            this.cboWareOut.Location = new System.Drawing.Point(89, 108);
+            this.cboWareOut.Name = "cboWareOut";
+            this.cboWareOut.Size = new System.Drawing.Size(121, 22);
+            this.cboWareOut.TabIndex = 12;
             // 
-            // comboBox3
+            // cboDisconYN
             // 
-            this.comboBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(556, 134);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 22);
-            this.comboBox3.TabIndex = 237;
+            this.cboDisconYN.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboDisconYN.FormattingEnabled = true;
+            this.cboDisconYN.Location = new System.Drawing.Point(556, 134);
+            this.cboDisconYN.Name = "cboDisconYN";
+            this.cboDisconYN.Size = new System.Drawing.Size(121, 22);
+            this.cboDisconYN.TabIndex = 17;
             // 
-            // textBox2
+            // txtUnitQty
             // 
-            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox2.Location = new System.Drawing.Point(328, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 22);
-            this.textBox2.TabIndex = 234;
+            this.txtUnitQty.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtUnitQty.Location = new System.Drawing.Point(328, 32);
+            this.txtUnitQty.Name = "txtUnitQty";
+            this.txtUnitQty.Size = new System.Drawing.Size(121, 22);
+            this.txtUnitQty.TabIndex = 4;
             // 
-            // textBox1
+            // txtRemark
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox1.Location = new System.Drawing.Point(89, 223);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(577, 93);
-            this.textBox1.TabIndex = 233;
+            this.txtRemark.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtRemark.Location = new System.Drawing.Point(89, 223);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(577, 93);
+            this.txtRemark.TabIndex = 19;
             // 
             // label2
             // 
@@ -220,14 +224,14 @@
             this.label2.TabIndex = 232;
             this.label2.Text = "비고";
             // 
-            // comboBox12
+            // cboOrderType
             // 
-            this.comboBox12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(89, 179);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(121, 22);
-            this.comboBox12.TabIndex = 231;
+            this.cboOrderType.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboOrderType.FormattingEnabled = true;
+            this.cboOrderType.Location = new System.Drawing.Point(89, 179);
+            this.cboOrderType.Name = "cboOrderType";
+            this.cboOrderType.Size = new System.Drawing.Size(121, 22);
+            this.cboOrderType.TabIndex = 18;
             // 
             // label29
             // 
@@ -284,31 +288,31 @@
             this.label34.TabIndex = 225;
             this.label34.Text = "수정일";
             // 
-            // textBox20
+            // txtModifierDate
             // 
-            this.textBox20.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox20.Location = new System.Drawing.Point(556, 158);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(121, 22);
-            this.textBox20.TabIndex = 224;
+            this.txtModifierDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtModifierDate.Location = new System.Drawing.Point(556, 158);
+            this.txtModifierDate.Name = "txtModifierDate";
+            this.txtModifierDate.ReadOnly = true;
+            this.txtModifierDate.Size = new System.Drawing.Size(121, 22);
+            this.txtModifierDate.TabIndex = 224;
             // 
-            // textBox21
+            // txtModifier
             // 
-            this.textBox21.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox21.Location = new System.Drawing.Point(328, 155);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(121, 22);
-            this.textBox21.TabIndex = 223;
+            this.txtModifier.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtModifier.Location = new System.Drawing.Point(328, 155);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.ReadOnly = true;
+            this.txtModifier.Size = new System.Drawing.Size(121, 22);
+            this.txtModifier.TabIndex = 223;
             // 
-            // textBox22
+            // txtStandard
             // 
-            this.textBox22.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox22.Location = new System.Drawing.Point(556, 13);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(121, 22);
-            this.textBox22.TabIndex = 222;
+            this.txtStandard.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtStandard.Location = new System.Drawing.Point(556, 13);
+            this.txtStandard.Name = "txtStandard";
+            this.txtStandard.Size = new System.Drawing.Size(121, 22);
+            this.txtStandard.TabIndex = 2;
             // 
             // label36
             // 
@@ -365,13 +369,13 @@
             this.label43.TabIndex = 209;
             this.label43.Text = "최소발주량";
             // 
-            // textBox28
+            // txtReadTime
             // 
-            this.textBox28.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox28.Location = new System.Drawing.Point(328, 105);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(121, 22);
-            this.textBox28.TabIndex = 208;
+            this.txtReadTime.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtReadTime.Location = new System.Drawing.Point(328, 105);
+            this.txtReadTime.Name = "txtReadTime";
+            this.txtReadTime.Size = new System.Drawing.Size(121, 22);
+            this.txtReadTime.TabIndex = 13;
             // 
             // label44
             // 
@@ -384,14 +388,14 @@
             this.label44.TabIndex = 207;
             this.label44.Text = "입고창고";
             // 
-            // comboBox15
+            // cboDCompany
             // 
-            this.comboBox15.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(89, 84);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(121, 22);
-            this.comboBox15.TabIndex = 206;
+            this.cboDCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboDCompany.FormattingEnabled = true;
+            this.cboDCompany.Location = new System.Drawing.Point(89, 84);
+            this.cboDCompany.Name = "cboDCompany";
+            this.cboDCompany.Size = new System.Drawing.Size(121, 22);
+            this.cboDCompany.TabIndex = 9;
             // 
             // label45
             // 
@@ -404,14 +408,14 @@
             this.label45.TabIndex = 205;
             this.label45.Text = "남품업체";
             // 
-            // comboBox16
+            // cboOCompany
             // 
-            this.comboBox16.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(328, 79);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(121, 22);
-            this.comboBox16.TabIndex = 204;
+            this.cboOCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboOCompany.FormattingEnabled = true;
+            this.cboOCompany.Location = new System.Drawing.Point(328, 79);
+            this.cboOCompany.Name = "cboOCompany";
+            this.cboOCompany.Size = new System.Drawing.Size(121, 22);
+            this.cboOCompany.TabIndex = 10;
             // 
             // label46
             // 
@@ -424,14 +428,14 @@
             this.label46.TabIndex = 203;
             this.label46.Text = "발주업체";
             // 
-            // comboBox17
+            // cboImportYN
             // 
-            this.comboBox17.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox17.FormattingEnabled = true;
-            this.comboBox17.Location = new System.Drawing.Point(89, 60);
-            this.comboBox17.Name = "comboBox17";
-            this.comboBox17.Size = new System.Drawing.Size(121, 22);
-            this.comboBox17.TabIndex = 202;
+            this.cboImportYN.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboImportYN.FormattingEnabled = true;
+            this.cboImportYN.Location = new System.Drawing.Point(89, 60);
+            this.cboImportYN.Name = "cboImportYN";
+            this.cboImportYN.Size = new System.Drawing.Size(121, 22);
+            this.cboImportYN.TabIndex = 6;
             // 
             // label47
             // 
@@ -455,14 +459,14 @@
             this.label48.TabIndex = 200;
             this.label48.Text = "공정검사여부";
             // 
-            // comboBox18
+            // cboProcessYN
             // 
-            this.comboBox18.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(328, 56);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(121, 22);
-            this.comboBox18.TabIndex = 199;
+            this.cboProcessYN.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboProcessYN.FormattingEnabled = true;
+            this.cboProcessYN.Location = new System.Drawing.Point(328, 56);
+            this.cboProcessYN.Name = "cboProcessYN";
+            this.cboProcessYN.Size = new System.Drawing.Size(121, 22);
+            this.cboProcessYN.TabIndex = 7;
             // 
             // label49
             // 
@@ -486,14 +490,14 @@
             this.label50.TabIndex = 197;
             this.label50.Text = "단위";
             // 
-            // comboBox19
+            // cboUnit
             // 
-            this.comboBox19.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox19.FormattingEnabled = true;
-            this.comboBox19.Location = new System.Drawing.Point(89, 37);
-            this.comboBox19.Name = "comboBox19";
-            this.comboBox19.Size = new System.Drawing.Size(121, 22);
-            this.comboBox19.TabIndex = 196;
+            this.cboUnit.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboUnit.FormattingEnabled = true;
+            this.cboUnit.Location = new System.Drawing.Point(89, 37);
+            this.cboUnit.Name = "cboUnit";
+            this.cboUnit.Size = new System.Drawing.Size(121, 22);
+            this.cboUnit.TabIndex = 3;
             // 
             // label51
             // 
@@ -506,14 +510,14 @@
             this.label51.TabIndex = 195;
             this.label51.Text = "단위수량";
             // 
-            // comboBox21
+            // cboExportYN
             // 
-            this.comboBox21.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox21.FormattingEnabled = true;
-            this.comboBox21.Location = new System.Drawing.Point(556, 61);
-            this.comboBox21.Name = "comboBox21";
-            this.comboBox21.Size = new System.Drawing.Size(121, 22);
-            this.comboBox21.TabIndex = 194;
+            this.cboExportYN.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboExportYN.FormattingEnabled = true;
+            this.cboExportYN.Location = new System.Drawing.Point(556, 61);
+            this.cboExportYN.Name = "cboExportYN";
+            this.cboExportYN.Size = new System.Drawing.Size(121, 22);
+            this.cboExportYN.TabIndex = 8;
             // 
             // label52
             // 
@@ -537,14 +541,14 @@
             this.label53.TabIndex = 193;
             this.label53.Text = "품목유형";
             // 
-            // comboBox22
+            // cboIType
             // 
-            this.comboBox22.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox22.FormattingEnabled = true;
-            this.comboBox22.Location = new System.Drawing.Point(556, 37);
-            this.comboBox22.Name = "comboBox22";
-            this.comboBox22.Size = new System.Drawing.Size(121, 22);
-            this.comboBox22.TabIndex = 192;
+            this.cboIType.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboIType.FormattingEnabled = true;
+            this.cboIType.Location = new System.Drawing.Point(556, 37);
+            this.cboIType.Name = "cboIType";
+            this.cboIType.Size = new System.Drawing.Size(121, 22);
+            this.cboIType.TabIndex = 5;
             // 
             // label54
             // 
@@ -557,13 +561,13 @@
             this.label54.TabIndex = 191;
             this.label54.Text = "품명";
             // 
-            // textBox31
+            // txtIname
             // 
-            this.textBox31.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox31.Location = new System.Drawing.Point(328, 8);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(121, 22);
-            this.textBox31.TabIndex = 190;
+            this.txtIname.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtIname.Location = new System.Drawing.Point(328, 8);
+            this.txtIname.Name = "txtIname";
+            this.txtIname.Size = new System.Drawing.Size(121, 22);
+            this.txtIname.TabIndex = 1;
             // 
             // label55
             // 
@@ -576,51 +580,52 @@
             this.label55.TabIndex = 189;
             this.label55.Text = "품목";
             // 
-            // textBox32
+            // txtItem
             // 
-            this.textBox32.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox32.Location = new System.Drawing.Point(89, 13);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(121, 22);
-            this.textBox32.TabIndex = 188;
+            this.txtItem.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtItem.Location = new System.Drawing.Point(89, 13);
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(121, 22);
+            this.txtItem.TabIndex = 0;
             // 
-            // textBox3
+            // txtManager
             // 
-            this.textBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox3.Location = new System.Drawing.Point(89, 155);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 22);
-            this.textBox3.TabIndex = 243;
+            this.txtManager.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtManager.Location = new System.Drawing.Point(89, 155);
+            this.txtManager.Name = "txtManager";
+            this.txtManager.ReadOnly = true;
+            this.txtManager.Size = new System.Drawing.Size(121, 22);
+            this.txtManager.TabIndex = 243;
             // 
-            // numericUpDown1
+            // numSaveStock
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(90, 132);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numSaveStock.Location = new System.Drawing.Point(90, 132);
+            this.numSaveStock.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(121, 22);
-            this.numericUpDown1.TabIndex = 244;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numSaveStock.Name = "numSaveStock";
+            this.numSaveStock.Size = new System.Drawing.Size(121, 22);
+            this.numSaveStock.TabIndex = 15;
+            this.numSaveStock.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
             // 
-            // numericUpDown2
+            // numMinOrder
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(556, 109);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
+            this.numMinOrder.Location = new System.Drawing.Point(556, 109);
+            this.numMinOrder.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(121, 22);
-            this.numericUpDown2.TabIndex = 245;
-            this.numericUpDown2.Value = new decimal(new int[] {
+            this.numMinOrder.Name = "numMinOrder";
+            this.numMinOrder.Size = new System.Drawing.Size(121, 22);
+            this.numMinOrder.TabIndex = 14;
+            this.numMinOrder.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -632,63 +637,64 @@
             this.ClientSize = new System.Drawing.Size(708, 410);
             this.Name = "PopUpItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PopUpItem_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboWareIn;
+        private System.Windows.Forms.ComboBox cboUseYN;
+        private System.Windows.Forms.ComboBox cboWareOut;
+        private System.Windows.Forms.ComboBox cboDisconYN;
+        private System.Windows.Forms.TextBox txtUnitQty;
+        private System.Windows.Forms.TextBox txtRemark;
         protected System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox cboOrderType;
         protected System.Windows.Forms.Label label29;
         protected System.Windows.Forms.Label label31;
         protected System.Windows.Forms.Label label32;
         protected System.Windows.Forms.Label label33;
         protected System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox txtModifierDate;
+        private System.Windows.Forms.TextBox txtModifier;
+        private System.Windows.Forms.TextBox txtStandard;
         protected System.Windows.Forms.Label label36;
         protected System.Windows.Forms.Label label39;
         protected System.Windows.Forms.Label label41;
         protected System.Windows.Forms.Label label42;
         protected System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txtReadTime;
         protected System.Windows.Forms.Label label44;
-        private System.Windows.Forms.ComboBox comboBox15;
+        private System.Windows.Forms.ComboBox cboDCompany;
         protected System.Windows.Forms.Label label45;
-        private System.Windows.Forms.ComboBox comboBox16;
+        private System.Windows.Forms.ComboBox cboOCompany;
         protected System.Windows.Forms.Label label46;
-        private System.Windows.Forms.ComboBox comboBox17;
+        private System.Windows.Forms.ComboBox cboImportYN;
         protected System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.ComboBox cboProcessYN;
         protected System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.ComboBox comboBox19;
+        private System.Windows.Forms.ComboBox cboUnit;
         protected System.Windows.Forms.Label label51;
-        private System.Windows.Forms.ComboBox comboBox21;
+        private System.Windows.Forms.ComboBox cboExportYN;
         protected System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.ComboBox comboBox22;
+        private System.Windows.Forms.ComboBox cboIType;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox txtIname;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtItem;
+        private System.Windows.Forms.NumericUpDown numMinOrder;
+        private System.Windows.Forms.NumericUpDown numSaveStock;
+        private System.Windows.Forms.TextBox txtManager;
     }
 }

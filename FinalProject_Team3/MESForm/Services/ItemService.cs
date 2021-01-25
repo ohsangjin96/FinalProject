@@ -20,5 +20,10 @@ namespace MESForm.Services
             ItemDAC dac = new ItemDAC();
             return dac.GetItemAllList();
         }
+        public bool ItemCheck(string item)
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.ItemCheck(item);
+        }
     }
 }

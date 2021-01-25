@@ -28,8 +28,8 @@ namespace MESForm
         {
             CommonCodeService service = new CommonCodeService();
             list = service.GetCommonCodeList();
-            ComboBoxBinding.DeptBind(cboDept, list, "Common_Name");
-            cboDept.SelectedIndex = -1;
+            ComboBoxBinding.ComBind(cboDept, list,"dept000",true,"선택");
+           // cboDept.SelectedIndex = -1;
         }
         private void btnIdCheck_Click(object sender, EventArgs e)//중복확인
         {
