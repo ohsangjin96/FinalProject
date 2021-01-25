@@ -14,10 +14,11 @@ namespace MESForm
     public partial class FrmITEM : MESForm.BaseForms.frmBaseLists
     {
         string Manager;
+        //public string Manager { get; set; }
 
         List<ItemVO> AllList;
      
-        public FrmITEM(string  manager)
+        public FrmITEM(string manager)
         {
             InitializeComponent();
             Manager = manager;
@@ -57,16 +58,7 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvItem, "최종수정일자", "ITME_Last_Modifier_Time", 100, false);
             CommonUtil.AddGridTextColumn(dgvItem, "비고", "ITEM_Remark", 100, false);
             LoadData();
-            /*
-                 사용미사용
-                -> 수입,공정,출하
-                YN
-                =사용유무,단종유무
-                품목유형
-                =>품목유형
-                발주방식
-                =발주방식
-             */
+        
         }
 
         private void LoadData()
@@ -85,7 +77,6 @@ namespace MESForm
         private void btnReg_Click(object sender, EventArgs e)//등록버튼
         {
             PopUpItem pop = new PopUpItem(Manager);
-           
             pop.ShowDialog();
         }
 

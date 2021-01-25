@@ -13,8 +13,8 @@ namespace MESForm
 {
     public partial class PopUpItem : MESForm.BaseForms.frmPopup
     {
-    
         string Manager;
+        public string name { get; set; }
         ItemService service = new ItemService();
         List<CommonCodeVO> list;
         public PopUpItem(string manager)

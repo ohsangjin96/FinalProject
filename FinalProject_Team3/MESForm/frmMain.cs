@@ -282,11 +282,7 @@ namespace MESForm
         {
             OpenCreateForm<frmAuthority>();
         }
-        private void button10_Click(object sender, EventArgs e)//품목
-        {
-
-            OpenCreateForm<FrmITEM>();
-        }
+       
         private void button9_Click(object sender, EventArgs e)//bom
         {
             
@@ -468,8 +464,22 @@ namespace MESForm
             List<LoginVO> Login = service.LoginInfo(DeptInfo.User_ID, DeptInfo.User_Pwd);
             service.Dispose();
 
-            lblName.Text = $"{DeptInfo.User_Dept} - {DeptInfo.User_Name}";
+            //lblName.Text = $"{DeptInfo.User_Dept} - {DeptInfo.User_Name}";
+            lblName.Text = DeptInfo.User_Name;
+            lblDept.Text = DeptInfo.User_Dept;
             this.Show();
+
+            
+            
+        }
+        private void button10_Click(object sender, EventArgs e)//품목
+        {
+            FrmITEM frm = new FrmITEM(DeptInfo.User_Name);
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            
+            
         }
     }
 }
