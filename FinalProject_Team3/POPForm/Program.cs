@@ -16,7 +16,7 @@ namespace POPForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PopUpLogin());
+            Application.Run(new frmPOP());
         }
     }
 }
