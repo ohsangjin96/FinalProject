@@ -16,7 +16,7 @@ namespace FProjectVO
         public string Factory_HighRank { get; set; }
         public string Factory_Explain { get; set; }
         public string Factory_Credit { get; set; }
-        public int Factory_Order { get; set; }
+        public int? Factory_Order { get; set; }
         public string Factory_Demand { get; set; }
         public string Factory_Process { get; set; }
         public string Factory_Material { get; set; }

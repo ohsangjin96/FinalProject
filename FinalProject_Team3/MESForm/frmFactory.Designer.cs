@@ -29,10 +29,11 @@ namespace MESForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl3 = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
+            this.btnDelete = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.lblFactoryGrade = new System.Windows.Forms.Label();
@@ -79,7 +80,7 @@ namespace MESForm
             // 
             this.panel1.Controls.Add(this.btnReg);
             this.panel1.Controls.Add(this.custButtonControl3);
-            this.panel1.Controls.Add(this.custButtonControl2);
+            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Location = new System.Drawing.Point(670, 94);
@@ -94,7 +95,6 @@ namespace MESForm
             this.dgvFactory.Location = new System.Drawing.Point(0, 0);
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.Size = new System.Drawing.Size(1226, 546);
-            this.dgvFactory.TabIndex = 0;
             // 
             // btnReg
             // 
@@ -129,21 +129,22 @@ namespace MESForm
             this.custButtonControl3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.custButtonControl3.UseVisualStyleBackColor = false;
             // 
-            // custButtonControl2
+            // btnDelete
             // 
-            this.custButtonControl2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl2.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl2.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl2.Location = new System.Drawing.Point(305, 3);
-            this.custButtonControl2.Name = "custButtonControl2";
-            this.custButtonControl2.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl2.TabIndex = 7;
-            this.custButtonControl2.Text = "삭제";
-            this.custButtonControl2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl2.UseVisualStyleBackColor = false;
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDelete.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(305, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(83, 32);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // custButtonControl1
             // 
@@ -234,7 +235,7 @@ namespace MESForm
         private CustomControls.custDataGridViewControl dgvFactory;
         private CustomControls.custButtonControl btnReg;
         private CustomControls.custButtonControl custButtonControl3;
-        private CustomControls.custButtonControl custButtonControl2;
+        private CustomControls.custButtonControl btnDelete;
         private CustomControls.custButtonControl custButtonControl1;
         private CustomControls.custButtonControl btnRefresh;
         private System.Windows.Forms.Label lblFactoryGrade;

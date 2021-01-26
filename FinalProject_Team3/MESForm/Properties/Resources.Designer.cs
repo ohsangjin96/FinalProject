@@ -148,11 +148,11 @@ namespace MESForm.Properties {
         }
         
         /// <summary>
-        ///   삭제를 실패하였습니다. 다시 확인해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   삭제를 하지 못했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string ErrDeleteSuccess {
+        internal static string ErrDeleteFailed {
             get {
-                return ResourceManager.GetString("ErrDeleteSuccess", resourceCulture);
+                return ResourceManager.GetString("ErrDeleteFailed", resourceCulture);
             }
         }
         

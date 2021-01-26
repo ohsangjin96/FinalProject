@@ -83,22 +83,6 @@ namespace MESForm
         }
         #endregion
 
-        /// <summary>
-        /// 폼 인스턴스 생성 시 직원의 정보를 넘겨줄때 사용
-        /// </summary>
-        /// <param name="frm">값을 넘길 대상 폼</param>
-        private void FormDataPass(FrmITEM frm)
-        {
-            if (OpenFormMdi(frm.GetType()))
-                frm.Dispose();
-            else
-            {
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.Hide();
@@ -292,7 +276,17 @@ namespace MESForm
 
         private void btnFactory_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmFactory>();
+            frmFactory frm = new frmFactory();
+            frm.DeptName = DeptInfo.User_Name;
+
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
 
         private void btnFacility_Click(object sender, EventArgs e)
@@ -509,7 +503,15 @@ namespace MESForm
         private void button10_Click(object sender, EventArgs e)//품목
         {
             FrmITEM frm = new FrmITEM(DeptInfo.User_Name);
-            FormDataPass(frm);
+
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
     }
 }

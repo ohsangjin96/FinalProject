@@ -175,7 +175,7 @@ namespace MESForm.PopUp
                     LoadData();
                 }
                 else
-                    MessageBox.Show(Properties.Resources.ErrDeleteSuccess);
+                    MessageBox.Show(Properties.Resources.ErrDeleteFailed);
             }
             catch(Exception err)
             {

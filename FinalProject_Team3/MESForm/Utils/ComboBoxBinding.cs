@@ -28,14 +28,14 @@ namespace MESForm.Utils
             {
                 CommonCodeVO blank = new CommonCodeVO
                 { 
-                    Common_Code = blankText,
-                    Common_Name = ""
+                    Common_Code = "",
+                    Common_Name = blankText
                 };
 
                 list.Insert(0, blank);
             }
-            cbo.DisplayMember = displayMember;
-            cbo.ValueMember = "Common_Name";
+            cbo.DisplayMember = "Common_Name";
+            cbo.ValueMember = displayMember;
             cbo.DataSource = list;
         }
 
@@ -74,6 +74,40 @@ namespace MESForm.Utils
 
             cbo.DisplayMember = displayMember;
             cbo.DataSource = vo;
+        }
+
+        public static void CompanyBind(ComboBox cbo, List<CompanyVO> list, bool blankItem = true, string blankText = "")
+        {
+            if (blankItem)
+            {
+                CompanyVO blank = new CompanyVO
+                {
+                    Com_Code = "",
+                    Com_Name = blankText // [선택,전체] 둘 중 하나 사용
+                };
+
+                list.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Com_Name";
+            cbo.ValueMember = "Com_Code";
+            cbo.DataSource = list;
+        }
+
+        public static void FactoryGradeBind(ComboBox cbo, List<FactoryVO> list, bool blankItem = true, string blankText = "")
+        {
+            if (blankItem)
+            {
+                FactoryVO blank = new FactoryVO
+                {
+                    Factory_Code = "",
+                    Factory_Name = blankText
+                };
+
+                list.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Factory_Name";
+            cbo.ValueMember = "Factory_Code";
+            cbo.DataSource = list;
         }
     }
 }

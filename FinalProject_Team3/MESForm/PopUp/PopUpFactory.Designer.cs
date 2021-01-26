@@ -58,14 +58,14 @@ namespace MESForm.PopUp
             this.txtFactoryCode = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtFactoryUse = new System.Windows.Forms.ComboBox();
+            this.cboFactoryUse = new System.Windows.Forms.ComboBox();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Size = new System.Drawing.Size(552, 34);
+            this.pnlTop.Size = new System.Drawing.Size(576, 34);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FactoryPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FactoryPopUp_MouseMove);
             // 
@@ -78,19 +78,20 @@ namespace MESForm.PopUp
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(279, 437);
+            this.btnCancel.Location = new System.Drawing.Point(291, 437);
             this.btnCancel.TabIndex = 16;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(203, 437);
+            this.btnSave.Location = new System.Drawing.Point(215, 437);
             this.btnSave.TabIndex = 15;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
-            this.pnl.Controls.Add(this.txtFactoryUse);
+            this.pnl.Controls.Add(this.cboFactoryUse);
             this.pnl.Controls.Add(this.cboFactoryMaterial);
             this.pnl.Controls.Add(this.cboFactoryProcess);
             this.pnl.Controls.Add(this.cboFactoryDemand);
@@ -120,12 +121,12 @@ namespace MESForm.PopUp
             this.pnl.Controls.Add(this.txtFactoryCode);
             this.pnl.Controls.Add(this.label10);
             this.pnl.Controls.Add(this.label14);
-            this.pnl.Size = new System.Drawing.Size(528, 390);
+            this.pnl.Size = new System.Drawing.Size(552, 390);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(512, 0);
+            this.btnClose.Location = new System.Drawing.Point(536, 0);
             this.btnClose.Size = new System.Drawing.Size(40, 34);
             // 
             // cboFactoryMaterial
@@ -133,15 +134,15 @@ namespace MESForm.PopUp
             this.cboFactoryMaterial.FormattingEnabled = true;
             this.cboFactoryMaterial.Location = new System.Drawing.Point(119, 204);
             this.cboFactoryMaterial.Name = "cboFactoryMaterial";
-            this.cboFactoryMaterial.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryMaterial.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryMaterial.TabIndex = 10;
             // 
             // cboFactoryProcess
             // 
             this.cboFactoryProcess.FormattingEnabled = true;
-            this.cboFactoryProcess.Location = new System.Drawing.Point(369, 167);
+            this.cboFactoryProcess.Location = new System.Drawing.Point(379, 167);
             this.cboFactoryProcess.Name = "cboFactoryProcess";
-            this.cboFactoryProcess.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryProcess.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryProcess.TabIndex = 9;
             // 
             // cboFactoryDemand
@@ -149,23 +150,23 @@ namespace MESForm.PopUp
             this.cboFactoryDemand.FormattingEnabled = true;
             this.cboFactoryDemand.Location = new System.Drawing.Point(119, 167);
             this.cboFactoryDemand.Name = "cboFactoryDemand";
-            this.cboFactoryDemand.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryDemand.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryDemand.TabIndex = 8;
             // 
             // cboComCode
             // 
             this.cboComCode.FormattingEnabled = true;
-            this.cboComCode.Location = new System.Drawing.Point(369, 128);
+            this.cboComCode.Location = new System.Drawing.Point(379, 128);
             this.cboComCode.Name = "cboComCode";
-            this.cboComCode.Size = new System.Drawing.Size(130, 22);
+            this.cboComCode.Size = new System.Drawing.Size(140, 22);
             this.cboComCode.TabIndex = 7;
             // 
             // cboFactoryCredit
             // 
             this.cboFactoryCredit.FormattingEnabled = true;
-            this.cboFactoryCredit.Location = new System.Drawing.Point(369, 92);
+            this.cboFactoryCredit.Location = new System.Drawing.Point(379, 92);
             this.cboFactoryCredit.Name = "cboFactoryCredit";
-            this.cboFactoryCredit.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryCredit.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryCredit.TabIndex = 5;
             // 
             // cboFactoryType
@@ -173,15 +174,15 @@ namespace MESForm.PopUp
             this.cboFactoryType.FormattingEnabled = true;
             this.cboFactoryType.Location = new System.Drawing.Point(119, 54);
             this.cboFactoryType.Name = "cboFactoryType";
-            this.cboFactoryType.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryType.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryType.TabIndex = 2;
             // 
             // cboFactoryHighRank
             // 
             this.cboFactoryHighRank.FormattingEnabled = true;
-            this.cboFactoryHighRank.Location = new System.Drawing.Point(369, 16);
+            this.cboFactoryHighRank.Location = new System.Drawing.Point(379, 16);
             this.cboFactoryHighRank.Name = "cboFactoryHighRank";
-            this.cboFactoryHighRank.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryHighRank.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryHighRank.TabIndex = 1;
             // 
             // cboFactoryGrade
@@ -189,20 +190,21 @@ namespace MESForm.PopUp
             this.cboFactoryGrade.FormattingEnabled = true;
             this.cboFactoryGrade.Location = new System.Drawing.Point(119, 16);
             this.cboFactoryGrade.Name = "cboFactoryGrade";
-            this.cboFactoryGrade.Size = new System.Drawing.Size(130, 22);
+            this.cboFactoryGrade.Size = new System.Drawing.Size(140, 22);
             this.cboFactoryGrade.TabIndex = 0;
             // 
             // txtAmender
             // 
+            this.txtAmender.Enabled = false;
             this.txtAmender.Location = new System.Drawing.Point(119, 242);
             this.txtAmender.Name = "txtAmender";
-            this.txtAmender.Size = new System.Drawing.Size(130, 22);
+            this.txtAmender.Size = new System.Drawing.Size(140, 22);
             this.txtAmender.TabIndex = 12;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(278, 246);
+            this.label15.Location = new System.Drawing.Point(288, 246);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(55, 14);
             this.label15.TabIndex = 100;
@@ -210,9 +212,10 @@ namespace MESForm.PopUp
             // 
             // txtModdifyDate
             // 
-            this.txtModdifyDate.Location = new System.Drawing.Point(369, 242);
+            this.txtModdifyDate.Enabled = false;
+            this.txtModdifyDate.Location = new System.Drawing.Point(379, 242);
             this.txtModdifyDate.Name = "txtModdifyDate";
-            this.txtModdifyDate.Size = new System.Drawing.Size(130, 22);
+            this.txtModdifyDate.Size = new System.Drawing.Size(140, 22);
             this.txtModdifyDate.TabIndex = 13;
             // 
             // label16
@@ -228,7 +231,7 @@ namespace MESForm.PopUp
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(278, 208);
+            this.label12.Location = new System.Drawing.Point(288, 208);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 14);
             this.label12.TabIndex = 97;
@@ -247,7 +250,7 @@ namespace MESForm.PopUp
             // 
             this.txtFactoryOrder.Location = new System.Drawing.Point(119, 128);
             this.txtFactoryOrder.Name = "txtFactoryOrder";
-            this.txtFactoryOrder.Size = new System.Drawing.Size(130, 22);
+            this.txtFactoryOrder.Size = new System.Drawing.Size(140, 22);
             this.txtFactoryOrder.TabIndex = 6;
             // 
             // label2
@@ -263,7 +266,7 @@ namespace MESForm.PopUp
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(278, 170);
+            this.label11.Location = new System.Drawing.Point(288, 170);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 14);
             this.label11.TabIndex = 93;
@@ -271,9 +274,9 @@ namespace MESForm.PopUp
             // 
             // txtFactoryName
             // 
-            this.txtFactoryName.Location = new System.Drawing.Point(369, 53);
+            this.txtFactoryName.Location = new System.Drawing.Point(379, 53);
             this.txtFactoryName.Name = "txtFactoryName";
-            this.txtFactoryName.Size = new System.Drawing.Size(130, 22);
+            this.txtFactoryName.Size = new System.Drawing.Size(140, 22);
             this.txtFactoryName.TabIndex = 3;
             // 
             // label3
@@ -301,7 +304,7 @@ namespace MESForm.PopUp
             this.txtExplain.Location = new System.Drawing.Point(119, 279);
             this.txtExplain.Multiline = true;
             this.txtExplain.Name = "txtExplain";
-            this.txtExplain.Size = new System.Drawing.Size(380, 94);
+            this.txtExplain.Size = new System.Drawing.Size(400, 94);
             this.txtExplain.TabIndex = 14;
             // 
             // label5
@@ -326,7 +329,7 @@ namespace MESForm.PopUp
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(278, 19);
+            this.label7.Location = new System.Drawing.Point(288, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 85;
@@ -336,7 +339,7 @@ namespace MESForm.PopUp
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(278, 57);
+            this.label8.Location = new System.Drawing.Point(288, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 14);
             this.label8.TabIndex = 86;
@@ -345,7 +348,7 @@ namespace MESForm.PopUp
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(278, 95);
+            this.label9.Location = new System.Drawing.Point(288, 95);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 14);
             this.label9.TabIndex = 87;
@@ -355,13 +358,13 @@ namespace MESForm.PopUp
             // 
             this.txtFactoryCode.Location = new System.Drawing.Point(119, 92);
             this.txtFactoryCode.Name = "txtFactoryCode";
-            this.txtFactoryCode.Size = new System.Drawing.Size(130, 22);
+            this.txtFactoryCode.Size = new System.Drawing.Size(140, 22);
             this.txtFactoryCode.TabIndex = 4;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(278, 132);
+            this.label10.Location = new System.Drawing.Point(288, 132);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 14);
             this.label10.TabIndex = 88;
@@ -376,18 +379,18 @@ namespace MESForm.PopUp
             this.label14.TabIndex = 89;
             this.label14.Text = "시설설명";
             // 
-            // txtFactoryUse
+            // cboFactoryUse
             // 
-            this.txtFactoryUse.FormattingEnabled = true;
-            this.txtFactoryUse.Location = new System.Drawing.Point(369, 204);
-            this.txtFactoryUse.Name = "txtFactoryUse";
-            this.txtFactoryUse.Size = new System.Drawing.Size(130, 22);
-            this.txtFactoryUse.TabIndex = 11;
+            this.cboFactoryUse.FormattingEnabled = true;
+            this.cboFactoryUse.Location = new System.Drawing.Point(379, 204);
+            this.cboFactoryUse.Name = "cboFactoryUse";
+            this.cboFactoryUse.Size = new System.Drawing.Size(140, 22);
+            this.cboFactoryUse.TabIndex = 11;
             // 
             // PopUpFactory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(552, 487);
+            this.ClientSize = new System.Drawing.Size(576, 487);
             this.Name = "PopUpFactory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.PopUpFactory_Load);
@@ -430,6 +433,6 @@ namespace MESForm.PopUp
         protected System.Windows.Forms.TextBox txtFactoryCode;
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox txtFactoryUse;
+        private System.Windows.Forms.ComboBox cboFactoryUse;
     }
 }

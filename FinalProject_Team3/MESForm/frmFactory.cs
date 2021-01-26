@@ -13,6 +13,7 @@ namespace MESForm
 {
     public partial class frmFactory : MESForm.BaseForms.frmBaseLists
     {
+        public string DeptName { get; set; }
         public frmFactory()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace MESForm
         private void LoadData()
         {
             FactoryService service = new FactoryService();
-            List<FactoryVO> list = service.GetFactoryList();
+            List<FactoryVO> list = service.GetFactoryGradeList();
             service.Dispose();
             dgvFactory.DataSource = list;
         }
@@ -57,8 +58,31 @@ namespace MESForm
         private void btnReg_Click(object sender, EventArgs e)
         {
             PopUp.PopUpFactory pop = new PopUp.PopUpFactory(frmMain.OpenMode.Register);
+            pop.DeptName = DeptName;
             if (pop.ShowDialog() == DialogResult.OK)
             {
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+            else
+            {
+                string factoryName = dgvFactory[4, dgvFactory.CurrentRow.Index].Value.ToString().Trim().Replace("L ", "");
+                FactoryService service = new FactoryService();
+                bool result = service.DeleteFactory(factoryName);
+
+                if (result)
+                {
+                    MessageBox.Show(Properties.Resources.DeleteSuccess);
+                    LoadData();
+                }
+                else
+                    MessageBox.Show($"{factoryName}은(는) 삭제할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             }
         }
