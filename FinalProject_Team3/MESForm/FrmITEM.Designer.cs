@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl3 = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
+            this.btnUpdate = new MESForm.CustomControls.custButtonControl();
+            this.btnDelete = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.dgvItem = new MESForm.CustomControls.custDataGridViewControl();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+           
             this.label4 = new System.Windows.Forms.Label();
             this.cboWareHouseOUT = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -112,8 +113,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnReg);
-            this.panel1.Controls.Add(this.custButtonControl3);
-            this.panel1.Controls.Add(this.custButtonControl2);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
             // 
@@ -134,37 +135,38 @@
             this.btnReg.UseVisualStyleBackColor = false;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
-            // custButtonControl3
+            // btnUpdate
             // 
-            this.custButtonControl3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl3.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl3.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl3.Location = new System.Drawing.Point(211, 3);
-            this.custButtonControl3.Name = "custButtonControl3";
-            this.custButtonControl3.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl3.TabIndex = 8;
-            this.custButtonControl3.Text = "수정";
-            this.custButtonControl3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl3.UseVisualStyleBackColor = false;
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(211, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(83, 32);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // custButtonControl2
+            // btnDelete
             // 
-            this.custButtonControl2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl2.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl2.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl2.Location = new System.Drawing.Point(300, 3);
-            this.custButtonControl2.Name = "custButtonControl2";
-            this.custButtonControl2.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl2.TabIndex = 7;
-            this.custButtonControl2.Text = "삭제";
-            this.custButtonControl2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl2.UseVisualStyleBackColor = false;
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDelete.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(300, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(83, 32);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "삭제";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExcel
             // 
@@ -205,25 +207,27 @@
             this.dgvItem.BackgroundColor = System.Drawing.Color.White;
             this.dgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
+           
             this.dgvItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItem.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvItem.Location = new System.Drawing.Point(0, 0);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.Size = new System.Drawing.Size(1226, 484);
             this.dgvItem.TabIndex = 1;
+            this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellClick);
             this.dgvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+           
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
+            
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+           
             // 
             // label4
             // 
@@ -388,8 +392,8 @@
         #endregion
 
         private CustomControls.custButtonControl btnReg;
-        private CustomControls.custButtonControl custButtonControl3;
-        private CustomControls.custButtonControl custButtonControl2;
+        private CustomControls.custButtonControl btnUpdate;
+        private CustomControls.custButtonControl btnDelete;
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnRefresh;
         private CustomControls.custDataGridViewControl dgvItem;
@@ -409,6 +413,6 @@
         private System.Windows.Forms.ComboBox cboOrderCompany;
         private System.Windows.Forms.ComboBox cboWareHouseIN;
         private System.Windows.Forms.ComboBox cboItemType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+      
     }
 }

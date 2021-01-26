@@ -1,4 +1,5 @@
 ﻿using FProjectVO;
+using MESForm.CustomControls;
 using MESForm.Properties;
 using MESForm.Services;
 using MESForm.Utils;
@@ -22,6 +23,7 @@ namespace MESForm
         List<CommonCodeVO> Commonlist;
         List<CompanyVO> Companylist;
         List<FactoryVO> Facrorylist;
+        CheckBox hearderCheckBox = new CheckBox(); //체크박스
 
         public FrmITEM(string manager)
         {
@@ -32,17 +34,34 @@ namespace MESForm
         {
             //로드
             Dgvsetting();
-            ComBinding();
+           // ComBinding();
+            selectCombobox();
         }
 
-       
-        private void Dgvsetting()
+        private void selectCombobox()
+        {
+            string[] gubun = { "use", "ordercompany", "Deliverycompany", "factory", "itemmanager", "itemtype"};
+            ItemService service = new ItemService();
+            List<ItemVO> selectList = service.GetCodeInfoByCodeTypes(gubun);
+
+            ComboBoxBinding.ComboBindingitem(cboUseYN, selectList, "use");
+            ComboBoxBinding.ComboBindingitem(cboManager, selectList, "itemmanager");
+            ComboBoxBinding.ComboBindingitem(cboItemType, selectList, "itemtype");
+            ComboBoxBinding.ComboBindingitem(cboOrderCompany, selectList, "ordercompany");
+            ComboBoxBinding.ComboBindingitem(cboDelCompany, selectList, "Deliverycompany");
+            ComboBoxBinding.ComboBindingitem(cboWareHouseIN, selectList, "factory");
+            ComboBoxBinding.ComboBindingitem(cboWareHouseOUT, selectList, "factory");
+
+           
+        }
+
+        private void Dgvsetting() //그리드뷰 데이터 세팅
         {
             CommonUtil.AddGridImageColumn(dgvItem,Resources.Action_Edit_12x12, "Edit");
             CommonUtil.SetInitGridView(dgvItem);
-            CommonUtil.AddGridTextColumn(dgvItem, "품목유형", "ITEM_Type");
-            CommonUtil.AddGridTextColumn(dgvItem, "품목", "ITEM_Code");
-            CommonUtil.AddGridTextColumn(dgvItem, "품명", "ITEM_Name");
+            CommonUtil.AddGridTextColumn(dgvItem, "품목유형", "ITEM_Type");//2
+            CommonUtil.AddGridTextColumn(dgvItem, "품목", "ITEM_Code");//3
+            CommonUtil.AddGridTextColumn(dgvItem, "품명", "ITEM_Name");//4
             CommonUtil.AddGridTextColumn(dgvItem, "규격", "ITEM_Standard");
             CommonUtil.AddGridTextColumn(dgvItem, "단위", "ITEM_Unit");
             CommonUtil.AddGridTextColumn(dgvItem, "단위수량", "ITEM_Unit_Qty");
@@ -66,8 +85,8 @@ namespace MESForm
             LoadData();
         
         }
-
-        private void LoadData()
+        
+        private void LoadData()//그리드뷰 데이터 로드
         {
             ItemService service = new ItemService();
             AllList = service.GetItemAllList();
@@ -75,7 +94,7 @@ namespace MESForm
             dgvItem.DataSource = AllList;
         }
 
-        private void ComBinding()//콤보박스 바인딩
+        private void ComBinding()//콤보박스 바인딩 (보류)
         {
             CommonCodeService Common = new CommonCodeService();
             Commonlist = Common.GetCommonCodeList();
@@ -151,36 +170,98 @@ namespace MESForm
 
         private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)//그리드뷰 버튼 클릭 이벤트
         {
-            
+            var senderGrid = (custDataGridViewControl)sender;
             int rowIndex = dgvItem.CurrentRow.Index;
 
-           
-                
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+              e.RowIndex >= 0)
+            {
+
                 PopUpItem frm = new PopUpItem(Manager);
-            frm.ITEM_Code = AllList[rowIndex].ITEM_Code;
-            frm.ITEM_Name = AllList[rowIndex].ITEM_Name;
-            frm.ITEM_Standard = AllList[rowIndex].ITEM_Standard;
-            frm.ITEM_Unit = AllList[rowIndex].ITEM_Unit;
-            frm.ITEM_Unit_Qty = AllList[rowIndex].ITEM_Unit_Qty;
-            frm.ITEM_Type = AllList[rowIndex].ITEM_Type;
-            frm.ITEM_Import_YN = AllList[rowIndex].ITEM_Import_YN;
-            frm.ITEM_Process_YN = AllList[rowIndex].ITEM_Process_YN;
-            frm.ITEM_Export_YN = AllList[rowIndex].ITEM_Export_YN;
-            frm.ITEM_Delivery_Company = AllList[rowIndex].ITEM_Delivery_Company;
-            frm.ITEM_Order_Company = AllList[rowIndex].ITEM_Order_Company;
-            frm.ITEM_WareHouse_IN = AllList[rowIndex].ITEM_WareHouse_IN;
-            frm.ITEM_WareHouse_OUT = AllList[rowIndex].ITEM_WareHouse_OUT;
-            frm.ITME_LeadTime = AllList[rowIndex].ITME_LeadTime;
-            frm.ITME_Min_Order_Qty = AllList[rowIndex].ITME_Min_Order_Qty;
-            frm.ITME_Safe_Qty = AllList[rowIndex].ITME_Safe_Qty;
-            frm.ITME_Manager = AllList[rowIndex].ITME_Manager;
-            frm.ITME_Last_Modifier = AllList[rowIndex].ITME_Last_Modifier;
-            frm.ITME_Last_Modifier_Time = AllList[rowIndex].ITME_Last_Modifier_Time;
-            frm.ITME_Use = AllList[rowIndex].ITME_Use;
-            frm.ITEM_Discontinuance = AllList[rowIndex].ITEM_Discontinuance;
-            frm.ITEM_Delivery_Type = AllList[rowIndex].ITEM_Delivery_Type;
-            frm.ITEM_Remark = AllList[rowIndex].ITEM_Remark;
-            frm.ShowDialog();
+                frm.ITEM_Code = AllList[rowIndex].ITEM_Code;
+                frm.ITEM_Name = AllList[rowIndex].ITEM_Name;
+                frm.ITEM_Standard = AllList[rowIndex].ITEM_Standard;
+                frm.ITEM_Unit = AllList[rowIndex].ITEM_Unit;
+                frm.ITEM_Unit_Qty = AllList[rowIndex].ITEM_Unit_Qty;
+                frm.ITEM_Type = AllList[rowIndex].ITEM_Type;
+                frm.ITEM_Import_YN = AllList[rowIndex].ITEM_Import_YN;
+                frm.ITEM_Process_YN = AllList[rowIndex].ITEM_Process_YN;
+                frm.ITEM_Export_YN = AllList[rowIndex].ITEM_Export_YN;
+                frm.ITEM_Delivery_Company = AllList[rowIndex].ITEM_Delivery_Company;
+                frm.ITEM_Order_Company = AllList[rowIndex].ITEM_Order_Company;
+                frm.ITEM_WareHouse_IN = AllList[rowIndex].ITEM_WareHouse_IN;
+                frm.ITEM_WareHouse_OUT = AllList[rowIndex].ITEM_WareHouse_OUT;
+                frm.ITME_LeadTime = AllList[rowIndex].ITME_LeadTime;
+                frm.ITME_Min_Order_Qty = AllList[rowIndex].ITME_Min_Order_Qty;
+                frm.ITME_Safe_Qty = AllList[rowIndex].ITME_Safe_Qty;
+                frm.ITME_Manager = AllList[rowIndex].ITME_Manager;
+                frm.ITME_Last_Modifier = AllList[rowIndex].ITME_Last_Modifier;
+                frm.ITME_Last_Modifier_Time = AllList[rowIndex].ITME_Last_Modifier_Time;
+                frm.ITME_Use = AllList[rowIndex].ITME_Use;
+                frm.ITEM_Discontinuance = AllList[rowIndex].ITEM_Discontinuance;
+                frm.ITEM_Delivery_Type = AllList[rowIndex].ITEM_Delivery_Type;
+                frm.ITEM_Remark = AllList[rowIndex].ITEM_Remark;
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           var senderGrid = (custDataGridViewControl)sender;
+            int rowIndex = dgvItem.CurrentRow.Index;
+
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+              e.RowIndex >= 0)
+            {
+
+                PopUpItem frm = new PopUpItem(Manager);
+                frm.ITEM_Code = AllList[rowIndex].ITEM_Code;
+                frm.ITEM_Name = AllList[rowIndex].ITEM_Name;
+                frm.ITEM_Standard = AllList[rowIndex].ITEM_Standard;
+                frm.ITEM_Unit = AllList[rowIndex].ITEM_Unit;
+                frm.ITEM_Unit_Qty = AllList[rowIndex].ITEM_Unit_Qty;
+                frm.ITEM_Type = AllList[rowIndex].ITEM_Type;
+                frm.ITEM_Import_YN = AllList[rowIndex].ITEM_Import_YN;
+                frm.ITEM_Process_YN = AllList[rowIndex].ITEM_Process_YN;
+                frm.ITEM_Export_YN = AllList[rowIndex].ITEM_Export_YN;
+                frm.ITEM_Delivery_Company = AllList[rowIndex].ITEM_Delivery_Company;
+                frm.ITEM_Order_Company = AllList[rowIndex].ITEM_Order_Company;
+                frm.ITEM_WareHouse_IN = AllList[rowIndex].ITEM_WareHouse_IN;
+                frm.ITEM_WareHouse_OUT = AllList[rowIndex].ITEM_WareHouse_OUT;
+                frm.ITME_LeadTime = AllList[rowIndex].ITME_LeadTime;
+                frm.ITME_Min_Order_Qty = AllList[rowIndex].ITME_Min_Order_Qty;
+                frm.ITME_Safe_Qty = AllList[rowIndex].ITME_Safe_Qty;
+                frm.ITME_Manager = AllList[rowIndex].ITME_Manager;
+                frm.ITME_Last_Modifier = AllList[rowIndex].ITME_Last_Modifier;
+                frm.ITME_Last_Modifier_Time = AllList[rowIndex].ITME_Last_Modifier_Time;
+                frm.ITME_Use = AllList[rowIndex].ITME_Use;
+                frm.ITEM_Discontinuance = AllList[rowIndex].ITEM_Discontinuance;
+                frm.ITEM_Delivery_Type = AllList[rowIndex].ITEM_Delivery_Type;
+                frm.ITEM_Remark = AllList[rowIndex].ITEM_Remark;
+                frm.ShowDialog();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)//삭제버튼
+        {
+            if (MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+            else
+            {
+                string factoryName = dgvItem[3, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+                ItemService service = new ItemService();
+               bool result = service.DeleteItem(factoryName);
+
+                if (result)
+                {
+                    MessageBox.Show(Properties.Resources.DeleteSuccess);
+                    LoadData();
+                }
+                else
+                    MessageBox.Show($"{factoryName}은(는) 삭제할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

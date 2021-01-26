@@ -32,5 +32,8 @@ namespace FProjectVO
         public string ITEM_Delivery_Type { get; set; }
         public string ITEM_Remark { get; set; }
 
+        public string Code { get; set; }
+        public string Gubun { get; set; }
+        public string CodeName { get; set; }
     }
 }
