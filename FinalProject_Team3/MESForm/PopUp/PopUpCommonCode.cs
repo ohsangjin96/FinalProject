@@ -49,7 +49,7 @@ namespace MESForm.PopUp
             btnSave.Visible = false;
             btnCancel.Visible = false;
             pnl.Location = gboInsert.Location;
-            pnl.Size = new Size(446, 555);
+            pnl.Size = new Size(491, 555);
             DgvSetting();
             LoadData();
         }
@@ -64,7 +64,7 @@ namespace MESForm.PopUp
             btnSave.Visible = true;
             btnCancel.Visible = true;
             pnl.Location = new Point(12, 308);
-            pnl.Size = new Size(446, 329);
+            pnl.Size = new Size(491, 329);
             bRegCheck = false;
         }
 
@@ -146,7 +146,7 @@ namespace MESForm.PopUp
                 btnSave.Visible = true;
                 btnCancel.Visible = true;
                 pnl.Location = new Point(12, 308);
-                pnl.Size = new Size(446, 329);
+                pnl.Size = new Size(491, 329);
 
                 if(bRegCheck)
                     bRegCheck = false;
@@ -175,7 +175,7 @@ namespace MESForm.PopUp
                     LoadData();
                 }
                 else
-                    MessageBox.Show(Properties.Resources.ErrDeleteSuccess);
+                    MessageBox.Show(Properties.Resources.ErrDeleteFailed);
             }
             catch(Exception err)
             {
@@ -190,7 +190,7 @@ namespace MESForm.PopUp
             btnSave.Visible = false;
             btnCancel.Visible = false;
             pnl.Location = gboInsert.Location;
-            pnl.Size = new Size(446, 555);
+            pnl.Size = new Size(491, 555);
             bRegCheck = true;
             updateMode = false;
         }
@@ -242,13 +242,15 @@ namespace MESForm.PopUp
 
         private void dgvCommonCode_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtCode.Text = dgvCommonCode[0, e.RowIndex].Value.ToString();
-            txtCodeName.Text = dgvCommonCode[1, e.RowIndex].Value.ToString();
+            txtCode.Text = dgvCommonCode[1, e.RowIndex].Value.ToString();
+            txtCodeName.Text = dgvCommonCode[2, e.RowIndex].Value.ToString();
 
-            if (Convert.ToString(dgvCommonCode[2, e.RowIndex].Value) == "")
+            if (Convert.ToString(dgvCommonCode[3, e.RowIndex].Value) == "")
                 cboParentCode.SelectedIndex = 0;
             else
-                cboParentCode.Text = Convert.ToString(dgvCommonCode[2, e.RowIndex].Value);
+                cboParentCode.Text = Convert.ToString(dgvCommonCode[3, e.RowIndex].Value);
+
+            nudSeq.Value = Convert.ToInt32(dgvCommonCode[4, e.RowIndex].Value);
         }
     }
 }

@@ -16,6 +16,9 @@ namespace MESForm
 {
     public partial class frmMain : Form
     {
+        //팝업 창을 띄었을 때 등록인지 수정인지
+        public enum OpenMode { Register, Update }
+
         public LoginVO DeptInfo { get; set; }
 
         public frmMain()
@@ -80,22 +83,6 @@ namespace MESForm
         }
         #endregion
 
-        /// <summary>
-        /// 폼 인스턴스 생성 시 직원의 정보를 넘겨줄때 사용
-        /// </summary>
-        /// <param name="frm">값을 넘길 대상 폼</param>
-        private void FormDataPass(FrmITEM frm)
-        {
-            if (OpenFormMdi(frm.GetType()))
-                frm.Dispose();
-            else
-            {
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.Hide();
@@ -104,7 +91,7 @@ namespace MESForm
             HideSubMenu();
         }
 
-       
+
 
         #region 상위 버튼 클릭
         private void btnResource_Click(object sender, EventArgs e)
@@ -258,7 +245,7 @@ namespace MESForm
                     tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
                     closeImage.Width,
                     closeImage.Height);
-                if(e.Button == MouseButtons.Left) //  x버튼 마우스 왼쪽 클릭때만 닫기
+                if (e.Button == MouseButtons.Left) //  x버튼 마우스 왼쪽 클릭때만 닫기
                 {
                     if (imageRect.Contains(e.Location))
                     {
@@ -289,7 +276,17 @@ namespace MESForm
 
         private void btnFactory_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmFactory>();
+            frmFactory frm = new frmFactory();
+            frm.DeptName = DeptInfo.User_Name;
+
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
 
         private void btnFacility_Click(object sender, EventArgs e)
@@ -313,11 +310,11 @@ namespace MESForm
         {
             OpenCreateForm<frmAuthority>();
         }
-       
+
         private void button9_Click(object sender, EventArgs e)//bom
         {
-            
-           
+
+
         }
 
         private void button8_Click(object sender, EventArgs e)//자재단가
@@ -327,7 +324,7 @@ namespace MESForm
 
         private void button7_Click(object sender, EventArgs e)//영업단가
         {
-           
+
             OpenCreateForm<frmSaleCost1>();
         }
         private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
@@ -432,7 +429,7 @@ namespace MESForm
             OpenCreateForm<Han.frmCurrentProcess>();
         }
         #endregion
-        
+
         #region 공정등록
         private void btnProcessMove_Click(object sender, EventArgs e)
         {
@@ -468,7 +465,7 @@ namespace MESForm
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
@@ -500,13 +497,21 @@ namespace MESForm
             //lblDept.Text = DeptInfo.User_Dept;
             this.Show();
 
-            
-            
+
+
         }
         private void button10_Click(object sender, EventArgs e)//품목
         {
             FrmITEM frm = new FrmITEM(DeptInfo.User_Name);
-            FormDataPass(frm);
+
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
     }
 }
