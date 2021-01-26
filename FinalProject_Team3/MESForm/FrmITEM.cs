@@ -18,7 +18,10 @@ namespace MESForm
         //public string Manager { get; set; }
 
         List<ItemVO> AllList;
-     
+        List<CommonCodeVO> Commonlist;
+        List<CompanyVO> Companylist;
+        List<FactoryVO> Facrorylist;
+
         public FrmITEM(string manager)
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace MESForm
        
         private void Dgvsetting()
         {
-            CommonUtil.SetDGVDesign_Num(dgvItem);
+          
             CommonUtil.SetInitGridView(dgvItem);
             CommonUtil.AddGridTextColumn(dgvItem, "품목유형", "ITEM_Type");
             CommonUtil.AddGridTextColumn(dgvItem, "품목", "ITEM_Code");
@@ -73,7 +76,40 @@ namespace MESForm
 
         private void ComBinding()//콤보박스 바인딩
         {
-            
+            CommonCodeService Common = new CommonCodeService();
+            Commonlist = Common.GetCommonCodeList();
+            CompanyService company = new CompanyService();
+            Companylist = company.GetCompanyList();
+            FactoryService factory = new FactoryService();
+            Facrorylist = factory.GetFactoryList();
+
+            var Manager = (from list in AllList
+                        where list.ITME_Manager !=null
+                        select list.ITME_Manager).Distinct().ToList();//담당자
+            Manager.Insert(0,"선택");
+
+            var OrderCompany = (from list in Companylist
+                                where list.Com_Type == "협력업체"
+                                select list).Distinct().ToList();
+            OrderCompany.Insert(0, new CompanyVO { Com_Name = "선택" });
+
+            var DelCompany= (from list in Companylist
+                             where list.Com_Type == "고객사"
+                             select list).Distinct().ToList();
+            DelCompany.Insert(0, new CompanyVO { Com_Name = "선택" });
+
+            var InFactory = (from flist in Facrorylist
+                             where flist.Factory_Grade == "창고"
+                             select flist).Distinct().ToList();
+            InFactory.Insert(0, new FactoryVO { Factory_Name = "선택" });
+
+            ComboBoxBinding.ComBind(cboUseYN, Commonlist, "UseYN000", true, "선택");//사용유무
+            ComboBoxBinding.BindingComboBoxPart(cboManager, Manager, "ITME_Manager");//담당자
+            ComboBoxBinding.ComBind(cboItemType, Commonlist, "ItemType000", true, "선택");//품목유형
+            ComboBoxBinding.BindingComboBoxPart(cboOrderCompany, OrderCompany, "Com_Name");//발주업체
+            ComboBoxBinding.BindingComboBoxPart(cboDelCompany, DelCompany, "Com_Name");//납품업체
+            ComboBoxBinding.BindingComboBoxPart(cboWareHouseIN, InFactory, "Factory_Name");//입고창고
+            ComboBoxBinding.BindingComboBoxPart(cboWareHouseOUT, InFactory, "Factory_Name");//출고창고
         }
 
         private void btnReg_Click(object sender, EventArgs e)//등록버튼

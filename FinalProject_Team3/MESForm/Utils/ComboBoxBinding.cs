@@ -59,11 +59,16 @@ namespace MESForm.Utils
             cbo.ValueMember =  "Common_code";
             cbo.DataSource = list;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="cbo">콤보박스</param>
+        /// <param name="vo">뽑아온 리스트</param>
+        /// <param name="displayMember"></param>
         public static void BindingComboBoxPart<T>(ComboBox cbo, List<T> vo, string displayMember)
         {
-
-
+            
             cbo.DisplayMember = displayMember;
             cbo.DataSource = vo;
         }

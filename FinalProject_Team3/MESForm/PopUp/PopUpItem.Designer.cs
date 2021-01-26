@@ -32,7 +32,6 @@
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.cboWareOut = new System.Windows.Forms.ComboBox();
             this.cboDisconYN = new System.Windows.Forms.ComboBox();
-            this.txtUnitQty = new System.Windows.Forms.TextBox();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cboOrderType = new System.Windows.Forms.ComboBox();
@@ -49,7 +48,6 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.txtReadTime = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.cboDCompany = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -74,10 +72,14 @@
             this.txtManager = new System.Windows.Forms.TextBox();
             this.numSaveStock = new System.Windows.Forms.NumericUpDown();
             this.numMinOrder = new System.Windows.Forms.NumericUpDown();
+            this.NumUnitQty = new System.Windows.Forms.NumericUpDown();
+            this.numReadTime = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUnitQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numReadTime)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -105,6 +107,8 @@
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.numReadTime);
+            this.pnl.Controls.Add(this.NumUnitQty);
             this.pnl.Controls.Add(this.numMinOrder);
             this.pnl.Controls.Add(this.numSaveStock);
             this.pnl.Controls.Add(this.txtManager);
@@ -112,7 +116,6 @@
             this.pnl.Controls.Add(this.cboUseYN);
             this.pnl.Controls.Add(this.cboWareOut);
             this.pnl.Controls.Add(this.cboDisconYN);
-            this.pnl.Controls.Add(this.txtUnitQty);
             this.pnl.Controls.Add(this.txtRemark);
             this.pnl.Controls.Add(this.label2);
             this.pnl.Controls.Add(this.cboOrderType);
@@ -129,7 +132,6 @@
             this.pnl.Controls.Add(this.label41);
             this.pnl.Controls.Add(this.label42);
             this.pnl.Controls.Add(this.label43);
-            this.pnl.Controls.Add(this.txtReadTime);
             this.pnl.Controls.Add(this.label44);
             this.pnl.Controls.Add(this.cboDCompany);
             this.pnl.Controls.Add(this.label45);
@@ -195,14 +197,6 @@
             this.cboDisconYN.Name = "cboDisconYN";
             this.cboDisconYN.Size = new System.Drawing.Size(121, 22);
             this.cboDisconYN.TabIndex = 17;
-            // 
-            // txtUnitQty
-            // 
-            this.txtUnitQty.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.txtUnitQty.Location = new System.Drawing.Point(328, 32);
-            this.txtUnitQty.Name = "txtUnitQty";
-            this.txtUnitQty.Size = new System.Drawing.Size(121, 22);
-            this.txtUnitQty.TabIndex = 4;
             // 
             // txtRemark
             // 
@@ -368,14 +362,6 @@
             this.label43.Size = new System.Drawing.Size(67, 14);
             this.label43.TabIndex = 209;
             this.label43.Text = "최소발주량";
-            // 
-            // txtReadTime
-            // 
-            this.txtReadTime.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.txtReadTime.Location = new System.Drawing.Point(328, 105);
-            this.txtReadTime.Name = "txtReadTime";
-            this.txtReadTime.Size = new System.Drawing.Size(121, 22);
-            this.txtReadTime.TabIndex = 13;
             // 
             // label44
             // 
@@ -631,6 +617,25 @@
             0,
             0});
             // 
+            // NumUnitQty
+            // 
+            this.NumUnitQty.Location = new System.Drawing.Point(328, 33);
+            this.NumUnitQty.Name = "NumUnitQty";
+            this.NumUnitQty.Size = new System.Drawing.Size(121, 22);
+            this.NumUnitQty.TabIndex = 244;
+            // 
+            // numReadTime
+            // 
+            this.numReadTime.Location = new System.Drawing.Point(328, 107);
+            this.numReadTime.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numReadTime.Name = "numReadTime";
+            this.numReadTime.Size = new System.Drawing.Size(121, 22);
+            this.numReadTime.TabIndex = 245;
+            // 
             // PopUpItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -644,6 +649,8 @@
             this.pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumUnitQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numReadTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,7 +661,6 @@
         private System.Windows.Forms.ComboBox cboUseYN;
         private System.Windows.Forms.ComboBox cboWareOut;
         private System.Windows.Forms.ComboBox cboDisconYN;
-        private System.Windows.Forms.TextBox txtUnitQty;
         private System.Windows.Forms.TextBox txtRemark;
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboOrderType;
@@ -671,7 +677,6 @@
         protected System.Windows.Forms.Label label41;
         protected System.Windows.Forms.Label label42;
         protected System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox txtReadTime;
         protected System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox cboDCompany;
         protected System.Windows.Forms.Label label45;
@@ -696,5 +701,7 @@
         private System.Windows.Forms.NumericUpDown numMinOrder;
         private System.Windows.Forms.NumericUpDown numSaveStock;
         private System.Windows.Forms.TextBox txtManager;
+        private System.Windows.Forms.NumericUpDown NumUnitQty;
+        private System.Windows.Forms.NumericUpDown numReadTime;
     }
 }

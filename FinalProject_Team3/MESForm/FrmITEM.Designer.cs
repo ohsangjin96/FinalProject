@@ -208,7 +208,6 @@
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.Size = new System.Drawing.Size(1226, 484);
             this.dgvItem.TabIndex = 1;
-            this.dgvItem.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvItem_RowPostPaint);
             // 
             // label4
             // 
