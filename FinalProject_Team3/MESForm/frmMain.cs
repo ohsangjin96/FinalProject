@@ -24,6 +24,10 @@ namespace MESForm
 
             this.panel1.Paint += Panel_Paint;
         }
+        #region 로그인 정보
+        public string Uname { get; set; }
+        public string Udept { get; set; }
+        #endregion
 
         private void Panel_Paint(object sender, PaintEventArgs e)
         {
@@ -63,38 +67,7 @@ namespace MESForm
             frm.Show();
             this.Cursor = currentCursor;
         }
-
-        //값을 넘길 때
-        private bool OpenFormMdi(Type t)
-        {
-            foreach (Form form in this.MdiChildren)
-            {
-                if (form.GetType() == t)
-                {
-                    form.Activate();
-                    custTab.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
-                    return true;
-                }
-            }
-            return false;
-        }
         #endregion
-
-        /// <summary>
-        /// 폼 인스턴스 생성 시 직원의 정보를 넘겨줄때 사용
-        /// </summary>
-        /// <param name="frm">값을 넘길 대상 폼</param>
-        private void FormDataPass(FrmITEM frm)
-        {
-            if (OpenFormMdi(frm.GetType()))
-                frm.Dispose();
-            else
-            {
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
-        }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -313,7 +286,15 @@ namespace MESForm
         {
             OpenCreateForm<frmAuthority>();
         }
+        private void button10_Click(object sender, EventArgs e)//품목
+        {
+
+            FrmITEM frm = new FrmITEM(Uname);
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
        
+        }
         private void button9_Click(object sender, EventArgs e)//bom
         {
             
@@ -496,17 +477,7 @@ namespace MESForm
             service.Dispose();
 
             lblName.Text = $"{DeptInfo.User_Dept} - {DeptInfo.User_Name}";
-            //lblName.Text = DeptInfo.User_Name;
-            //lblDept.Text = DeptInfo.User_Dept;
             this.Show();
-
-            
-            
-        }
-        private void button10_Click(object sender, EventArgs e)//품목
-        {
-            FrmITEM frm = new FrmITEM(DeptInfo.User_Name);
-            FormDataPass(frm);
         }
     }
 }
