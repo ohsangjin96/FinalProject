@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl3 = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
+            this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.dgvItem = new MESForm.CustomControls.custDataGridViewControl();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.cboWareHouseOUT = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -112,7 +114,7 @@
             this.panel1.Controls.Add(this.btnReg);
             this.panel1.Controls.Add(this.custButtonControl3);
             this.panel1.Controls.Add(this.custButtonControl2);
-            this.panel1.Controls.Add(this.custButtonControl1);
+            this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
             // 
             // btnReg
@@ -164,21 +166,22 @@
             this.custButtonControl2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.custButtonControl2.UseVisualStyleBackColor = false;
             // 
-            // custButtonControl1
+            // btnExcel
             // 
-            this.custButtonControl1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(391, 3);
-            this.custButtonControl1.Name = "custButtonControl1";
-            this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl1.TabIndex = 6;
-            this.custButtonControl1.Text = "엑셀";
-            this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl1.UseVisualStyleBackColor = false;
+            this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExcel.Location = new System.Drawing.Point(391, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(83, 32);
+            this.btnExcel.TabIndex = 6;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnRefresh
             // 
@@ -202,13 +205,25 @@
             this.dgvItem.BackgroundColor = System.Drawing.Color.White;
             this.dgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
             this.dgvItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItem.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvItem.Location = new System.Drawing.Point(0, 0);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.Size = new System.Drawing.Size(1226, 484);
             this.dgvItem.TabIndex = 1;
-            this.dgvItem.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvItem_RowPostPaint);
+            this.dgvItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // label4
             // 
@@ -375,7 +390,7 @@
         private CustomControls.custButtonControl btnReg;
         private CustomControls.custButtonControl custButtonControl3;
         private CustomControls.custButtonControl custButtonControl2;
-        private CustomControls.custButtonControl custButtonControl1;
+        private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnRefresh;
         private CustomControls.custDataGridViewControl dgvItem;
         private System.Windows.Forms.Label label4;
@@ -394,5 +409,6 @@
         private System.Windows.Forms.ComboBox cboOrderCompany;
         private System.Windows.Forms.ComboBox cboWareHouseIN;
         private System.Windows.Forms.ComboBox cboItemType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

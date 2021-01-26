@@ -61,7 +61,7 @@ namespace FProjectDAC
             }
         }
         // 데이터 등록
-        public bool InsertSample(ItemVO vo)
+        public bool RegisterItem(ItemVO vo)
         {
             try
             {
