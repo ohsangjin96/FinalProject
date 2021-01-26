@@ -107,7 +107,7 @@ namespace MESForm
             HideSubMenu();
         }
 
-       
+
 
         #region 상위 버튼 클릭
         private void btnResource_Click(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace MESForm
                     tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
                     closeImage.Width,
                     closeImage.Height);
-                if(e.Button == MouseButtons.Left) //  x버튼 마우스 왼쪽 클릭때만 닫기
+                if (e.Button == MouseButtons.Left) //  x버튼 마우스 왼쪽 클릭때만 닫기
                 {
                     if (imageRect.Contains(e.Location))
                     {
@@ -316,11 +316,11 @@ namespace MESForm
         {
             OpenCreateForm<frmAuthority>();
         }
-       
+
         private void button9_Click(object sender, EventArgs e)//bom
         {
-            
-           
+
+
         }
 
         private void button8_Click(object sender, EventArgs e)//자재단가
@@ -330,7 +330,7 @@ namespace MESForm
 
         private void button7_Click(object sender, EventArgs e)//영업단가
         {
-           
+
             OpenCreateForm<frmSaleCost1>();
         }
         private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
@@ -435,7 +435,7 @@ namespace MESForm
             OpenCreateForm<Han.frmCurrentProcess>();
         }
         #endregion
-        
+
         #region 공정등록
         private void btnProcessMove_Click(object sender, EventArgs e)
         {
@@ -471,7 +471,7 @@ namespace MESForm
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         private void lblLogout_Click(object sender, EventArgs e)
@@ -503,8 +503,8 @@ namespace MESForm
             //lblDept.Text = DeptInfo.User_Dept;
             this.Show();
 
-            
-            
+
+
         }
         private void button10_Click(object sender, EventArgs e)//품목
         {
