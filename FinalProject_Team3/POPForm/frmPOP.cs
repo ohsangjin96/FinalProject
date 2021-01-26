@@ -80,7 +80,7 @@ namespace POPForm
             {
                 if(temp is Machin machins)
                 {
-                    machins.bn
+                    //machins.bn
                 }
             }
         }
