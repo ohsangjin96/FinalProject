@@ -63,6 +63,16 @@ namespace MESForm.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Action_Edit_12x12 {
+            get {
+                object obj = ResourceManager.GetObject("Action_Edit_12x12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Authority {
             get {
                 object obj = ResourceManager.GetObject("Authority", resourceCulture);
@@ -264,6 +274,16 @@ namespace MESForm.Properties {
         internal static string OrderComplete {
             get {
                 return ResourceManager.GetString("OrderComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap PopEdit_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("PopEdit_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

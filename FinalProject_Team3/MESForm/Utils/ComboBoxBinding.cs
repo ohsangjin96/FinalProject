@@ -57,7 +57,7 @@ namespace MESForm.Utils
             {
                 CommonCodeVO blank = new CommonCodeVO
                 {
-                    Common_Code = "",
+                    //Common_Code = "",
                     Common_Name = blankText // [선택,전체] 둘 중 하나 사용
                 };
 

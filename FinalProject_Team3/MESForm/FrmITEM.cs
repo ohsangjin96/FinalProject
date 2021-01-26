@@ -1,4 +1,5 @@
 ﻿using FProjectVO;
+using MESForm.Properties;
 using MESForm.Services;
 using MESForm.Utils;
 using System;
@@ -37,7 +38,7 @@ namespace MESForm
        
         private void Dgvsetting()
         {
-          
+            CommonUtil.AddGridImageColumn(dgvItem,Resources.Action_Edit_12x12, "Edit");
             CommonUtil.SetInitGridView(dgvItem);
             CommonUtil.AddGridTextColumn(dgvItem, "품목유형", "ITEM_Type");
             CommonUtil.AddGridTextColumn(dgvItem, "품목", "ITEM_Code");
@@ -118,12 +119,7 @@ namespace MESForm
             pop.ShowDialog();
         }
 
-        private void dgvItem_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)//열번호매기기
-        {
-           
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)//새로고침 버튼
         {
             LoadData();
 
@@ -142,6 +138,49 @@ namespace MESForm
             //                                  All.ITME_Manager.Contains(cboManager.Text) &&
             //                                  All.ITEM_Type.Contains(cboItemType.Text)
             //                      select All).ToList();
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)//엑셀버튼
+        {
+            string sResult = ExcelExportImport.ExportToDataGridView<ItemVO>((List<ItemVO>)dgvItem.DataSource,"");
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
+            }
+        }
+
+        private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)//그리드뷰 버튼 클릭 이벤트
+        {
+            
+            int rowIndex = dgvItem.CurrentRow.Index;
+
+           
+                
+                PopUpItem frm = new PopUpItem(Manager);
+            frm.ITEM_Code = AllList[rowIndex].ITEM_Code;
+            frm.ITEM_Name = AllList[rowIndex].ITEM_Name;
+            frm.ITEM_Standard = AllList[rowIndex].ITEM_Standard;
+            frm.ITEM_Unit = AllList[rowIndex].ITEM_Unit;
+            frm.ITEM_Unit_Qty = AllList[rowIndex].ITEM_Unit_Qty;
+            frm.ITEM_Type = AllList[rowIndex].ITEM_Type;
+            frm.ITEM_Import_YN = AllList[rowIndex].ITEM_Import_YN;
+            frm.ITEM_Process_YN = AllList[rowIndex].ITEM_Process_YN;
+            frm.ITEM_Export_YN = AllList[rowIndex].ITEM_Export_YN;
+            frm.ITEM_Delivery_Company = AllList[rowIndex].ITEM_Delivery_Company;
+            frm.ITEM_Order_Company = AllList[rowIndex].ITEM_Order_Company;
+            frm.ITEM_WareHouse_IN = AllList[rowIndex].ITEM_WareHouse_IN;
+            frm.ITEM_WareHouse_OUT = AllList[rowIndex].ITEM_WareHouse_OUT;
+            frm.ITME_LeadTime = AllList[rowIndex].ITME_LeadTime;
+            frm.ITME_Min_Order_Qty = AllList[rowIndex].ITME_Min_Order_Qty;
+            frm.ITME_Safe_Qty = AllList[rowIndex].ITME_Safe_Qty;
+            frm.ITME_Manager = AllList[rowIndex].ITME_Manager;
+            frm.ITME_Last_Modifier = AllList[rowIndex].ITME_Last_Modifier;
+            frm.ITME_Last_Modifier_Time = AllList[rowIndex].ITME_Last_Modifier_Time;
+            frm.ITME_Use = AllList[rowIndex].ITME_Use;
+            frm.ITEM_Discontinuance = AllList[rowIndex].ITEM_Discontinuance;
+            frm.ITEM_Delivery_Type = AllList[rowIndex].ITEM_Delivery_Type;
+            frm.ITEM_Remark = AllList[rowIndex].ITEM_Remark;
+            frm.ShowDialog();
         }
     }
 }

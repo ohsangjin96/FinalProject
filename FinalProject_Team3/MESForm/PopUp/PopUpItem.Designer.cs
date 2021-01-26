@@ -70,16 +70,16 @@
             this.label55 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.txtManager = new System.Windows.Forms.TextBox();
-            this.numSaveStock = new System.Windows.Forms.NumericUpDown();
-            this.numMinOrder = new System.Windows.Forms.NumericUpDown();
             this.NumUnitQty = new System.Windows.Forms.NumericUpDown();
             this.numReadTime = new System.Windows.Forms.NumericUpDown();
+            this.numMinOrder = new System.Windows.Forms.NumericUpDown();
+            this.numSaveStock = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUnitQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReadTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -107,10 +107,10 @@
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.numSaveStock);
+            this.pnl.Controls.Add(this.numMinOrder);
             this.pnl.Controls.Add(this.numReadTime);
             this.pnl.Controls.Add(this.NumUnitQty);
-            this.pnl.Controls.Add(this.numMinOrder);
-            this.pnl.Controls.Add(this.numSaveStock);
             this.pnl.Controls.Add(this.txtManager);
             this.pnl.Controls.Add(this.cboWareIn);
             this.pnl.Controls.Add(this.cboUseYN);
@@ -583,40 +583,6 @@
             this.txtManager.Size = new System.Drawing.Size(121, 22);
             this.txtManager.TabIndex = 243;
             // 
-            // numSaveStock
-            // 
-            this.numSaveStock.Location = new System.Drawing.Point(90, 132);
-            this.numSaveStock.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numSaveStock.Name = "numSaveStock";
-            this.numSaveStock.Size = new System.Drawing.Size(121, 22);
-            this.numSaveStock.TabIndex = 15;
-            this.numSaveStock.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // numMinOrder
-            // 
-            this.numMinOrder.Location = new System.Drawing.Point(556, 109);
-            this.numMinOrder.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numMinOrder.Name = "numMinOrder";
-            this.numMinOrder.Size = new System.Drawing.Size(121, 22);
-            this.numMinOrder.TabIndex = 14;
-            this.numMinOrder.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // NumUnitQty
             // 
             this.NumUnitQty.Location = new System.Drawing.Point(328, 33);
@@ -636,6 +602,20 @@
             this.numReadTime.Size = new System.Drawing.Size(121, 22);
             this.numReadTime.TabIndex = 245;
             // 
+            // numMinOrder
+            // 
+            this.numMinOrder.Location = new System.Drawing.Point(556, 108);
+            this.numMinOrder.Name = "numMinOrder";
+            this.numMinOrder.Size = new System.Drawing.Size(121, 22);
+            this.numMinOrder.TabIndex = 246;
+            // 
+            // numSaveStock
+            // 
+            this.numSaveStock.Location = new System.Drawing.Point(89, 131);
+            this.numSaveStock.Name = "numSaveStock";
+            this.numSaveStock.Size = new System.Drawing.Size(121, 22);
+            this.numSaveStock.TabIndex = 247;
+            // 
             // PopUpItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -647,10 +627,10 @@
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumUnitQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numReadTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSaveStock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -698,10 +678,10 @@
         private System.Windows.Forms.TextBox txtIname;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.TextBox txtItem;
-        private System.Windows.Forms.NumericUpDown numMinOrder;
-        private System.Windows.Forms.NumericUpDown numSaveStock;
         private System.Windows.Forms.TextBox txtManager;
         private System.Windows.Forms.NumericUpDown NumUnitQty;
         private System.Windows.Forms.NumericUpDown numReadTime;
+        private System.Windows.Forms.NumericUpDown numMinOrder;
+        private System.Windows.Forms.NumericUpDown numSaveStock;
     }
 }

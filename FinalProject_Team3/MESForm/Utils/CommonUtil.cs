@@ -72,16 +72,16 @@ namespace MESForm.Utils
         #endregion
 
         #region 데이터그리드뷰 버튼 생성
-        public static void DgvButtonBinding(string headText, string name, string text, DataGridView dgv)
+        public static void AddGridImageColumn(DataGridView dgv, Image image, string columnName, int width = 50)
         {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.HeaderText = headText;
-            btn.Name = name;
-            btn.Text = text;        //
-            btn.Width = 100;
-            btn.DefaultCellStyle.Padding = new Padding(0, 0, 0, 0);
-            btn.UseColumnTextForButtonValue = true;
-            dgv.Columns.Add(btn);
+            DataGridViewImageColumn col = new DataGridViewImageColumn();
+
+            col.SortMode = DataGridViewColumnSortMode.Automatic;
+            col.Image = image;
+            col.HeaderText = columnName;
+            col.Width = width;
+            col.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dgv.Columns.Add(col);
         }
         #endregion
     }
