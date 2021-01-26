@@ -61,7 +61,8 @@ namespace MESForm
             pop.DeptName = DeptName;
             if (pop.ShowDialog() == DialogResult.OK)
             {
-
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadData();
             }
         }
 
@@ -82,8 +83,6 @@ namespace MESForm
                 }
                 else
                     MessageBox.Show($"{factoryName}은(는) 삭제할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
             }
         }
     }
