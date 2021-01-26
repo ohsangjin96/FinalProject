@@ -16,6 +16,9 @@ namespace MESForm
 {
     public partial class frmMain : Form
     {
+        //팝업 창을 띄었을 때 등록인지 수정인지
+        public enum OpenMode { Register, Update }
+
         public LoginVO DeptInfo { get; set; }
 
         public frmMain()

@@ -29,6 +29,7 @@ namespace MESForm.PopUp
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gboInsert = new System.Windows.Forms.GroupBox();
             this.cboParentCode = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();

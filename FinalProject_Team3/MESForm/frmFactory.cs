@@ -56,7 +56,7 @@ namespace MESForm
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            PopUp.PopUpFactory pop = new PopUp.PopUpFactory();
+            PopUp.PopUpFactory pop = new PopUp.PopUpFactory(frmMain.OpenMode.Register);
             if (pop.ShowDialog() == DialogResult.OK)
             {
 

@@ -86,6 +86,7 @@ namespace MESForm.PopUp
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(203, 437);
             this.btnSave.TabIndex = 15;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
@@ -389,6 +390,7 @@ namespace MESForm.PopUp
             this.ClientSize = new System.Drawing.Size(552, 487);
             this.Name = "PopUpFactory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PopUpFactory_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);

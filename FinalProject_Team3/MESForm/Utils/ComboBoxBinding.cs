@@ -10,6 +10,14 @@ namespace MESForm.Utils
 {
     public class ComboBoxBinding
     {
+        /// <summary>
+        /// 상위코드를 바인딩할 때 사용
+        /// </summary>
+        /// <param name="cbo">콤보박스 name</param>
+        /// <param name="list">공통코드 리스트</param>
+        /// <param name="displayMember">보여줄 내용</param>
+        /// <param name="blankItem">맨 위줄 빈칸 생성</param>
+        /// <param name="blankText">빈 칸의 내용</param>
         public static void CommonCodeBind(ComboBox cbo, List<CommonCodeVO> list, string displayMember, bool blankItem = true, string blankText = "")
         {
             list = (from a in list
