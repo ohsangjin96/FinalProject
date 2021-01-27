@@ -45,13 +45,16 @@ namespace FProjectDAC
             }
         }
 
-        public List<FactoryVO> GetFactoryGradeList()
+        public List<FactoryVO> GetFactoryGradeList(string codeOrName, string grade)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"SP_GetFactoryInfo";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@CodeOrName", (string.IsNullOrEmpty(codeOrName)) ? DBNull.Value : (object)codeOrName);
+                cmd.Parameters.AddWithValue("@FactoryGrade", (grade == "전체") ? DBNull.Value : (object)grade);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(reader);
@@ -91,8 +94,8 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Factory_Code", vo.Factory_Code);
                     cmd.Parameters.AddWithValue("@Factory_Name", vo.Factory_Name);
                     cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "없음") ? DBNull.Value : (object)vo.Factory_HighRank);
-                    cmd.Parameters.AddWithValue("@Factory_Explain", vo.Factory_Explain);
-                    cmd.Parameters.AddWithValue("@Factory_Credit", vo.Factory_Credit);
+                    cmd.Parameters.AddWithValue("@Factory_Explain", (vo.Factory_Explain == "") ? DBNull.Value : (object)vo.Factory_Explain);
+                    cmd.Parameters.AddWithValue("@Factory_Credit", (vo.Factory_Credit == "") ? DBNull.Value : (object)vo.Factory_Credit);
                     cmd.Parameters.AddWithValue("@Factory_Order", (vo.Factory_Order == -1) ? DBNull.Value : (object)vo.Factory_Order);
                     cmd.Parameters.AddWithValue("@Factory_Demand", (vo.Factory_Demand == "") ? DBNull.Value : (object)vo.Factory_Demand);
                     cmd.Parameters.AddWithValue("@Factory_Process", (vo.Factory_Process == "") ? DBNull.Value : (object)vo.Factory_Process);
@@ -102,6 +105,48 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Factory_Use", vo.Factory_Use);
                     cmd.Parameters.AddWithValue("@Factory_Amender", vo.Factory_Amender);
                     cmd.Parameters.AddWithValue("@Factory_ModdifyDate", vo.Factory_ModdifyDate);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+
+        // 공장정보 수정
+        public bool UpdateFactory(FactoryVO vo)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"update Factory set Factory_Grade = @Factory_Grade, Factory_Type = @Factory_Type,
+                                               Factory_Name = @Factory_Name, Factory_HighRank = @Factory_HighRank,
+                                               Factory_Explain = @Factory_Explain, Factory_Credit = @Factory_Credit,
+                                               Factory_Order = @Factory_Order, Factory_Demand = @Factory_Demand,
+                                               Factory_Process = @Factory_Process, Factory_Material = @Factory_Material,
+                                               Com_Code = @Com_Code, Com_Name = @Com_Name, Factory_Use = @Factory_Use
+                                        where Factory_Code = @Factory_Code";
+
+                    cmd.Parameters.AddWithValue("@Factory_Grade", vo.Factory_Grade);
+                    cmd.Parameters.AddWithValue("@Factory_Type", vo.Factory_Type);
+                    cmd.Parameters.AddWithValue("@Factory_Code", vo.Factory_Code);
+                    cmd.Parameters.AddWithValue("@Factory_Name", vo.Factory_Name);
+                    cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "없음") ? DBNull.Value : (object)vo.Factory_HighRank);
+                    cmd.Parameters.AddWithValue("@Factory_Explain", (vo.Factory_Explain == "") ? DBNull.Value : (object)vo.Factory_Explain);
+                    cmd.Parameters.AddWithValue("@Factory_Credit", (vo.Factory_Credit == "") ? DBNull.Value : (object)vo.Factory_Credit);
+                    cmd.Parameters.AddWithValue("@Factory_Order", (vo.Factory_Order == -1) ? DBNull.Value : (object)vo.Factory_Order);
+                    cmd.Parameters.AddWithValue("@Factory_Demand", (vo.Factory_Demand == "") ? DBNull.Value : (object)vo.Factory_Demand);
+                    cmd.Parameters.AddWithValue("@Factory_Process", (vo.Factory_Process == "") ? DBNull.Value : (object)vo.Factory_Process);
+                    cmd.Parameters.AddWithValue("@Factory_Material", (vo.Factory_Material == "") ? DBNull.Value : (object)vo.Factory_Material);
+                    cmd.Parameters.AddWithValue("@Com_Code", (vo.Com_Code == "") ? DBNull.Value : (object)vo.Com_Code);
+                    cmd.Parameters.AddWithValue("@Com_Name", (vo.Com_Name == "") ? DBNull.Value : (object)vo.Com_Name);
+                    cmd.Parameters.AddWithValue("@Factory_Use", vo.Factory_Use);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
 

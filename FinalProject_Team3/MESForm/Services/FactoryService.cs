@@ -22,16 +22,22 @@ namespace MESForm.Services
             return dac.GetFactoryList();
         }
 
-        public List<FactoryVO> GetFactoryGradeList()
+        public List<FactoryVO> GetFactoryGradeList(string codeOrName, string grade)
         {
             FactoryDAC dac = new FactoryDAC();
-            return dac.GetFactoryGradeList();
+            return dac.GetFactoryGradeList(codeOrName, grade);
         }
 
         public bool InsertFactory(FactoryVO vo)
         {
             FactoryDAC dac = new FactoryDAC();
             return dac.InsertFactory(vo);
+        }
+
+        public bool UpdateFactory(FactoryVO vo)
+        {
+            FactoryDAC dac = new FactoryDAC();
+            return dac.UpdateFactory(vo);
         }
 
         public bool DeleteFactory(string factoryName)

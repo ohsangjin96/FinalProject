@@ -89,6 +89,10 @@ namespace MESForm
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.모든탭닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tslblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tstxtExplain = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.custTab = new MESForm.CustomControls.custTabControl();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -104,6 +108,7 @@ namespace MESForm
             this.pnlProduct.SuspendLayout();
             this.pnlResource.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -882,6 +887,36 @@ namespace MESForm
             this.닫기ToolStripMenuItem.Text = "닫기(&C)";
             this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstxtExplain,
+            this.tslblDateTime});
+            this.statusStrip1.Location = new System.Drawing.Point(238, 746);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(863, 22);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tslblDateTime
+            // 
+            this.tslblDateTime.Name = "tslblDateTime";
+            this.tslblDateTime.Size = new System.Drawing.Size(55, 17);
+            this.tslblDateTime.Text = "현재시간";
+            // 
+            // tstxtExplain
+            // 
+            this.tstxtExplain.Name = "tstxtExplain";
+            this.tstxtExplain.Size = new System.Drawing.Size(762, 17);
+            this.tstxtExplain.Spring = true;
+            this.tstxtExplain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // custTab
             // 
             this.custTab.ContextMenuStrip = this.contextMenuStrip1;
@@ -900,6 +935,7 @@ namespace MESForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 768);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.custTab);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -927,7 +963,10 @@ namespace MESForm
             this.pnlProduct.ResumeLayout(false);
             this.pnlResource.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -993,6 +1032,10 @@ namespace MESForm
         private System.Windows.Forms.ToolStripMenuItem 닫기ToolStripMenuItem;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.LinkLabel lblLogout;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tslblDateTime;
+        private System.Windows.Forms.ToolStripStatusLabel tstxtExplain;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

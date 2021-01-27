@@ -29,15 +29,14 @@ namespace MESForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl3 = new MESForm.CustomControls.custButtonControl();
+            this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.lblFactoryGrade = new System.Windows.Forms.Label();
-            this.txtFactoryCode = new System.Windows.Forms.TextBox();
+            this.txtFactoryCodeOrName = new System.Windows.Forms.TextBox();
             this.lblFactoryCode = new System.Windows.Forms.Label();
             this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
             this.pnlSelect.SuspendLayout();
@@ -50,12 +49,12 @@ namespace MESForm
             // 
             this.pnlSelect.Controls.Add(this.cboFactoryGrade);
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
-            this.pnlSelect.Controls.Add(this.txtFactoryCode);
+            this.pnlSelect.Controls.Add(this.txtFactoryCodeOrName);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
             this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.txtFactoryCode, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtFactoryCodeOrName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryGrade, 0);
             this.pnlSelect.Controls.SetChildIndex(this.cboFactoryGrade, 0);
             // 
@@ -63,6 +62,7 @@ namespace MESForm
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -79,14 +79,14 @@ namespace MESForm
             // panel1
             // 
             this.panel1.Controls.Add(this.btnReg);
-            this.panel1.Controls.Add(this.custButtonControl3);
+            this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Location = new System.Drawing.Point(670, 94);
             // 
             // dgvFactory
-            // 
+            //
             this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
             this.dgvFactory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -95,6 +95,7 @@ namespace MESForm
             this.dgvFactory.Location = new System.Drawing.Point(0, 0);
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.Size = new System.Drawing.Size(1226, 546);
+            this.dgvFactory.TabIndex = 0;
             // 
             // btnReg
             // 
@@ -113,21 +114,22 @@ namespace MESForm
             this.btnReg.UseVisualStyleBackColor = false;
             this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
-            // custButtonControl3
+            // btnUpdate
             // 
-            this.custButtonControl3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl3.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl3.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl3.Location = new System.Drawing.Point(216, 3);
-            this.custButtonControl3.Name = "custButtonControl3";
-            this.custButtonControl3.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl3.TabIndex = 8;
-            this.custButtonControl3.Text = "수정";
-            this.custButtonControl3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl3.UseVisualStyleBackColor = false;
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(216, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(83, 32);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "수정";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -161,6 +163,7 @@ namespace MESForm
             this.custButtonControl1.Text = "엑셀";
             this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.custButtonControl1.UseVisualStyleBackColor = false;
+            this.custButtonControl1.Click += new System.EventHandler(this.custButtonControl1_Click);
             // 
             // btnRefresh
             // 
@@ -177,6 +180,7 @@ namespace MESForm
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // lblFactoryGrade
             // 
@@ -188,12 +192,13 @@ namespace MESForm
             this.lblFactoryGrade.TabIndex = 25;
             this.lblFactoryGrade.Text = "시설군";
             // 
-            // txtFactoryCode
+            // txtFactoryCodeOrName
             // 
-            this.txtFactoryCode.Location = new System.Drawing.Point(130, 27);
-            this.txtFactoryCode.Name = "txtFactoryCode";
-            this.txtFactoryCode.Size = new System.Drawing.Size(191, 22);
-            this.txtFactoryCode.TabIndex = 24;
+            this.txtFactoryCodeOrName.Location = new System.Drawing.Point(130, 27);
+            this.txtFactoryCodeOrName.Name = "txtFactoryCodeOrName";
+            this.txtFactoryCodeOrName.Size = new System.Drawing.Size(191, 22);
+            this.txtFactoryCodeOrName.TabIndex = 24;
+            this.txtFactoryCodeOrName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // lblFactoryCode
             // 
@@ -203,15 +208,17 @@ namespace MESForm
             this.lblFactoryCode.Name = "lblFactoryCode";
             this.lblFactoryCode.Size = new System.Drawing.Size(55, 14);
             this.lblFactoryCode.TabIndex = 23;
-            this.lblFactoryCode.Text = "시설코드";
+            this.lblFactoryCode.Text = "시설코드/명";
             // 
             // cboFactoryGrade
             // 
+            this.cboFactoryGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFactoryGrade.FormattingEnabled = true;
             this.cboFactoryGrade.Location = new System.Drawing.Point(545, 27);
             this.cboFactoryGrade.Name = "cboFactoryGrade";
             this.cboFactoryGrade.Size = new System.Drawing.Size(191, 22);
             this.cboFactoryGrade.TabIndex = 29;
+            this.cboFactoryGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // frmFactory
             // 
@@ -234,12 +241,12 @@ namespace MESForm
 
         private CustomControls.custDataGridViewControl dgvFactory;
         private CustomControls.custButtonControl btnReg;
-        private CustomControls.custButtonControl custButtonControl3;
+        private CustomControls.custButtonControl btnUpdate;
         private CustomControls.custButtonControl btnDelete;
         private CustomControls.custButtonControl custButtonControl1;
         private CustomControls.custButtonControl btnRefresh;
         private System.Windows.Forms.Label lblFactoryGrade;
-        private System.Windows.Forms.TextBox txtFactoryCode;
+        private System.Windows.Forms.TextBox txtFactoryCodeOrName;
         private System.Windows.Forms.Label lblFactoryCode;
         private System.Windows.Forms.ComboBox cboFactoryGrade;
     }

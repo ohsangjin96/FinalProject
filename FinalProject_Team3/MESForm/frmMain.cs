@@ -19,6 +19,7 @@ namespace MESForm
         //팝업 창을 띄었을 때 등록인지 수정인지
         public enum OpenMode { Register, Update }
 
+        //로그인 정보 가져오기
         public LoginVO DeptInfo { get; set; }
 
         public frmMain()
@@ -28,6 +29,11 @@ namespace MESForm
             this.panel1.Paint += Panel_Paint;
         }
 
+        /// <summary>
+        /// 메인화면 상단 패널 디자인(그라데이션)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Panel_Paint(object sender, PaintEventArgs e)
         {
             Color startColor = Color.FromArgb(244, 247, 245);
@@ -513,6 +519,11 @@ namespace MESForm
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            tslblDateTime.Text = DateTime.Now.ToString("yyyy년 MM월 dd일 HH시 mm분 ss초");
         }
     }
 }
