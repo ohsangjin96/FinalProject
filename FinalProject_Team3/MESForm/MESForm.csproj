@@ -116,6 +116,12 @@
     <Compile Include="CustomControls\custTabControl.Designer.cs">
       <DependentUpon>custTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBOM.Designer.cs">
+      <DependentUpon>FrmBOM.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBOR.cs">
       <SubType>Form</SubType>
     </Compile>

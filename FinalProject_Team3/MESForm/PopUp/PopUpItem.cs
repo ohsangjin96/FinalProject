@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static MESForm.frmMain;
 
 namespace MESForm
 {
@@ -40,27 +41,46 @@ namespace MESForm
         public string ITEM_Remark { get; set; }
         #endregion
 
-        string Manager;
-        public string name { get; set; }
+
+        public string Uname { get; set; }
         ItemService service = new ItemService();
         List<CommonCodeVO> list;
         List<CompanyVO> Companylist;
         List<FactoryVO> Facrorylist;
-        public PopUpItem(string manager)
+
+        bool bRegOrUp; //등록 : true, 수정 : false
+        public PopUpItem()
         {
             InitializeComponent();
-            Manager = manager;
+
+        }
+
+        public PopUpItem(OpenMode mode)
+        {
+            InitializeComponent();
+
+            if (mode == OpenMode.Register)
+            {
+                bRegOrUp = true;
+            }
+            else if (mode == OpenMode.Update)
+            {
+                bRegOrUp = false;
+            }
         }
         private void PopUpItem_Load(object sender, EventArgs e)
         {
             txtModifierDate.Text = DateTime.Now.ToString("d");
-            
-            txtManager.Text = Manager;
-            txtModifier.Text = Manager;
-            
+            txtManager.Text = Uname;
+            txtModifier.Text = Uname;
+
 
             ComboBinding();
-            EditBinding();
+            if (bRegOrUp==false)
+            {
+                EditBinding();
+            }
+           
 
         }
 
@@ -86,6 +106,9 @@ namespace MESForm
             cboDisconYN.Text = ITEM_Discontinuance;
             cboOrderType.Text = ITEM_Delivery_Type;
             txtRemark.Text = ITEM_Remark;
+            txtManager.Text = ITME_Manager;
+            txtModifier.Text= ITME_Manager;
+            txtModifierDate.Text= DateTime.Now.ToString("d");
 
         }
 
@@ -153,12 +176,16 @@ namespace MESForm
                 return;
             }
             //품목이 중복될 경우 
-            bool bFlag = service.ItemCheck(txtItem.Text);
-            if (bFlag == true)
+            if (bRegOrUp == true)
             {
-                MessageBox.Show(Properties.Resources.ErrAlreadyReg.Replace("@@", "품목"));
-                return;
+                bool bFlag = service.ItemCheck(txtItem.Text);
+                if (bFlag == true )
+                {
+                    MessageBox.Show(Properties.Resources.ErrAlreadyReg.Replace("@@", "품목"));
+                    return;
+                }
             }
+            
             //vo 객채 생성
             ItemVO vo = new ItemVO();
             vo.ITEM_Code = txtItem.Text;
@@ -184,19 +211,38 @@ namespace MESForm
             vo.ITEM_Discontinuance = cboDisconYN.Text;
             vo.ITEM_Delivery_Type = cboOrderType.Text;
             vo.ITEM_Remark = txtRemark.Text;
-
             //서비스에 vo 전달해서 db에 저장
-            bool falg = service.RegisterItem(vo);
+            if (bRegOrUp)//등록
+            {
+                bool Ifalg = service.RegisterItem(vo);
 
-            if (falg == true)
-            {
-                MessageBox.Show(Properties.Resources.SaveSuccess + "새로고침 하십시오.");
-                this.Close();
+                if (Ifalg == true)
+                {
+                    MessageBox.Show(Properties.Resources.SaveSuccess + "새로고침 하십시오.");
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("등록 중 오류가 발생하였습니다.");
+                }
             }
-            else
+            else //수정
             {
-                MessageBox.Show("등록 중 오류가 발생하였습니다.");
+                txtItem.ReadOnly = true;
+                bool Ufag = service.UpdateItem(vo);
+                if (Ufag == true)
+                {
+                    MessageBox.Show(Properties.Resources.SaveSuccess + "새로고침 하십시오.");
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("수정 중 오류가 발생하였습니다.");
+                }
             }
+
 
 
         }
