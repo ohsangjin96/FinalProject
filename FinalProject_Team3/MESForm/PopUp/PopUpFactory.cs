@@ -39,6 +39,9 @@ namespace MESForm.PopUp
             }
         }
 
+        /// <summary>
+        /// 콤보박스 바인딩
+        /// </summary>
         private void ComboBoxBind()
         {
             CommonCodeService commonService = new CommonCodeService();
@@ -59,7 +62,7 @@ namespace MESForm.PopUp
 
             ComboBoxBinding.ComBind(cboFactoryGrade, commonList, "FacGrade000", false);
             ComboBoxBinding.ComBind(cboFactoryType, commonList, "FAC000", false);
-            ComboBoxBinding.FactoryGradeBind(cboFactoryHighRank, factoryList, false);
+            ComboBoxBinding.FactoryGradeBind(cboFactoryHighRank, factoryList, true, "없음");
             ComboBoxBinding.ComBind(cboFactoryCredit, commonList, "FreeOffer000");
             ComboBoxBinding.CompanyBind(cboComCode, companyList);
             ComboBox[] cbArray = { cboFactoryDemand, cboFactoryProcess, cboFactoryMaterial };
@@ -77,44 +80,78 @@ namespace MESForm.PopUp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int factoryOrder;
 
             //유효성 체크
-            if (txtFactoryName.Text == "")
+            if (txtFactoryName.Text == "") // 시설명 미입력
             {
-                MessageBox.Show("이름");
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "시설명을"));
+                return;
             }
 
-            if (txtFactoryOrder.Text == "")
-                factoryOrder = -1;
-            else
-                factoryOrder = Convert.ToInt32(txtFactoryOrder.Text);
-
-            FactoryVO vo = new FactoryVO
+            else if (txtFactoryCode.Text == "")
             {
-                Factory_Grade = cboFactoryGrade.Text,
-                Factory_HighRank = cboFactoryHighRank.Text,
-                Factory_Type = cboFactoryType.Text,
-                Factory_Name = txtFactoryName.Text,
-                Factory_Code = txtFactoryCode.Text,
-                Factory_Credit = cboFactoryCredit.Text,
-                Factory_Order = factoryOrder,
-                Com_Code = cboComCode.SelectedValue.ToString(),
-                Com_Name = cboComCode.Text,
-                Factory_Demand = cboFactoryDemand.Text,
-                Factory_Process = cboFactoryProcess.Text,
-                Factory_Material = cboFactoryMaterial.Text,
-                Factory_Use = cboFactoryUse.Text,
-                Factory_Amender = txtAmender.Text,
-                Factory_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text),
-                Factory_Explain = txtExplain.Text
-            };
-
-            FactoryService service = new FactoryService();
-            if (bRegOrUp)
-            {
-                service.InsertFactory(vo);
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "시설코드를"));
+                return;
             }
+
+            try
+            {
+                int factoryOrder; // 순서
+
+                if (txtFactoryOrder.Text == "") //순서를 입력하지 않았을 때는 DB에 null 저장
+                    factoryOrder = -1;
+                else
+                    factoryOrder = Convert.ToInt32(txtFactoryOrder.Text);
+
+                FactoryVO vo = new FactoryVO
+                {
+                    Factory_Grade = cboFactoryGrade.Text,
+                    Factory_HighRank = cboFactoryHighRank.Text,
+                    Factory_Type = cboFactoryType.Text,
+                    Factory_Name = txtFactoryName.Text,
+                    Factory_Code = txtFactoryCode.Text,
+                    Factory_Credit = cboFactoryCredit.Text,
+                    Factory_Order = factoryOrder,
+                    Com_Code = cboComCode.SelectedValue.ToString(),
+                    Com_Name = cboComCode.Text,
+                    Factory_Demand = cboFactoryDemand.Text,
+                    Factory_Process = cboFactoryProcess.Text,
+                    Factory_Material = cboFactoryMaterial.Text,
+                    Factory_Use = cboFactoryUse.Text,
+                    Factory_Amender = txtAmender.Text,
+                    Factory_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text),
+                    Factory_Explain = txtExplain.Text
+                };
+
+                FactoryService service = new FactoryService();
+                if (bRegOrUp)
+                {
+                    //등록
+                    service.InsertFactory(vo);
+                }
+                else
+                {
+                    //수정
+                }
+                service.Dispose();
+
+                DialogResult = DialogResult.OK;
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+                if (err.Message == "이미 등록된 시설명입니다.")
+                {
+                    txtFactoryName.Focus();
+                    txtFactoryName.SelectAll();
+                }
+                else if(err.Message == "이미 등록된 시설코드입니다.")
+                {
+                    txtFactoryCode.Focus();
+                    txtFactoryCode.SelectAll();
+                }
+            }
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -133,6 +170,14 @@ namespace MESForm.PopUp
             {
                 Location = new Point(this.Left - (mousePoint.X - e.X),
                     this.Top - (mousePoint.Y - e.Y));
+            }
+        }
+
+        private void txtFactoryOrder_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
             }
         }
     }

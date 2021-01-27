@@ -248,10 +248,12 @@ namespace MESForm.PopUp
             // 
             // txtFactoryOrder
             // 
+            this.txtFactoryOrder.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtFactoryOrder.Location = new System.Drawing.Point(119, 128);
             this.txtFactoryOrder.Name = "txtFactoryOrder";
             this.txtFactoryOrder.Size = new System.Drawing.Size(140, 22);
             this.txtFactoryOrder.TabIndex = 6;
+            this.txtFactoryOrder.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFactoryOrder_KeyPress);
             // 
             // label2
             // 

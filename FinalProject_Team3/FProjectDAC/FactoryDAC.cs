@@ -63,6 +63,15 @@ namespace FProjectDAC
         // 공장정보 등록
         public bool InsertFactory(FactoryVO vo)
         {
+            if (!IsNameValied(vo.Factory_Name))
+            {
+                throw new Exception("이미 등록된 시설명입니다.");
+            }
+            else if (!IsNameValied(vo.Factory_Code))
+            {
+                throw new Exception("이미 등록된 시설코드입니다.");
+            }
+
             try
             {
                 using (SqlCommand cmd = new SqlCommand())
@@ -81,7 +90,7 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Factory_Type", vo.Factory_Type);
                     cmd.Parameters.AddWithValue("@Factory_Code", vo.Factory_Code);
                     cmd.Parameters.AddWithValue("@Factory_Name", vo.Factory_Name);
-                    cmd.Parameters.AddWithValue("@Factory_HighRank", vo.Factory_HighRank);
+                    cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "없음") ? DBNull.Value : (object)vo.Factory_HighRank);
                     cmd.Parameters.AddWithValue("@Factory_Explain", vo.Factory_Explain);
                     cmd.Parameters.AddWithValue("@Factory_Credit", vo.Factory_Credit);
                     cmd.Parameters.AddWithValue("@Factory_Order", (vo.Factory_Order == -1) ? DBNull.Value : (object)vo.Factory_Order);
@@ -131,5 +140,45 @@ namespace FProjectDAC
                 throw new Exception(err.Message);
             }
         }
+
+        #region 중복체크
+        // 시설명 중복 체크
+        public bool IsNameValied(string name)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) from Factory where Factory_Name = @Factory_Name";
+
+                cmd.Parameters.AddWithValue("@Factory_Name", name);
+
+                int result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (result < 1)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        // 시설명 중복 체크
+        public bool IsCodeValied(string code)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(*) from Factory where Factory_Code = @Factory_Code";
+
+                cmd.Parameters.AddWithValue("@Factory_Code", code);
+
+                int result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (result < 1)
+                    return true;
+                else
+                    return false;
+            }
+        }
+        #endregion
     }
 }
