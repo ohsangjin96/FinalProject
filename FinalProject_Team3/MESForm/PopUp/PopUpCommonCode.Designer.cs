@@ -29,6 +29,7 @@ namespace MESForm.PopUp
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gboInsert = new System.Windows.Forms.GroupBox();
             this.cboParentCode = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -108,6 +109,7 @@ namespace MESForm.PopUp
             // 
             // cboParentCode
             // 
+            this.cboParentCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboParentCode.FormattingEnabled = true;
             this.cboParentCode.Location = new System.Drawing.Point(161, 100);
             this.cboParentCode.Name = "cboParentCode";
@@ -128,12 +130,14 @@ namespace MESForm.PopUp
             // txtCodeName
             // 
             this.txtCodeName.Location = new System.Drawing.Point(161, 61);
+            this.txtCodeName.MaxLength = 20;
             this.txtCodeName.Name = "txtCodeName";
             this.txtCodeName.Size = new System.Drawing.Size(173, 22);
-            this.txtCodeName.TabIndex = 4;
+            this.txtCodeName.TabIndex = 5;
             // 
             // nudSeq
             // 
+            this.nudSeq.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.nudSeq.Location = new System.Drawing.Point(161, 139);
             this.nudSeq.Maximum = new decimal(new int[] {
             999,
@@ -173,7 +177,7 @@ namespace MESForm.PopUp
             this.btnCodeVal.Location = new System.Drawing.Point(359, 23);
             this.btnCodeVal.Name = "btnCodeVal";
             this.btnCodeVal.Size = new System.Drawing.Size(70, 25);
-            this.btnCodeVal.TabIndex = 3;
+            this.btnCodeVal.TabIndex = 4;
             this.btnCodeVal.Text = "중복확인";
             this.btnCodeVal.UseVisualStyleBackColor = false;
             this.btnCodeVal.Click += new System.EventHandler(this.btnCodeVal_Click);
@@ -190,9 +194,10 @@ namespace MESForm.PopUp
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(161, 24);
+            this.txtCode.MaxLength = 20;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(173, 22);
-            this.txtCode.TabIndex = 2;
+            this.txtCode.TabIndex = 3;
             this.txtCode.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // label7
@@ -211,7 +216,7 @@ namespace MESForm.PopUp
             this.btnDelete.Location = new System.Drawing.Point(428, 51);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 25);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "삭제";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -233,7 +238,7 @@ namespace MESForm.PopUp
             this.btnUpdate.Location = new System.Drawing.Point(347, 51);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 25);
-            this.btnUpdate.TabIndex = 79;
+            this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);

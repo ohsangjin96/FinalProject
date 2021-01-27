@@ -19,6 +19,7 @@ namespace MESForm.PopUp
         bool bRegOrUp; //등록 : true, 수정 : false
 
         public string DeptName { get; set; }
+        public FactoryVO factoryVO { get; set; }
 
         public PopUpFactory()
         {
@@ -36,7 +37,33 @@ namespace MESForm.PopUp
             else if (mode == OpenMode.Update)
             {
                 bRegOrUp = false;
+                txtFactoryCode.Enabled = false;
             }
+        }
+
+        /// <summary>
+        /// 수정하기 위해 기존의 데이터를 불러오는 메서드
+        /// </summary>
+        private void GetFactoryInfo()
+        {
+            cboFactoryGrade.Text = factoryVO.Factory_Grade;
+            cboFactoryHighRank.Text = factoryVO.Factory_HighRank;
+            cboFactoryType.Text = factoryVO.Factory_Type;
+            txtFactoryName.Text = factoryVO.Factory_Name;
+            txtFactoryCode.Text = factoryVO.Factory_Code;
+            cboFactoryCredit.Text = factoryVO.Factory_Credit;
+
+            if(factoryVO.Factory_Order != 0)
+                txtFactoryOrder.Text = factoryVO.Factory_Order.ToString();
+
+            cboComCode.Text = factoryVO.Com_Name;
+            cboFactoryDemand.Text = factoryVO.Factory_Demand;
+            cboFactoryProcess.Text = factoryVO.Factory_Process;
+            cboFactoryMaterial.Text = factoryVO.Factory_Material;
+            cboFactoryUse.Text = factoryVO.Factory_Use;
+            txtAmender.Text = factoryVO.Factory_Amender;
+            txtModdifyDate.Text = factoryVO.Factory_ModdifyDate.ToString();
+            txtExplain.Text = factoryVO.Factory_Explain;
         }
 
         /// <summary>
@@ -74,13 +101,20 @@ namespace MESForm.PopUp
         private void PopUpFactory_Load(object sender, EventArgs e)
         {
             ComboBoxBind();
-            txtAmender.Text = DeptName;
-            txtModdifyDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            if (bRegOrUp)
+            {
+                txtAmender.Text = DeptName;
+                txtModdifyDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            else
+            {
+                GetFactoryInfo();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
             //유효성 체크
             if (txtFactoryName.Text == "") // 시설명 미입력
             {
@@ -132,6 +166,7 @@ namespace MESForm.PopUp
                 else
                 {
                     //수정
+                    service.UpdateFactory(vo);
                 }
                 service.Dispose();
 
