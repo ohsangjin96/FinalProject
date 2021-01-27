@@ -502,7 +502,8 @@ namespace MESForm
         }
         private void button10_Click(object sender, EventArgs e)//품목
         {
-            FrmITEM frm = new FrmITEM(DeptInfo.User_Name);
+            FrmITEM frm = new FrmITEM();
+            frm.Uname = DeptInfo.User_Name;
 
             if (OpenFormMdi(frm.GetType()))
                 frm.Dispose();
