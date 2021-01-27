@@ -551,6 +551,9 @@
     <EmbeddedResource Include="BaseForms\frmPopUp_2.resx">
       <DependentUpon>frmPopUp_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBOM.resx">
+      <DependentUpon>FrmBOM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBOR.resx">
       <DependentUpon>frmBOR.cs</DependentUpon>
     </EmbeddedResource>
