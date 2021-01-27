@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +49,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.numMinOrder = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -75,6 +76,7 @@
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.numMinOrder);
             this.pnl.Controls.Add(this.label55);
             this.pnl.Controls.Add(this.textBox3);
             this.pnl.Controls.Add(this.label45);
@@ -82,7 +84,6 @@
             this.pnl.Controls.Add(this.label2);
             this.pnl.Controls.Add(this.dateTimePicker1);
             this.pnl.Controls.Add(this.label3);
-            this.pnl.Controls.Add(this.textBox2);
             this.pnl.Controls.Add(this.label4);
             this.pnl.Controls.Add(this.textBox1);
             this.pnl.Controls.Add(this.label5);
@@ -176,15 +177,6 @@
             this.label3.TabIndex = 166;
             this.label3.Text = "사용유무";
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox2.Location = new System.Drawing.Point(82, 76);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 22);
-            this.textBox2.TabIndex = 181;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -202,6 +194,7 @@
             this.textBox1.Location = new System.Drawing.Point(82, 176);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(161, 22);
             this.textBox1.TabIndex = 180;
             // 
@@ -222,6 +215,7 @@
             this.textBox32.Location = new System.Drawing.Point(328, 172);
             this.textBox32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox32.Name = "textBox32";
+            this.textBox32.ReadOnly = true;
             this.textBox32.Size = new System.Drawing.Size(161, 22);
             this.textBox32.TabIndex = 179;
             // 
@@ -330,6 +324,13 @@
             this.comboBox18.Size = new System.Drawing.Size(161, 22);
             this.comboBox18.TabIndex = 174;
             // 
+            // numMinOrder
+            // 
+            this.numMinOrder.Location = new System.Drawing.Point(82, 74);
+            this.numMinOrder.Name = "numMinOrder";
+            this.numMinOrder.Size = new System.Drawing.Size(161, 22);
+            this.numMinOrder.TabIndex = 247;
+            // 
             // PopUpBOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -339,6 +340,7 @@
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,7 +354,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
@@ -367,5 +368,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox18;
+        private System.Windows.Forms.NumericUpDown numMinOrder;
     }
 }

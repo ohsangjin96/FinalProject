@@ -114,5 +114,22 @@ namespace MESForm.Utils
             cbo.ValueMember = "Factory_Code";
             cbo.DataSource = list;
         }
+
+        public static void ComboBindingitem(ComboBox cbo, List<ItemVO> list, string gubun, bool blankItem = true, string blankText = "")
+        {
+            var codeList = (from item in list
+                            where item.Gubun.Equals(gubun)
+                            select item).ToList();
+
+            if (blankItem)
+            {
+                ItemVO blank = new ItemVO
+                { Code = "" };
+                codeList.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Code";
+            cbo.ValueMember = "Code";
+            cbo.DataSource = codeList;
+        }
     }
 }

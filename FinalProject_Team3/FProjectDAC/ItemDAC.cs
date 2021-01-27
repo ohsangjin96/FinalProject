@@ -119,6 +119,51 @@ namespace FProjectDAC
                 throw new Exception(err.Message);
             }
         }
+        public List<ItemVO> GetCodeInfoByCodeTypes(string[] types)//코드타입으로 코드정보 조회
+        {
+            /*파라미터를 꼭 써서 쿼리문을 생성해야 되는 경우
+                -사용자가 입력하는 부분(SQL Injection)  
+            */
+
+            string type = string.Join("','", types);
+            string sql = @"select Code, Gubun
+                            from GetItemView
+                            where Gubun in('" + type + "')";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemVO> list = Helper.DataReaderMapToList<ItemVO>(reader);
+                return list;
+            }
+
+        }
+
+        public bool DeleteItem(string pk)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"delete from item where ITEM_Code=@ITEM_Code";
+                    
+
+                    cmd.Parameters.AddWithValue("@ITEM_Code", pk);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    if (iRowAffect > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+        }
+
     }
 }
 //

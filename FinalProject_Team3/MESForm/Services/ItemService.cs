@@ -30,5 +30,15 @@ namespace MESForm.Services
             ItemDAC dac = new ItemDAC();
             return dac.RegisterItem(vo);
         }
+        public List<ItemVO> GetCodeInfoByCodeTypes(string[] types)//코드타입으로 코드정보 조회
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.GetCodeInfoByCodeTypes(types);
+        }
+        public bool DeleteItem(string pk) //삭제
+        {
+            ItemDAC dac = new ItemDAC();
+            return dac.DeleteItem(pk);
+        }
     }
 }

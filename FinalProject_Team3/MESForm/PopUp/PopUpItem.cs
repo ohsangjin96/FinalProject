@@ -82,9 +82,6 @@ namespace MESForm
             numReadTime.Value = ITME_LeadTime;
             numMinOrder.Value = ITME_Min_Order_Qty;
             numSaveStock.Value = ITME_Safe_Qty;
-            txtManager.Text = ITME_Manager;
-            txtModifier.Text = ITME_Last_Modifier;
-            txtModifierDate.Text = Convert.ToString(ITME_Last_Modifier_Time);
             cboUseYN.Text = ITME_Use;
             cboDisconYN.Text = ITEM_Discontinuance;
             cboOrderType.Text = ITEM_Delivery_Type;
