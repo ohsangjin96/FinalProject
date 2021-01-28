@@ -13,6 +13,8 @@ namespace MESForm
 {
     public partial class frmFacility : MESForm.BaseForms.frmBaseLists
     {
+        public string DeptName { get; set; }
+
         public frmFacility()
         {
             InitializeComponent();
@@ -66,10 +68,12 @@ namespace MESForm
 
         private void btnReg1_Click(object sender, EventArgs e)
         {
-            PopUp.PopUpFacility pop = new PopUp.PopUpFacility();
+            PopUp.PopUpFacility pop = new PopUp.PopUpFacility(frmMain.OpenMode.Register);
+            pop.DeptName = DeptName;
             if (pop.ShowDialog() == DialogResult.OK)
             {
-
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadFacilityData();
             }
         }
 

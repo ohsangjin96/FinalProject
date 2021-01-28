@@ -29,30 +29,31 @@ namespace MESForm.PopUp
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtExplain = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtModdifyDate = new System.Windows.Forms.TextBox();
+            this.txtAmender = new System.Windows.Forms.TextBox();
+            this.txtFacilitiesCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFacilitiesName = new System.Windows.Forms.TextBox();
+            this.cboFacilitiesUse = new System.Windows.Forms.ComboBox();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Size = new System.Drawing.Size(322, 32);
+            this.pnlTop.Size = new System.Drawing.Size(341, 34);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FacilityPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FacilityPopUp_MouseMove);
             // 
             // label1
             // 
+            this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.Text = "설비군";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FacilityPopUp_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FacilityPopUp_MouseMove);
@@ -60,138 +61,148 @@ namespace MESForm.PopUp
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(164, 380);
+            this.btnCancel.Location = new System.Drawing.Point(173, 383);
+            this.btnCancel.TabIndex = 7;
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(88, 380);
+            this.btnSave.Location = new System.Drawing.Point(97, 383);
+            this.btnSave.TabIndex = 6;
             // 
             // pnl
             // 
-            this.pnl.Controls.Add(this.textBox2);
+            this.pnl.Controls.Add(this.cboFacilitiesUse);
+            this.pnl.Controls.Add(this.txtExplain);
             this.pnl.Controls.Add(this.label7);
-            this.pnl.Controls.Add(this.textBox10);
-            this.pnl.Controls.Add(this.textBox11);
-            this.pnl.Controls.Add(this.textBox8);
+            this.pnl.Controls.Add(this.txtModdifyDate);
+            this.pnl.Controls.Add(this.txtAmender);
+            this.pnl.Controls.Add(this.txtFacilitiesCode);
             this.pnl.Controls.Add(this.label2);
             this.pnl.Controls.Add(this.label3);
             this.pnl.Controls.Add(this.label4);
             this.pnl.Controls.Add(this.label5);
-            this.pnl.Controls.Add(this.textBox6);
             this.pnl.Controls.Add(this.label6);
-            this.pnl.Controls.Add(this.textBox1);
-            this.pnl.Size = new System.Drawing.Size(298, 336);
+            this.pnl.Controls.Add(this.txtFacilitiesName);
+            this.pnl.Size = new System.Drawing.Size(317, 336);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(282, 0);
+            this.btnClose.Location = new System.Drawing.Point(301, 0);
+            this.btnClose.Size = new System.Drawing.Size(40, 34);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // textBox2
+            // txtExplain
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 226);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 89);
-            this.textBox2.TabIndex = 80;
+            this.txtExplain.Location = new System.Drawing.Point(31, 243);
+            this.txtExplain.Multiline = true;
+            this.txtExplain.Name = "txtExplain";
+            this.txtExplain.Size = new System.Drawing.Size(265, 84);
+            this.txtExplain.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 200);
+            this.label7.Location = new System.Drawing.Point(28, 215);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.Size = new System.Drawing.Size(55, 14);
             this.label7.TabIndex = 79;
             this.label7.Text = "시설설명";
             // 
-            // textBox10
+            // txtModdifyDate
             // 
-            this.textBox10.Location = new System.Drawing.Point(146, 162);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 21);
-            this.textBox10.TabIndex = 78;
+            this.txtModdifyDate.Enabled = false;
+            this.txtModdifyDate.Location = new System.Drawing.Point(146, 174);
+            this.txtModdifyDate.Name = "txtModdifyDate";
+            this.txtModdifyDate.Size = new System.Drawing.Size(150, 22);
+            this.txtModdifyDate.TabIndex = 4;
             // 
-            // textBox11
+            // txtAmender
             // 
-            this.textBox11.Location = new System.Drawing.Point(146, 127);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 21);
-            this.textBox11.TabIndex = 77;
+            this.txtAmender.Enabled = false;
+            this.txtAmender.Location = new System.Drawing.Point(146, 137);
+            this.txtAmender.Name = "txtAmender";
+            this.txtAmender.Size = new System.Drawing.Size(150, 22);
+            this.txtAmender.TabIndex = 3;
             // 
-            // textBox8
+            // txtFacilitiesCode
             // 
-            this.textBox8.Location = new System.Drawing.Point(146, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 21);
-            this.textBox8.TabIndex = 76;
+            this.txtFacilitiesCode.Location = new System.Drawing.Point(146, 24);
+            this.txtFacilitiesCode.Name = "txtFacilitiesCode";
+            this.txtFacilitiesCode.Size = new System.Drawing.Size(150, 22);
+            this.txtFacilitiesCode.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 25);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(28, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(67, 14);
             this.label2.TabIndex = 75;
             this.label2.Text = "설비군코드";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 60);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(28, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(55, 14);
             this.label3.TabIndex = 69;
             this.label3.Text = "설비군명";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 95);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(28, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.Size = new System.Drawing.Size(55, 14);
             this.label4.TabIndex = 70;
             this.label4.Text = "사용유무";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 130);
+            this.label5.Location = new System.Drawing.Point(28, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(43, 14);
             this.label5.TabIndex = 71;
             this.label5.Text = "수정자";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(146, 92);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 21);
-            this.textBox6.TabIndex = 74;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 165);
+            this.label6.Location = new System.Drawing.Point(28, 178);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.Size = new System.Drawing.Size(55, 14);
             this.label6.TabIndex = 72;
             this.label6.Text = "수정시간";
             // 
-            // textBox1
+            // txtFacilitiesName
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 21);
-            this.textBox1.TabIndex = 73;
+            this.txtFacilitiesName.Location = new System.Drawing.Point(146, 61);
+            this.txtFacilitiesName.Name = "txtFacilitiesName";
+            this.txtFacilitiesName.Size = new System.Drawing.Size(150, 22);
+            this.txtFacilitiesName.TabIndex = 1;
             // 
-            // FacilityPopUp
+            // cboFacilitiesUse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(322, 436);
-            this.Name = "FacilityPopUp";
+            this.cboFacilitiesUse.FormattingEnabled = true;
+            this.cboFacilitiesUse.Location = new System.Drawing.Point(146, 99);
+            this.cboFacilitiesUse.Name = "cboFacilitiesUse";
+            this.cboFacilitiesUse.Size = new System.Drawing.Size(150, 22);
+            this.cboFacilitiesUse.TabIndex = 2;
+            // 
+            // PopUpFacility
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(341, 444);
+            this.Name = "PopUpFacility";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PopUpFacility_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
@@ -202,17 +213,17 @@ namespace MESForm.PopUp
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtExplain;
         private System.Windows.Forms.Label label7;
-        protected System.Windows.Forms.TextBox textBox10;
-        protected System.Windows.Forms.TextBox textBox11;
-        protected System.Windows.Forms.TextBox textBox8;
+        protected System.Windows.Forms.TextBox txtModdifyDate;
+        protected System.Windows.Forms.TextBox txtAmender;
+        protected System.Windows.Forms.TextBox txtFacilitiesCode;
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label3;
         protected System.Windows.Forms.Label label4;
         protected System.Windows.Forms.Label label5;
-        protected System.Windows.Forms.TextBox textBox6;
         protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.TextBox textBox1;
+        protected System.Windows.Forms.TextBox txtFacilitiesName;
+        private System.Windows.Forms.ComboBox cboFacilitiesUse;
     }
 }
