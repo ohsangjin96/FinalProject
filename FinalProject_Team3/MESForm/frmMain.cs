@@ -87,6 +87,19 @@ namespace MESForm
             }
             return false;
         }
+
+        //MDI 중복 확인 2
+        private void MdiOpenCheck<T>(T frm) where T : Form
+        {
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
+        }
         #endregion
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -285,19 +298,15 @@ namespace MESForm
             frmFactory frm = new frmFactory();
             frm.DeptName = DeptInfo.User_Name;
 
-            if (OpenFormMdi(frm.GetType()))
-                frm.Dispose();
-            else
-            {
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
+            MdiOpenCheck(frm);
         }
 
         private void btnFacility_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmFacility>();
+            frmFacility frm = new frmFacility();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void btnCompany_Click(object sender, EventArgs e)

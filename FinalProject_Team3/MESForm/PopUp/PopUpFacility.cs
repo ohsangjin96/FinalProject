@@ -1,20 +1,53 @@
-﻿using System;
+﻿using FProjectVO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static MESForm.frmMain;
 
 namespace MESForm.PopUp
 {
     public partial class PopUpFacility : MESForm.BaseForms.frmPopup
     {
         private Point mousePoint;
+        bool bRegOrUp; //등록 : true, 수정 : false
+
+        public string DeptName { get; set; }
+        public FacilityVO facilityVO { get; set; }
 
         public PopUpFacility()
         {
             InitializeComponent();
+        }
+
+        public PopUpFacility(OpenMode mode)
+        {
+            InitializeComponent();
+
+            if (mode == OpenMode.Register)
+            {
+                bRegOrUp = true;
+            }
+            else if (mode == OpenMode.Update)
+            {
+                bRegOrUp = false;
+            }
+        }
+
+        private void PopUpFacility_Load(object sender, EventArgs e)
+        {
+            if (bRegOrUp)
+            {
+                txtAmender.Text = DeptName;
+                txtModdifyDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            else
+            {
+                
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
