@@ -320,7 +320,17 @@ namespace MESForm
         private void button9_Click(object sender, EventArgs e)//bom
         {
 
+            FrmBOM frm = new FrmBOM();
+            frm.DeptName = DeptInfo.User_Name;
 
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)//자재단가
