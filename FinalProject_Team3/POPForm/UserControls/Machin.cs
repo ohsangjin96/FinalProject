@@ -15,6 +15,7 @@ namespace POPForm.UserControls
 {
     public partial class Machin : UserControl
     {
+        public string ID { get { return id; } set { id = value; } }
         public string Facility { get { return lblFacility.Text; } set{lblFacility.Text=value;} }
         public string Name { get { return lblName.Text; } set { lblName.Text = value; } }
         public string Program { get { return lblProgram.Text; } set { lblProgram.Text = value; } }
@@ -28,7 +29,8 @@ namespace POPForm.UserControls
         int fail, success = 0;
         
         int range = 1;
-        
+
+        string id;
         
         public Machin()
         {
@@ -89,7 +91,7 @@ namespace POPForm.UserControls
                             WorkRegist_WorkTime = TotTime,
                             WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
                             WorkRegist_State = "제작완료",
-                            Plan_ID = "20210126-P"
+                            Plan_ID = id
                         };
 
                         WorkRegistEventArgs args = new WorkRegistEventArgs();
@@ -120,6 +122,11 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)

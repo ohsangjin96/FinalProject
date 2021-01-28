@@ -86,7 +86,7 @@ namespace MESForm
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvList);
-            this.pnlItem.Size = new System.Drawing.Size(1226, 526);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 509);
             // 
             // panel1
             // 
@@ -179,14 +179,14 @@ namespace MESForm
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1226, 526);
+            this.dgvList.Size = new System.Drawing.Size(1226, 509);
             this.dgvList.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(545, 14);
+            this.dateTimePicker1.Location = new System.Drawing.Point(545, 16);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 41);
+            this.dateTimePicker1.Size = new System.Drawing.Size(281, 31);
             this.dateTimePicker1.TabIndex = 27;
             // 
             // btnExcel
@@ -215,7 +215,7 @@ namespace MESForm
             // frmProductPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(1250, 754);
+            this.ClientSize = new System.Drawing.Size(1250, 737);
             this.Name = "frmProductPlan";
             this.Text = "생성계획";
             this.Load += new System.EventHandler(this.frmProductPlan_Load);
