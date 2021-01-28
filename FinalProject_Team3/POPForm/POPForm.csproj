@@ -92,6 +92,10 @@
     <Compile Include="ResultCheck.Designer.cs">
       <DependentUpon>ResultCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DateTimePicker.Designer.cs" />
     <Compile Include="UserControls\Machin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +126,7 @@
     <EmbeddedResource Include="ResultCheck.resx">
       <DependentUpon>ResultCheck.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DateTimePicker.resx" />
     <EmbeddedResource Include="UserControls\Machin.resx">
       <DependentUpon>Machin.cs</DependentUpon>
     </EmbeddedResource>

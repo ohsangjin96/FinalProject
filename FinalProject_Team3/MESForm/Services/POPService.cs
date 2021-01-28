@@ -15,5 +15,10 @@ namespace MESForm.Services
             POPDAC dac = new POPDAC();
             return dac.GetPOPList(Item_Code);
         }
+        public bool InsertWorkRegistList(List<WorkRegistVO> curlist)
+        {
+            POPDAC dac = new POPDAC();
+            return dac.InsertWorkRegistList(curlist);
+        }
     }
 }
