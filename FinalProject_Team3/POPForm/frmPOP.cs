@@ -86,7 +86,7 @@ namespace POPForm
                     machin.Location = new Point(0, 4 + i * 105);
                     machin.Facility = list[i].Facility_Name;
                     machin.Name = list[i].Item_Code;
-                    
+                    machin.ID = lblID.Text;
                     machin.Tag = list[i].Facility_Code;
                     machin.MachinRegist += Machin_MachinRegist;
                     splitContainer2.Panel2.Controls.Add(machin);
@@ -102,6 +102,8 @@ namespace POPForm
             curlist.Add(e.Data);
             dgvList2.DataSource = null;
             dgvList2.DataSource = curlist;
+            btnRegist.BackColor = SystemColors.Highlight;
+            btnRegist.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,5 +117,26 @@ namespace POPForm
                 }
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (curlist.Count > 0)
+            {
+                POPService service = new POPService();
+                service.InsertWorkRegistList(curlist);
+                dgvList2.DataSource = null;
+                curlist.Clear();
+                btnRegist.Enabled = false;
+                btnRegist.BackColor = Color.Silver;
+                
+            }
+            else if(curlist == null)
+            {
+                MessageBox.Show("기계를 먼저 돌려주세요");
+            }
+            
+        }
+
+       
     }
 }

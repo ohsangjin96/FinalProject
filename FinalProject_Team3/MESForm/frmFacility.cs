@@ -13,6 +13,8 @@ namespace MESForm
 {
     public partial class frmFacility : MESForm.BaseForms.frmBaseLists
     {
+        public string DeptName { get; set; }
+
         public frmFacility()
         {
             InitializeComponent();
@@ -24,9 +26,9 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvFacility, "설비군코드", "Facilities_Code");
             CommonUtil.AddGridTextColumn(dgvFacility, "설비군명", "Facilities_Name");
             CommonUtil.AddGridTextColumn(dgvFacility, "사용유무", "Facilities_Use");
-            //CommonUtil.AddGridTextColumn(dgvFacility, "수정자", "Facilities_Amender");
-            //CommonUtil.AddGridTextColumn(dgvFacility, "수정날짜", "Facilities_ModdifyDate");
-            //CommonUtil.AddGridTextColumn(dgvFacility, "설명", "Facilities_Explain");
+            CommonUtil.AddGridTextColumn(dgvFacility, "수정자", "Facilities_Amender", 10, false);
+            CommonUtil.AddGridTextColumn(dgvFacility, "수정날짜", "Facilities_ModdifyDate", 10, false);
+            CommonUtil.AddGridTextColumn(dgvFacility, "설명", "Facilities_Explain", 10, false);
 
 
             CommonUtil.SetInitGridView(dgvFacilityDetail);
@@ -64,22 +66,93 @@ namespace MESForm
             LoadFacilityDetailData();
         }
 
+        #region 설비군
         private void btnReg1_Click(object sender, EventArgs e)
         {
-            PopUp.PopUpFacility pop = new PopUp.PopUpFacility();
+            PopUp.PopUpFacility pop = new PopUp.PopUpFacility(frmMain.OpenMode.Register);
+            pop.DeptName = DeptName;
             if (pop.ShowDialog() == DialogResult.OK)
             {
-
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadFacilityData();
             }
         }
 
+        private void btnUpdate1_Click(object sender, EventArgs e)
+        {
+            int rowIdx = dgvFacility.CurrentRow.Index;
+
+            FacilityVO vo = new FacilityVO
+            {
+                Facilities_Code = dgvFacility[1, rowIdx].Value.ToString(),
+                Facilities_Name = dgvFacility[2, rowIdx].Value.ToString(),
+                Facilities_Use = dgvFacility[3, rowIdx].Value.ToString(),
+                Facilities_Amender = dgvFacility[4, rowIdx].Value.ToString(),
+                Facilities_ModdifyDate = Convert.ToDateTime(dgvFacility[5, rowIdx].Value),
+                Facilities_Explain = Convert.ToString(dgvFacility[6, rowIdx].Value)
+            };
+
+            PopUp.PopUpFacility pop = new PopUp.PopUpFacility(frmMain.OpenMode.Update);
+            pop.facilityVO = vo;
+
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadFacilityData();
+            }
+        }
+
+        private void btnDelete1_Click(object sender, EventArgs e)
+        {
+            string code = dgvFacility[1, dgvFacility.CurrentRow.Index].Value.ToString();
+            string name = dgvFacility[2, dgvFacility.CurrentRow.Index].Value.ToString();
+            FacilityService service = new FacilityService();
+            int cnt = service.SearchFacilityDetaile(code);
+
+            if (cnt != 0)
+            {
+                if(MessageBox.Show($"{name}을(를) 참조하는 {cnt}개의 설비도 모두 삭제됩니다.\n{Properties.Resources.DeleteCheck}", "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    service.Dispose();
+                    return;
+                }
+            }
+            else
+            {
+                if (MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    return;
+            }
+
+
+            try
+            {
+                bool result = service.DeleteFacility(code);
+                service.Dispose();
+
+                if (result)
+                {
+                    MessageBox.Show(Properties.Resources.DeleteSuccess);
+                    LoadFacilityData();
+                    LoadFacilityDetailData();
+                }
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+        #endregion
+
+        #region 설비
         private void btnReg2_Click(object sender, EventArgs e)
         {
             PopUp.PopUpFacilityDetail pop = new PopUp.PopUpFacilityDetail();
             if (pop.ShowDialog() == DialogResult.OK)
             {
-
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadFacilityData();
             }
         }
+        #endregion
     }
 }

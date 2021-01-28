@@ -90,8 +90,8 @@ namespace MESForm
             this.모든탭닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tslblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstxtExplain = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.custTab = new MESForm.CustomControls.custTabControl();
             this.panel1.SuspendLayout();
@@ -898,18 +898,18 @@ namespace MESForm
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // tstxtExplain
+            // 
+            this.tstxtExplain.Name = "tstxtExplain";
+            this.tstxtExplain.Size = new System.Drawing.Size(793, 17);
+            this.tstxtExplain.Spring = true;
+            this.tstxtExplain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // tslblDateTime
             // 
             this.tslblDateTime.Name = "tslblDateTime";
             this.tslblDateTime.Size = new System.Drawing.Size(55, 17);
             this.tslblDateTime.Text = "현재시간";
-            // 
-            // tstxtExplain
-            // 
-            this.tstxtExplain.Name = "tstxtExplain";
-            this.tstxtExplain.Size = new System.Drawing.Size(762, 17);
-            this.tstxtExplain.Spring = true;
-            this.tstxtExplain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // timer1
             // 
@@ -945,7 +945,6 @@ namespace MESForm
             this.Text = "SmartMOM - made by GDC6 / Team3";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMain_MdiChildActivate);
             this.panel1.ResumeLayout(false);

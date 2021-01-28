@@ -19,6 +19,8 @@ namespace MESForm
         //팝업 창을 띄었을 때 등록인지 수정인지
         public enum OpenMode { Register, Update }
 
+        Cursor currentCursor = Cursors.Default; //기본 커서 저장을 위한 변수 선언
+
         //로그인 정보 가져오기
         public LoginVO DeptInfo { get; set; }
 
@@ -54,7 +56,6 @@ namespace MESForm
         //Mdi 중복 방지
         private void OpenCreateForm<T>() where T : Form, new()
         {
-            Cursor currentCursor = this.Cursor;
             foreach (Form form in Application.OpenForms)
             {
                 if (form.GetType() == typeof(T))
@@ -87,8 +88,28 @@ namespace MESForm
             }
             return false;
         }
+
+        //MDI 중복 확인 2
+        private void MdiOpenCheck<T>(T frm) where T : Form
+        {
+            this.Cursor = Cursors.WaitCursor;
+            if (OpenFormMdi(frm.GetType()))
+                frm.Dispose();
+            else
+            {
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
+            this.Cursor = currentCursor;
+        }
         #endregion
 
+        /// <summary>
+        /// 메인화면 로드 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.Hide();
@@ -96,8 +117,6 @@ namespace MESForm
 
             HideSubMenu();
         }
-
-
 
         #region 상위 버튼 클릭
         private void btnResource_Click(object sender, EventArgs e)
@@ -208,11 +227,7 @@ namespace MESForm
 
         private void 모든탭닫기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            custTab.TabPages.Clear();
-            foreach (Form frm in this.MdiChildren)
-            {
-                frm.Dispose();
-            }
+            MdiFormClose();
         }
 
         private void 닫기ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -261,6 +276,16 @@ namespace MESForm
                 }
             }
         }
+
+        // 열린 MDI창 모두 닫기
+        private void MdiFormClose()
+        {
+            custTab.TabPages.Clear();
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Dispose();
+            }
+        }
         #endregion
 
         //공통코드
@@ -285,19 +310,15 @@ namespace MESForm
             frmFactory frm = new frmFactory();
             frm.DeptName = DeptInfo.User_Name;
 
-            if (OpenFormMdi(frm.GetType()))
-                frm.Dispose();
-            else
-            {
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
+            MdiOpenCheck(frm);
         }
 
         private void btnFacility_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmFacility>();
+            frmFacility frm = new frmFacility();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void btnCompany_Click(object sender, EventArgs e)
@@ -479,17 +500,14 @@ namespace MESForm
                 e.Cancel = true;
         }
 
-        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
-
         private void lblLogout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("로그아웃을 하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
                 == DialogResult.Yes)
             {
                 this.Hide();
+                HideSubMenu();
+                MdiFormClose();
                 LogMenu();
             }
             else

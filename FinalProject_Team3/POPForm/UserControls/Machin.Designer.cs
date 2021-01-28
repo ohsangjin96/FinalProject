@@ -108,6 +108,7 @@ namespace POPForm.UserControls
             this.button11.TabIndex = 55;
             this.button11.Text = "로그";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // label20
             // 
