@@ -37,8 +37,8 @@ namespace MESForm
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnReg1 = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl5 = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl6 = new MESForm.CustomControls.custButtonControl();
+            this.btnUpdate1 = new MESForm.CustomControls.custButtonControl();
+            this.btnDelete1 = new MESForm.CustomControls.custButtonControl();
             this.dgvFacility = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlItem2 = new System.Windows.Forms.Panel();
             this.dgvFacilityDetail = new MESForm.CustomControls.custDataGridViewControl();
@@ -178,8 +178,8 @@ namespace MESForm
             // panel2
             // 
             this.panel2.Controls.Add(this.btnReg1);
-            this.panel2.Controls.Add(this.custButtonControl5);
-            this.panel2.Controls.Add(this.custButtonControl6);
+            this.panel2.Controls.Add(this.btnUpdate1);
+            this.panel2.Controls.Add(this.btnDelete1);
             this.panel2.Location = new System.Drawing.Point(142, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 41);
@@ -202,37 +202,39 @@ namespace MESForm
             this.btnReg1.UseVisualStyleBackColor = false;
             this.btnReg1.Click += new System.EventHandler(this.btnReg1_Click);
             // 
-            // custButtonControl5
+            // btnUpdate1
             // 
-            this.custButtonControl5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl5.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl5.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl5.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl5.Location = new System.Drawing.Point(108, 3);
-            this.custButtonControl5.Name = "custButtonControl5";
-            this.custButtonControl5.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl5.TabIndex = 16;
-            this.custButtonControl5.Text = "수정";
-            this.custButtonControl5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl5.UseVisualStyleBackColor = false;
+            this.btnUpdate1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnUpdate1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnUpdate1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate1.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate1.Location = new System.Drawing.Point(108, 3);
+            this.btnUpdate1.Name = "btnUpdate1";
+            this.btnUpdate1.Size = new System.Drawing.Size(83, 32);
+            this.btnUpdate1.TabIndex = 16;
+            this.btnUpdate1.Text = "수정";
+            this.btnUpdate1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate1.UseVisualStyleBackColor = false;
+            this.btnUpdate1.Click += new System.EventHandler(this.btnUpdate1_Click);
             // 
-            // custButtonControl6
+            // btnDelete1
             // 
-            this.custButtonControl6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl6.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl6.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl6.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl6.Location = new System.Drawing.Point(197, 3);
-            this.custButtonControl6.Name = "custButtonControl6";
-            this.custButtonControl6.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl6.TabIndex = 15;
-            this.custButtonControl6.Text = "삭제";
-            this.custButtonControl6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl6.UseVisualStyleBackColor = false;
+            this.btnDelete1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDelete1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnDelete1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete1.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete1.Location = new System.Drawing.Point(197, 3);
+            this.btnDelete1.Name = "btnDelete1";
+            this.btnDelete1.Size = new System.Drawing.Size(83, 32);
+            this.btnDelete1.TabIndex = 15;
+            this.btnDelete1.Text = "삭제";
+            this.btnDelete1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete1.UseVisualStyleBackColor = false;
+            this.btnDelete1.Click += new System.EventHandler(this.btnDelete1_Click);
             // 
             // dgvFacility
             // 
@@ -308,8 +310,8 @@ namespace MESForm
         private CustomControls.custButtonControl btnRefresh;
         private System.Windows.Forms.Panel panel2;
         private CustomControls.custButtonControl btnReg1;
-        private CustomControls.custButtonControl custButtonControl5;
-        private CustomControls.custButtonControl custButtonControl6;
+        private CustomControls.custButtonControl btnUpdate1;
+        private CustomControls.custButtonControl btnDelete1;
         private CustomControls.custDataGridViewControl dgvFacility;
         private System.Windows.Forms.Panel pnlItem2;
         private CustomControls.custDataGridViewControl dgvFacilityDetail;

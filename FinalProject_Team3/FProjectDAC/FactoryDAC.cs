@@ -70,7 +70,7 @@ namespace FProjectDAC
             {
                 throw new Exception("이미 등록된 시설명입니다.");
             }
-            else if (!IsNameValied(vo.Factory_Code))
+            else if (!IsCodeValied(vo.Factory_Code))
             {
                 throw new Exception("이미 등록된 시설코드입니다.");
             }
@@ -206,7 +206,7 @@ namespace FProjectDAC
             }
         }
 
-        // 시설명 중복 체크
+        // 시설코드 중복 체크
         public bool IsCodeValied(string code)
         {
             using (SqlCommand cmd = new SqlCommand())
