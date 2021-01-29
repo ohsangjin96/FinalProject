@@ -32,10 +32,10 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select Item_Code,Facility_Code,Facility_Name from Facility_Detail where Item_Code 
-                                    in(select BOM.Item_Code from PO,BOM where PO.Item_Code = @BOM_Parent_Code)";
+                cmd.CommandText = @"select Item_Code,Facility_Code,Facility_Name,Facility_IP,Facility_Port from Facility_Detail where Item_Code 
+                                    in(select BOM.Item_Code from PO,BOM where PO.Item_Code = @BOM_Parent_Name)";
 
-                cmd.Parameters.AddWithValue("@BOM_Parent_Code", Item_Code);
+                cmd.Parameters.AddWithValue("@BOM_Parent_Name", Item_Code);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<POPVO> list = Helper.DataReaderMapToList<POPVO>(reader);
 
