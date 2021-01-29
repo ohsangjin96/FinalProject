@@ -63,12 +63,14 @@ namespace MESForm.PopUp
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(173, 383);
             this.btnCancel.TabIndex = 7;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(97, 383);
             this.btnSave.TabIndex = 6;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
@@ -91,7 +93,6 @@ namespace MESForm.PopUp
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Location = new System.Drawing.Point(301, 0);
             this.btnClose.Size = new System.Drawing.Size(40, 34);
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // txtExplain
             // 

@@ -39,7 +39,7 @@ namespace MESForm
            // string[] gubun = { "use", "ordercompany", "Deliverycompany", "factory", "itemmanager", "itemtype"};
             ItemService service = new ItemService();
             List<ItemVO> selectList = service.GetCodeInfoByCodeTypes();
-
+            service.Dispose();
             ComboBoxBinding.ComboBindingitem(cboUseYN, selectList, "use");
             ComboBoxBinding.ComboBindingitem(cboManager, selectList, "itemmanager");
             ComboBoxBinding.ComboBindingitem(cboItemType, selectList, "itemtype");
