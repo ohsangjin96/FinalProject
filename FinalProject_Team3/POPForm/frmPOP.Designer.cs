@@ -59,7 +59,7 @@ namespace POPForm
             this.lblItemName1 = new System.Windows.Forms.Label();
             this.lblAmount1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnClose = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -257,7 +257,7 @@ namespace POPForm
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label41);
             this.panel2.Controls.Add(this.imgLogo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -270,7 +270,7 @@ namespace POPForm
             // 
             this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.BackColor = System.Drawing.Color.White;
+            this.label41.BackColor = System.Drawing.SystemColors.Highlight;
             this.label41.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label41.Location = new System.Drawing.Point(238, 0);
             this.label41.Name = "label41";
@@ -453,20 +453,21 @@ namespace POPForm
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "다운로드-_1_.jpg");
             // 
-            // btnClose
+            // button1
             // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(1425, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 68);
-            this.btnClose.TabIndex = 108;
-            this.btnClose.UseVisualStyleBackColor = false;
-           
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1389, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 68);
+            this.button1.TabIndex = 109;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPOP
             // 
@@ -530,7 +531,7 @@ namespace POPForm
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.DataGridView dgvList2;
-        protected System.Windows.Forms.Button btnClose;
+        protected System.Windows.Forms.Button button1;
     }
 }
 

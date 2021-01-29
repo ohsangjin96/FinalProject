@@ -31,6 +31,8 @@ namespace POPForm.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblPort = new System.Windows.Forms.Label();
+            this.lblIP = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
@@ -46,6 +48,7 @@ namespace POPForm.UserControls
             this.label10 = new System.Windows.Forms.Label();
             this.lblFacility = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer_Conn = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +57,8 @@ namespace POPForm.UserControls
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.lblPort);
+            this.panel4.Controls.Add(this.lblIP);
             this.panel4.Controls.Add(this.lblName);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.button11);
@@ -72,6 +77,24 @@ namespace POPForm.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1047, 105);
             this.panel4.TabIndex = 58;
+            // 
+            // lblPort
+            // 
+            this.lblPort.AutoSize = true;
+            this.lblPort.Location = new System.Drawing.Point(457, 80);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(38, 12);
+            this.lblPort.TabIndex = 59;
+            this.lblPort.Text = "label3";
+            // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Location = new System.Drawing.Point(368, 80);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(38, 12);
+            this.lblIP.TabIndex = 58;
+            this.lblIP.Text = "label2";
             // 
             // lblName
             // 
@@ -274,5 +297,8 @@ namespace POPForm.UserControls
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button bntActive;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblPort;
+        private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.Timer timer_Conn;
     }
 }

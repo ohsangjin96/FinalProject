@@ -161,5 +161,22 @@ namespace MESForm.Utils
             cbo.ValueMember = "Code";
             cbo.DataSource = codeList;
         }
+
+        public static void BOMComboBindingitem(ComboBox cbo, List<BOMVO> list, string gubun, bool blankItem = true, string blankText = "")
+        {
+            var codeList = (from item in list
+                            where item.Gubun.Equals(gubun)
+                            select item).ToList();
+
+            if (blankItem)
+            {
+                BOMVO blank = new BOMVO
+                { Code = "" };
+                codeList.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Code";
+            cbo.ValueMember = "Code";
+            cbo.DataSource = codeList;
+        }
     }
 }

@@ -490,6 +490,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BOMService.cs" />
     <Compile Include="Services\BORService.cs" />
     <Compile Include="Services\CommonCodeService.cs" />
     <Compile Include="Services\CompanyService.cs" />
