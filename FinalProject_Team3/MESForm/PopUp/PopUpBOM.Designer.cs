@@ -52,9 +52,12 @@
             this.numSpend = new System.Windows.Forms.NumericUpDown();
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSpend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -75,9 +78,12 @@
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(195, 497);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.numLevel);
+            this.pnl.Controls.Add(this.label12);
             this.pnl.Controls.Add(this.txtItemName);
             this.pnl.Controls.Add(this.label11);
             this.pnl.Controls.Add(this.numSpend);
@@ -244,6 +250,7 @@
             this.cboParent.Name = "cboParent";
             this.cboParent.Size = new System.Drawing.Size(161, 22);
             this.cboParent.TabIndex = 178;
+            this.cboParent.SelectedIndexChanged += new System.EventHandler(this.cboParent_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -265,7 +272,7 @@
             this.cboItemCode.Name = "cboItemCode";
             this.cboItemCode.Size = new System.Drawing.Size(161, 22);
             this.cboItemCode.TabIndex = 177;
-            this.cboItemCode.SelectedValueChanged += new System.EventHandler(this.cboItemCode_SelectedValueChanged);
+            this.cboItemCode.SelectedIndexChanged += new System.EventHandler(this.cboItemCode_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -333,9 +340,19 @@
             // numSpend
             // 
             this.numSpend.Location = new System.Drawing.Point(331, 77);
+            this.numSpend.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numSpend.Name = "numSpend";
             this.numSpend.Size = new System.Drawing.Size(161, 22);
             this.numSpend.TabIndex = 247;
+            this.numSpend.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txtItemName
             // 
@@ -358,6 +375,35 @@
             this.label11.TabIndex = 248;
             this.label11.Text = "품명";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(262, 275);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 14);
+            this.label12.TabIndex = 250;
+            this.label12.Text = "Level";
+            // 
+            // numLevel
+            // 
+            this.numLevel.Location = new System.Drawing.Point(331, 273);
+            this.numLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLevel.Name = "numLevel";
+            this.numLevel.ReadOnly = true;
+            this.numLevel.Size = new System.Drawing.Size(161, 22);
+            this.numLevel.TabIndex = 251;
+            this.numLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // PopUpBOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -370,6 +416,7 @@
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSpend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +447,7 @@
         private System.Windows.Forms.NumericUpDown numSpend;
         private System.Windows.Forms.TextBox txtItemName;
         protected System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown numLevel;
     }
 }

@@ -80,7 +80,13 @@ namespace MESForm.Utils
             cbo.DisplayMember = displayMember;
             cbo.DataSource = vo;
         }
+        public static void BindingComboBox<T>(ComboBox cbo, List<T> vo, string valueMember, string displayMember)
+        {
 
+            cbo.DisplayMember = displayMember;
+            cbo.ValueMember = valueMember;
+            cbo.DataSource = vo;
+        }
         public static void CompanyBind(ComboBox cbo, List<CompanyVO> list, bool blankItem = true, string blankText = "")
         {
             if (blankItem)

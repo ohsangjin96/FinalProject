@@ -47,12 +47,12 @@ namespace MESForm
             CommonUtil.SetInitGridView(dgvBom);
             CommonUtil.AddGridTextColumn(dgvBom, "BOM코드", "bom_code",100,false);//
             CommonUtil.AddGridTextColumn(dgvBom, "품목유형", "item_type");//
+            CommonUtil.AddGridTextColumn(dgvBom, "상위품목", "BOM_Parent_Name");//
             CommonUtil.AddGridTextColumn(dgvBom, "품목", "item_code");//
             CommonUtil.AddGridTextColumn(dgvBom, "품명", "item_name");//
-            CommonUtil.AddGridTextColumn(dgvBom, "상위품명", "BOM_Parent_Name");//
             CommonUtil.AddGridTextColumn(dgvBom, "소요량", "BOM_Spend");//
             CommonUtil.AddGridTextColumn(dgvBom, "Level", "BOM_Level");//
-            CommonUtil.AddGridTextColumn(dgvBom, "시작일자", "BOM_StardDate");//
+            CommonUtil.AddGridTextColumn(dgvBom, "시작일자", "BOM_StartDate");//
             CommonUtil.AddGridTextColumn(dgvBom, "종료일자", "BOM_EndDate");//
             CommonUtil.AddGridTextColumn(dgvBom, "사용유무", "ITME_Use");//
             CommonUtil.AddGridTextColumn(dgvBom, "소요계획", "BOM_Plan");//
