@@ -164,8 +164,9 @@ namespace FProjectDAC
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"select Facility_Code, Facilities_Code, Facility_Name, Facility_Exhaustion, Facility_Imported,
-                                           Facility_Poor, Facility_MES, Facility_OutSourcing, Facility_Amender,
-                                           Facility_ModdifyDate, Facility_Use, Facility_Note, Facility_Comment
+                                           Facility_Poor, Facility_MES, Facility_OutSourcing, Facility_Amender, 
+                                           Facility_ModdifyDate, Facility_Use, Facility_Note, Facility_Comment,
+                                           Item_Code, Facility_IP, Facility_Port
                                     from Facility_Detail";
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FacilityVO> list = Helper.DataReaderMapToList<FacilityVO>(reader);
@@ -174,7 +175,6 @@ namespace FProjectDAC
             }
         }
         #endregion
-        //select count(*) from Facility_Detail where Facilities_Code = 'TEST1'
 
         #region 중복체크
         // 설비군명 중복 체크

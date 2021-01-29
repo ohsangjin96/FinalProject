@@ -98,6 +98,36 @@ namespace MESForm.Utils
             cbo.DataSource = list;
         }
 
+        public static void FactoryTypeBind(ComboBox cbo, List<FactoryVO> list, string warehouse, bool blankItem = true, string blankText = "")
+        {
+            if (warehouse == "창고")
+            {
+                list = (from temp in list
+                        where temp.Factory_Type.EndsWith(warehouse) && temp.Factory_Type != "불량창고"
+                        select temp).ToList();
+            }
+            else if (warehouse == "불량창고")
+            {
+                list = (from temp in list
+                        where temp.Factory_Type == warehouse
+                        select temp).ToList();
+            }
+
+            if (blankItem)
+            {
+                FactoryVO blank = new FactoryVO
+                {
+                    Factory_Code = "",
+                    Factory_Name = blankText
+                };
+
+                list.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Factory_Name";
+            cbo.ValueMember = "Factory_Code";
+            cbo.DataSource = list;
+        }
+
         public static void FactoryGradeBind(ComboBox cbo, List<FactoryVO> list, bool blankItem = true, string blankText = "")
         {
             if (blankItem)
