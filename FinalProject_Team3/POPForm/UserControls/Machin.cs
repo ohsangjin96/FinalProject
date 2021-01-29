@@ -51,7 +51,7 @@ namespace POPForm.UserControls
         public bool bExit = false;
 
         int timer_CONNECT = 1000;
-        int timer_KEEP_ALIVE = 1000;
+        int timer_KEEP_ALIVE = 10000;
         int timer_READ_PLC = 1000;
         int fail, success = 0;
         int range = 1;
@@ -163,6 +163,8 @@ namespace POPForm.UserControls
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
             _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+            hostIP = lblIP.Text;
+            hostPort = Convert.ToInt32(lblPort.Text);
             try
             {
                 Log.WriteInfo("DB서버 연결");
