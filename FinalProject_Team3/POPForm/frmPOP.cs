@@ -88,6 +88,8 @@ namespace POPForm
                     machin.Name = list[i].Item_Code;
                     machin.ID = lblID.Text;
                     machin.Tag = list[i].Facility_Code;
+                    machin.IP = list[i].Facility_IP;
+                    machin.Port = list[i].Facility_Port;
                     machin.MachinRegist += Machin_MachinRegist;
                     splitContainer2.Panel2.Controls.Add(machin);
                 }
@@ -137,6 +139,9 @@ namespace POPForm
             
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
