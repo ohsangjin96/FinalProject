@@ -15,15 +15,17 @@ namespace MESForm
 {
     public partial class PopUpBOM : MESForm.BaseForms.frmPopup
     {
-        bool bRegOrUp; //등록/복사 : true, 수정 : false
-        string Parent = "없음";
-        public string  Uname { get; set; }
+        int bRegOrUp; //등록/복사 : true, 수정 : false
+        int pk;
+        public string Uname { get; set; }
+        public BOMVO bomvo { get; set; }
+
         List<BOMVO> BomList;
         BOMVO vo = new BOMVO();
+
         public PopUpBOM()
         {
             InitializeComponent();
-
         }
         public PopUpBOM(OpenMode mode)
         {
@@ -31,11 +33,15 @@ namespace MESForm
 
             if (mode == OpenMode.Register)
             {
-                bRegOrUp = true;
+                bRegOrUp = 1;
+            }
+            else if (mode == OpenMode.Copy)
+            {
+                bRegOrUp = 2;
             }
             else if (mode == OpenMode.Update)
             {
-                bRegOrUp = false;
+                bRegOrUp = 3;
             }
         }
 
@@ -44,10 +50,51 @@ namespace MESForm
             dtpEndDate.Enabled = false;
             txtModifier.Text = Uname;
             txtModifiDay.Text = DateTime.Now.ToString("d");
-            ComBinding();
 
-            
-           
+            ComBinding();
+            if (bRegOrUp == 2)
+            {
+
+                BOMCopy();
+            }
+            if (bRegOrUp == 3)
+            {
+                pk = bomvo.bom_code;
+                BOMUpdate();
+            }
+        }
+        private void BOMCopy()
+        {
+            // 도구들한테 vo받은 것들 바인딩
+            controlInfo();
+
+        }
+        private void BOMUpdate()
+        {
+            cboParent.Enabled = false;
+            cboItemCode.Enabled = false;
+            // 도구들한테 vo받은 것들 바인딩
+            controlInfo();
+        }
+
+        private void controlInfo()
+        {
+            if (bomvo.BOM_Parent_Name == null)
+            {
+                cboParent.Text = bomvo.BOM_Parent_Name;
+            }
+            cboParent.Text = bomvo.BOM_Parent_Name;
+            cboItemCode.Text = bomvo.item_code;
+            txtItemName.Text = bomvo.item_name.Trim().Replace("L", string.Empty);
+            numSpend.Value = bomvo.BOM_Spend;
+            dtpStartDate.Value = bomvo.BOM_StartDate;
+            dtpEndDate.Value = bomvo.BOM_EndDate;
+            txtModifier.Text = bomvo.BOM_Amender;
+            cboAuto.Text = bomvo.BOM_Auto;
+            cboPlan.Text = bomvo.BOM_Plan;
+            numLevel.Value = bomvo.BOM_Level;
+            txtNote.Text = bomvo.BOM_Note;
+            txtModifier.Text = Uname;
         }
 
         private void ComBinding()//콤보박스 바인딩
@@ -61,21 +108,13 @@ namespace MESForm
             CommonCodeService service = new CommonCodeService();
             List<CommonCodeVO> comList = service.GetCommonCodeList();
 
-
             var BomLinq = (from item in BomList
                            where item.item_type == "제품" || item.item_type == "반제품"
                            select item.item_code).ToList();
             BomLinq.Insert(0, "없음");
 
-            //var ItemLinq = (from item in ItemList
-            //                select item.ITEM_Code).ToList();
-            //ItemLinq.Insert(0, "선택");
-
-           
-       
             ComboBoxBinding.BindingComboBoxPart(cboParent, BomLinq, "item_code");
             ComboBoxBinding.BindingComboBox(cboItemCode, ItemList, "item_name", "item_code");
-            ComboBoxBinding.ComBind(cboUseYN, comList, "UseYN000", true);//사용유무
             ComboBoxBinding.ComBind(cboAuto, comList, "YN000", true);
             ComboBoxBinding.ComBind(cboPlan, comList, "YN000", true);
         }
@@ -92,48 +131,52 @@ namespace MESForm
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            //유효성 체크
-            if (bRegOrUp == true)
+            if (bRegOrUp == 1 || bRegOrUp == 2)
             {
-                //string Parent1 = "";
-                NewMethod(sb);
+                if (dtpStartDate.Value.Day < DateTime.Now.Day)
+                {
+                    MessageBox.Show("시작일자는 오늘보다 전 날일 수 없습니다. 다시 설정하여 주십시오.");
+                    return;
+                }
+            }
+
+            if (cboAuto.Text == "" || cboPlan.Text == "")
+            {
+                MessageBox.Show("필수 입력사항을 기입하여 주십시오.");
+                return;
+            }
+            try
+            {
                 CreateVO();
                 BOMService service = new BOMService();
-                bool bFlag = service.RegisterBOM(vo,vo.BOM_Parent_Name);
-                if (bFlag == true)
+                if (bRegOrUp == 1 || bRegOrUp == 2)//등록
                 {
-                    MessageBox.Show(Properties.Resources.SaveSuccess + "새로고침 하십시오.");
-                    this.Close();
-
+                    service.RegisterBOM(vo);
                 }
-                else
+                else //수정
                 {
-                    MessageBox.Show("등록 중 오류가 발생하였습니다.");
+                    service.UpdateBOM(vo);
                 }
+                DialogResult = DialogResult.OK;
             }
-            if (bRegOrUp == false)
+
+            catch (Exception err)
             {
-                NewMethod(sb);
 
+                MessageBox.Show(err.Message);
             }
-            //vo 객채 생성
-
-          
-            //서비스에 vo 전달해서 db에 저장
-            
 
         }
-
         private void CreateVO()
         {
+            vo.bom_code = pk;
             vo.BOM_Parent_Name = cboParent.Text;
             vo.item_code = cboItemCode.Text;
             vo.item_name = txtItemName.Text;
             vo.BOM_Spend = Convert.ToInt32(numSpend.Value);
             vo.BOM_StartDate = Convert.ToDateTime(dtpStartDate.Value);
             vo.BOM_EndDate = Convert.ToDateTime(dtpEndDate.Value);
-            vo.ITME_Use = cboUseYN.Text;
+
             vo.BOM_Amender = txtModifier.Text;
             vo.BOM_ModdifyDate = Convert.ToDateTime(txtModifiDay.Text);
             vo.BOM_Auto = cboAuto.Text;
@@ -141,28 +184,12 @@ namespace MESForm
             vo.BOM_Note = txtNote.Text;
             vo.BOM_Level = Convert.ToInt32(numLevel.Value);
         }
-
-        private void NewMethod(StringBuilder sb)
-        {
-            if (dtpStartDate.Value.Day < DateTime.Now.Day)
-            {
-                sb.AppendLine("시작일자는 오늘보다 전 날일 수 없습니다. 다시 설정하여 주십시오.");
-
-            }
-            if (cboUseYN.Text == "" || cboAuto.Text == "" || cboPlan.Text == "")
-            {
-                sb.AppendLine("필수 입력사항을 기입하여 주십시오.");
-            }
-
-            MessageBox.Show(sb.ToString());
-        }
-
         private void cboParent_SelectedIndexChanged(object sender, EventArgs e)
         {
             string Type1 = "제품";
             string Type2 = "반제품";
             BOMService service = new BOMService();
-            if (cboParent.SelectedIndex==0)
+            if (cboParent.SelectedIndex == 0)
             {
                 numLevel.Value = 1;
             }
@@ -170,10 +197,14 @@ namespace MESForm
             {
                 numLevel.Value = 2;
             }
-            else if (Type2 ==service.LevelCheck(cboParent.Text))
+            else if (Type2 == service.LevelCheck(cboParent.Text))
             {
                 numLevel.Value = 3;
             }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

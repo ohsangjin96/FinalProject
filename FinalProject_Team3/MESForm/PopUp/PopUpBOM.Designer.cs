@@ -34,7 +34,6 @@
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtModifier = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,7 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cboItemCode = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboPlan = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -73,6 +71,7 @@
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancel.Location = new System.Drawing.Point(271, 497);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -93,7 +92,6 @@
             this.pnl.Controls.Add(this.dtpEndDate);
             this.pnl.Controls.Add(this.label2);
             this.pnl.Controls.Add(this.dtpStartDate);
-            this.pnl.Controls.Add(this.label3);
             this.pnl.Controls.Add(this.label4);
             this.pnl.Controls.Add(this.txtModifier);
             this.pnl.Controls.Add(this.label5);
@@ -103,7 +101,6 @@
             this.pnl.Controls.Add(this.label7);
             this.pnl.Controls.Add(this.cboItemCode);
             this.pnl.Controls.Add(this.label8);
-            this.pnl.Controls.Add(this.cboUseYN);
             this.pnl.Controls.Add(this.label9);
             this.pnl.Controls.Add(this.cboPlan);
             this.pnl.Controls.Add(this.label10);
@@ -176,17 +173,6 @@
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(161, 22);
             this.dtpStartDate.TabIndex = 182;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(13, 175);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 14);
-            this.label3.TabIndex = 166;
-            this.label3.Text = "사용유무";
             // 
             // label4
             // 
@@ -285,16 +271,6 @@
             this.label8.TabIndex = 171;
             this.label8.Text = "소요량";
             // 
-            // cboUseYN
-            // 
-            this.cboUseYN.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.cboUseYN.FormattingEnabled = true;
-            this.cboUseYN.Location = new System.Drawing.Point(82, 172);
-            this.cboUseYN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboUseYN.Name = "cboUseYN";
-            this.cboUseYN.Size = new System.Drawing.Size(161, 22);
-            this.cboUseYN.TabIndex = 176;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -380,7 +356,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(262, 275);
+            this.label12.Location = new System.Drawing.Point(13, 172);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 14);
             this.label12.TabIndex = 250;
@@ -388,7 +364,7 @@
             // 
             // numLevel
             // 
-            this.numLevel.Location = new System.Drawing.Point(331, 273);
+            this.numLevel.Location = new System.Drawing.Point(82, 170);
             this.numLevel.Minimum = new decimal(new int[] {
             1,
             0,
@@ -429,7 +405,6 @@
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtModifier;
         private System.Windows.Forms.Label label5;
@@ -439,7 +414,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboItemCode;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cboUseYN;
         protected System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboPlan;
         protected System.Windows.Forms.Label label10;

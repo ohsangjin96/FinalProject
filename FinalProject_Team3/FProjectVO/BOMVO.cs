@@ -10,9 +10,10 @@ namespace FProjectVO
     {
         public int bom_code { get; set; }
         public string item_type { get; set; }
+        public string BOM_Parent_Name { get; set; }
         public string item_code { get; set; }
         public string item_name { get; set; }
-        public string BOM_Parent_Name { get; set; }
+        
         public int BOM_Spend { get; set; }
         public int BOM_Level { get; set; }
         public DateTime BOM_StartDate { get; set; }
