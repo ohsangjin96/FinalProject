@@ -50,12 +50,15 @@
     <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="DemandDAC.cs" />
     <Compile Include="FacilityDAC.cs" />
     <Compile Include="FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="ItemDAC.cs" />
     <Compile Include="LoginDAC.cs" />
+    <Compile Include="MtpDAC.cs" />
     <Compile Include="OrderDAC.cs" />
+    <Compile Include="PODAC.cs" />
     <Compile Include="POPDAC.cs" />
     <Compile Include="Product_PlanDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

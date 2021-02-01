@@ -493,6 +493,7 @@
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\POPService.cs" />
+    <Compile Include="Services\POService.cs" />
     <Compile Include="Services\Product_PlanService.cs" />
     <Compile Include="Services\SampleService.cs" />
     <Compile Include="Services\SignUpService.cs" />
