@@ -147,9 +147,10 @@ namespace POPForm
             //50|2|1   50|2|0   HeartBeat 
 
             bool bFind = false;
+            
             int sCnt = 0, eCnt = 0, vLoop = 0;
             string readData = "";
-
+            
             if (client.client.Available > 0)
             {
                 byte[] rcvTmp = new byte[client.client.Available]; //초기 받는

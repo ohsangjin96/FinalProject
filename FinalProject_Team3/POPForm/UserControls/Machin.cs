@@ -84,8 +84,28 @@ namespace POPForm.UserControls
             button2.Enabled = true;
             timer1.Start();
             button2.BackColor = Color.Red;
+            string now = DateTime.Now.ToString();
             timer1.Interval = int.Parse(ConfigurationManager.AppSettings["timer"]);
-           
+            _logging = new LoggingUtility(lblFacility.Text , Level.Debug, 30);
+            hostIP = lblIP.Text;
+            hostPort = Convert.ToInt32(lblPort.Text);
+            try
+            {
+                Log.WriteInfo("DB서버 연결");
+
+
+                EncrytLibrary.AES aes = new EncrytLibrary.AES();
+                strConn = aes.AESDecrypt256(strConn);
+                conn = new SqlConnection(strConn);
+                conn.Open();
+
+                timer_Conn.Start();
+            }
+            catch (Exception err)
+            {
+                Log.WriteError("DB접속 실패:" + err.Message);
+            }
+
         }
 
          public void RandomNumber()
@@ -138,6 +158,8 @@ namespace POPForm.UserControls
                         args.Data = vo;
                         MachinRegist(this, args);
                     }
+                    Log.WriteInfo($"{lblName.Text} | {lblFacility.Text} | 성공: {lblSuccess.Text} / 실패: {lblFail.Text}");
+                    Log.WriteInfo("설비 가동이 완료되었습니다.");
                     lblFail.Text=lblSuccess.Text= "0";
                     lblProgram.Text = "00";
                     bntActive.BackColor = Color.Green;
@@ -145,8 +167,10 @@ namespace POPForm.UserControls
                     button2.BackColor = Color.Silver;
                     button2.Enabled = false;
                     success = fail = range = 0;
-                    
+
+                
                 }
+                Log.WriteInfo($"{lblName.Text} | {lblFacility.Text} | 성공: {lblSuccess.Text} / 실패: {lblFail.Text}");
                 range += 1;
                
             }
@@ -162,29 +186,7 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
-            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
-            hostIP = lblIP.Text;
-            hostPort = Convert.ToInt32(lblPort.Text);
-            try
-            {
-                Log.WriteInfo("DB서버 연결");
-
-                
-                EncrytLibrary.AES aes = new EncrytLibrary.AES();
-                strConn = aes.AESDecrypt256(strConn);
-                conn = new SqlConnection(strConn);
-                conn.Open();
-
-                m_thread = new LogPart(conn, _logging,lblFacility.Text,hostIP, hostPort, timer_CONNECT, timer_KEEP_ALIVE, timer_READ_PLC, clientName, clientIP);
-               
-                m_thread.ThreadStart();
-
-                timer_Conn.Start();
-            }
-            catch (Exception err)
-            {
-                Log.WriteError("DB접속 실패:" + err.Message);
-            }
+            
         }
         
         private void button11_Click(object sender, EventArgs e)
@@ -200,6 +202,7 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.Enabled = false;
             bntActive.BackColor = Color.Green;
+            m_thread.ThreadStop();
         }
     }
 
