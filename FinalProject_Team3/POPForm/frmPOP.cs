@@ -1,4 +1,5 @@
 ﻿using FProjectVO;
+using MachinServer;
 using MESForm.Services;
 using POPForm.UserControls;
 using System;
@@ -38,10 +39,7 @@ namespace POPForm
             
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+       
 
         private void frmPOP_Load(object sender, EventArgs e)
         {
@@ -66,8 +64,15 @@ namespace POPForm
 
             OrderService service = new OrderService();
             dgvList.DataSource= service.GetOrderList();
+            Thread ServerPlay = new Thread(serverplay);
+            ServerPlay.Priority = ThreadPriority.Highest;
+            ServerPlay.Start();
         }
+        private void serverplay()
+        {
+            Form1 frm = new Form1();
 
+        }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

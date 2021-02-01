@@ -47,7 +47,6 @@ namespace POPForm.UserControls
             this.lblSuccess = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblFacility = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_Conn = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +76,6 @@ namespace POPForm.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1047, 105);
             this.panel4.TabIndex = 58;
-         
             // 
             // lblPort
             // 
@@ -262,10 +260,6 @@ namespace POPForm.UserControls
             this.lblFacility.TabIndex = 0;
             this.lblFacility.Text = "설비 이름";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Machin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -297,7 +291,6 @@ namespace POPForm.UserControls
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button bntActive;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Timer timer_Conn;

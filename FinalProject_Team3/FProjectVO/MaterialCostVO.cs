@@ -22,7 +22,7 @@ namespace FProjectVO
         public string MC_USE { get; set; }//사용유무
         public string MC_Remark { get; set; }//비고
 
-        public string Code { get; set; }
-        public string Gubun { get; set; }
+        //public string Code { get; set; }
+       // public string Gubun { get; set; }
     }
 }
