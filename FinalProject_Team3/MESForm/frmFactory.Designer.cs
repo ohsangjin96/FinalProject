@@ -29,20 +29,30 @@ namespace MESForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
-            this.lblFactoryGrade = new System.Windows.Forms.Label();
-            this.txtFactoryCodeOrName = new System.Windows.Forms.TextBox();
             this.lblFactoryCode = new System.Windows.Forms.Label();
+            this.txtFactoryCodeOrName = new System.Windows.Forms.TextBox();
+            this.lblFactoryGrade = new System.Windows.Forms.Label();
             this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
+            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -52,11 +62,11 @@ namespace MESForm
             this.pnlSelect.Controls.Add(this.txtFactoryCodeOrName);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
             this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
-            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtFactoryCodeOrName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryGrade, 0);
             this.pnlSelect.Controls.SetChildIndex(this.cboFactoryGrade, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             // 
             // btnInquiry
             // 
@@ -72,6 +82,7 @@ namespace MESForm
             // 
             // pnlItem
             // 
+            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
             this.pnlItem.Controls.Add(this.dgvFactory);
             this.pnlItem.Location = new System.Drawing.Point(12, 141);
             this.pnlItem.Size = new System.Drawing.Size(1226, 546);
@@ -86,16 +97,38 @@ namespace MESForm
             this.panel1.Location = new System.Drawing.Point(670, 94);
             // 
             // dgvFactory
-            //
+            // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvFactory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
             this.dgvFactory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFactory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFactory.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvFactory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFactory.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFactory.Location = new System.Drawing.Point(0, 0);
             this.dgvFactory.Name = "dgvFactory";
             this.dgvFactory.Size = new System.Drawing.Size(1226, 546);
             this.dgvFactory.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // btnReg
             // 
@@ -182,6 +215,24 @@ namespace MESForm
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // lblFactoryCode
+            // 
+            this.lblFactoryCode.AutoSize = true;
+            this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFactoryCode.Location = new System.Drawing.Point(30, 30);
+            this.lblFactoryCode.Name = "lblFactoryCode";
+            this.lblFactoryCode.Size = new System.Drawing.Size(73, 14);
+            this.lblFactoryCode.TabIndex = 23;
+            this.lblFactoryCode.Text = "시설코드/명";
+            // 
+            // txtFactoryCodeOrName
+            // 
+            this.txtFactoryCodeOrName.Location = new System.Drawing.Point(130, 27);
+            this.txtFactoryCodeOrName.Name = "txtFactoryCodeOrName";
+            this.txtFactoryCodeOrName.Size = new System.Drawing.Size(191, 22);
+            this.txtFactoryCodeOrName.TabIndex = 24;
+            this.txtFactoryCodeOrName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            // 
             // lblFactoryGrade
             // 
             this.lblFactoryGrade.AutoSize = true;
@@ -192,24 +243,6 @@ namespace MESForm
             this.lblFactoryGrade.TabIndex = 25;
             this.lblFactoryGrade.Text = "시설군";
             // 
-            // txtFactoryCodeOrName
-            // 
-            this.txtFactoryCodeOrName.Location = new System.Drawing.Point(130, 27);
-            this.txtFactoryCodeOrName.Name = "txtFactoryCodeOrName";
-            this.txtFactoryCodeOrName.Size = new System.Drawing.Size(191, 22);
-            this.txtFactoryCodeOrName.TabIndex = 24;
-            this.txtFactoryCodeOrName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
-            // 
-            // lblFactoryCode
-            // 
-            this.lblFactoryCode.AutoSize = true;
-            this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryCode.Location = new System.Drawing.Point(30, 30);
-            this.lblFactoryCode.Name = "lblFactoryCode";
-            this.lblFactoryCode.Size = new System.Drawing.Size(55, 14);
-            this.lblFactoryCode.TabIndex = 23;
-            this.lblFactoryCode.Text = "시설코드/명";
-            // 
             // cboFactoryGrade
             // 
             this.cboFactoryGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -219,6 +252,41 @@ namespace MESForm
             this.cboFactoryGrade.Size = new System.Drawing.Size(191, 22);
             this.cboFactoryGrade.TabIndex = 29;
             this.cboFactoryGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            // 
+            // custDataGridViewControl1
+            // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle9;
+            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
+            this.custDataGridViewControl1.RowTemplate.Height = 23;
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 546);
+            this.custDataGridViewControl1.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "no";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn2.HeaderText = "No";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
             // 
             // frmFactory
             // 
@@ -232,6 +300,7 @@ namespace MESForm
             this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,9 +314,12 @@ namespace MESForm
         private CustomControls.custButtonControl btnDelete;
         private CustomControls.custButtonControl custButtonControl1;
         private CustomControls.custButtonControl btnRefresh;
+        private System.Windows.Forms.ComboBox cboFactoryGrade;
         private System.Windows.Forms.Label lblFactoryGrade;
         private System.Windows.Forms.TextBox txtFactoryCodeOrName;
         private System.Windows.Forms.Label lblFactoryCode;
-        private System.Windows.Forms.ComboBox cboFactoryGrade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

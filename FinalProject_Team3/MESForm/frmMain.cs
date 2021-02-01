@@ -359,7 +359,10 @@ namespace MESForm
 
         private void button8_Click(object sender, EventArgs e)//자재단가
         {
-            OpenCreateForm<frmMaterialCost1>();
+            FrmMaterialCost frm = new FrmMaterialCost();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void button7_Click(object sender, EventArgs e)//영업단가
