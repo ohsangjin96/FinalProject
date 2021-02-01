@@ -49,6 +49,7 @@ namespace MESForm.PopUp
             List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
             commonService.Dispose();
             ComboBoxBinding.ComBind(cboFacilityUse, commonList, "UseYN000", false);
+            ComboBoxBinding.ComBind(cboOutSourcing, commonList, "UseYN000", false);
 
             //공장관리
             FactoryService factoryService = new FactoryService();
@@ -72,6 +73,27 @@ namespace MESForm.PopUp
             cboItemCode.DataSource = itemList;
         }
 
+        // 설비정보 가져오는 메서드
+        private void GetFacilityInfo()
+        {
+            txtFacilitiesCode.Text = facilityVO.Facilities_Code;
+            txtFacilityCode.Text = facilityVO.Facility_Code;
+            txtFacilityName.Text = facilityVO.Facility_Name;
+            cboExhaustion.Text = facilityVO.Facility_Exhaustion;
+            cboImported.Text = facilityVO.Facility_Imported;
+            cboPoor.Text = facilityVO.Facility_Poor;
+            cboFacilityUse.Text = facilityVO.Facility_Use;
+            txtFacilityMES.Text = facilityVO.Facility_MES;
+            cboOutSourcing.Text = facilityVO.Facility_OutSourcing;
+            cboItemCode.Text = facilityVO.Item_Code;
+            txtIP.Text = facilityVO.Facility_IP;
+            txtPort.Text = facilityVO.Facility_Port;
+            txtFacilityNote.Text = facilityVO.Facility_Note;
+            txtFacilityComment.Text = facilityVO.Facility_Comment;
+            txtAmender.Text = facilityVO.Facility_Amender;
+            txtModdifyDate.Text = Convert.ToString(facilityVO.Facility_ModdifyDate);
+        }
+
         private void PopUpFacilityDetail_Load(object sender, EventArgs e)
         {
             ComboBoxBind();
@@ -84,10 +106,15 @@ namespace MESForm.PopUp
             }
             else
             {
-                
+                GetFacilityInfo();
             }
         }
 
+        /// <summary>
+        /// 데이터 등록(bRegOrUp = true) 및 수정(bRegOrUp = false) 버튼
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             if(txtFacilityCode.Text == "")
@@ -97,8 +124,79 @@ namespace MESForm.PopUp
             }
             else if (txtFacilityName.Text == "")
             {
-                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "설비명"));
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "설비명을"));
                 return;
+            }
+            else if (cboExhaustion.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyComboBox.Replace("@@", "소진창고를"));
+                return;
+            }
+            else if (cboImported.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyComboBox.Replace("@@", "양품창고를"));
+                return;
+            }
+            else if (txtIP.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "아이피를"));
+                return;
+            }
+            else if (txtPort.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "포트를"));
+                return;
+            }
+
+            try
+            {
+                FacilityVO vo = new FacilityVO
+                {
+                    Facilities_Code = txtFacilitiesCode.Text,
+                    Facility_Code = txtFacilityCode.Text,
+                    Facility_Name = txtFacilityName.Text,
+                    Facility_Exhaustion = cboExhaustion.Text,
+                    Facility_Imported = cboImported.Text,
+                    Facility_Poor = cboPoor.Text,
+                    Facility_Use = cboFacilityUse.Text,
+                    Facility_MES = txtFacilityMES.Text,
+                    Facility_OutSourcing = cboOutSourcing.Text,
+                    Item_Code = cboItemCode.Text,
+                    Facility_IP = txtIP.Text,
+                    Facility_Port = txtPort.Text,
+                    Facility_Note = txtFacilityNote.Text,
+                    Facility_Comment = txtFacilityComment.Text,
+                    Facility_Amender = txtAmender.Text,
+                    Facility_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text)
+                };
+
+                FacilityService service = new FacilityService();
+                if (bRegOrUp) //등록
+                {
+                    service.InsertFacility(vo);
+                }
+                else //수정
+                {
+                    service.UpdateFacility(vo);
+                }
+                service.Dispose();
+
+                DialogResult = DialogResult.OK;
+            }
+            catch (Exception err)
+            {
+                if (err.Message == "이미 등록된 설비코드입니다.")
+                {
+                    txtFacilityCode.Focus();
+                    txtFacilityCode.SelectAll();
+                }
+                else if (err.Message == "이미 등록된 설비명입니다.")
+                {
+                    txtFacilityName.Focus();
+                    txtFacilityName.SelectAll();
+                }
+
+                MessageBox.Show(err.Message);
             }
         }
 

@@ -167,6 +167,15 @@ namespace MESForm.Properties {
         }
         
         /// <summary>
+        ///   @@ 선택해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string ErrEmptyComboBox {
+            get {
+                return ResourceManager.GetString("ErrEmptyComboBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   @@ 입력해주세요.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string ErrEmptyText {

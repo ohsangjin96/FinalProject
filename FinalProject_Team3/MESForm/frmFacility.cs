@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace MESForm
 {
     public partial class frmFacility : MESForm.BaseForms.frmBaseLists
     {
+        List<FacilityVO> facilityDetailList;
         public string DeptName { get; set; }
 
         public frmFacility()
@@ -52,16 +54,16 @@ namespace MESForm
         private void LoadFacilityData()
         {
             FacilityService service = new FacilityService();
-            List<FacilityVO> list = service.GetFacilityList();
+            List<FacilityVO> list = service.GetFacilitiesList();
             service.Dispose();
             dgvFacility.DataSource = list;
         }
         private void LoadFacilityDetailData()
         {
             FacilityService service = new FacilityService();
-            List<FacilityVO> list = service.GetFacilityDetailList();
+            facilityDetailList = service.GetFacilityDetailList();
             service.Dispose();
-            dgvFacilityDetail.DataSource = list;
+            dgvFacilityDetail.DataSource = facilityDetailList;
         }
 
         private void frmFacility_Load(object sender, EventArgs e)
@@ -72,6 +74,7 @@ namespace MESForm
         }
 
         #region 설비군
+
         private void btnReg1_Click(object sender, EventArgs e)
         {
             PopUp.PopUpFacility pop = new PopUp.PopUpFacility(frmMain.OpenMode.Register);
@@ -112,7 +115,7 @@ namespace MESForm
             string code = dgvFacility[1, dgvFacility.CurrentRow.Index].Value.ToString();
             string name = dgvFacility[2, dgvFacility.CurrentRow.Index].Value.ToString();
             FacilityService service = new FacilityService();
-            int cnt = service.SearchFacilityDetaile(code);
+            int cnt = service.SearchFacility(code);
 
             if (cnt != 0)
             {
@@ -131,7 +134,7 @@ namespace MESForm
 
             try
             {
-                bool result = service.DeleteFacility(code);
+                bool result = service.DeleteFacilities(code);
                 service.Dispose();
 
                 if (result)
@@ -147,6 +150,21 @@ namespace MESForm
             }
         }
         #endregion
+
+        /// <summary>
+        /// 설비군의 데이터 셀 더블클릭 시 해당하는 설비군코드와 일치하는 설비의 목록만 나오도록 설정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvFacility_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string code = dgvFacility[1, dgvFacility.CurrentRow.Index].Value.ToString();
+            var newList = (from temp in facilityDetailList
+                           where temp.Facilities_Code == code
+                           select temp).ToList();
+
+            dgvFacilityDetail.DataSource = newList;
+        }
 
         #region 설비
         private void btnReg2_Click(object sender, EventArgs e)
@@ -167,22 +185,22 @@ namespace MESForm
 
             FacilityVO vo = new FacilityVO
             {
-                Facility_Code = dgvFacilityDetail[1, rowIdx].Value.ToString(),
-                Facilities_Code = dgvFacilityDetail[2, rowIdx].Value.ToString(),
-                Facility_Name = dgvFacilityDetail[3, rowIdx].Value.ToString(),
-                Facility_Exhaustion = dgvFacilityDetail[4, rowIdx].Value.ToString(),
-                Facility_Imported = dgvFacilityDetail[5, rowIdx].Value.ToString(),
+                Facilities_Code = Convert.ToString(dgvFacilityDetail[1, rowIdx].Value),
+                Facility_Code = Convert.ToString(dgvFacilityDetail[2, rowIdx].Value),
+                Facility_Name = Convert.ToString(dgvFacilityDetail[3, rowIdx].Value),
+                Facility_Exhaustion = Convert.ToString(dgvFacilityDetail[4, rowIdx].Value),
+                Facility_Imported = Convert.ToString(dgvFacilityDetail[5, rowIdx].Value),
                 Facility_Poor = Convert.ToString(dgvFacilityDetail[6, rowIdx].Value),
                 Facility_MES = Convert.ToString(dgvFacilityDetail[7, rowIdx].Value),
-                Facility_OutSourcing = dgvFacilityDetail[8, rowIdx].Value.ToString(),
-                Facility_Amender = dgvFacilityDetail[9, rowIdx].Value.ToString(),
+                Facility_OutSourcing = Convert.ToString(dgvFacilityDetail[8, rowIdx].Value),
+                Facility_Amender = Convert.ToString(dgvFacilityDetail[9, rowIdx].Value),
                 Facility_ModdifyDate = Convert.ToDateTime(dgvFacilityDetail[10, rowIdx].Value),
                 Facility_Use = Convert.ToString(dgvFacilityDetail[11, rowIdx].Value),
                 Facility_Note = Convert.ToString(dgvFacilityDetail[12, rowIdx].Value),
-                Facility_Comment = dgvFacilityDetail[13, rowIdx].Value.ToString(),
+                Facility_Comment = Convert.ToString(dgvFacilityDetail[13, rowIdx].Value),
                 Item_Code = Convert.ToString(dgvFacilityDetail[14, rowIdx].Value),
                 Facility_IP = Convert.ToString(dgvFacilityDetail[15, rowIdx].Value),
-                Facility_Port = Convert.ToString(dgvFacilityDetail[16, rowIdx].Value),
+                Facility_Port = Convert.ToString(dgvFacilityDetail[16, rowIdx].Value)
             };
 
             PopUp.PopUpFacilityDetail pop = new PopUp.PopUpFacilityDetail(frmMain.OpenMode.Update);
@@ -197,12 +215,35 @@ namespace MESForm
 
         private void btnDelete2_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    FacilityService service = new FacilityService();
+                    string code = dgvFacilityDetail[2, dgvFacilityDetail.CurrentRow.Index].Value.ToString();
+                    bool result = service.DeleteFacility(code);
+
+                    if (result)
+                    {
+                        MessageBox.Show(Properties.Resources.DeleteSuccess);
+                        LoadFacilityDetailData();
+                    }
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
 
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            dgvFacilityDetail.DataSource = facilityDetailList;
         }
         #endregion
     }
