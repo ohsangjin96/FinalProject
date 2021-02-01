@@ -34,14 +34,11 @@ namespace POPForm.UserControls
         public delegate void MachinRegistWorkRegist(object sender, WorkRegistEventArgs e);
         public event MachinRegistWorkRegist MachinRegist;
 
-        TcpControl client;
+     
         NetworkStream recvData;
         SqlConnection conn;
         LoggingUtility _logging;
-        LogPart m_thread;
-
-        string hostIP;
-        int hostPort;
+ 
         string taskID;
         string strConn;
         bool logVisible = false;
@@ -63,7 +60,8 @@ namespace POPForm.UserControls
             taskID = lblFacility.Text;
 
             this.Text =taskID;
-
+            TcpClient client = new TcpClient();
+            client.Connect(lblIP.Text, lblPort.Text);
             clientName = Dns.GetHostName();
 
             IPAddress[] locals = Dns.GetHostAddresses(clientName);
@@ -84,15 +82,37 @@ namespace POPForm.UserControls
             button2.Enabled = true;
             timer1.Start();
             button2.BackColor = Color.Red;
-            string now = DateTime.Now.ToString();
             timer1.Interval = int.Parse(ConfigurationManager.AppSettings["timer"]);
-            _logging = new LoggingUtility(lblFacility.Text , Level.Debug, 30);
-            hostIP = lblIP.Text;
-            hostPort = Convert.ToInt32(lblPort.Text);
+            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+            MachinServer.Form1 server = new MachinServer.Form1(lblIP.Text,lblPort.Text);
             try
             {
                 Log.WriteInfo("DB서버 연결");
+      
+                NetworkStream ns = client.GetStream();
 
+                while (true)
+                {
+                    IPEndPoint clientPoint = new IPEndPoint(127.0.0.1,9000);
+                    IPEndPoint serverPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text));
+
+                    myClient = new TcpClient(clientPoint);
+                    myClient.Connect(serverPoint);
+
+                    string msg = $"{lblIP.Text},{lblPort.Text}";
+                    byte[] data = Encoding.Default.GetBytes(msg);
+                    ns.Write(data, 0, data.Length);
+                    Console.WriteLine("송신:" + msg);
+
+                    data = new byte[256];
+                    ns.Read(data, 0, data.Length);
+                    string response = Encoding.Default.GetString(data, 0, data.Length);
+                    Console.WriteLine("수신:" + response);
+                }
+                ns.Close();
+                client.Close();
+
+                Console.WriteLine("클라이언트를 종료합니다...");
 
                 EncrytLibrary.AES aes = new EncrytLibrary.AES();
                 strConn = aes.AESDecrypt256(strConn);
@@ -108,7 +128,7 @@ namespace POPForm.UserControls
 
         }
 
-         public void RandomNumber()
+        public void RandomNumber()
         {
             Random rand = new Random();
             int Produce = rand.Next(0, 100);
@@ -127,6 +147,7 @@ namespace POPForm.UserControls
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             try
             {
                 int a = int.Parse(ConfigurationManager.AppSettings["timer"]);
@@ -186,7 +207,7 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
-            
+           
         }
         
         private void button11_Click(object sender, EventArgs e)
@@ -194,6 +215,8 @@ namespace POPForm.UserControls
             PopUpLog frm = new PopUpLog(IP, Port);
             frm.Show();
         }
+
+        
 
         private void button2_Click(object sender, EventArgs e)
         {

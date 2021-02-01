@@ -190,6 +190,10 @@
       <Project>{be32a89f-587f-492c-9e6b-c6ea07abb975}</Project>
       <Name>FProjectVO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MachinServer\MachinServer.csproj">
+      <Project>{14743b1b-ae15-4901-8be9-8441951119c0}</Project>
+      <Name>MachinServer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MESForm\MESForm.csproj">
       <Project>{d9ff87b0-3ace-4d31-90c8-56ce2670a544}</Project>
       <Name>MESForm</Name>
