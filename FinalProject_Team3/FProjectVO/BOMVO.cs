@@ -10,12 +10,13 @@ namespace FProjectVO
     {
         public int bom_code { get; set; }
         public string item_type { get; set; }
+        public string BOM_Parent_Name { get; set; }
         public string item_code { get; set; }
         public string item_name { get; set; }
-        public string BOM_Parent_Name { get; set; }
+        
         public int BOM_Spend { get; set; }
         public int BOM_Level { get; set; }
-        public DateTime BOM_StardDate { get; set; }
+        public DateTime BOM_StartDate { get; set; }
         public DateTime BOM_EndDate { get; set; }
         public string ITME_Use { get; set; }
         public string BOM_Plan { get; set; }
@@ -25,6 +26,8 @@ namespace FProjectVO
         public string Gubun { get; set; }
 
         public string Code { get; set; }
+        public string BOM_Amender { get; set; }
+        public DateTime BOM_ModdifyDate { get; set; }
 
     }
 }
