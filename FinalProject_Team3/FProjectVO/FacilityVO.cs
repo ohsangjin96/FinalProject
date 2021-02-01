@@ -13,7 +13,7 @@ namespace FProjectVO
         public string Facilities_Name { get; set; }         //설비군명
         public string Facilities_Use { get; set; }          //사용유무
         public string Facilities_Amender { get; set; }      //수정자
-        public DateTime Facilities_ModdifyDate { get; set; }//수정일자
+        public string Facilities_ModdifyDate { get; set; }//수정일자
         public string Facilities_Explain { get; set; }      //설명
 
         //설비
@@ -26,7 +26,7 @@ namespace FProjectVO
         public string Facility_MES { get; set; }            //MES설비
         public string Facility_OutSourcing { get; set; }    //외주여부
         public string Facility_Amender { get; set; }        //수정자
-        public DateTime Facility_ModdifyDate { get; set; }  //수정일자
+        public string Facility_ModdifyDate { get; set; }  //수정일자
         public string Facility_Use { get; set; }            //사용유무
         public string Facility_Note { get; set; }           //특이사항
         public string Facility_Comment { get; set; }        //비고

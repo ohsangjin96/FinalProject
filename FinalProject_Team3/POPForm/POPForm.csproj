@@ -71,7 +71,6 @@
     <Compile Include="custDataGridViewControl.designer.cs">
       <DependentUpon>custDataGridViewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogPart.cs" />
     <Compile Include="PopUpLog.cs">
       <SubType>Form</SubType>
     </Compile>

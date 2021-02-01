@@ -17,14 +17,15 @@ namespace FProjectVO
         public string Com_Conditions { get; set; }
         public string Com_Charge { get; set; }
         public string Com_Email { get; set; }
-        public DateTime Com_StartDate { get; set; }
-        public DateTime Com_EndDate { get; set; }
+        public string Com_StartDate { get; set; }
+        public string Com_EndDate { get; set; }
         public string Com_Phone { get; set; }
         public string Com_Fax { get; set; }
         public string Com_Warehouse { get; set; }
         public string Com_Use { get; set; }
         public string Com_Amender { get; set; }
-        public DateTime Com_ModdifyDate { get; set; }
+        public string Com_ModdifyDate { get; set; }
+        public string Com_Info { get; set; }
 
     }
 }

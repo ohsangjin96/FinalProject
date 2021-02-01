@@ -323,7 +323,10 @@ namespace MESForm
 
         private void btnCompany_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmCompany>();
+            frmCompany frm = new frmCompany();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void btnBOR_Click(object sender, EventArgs e)
