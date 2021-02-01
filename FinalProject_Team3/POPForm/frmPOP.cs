@@ -19,6 +19,8 @@ namespace POPForm
         Machin machin;
         delegate void EventHandler(object sender, EventArgs arg);
         public List<WorkRegistVO> curlist { get; set; }
+
+        List<POPVO> list = new List<POPVO>();
         public frmPOP()
         {
             InitializeComponent();
@@ -77,7 +79,7 @@ namespace POPForm
                 lblFixedDate.Text = date.ToString("yyyy-MM-dd");
                 string Item_Code =dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
                 POPService service = new POPService();
-                List<POPVO> list = service.GetPOPList(Item_Code); 
+                list = service.GetPOPList(Item_Code); 
                 for (int i=0; i<list.Count; i++)
                 {
                     machin = new Machin();
@@ -141,7 +143,7 @@ namespace POPForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

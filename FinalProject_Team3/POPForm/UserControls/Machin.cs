@@ -34,14 +34,11 @@ namespace POPForm.UserControls
         public delegate void MachinRegistWorkRegist(object sender, WorkRegistEventArgs e);
         public event MachinRegistWorkRegist MachinRegist;
 
-        TcpControl client;
+     
         NetworkStream recvData;
         SqlConnection conn;
         LoggingUtility _logging;
-        LogPart m_thread;
-
-        string hostIP;
-        int hostPort;
+ 
         string taskID;
         string strConn;
         bool logVisible = false;
@@ -63,7 +60,8 @@ namespace POPForm.UserControls
             taskID = lblFacility.Text;
 
             this.Text =taskID;
-
+            TcpClient client = new TcpClient();
+            client.Connect(lblIP.Text, lblPort.Text);
             clientName = Dns.GetHostName();
 
             IPAddress[] locals = Dns.GetHostAddresses(clientName);
@@ -85,10 +83,52 @@ namespace POPForm.UserControls
             timer1.Start();
             button2.BackColor = Color.Red;
             timer1.Interval = int.Parse(ConfigurationManager.AppSettings["timer"]);
-           
+            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+            MachinServer.Form1 server = new MachinServer.Form1(lblIP.Text,lblPort.Text);
+            try
+            {
+                Log.WriteInfo("DB서버 연결");
+      
+                NetworkStream ns = client.GetStream();
+
+                while (true)
+                {
+                    IPEndPoint clientPoint = new IPEndPoint(127.0.0.1,9000);
+                    IPEndPoint serverPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text));
+
+                    myClient = new TcpClient(clientPoint);
+                    myClient.Connect(serverPoint);
+
+                    string msg = $"{lblIP.Text},{lblPort.Text}";
+                    byte[] data = Encoding.Default.GetBytes(msg);
+                    ns.Write(data, 0, data.Length);
+                    Console.WriteLine("송신:" + msg);
+
+                    data = new byte[256];
+                    ns.Read(data, 0, data.Length);
+                    string response = Encoding.Default.GetString(data, 0, data.Length);
+                    Console.WriteLine("수신:" + response);
+                }
+                ns.Close();
+                client.Close();
+
+                Console.WriteLine("클라이언트를 종료합니다...");
+
+                EncrytLibrary.AES aes = new EncrytLibrary.AES();
+                strConn = aes.AESDecrypt256(strConn);
+                conn = new SqlConnection(strConn);
+                conn.Open();
+
+                timer_Conn.Start();
+            }
+            catch (Exception err)
+            {
+                Log.WriteError("DB접속 실패:" + err.Message);
+            }
+
         }
 
-         public void RandomNumber()
+        public void RandomNumber()
         {
             Random rand = new Random();
             int Produce = rand.Next(0, 100);
@@ -107,6 +147,7 @@ namespace POPForm.UserControls
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             try
             {
                 int a = int.Parse(ConfigurationManager.AppSettings["timer"]);
@@ -138,6 +179,8 @@ namespace POPForm.UserControls
                         args.Data = vo;
                         MachinRegist(this, args);
                     }
+                    Log.WriteInfo($"{lblName.Text} | {lblFacility.Text} | 성공: {lblSuccess.Text} / 실패: {lblFail.Text}");
+                    Log.WriteInfo("설비 가동이 완료되었습니다.");
                     lblFail.Text=lblSuccess.Text= "0";
                     lblProgram.Text = "00";
                     bntActive.BackColor = Color.Green;
@@ -145,8 +188,10 @@ namespace POPForm.UserControls
                     button2.BackColor = Color.Silver;
                     button2.Enabled = false;
                     success = fail = range = 0;
-                    
+
+                
                 }
+                Log.WriteInfo($"{lblName.Text} | {lblFacility.Text} | 성공: {lblSuccess.Text} / 실패: {lblFail.Text}");
                 range += 1;
                
             }
@@ -162,29 +207,7 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
-            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
-            hostIP = lblIP.Text;
-            hostPort = Convert.ToInt32(lblPort.Text);
-            try
-            {
-                Log.WriteInfo("DB서버 연결");
-
-                
-                EncrytLibrary.AES aes = new EncrytLibrary.AES();
-                strConn = aes.AESDecrypt256(strConn);
-                conn = new SqlConnection(strConn);
-                conn.Open();
-
-                m_thread = new LogPart(conn, _logging,lblFacility.Text,hostIP, hostPort, timer_CONNECT, timer_KEEP_ALIVE, timer_READ_PLC, clientName, clientIP);
-               
-                m_thread.ThreadStart();
-
-                timer_Conn.Start();
-            }
-            catch (Exception err)
-            {
-                Log.WriteError("DB접속 실패:" + err.Message);
-            }
+           
         }
         
         private void button11_Click(object sender, EventArgs e)
@@ -193,6 +216,8 @@ namespace POPForm.UserControls
             frm.Show();
         }
 
+        
+
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Stop();
@@ -200,6 +225,7 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.Enabled = false;
             bntActive.BackColor = Color.Green;
+            m_thread.ThreadStop();
         }
     }
 

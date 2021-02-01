@@ -73,6 +73,7 @@ namespace MESForm.Han
             this.dtpPlan.Name = "dtpPlan";
             this.dtpPlan.Size = new System.Drawing.Size(125, 22);
             this.dtpPlan.TabIndex = 65;
+            this.dtpPlan.ValueChanged += new System.EventHandler(this.dtpPlan_ValueChanged);
             // 
             // btnFile
             // 
@@ -83,6 +84,7 @@ namespace MESForm.Han
             this.btnFile.TabIndex = 64;
             this.btnFile.Text = "파일선택";
             this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // txtPlanVersion
             // 
@@ -140,6 +142,7 @@ namespace MESForm.Han
             this.txtPlanFile.Name = "txtPlanFile";
             this.txtPlanFile.Size = new System.Drawing.Size(125, 22);
             this.txtPlanFile.TabIndex = 45;
+            this.txtPlanFile.TextChanged += new System.EventHandler(this.txtPlanFile_TextChanged);
             // 
             // btnCancel
             // 
@@ -171,6 +174,7 @@ namespace MESForm.Han
             this.btnUpload.TabIndex = 65;
             this.btnUpload.Text = "영업마스터 Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // pnlTop
             // 
@@ -206,9 +210,9 @@ namespace MESForm.Han
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(120, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "제목입력";
+            this.label1.Text = "영업마스터업로드";
             // 
             // popupPOUpload
             // 
@@ -224,6 +228,7 @@ namespace MESForm.Han
             this.Name = "popupPOUpload";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPopup";
+            this.Load += new System.EventHandler(this.popupPOUpload_Load);
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             this.pnlTop.ResumeLayout(false);

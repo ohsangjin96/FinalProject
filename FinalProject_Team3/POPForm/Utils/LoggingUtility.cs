@@ -73,10 +73,11 @@ namespace POPForm
             //rollingAppender.LockingModel = new log4net.Appender.FileAppender.MinimalLock();
             //rollingAppender.DatePattern = "_yyyyMMdd\".log\""; // 날짜가 지나간 경우 이전 로그에 붙을 이름 구성
             //log4net.Layout.PatternLayout layout = new log4net.Layout.PatternLayout("%date [%property{buildversion}] %-5level %logger - %message%newline");
-
+           
             roller = new RollingDateAppender
             {
-                Name = loggerName + "FileAppender",
+                
+                Name = loggerName +"FileAppender",
                 File = GetLoggingFilePath(),
                 LockingModel = new FileAppender.MinimalLock(),
                 AppendToFile = true,

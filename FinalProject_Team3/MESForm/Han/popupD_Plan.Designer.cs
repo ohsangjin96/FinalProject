@@ -29,11 +29,13 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
+            this.btnInquiry = new MESForm.CustomControls.custButtonControl();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,12 +61,13 @@ namespace MESForm.Han
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(513, 453);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
-            this.pnl.Controls.Add(this.custButtonControl1);
+            this.pnl.Controls.Add(this.btnInquiry);
             this.pnl.Controls.Add(this.panel1);
-            this.pnl.Controls.Add(this.comboBox1);
+            this.pnl.Controls.Add(this.cboPlanID);
             this.pnl.Controls.Add(this.label3);
             this.pnl.Size = new System.Drawing.Size(1148, 401);
             // 
@@ -90,6 +93,8 @@ namespace MESForm.Han
             this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
             this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.custDataGridViewControl1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1});
             this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
@@ -98,14 +103,24 @@ namespace MESForm.Han
             this.custDataGridViewControl1.Size = new System.Drawing.Size(1100, 322);
             this.custDataGridViewControl1.TabIndex = 0;
             // 
-            // comboBox1
+            // dataGridViewTextBoxColumn1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(85, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 22);
-            this.comboBox1.TabIndex = 77;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // cboPlanID
+            // 
+            this.cboPlanID.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboPlanID.FormattingEnabled = true;
+            this.cboPlanID.Location = new System.Drawing.Point(85, 19);
+            this.cboPlanID.Name = "cboPlanID";
+            this.cboPlanID.Size = new System.Drawing.Size(154, 22);
+            this.cboPlanID.TabIndex = 77;
             // 
             // label3
             // 
@@ -117,20 +132,21 @@ namespace MESForm.Han
             this.label3.TabIndex = 76;
             this.label3.Text = "PlanID";
             // 
-            // custButtonControl1
+            // btnInquiry
             // 
-            this.custButtonControl1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(1043, 13);
-            this.custButtonControl1.Name = "custButtonControl1";
-            this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl1.TabIndex = 80;
-            this.custButtonControl1.Text = "조회";
-            this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl1.UseVisualStyleBackColor = false;
+            this.btnInquiry.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInquiry.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnInquiry.ForeColor = System.Drawing.Color.Black;
+            this.btnInquiry.Location = new System.Drawing.Point(1043, 13);
+            this.btnInquiry.Name = "btnInquiry";
+            this.btnInquiry.Size = new System.Drawing.Size(83, 32);
+            this.btnInquiry.TabIndex = 80;
+            this.btnInquiry.Text = "조회";
+            this.btnInquiry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInquiry.UseVisualStyleBackColor = false;
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // popupD_Plan
             // 
@@ -156,8 +172,9 @@ namespace MESForm.Han
 
         private System.Windows.Forms.Panel panel1;
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
-        protected System.Windows.Forms.ComboBox comboBox1;
+        protected System.Windows.Forms.ComboBox cboPlanID;
         protected System.Windows.Forms.Label label3;
-        private CustomControls.custButtonControl custButtonControl1;
+        private CustomControls.custButtonControl btnInquiry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

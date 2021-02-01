@@ -158,6 +158,12 @@
     <Compile Include="FrmITEM.Designer.cs">
       <DependentUpon>FrmITEM.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMaterialCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaterialCost.Designer.cs">
+      <DependentUpon>FrmMaterialCost.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMaterialCost1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -440,12 +446,6 @@
     <Compile Include="PopUp\frmSignUpPopUp.Designer.cs">
       <DependentUpon>frmSignUpPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="PopUp\frmBOMPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmBOMPopUp.Designer.cs">
-      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopUp\frmCreateGroupPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,6 +500,7 @@
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\POPService.cs" />
+    <Compile Include="Services\POService.cs" />
     <Compile Include="Services\Product_PlanService.cs" />
     <Compile Include="Services\SampleService.cs" />
     <Compile Include="Services\SignUpService.cs" />
@@ -572,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmITEM.resx">
       <DependentUpon>FrmITEM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaterialCost.resx">
+      <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterialCost1.resx">
       <DependentUpon>frmMaterialCost1.cs</DependentUpon>
@@ -704,9 +708,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmSaleCostPopUp.resx">
       <DependentUpon>frmSaleCostPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmBOMPopUp.resx">
-      <DependentUpon>frmBOMPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmCreateGroupPopUp.resx">
       <DependentUpon>frmCreateGroupPopUp.cs</DependentUpon>

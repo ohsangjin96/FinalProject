@@ -10,7 +10,7 @@ namespace FProjectVO
     {
         public string Plan_ID{ set; get; }
         public DateTime Order_Plandate { set; get; }
-        public int Order_WO { set; get; }
+        public string Order_WO { set; get; }
         public string Com_Code { set; get; }
         public string Com_Type { set; get; }
         public int Order_MKT { set; get; }
