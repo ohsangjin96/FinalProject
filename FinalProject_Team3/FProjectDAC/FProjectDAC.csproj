@@ -57,6 +57,7 @@
     <Compile Include="Helper.cs" />
     <Compile Include="ItemDAC.cs" />
     <Compile Include="LoginDAC.cs" />
+    <Compile Include="MaterialCostDAC.cs" />
     <Compile Include="MtpDAC.cs" />
     <Compile Include="OrderDAC.cs" />
     <Compile Include="PODAC.cs" />

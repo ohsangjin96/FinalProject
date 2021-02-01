@@ -15,6 +15,7 @@ namespace MESForm
 {
     public partial class PopUpItem : MESForm.BaseForms.frmPopup
     {
+      
         #region d
         public string ITEM_Code { get; set; }
         public string ITEM_Name { get; set; }
