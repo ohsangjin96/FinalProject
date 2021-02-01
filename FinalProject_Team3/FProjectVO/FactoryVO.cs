@@ -24,7 +24,7 @@ namespace FProjectVO
         public string Com_Name { get; set; }
         public string Factory_Use { get; set; }
         public string Factory_Amender { get; set; }
-        public DateTime Factory_ModdifyDate { get; set; }
+        public string Factory_ModdifyDate { get; set; }
 
     }
 }
