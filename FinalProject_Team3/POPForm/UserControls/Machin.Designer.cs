@@ -77,6 +77,7 @@ namespace POPForm.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1047, 105);
             this.panel4.TabIndex = 58;
+         
             // 
             // lblPort
             // 

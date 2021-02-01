@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESWebAPI", "MESWebAPI\MESW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESMVC", "MESMVC\MESMVC.csproj", "{ECC865B5-E960-43B4-BA05-C364523B1787}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachinServer", "MachinServer\MachinServer.csproj", "{14743B1B-AE15-4901-8BE9-8441951119C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{ECC865B5-E960-43B4-BA05-C364523B1787}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC865B5-E960-43B4-BA05-C364523B1787}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECC865B5-E960-43B4-BA05-C364523B1787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14743B1B-AE15-4901-8BE9-8441951119C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14743B1B-AE15-4901-8BE9-8441951119C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14743B1B-AE15-4901-8BE9-8441951119C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14743B1B-AE15-4901-8BE9-8441951119C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
