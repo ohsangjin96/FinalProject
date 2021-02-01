@@ -11,6 +11,8 @@ namespace FProjectVO
         public string Item_Code { get; set; }
         public string Facility_Code { get; set; }
         public string Facility_Name { get; set; }
+        public string Facility_IP { get; set; }
+        public string Facility_Port { get; set; }
 
     }
 }

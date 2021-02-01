@@ -29,30 +29,33 @@
         private void InitializeComponent()
         {
             this.label55 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtModifier = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.txtModifiDay = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboParent = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboItemCode = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPlan = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
-            this.numMinOrder = new System.Windows.Forms.NumericUpDown();
+            this.cboAuto = new System.Windows.Forms.ComboBox();
+            this.numSpend = new System.Windows.Forms.NumericUpDown();
+            this.txtItemName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numLevel = new System.Windows.Forms.NumericUpDown();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -67,38 +70,42 @@
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(271, 453);
+            this.btnCancel.Location = new System.Drawing.Point(271, 497);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(195, 453);
+            this.btnSave.Location = new System.Drawing.Point(195, 497);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
-            this.pnl.Controls.Add(this.numMinOrder);
+            this.pnl.Controls.Add(this.numLevel);
+            this.pnl.Controls.Add(this.label12);
+            this.pnl.Controls.Add(this.txtItemName);
+            this.pnl.Controls.Add(this.label11);
+            this.pnl.Controls.Add(this.numSpend);
             this.pnl.Controls.Add(this.label55);
-            this.pnl.Controls.Add(this.textBox3);
+            this.pnl.Controls.Add(this.txtNote);
             this.pnl.Controls.Add(this.label45);
-            this.pnl.Controls.Add(this.dateTimePicker2);
+            this.pnl.Controls.Add(this.dtpEndDate);
             this.pnl.Controls.Add(this.label2);
-            this.pnl.Controls.Add(this.dateTimePicker1);
-            this.pnl.Controls.Add(this.label3);
+            this.pnl.Controls.Add(this.dtpStartDate);
             this.pnl.Controls.Add(this.label4);
-            this.pnl.Controls.Add(this.textBox1);
+            this.pnl.Controls.Add(this.txtModifier);
             this.pnl.Controls.Add(this.label5);
-            this.pnl.Controls.Add(this.textBox32);
+            this.pnl.Controls.Add(this.txtModifiDay);
             this.pnl.Controls.Add(this.label6);
-            this.pnl.Controls.Add(this.comboBox4);
+            this.pnl.Controls.Add(this.cboParent);
             this.pnl.Controls.Add(this.label7);
-            this.pnl.Controls.Add(this.comboBox3);
+            this.pnl.Controls.Add(this.cboItemCode);
             this.pnl.Controls.Add(this.label8);
-            this.pnl.Controls.Add(this.comboBox2);
             this.pnl.Controls.Add(this.label9);
-            this.pnl.Controls.Add(this.comboBox1);
+            this.pnl.Controls.Add(this.cboPlan);
             this.pnl.Controls.Add(this.label10);
-            this.pnl.Controls.Add(this.comboBox18);
-            this.pnl.Size = new System.Drawing.Size(512, 401);
+            this.pnl.Controls.Add(this.cboAuto);
+            this.pnl.Size = new System.Drawing.Size(512, 445);
             // 
             // btnClose
             // 
@@ -114,110 +121,100 @@
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(55, 14);
             this.label55.TabIndex = 163;
-            this.label55.Text = "상위품목";
+            this.label55.Text = "상위품명";
             // 
-            // textBox3
+            // txtNote
             // 
-            this.textBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox3.Location = new System.Drawing.Point(82, 276);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(407, 119);
-            this.textBox3.TabIndex = 184;
+            this.txtNote.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtNote.Location = new System.Drawing.Point(82, 314);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(407, 119);
+            this.txtNote.TabIndex = 184;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(13, 176);
+            this.label45.Location = new System.Drawing.Point(262, 172);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(43, 14);
             this.label45.TabIndex = 164;
             this.label45.Text = "수정자";
             // 
-            // dateTimePicker2
+            // dtpEndDate
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(82, 123);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(161, 22);
-            this.dateTimePicker2.TabIndex = 183;
+            this.dtpEndDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(331, 121);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(161, 22);
+            this.dtpEndDate.TabIndex = 183;
+            this.dtpEndDate.Value = new System.DateTime(9998, 1, 1, 23, 41, 0, 0);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(262, 226);
+            this.label2.Location = new System.Drawing.Point(13, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 165;
             this.label2.Text = "소요계획";
             // 
-            // dateTimePicker1
+            // dtpStartDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(328, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 22);
-            this.dateTimePicker1.TabIndex = 182;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(262, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 14);
-            this.label3.TabIndex = 166;
-            this.label3.Text = "사용유무";
+            this.dtpStartDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(82, 121);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(161, 22);
+            this.dtpStartDate.TabIndex = 182;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(262, 76);
+            this.label4.Location = new System.Drawing.Point(13, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 14);
             this.label4.TabIndex = 167;
             this.label4.Text = "시작일";
             // 
-            // textBox1
+            // txtModifier
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox1.Location = new System.Drawing.Point(82, 176);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(161, 22);
-            this.textBox1.TabIndex = 180;
+            this.txtModifier.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtModifier.Location = new System.Drawing.Point(331, 172);
+            this.txtModifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtModifier.Name = "txtModifier";
+            this.txtModifier.ReadOnly = true;
+            this.txtModifier.Size = new System.Drawing.Size(161, 22);
+            this.txtModifier.TabIndex = 180;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(13, 226);
+            this.label5.Location = new System.Drawing.Point(262, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 14);
             this.label5.TabIndex = 168;
             this.label5.Text = "자동차감";
             // 
-            // textBox32
+            // txtModifiDay
             // 
-            this.textBox32.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.textBox32.Location = new System.Drawing.Point(328, 172);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(161, 22);
-            this.textBox32.TabIndex = 179;
+            this.txtModifiDay.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtModifiDay.Location = new System.Drawing.Point(82, 219);
+            this.txtModifiDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtModifiDay.Name = "txtModifiDay";
+            this.txtModifiDay.ReadOnly = true;
+            this.txtModifiDay.Size = new System.Drawing.Size(161, 22);
+            this.txtModifiDay.TabIndex = 179;
             // 
             // label6
             // 
@@ -230,117 +227,172 @@
             this.label6.TabIndex = 169;
             this.label6.Text = "품목";
             // 
-            // comboBox4
+            // cboParent
             // 
-            this.comboBox4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(82, 27);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(161, 22);
-            this.comboBox4.TabIndex = 178;
+            this.cboParent.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboParent.FormattingEnabled = true;
+            this.cboParent.Location = new System.Drawing.Point(82, 27);
+            this.cboParent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboParent.Name = "cboParent";
+            this.cboParent.Size = new System.Drawing.Size(161, 22);
+            this.cboParent.TabIndex = 178;
+            this.cboParent.SelectedIndexChanged += new System.EventHandler(this.cboParent_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(13, 126);
+            this.label7.Location = new System.Drawing.Point(262, 124);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 14);
             this.label7.TabIndex = 170;
             this.label7.Text = "종료일";
             // 
-            // comboBox3
+            // cboItemCode
             // 
-            this.comboBox3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(328, 27);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(161, 22);
-            this.comboBox3.TabIndex = 177;
+            this.cboItemCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboItemCode.FormattingEnabled = true;
+            this.cboItemCode.Location = new System.Drawing.Point(331, 27);
+            this.cboItemCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboItemCode.Name = "cboItemCode";
+            this.cboItemCode.Size = new System.Drawing.Size(161, 22);
+            this.cboItemCode.TabIndex = 177;
+            this.cboItemCode.SelectedIndexChanged += new System.EventHandler(this.cboItemCode_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(13, 76);
+            this.label8.Location = new System.Drawing.Point(262, 79);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 14);
             this.label8.TabIndex = 171;
             this.label8.Text = "소요량";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(328, 123);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 22);
-            this.comboBox2.TabIndex = 176;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(262, 176);
+            this.label9.Location = new System.Drawing.Point(13, 222);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 14);
             this.label9.TabIndex = 172;
             this.label9.Text = "수정일";
             // 
-            // comboBox1
+            // cboPlan
             // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(328, 223);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 22);
-            this.comboBox1.TabIndex = 175;
+            this.cboPlan.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboPlan.FormattingEnabled = true;
+            this.cboPlan.Location = new System.Drawing.Point(82, 267);
+            this.cboPlan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboPlan.Name = "cboPlan";
+            this.cboPlan.Size = new System.Drawing.Size(161, 22);
+            this.cboPlan.TabIndex = 175;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(13, 276);
+            this.label10.Location = new System.Drawing.Point(13, 314);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 14);
             this.label10.TabIndex = 173;
             this.label10.Text = "비고";
             // 
-            // comboBox18
+            // cboAuto
             // 
-            this.comboBox18.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(82, 223);
-            this.comboBox18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(161, 22);
-            this.comboBox18.TabIndex = 174;
+            this.cboAuto.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.cboAuto.FormattingEnabled = true;
+            this.cboAuto.Location = new System.Drawing.Point(331, 219);
+            this.cboAuto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboAuto.Name = "cboAuto";
+            this.cboAuto.Size = new System.Drawing.Size(161, 22);
+            this.cboAuto.TabIndex = 174;
             // 
-            // numMinOrder
+            // numSpend
             // 
-            this.numMinOrder.Location = new System.Drawing.Point(82, 74);
-            this.numMinOrder.Name = "numMinOrder";
-            this.numMinOrder.Size = new System.Drawing.Size(161, 22);
-            this.numMinOrder.TabIndex = 247;
+            this.numSpend.Location = new System.Drawing.Point(331, 77);
+            this.numSpend.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numSpend.Name = "numSpend";
+            this.numSpend.Size = new System.Drawing.Size(161, 22);
+            this.numSpend.TabIndex = 247;
+            this.numSpend.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // txtItemName
+            // 
+            this.txtItemName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.txtItemName.Location = new System.Drawing.Point(82, 76);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtItemName.Name = "txtItemName";
+            this.txtItemName.ReadOnly = true;
+            this.txtItemName.Size = new System.Drawing.Size(161, 22);
+            this.txtItemName.TabIndex = 249;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(13, 79);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 14);
+            this.label11.TabIndex = 248;
+            this.label11.Text = "품명";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(13, 172);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 14);
+            this.label12.TabIndex = 250;
+            this.label12.Text = "Level";
+            // 
+            // numLevel
+            // 
+            this.numLevel.Location = new System.Drawing.Point(82, 170);
+            this.numLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numLevel.Name = "numLevel";
+            this.numLevel.ReadOnly = true;
+            this.numLevel.Size = new System.Drawing.Size(161, 22);
+            this.numLevel.TabIndex = 251;
+            this.numLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // PopUpBOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(536, 501);
+            this.ClientSize = new System.Drawing.Size(536, 545);
             this.Name = "PopUpBOM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PopUpBOM_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSpend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,26 +400,28 @@
         #endregion
 
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNote;
         protected System.Windows.Forms.Label label45;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtModifier;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox txtModifiDay;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboParent;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboItemCode;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
         protected System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPlan;
         protected System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox18;
-        private System.Windows.Forms.NumericUpDown numMinOrder;
+        private System.Windows.Forms.ComboBox cboAuto;
+        private System.Windows.Forms.NumericUpDown numSpend;
+        private System.Windows.Forms.TextBox txtItemName;
+        protected System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown numLevel;
     }
 }

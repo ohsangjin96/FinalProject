@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAWJJREFUKFNlkj1OAlEUhZ+MCUIisbKSwhVMxQJwBRqotJBGrLCUBVBNYuMCxM7o
+        DiglIaGBxkYbrZFEDf4kmpk343fImyGBl5y5v2fuve8+Y629A/dxHFdB3iydJEly+LfJCaIo+kB2DUof
+        5VvEMAz3Sdh0+SKsY/vErsEX+AE9Q+IeSp/gDDlAHpK8BTz0CrjBr9gbuNJPDJ88xAOkCKo4pvoJvir6
+        rSNMQEB8l5+tzdvAKIEjMCb4Bx7BEHyCV9AhtpMR0qOWqNAk4QlYkiRU5QK9vELQcTOopaEI2Alyimgi
+        Cy5tcQjolioQNINamokAfqk+Yr4aOUWXnu3BB+ktaQa1dEpshK4ZHyAfY2/MSQS1OO0hvSUNXQYFKtRF
+        ACF4xteC6OlFBECL0x50rdktIYtUaOB/wY+wU+xzvQg9DW1ai1vswR21RM6ZCMRj9HdV6oIetr9MSA9+
+        j+S2CNbay39jaucgDEU85gAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -125,7 +138,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABs
-        CgAAAk1TRnQBSQFMAwEBAAFIAQABSAEAAR4BAAEeAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMA
+        CgAAAk1TRnQBSQFMAwEBAAFwAQABcAEAAR4BAAEeAQAE/wEJAQAI/wFCAU0BNgEEBgABNgEEAgABKAMA
         AXgDAAEeAwABAQEAAQgFAAEQAQ4YAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA

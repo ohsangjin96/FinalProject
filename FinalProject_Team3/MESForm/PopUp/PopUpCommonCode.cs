@@ -83,6 +83,18 @@ namespace MESForm.PopUp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtCode.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "코드를"));
+                return;
+            }
+
+            if (txtCodeName.Text == "")
+            {
+                MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "코드명을"));
+                return;
+            }
+
             if (!updateMode && btnCodeVal.Enabled)
             {
                 MessageBox.Show(Properties.Resources.ErrValCheck);
@@ -104,12 +116,6 @@ namespace MESForm.PopUp
 
                 if (updateMode)
                 {
-                    if (txtCode.Text == "")
-                    {
-                        MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "코드를"));
-                        return;
-                    }
-
                     result = service.UpdateCommonCode(vo);
                 }
                 else
@@ -165,17 +171,20 @@ namespace MESForm.PopUp
 
             try
             {
-                CommonCodeService service = new CommonCodeService();
-                bool result = service.DeleteCommonCode(txtCode.Text);
-                service.Dispose();
-
-                if (result)
+                if (MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show(Properties.Resources.DeleteSuccess);
-                    LoadData();
+                    CommonCodeService service = new CommonCodeService();
+                    bool result = service.DeleteCommonCode(txtCode.Text);
+                    service.Dispose();
+
+                    if (result)
+                    {
+                        MessageBox.Show(Properties.Resources.DeleteSuccess);
+                        LoadData();
+                    }
+                    else
+                        MessageBox.Show(Properties.Resources.ErrDeleteFailed);
                 }
-                else
-                    MessageBox.Show(Properties.Resources.ErrDeleteFailed);
             }
             catch(Exception err)
             {

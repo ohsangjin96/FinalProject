@@ -80,7 +80,13 @@ namespace MESForm.Utils
             cbo.DisplayMember = displayMember;
             cbo.DataSource = vo;
         }
+        public static void BindingComboBox<T>(ComboBox cbo, List<T> vo, string valueMember, string displayMember)
+        {
 
+            cbo.DisplayMember = displayMember;
+            cbo.ValueMember = valueMember;
+            cbo.DataSource = vo;
+        }
         public static void CompanyBind(ComboBox cbo, List<CompanyVO> list, bool blankItem = true, string blankText = "")
         {
             if (blankItem)
@@ -95,6 +101,36 @@ namespace MESForm.Utils
             }
             cbo.DisplayMember = "Com_Name";
             cbo.ValueMember = "Com_Code";
+            cbo.DataSource = list;
+        }
+
+        public static void FactoryTypeBind(ComboBox cbo, List<FactoryVO> list, string warehouse, bool blankItem = true, string blankText = "")
+        {
+            if (warehouse == "창고")
+            {
+                list = (from temp in list
+                        where temp.Factory_Type.EndsWith(warehouse) && temp.Factory_Type != "불량창고"
+                        select temp).ToList();
+            }
+            else if (warehouse == "불량창고")
+            {
+                list = (from temp in list
+                        where temp.Factory_Type == warehouse
+                        select temp).ToList();
+            }
+
+            if (blankItem)
+            {
+                FactoryVO blank = new FactoryVO
+                {
+                    Factory_Code = "",
+                    Factory_Name = blankText
+                };
+
+                list.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Factory_Name";
+            cbo.ValueMember = "Factory_Code";
             cbo.DataSource = list;
         }
 
@@ -124,6 +160,23 @@ namespace MESForm.Utils
             if (blankItem)
             {
                 ItemVO blank = new ItemVO
+                { Code = "" };
+                codeList.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Code";
+            cbo.ValueMember = "Code";
+            cbo.DataSource = codeList;
+        }
+
+        public static void BOMComboBindingitem(ComboBox cbo, List<BOMVO> list, string gubun, bool blankItem = true, string blankText = "")
+        {
+            var codeList = (from item in list
+                            where item.Gubun.Equals(gubun)
+                            select item).ToList();
+
+            if (blankItem)
+            {
+                BOMVO blank = new BOMVO
                 { Code = "" };
                 codeList.Insert(0, blank);
             }

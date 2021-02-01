@@ -37,6 +37,7 @@ namespace MESForm.Utils
             dgv.AutoGenerateColumns = false;
             dgv.AllowUserToAddRows = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public static void AddGridTextColumn(DataGridView dgv,

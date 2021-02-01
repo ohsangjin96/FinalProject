@@ -44,13 +44,18 @@ namespace MESForm
         private void LoadData()
         {
             FactoryService service = new FactoryService();
-            List<FactoryVO> list = service.GetFactoryGradeList();
+            List<FactoryVO> list = service.GetFactoryGradeList(string.Empty, "전체");
             service.Dispose();
             dgvFactory.DataSource = list;
         }
 
         private void frmFactory_Load(object sender, EventArgs e)
         {
+            CommonCodeService commonService = new CommonCodeService();
+            List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
+            commonService.Dispose();
+
+            ComboBoxBinding.ComBind(cboFactoryGrade, commonList, "FacGrade000", true, "전체");
             DgvSetting();
             LoadData();
         }
@@ -59,6 +64,48 @@ namespace MESForm
         {
             PopUp.PopUpFactory pop = new PopUp.PopUpFactory(frmMain.OpenMode.Register);
             pop.DeptName = DeptName;
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadData();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int rowIdx = dgvFactory.CurrentRow.Index;
+
+            string highRank;
+
+            if (string.IsNullOrEmpty(Convert.ToString(dgvFactory[5, rowIdx].Value)))
+                highRank = "없음";
+            else
+                highRank = Convert.ToString(dgvFactory[5, rowIdx].Value);
+
+            
+
+            FactoryVO vo = new FactoryVO
+            {
+                Factory_Grade = dgvFactory[1, rowIdx].Value.ToString(),
+                Factory_Type = dgvFactory[2, rowIdx].Value.ToString(),
+                Factory_Code = dgvFactory[3, rowIdx].Value.ToString(),
+                Factory_Name = dgvFactory[4, dgvFactory.CurrentRow.Index].Value.ToString().Trim().Replace("L ", ""),
+                Factory_HighRank = highRank,
+                Factory_Explain = Convert.ToString(dgvFactory[6, rowIdx].Value),
+                Factory_Credit = Convert.ToString(dgvFactory[7, rowIdx].Value),
+                Factory_Order = Convert.ToInt32(dgvFactory[8, rowIdx].Value),
+                Factory_Demand = Convert.ToString(dgvFactory[9, rowIdx].Value),
+                Factory_Process = Convert.ToString(dgvFactory[10, rowIdx].Value),
+                Factory_Material = Convert.ToString(dgvFactory[11, rowIdx].Value),
+                Com_Code = Convert.ToString(dgvFactory[12, rowIdx].Value),
+                Com_Name = Convert.ToString(dgvFactory[13, rowIdx].Value),
+                Factory_Use = Convert.ToString(dgvFactory[14, rowIdx].Value),
+                Factory_Amender = Convert.ToString(dgvFactory[15, rowIdx].Value),
+                Factory_ModdifyDate = Convert.ToDateTime(dgvFactory[16, rowIdx].Value)
+            };
+            PopUp.PopUpFactory pop = new PopUp.PopUpFactory(frmMain.OpenMode.Update);
+            pop.factoryVO = vo;
+
             if (pop.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show(Properties.Resources.SaveSuccess);
@@ -84,6 +131,33 @@ namespace MESForm
                 else
                     MessageBox.Show($"{factoryName}은(는) 삭제할 수 없습니다.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void custButtonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            string codeOrName = txtFactoryCodeOrName.Text;
+            string grade = cboFactoryGrade.Text;
+
+            FactoryService service = new FactoryService();
+            List<FactoryVO>  list = service.GetFactoryGradeList(codeOrName, grade);
+            dgvFactory.DataSource = list;
+
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                btnInquiry.PerformClick();
         }
     }
 }

@@ -33,7 +33,7 @@ namespace POPForm
             return _loggingUtility;
         }
 
-        private LoggingUtility(string loggerName, Level logLevel, int saveDays)
+        public LoggingUtility(string loggerName, Level logLevel, int saveDays)
         {
             logFileName = $"{loggerName}.log";
             logSaveDays = saveDays;
