@@ -113,6 +113,7 @@
             // 
             // cboItem
             // 
+            this.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItem.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.cboItem.FormattingEnabled = true;
             this.cboItem.Location = new System.Drawing.Point(369, 12);
@@ -123,6 +124,7 @@
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.cboCompany.FormattingEnabled = true;
             this.cboCompany.Location = new System.Drawing.Point(111, 13);
@@ -278,8 +280,10 @@
             this.txtBeginCost.Location = new System.Drawing.Point(369, 59);
             this.txtBeginCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBeginCost.Name = "txtBeginCost";
+            this.txtBeginCost.ReadOnly = true;
             this.txtBeginCost.Size = new System.Drawing.Size(138, 22);
             this.txtBeginCost.TabIndex = 231;
+            this.txtBeginCost.Text = "0";
             // 
             // txtIngCost
             // 
@@ -289,18 +293,22 @@
             this.txtIngCost.Name = "txtIngCost";
             this.txtIngCost.Size = new System.Drawing.Size(138, 22);
             this.txtIngCost.TabIndex = 232;
+            this.txtIngCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIngCost_KeyPress);
             // 
             // dtpEnd
             // 
+            this.dtpEnd.Enabled = false;
             this.dtpEnd.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEnd.Location = new System.Drawing.Point(369, 106);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(138, 22);
             this.dtpEnd.TabIndex = 233;
+            this.dtpEnd.Value = new System.DateTime(9998, 1, 1, 0, 0, 0, 0);
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(111, 201);

@@ -50,7 +50,25 @@ namespace MESForm
         }
         private void btnUpdate_Click(object sender, EventArgs e)//수정
         {
+            int rowIdx = dgvCost.CurrentRow.Index;
+
+            MaterialCostVO vo = new MaterialCostVO();
+            vo.MC_Code = Convert.ToInt32(dgvCost[1, rowIdx].Value.ToString());
+            vo.COM_Code = dgvCost[2, rowIdx].Value.ToString();
+            vo.Com_Name= dgvCost[3, rowIdx].Value.ToString();
+            vo.ITEM_Code = dgvCost[4, rowIdx].Value.ToString();
+            vo.ITEM_Name = dgvCost[5, rowIdx].Value.ToString();
+            vo.ITEM_Unit_Qty = Convert.ToInt32(dgvCost[6, rowIdx].Value.ToString());
+            vo.ITEM_Unit = dgvCost[7, rowIdx].Value.ToString();
+            vo.MC_IngCost = Convert.ToInt32(dgvCost[8, rowIdx].Value.ToString());
+            vo.MC_BeforeCost = Convert.ToInt32(dgvCost[9, rowIdx].Value.ToString());
+            vo.MC_StartDate = Convert.ToDateTime(dgvCost[10, rowIdx].Value.ToString());
+            vo.MC_EndDate = Convert.ToDateTime(dgvCost[11, rowIdx].Value.ToString());
+            vo.MC_USE= dgvCost[12, rowIdx].Value.ToString();
+            vo.MC_Remark = dgvCost[13, rowIdx].Value.ToString();
+
             popUpMaterialCost pop = new popUpMaterialCost(frmMain.OpenMode.Update);
+            pop.MCvo = vo;
             pop.Uname = DeptName;
             if (pop.ShowDialog() == DialogResult.OK)
             {
@@ -64,7 +82,8 @@ namespace MESForm
         }
         private void btnExcel_Click(object sender, EventArgs e)//엑셀
         {
-            string sResult = ExcelExportImport.ExportToDataGridView<MaterialCostVO>((List<MaterialCostVO>)dgvCost.DataSource, "");
+            string sResult = ExcelExportImport.ExportToDataGridView<MaterialCostVO>((List<MaterialCostVO>)dgvCost.DataSource, "MC_Last_Modifier");
+
             if (sResult.Length > 0)
             {
                 MessageBox.Show(sResult);

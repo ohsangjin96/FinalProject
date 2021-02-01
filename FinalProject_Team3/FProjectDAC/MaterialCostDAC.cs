@@ -44,7 +44,7 @@ namespace FProjectDAC
                 return list;
             }
         }
-        public List<MaterialCostVO> GetItemCode(string order)
+        public List<string> GetItemCode(string order)
         {
             using (SqlCommand cmd =new SqlCommand())
             {
@@ -54,11 +54,78 @@ namespace FProjectDAC
                                    where i.ITEM_Order_Company=@ITEM_Order_Company";
 
                 cmd.Parameters.AddWithValue("@ITEM_Order_Company", order);
-                SqlDataReader reader = cmd.ExecuteReader();
                 
-                List<MaterialCostVO> list = Helper.DataReaderMapToList<MaterialCostVO>(reader);
 
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<string> list = new List<string>();
+                while (reader.Read())
+                {
+                    list.Add(Convert.ToString(reader[0]));
+                }
                 return list;
+            }
+        }
+
+        public bool RegisterMC(MaterialCostVO vo)
+        {
+            if (!IsCodeValied(vo.ITEM_Code,vo.MC_BeforeCost))
+            {
+                throw new Exception("이미 등록된 품목입니다.");
+            }
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"insert into Material_Cost(MC_IngCost, MC_BeforeCost, MC_StartDate, MC_EndDate, MC_Last_Modifier,
+	        					                              MC_Last_Modifier_Time, MC_USE, MC_Remark, COM_Code, ITEM_Code)
+                                   values(@MC_IngCost, @MC_BeforeCost,@MC_StartDate,@MC_EndDate,@MC_Last_Modifier,
+                                   	      @MC_Last_Modifier_Time, @MC_USE, @MC_Remark, @COM_Code, @ITEM_Code)";
+
+                    cmd.Parameters.AddWithValue("@MC_IngCost", vo.MC_IngCost);
+                    cmd.Parameters.AddWithValue("@MC_BeforeCost", vo.MC_BeforeCost);
+                    cmd.Parameters.AddWithValue("@MC_StartDate", vo.MC_StartDate);
+                    cmd.Parameters.AddWithValue("@MC_EndDate", vo.MC_EndDate);
+                    cmd.Parameters.AddWithValue("@MC_Last_Modifier", vo.MC_Last_Modifier);
+                    cmd.Parameters.AddWithValue("@MC_Last_Modifier_Time", vo.MC_Last_Modifier_Time);
+                    cmd.Parameters.AddWithValue("@MC_USE", vo.MC_USE);
+                    cmd.Parameters.AddWithValue("@MC_Remark", vo.MC_Remark);
+                    cmd.Parameters.AddWithValue("@COM_Code", vo.COM_Code);
+                    cmd.Parameters.AddWithValue("@ITEM_Code", vo.ITEM_Code);
+
+                    int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
+            }
+
+        }
+
+        
+
+
+        public bool IsCodeValied(string item,int Bcost)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @" select count(*) from Material_Cost
+                                     where ITEM_Code=@ITEM_Code and MC_BeforeCost=@MC_BeforeCost";
+
+                cmd.Parameters.AddWithValue("@ITEM_Code", item);
+                cmd.Parameters.AddWithValue("@MC_BeforeCost", Bcost);
+
+                int result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (result < 1)
+                    return true;
+                else
+                    return false;
             }
         }
     }

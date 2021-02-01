@@ -21,8 +21,9 @@ namespace FProjectVO
         public DateTime MC_EndDate { get; set; }//종료일
         public string MC_USE { get; set; }//사용유무
         public string MC_Remark { get; set; }//비고
-
-        public string Code { get; set; }
-        public string Gubun { get; set; }
+        public string MC_Last_Modifier { get; set; }//수정자
+        public DateTime MC_Last_Modifier_Time { get; set; }//종료일
+        //public string Code { get; set; }
+        //public string Gubun { get; set; }
     }
 }
