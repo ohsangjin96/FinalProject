@@ -161,7 +161,7 @@ namespace MESForm
             vo.BOM_Auto = dgvBom[12, rowIdx].Value.ToString();
             vo.BOM_Note = dgvBom[13, rowIdx].Value.ToString();
 
-
+            //
             PopUpBOM pop = new PopUpBOM(frmMain.OpenMode.Update);
             pop.bomvo = vo;
             pop.Uname = DeptName;
