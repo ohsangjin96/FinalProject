@@ -20,10 +20,15 @@ namespace MESForm.Services
             MaterialCostDAC dac = new MaterialCostDAC();
             return dac.GetMCInfo(day);
         }
-        public List<MaterialCostVO> GetItemCode(string order)
+        public List<string> GetItemCode(string order)
         {
             MaterialCostDAC dac = new MaterialCostDAC();
             return dac.GetItemCode(order);
+        }
+        public bool RegisterMC(MaterialCostVO vo)
+        {
+            MaterialCostDAC dac = new MaterialCostDAC();
+            return dac.RegisterMC(vo);
         }
         
     }
