@@ -107,7 +107,7 @@ namespace MESForm.PopUp
                 {
                     Common_Code = txtCode.Text,
                     Common_Name = txtCodeName.Text,
-                    Common_Parent = cboParentCode.Text,
+                    Common_Parent = cboParentCode.SelectedValue.ToString(),
                     Common_Seq = (int)nudSeq.Value
                 };
 
