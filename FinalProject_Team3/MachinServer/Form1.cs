@@ -26,29 +26,27 @@ namespace MachinServer
         Thread startThread;
         IPEndPoint Serverlocal;
         string name;
-
-        public Form1(string Name)
-        {
+        int port;
+        public Form1(string Port)
+        {   
             InitializeComponent();
-            name = Name;
-            
-        }
-        public Form1()
-        {
-            InitializeComponent();  
+            port = Convert.ToInt32(Port);
             startThread = new Thread(StartServer);
             startThread.IsBackground = true;
             timer = new System.Timers.Timer();
-            timer.Interval = 5000;
+            timer.Interval = 1000;
             timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
             startThread.Start();
         }
-
+        public Form1()
+        {
+            InitializeComponent();
+        }
         
         private void StartServer()
         {
            
-            Serverlocal = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8700);
+            Serverlocal = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port+1);
             server = new TcpListener(Serverlocal);
             server.Start();
             
@@ -70,9 +68,13 @@ namespace MachinServer
                         }
 
                     }
-
-                    
-                   
+                    else
+                    {
+                        timer.Stop();
+                        bbflag = true;
+                      
+                    }
+          
                 }
                 catch(Exception err)
                 {
@@ -103,11 +105,7 @@ namespace MachinServer
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         
 
        

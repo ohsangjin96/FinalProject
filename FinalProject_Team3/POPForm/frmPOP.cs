@@ -33,14 +33,6 @@ namespace POPForm
             ResultCheck frm = new ResultCheck();
             frm.Show();
         }
-
-        private void frmPOP_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
-       
-
         private void frmPOP_Load(object sender, EventArgs e)
         {
             CommonUtil.SetInitGridView(dgvList);
@@ -49,29 +41,21 @@ namespace POPForm
             CommonUtil.AddGridTextColumn(dgvList, "아이템 이름", "Item_Name", 160);
             CommonUtil.AddGridTextColumn(dgvList, "수량", "Order_OrderAmount", 100);
             CommonUtil.AddGridTextColumn(dgvList, "날짜", "Order_FixedDate", 200);
-            
+
             CommonUtil.SetInitGridView(dgvList2);
-            CommonUtil.AddGridTextColumn(dgvList2, "PlanID","Plan_ID", 150);
-            CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜","WorkRegist_Start", 165);
-            CommonUtil.AddGridTextColumn(dgvList2, "아이템코드","Item_Code", 150);
-            CommonUtil.AddGridTextColumn(dgvList2, "상태","WorkRegist_State", 100);
-            CommonUtil.AddGridTextColumn(dgvList2, "걸린시간","WorkRegist_WorkTime", 120);
-            CommonUtil.AddGridTextColumn(dgvList2, "양품","WorkRegist_NomalQty", 100);
-            CommonUtil.AddGridTextColumn(dgvList2, "불량","WorkRegist_FailQty", 100);
-            CommonUtil.AddGridTextColumn(dgvList2, "설비코드","FacilityDetail_Code", 120);
+            CommonUtil.AddGridTextColumn(dgvList2, "PlanID", "Plan_ID", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜", "WorkRegist_Start", 165);
+            CommonUtil.AddGridTextColumn(dgvList2, "아이템코드", "Item_Code", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "상태", "WorkRegist_State", 100);
+            CommonUtil.AddGridTextColumn(dgvList2, "걸린시간", "WorkRegist_WorkTime", 120);
+            CommonUtil.AddGridTextColumn(dgvList2, "양품", "WorkRegist_NomalQty", 100);
+            CommonUtil.AddGridTextColumn(dgvList2, "불량", "WorkRegist_FailQty", 100);
+            CommonUtil.AddGridTextColumn(dgvList2, "설비코드", "FacilityDetail_Code", 120);
             this.dgvList.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            dgvList.DataSource= service.GetOrderList();
-            Thread ServerPlay = new Thread(serverplay);
-            ServerPlay.Priority = ThreadPriority.Highest;
-            ServerPlay.Start();
-        }
-        private void serverplay()
-        {
-            Form1 frm = new Form1();
-
+            dgvList.DataSource = service.GetOrderList();
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {

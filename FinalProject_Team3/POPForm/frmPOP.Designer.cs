@@ -481,7 +481,7 @@ namespace POPForm
             this.Name = "frmPOP";
             this.Text = "POP프로그램";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPOP_FormClosed);
+            
             this.Load += new System.EventHandler(this.frmPOP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).EndInit();
