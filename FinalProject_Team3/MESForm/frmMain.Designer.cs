@@ -204,7 +204,7 @@ namespace MESForm
             this.imgLogo.Location = new System.Drawing.Point(0, 0);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(238, 95);
-            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 0;
             this.imgLogo.TabStop = false;
             // 
