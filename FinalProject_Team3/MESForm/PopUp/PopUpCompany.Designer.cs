@@ -29,49 +29,49 @@ namespace MESForm.PopUp
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.txtModdifyDate = new System.Windows.Forms.TextBox();
+            this.txtAmender = new System.Windows.Forms.TextBox();
+            this.txtTelNumber = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.cboWarehouse = new System.Windows.Forms.ComboBox();
+            this.cboCompanyUse = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtConditions = new System.Windows.Forms.TextBox();
+            this.txtCompanyConditions = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboType = new System.Windows.Forms.ComboBox();
+            this.cboCompanyType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCompanyInfo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtChargeName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFaxNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.txtCompanyCategory = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCEO = new System.Windows.Forms.TextBox();
+            this.txtCEOName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCompanyRegNum = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.Size = new System.Drawing.Size(785, 34);
+            this.pnlTop.Size = new System.Drawing.Size(794, 34);
             this.pnlTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseDown);
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CompanyPopUp_MouseMove);
             // 
@@ -84,118 +84,125 @@ namespace MESForm.PopUp
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(393, 438);
+            this.btnCancel.Location = new System.Drawing.Point(398, 438);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(317, 438);
+            this.btnSave.Location = new System.Drawing.Point(322, 438);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
             this.pnl.Controls.Add(this.label19);
-            this.pnl.Controls.Add(this.textBox1);
-            this.pnl.Controls.Add(this.dateTimePicker2);
-            this.pnl.Controls.Add(this.dateTimePicker1);
-            this.pnl.Controls.Add(this.textBox12);
-            this.pnl.Controls.Add(this.textBox11);
-            this.pnl.Controls.Add(this.textBox10);
-            this.pnl.Controls.Add(this.textBox8);
-            this.pnl.Controls.Add(this.comboBox2);
-            this.pnl.Controls.Add(this.comboBox1);
+            this.pnl.Controls.Add(this.txtCompanyRegNum);
+            this.pnl.Controls.Add(this.dtpEndDate);
+            this.pnl.Controls.Add(this.dtpStartDate);
+            this.pnl.Controls.Add(this.txtModdifyDate);
+            this.pnl.Controls.Add(this.txtAmender);
+            this.pnl.Controls.Add(this.txtTelNumber);
+            this.pnl.Controls.Add(this.txtEmail);
+            this.pnl.Controls.Add(this.cboWarehouse);
+            this.pnl.Controls.Add(this.cboCompanyUse);
             this.pnl.Controls.Add(this.label18);
             this.pnl.Controls.Add(this.label17);
             this.pnl.Controls.Add(this.label16);
             this.pnl.Controls.Add(this.label15);
             this.pnl.Controls.Add(this.label13);
-            this.pnl.Controls.Add(this.txtConditions);
+            this.pnl.Controls.Add(this.txtCompanyConditions);
             this.pnl.Controls.Add(this.label12);
-            this.pnl.Controls.Add(this.txtName);
-            this.pnl.Controls.Add(this.txtCode);
+            this.pnl.Controls.Add(this.txtCompanyName);
+            this.pnl.Controls.Add(this.txtCompanyCode);
             this.pnl.Controls.Add(this.label2);
-            this.pnl.Controls.Add(this.cboType);
+            this.pnl.Controls.Add(this.cboCompanyType);
             this.pnl.Controls.Add(this.label3);
             this.pnl.Controls.Add(this.label4);
-            this.pnl.Controls.Add(this.textBox7);
+            this.pnl.Controls.Add(this.txtCompanyInfo);
             this.pnl.Controls.Add(this.label5);
-            this.pnl.Controls.Add(this.textBox6);
+            this.pnl.Controls.Add(this.txtChargeName);
             this.pnl.Controls.Add(this.label6);
             this.pnl.Controls.Add(this.label7);
-            this.pnl.Controls.Add(this.textBox4);
+            this.pnl.Controls.Add(this.txtFaxNumber);
             this.pnl.Controls.Add(this.label8);
-            this.pnl.Controls.Add(this.txtCategory);
+            this.pnl.Controls.Add(this.txtCompanyCategory);
             this.pnl.Controls.Add(this.label9);
-            this.pnl.Controls.Add(this.txtCEO);
+            this.pnl.Controls.Add(this.txtCEOName);
             this.pnl.Controls.Add(this.label10);
             this.pnl.Controls.Add(this.label11);
             this.pnl.Controls.Add(this.label14);
-            this.pnl.Size = new System.Drawing.Size(761, 386);
+            this.pnl.Size = new System.Drawing.Size(770, 386);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(745, 0);
+            this.btnClose.Location = new System.Drawing.Point(754, 0);
             this.btnClose.Size = new System.Drawing.Size(40, 34);
             // 
-            // dateTimePicker2
+            // dtpEndDate
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(609, 165);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker2.TabIndex = 14;
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(609, 165);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(140, 22);
+            this.dtpEndDate.TabIndex = 14;
+            this.dtpEndDate.Value = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dtpStartDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(362, 168);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(362, 168);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(140, 22);
+            this.dtpStartDate.TabIndex = 13;
             // 
-            // textBox12
+            // txtModdifyDate
             // 
-            this.textBox12.Location = new System.Drawing.Point(362, 205);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(166, 22);
-            this.textBox12.TabIndex = 16;
+            this.txtModdifyDate.Enabled = false;
+            this.txtModdifyDate.Location = new System.Drawing.Point(362, 205);
+            this.txtModdifyDate.Name = "txtModdifyDate";
+            this.txtModdifyDate.Size = new System.Drawing.Size(140, 22);
+            this.txtModdifyDate.TabIndex = 16;
             // 
-            // textBox11
+            // txtAmender
             // 
-            this.textBox11.Location = new System.Drawing.Point(115, 205);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 22);
-            this.textBox11.TabIndex = 15;
+            this.txtAmender.Enabled = false;
+            this.txtAmender.Location = new System.Drawing.Point(115, 205);
+            this.txtAmender.Name = "txtAmender";
+            this.txtAmender.Size = new System.Drawing.Size(140, 22);
+            this.txtAmender.TabIndex = 15;
             // 
-            // textBox10
+            // txtTelNumber
             // 
-            this.textBox10.Location = new System.Drawing.Point(115, 131);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 22);
-            this.textBox10.TabIndex = 9;
+            this.txtTelNumber.Location = new System.Drawing.Point(115, 131);
+            this.txtTelNumber.Name = "txtTelNumber";
+            this.txtTelNumber.Size = new System.Drawing.Size(140, 22);
+            this.txtTelNumber.TabIndex = 9;
             // 
-            // textBox8
+            // txtEmail
             // 
-            this.textBox8.Location = new System.Drawing.Point(609, 95);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 22);
-            this.textBox8.TabIndex = 8;
+            this.txtEmail.Location = new System.Drawing.Point(609, 95);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(140, 22);
+            this.txtEmail.TabIndex = 8;
             // 
-            // comboBox2
+            // cboWarehouse
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(115, 168);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(125, 22);
-            this.comboBox2.TabIndex = 12;
+            this.cboWarehouse.FormattingEnabled = true;
+            this.cboWarehouse.Location = new System.Drawing.Point(115, 168);
+            this.cboWarehouse.Name = "cboWarehouse";
+            this.cboWarehouse.Size = new System.Drawing.Size(140, 22);
+            this.cboWarehouse.TabIndex = 12;
             // 
-            // comboBox1
+            // cboCompanyUse
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(609, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 22);
-            this.comboBox1.TabIndex = 11;
+            this.cboCompanyUse.FormattingEnabled = true;
+            this.cboCompanyUse.Location = new System.Drawing.Point(609, 130);
+            this.cboCompanyUse.Name = "cboCompanyUse";
+            this.cboCompanyUse.Size = new System.Drawing.Size(140, 22);
+            this.cboCompanyUse.TabIndex = 11;
             // 
             // label18
             // 
@@ -243,12 +250,12 @@ namespace MESForm.PopUp
             this.label13.TabIndex = 103;
             this.label13.Text = "창고유무";
             // 
-            // txtConditions
+            // txtCompanyConditions
             // 
-            this.txtConditions.Location = new System.Drawing.Point(115, 95);
-            this.txtConditions.Name = "txtConditions";
-            this.txtConditions.Size = new System.Drawing.Size(125, 22);
-            this.txtConditions.TabIndex = 6;
+            this.txtCompanyConditions.Location = new System.Drawing.Point(115, 95);
+            this.txtCompanyConditions.Name = "txtCompanyConditions";
+            this.txtCompanyConditions.Size = new System.Drawing.Size(140, 22);
+            this.txtCompanyConditions.TabIndex = 6;
             // 
             // label12
             // 
@@ -259,19 +266,19 @@ namespace MESForm.PopUp
             this.label12.TabIndex = 101;
             this.label12.Text = "전화번호";
             // 
-            // txtName
+            // txtCompanyName
             // 
-            this.txtName.Location = new System.Drawing.Point(362, 20);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(125, 22);
-            this.txtName.TabIndex = 1;
+            this.txtCompanyName.Location = new System.Drawing.Point(362, 20);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(140, 22);
+            this.txtCompanyName.TabIndex = 1;
             // 
-            // txtCode
+            // txtCompanyCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(115, 20);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(125, 22);
-            this.txtCode.TabIndex = 0;
+            this.txtCompanyCode.Location = new System.Drawing.Point(115, 20);
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(140, 22);
+            this.txtCompanyCode.TabIndex = 0;
             // 
             // label2
             // 
@@ -283,13 +290,13 @@ namespace MESForm.PopUp
             this.label2.TabIndex = 98;
             this.label2.Text = "업체코드";
             // 
-            // cboType
+            // cboCompanyType
             // 
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(609, 20);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(125, 22);
-            this.cboType.TabIndex = 2;
+            this.cboCompanyType.FormattingEnabled = true;
+            this.cboCompanyType.Location = new System.Drawing.Point(609, 20);
+            this.cboCompanyType.Name = "cboCompanyType";
+            this.cboCompanyType.Size = new System.Drawing.Size(140, 22);
+            this.cboCompanyType.TabIndex = 2;
             // 
             // label3
             // 
@@ -309,13 +316,13 @@ namespace MESForm.PopUp
             this.label4.TabIndex = 83;
             this.label4.Text = "담당자명";
             // 
-            // textBox7
+            // txtCompanyInfo
             // 
-            this.textBox7.Location = new System.Drawing.Point(115, 241);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(619, 128);
-            this.textBox7.TabIndex = 17;
+            this.txtCompanyInfo.Location = new System.Drawing.Point(115, 241);
+            this.txtCompanyInfo.Multiline = true;
+            this.txtCompanyInfo.Name = "txtCompanyInfo";
+            this.txtCompanyInfo.Size = new System.Drawing.Size(634, 128);
+            this.txtCompanyInfo.TabIndex = 17;
             // 
             // label5
             // 
@@ -326,12 +333,12 @@ namespace MESForm.PopUp
             this.label5.TabIndex = 84;
             this.label5.Text = "팩스";
             // 
-            // textBox6
+            // txtChargeName
             // 
-            this.textBox6.Location = new System.Drawing.Point(362, 95);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 22);
-            this.textBox6.TabIndex = 7;
+            this.txtChargeName.Location = new System.Drawing.Point(362, 95);
+            this.txtChargeName.Name = "txtChargeName";
+            this.txtChargeName.Size = new System.Drawing.Size(140, 22);
+            this.txtChargeName.TabIndex = 7;
             // 
             // label6
             // 
@@ -352,12 +359,12 @@ namespace MESForm.PopUp
             this.label7.TabIndex = 86;
             this.label7.Text = "업종";
             // 
-            // textBox4
+            // txtFaxNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(362, 130);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 22);
-            this.textBox4.TabIndex = 10;
+            this.txtFaxNumber.Location = new System.Drawing.Point(362, 130);
+            this.txtFaxNumber.Name = "txtFaxNumber";
+            this.txtFaxNumber.Size = new System.Drawing.Size(140, 22);
+            this.txtFaxNumber.TabIndex = 10;
             // 
             // label8
             // 
@@ -368,12 +375,12 @@ namespace MESForm.PopUp
             this.label8.TabIndex = 87;
             this.label8.Text = "이메일";
             // 
-            // txtCategory
+            // txtCompanyCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(609, 58);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(125, 22);
-            this.txtCategory.TabIndex = 5;
+            this.txtCompanyCategory.Location = new System.Drawing.Point(609, 58);
+            this.txtCompanyCategory.Name = "txtCompanyCategory";
+            this.txtCompanyCategory.Size = new System.Drawing.Size(140, 22);
+            this.txtCompanyCategory.TabIndex = 5;
             // 
             // label9
             // 
@@ -385,12 +392,12 @@ namespace MESForm.PopUp
             this.label9.TabIndex = 88;
             this.label9.Text = "사용유무";
             // 
-            // txtCEO
+            // txtCEOName
             // 
-            this.txtCEO.Location = new System.Drawing.Point(115, 57);
-            this.txtCEO.Name = "txtCEO";
-            this.txtCEO.Size = new System.Drawing.Size(125, 22);
-            this.txtCEO.TabIndex = 3;
+            this.txtCEOName.Location = new System.Drawing.Point(115, 57);
+            this.txtCEOName.Name = "txtCEOName";
+            this.txtCEOName.Size = new System.Drawing.Size(140, 22);
+            this.txtCEOName.TabIndex = 3;
             // 
             // label10
             // 
@@ -429,19 +436,20 @@ namespace MESForm.PopUp
             this.label19.TabIndex = 116;
             this.label19.Text = "사업자등록번호";
             // 
-            // textBox1
+            // txtCompanyRegNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(362, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtCompanyRegNum.Location = new System.Drawing.Point(362, 57);
+            this.txtCompanyRegNum.Name = "txtCompanyRegNum";
+            this.txtCompanyRegNum.Size = new System.Drawing.Size(140, 22);
+            this.txtCompanyRegNum.TabIndex = 4;
             // 
             // PopUpCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(785, 482);
+            this.ClientSize = new System.Drawing.Size(794, 482);
             this.Name = "PopUpCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PopUpCompany_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
@@ -452,41 +460,41 @@ namespace MESForm.PopUp
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        protected System.Windows.Forms.TextBox textBox12;
-        protected System.Windows.Forms.TextBox textBox11;
-        protected System.Windows.Forms.TextBox textBox10;
-        protected System.Windows.Forms.TextBox textBox8;
-        protected System.Windows.Forms.ComboBox comboBox2;
-        protected System.Windows.Forms.ComboBox comboBox1;
-        protected System.Windows.Forms.Label label18;
-        protected System.Windows.Forms.Label label17;
-        protected System.Windows.Forms.Label label16;
-        protected System.Windows.Forms.Label label15;
-        protected System.Windows.Forms.Label label13;
-        protected System.Windows.Forms.TextBox txtConditions;
-        protected System.Windows.Forms.Label label12;
-        protected System.Windows.Forms.TextBox txtName;
-        protected System.Windows.Forms.TextBox txtCode;
-        protected System.Windows.Forms.Label label2;
-        protected System.Windows.Forms.ComboBox cboType;
-        protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.TextBox textBox7;
-        protected System.Windows.Forms.Label label5;
-        protected System.Windows.Forms.TextBox textBox6;
-        protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.Label label7;
-        protected System.Windows.Forms.TextBox textBox4;
-        protected System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.TextBox txtCategory;
-        protected System.Windows.Forms.Label label9;
-        protected System.Windows.Forms.TextBox txtCEO;
-        protected System.Windows.Forms.Label label10;
-        protected System.Windows.Forms.Label label11;
-        protected System.Windows.Forms.Label label14;
-        protected System.Windows.Forms.Label label19;
-        protected System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.TextBox txtModdifyDate;
+        private System.Windows.Forms.TextBox txtAmender;
+        private System.Windows.Forms.TextBox txtTelNumber;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.ComboBox cboWarehouse;
+        private System.Windows.Forms.ComboBox cboCompanyUse;
+        private System.Windows.Forms.TextBox txtCompanyConditions;
+        private System.Windows.Forms.TextBox txtCompanyName;
+        private System.Windows.Forms.TextBox txtCompanyCode;
+        private System.Windows.Forms.ComboBox cboCompanyType;
+        private System.Windows.Forms.TextBox txtChargeName;
+        private System.Windows.Forms.TextBox txtFaxNumber;
+        private System.Windows.Forms.TextBox txtCompanyCategory;
+        private System.Windows.Forms.TextBox txtCEOName;
+        private System.Windows.Forms.TextBox txtCompanyRegNum;
+        private System.Windows.Forms.TextBox txtCompanyInfo;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label19;
     }
 }

@@ -29,6 +29,10 @@ namespace MESForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblFormName2 = new System.Windows.Forms.Label();
             this.btnReg2 = new MESForm.CustomControls.custButtonControl();
             this.btnUpdate2 = new MESForm.CustomControls.custButtonControl();
@@ -73,7 +77,7 @@ namespace MESForm
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlItem.Controls.Add(this.dgvFacility);
             this.pnlItem.Location = new System.Drawing.Point(12, 59);
-            this.pnlItem.Size = new System.Drawing.Size(410, 628);
+            this.pnlItem.Size = new System.Drawing.Size(395, 628);
             // 
             // panel1
             // 
@@ -88,7 +92,7 @@ namespace MESForm
             // 
             this.lblFormName2.AutoSize = true;
             this.lblFormName2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFormName2.Location = new System.Drawing.Point(433, 19);
+            this.lblFormName2.Location = new System.Drawing.Point(420, 19);
             this.lblFormName2.Name = "lblFormName2";
             this.lblFormName2.Size = new System.Drawing.Size(44, 21);
             this.lblFormName2.TabIndex = 21;
@@ -184,7 +188,7 @@ namespace MESForm
             this.panel2.Controls.Add(this.btnReg1);
             this.panel2.Controls.Add(this.btnUpdate1);
             this.panel2.Controls.Add(this.btnDelete1);
-            this.panel2.Location = new System.Drawing.Point(142, 12);
+            this.panel2.Location = new System.Drawing.Point(127, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 41);
             this.panel2.TabIndex = 22;
@@ -242,14 +246,24 @@ namespace MESForm
             // 
             // dgvFacility
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvFacility.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFacility.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacility.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFacility.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFacility.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFacility.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFacility.Location = new System.Drawing.Point(0, 0);
             this.dgvFacility.Name = "dgvFacility";
-            this.dgvFacility.Size = new System.Drawing.Size(410, 628);
+            this.dgvFacility.Size = new System.Drawing.Size(395, 628);
             this.dgvFacility.TabIndex = 0;
             this.dgvFacility.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacility_CellDoubleClick);
             // 
@@ -259,22 +273,32 @@ namespace MESForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlItem2.Controls.Add(this.dgvFacilityDetail);
-            this.pnlItem2.Location = new System.Drawing.Point(437, 59);
+            this.pnlItem2.Location = new System.Drawing.Point(424, 59);
             this.pnlItem2.Name = "pnlItem2";
-            this.pnlItem2.Size = new System.Drawing.Size(801, 628);
+            this.pnlItem2.Size = new System.Drawing.Size(814, 628);
             this.pnlItem2.TabIndex = 20;
             // 
             // dgvFacilityDetail
             // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.dgvFacilityDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFacilityDetail.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacilityDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFacilityDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFacilityDetail.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFacilityDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvFacilityDetail.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvFacilityDetail.Location = new System.Drawing.Point(0, 0);
             this.dgvFacilityDetail.Name = "dgvFacilityDetail";
             this.dgvFacilityDetail.RowTemplate.Height = 23;
-            this.dgvFacilityDetail.Size = new System.Drawing.Size(801, 628);
+            this.dgvFacilityDetail.Size = new System.Drawing.Size(814, 628);
             this.dgvFacilityDetail.TabIndex = 0;
             // 
             // frmFacility

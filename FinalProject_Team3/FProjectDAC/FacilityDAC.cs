@@ -33,7 +33,8 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select Facilities_Code, Facilities_Name, Facilities_Use, Facilities_Amender,                                           Facilities_ModdifyDate, Facilities_Explain
+                cmd.CommandText = @"select Facilities_Code, Facilities_Name, Facilities_Use, Facilities_Amender,                                      CONVERT(CHAR(19), Facilities_ModdifyDate, 120) Facilities_ModdifyDate,
+                                           Facilities_Explain
                                     from Facility";
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FacilityVO> list = Helper.DataReaderMapToList<FacilityVO>(reader);
@@ -59,13 +60,12 @@ namespace FProjectDAC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = @"insert into Facility (Facilities_Code, Facilities_Name, Facilities_Use,
+                    cmd.CommandText = @"insert into Facility (Facilities_Code, Facilities_Use,
                                                               Facilities_Amender, Facilities_ModdifyDate, Facilities_Explain)
-                                        values (@Facilities_Code, @Facilities_Name, @Facilities_Use, @Facilities_Amender,
+                                        values (@Facilities_Code, @Facilities_Use, @Facilities_Amender,
                                                 @Facilities_ModdifyDate, @Facilities_Explain)";
 
                     cmd.Parameters.AddWithValue("@Facilities_Code", vo.Facilities_Code);
-                    cmd.Parameters.AddWithValue("@Facilities_Name", vo.Facilities_Name);
                     cmd.Parameters.AddWithValue("@Facilities_Use", vo.Facilities_Use);
                     cmd.Parameters.AddWithValue("@Facilities_Amender", vo.Facilities_Amender);
                     cmd.Parameters.AddWithValue("@Facilities_ModdifyDate", vo.Facilities_ModdifyDate);
@@ -157,38 +157,19 @@ namespace FProjectDAC
         #endregion
 
         #region 설비
-        //설비 데이터 검색
+        // 설비 데이터 검색
         public List<FacilityVO> GetFacilityDetailList()
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = conn;
-                cmd.CommandText = @"select Facility_Code, Facilities_Code, Facility_Name, Facility_Exhaustion, Facility_Imported,
-                                           Facility_Poor, Facility_MES, Facility_OutSourcing, Facility_Amender, 
-                                           Facility_ModdifyDate, Facility_Use, Facility_Note, Facility_Comment,
-                                           Item_Code, Facility_IP, Facility_Port
-                                    from Facility_Detail";
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<FacilityVO> list = Helper.DataReaderMapToList<FacilityVO>(reader);
-
-                return list;
-            }
-        }
-
-        //설비 데이터 검색
-        public List<FacilityVO> GetFacilityDetailListFromFacilities(string code)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"select Facility_Code, Facilities_Code, Facility_Name, Facility_Exhaustion,
                                            Facility_Imported, Facility_Poor, Facility_MES, Facility_OutSourcing,
-                                           Facility_Amender, Facility_ModdifyDate, Facility_Use, Facility_Note,
-                                           Facility_Comment, Item_Code, Facility_IP, Facility_Port from Facility_Detail
-                                    where Facilities_Code = @Facilities_Code";
-                cmd.Parameters.AddWithValue("@Facility_Code", code);
-
-
+                                           Facility_Amender, 
+                                           CONVERT(CHAR(19), Facility_ModdifyDate, 120) Facility_ModdifyDate,
+                                           Facility_Use, Facility_Note, Facility_Comment,
+                                           Item_Code, Facility_IP, Facility_Port
+                                    from Facility_Detail";
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FacilityVO> list = Helper.DataReaderMapToList<FacilityVO>(reader);
 
@@ -214,18 +195,17 @@ namespace FProjectDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"insert into Facility_Detail (Facility_Code, Facilities_Code,
-                                           Facility_Name, Facility_Exhaustion, Facility_Imported, Facility_Poor,
+                                           Facility_Exhaustion, Facility_Imported, Facility_Poor,
                                            Facility_MES, Facility_OutSourcing, Facility_Amender, Facility_ModdifyDate,
                                            Facility_Use, Facility_Note, Facility_Comment, Item_Code, Facility_IP,
                                            Facility_Port)
-                                        values (@Facility_Code, @Facilities_Code, @Facility_Name, @Facility_Exhaustion,
+                                        values (@Facility_Code, @Facilities_Code, @Facility_Exhaustion,
                                                 @Facility_Imported, @Facility_Poor, @Facility_MES, @Facility_OutSourcing,
                                                 @Facility_Amender, @Facility_ModdifyDate, @Facility_Use, @Facility_Note,
                                                 @Facility_Comment, @Item_Code, @Facility_IP, @Facility_Port)";
 
                     cmd.Parameters.AddWithValue("@Facility_Code", vo.Facility_Code);
                     cmd.Parameters.AddWithValue("@Facilities_Code", vo.Facilities_Code);
-                    cmd.Parameters.AddWithValue("@Facility_Name", vo.Facility_Name);
                     cmd.Parameters.AddWithValue("@Facility_Exhaustion", vo.Facility_Exhaustion);
                     cmd.Parameters.AddWithValue("@Facility_Imported", vo.Facility_Imported);
                     cmd.Parameters.AddWithValue("@Facility_Poor", (vo.Facility_Poor == "") ? DBNull.Value : (object)vo.Facility_Poor);

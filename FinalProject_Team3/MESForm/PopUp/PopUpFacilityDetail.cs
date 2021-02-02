@@ -40,6 +40,7 @@ namespace MESForm.PopUp
             {
                 bRegOrUp = false;
                 txtFacilityCode.Enabled = false;
+                txtFacilityName.Enabled = false;
             }
         }
         private void ComboBoxBind()
@@ -167,7 +168,7 @@ namespace MESForm.PopUp
                     Facility_Note = txtFacilityNote.Text,
                     Facility_Comment = txtFacilityComment.Text,
                     Facility_Amender = txtAmender.Text,
-                    Facility_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text)
+                    Facility_ModdifyDate = txtModdifyDate.Text
                 };
 
                 FacilityService service = new FacilityService();

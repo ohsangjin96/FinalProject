@@ -778,9 +778,6 @@
     <None Include="Resources\close_red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mainLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menubar_16x16.png" />
   </ItemGroup>
   <ItemGroup>
@@ -797,6 +794,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Action_Edit_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

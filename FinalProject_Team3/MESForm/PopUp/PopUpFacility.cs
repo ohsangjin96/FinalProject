@@ -37,6 +37,7 @@ namespace MESForm.PopUp
             {
                 bRegOrUp = false;
                 txtFacilitiesCode.Enabled = false;
+                txtFacilitiesName.Enabled = false;
             }
         }
         
@@ -107,7 +108,7 @@ namespace MESForm.PopUp
                     Facilities_Name = txtFacilitiesName.Text,
                     Facilities_Use = cboFacilitiesUse.Text,
                     Facilities_Amender = txtAmender.Text,
-                    Facilities_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text),
+                    Facilities_ModdifyDate = txtModdifyDate.Text,
                     Facilities_Explain = txtExplain.Text
                 };
 

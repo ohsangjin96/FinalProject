@@ -38,6 +38,7 @@ namespace MESForm.PopUp
             {
                 bRegOrUp = false;
                 txtFactoryCode.Enabled = false;
+                txtFactoryName.Enabled = false;
             }
         }
 
@@ -121,7 +122,6 @@ namespace MESForm.PopUp
                 MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "시설명을"));
                 return;
             }
-
             else if (txtFactoryCode.Text == "")
             {
                 MessageBox.Show(Properties.Resources.ErrEmptyText.Replace("@@", "시설코드를"));
@@ -153,7 +153,7 @@ namespace MESForm.PopUp
                     Factory_Material = cboFactoryMaterial.Text,
                     Factory_Use = cboFactoryUse.Text,
                     Factory_Amender = txtAmender.Text,
-                    Factory_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text),
+                    Factory_ModdifyDate = txtModdifyDate.Text,
                     Factory_Explain = txtExplain.Text
                 };
 
@@ -174,7 +174,6 @@ namespace MESForm.PopUp
             }
             catch(Exception err)
             {
-                MessageBox.Show(err.Message);
                 if (err.Message == "이미 등록된 시설명입니다.")
                 {
                     txtFactoryName.Focus();
@@ -185,6 +184,8 @@ namespace MESForm.PopUp
                     txtFactoryCode.Focus();
                     txtFactoryCode.SelectAll();
                 }
+
+                MessageBox.Show(err.Message);
             }
             
         }

@@ -22,22 +22,22 @@ namespace MESForm
         private void DgvSetting()
         {
             CommonUtil.SetInitGridView(dgvFactory);
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "Factory_Grade"); // 1
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "Factory_Grade", 80); // 1
             CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "Factory_Type"); // 2
             CommonUtil.AddGridTextColumn(dgvFactory, "시설코드", "Factory_Code"); // 3
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "Factory_Name"); // 4
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "Factory_Name", 120); // 4
             CommonUtil.AddGridTextColumn(dgvFactory, "상위시설", "Factory_HighRank"); // 5
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "Factory_Explain"); // 6
-            CommonUtil.AddGridTextColumn(dgvFactory, "유무상구분", "Factory_Credit"); // 7
-            CommonUtil.AddGridTextColumn(dgvFactory, "순서", "Factory_Order"); // 8
-            CommonUtil.AddGridTextColumn(dgvFactory, "수요차감", "Factory_Demand"); // 9
-            CommonUtil.AddGridTextColumn(dgvFactory, "공정차감", "Factory_Process"); // 10
-            CommonUtil.AddGridTextColumn(dgvFactory, "자재차감", "Factory_Material"); // 11
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "Factory_Explain", 120); // 6
+            CommonUtil.AddGridTextColumn(dgvFactory, "유무상구분", "Factory_Credit", 100); // 7
+            CommonUtil.AddGridTextColumn(dgvFactory, "순서", "Factory_Order", 60); // 8
+            CommonUtil.AddGridTextColumn(dgvFactory, "수요차감", "Factory_Demand", 80); // 9
+            CommonUtil.AddGridTextColumn(dgvFactory, "공정차감", "Factory_Process", 80); // 10
+            CommonUtil.AddGridTextColumn(dgvFactory, "자재차감", "Factory_Material", 80); // 11
             CommonUtil.AddGridTextColumn(dgvFactory, "업체", "Com_Code"); // 12
             CommonUtil.AddGridTextColumn(dgvFactory, "업체명", "Com_Name"); // 13
-            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use"); // 14
+            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use", 80); // 14
             CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "Factory_Amender"); // 15
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate"); // 16
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate", 140); // 16
             CommonUtil.AddGridTextColumn(dgvFactory, "시설ID", "Factory_ID", 100, false); // 17
         }
 
@@ -101,7 +101,7 @@ namespace MESForm
                 Com_Name = Convert.ToString(dgvFactory[13, rowIdx].Value),
                 Factory_Use = Convert.ToString(dgvFactory[14, rowIdx].Value),
                 Factory_Amender = Convert.ToString(dgvFactory[15, rowIdx].Value),
-                Factory_ModdifyDate = Convert.ToDateTime(dgvFactory[16, rowIdx].Value)
+                Factory_ModdifyDate = Convert.ToString(dgvFactory[16, rowIdx].Value)
             };
             PopUp.PopUpFactory pop = new PopUp.PopUpFactory(frmMain.OpenMode.Update);
             pop.factoryVO = vo;

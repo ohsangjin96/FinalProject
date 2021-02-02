@@ -81,12 +81,6 @@ namespace MESForm.Services
             FacilityDAC dac = new FacilityDAC();
             return dac.DeleteFacility(code);
         }
-
-        public List<FacilityVO> GetFacilityDetailListFromFacilities(string code)
-        {
-            FacilityDAC dac = new FacilityDAC();
-            return dac.GetFacilityDetailListFromFacilities(code);
-        }
         #endregion
     }
 }
