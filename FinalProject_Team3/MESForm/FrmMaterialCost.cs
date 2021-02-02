@@ -33,6 +33,7 @@ namespace MESForm
          
             dgvSetting();
             LoadData();
+            
         }
         private void btnInquiry_Click(object sender, EventArgs e)//조회버튼
         {
@@ -78,7 +79,29 @@ namespace MESForm
         }
         private void btnDelete_Click(object sender, EventArgs e)//삭제
         {
+            int rowIdx = dgvCost.CurrentRow.Index;
+            if (MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
 
+            else
+            {
+                int pk = Convert.ToInt32(dgvCost[1, rowIdx].Value.ToString());
+                string itemCode = dgvCost[4, rowIdx].Value.ToString();
+                int BoforeCost = Convert.ToInt32(dgvCost[9, rowIdx].Value.ToString());
+                MaterialCostService service = new MaterialCostService();
+
+                bool result = service.DeleteMC(pk, itemCode, BoforeCost);
+
+                if (result)
+                {
+                    MessageBox.Show(Properties.Resources.DeleteSuccess);
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("삭제 도중 오류가 발생하였습니다.");
+                }
+            }
         }
         private void btnExcel_Click(object sender, EventArgs e)//엑셀
         {
@@ -120,5 +143,10 @@ namespace MESForm
             dgvCost.DataSource = AllList;
         }
         #endregion
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
