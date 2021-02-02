@@ -37,40 +37,42 @@ namespace POPForm.UserControls
         public delegate void MachinRegistWorkRegist(object sender, WorkRegistEventArgs e);
         public event MachinRegistWorkRegist MachinRegist;
    
-        SqlConnection conn;
         NetworkStream ns;
         LoggingUtility _logging;
         Form1 frm;
+        Thread BntClick;
         Thread ServerPlay;
-        string taskID;
-        string strConn;
-        bool logVisible = false;
+        bool MachinActive = true;
         
         public bool bExit = false;
-        int fail, success = 0;
         string id;
        
         public Machin()
         {
             InitializeComponent();
-            taskID = lblFacility.Text;
+            BntClick = new Thread(bntClick);
+            ServerPlay = new Thread(serverplay);
            
         }
         
-       
-        private void bntActive_Click(object sender, EventArgs e)
+        
+        private void bntClick()
         {
-           
-            _logging = new LoggingUtility(taskID, Level.Debug, 30);
-            bntActive.BackColor = Color.Silver;
-            bntActive.Enabled = false;
-            button2.Enabled = true;
-            button2.BackColor = Color.Red;
+            string a = null;
+            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+            this.Invoke(new Action(() =>
+            {
+                bntActive.BackColor = Color.Silver;
+                bntActive.Enabled = false;
+                button2.Enabled = true;
+                button2.BackColor = Color.Red;
+            }));
+                
             try
             {
-                
+
                 IPEndPoint clientPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text));
-                IPEndPoint serverPoint = new IPEndPoint(IPAddress.Parse("127.0.1"), 8700);
+                IPEndPoint serverPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), int.Parse(lblPort.Text)+1);
                 TcpClient client = new TcpClient(clientPoint);
                 client.Connect(serverPoint);
                 while (true)
@@ -79,10 +81,14 @@ namespace POPForm.UserControls
                     byte[] data = new byte[100];
                     ns.Read(data, 0, data.Length);
                     string response = Encoding.Default.GetString(data, 0, data.Length);
-                    string[] temp =response.Split(',');
-                    lblSuccess.Text = temp[0];
-                    lblFail.Text = temp[1];
-                    lblProgram.Text = temp[2];
+                    string[] temp = response.Split(',');
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        lblSuccess.Text = temp[0];
+                        lblFail.Text = temp[1];
+                        lblProgram.Text = temp[2];
+                    }));
+                    
                     Log.WriteInfo($"성공:{temp[0]} 실패:{temp[1]} 진행률:{temp[2]}%");
 
                     if (Convert.ToInt32(temp[2]) == 100)
@@ -99,54 +105,58 @@ namespace POPForm.UserControls
                             Plan_ID = id
                         };
                         Log.WriteInfo($"설비 종료");
-                        WorkRegistEventArgs args = new WorkRegistEventArgs();
-                        args.Data = vo;
-                        MachinRegist(this, args);
-                        lblFail.Text = lblSuccess.Text = "0";
-                        lblProgram.Text = "00";
-                        bntActive.BackColor = Color.Green;
-                        bntActive.Enabled = true;
-                        button2.BackColor = Color.Silver;
-                        button2.Enabled = false;
-                        success = fail = 0;
+                        
+                        this.BeginInvoke(new Action(() =>
+                        {
+                            WorkRegistEventArgs args = new WorkRegistEventArgs();
+                            args.Data = vo;
+                            MachinRegist(this, args);
+                            lblFail.Text = lblSuccess.Text = "0";
+                            lblProgram.Text = "00";
+                            bntActive.BackColor = Color.Green;
+                            bntActive.Enabled = true;
+                            button2.BackColor = Color.Silver;
+                            button2.Enabled = false;
+                            MachinActive = true;
+
+
+                        }));
+                            
                         break;
                     }
-                   
+
                 }
                 ns.Close();
                 client.Close();
-
-
-
             }
             catch (Exception err)
             {
                 Log.WriteError("DB접속 실패:" + err.Message);
             }
-
         }
 
-        public void RandomNumber()
+        private void bntActive_Click(object sender, EventArgs e)
         {
-            Random rand = new Random();
-            int Produce = rand.Next(0, 100);
-            if (Produce < 95)
+            if (MachinActive)
             {
-                success += 1;
+                ServerPlay.Start();
+                BntClick.Start();
+                MachinActive = false;
             }
             else
             {
-                fail += 1;
+                BntClick.Resume();
             }
-            
-            lblFail.Text = fail.ToString();
-            lblSuccess.Text = success.ToString();
-            
         }
-        
+        private void serverplay()
+        {
+            Form1 frm = new Form1(lblPort.Text);
+
+        }
 
         private void Machin_Load(object sender, EventArgs e)
         {
+            Thread BntClick = new Thread(bntClick);
             bntActive.BackColor = Color.Green;
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
@@ -156,7 +166,7 @@ namespace POPForm.UserControls
         
         private void button11_Click(object sender, EventArgs e)
         {
-            PopUpLog frm = new PopUpLog(IP, Port);
+            PopUpLog frm = new PopUpLog(IP, Port, Facility);
             frm.Show();
         }
 
@@ -164,7 +174,7 @@ namespace POPForm.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ServerPlay.Suspend();
+            BntClick.Suspend();
             button2.BackColor = Color.Silver;
             bntActive.Enabled = true;
             button2.Enabled = false;

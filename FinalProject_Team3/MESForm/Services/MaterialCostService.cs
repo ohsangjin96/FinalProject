@@ -30,6 +30,17 @@ namespace MESForm.Services
             MaterialCostDAC dac = new MaterialCostDAC();
             return dac.RegisterMC(vo);
         }
-        
+
+        public bool UpdateMC(MaterialCostVO vo)
+        {
+            MaterialCostDAC dac = new MaterialCostDAC();
+            return dac.UpdateMC(vo);
+        }
+
+        public bool DeleteMC(int pk, string itemCode, int BoforeCost)
+        {
+            MaterialCostDAC dac = new MaterialCostDAC();
+            return dac.DeleteMC(pk, itemCode, BoforeCost);
+        }
     }
 }

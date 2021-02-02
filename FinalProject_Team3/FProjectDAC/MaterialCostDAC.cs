@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FProjectDAC
 {
-   public class MaterialCostDAC : ConnectionAccess, IDisposable
+    public class MaterialCostDAC : ConnectionAccess, IDisposable
     {
         string strConn;
         SqlConnection conn;
@@ -25,10 +25,10 @@ namespace FProjectDAC
         {
             conn.Close();
         }
-       
-        public List<MaterialCostVO> GetMCInfo(string  day)
+
+        public List<MaterialCostVO> GetMCInfo(string day)
         {
-            using (SqlCommand cmd= new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"select MC_Code, m.COM_Code, c.Com_Name,m.ITEM_Code,i.ITEM_Name,i.ITEM_Unit_Qty,i.ITEM_Unit,
@@ -46,7 +46,7 @@ namespace FProjectDAC
         }
         public List<string> GetItemCode(string order)
         {
-            using (SqlCommand cmd =new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"select ITEM_Code 
@@ -54,7 +54,7 @@ namespace FProjectDAC
                                    where i.ITEM_Order_Company=@ITEM_Order_Company";
 
                 cmd.Parameters.AddWithValue("@ITEM_Order_Company", order);
-                
+
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<string> list = new List<string>();
@@ -68,7 +68,7 @@ namespace FProjectDAC
 
         public bool RegisterMC(MaterialCostVO vo)
         {
-            if (!IsCodeValied(vo.ITEM_Code,vo.MC_BeforeCost))
+            if (!IsCodeValied(vo.ITEM_Code, vo.MC_BeforeCost))
             {
                 throw new Exception("이미 등록된 품목입니다.");
             }
@@ -106,10 +106,10 @@ namespace FProjectDAC
 
         }
 
-        
 
 
-        public bool IsCodeValied(string item,int Bcost)
+
+        public bool IsCodeValied(string item, int Bcost)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -126,6 +126,51 @@ namespace FProjectDAC
                     return true;
                 else
                     return false;
+            }
+        }
+        public bool UpdateMC(MaterialCostVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"SP_UpdateSC";
+
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@MC_Code", vo.MC_Code);
+                cmd.Parameters.AddWithValue("@MC_IngCost", vo.MC_IngCost);
+                cmd.Parameters.AddWithValue("@MC_BeforeCost",vo.MC_BeforeCost);
+                cmd.Parameters.AddWithValue("@MC_StartDate", vo.MC_StartDate);
+                cmd.Parameters.AddWithValue("@MC_Last_Modifier", vo.MC_Last_Modifier);
+                cmd.Parameters.AddWithValue("@MC_Last_Modifier_Time", vo.MC_Last_Modifier_Time);
+                cmd.Parameters.AddWithValue("@MC_USE", vo.MC_USE);
+                cmd.Parameters.AddWithValue("@MC_Remark", vo.MC_Remark);
+                cmd.Parameters.AddWithValue("@COM_Code", vo.COM_Code);
+                cmd.Parameters.AddWithValue("@ITEM_Code",vo.ITEM_Code);
+
+
+
+                int iRowAffect = cmd.ExecuteNonQuery();
+
+                return iRowAffect > 0;
+            }
+        }
+
+        public bool DeleteMC(int pk, string  itemCode,int  BoforeCost)
+        {
+            using (SqlCommand cmd= new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "SP_DeleteMC";
+
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@MC_Code", pk);
+                cmd.Parameters.AddWithValue("@item_code", itemCode);
+                cmd.Parameters.AddWithValue("@MC_BeforeCost", BoforeCost);
+
+                int iRowAffect = cmd.ExecuteNonQuery();
+
+                return iRowAffect > 0;
             }
         }
     }
