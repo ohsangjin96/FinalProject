@@ -503,6 +503,8 @@ namespace MESForm
             {
                 e.Cancel = true;
                 this.Hide();
+                HideSubMenu();
+                MdiFormClose();
                 LogMenu();
             }
             else
