@@ -83,7 +83,7 @@ namespace MESForm
                 {
                     form.Activate();
                     custTab.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
-                    return true;
+                    return true; 
                 }
             }
             return false;
@@ -375,11 +375,14 @@ namespace MESForm
         }
         private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
         {
-            OpenCreateForm<frmShiftInfo1>();
+            FrmShift frm = new FrmShift();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
         private void btnShiftSchedule_Click(object sender, EventArgs e)//shift스케줄관리
         {
-            OpenCreateForm<frmShiftSchedule1>();
+          
         }
 
         #region 수주/계획관리

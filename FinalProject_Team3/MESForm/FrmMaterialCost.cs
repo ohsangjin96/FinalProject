@@ -28,9 +28,8 @@ namespace MESForm
        
         private void FrmMaterialCost_Load(object sender, EventArgs e)
         {
-            //this.dtpDate.Format = DateTimePickerFormat.Custom;
-            // this.dtpDate.CustomFormat = " "; //a string with one whitespace
-         
+            this.dtpDate.Format = DateTimePickerFormat.Custom;
+            this.dtpDate.CustomFormat = " ";
             dgvSetting();
             LoadData();
             
@@ -145,6 +144,16 @@ namespace MESForm
         #endregion
 
         private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dtpDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtItemCode_TextChanged(object sender, EventArgs e)
         {
            
         }

@@ -176,11 +176,11 @@
     <Compile Include="FrmSalesCost.Designer.cs">
       <DependentUpon>FrmSalesCost.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShiftInfo1.cs">
+    <Compile Include="FrmShift.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmShiftInfo1.Designer.cs">
-      <DependentUpon>frmShiftInfo1.cs</DependentUpon>
+    <Compile Include="FrmShift.Designer.cs">
+      <DependentUpon>FrmShift.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmCurrentOrder.cs">
       <SubType>Form</SubType>
@@ -410,12 +410,6 @@
     <Compile Include="PopUp\frmShiftInfoPopUp.Designer.cs">
       <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShiftSchedule1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmShiftSchedule1.Designer.cs">
-      <DependentUpon>frmShiftSchedule1.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopUp\frmShiftschedulePopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -574,11 +568,8 @@
     <EmbeddedResource Include="FrmSalesCost.resx">
       <DependentUpon>FrmSalesCost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmShiftInfo1.resx">
-      <DependentUpon>frmShiftInfo1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmShiftSchedule1.resx">
-      <DependentUpon>frmShiftSchedule1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmShift.resx">
+      <DependentUpon>FrmShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmCurrentOrder.resx">
       <DependentUpon>frmCurrentOrder.cs</DependentUpon>
