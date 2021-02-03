@@ -18,25 +18,24 @@ namespace MachinServer
 {
     public partial class Form1 : Form
     {
-        
+        public LoggingUtility Log { get { return _logging; } }
+        LoggingUtility _logging;
         TcpListener server;
         NetworkStream ns;
-        int success = 0, fail = 0, process = 1;
         System.Timers.Timer timer;
         Thread startThread;
         IPEndPoint Serverlocal;
         string name;
+        TcpClient client;
         int port;
-        public Form1(string Port)
+        public Form1(string Name,string Port)
         {   
             InitializeComponent();
+            name = Name;
             port = Convert.ToInt32(Port);
             startThread = new Thread(StartServer);
-            startThread.IsBackground = true;
-            timer = new System.Timers.Timer();
-            timer.Interval = 1000;
-            timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
             startThread.Start();
+            _logging = new LoggingUtility(name, Level.Debug, 30);
         }
         public Form1()
         {
@@ -56,54 +55,32 @@ namespace MachinServer
             {
                 try
                 {
-                    TcpClient client = server.AcceptTcpClient();
-                    ns = client.GetStream();
+                    client = server.AcceptTcpClient();
+                    
 
                     if (NetworkInterface.GetIsNetworkAvailable())
                     {
-                        if (bbflag)
-                        {
-                            timer.Start();
-                            bbflag = false;
-                        }
+                        
 
                     }
                     else
                     {
-                        timer.Stop();
-                        bbflag = true;
-                      
+                       
                     }
-          
+                        
+
                 }
-                catch(Exception err)
+
+                catch (Exception err)
                 {
                     MessageBox.Show(err.Message);
                 }
             }
+         }
             
-        }
+        
 
-        private void timer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            Random rand = new Random();
-            int Produce = rand.Next(0, 100);
-
-            if (Produce < 95)
-            {
-                success += 1;
-            }
-            else
-            {
-                fail += 1;
-            }
-            string msg = $"{success},{fail},{process},";
-            byte[] sendBytes = Encoding.Default.GetBytes(msg); //string => byte[]
-            ns.Write(sendBytes, 0, sendBytes.Length);
-            if (process >= 100) timer.Stop();
-            process++;
-
-        }
+       
 
        
         

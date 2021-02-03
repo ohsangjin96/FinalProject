@@ -17,6 +17,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace POPForm.UserControls
@@ -42,14 +43,22 @@ namespace POPForm.UserControls
         Form1 frm;
         Thread BntClick;
         Thread ServerPlay;
+        TcpClient client;
+        IPEndPoint serverPoint;
+        System.Timers.Timer timer;
         bool MachinActive = true;
-        
+        int success = 0;
+        int fail = 0;
+        int process = 1;
         public bool bExit = false;
         string id;
        
         public Machin()
         {
             InitializeComponent();
+            timer = new System.Timers.Timer();
+            timer.Interval = 500;
+            timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
             BntClick = new Thread(bntClick);
             ServerPlay = new Thread(serverplay);
            
@@ -57,81 +66,74 @@ namespace POPForm.UserControls
         
         
         private void bntClick()
-        {
-            string a = null;
-            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
-            this.Invoke(new Action(() =>
-            {
-                bntActive.BackColor = Color.Silver;
-                bntActive.Enabled = false;
-                button2.Enabled = true;
-                button2.BackColor = Color.Red;
-            }));
-                
+
+        {            
             try
-            {
+          {
+                #region 실수
+                //        IPEndPoint clientPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text));
+                //        serverPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), int.Parse(lblPort.Text)+1);
+                //        client = new TcpClient(clientPoint);
+                //        client.Connect(serverPoint);
+                //        while (true)
+                //        {
+                //            ns = client.GetStream();
+                //            byte[] data = new byte[100];
+                //            ns.Read(data, 0, data.Length);
+                //            string response = Encoding.Default.GetString(data, 0, data.Length);
+                //            string[] temp = response.Split(',');
+                //            this.BeginInvoke(new Action(() =>
+                //            {
+                //                lblSuccess.Text = temp[0];
+                //                lblFail.Text = temp[1];
+                //                lblProgram.Text = temp[2];
+                //            }));
 
-                IPEndPoint clientPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text));
-                IPEndPoint serverPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), int.Parse(lblPort.Text)+1);
-                TcpClient client = new TcpClient(clientPoint);
-                client.Connect(serverPoint);
-                while (true)
-                {
-                    ns = client.GetStream();
-                    byte[] data = new byte[100];
-                    ns.Read(data, 0, data.Length);
-                    string response = Encoding.Default.GetString(data, 0, data.Length);
-                    string[] temp = response.Split(',');
-                    this.BeginInvoke(new Action(() =>
-                    {
-                        lblSuccess.Text = temp[0];
-                        lblFail.Text = temp[1];
-                        lblProgram.Text = temp[2];
-                    }));
-                    
-                    Log.WriteInfo($"성공:{temp[0]} 실패:{temp[1]} 진행률:{temp[2]}%");
+                //            Log.WriteInfo($"성공:{temp[0]} 실패:{temp[1]} 진행률:{temp[2]}%");
 
-                    if (Convert.ToInt32(temp[2]) == 100)
-                    {
-                        WorkRegistVO vo = new WorkRegistVO
-                        {
-                            Item_Code = lblName.Text,
-                            FacilityDetail_Code = this.Tag.ToString(),
-                            WorkRegist_FailQty = int.Parse(lblFail.Text),
-                            WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
-                            // WorkRegist_WorkTime = TotTime,
-                            WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
-                            WorkRegist_State = "제작완료",
-                            Plan_ID = id
-                        };
-                        Log.WriteInfo($"설비 종료");
-                        
-                        this.BeginInvoke(new Action(() =>
-                        {
-                            WorkRegistEventArgs args = new WorkRegistEventArgs();
-                            args.Data = vo;
-                            MachinRegist(this, args);
-                            lblFail.Text = lblSuccess.Text = "0";
-                            lblProgram.Text = "00";
-                            bntActive.BackColor = Color.Green;
-                            bntActive.Enabled = true;
-                            button2.BackColor = Color.Silver;
-                            button2.Enabled = false;
-                            MachinActive = true;
+                //            if (Convert.ToInt32(temp[2]) == 100)
+                //            {
+                //                WorkRegistVO vo = new WorkRegistVO
+                //                {
+                //                    Item_Code = lblName.Text,
+                //                    FacilityDetail_Code = this.Tag.ToString(),
+                //                    WorkRegist_FailQty = int.Parse(lblFail.Text),
+                //                    WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
+                //                    // WorkRegist_WorkTime = TotTime,
+                //                    WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                //                    WorkRegist_State = "제작완료",
+                //                    Plan_ID = id
+                //                };
+                //                Log.WriteInfo($"설비 종료");
+
+                //                this.BeginInvoke(new Action(() =>
+                //                {
+                //                    WorkRegistEventArgs args = new WorkRegistEventArgs();
+                //                    args.Data = vo;
+                //                    MachinRegist(this, args);
+                //                    lblFail.Text = lblSuccess.Text = "0";
+                //                    lblProgram.Text = "00";
+                //                    bntActive.BackColor = Color.Green;
+                //                    bntActive.Enabled = true;
+                //                    button2.BackColor = Color.Silver;
+                //                    button2.Enabled = false;
+                //                    MachinActive = true;
 
 
-                        }));
-                            
-                        break;
-                    }
+                //                }));
 
-                }
-                ns.Close();
-                client.Close();
-            }
+                //                break;
+                //            }
+
+                //        }
+                //        ns.Close();
+                //        client.Close();
+                #endregion
+                timer.Start();
+          }
             catch (Exception err)
             {
-                Log.WriteError("DB접속 실패:" + err.Message);
+               Log.WriteError("DB접속 실패:" + err.Message);
             }
         }
 
@@ -139,19 +141,55 @@ namespace POPForm.UserControls
         {
             if (MachinActive)
             {
+                
+                bntActive.BackColor = Color.Silver;
+                bntActive.Enabled = false;
+                button2.Enabled = true;
+                button2.BackColor = Color.Red;
                 ServerPlay.Start();
                 BntClick.Start();
                 MachinActive = false;
             }
             else
             {
-                BntClick.Resume();
+                bntActive.BackColor = Color.Silver;
+                bntActive.Enabled = false;
+                button2.Enabled = true;
+                button2.BackColor = Color.Red;
+                timer.Start();
             }
+        }
+        private void timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+
+            Random rand = new Random();
+            int Produce = rand.Next(0, 100);
+
+            if (Produce < 95)
+            {
+                success += 1;
+            }
+            else
+            {
+                fail += 1;
+            }
+            process++;
+            lblSuccess.Text = success.ToString();
+            lblFail.Text = fail.ToString();
+            lblProgram.Text = process.ToString();
+
+            string msg = $"{success},{fail},{process},";
+            byte[] sendBytes = Encoding.Default.GetBytes(msg); //string => byte[]
+            ns = client.GetStream();
+            ns.Write(sendBytes, 0, sendBytes.Length);
+            if (process >= 100) timer.Stop();
+           
+
+
         }
         private void serverplay()
         {
-            Form1 frm = new Form1(lblPort.Text);
-
+            Form1 frm = new Form1(lblFacility.Text,lblPort.Text);
         }
 
         private void Machin_Load(object sender, EventArgs e)
@@ -174,12 +212,13 @@ namespace POPForm.UserControls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BntClick.Suspend();
+            timer.Stop();
             button2.BackColor = Color.Silver;
             bntActive.Enabled = true;
             button2.Enabled = false;
             bntActive.BackColor = Color.Green;
            
+   
         }
     }
 
