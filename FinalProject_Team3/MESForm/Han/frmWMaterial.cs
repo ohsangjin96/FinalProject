@@ -47,8 +47,8 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고창고", "af");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고량", "ag");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "단가", "ah");
-            CommonUtil.AddGridTextColumn(dgvWarehouse, "Market", "ai");
-            CommonUtil.AddGridTextColumn(dgvWarehouse, "환종", "aj");
+            //CommonUtil.AddGridTextColumn(dgvWarehouse, "Market", "ai");
+            //CommonUtil.AddGridTextColumn(dgvWarehouse, "환종", "aj");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "수정자", "ak");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "al");
         }
