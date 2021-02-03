@@ -4,21 +4,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmWMaterial : Form
+    public partial class frmWMaterial : MESForm.BaseForms.frmBaseLists
     {
         public frmWMaterial()
         {
             InitializeComponent();
         }
 
-        private void DGVSetting()
+        private void DgvSetting()
         {
             CommonUtil.SetInitGridView(dgvWaitingWarehouse);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "업체", "Warehouse_Company");
@@ -47,15 +45,13 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고창고", "af");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고량", "ag");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "단가", "ah");
-            CommonUtil.AddGridTextColumn(dgvWarehouse, "Market", "ai");
-            CommonUtil.AddGridTextColumn(dgvWarehouse, "환종", "aj");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "수정자", "ak");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "al");
         }
 
-        private void frmWMaterial_Load(object sender, EventArgs e)
+        private void frmWMaterial2_Load(object sender, EventArgs e)
         {
-            DGVSetting();
+            DgvSetting();
         }
     }
 }
