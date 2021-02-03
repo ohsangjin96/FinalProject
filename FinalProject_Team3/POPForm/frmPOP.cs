@@ -94,7 +94,20 @@ namespace POPForm
 
         private void Machin_MachinRegist(object sender, WorkRegistEventArgs e)
         {
-            curlist.Add(e.Data);
+            bool bbflag = true;
+            foreach(var temp in curlist)
+            {
+                if (temp.Item_Code == e.Data.Item_Code)
+                {
+                    temp.WorkRegist_NomalQty += temp.WorkRegist_NomalQty + e.Data.WorkRegist_NomalQty;
+                    temp.WorkRegist_FailQty += temp.WorkRegist_FailQty + e.Data.WorkRegist_FailQty;
+                    bbflag = false;
+                }
+            }
+            if (bbflag)
+            {
+                curlist.Add(e.Data);
+            }
             dgvList2.DataSource = null;
             dgvList2.DataSource = curlist;
             btnRegist.BackColor = SystemColors.Highlight;
