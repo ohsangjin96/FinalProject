@@ -20,12 +20,13 @@ namespace POPForm
         Machin machin;
         delegate void EventHandler(object sender, EventArgs arg);
         public List<WorkRegistVO> curlist { get; set; }
-
+        
         List<POPVO> list = new List<POPVO>();
         public frmPOP()
         {
             InitializeComponent();
             curlist = new List<WorkRegistVO>();
+           
         }
         
         private void button10_Click(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace POPForm
                 {
                     machin = new Machin();
                 
-                    machin.Name = $"machin{i}";
+                    
                     machin.Location = new Point(0, 4 + i * 105);
                     machin.Facility = list[i].Facility_Name;
                     machin.Name = list[i].Item_Code;
@@ -81,6 +82,7 @@ namespace POPForm
                     machin.Tag = list[i].Facility_Code;
                     machin.IP = list[i].Facility_IP;
                     machin.Port = list[i].Facility_Port;
+                    machin.BOM_Level = list[i].BOM_Level.ToString();
                     machin.MachinRegist += Machin_MachinRegist;
                     splitContainer2.Panel2.Controls.Add(machin);
                 }
@@ -105,8 +107,16 @@ namespace POPForm
             {
                 if (temp is Machin machins)
                 {
-                    machins.bntActive.PerformClick();
+                    for(int i =0; i<list.Count; i++)
+                    {
+                        if (machins.Name == list[i].Item_Code)
+                        {
+                            if(machins.BOM_Level=="2")
+                            machins.bntActive.PerformClick();
+                        }
                     
+                    }
+
                 }
             }
         }
@@ -133,6 +143,7 @@ namespace POPForm
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            
         }
     }
 }
