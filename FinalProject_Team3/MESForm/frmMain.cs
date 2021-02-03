@@ -367,8 +367,11 @@ namespace MESForm
 
         private void button7_Click(object sender, EventArgs e)//영업단가
         {
+            FrmSalesCost frm = new FrmSalesCost();
+            frm.DeptName = DeptInfo.User_Name;
 
-            OpenCreateForm<frmSaleCost1>();
+            MdiOpenCheck(frm);
+
         }
         private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
         {

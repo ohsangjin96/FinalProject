@@ -13,17 +13,18 @@ using static MESForm.frmMain;
 
 namespace MESForm
 {
-    public partial class popUpMaterialCost : MESForm.BaseForms.frmPopup
+
+    public partial class PopUpSalesCost : MESForm.BaseForms.frmPopup
     {
-        bool bRegOrUp;
-        List<string> list;
+        bool bRegOrUp;// 등록인지 수정인지
+        List<string> list; // 고객사의 대한 품목들 리스트
+        public SalesCostVO SCvo { get; set; }
         public string Uname { get; set; }
-        public MaterialCostVO MCvo { get; set; }
-        public popUpMaterialCost()
+        public PopUpSalesCost()
         {
             InitializeComponent();
         }
-        public popUpMaterialCost(OpenMode mode)
+        public PopUpSalesCost(OpenMode mode)
         {
             InitializeComponent();
             if (mode == OpenMode.Register)
@@ -35,13 +36,7 @@ namespace MESForm
                 bRegOrUp = false;
             }
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void popUpMaterialCost_Load(object sender, EventArgs e)
+        private void PopUpSalesCost_Load(object sender, EventArgs e)
         {
             ComBind();
             txtModifier.Text = Uname;
@@ -54,18 +49,17 @@ namespace MESForm
 
         private void ControlInfo()
         {
-            txtBeginCost.Text = Convert.ToString(MCvo.MC_IngCost);
-            cboCompany.Text = MCvo.COM_Code;
-            cboItem.Text = MCvo.ITEM_Code;
-            cboUse.Text = MCvo.MC_USE;
-            txtRemark.Text = MCvo.MC_Remark;
+            txtBeginCost.Text = Convert.ToString(SCvo.SC_IngCost);
+            cboCompany.Text = SCvo.COM_Code;
+            cboItem.Text = SCvo.ITEM_Code;
+            cboUse.Text = SCvo.SC_Use;
+            txtRemark.Text = SCvo.SC_Remark;
             cboItem.Enabled = false;
             cboCompany.Enabled = false;
         }
 
         private void ComBind()
         {
-
             CompanyService service = new CompanyService();
             List<CompanyVO> CompanyList = service.GetCompanyList();
             service.Dispose();
@@ -74,9 +68,8 @@ namespace MESForm
             List<CommonCodeVO> CommonList = service1.GetCommonCodeList();
             service1.Dispose();
 
-
             var company = (from item in CompanyList
-                           where item.Com_Type == "협력업체"
+                           where item.Com_Type == "고객사"
                            select item).ToList();
             company.Insert(0, new CompanyVO { Com_Code = "선택" });
 
@@ -87,13 +80,14 @@ namespace MESForm
 
             ComboBoxBinding.BindingComboBox(cboCompany, company, "Com_Name", "Com_Code");
             ComboBoxBinding.BindingComboBox(cboUse, use, "Common_Name", "Common_Name");
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             //유효성 검사
             if (cboCompany.Text.Trim() == "선택" || cboItem.Text.Trim() == string.Empty || txtIngCost.Text == string.Empty ||
-                cboUse.Text == "선택")
+               cboUse.Text == "선택")
             {
                 MessageBox.Show(Properties.Resources.ErrNotEntered);
                 return;
@@ -105,47 +99,47 @@ namespace MESForm
             }
             try
             {
-                MaterialCostVO vo = new MaterialCostVO();
+                SalesCostVO vo = new SalesCostVO();
                 vo.COM_Code = cboCompany.Text;
                 vo.ITEM_Code = cboItem.Text;
-                vo.MC_IngCost = Convert.ToInt32(txtIngCost.Text);
-                vo.MC_BeforeCost = Convert.ToInt32(txtBeginCost.Text);
-                vo.MC_StartDate = Convert.ToDateTime(dtpStart.Value);
-                vo.MC_EndDate = Convert.ToDateTime(dtpEnd.Value);
-                vo.MC_Last_Modifier = txtModifier.Text;
-                vo.MC_Last_Modifier_Time = Convert.ToDateTime(txtModifyDate.Text);
-                vo.MC_USE = cboUse.Text;
-                vo.MC_Remark = txtRemark.Text;
+                vo.SC_IngCost = Convert.ToInt32(txtIngCost.Text);
+                vo.SC_BeforeCost = Convert.ToInt32(txtBeginCost.Text);
+                vo.SC_StartDate = Convert.ToDateTime(dtpStart.Value);
+                vo.SC_EndDate = Convert.ToDateTime(dtpEnd.Value);
+                vo.SC_Last_Modifier = txtModifier.Text;
+                vo.SC_Last_Modifier_Time = Convert.ToDateTime(txtModifyDate.Text);
+                vo.SC_Use = cboUse.Text;
+                vo.SC_Remark = txtRemark.Text;
                 if (!bRegOrUp)
                 {
-                    vo.MC_Code = MCvo.MC_Code;
+                    vo.SC_Code = SCvo.SC_Code;
                 }
-               
 
-                MaterialCostService service = new MaterialCostService();
+                SalesCostService service = new SalesCostService();
                 if (bRegOrUp)//등록
                 {
-                    service.RegisterMC(vo);
+                    service.RegisterSC(vo);
                 }
                 else //수정
                 {
-                    service.UpdateMC(vo);
+                   service.UpdateSC(vo);
                 }
                 DialogResult = DialogResult.OK;
+
             }
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-                
             }
-            //VO 전달
-            
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void cboCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (cboCompany.SelectedIndex == 0)
             {
                 cboItem.Text = "선택";
@@ -161,23 +155,12 @@ namespace MESForm
 
             string order = cboCompany.SelectedValue.ToString();
 
-            MaterialCostService service = new MaterialCostService();
+            SalesCostService service = new SalesCostService();
             list = service.GetItemCode(order);
             service.Dispose();
             for (int i = 0; i < list.Count; i++)
             {
                 cboItem.Items.Add(list[i].ToString());
-            }
-
-            //리스트가 초기화가 됬으면 좋겠다. 물어보기
-
-        }
-
-        private void txtIngCost_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
-            {
-                e.Handled = true;
             }
         }
     }
