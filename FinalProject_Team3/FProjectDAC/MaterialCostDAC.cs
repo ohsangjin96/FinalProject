@@ -133,7 +133,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"SP_UpdateSC";
+                cmd.CommandText = @"SP_UpdateMC";
 
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@MC_Code", vo.MC_Code);
