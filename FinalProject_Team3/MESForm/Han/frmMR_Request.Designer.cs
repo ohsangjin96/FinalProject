@@ -80,8 +80,8 @@ namespace MESForm.Han
             this.pnlSelect.Controls.SetChildIndex(this.txtItem, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtWorkOrderID, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.dtpDate, 0);
             // 
             // btnInquiry
@@ -323,10 +323,10 @@ namespace MESForm.Han
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(126, 22);
+            this.dtpDate.Location = new System.Drawing.Point(126, 20);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(281, 51);
-            this.dtpDate.TabIndex = 42;
+            this.dtpDate.Size = new System.Drawing.Size(281, 33);
+            this.dtpDate.TabIndex = 25;
             // 
             // frmMR_Request
             // 
