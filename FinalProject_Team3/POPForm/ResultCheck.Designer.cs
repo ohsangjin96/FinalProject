@@ -31,6 +31,9 @@ namespace POPForm
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultCheck));
             this.pnlSelect = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFactoryGrade = new System.Windows.Forms.Label();
@@ -48,11 +51,7 @@ namespace POPForm
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
@@ -79,6 +78,31 @@ namespace POPForm
             this.pnlSelect.Size = new System.Drawing.Size(1226, 121);
             this.pnlSelect.TabIndex = 16;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(141, 72);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(191, 22);
+            this.comboBox1.TabIndex = 45;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(45, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 14);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "설비";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(493, 15);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(281, 28);
+            this.dateTimePicker1.TabIndex = 42;
+            // 
             // cboUseYN
             // 
             this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -104,9 +128,9 @@ namespace POPForm
             this.lblFactoryGrade.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFactoryGrade.Location = new System.Drawing.Point(398, 24);
             this.lblFactoryGrade.Name = "lblFactoryGrade";
-            this.lblFactoryGrade.Size = new System.Drawing.Size(55, 14);
+            this.lblFactoryGrade.Size = new System.Drawing.Size(31, 14);
             this.lblFactoryGrade.TabIndex = 38;
-            this.lblFactoryGrade.Text = "품목유형";
+            this.lblFactoryGrade.Text = "날짜";
             // 
             // txtItemName
             // 
@@ -271,7 +295,6 @@ namespace POPForm
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.Highlight;
             this.pnlTop.Controls.Add(this.button1);
-            this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Controls.Add(this.label1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -287,27 +310,13 @@ namespace POPForm
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1170, 0);
+            this.button1.Location = new System.Drawing.Point(1210, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 108;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Location = new System.Drawing.Point(1210, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 40);
-            this.btnClose.TabIndex = 107;
-            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -319,31 +328,6 @@ namespace POPForm
             this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "실적확인";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(493, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 28);
-            this.dateTimePicker1.TabIndex = 42;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(45, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 14);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "설비";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(141, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 22);
-            this.comboBox1.TabIndex = 45;
             // 
             // ResultCheck
             // 
@@ -380,7 +364,6 @@ namespace POPForm
         protected System.Windows.Forms.Panel pnlItem;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Panel pnlTop;
-        protected System.Windows.Forms.Button btnClose;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button button1;
         private custDataGridViewControl custDataGridViewControl1;

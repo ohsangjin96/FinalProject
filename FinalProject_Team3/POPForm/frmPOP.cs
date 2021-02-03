@@ -82,6 +82,7 @@ namespace POPForm
                     machin.Tag = list[i].Facility_Code;
                     machin.IP = list[i].Facility_IP;
                     machin.Port = list[i].Facility_Port;
+                    machin.BOM_Level = list[i].BOM_Level.ToString();
                     machin.MachinRegist += Machin_MachinRegist;
                     splitContainer2.Panel2.Controls.Add(machin);
                 }
@@ -110,6 +111,7 @@ namespace POPForm
                     {
                         if (machins.Name == list[i].Item_Code)
                         {
+                            if(machins.BOM_Level=="2")
                             machins.bntActive.PerformClick();
                         }
                     

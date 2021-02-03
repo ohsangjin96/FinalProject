@@ -87,15 +87,15 @@ namespace MachinServer
                 fail += 1;
             }
             process++;
-            string msg = $"{taskID},{success},{fail},{process},";
+            string msg = $"{success},{fail},{process},";
             byte[] buff = Encoding.Default.GetBytes(msg);
             stream.Write(buff, 0, buff.Length);
+            stream.Flush();
             Console.WriteLine(msg);
             if (process >= 100)
             {
                 timer1.Stop();
                 success = fail = process = 0;
-              
             }
         }
 

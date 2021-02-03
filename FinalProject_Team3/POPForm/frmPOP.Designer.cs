@@ -45,6 +45,7 @@ namespace POPForm
             this.button10 = new System.Windows.Forms.Button();
             this.btnRegist = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -59,7 +60,6 @@ namespace POPForm
             this.lblItemName1 = new System.Windows.Forms.Label();
             this.lblAmount1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -266,6 +266,22 @@ namespace POPForm
             this.panel2.Size = new System.Drawing.Size(1465, 68);
             this.panel2.TabIndex = 44;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1389, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 68);
+            this.button1.TabIndex = 109;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label41
             // 
             this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -453,22 +469,6 @@ namespace POPForm
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "다운로드-_1_.jpg");
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1389, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 68);
-            this.button1.TabIndex = 109;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmPOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -481,7 +481,6 @@ namespace POPForm
             this.Name = "frmPOP";
             this.Text = "POP프로그램";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
             this.Load += new System.EventHandler(this.frmPOP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).EndInit();

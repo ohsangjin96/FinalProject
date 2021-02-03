@@ -2,6 +2,7 @@
 using FProjectVO;
 using log4net.Core;
 using MachinServer;
+using MESForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,18 +34,22 @@ namespace POPForm.UserControls
         public string Program { get { return lblProgram.Text; } set { lblProgram.Text = value; } }
         public string IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
+        public string BOM_Level { get { return lblLevel.Text; } set { lblLevel.Text = value; } }
         public LoggingUtility Log { get { return _logging; } }
 
         #endregion
         public delegate void MachinRegistWorkRegist(object sender, WorkRegistEventArgs e);
         public event MachinRegistWorkRegist MachinRegist;
         LoggingUtility _logging;
-        NetworkStream ns; 
+        NetworkStream ns;
+        bool bflag = true;
         TcpClient client;
         IPEndPoint serverPoint;
         IPEndPoint clientPoint;
         Thread buttonClick;
+        TcpControl tcpcontrol;
         int Process_ID;
+        bool ServerStop = true;
         bool MachinActive = true;
         public bool bExit = false;
         string id;
@@ -53,44 +58,31 @@ namespace POPForm.UserControls
         {
             InitializeComponent();
             buttonClick = new Thread(ButtonClick);
-            i = 0;
+           
+           
         }
 
         private void ButtonClick()
         {
-            if (i == 1)
-            {
-                ns = client.GetStream();
-                byte[] data = new byte[100];
-                ns.Read(data, 0, data.Length);
-                string response = Encoding.Default.GetString(data, 0, data.Length);
-                string[] temp = response.Split(',');
-                _logging = new LoggingUtility(temp[0], Level.Debug, 30);
-                Log.WriteInfo($"성공:{temp[1]} 실패:{temp[2]} 진행률:{temp[3]}");
-                this.BeginInvoke(new Action(() =>
-                {
-                    lblSuccess.Text = temp[1];
-                    lblFail.Text = temp[2];
-                    lblProgram.Text = temp[3];
-                }));
-            }
-
+            
             while (true)
             {
-
-                ns = client.GetStream();
-                byte[] data = new byte[100];
+                ns = tcpcontrol.dataStream;
+                byte[] data = new byte[20];
                 ns.Read(data, 0, data.Length);
                 string response = Encoding.Default.GetString(data, 0, data.Length);
                 string[] temp = response.Split(',');
-                Log.WriteInfo($"성공:{temp[1]} 실패:{temp[2]} 진행률:{temp[3]}%");
+                Log.WriteInfo($"성공:{temp[0]} 실패:{temp[1]} 진행률:{temp[2]}%");
+                //LogService service = new LogService();
+                //service.insertLog();
                 this.BeginInvoke(new Action(() =>
                 {
-                    lblSuccess.Text = temp[1];
-                    lblFail.Text = temp[2];
-                    lblProgram.Text = temp[3];
+                    lblSuccess.Text = temp[0];
+                    lblFail.Text = temp[1];
+                    lblProgram.Text = temp[2];
                 }));
-                if (Convert.ToInt32(temp[3]) >= 100)
+                
+                if (Convert.ToInt32(temp[2]) >= 100)
                 {
 
                     WorkRegistVO vo = new WorkRegistVO
@@ -115,7 +107,7 @@ namespace POPForm.UserControls
                         bntActive.Enabled = true;
                         button2.BackColor = Color.Silver;
                         button2.Enabled = false;
-                        MachinActive = true;
+
                     }));
                     foreach (Process process in Process.GetProcesses())
                     {
@@ -124,30 +116,31 @@ namespace POPForm.UserControls
                             process.Kill();
                         }
                     }
+                    
                     break;
                 }
+                
+
             }
+
+
 
         }
         private void bntActive_Click(object sender, EventArgs e)
         {
-            buttonClick = new Thread(ButtonClick);
             string server = @"C:\Users\azan0\source\repos\ohsangjin96\FinalProject\FinalProject_Team3\MachinServer\bin\Debug\MachinServer.exe";
-            Process pro = Process.Start(server, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text) + 1}");
-            int Process_ID = pro.Id;
+            Process pro = Process.Start(server, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text) + 1 }");
+            Process_ID = pro.Id;
 
-            if (client == null)
-            {
-                clientPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text));
-                serverPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text) + 1);
-                client = new TcpClient(clientPoint);
-               
-            }
-            if (i == 0)
-            {
-                client.Connect(serverPoint);
-                i++;
-            }
+            tcpcontrol = new TcpControl(lblIP.Text, int.Parse(lblPort.Text)+1);
+            //serverPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text)+1);
+    
+            
+   
+          // tcpcontrol.client.Connect(serverPoint);
+
+            buttonClick = new Thread(ButtonClick);
+          
             
            bntActive.BackColor = Color.Silver;
            bntActive.Enabled = false;
@@ -169,7 +162,8 @@ namespace POPForm.UserControls
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
-           
+            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+
         }
         
         private void button11_Click(object sender, EventArgs e)
@@ -187,6 +181,28 @@ namespace POPForm.UserControls
             button2.Enabled = false;
             bntActive.BackColor = Color.Green;
 
+            WorkRegistVO vo = new WorkRegistVO
+            {
+                Item_Code = lblName.Text,
+                FacilityDetail_Code = this.Tag.ToString(),
+                WorkRegist_FailQty = int.Parse(lblFail.Text),
+                WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
+                // WorkRegist_WorkTime = TotTime,
+                WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                WorkRegist_State = "제작완료",
+                Plan_ID = id
+            };
+
+            WorkRegistEventArgs args = new WorkRegistEventArgs();
+            args.Data = vo;
+            MachinRegist(this, args);
+            lblFail.Text = lblSuccess.Text = "0";
+            lblProgram.Text = "00";
+            bntActive.BackColor = Color.Green;
+            bntActive.Enabled = true;
+            button2.BackColor = Color.Silver;
+            button2.Enabled = false;
+
             foreach (Process process in Process.GetProcesses())
             {
                 if (process.Id.Equals(Process_ID))
@@ -195,6 +211,9 @@ namespace POPForm.UserControls
                 }
             }
 
+            lblSuccess.Text = lblFail.Text = lblProgram.Text = "0";
+            bflag = false;
+            i = 1;
 
         }
     }
