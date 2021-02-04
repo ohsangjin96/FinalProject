@@ -164,23 +164,23 @@
     <Compile Include="FrmMaterialCost.Designer.cs">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMaterialCost1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMaterialCost1.Designer.cs">
-      <DependentUpon>frmMaterialCost1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProductPlan.Designer.cs">
       <DependentUpon>frmProductPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShiftInfo1.cs">
+    <Compile Include="FrmSalesCost.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmShiftInfo1.Designer.cs">
-      <DependentUpon>frmShiftInfo1.cs</DependentUpon>
+    <Compile Include="FrmSalesCost.Designer.cs">
+      <DependentUpon>FrmSalesCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShift.Designer.cs">
+      <DependentUpon>FrmShift.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmCurrentOrder.cs">
       <SubType>Form</SubType>
@@ -308,6 +308,18 @@
     <Compile Include="Han\popupStockHistory.Designer.cs">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp\PopUpSalesCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PopUpSalesCost.Designer.cs">
+      <DependentUpon>PopUpSalesCost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\popUpMaterialCost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\popUpMaterialCost.Designer.cs">
+      <DependentUpon>popUpMaterialCost.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopUp\PopUpBOM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,18 +343,6 @@
     </Compile>
     <Compile Include="PopUp\PopUpItem.Designer.cs">
       <DependentUpon>PopUpItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\PopUpMaterialCost.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\PopUpMaterialCost.Designer.cs">
-      <DependentUpon>PopUpMaterialCost.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\PopUpSaleCost.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\PopUpSaleCost.Designer.cs">
-      <DependentUpon>PopUpSaleCost.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\PopUpShiftInfo.cs">
       <SubType>Form</SubType>
@@ -404,29 +404,11 @@
     <Compile Include="PopUp\frmShiftInfoPopUp.Designer.cs">
       <DependentUpon>frmShiftInfoPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShiftSchedule1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmShiftSchedule1.Designer.cs">
-      <DependentUpon>frmShiftSchedule1.cs</DependentUpon>
-    </Compile>
     <Compile Include="PopUp\frmShiftschedulePopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PopUp\frmShiftschedulePopUp.Designer.cs">
       <DependentUpon>frmShiftschedulePopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PopUp\frmMaterialCostPopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PopUp\frmMaterialCostPopUp.Designer.cs">
-      <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSaleCost1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSaleCost1.Designer.cs">
-      <DependentUpon>frmSaleCost1.cs</DependentUpon>
     </Compile>
     <Compile Include="PopUp\frmSaleCostPopUp.cs">
       <SubType>Form</SubType>
@@ -493,11 +475,14 @@
     <Compile Include="Services\FactoryService.cs" />
     <Compile Include="Services\ItemService.cs" />
     <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\MaterialCostService.cs" />
     <Compile Include="Services\MtpService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\POPService.cs" />
     <Compile Include="Services\POService.cs" />
     <Compile Include="Services\Product_PlanService.cs" />
+    <Compile Include="Services\SalesCostService.cs" />
     <Compile Include="Services\ReOrderService.cs" />
     <Compile Include="Services\SampleService.cs" />
     <Compile Include="Services\SignUpService.cs" />
@@ -574,17 +559,14 @@
     <EmbeddedResource Include="FrmMaterialCost.resx">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMaterialCost1.resx">
-      <DependentUpon>frmMaterialCost1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmProductPlan.resx">
       <DependentUpon>frmProductPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmShiftInfo1.resx">
-      <DependentUpon>frmShiftInfo1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSalesCost.resx">
+      <DependentUpon>FrmSalesCost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmShiftSchedule1.resx">
-      <DependentUpon>frmShiftSchedule1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmShift.resx">
+      <DependentUpon>FrmShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmCurrentOrder.resx">
       <DependentUpon>frmCurrentOrder.cs</DependentUpon>
@@ -649,6 +631,9 @@
     <EmbeddedResource Include="Han\popupStockHistory.resx">
       <DependentUpon>popupStockHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\popUpMaterialCost.resx">
+      <DependentUpon>popUpMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopUp\PopUpBOM.resx">
       <DependentUpon>PopUpBOM.cs</DependentUpon>
     </EmbeddedResource>
@@ -661,11 +646,8 @@
     <EmbeddedResource Include="PopUp\PopUpItem.resx">
       <DependentUpon>PopUpItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\PopUpMaterialCost.resx">
-      <DependentUpon>PopUpMaterialCost.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\PopUpSaleCost.resx">
-      <DependentUpon>PopUpSaleCost.cs</DependentUpon>
+    <EmbeddedResource Include="PopUp\PopUpSalesCost.resx">
+      <DependentUpon>PopUpSalesCost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\PopUpShiftInfo.resx">
       <DependentUpon>PopUpShiftInfo.cs</DependentUpon>
@@ -693,12 +675,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\PopUpFactory.resx">
       <DependentUpon>PopUpFactory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PopUp\frmMaterialCostPopUp.resx">
-      <DependentUpon>frmMaterialCostPopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSaleCost1.resx">
-      <DependentUpon>frmSaleCost1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp\frmSaleCostPopUp.resx">
       <DependentUpon>frmSaleCostPopUp.cs</DependentUpon>
@@ -789,9 +765,6 @@
     <None Include="Resources\close_red.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mainLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menubar_16x16.png" />
   </ItemGroup>
   <ItemGroup>
@@ -808,6 +781,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Action_Edit_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

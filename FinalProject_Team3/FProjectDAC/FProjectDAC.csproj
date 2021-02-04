@@ -56,14 +56,18 @@
     <Compile Include="FactoryDAC.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="ItemDAC.cs" />
+    <Compile Include="LogDAC.cs" />
     <Compile Include="LoginDAC.cs" />
+    <Compile Include="MaterialCostDAC.cs" />
     <Compile Include="MtpDAC.cs" />
     <Compile Include="OrderDAC.cs" />
     <Compile Include="PODAC.cs" />
     <Compile Include="POPDAC.cs" />
     <Compile Include="Product_PlanDAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesCostDAC.cs" />
     <Compile Include="ReOrderDAC.cs" />
+    
     <Compile Include="SampleDAC.cs" />
     <Compile Include="SignUpDAC.cs" />
   </ItemGroup>

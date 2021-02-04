@@ -1,4 +1,5 @@
 ﻿using FProjectVO;
+using MachinServer;
 using MESForm.Services;
 using POPForm.UserControls;
 using System;
@@ -19,10 +20,13 @@ namespace POPForm
         Machin machin;
         delegate void EventHandler(object sender, EventArgs arg);
         public List<WorkRegistVO> curlist { get; set; }
+        
+        List<POPVO> list = new List<POPVO>();
         public frmPOP()
         {
             InitializeComponent();
             curlist = new List<WorkRegistVO>();
+           
         }
         
         private void button10_Click(object sender, EventArgs e)
@@ -30,17 +34,6 @@ namespace POPForm
             ResultCheck frm = new ResultCheck();
             frm.Show();
         }
-
-        private void frmPOP_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void frmPOP_Load(object sender, EventArgs e)
         {
             CommonUtil.SetInitGridView(dgvList);
@@ -49,23 +42,22 @@ namespace POPForm
             CommonUtil.AddGridTextColumn(dgvList, "아이템 이름", "Item_Name", 160);
             CommonUtil.AddGridTextColumn(dgvList, "수량", "Order_OrderAmount", 100);
             CommonUtil.AddGridTextColumn(dgvList, "날짜", "Order_FixedDate", 200);
-            
+
             CommonUtil.SetInitGridView(dgvList2);
-            CommonUtil.AddGridTextColumn(dgvList2, "PlanID","Plan_ID", 150);
-            CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜","WorkRegist_Start", 165);
-            CommonUtil.AddGridTextColumn(dgvList2, "아이템코드","Item_Code", 150);
-            CommonUtil.AddGridTextColumn(dgvList2, "상태","WorkRegist_State", 100);
-            CommonUtil.AddGridTextColumn(dgvList2, "걸린시간","WorkRegist_WorkTime", 120);
-            CommonUtil.AddGridTextColumn(dgvList2, "양품","WorkRegist_NomalQty", 100);
-            CommonUtil.AddGridTextColumn(dgvList2, "불량","WorkRegist_FailQty", 100);
-            CommonUtil.AddGridTextColumn(dgvList2, "설비코드","FacilityDetail_Code", 120);
+            CommonUtil.AddGridTextColumn(dgvList2, "PlanID", "Plan_ID", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜", "WorkRegist_Start", 165);
+            CommonUtil.AddGridTextColumn(dgvList2, "아이템코드", "Item_Code", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "상태", "WorkRegist_State", 100);
+            CommonUtil.AddGridTextColumn(dgvList2, "걸린시간", "WorkRegist_WorkTime", 120);
+            CommonUtil.AddGridTextColumn(dgvList2, "양품", "WorkRegist_NomalQty", 100);
+            CommonUtil.AddGridTextColumn(dgvList2, "불량", "WorkRegist_FailQty", 100);
+            CommonUtil.AddGridTextColumn(dgvList2, "설비코드", "FacilityDetail_Code", 120);
             this.dgvList.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            dgvList.DataSource= service.GetOrderList();
+            dgvList.DataSource = service.GetOrderList();
         }
-
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -77,12 +69,12 @@ namespace POPForm
                 lblFixedDate.Text = date.ToString("yyyy-MM-dd");
                 string Item_Code =dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
                 POPService service = new POPService();
-                List<POPVO> list = service.GetPOPList(Item_Code); 
+                list = service.GetPOPList(Item_Code); 
                 for (int i=0; i<list.Count; i++)
                 {
                     machin = new Machin();
                 
-                    machin.Name = $"machin{i}";
+                    
                     machin.Location = new Point(0, 4 + i * 105);
                     machin.Facility = list[i].Facility_Name;
                     machin.Name = list[i].Item_Code;
@@ -90,6 +82,7 @@ namespace POPForm
                     machin.Tag = list[i].Facility_Code;
                     machin.IP = list[i].Facility_IP;
                     machin.Port = list[i].Facility_Port;
+                    machin.BOM_Level = list[i].BOM_Level.ToString();
                     machin.MachinRegist += Machin_MachinRegist;
                     splitContainer2.Panel2.Controls.Add(machin);
                 }
@@ -101,7 +94,20 @@ namespace POPForm
 
         private void Machin_MachinRegist(object sender, WorkRegistEventArgs e)
         {
-            curlist.Add(e.Data);
+            bool bbflag = true;
+            foreach(var temp in curlist)
+            {
+                if (temp.Item_Code == e.Data.Item_Code)
+                {
+                    temp.WorkRegist_NomalQty += temp.WorkRegist_NomalQty + e.Data.WorkRegist_NomalQty;
+                    temp.WorkRegist_FailQty += temp.WorkRegist_FailQty + e.Data.WorkRegist_FailQty;
+                    bbflag = false;
+                }
+            }
+            if (bbflag)
+            {
+                curlist.Add(e.Data);
+            }
             dgvList2.DataSource = null;
             dgvList2.DataSource = curlist;
             btnRegist.BackColor = SystemColors.Highlight;
@@ -114,8 +120,16 @@ namespace POPForm
             {
                 if (temp is Machin machins)
                 {
-                    machins.bntActive.PerformClick();
+                    for(int i =0; i<list.Count; i++)
+                    {
+                        if (machins.Name == list[i].Item_Code)
+                        {
+                            if(machins.BOM_Level=="2")
+                            machins.bntActive.PerformClick();
+                        }
                     
+                    }
+
                 }
             }
         }
@@ -141,7 +155,8 @@ namespace POPForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+            
         }
     }
 }

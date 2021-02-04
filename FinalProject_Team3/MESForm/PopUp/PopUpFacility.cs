@@ -37,13 +37,14 @@ namespace MESForm.PopUp
             {
                 bRegOrUp = false;
                 txtFacilitiesCode.Enabled = false;
+                txtFacilitiesName.Enabled = false;
             }
         }
         
         /// <summary>
         /// 수정하기 위해 기존의 데이터를 불러오는 메서드
         /// </summary>
-        private void GetFactoryInfo()
+        private void GetFacilitiesInfo()
         {
             txtFacilitiesCode.Text = facilityVO.Facilities_Code;
             txtFacilitiesName.Text = facilityVO.Facilities_Name;
@@ -75,7 +76,7 @@ namespace MESForm.PopUp
             }
             else
             {
-                GetFactoryInfo();
+                GetFacilitiesInfo();
             }
         }
 
@@ -107,18 +108,18 @@ namespace MESForm.PopUp
                     Facilities_Name = txtFacilitiesName.Text,
                     Facilities_Use = cboFacilitiesUse.Text,
                     Facilities_Amender = txtAmender.Text,
-                    Facilities_ModdifyDate = Convert.ToDateTime(txtModdifyDate.Text),
+                    Facilities_ModdifyDate = txtModdifyDate.Text,
                     Facilities_Explain = txtExplain.Text
                 };
 
                 FacilityService service = new FacilityService();
                 if (bRegOrUp) //등록
                 {
-                    service.InsertFacility(vo);
+                    service.InsertFacilities(vo);
                 }
                 else //수정
                 {
-                    service.UpdateFacility(vo);
+                    service.UpdateFacilities(vo);
                 }
                 service.Dispose();
 
@@ -126,9 +127,6 @@ namespace MESForm.PopUp
             }
             catch(Exception err)
             {
-                MessageBox.Show(err.Message);
-
-                MessageBox.Show(err.Message);
                 if (err.Message == "이미 등록된 설비군코드입니다.")
                 {
                     txtFacilitiesCode.Focus();
@@ -139,6 +137,8 @@ namespace MESForm.PopUp
                     txtFacilitiesName.Focus();
                     txtFacilitiesName.SelectAll();
                 }
+
+                MessageBox.Show(err.Message);
             }
         }
 

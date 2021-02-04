@@ -31,6 +31,7 @@ namespace POPForm.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblLevel = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
             this.lblIP = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@ namespace POPForm.UserControls
             this.lblSuccess = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblFacility = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer_Conn = new System.Windows.Forms.Timer(this.components);
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@ namespace POPForm.UserControls
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.lblLevel);
             this.panel4.Controls.Add(this.lblPort);
             this.panel4.Controls.Add(this.lblIP);
             this.panel4.Controls.Add(this.lblName);
@@ -77,6 +78,15 @@ namespace POPForm.UserControls
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1047, 105);
             this.panel4.TabIndex = 58;
+            // 
+            // lblLevel
+            // 
+            this.lblLevel.AutoSize = true;
+            this.lblLevel.Location = new System.Drawing.Point(554, 81);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(38, 12);
+            this.lblLevel.TabIndex = 60;
+            this.lblLevel.Text = "label2";
             // 
             // lblPort
             // 
@@ -261,10 +271,6 @@ namespace POPForm.UserControls
             this.lblFacility.TabIndex = 0;
             this.lblFacility.Text = "설비 이름";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Machin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -296,9 +302,9 @@ namespace POPForm.UserControls
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button bntActive;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblPort;
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Timer timer_Conn;
+        private System.Windows.Forms.Label lblLevel;
     }
 }

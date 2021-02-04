@@ -147,14 +147,18 @@
   </data>
   <data name="ErrAlreadyReg" xml:space="preserve">
     <value>이미 등록된 @@입니다.</value>
-    <comment>ex) 이미 등록된 아이디입니다.</comment>
+    <comment>ex) 이미 등록된 '아이디'입니다.</comment>
   </data>
   <data name="ErrDeleteFailed" xml:space="preserve">
     <value>삭제를 하지 못했습니다.</value>
   </data>
+  <data name="ErrEmptyComboBox" xml:space="preserve">
+    <value>@@ 선택해주세요.</value>
+    <comment>ex) '소진창고를' 입력해주세요..</comment>
+  </data>
   <data name="ErrEmptyText" xml:space="preserve">
     <value>@@ 입력해주세요.</value>
-    <comment>ex) 이름을 입력해주세요.</comment>
+    <comment>ex) '이름을' 입력해주세요.</comment>
   </data>
   <data name="ErrNotData" xml:space="preserve">
     <value>해당하는 @@ 찾지 못했습니다.</value>
@@ -165,6 +169,10 @@
   </data>
   <data name="ErrNotSelectData" xml:space="preserve">
     <value>조회할 데이터가 없습니다.</value>
+  </data>
+  <data name="ErrPattern" xml:space="preserve">
+    <value>올바른 @@ 형식이 아닙니다. 다시 확인해주세요.</value>
+    <comment>ex) 올바른 '전화번호' 형식이 아닙니다. 다시 확인해주세요.</comment>
   </data>
   <data name="ErrSelecDgvData" xml:space="preserve">
     <value>검색할 데이터를 선택해주세요.</value>

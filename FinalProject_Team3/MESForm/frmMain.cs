@@ -83,7 +83,7 @@ namespace MESForm
                 {
                     form.Activate();
                     custTab.SelectedTab = (TabPage)this.ActiveMdiChild.Tag;
-                    return true;
+                    return true; 
                 }
             }
             return false;
@@ -323,7 +323,10 @@ namespace MESForm
 
         private void btnCompany_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmCompany>();
+            frmCompany frm = new frmCompany();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void btnBOR_Click(object sender, EventArgs e)
@@ -356,21 +359,30 @@ namespace MESForm
 
         private void button8_Click(object sender, EventArgs e)//자재단가
         {
-            OpenCreateForm<frmMaterialCost1>();
+            FrmMaterialCost frm = new FrmMaterialCost();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void button7_Click(object sender, EventArgs e)//영업단가
         {
+            FrmSalesCost frm = new FrmSalesCost();
+            frm.DeptName = DeptInfo.User_Name;
 
-            OpenCreateForm<frmSaleCost1>();
+            MdiOpenCheck(frm);
+
         }
         private void btnShiftInfo_Click(object sender, EventArgs e)//shift기준정보
         {
-            OpenCreateForm<frmShiftInfo1>();
+            FrmShift frm = new FrmShift();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
         private void btnShiftSchedule_Click(object sender, EventArgs e)//shift스케줄관리
         {
-            OpenCreateForm<frmShiftSchedule1>();
+          
         }
 
         #region 수주/계획관리
@@ -494,6 +506,8 @@ namespace MESForm
             {
                 e.Cancel = true;
                 this.Hide();
+                HideSubMenu();
+                MdiFormClose();
                 LogMenu();
             }
             else

@@ -1,20 +1,25 @@
 ﻿using FProjectDAC;
 using FProjectVO;
 using log4net.Core;
+using MachinServer;
+using MESForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace POPForm.UserControls
@@ -29,177 +34,187 @@ namespace POPForm.UserControls
         public string Program { get { return lblProgram.Text; } set { lblProgram.Text = value; } }
         public string IP { get { return lblIP.Text; } set { lblIP.Text = value; } }
         public string Port { get { return lblPort.Text; } set { lblPort.Text = value; } }
+        public string BOM_Level { get { return lblLevel.Text; } set { lblLevel.Text = value; } }
         public LoggingUtility Log { get { return _logging; } }
+
         #endregion
         public delegate void MachinRegistWorkRegist(object sender, WorkRegistEventArgs e);
         public event MachinRegistWorkRegist MachinRegist;
-
-        TcpControl client;
-        NetworkStream recvData;
-        SqlConnection conn;
         LoggingUtility _logging;
-        LogPart m_thread;
-
-        string hostIP;
-        int hostPort;
-        string taskID;
-        string strConn;
-        bool logVisible = false;
-        string clientName;
-        string clientIP;
-
+        NetworkStream ns;
+        bool bflag = true;
+        TcpClient client;
+        IPEndPoint serverPoint;
+        IPEndPoint clientPoint;
+        Thread buttonClick;
+        TcpControl tcpcontrol;
+        int Process_ID;
+        bool ServerStop = true;
+        bool MachinActive = true;
         public bool bExit = false;
-
-        int timer_CONNECT = 1000;
-        int timer_KEEP_ALIVE = 10000;
-        int timer_READ_PLC = 1000;
-        int fail, success = 0;
-        int range = 1;
         string id;
-        
+        int i;
         public Machin()
         {
             InitializeComponent();
-            taskID = lblFacility.Text;
-
-            this.Text =taskID;
-
-            clientName = Dns.GetHostName();
-
-            IPAddress[] locals = Dns.GetHostAddresses(clientName);
-            if (locals.Length > 0)
-            {
-                clientIP = locals[1].ToString();
-            }
-
-                ConnectionAccess con = new ConnectionAccess();
-                strConn = con.ConnectionString;
-    
-        }
-        
-        private void bntActive_Click(object sender, EventArgs e)
-        {
-            bntActive.BackColor = Color.Silver;
-            bntActive.Enabled = false;
-            button2.Enabled = true;
-            timer1.Start();
-            button2.BackColor = Color.Red;
-            timer1.Interval = int.Parse(ConfigurationManager.AppSettings["timer"]);
+            buttonClick = new Thread(ButtonClick);
+           
            
         }
 
-         public void RandomNumber()
+        private void ButtonClick()
         {
-            Random rand = new Random();
-            int Produce = rand.Next(0, 100);
-            if (Produce < 95)
-            {
-                success += 1;
-            }
-            else
-            {
-                fail += 1;
-            }
             
-            lblFail.Text = fail.ToString();
-            lblSuccess.Text = success.ToString();
-            
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try
+            while (true)
             {
-                int a = int.Parse(ConfigurationManager.AppSettings["timer"]);
-                int TotTime = a * range / 1000;
-                int per = int.Parse(lblProgram.Text);
-                per = per + 1;
-                RandomNumber();
-                lblProgram.Text = per.ToString();
-
-                if ( per >= 100)
+                ns = tcpcontrol.dataStream;
+                byte[] data = new byte[20];
+                ns.Read(data, 0, data.Length);
+                string response = Encoding.Default.GetString(data, 0, data.Length);
+                string[] temp = response.Split(',');
+                Log.WriteInfo($"성공:{temp[0]} 실패:{temp[1]} 진행률:{temp[2]}%");
+                //LogService service = new LogService();
+                //service.insertLog();
+                this.BeginInvoke(new Action(() =>
                 {
-                    timer1.Stop();
+                    lblSuccess.Text = temp[0];
+                    lblFail.Text = temp[1];
+                    lblProgram.Text = temp[2];
+                }));
+                
+                if (Convert.ToInt32(temp[2]) >= 100)
+                {
 
-                    if (MachinRegist != null)
+                    WorkRegistVO vo = new WorkRegistVO
                     {
-                        WorkRegistVO vo = new WorkRegistVO
-                        {
-                            Item_Code = lblName.Text,
-                            FacilityDetail_Code = this.Tag.ToString(),
-                            WorkRegist_FailQty = int.Parse(lblFail.Text),
-                            WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
-                            WorkRegist_WorkTime = TotTime,
-                            WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
-                            WorkRegist_State = "제작완료",
-                            Plan_ID = id
-                        };
-
+                        Item_Code = lblName.Text,
+                        FacilityDetail_Code = this.Tag.ToString(),
+                        WorkRegist_FailQty = int.Parse(lblFail.Text),
+                        WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
+                        // WorkRegist_WorkTime = TotTime,
+                        WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                        WorkRegist_State = "제작완료",
+                        Plan_ID = id
+                    };
+                    this.BeginInvoke(new Action(() =>
+                    {
                         WorkRegistEventArgs args = new WorkRegistEventArgs();
                         args.Data = vo;
                         MachinRegist(this, args);
+                        lblFail.Text = lblSuccess.Text = "0";
+                        lblProgram.Text = "00";
+                        bntActive.BackColor = Color.Green;
+                        bntActive.Enabled = true;
+                        button2.BackColor = Color.Silver;
+                        button2.Enabled = false;
+
+                    }));
+                    foreach (Process process in Process.GetProcesses())
+                    {
+                        if (process.Id.Equals(Process_ID))
+                        {
+                            process.Kill();
+                        }
                     }
-                    lblFail.Text=lblSuccess.Text= "0";
-                    lblProgram.Text = "00";
-                    bntActive.BackColor = Color.Green;
-                    bntActive.Enabled = true;
-                    button2.BackColor = Color.Silver;
-                    button2.Enabled = false;
-                    success = fail = range = 0;
                     
+                    break;
                 }
-                range += 1;
-               
+                
+
             }
-            catch(Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+
+
+
+        }
+        private void bntActive_Click(object sender, EventArgs e)
+        {
+            string server = @"C:\Users\azan0\source\repos\ohsangjin96\FinalProject\FinalProject_Team3\MachinServer\bin\Debug\MachinServer.exe";
+            Process pro = Process.Start(server, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text) + 1 }");
+            Process_ID = pro.Id;
+
+            tcpcontrol = new TcpControl(lblIP.Text, int.Parse(lblPort.Text)+1);
+            //serverPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text)+1);
+    
+            
+   
+          // tcpcontrol.client.Connect(serverPoint);
+
+            buttonClick = new Thread(ButtonClick);
+          
+            
+           bntActive.BackColor = Color.Silver;
+           bntActive.Enabled = false;
+           button2.Enabled = true;
+           button2.BackColor = Color.Red;
+           MachinActive = false;
+           buttonClick.Start();
+           
+          
+            
+
+
         }
 
         private void Machin_Load(object sender, EventArgs e)
         {
+          
             bntActive.BackColor = Color.Green;
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
             button2.Enabled = false;
             _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
-            hostIP = lblIP.Text;
-            hostPort = Convert.ToInt32(lblPort.Text);
-            try
-            {
-                Log.WriteInfo("DB서버 연결");
 
-                
-                EncrytLibrary.AES aes = new EncrytLibrary.AES();
-                strConn = aes.AESDecrypt256(strConn);
-                conn = new SqlConnection(strConn);
-                conn.Open();
-
-                m_thread = new LogPart(conn, _logging,lblFacility.Text,hostIP, hostPort, timer_CONNECT, timer_KEEP_ALIVE, timer_READ_PLC, clientName, clientIP);
-               
-                m_thread.ThreadStart();
-
-                timer_Conn.Start();
-            }
-            catch (Exception err)
-            {
-                Log.WriteError("DB접속 실패:" + err.Message);
-            }
         }
         
         private void button11_Click(object sender, EventArgs e)
         {
-            PopUpLog frm = new PopUpLog(IP, Port);
+            PopUpLog frm = new PopUpLog(IP, Port, Facility);
             frm.Show();
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
+          
             button2.BackColor = Color.Silver;
             bntActive.Enabled = true;
             button2.Enabled = false;
             bntActive.BackColor = Color.Green;
+
+            WorkRegistVO vo = new WorkRegistVO
+            {
+                Item_Code = lblName.Text,
+                FacilityDetail_Code = this.Tag.ToString(),
+                WorkRegist_FailQty = int.Parse(lblFail.Text),
+                WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
+                // WorkRegist_WorkTime = TotTime,
+                WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                WorkRegist_State = "제작완료",
+                Plan_ID = id
+            };
+
+            WorkRegistEventArgs args = new WorkRegistEventArgs();
+            args.Data = vo;
+            MachinRegist(this, args);
+            lblFail.Text = lblSuccess.Text = "0";
+            lblProgram.Text = "00";
+            bntActive.BackColor = Color.Green;
+            bntActive.Enabled = true;
+            button2.BackColor = Color.Silver;
+            button2.Enabled = false;
+
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.Id.Equals(Process_ID))
+                {
+                    process.Kill();
+                }
+            }
+
+            lblSuccess.Text = lblFail.Text = lblProgram.Text = "0";
+            bflag = false;
+            i = 1;
+
         }
     }
 

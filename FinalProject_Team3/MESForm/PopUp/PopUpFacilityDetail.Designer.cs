@@ -377,7 +377,6 @@ namespace MESForm.PopUp
             // 
             // txtIP
             // 
-            this.txtIP.Enabled = false;
             this.txtIP.Location = new System.Drawing.Point(352, 125);
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(140, 22);
@@ -386,6 +385,7 @@ namespace MESForm.PopUp
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label16.Location = new System.Drawing.Point(267, 128);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(18, 14);
@@ -394,7 +394,6 @@ namespace MESForm.PopUp
             // 
             // txtPort
             // 
-            this.txtPort.Enabled = false;
             this.txtPort.Location = new System.Drawing.Point(596, 125);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(140, 22);
@@ -403,6 +402,7 @@ namespace MESForm.PopUp
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label17.Location = new System.Drawing.Point(511, 128);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 14);

@@ -34,8 +34,8 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"select Factory_ID, Factory_Grade, Factory_Type, Factory_Code, Factory_Name,
                                            Factory_HighRank, Factory_Explain, Factory_Credit, Factory_Order, Factory_Demand, 
-                                           Factory_Process, Factory_Material, Com_Code, Com_Name, Factory_Use, Factory_Amender,
-                                           Factory_ModdifyDate
+                                           Factory_Process, Factory_Material, Com_Code, Com_Name, Factory_Use,
+                                           Factory_Amender, Convert(CHAR(19), Factory_ModdifyDate, 120) Factory_ModdifyDate
                                            from Factory";
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -47,19 +47,27 @@ namespace FProjectDAC
 
         public List<FactoryVO> GetFactoryGradeList(string codeOrName, string grade)
         {
-            using (SqlCommand cmd = new SqlCommand())
+            try
             {
-                cmd.Connection = conn;
-                cmd.CommandText = @"SP_GetFactoryInfo";
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SP_GetFactoryInfo";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@CodeOrName", (string.IsNullOrEmpty(codeOrName)) ? DBNull.Value : (object)codeOrName);
-                cmd.Parameters.AddWithValue("@FactoryGrade", (grade == "전체") ? DBNull.Value : (object)grade);
+                    cmd.Parameters.AddWithValue("@CodeOrName", (string.IsNullOrEmpty(codeOrName)) ? DBNull.Value : (object)codeOrName);
+                    cmd.Parameters.AddWithValue("@FactoryGrade", (grade == "전체") ? DBNull.Value : (object)grade);
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(reader);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<FactoryVO> list = Helper.DataReaderMapToList<FactoryVO>(reader);
 
-                return list;
+                    return list;
+                }
+            }
+            catch(Exception err)
+            {
+                string msg = err.Message;
+                return null;
             }
         }
 
@@ -126,17 +134,16 @@ namespace FProjectDAC
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = @"update Factory set Factory_Grade = @Factory_Grade, Factory_Type = @Factory_Type,
-                                               Factory_Name = @Factory_Name, Factory_HighRank = @Factory_HighRank,
-                                               Factory_Explain = @Factory_Explain, Factory_Credit = @Factory_Credit,
-                                               Factory_Order = @Factory_Order, Factory_Demand = @Factory_Demand,
-                                               Factory_Process = @Factory_Process, Factory_Material = @Factory_Material,
-                                               Com_Code = @Com_Code, Com_Name = @Com_Name, Factory_Use = @Factory_Use
+                                               Factory_HighRank = @Factory_HighRank, Factory_Explain = @Factory_Explain, 
+                                               Factory_Credit = @Factory_Credit, Factory_Order = @Factory_Order,
+                                               Factory_Demand = @Factory_Demand, Factory_Process = @Factory_Process,
+                                               Factory_Material = @Factory_Material, Com_Code = @Com_Code,
+                                               Com_Name = @Com_Name, Factory_Use = @Factory_Use
                                         where Factory_Code = @Factory_Code";
 
                     cmd.Parameters.AddWithValue("@Factory_Grade", vo.Factory_Grade);
                     cmd.Parameters.AddWithValue("@Factory_Type", vo.Factory_Type);
                     cmd.Parameters.AddWithValue("@Factory_Code", vo.Factory_Code);
-                    cmd.Parameters.AddWithValue("@Factory_Name", vo.Factory_Name);
                     cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "없음") ? DBNull.Value : (object)vo.Factory_HighRank);
                     cmd.Parameters.AddWithValue("@Factory_Explain", (vo.Factory_Explain == "") ? DBNull.Value : (object)vo.Factory_Explain);
                     cmd.Parameters.AddWithValue("@Factory_Credit", (vo.Factory_Credit == "") ? DBNull.Value : (object)vo.Factory_Credit);
