@@ -34,7 +34,7 @@
             this.lblFactoryGrade = new System.Windows.Forms.Label();
             this.lblFactoryCode = new System.Windows.Forms.Label();
             this.cboShift = new System.Windows.Forms.ComboBox();
-            this.cboFacName = new System.Windows.Forms.ComboBox();
+            this.cboFacCode = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
@@ -50,7 +50,7 @@
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.cboFacName);
+            this.pnlSelect.Controls.Add(this.cboFacCode);
             this.pnlSelect.Controls.Add(this.cboShift);
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
@@ -59,7 +59,7 @@
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryGrade, 0);
             this.pnlSelect.Controls.SetChildIndex(this.cboShift, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboFacName, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboFacCode, 0);
             // 
             // btnInquiry
             // 
@@ -117,13 +117,13 @@
             this.cboShift.Size = new System.Drawing.Size(191, 22);
             this.cboShift.TabIndex = 37;
             // 
-            // cboFacName
+            // cboFacCode
             // 
-            this.cboFacName.FormattingEnabled = true;
-            this.cboFacName.Location = new System.Drawing.Point(575, 25);
-            this.cboFacName.Name = "cboFacName";
-            this.cboFacName.Size = new System.Drawing.Size(191, 22);
-            this.cboFacName.TabIndex = 38;
+            this.cboFacCode.FormattingEnabled = true;
+            this.cboFacCode.Location = new System.Drawing.Point(575, 25);
+            this.cboFacCode.Name = "cboFacCode";
+            this.cboFacCode.Size = new System.Drawing.Size(191, 22);
+            this.cboFacCode.TabIndex = 38;
             // 
             // btnUpdate
             // 
@@ -250,6 +250,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1250, 700);
             this.Name = "FrmShift";
+            this.Text = "Shift기준정보";
             this.Load += new System.EventHandler(this.FrmShift_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
@@ -266,7 +267,7 @@
         private System.Windows.Forms.ComboBox cboShift;
         private System.Windows.Forms.Label lblFactoryGrade;
         private System.Windows.Forms.Label lblFactoryCode;
-        private System.Windows.Forms.ComboBox cboFacName;
+        private System.Windows.Forms.ComboBox cboFacCode;
         private CustomControls.custButtonControl btnUpdate;
         private CustomControls.custButtonControl btnReg;
         private CustomControls.custButtonControl btnDelete;

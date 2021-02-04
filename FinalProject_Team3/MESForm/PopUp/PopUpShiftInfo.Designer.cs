@@ -313,6 +313,7 @@
             this.cboFacCode.Name = "cboFacCode";
             this.cboFacCode.Size = new System.Drawing.Size(168, 22);
             this.cboFacCode.TabIndex = 203;
+            this.cboFacCode.SelectedIndexChanged += new System.EventHandler(this.cboFacCode_SelectedIndexChanged);
             // 
             // txtFacName
             // 
@@ -359,6 +360,8 @@
             this.ClientSize = new System.Drawing.Size(604, 472);
             this.Name = "PopUpShiftInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Shift";
+            this.Load += new System.EventHandler(this.PopUpShiftInfo_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
