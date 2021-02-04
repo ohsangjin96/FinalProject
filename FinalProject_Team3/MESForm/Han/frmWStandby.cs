@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmWStandby : Form
+    public partial class frmWStandby : BaseForms.frmBaseLists
     {
         public frmWStandby()
         {
@@ -35,19 +35,19 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주유형", "l");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "비고", "m");
 
-            CommonUtil.SetInitGridView(custDataGridViewControl2);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주번호", "aa");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "품목", "ab");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "규격", "ac");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "단위", "ad");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주수량", "ae");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "잔여수량", "af");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "입고수량", "ag");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주유형", "ah");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "입고일자", "ai");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주일자", "aj");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "검사유무", "ak");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "비고", "al");
+            //CommonUtil.SetInitGridView(custDataGridViewControl2);
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주번호", "aa");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "품목", "ab");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "규격", "ac");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "단위", "ad");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주수량", "ae");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "잔여수량", "af");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "입고수량", "ag");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주유형", "ah");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "입고일자", "ai");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주일자", "aj");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "검사유무", "ak");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "비고", "al");
         }
 
         private void frmWStandby_Load(object sender, EventArgs e)
