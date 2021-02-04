@@ -164,6 +164,12 @@
     <Compile Include="FrmMaterialCost.Designer.cs">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerformance.Designer.cs">
+      <DependentUpon>frmPerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaterialCost.resx">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerformance.resx">
+      <DependentUpon>frmPerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductPlan.resx">
       <DependentUpon>frmProductPlan.cs</DependentUpon>

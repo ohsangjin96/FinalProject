@@ -33,7 +33,7 @@ namespace POPForm
             this.pnlSelect = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
+           
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFactoryGrade = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@ namespace POPForm
             this.pnlSelect.BackColor = System.Drawing.Color.White;
             this.pnlSelect.Controls.Add(this.comboBox1);
             this.pnlSelect.Controls.Add(this.label3);
-            this.pnlSelect.Controls.Add(this.dateTimePicker1);
+            
             this.pnlSelect.Controls.Add(this.cboUseYN);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
@@ -98,10 +98,7 @@ namespace POPForm
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(493, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 28);
-            this.dateTimePicker1.TabIndex = 42;
+           
             // 
             // cboUseYN
             // 
@@ -377,7 +374,7 @@ namespace POPForm
         private System.Windows.Forms.Label lblFactoryGrade;
         private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.Label lblFactoryCode;
-        private MESForm.UserControls.DateTimePicker dateTimePicker1;
+        
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
     }

@@ -53,11 +53,11 @@ namespace FProjectDAC
                                     WorkRegist_WorkTime, WorkRegist_NomalQty, WorkRegist_FailQty, FacilityDetail_Code)
                                     values(@WorkOrder_ID, @WorkRegist_Start, @Item_Code, @Item_Name, @WorkRegist_State, 
                                     @WorkRegist_WorkTime, @WorkRegist_NomalQty, @WorkRegist_FailQty, @FacilityDetail_Code)";
-                                    
+
 
                 for (int i = 0; i < curlist.Count; i++)
                 {
-                    cmd.Parameters.AddWithValue("@WorkOrder_ID", curlist[i].Plan_ID);
+                    cmd.Parameters.AddWithValue("@WorkOrder_ID", curlist[i].WorkOrder_ID);
                     cmd.Parameters.AddWithValue("@WorkRegist_Start", curlist[i].WorkRegist_Start);
                     cmd.Parameters.AddWithValue("@Item_Code", curlist[i].Item_Code);
                     cmd.Parameters.AddWithValue("@Item_Name", curlist[i].Item_Code);
@@ -74,5 +74,21 @@ namespace FProjectDAC
 
             }
         }
+            public List<WorkRegistVO> GetWorkRegist()
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"select WorkRegistID, WorkOrder_ID,Com_Code,WorkRegist.Item_Code, FacilityDetail_Code, WorkRegist_NomalQty,
+                                        WorkRegist_FailQty, WorkRegist_WorkTime, WorkRegist_Start, WorkRegist_State
+                                        from WorkRegist,PO where WorkOrder_ID = PO.Plan_ID";
+        
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    List<WorkRegistVO> list = Helper.DataReaderMapToList<WorkRegistVO>(reader);
+
+                    return list;
+                }
+            }
+        }
     }
-}
+

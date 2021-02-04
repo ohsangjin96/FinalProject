@@ -22,11 +22,11 @@ namespace POPForm
         public List<WorkRegistVO> curlist { get; set; }
         
         List<POPVO> list = new List<POPVO>();
+        List<OrderVO> orderlist = new List<OrderVO>();
         public frmPOP()
         {
             InitializeComponent();
-            curlist = new List<WorkRegistVO>();
-           
+            curlist = new List<WorkRegistVO>();         
         }
         
         private void button10_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace POPForm
             CommonUtil.AddGridTextColumn(dgvList, "날짜", "Order_FixedDate", 200);
 
             CommonUtil.SetInitGridView(dgvList2);
-            CommonUtil.AddGridTextColumn(dgvList2, "PlanID", "Plan_ID", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "PlanID", "WorkOrder_ID", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜", "WorkRegist_Start", 165);
             CommonUtil.AddGridTextColumn(dgvList2, "아이템코드", "Item_Code", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "상태", "WorkRegist_State", 100);
@@ -56,7 +56,8 @@ namespace POPForm
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            dgvList.DataSource = service.GetOrderList();
+            orderlist= service.GetOrderList();
+            dgvList.DataSource = orderlist;
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -157,6 +158,16 @@ namespace POPForm
         {
             Application.Exit();
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DateTime Dtpfrom = dtpfrom.Value;
+            DateTime Dtpto = dtpto.Value;
+            var selectlist = (from info in orderlist
+                              where info.Order_FixedDate > Dtpfrom && info.Order_FixedDate < Dtpto
+                              select info).ToList();
+            dgvList.DataSource = selectlist;
         }
     }
 }
