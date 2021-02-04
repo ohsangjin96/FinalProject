@@ -14,5 +14,10 @@ namespace FProjectVO
         public DateTime Mtp_Date { get; set; }
 
 
+
+
+        public string ITEM_Type { get; set; }
+        public string ITEM_Name { get; set; }
+        public string Plan_ID { get; set; }
     }
 }
