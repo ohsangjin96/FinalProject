@@ -1,4 +1,5 @@
-﻿using FProjectVO;
+﻿using FProjectDAC;
+using FProjectVO;
 using MESForm.Services;
 using MESForm.Utils;
 using System;
@@ -16,6 +17,7 @@ namespace MESForm.Han
     public partial class popupD_Plan : BaseForms.frmPopup
     {
         List<POVO> allList;
+        List<POVO> deList;
         public popupD_Plan()
         {
             InitializeComponent();
@@ -49,6 +51,7 @@ namespace MESForm.Han
                              select list.Plan_ID).Distinct().ToList();
             Planid.Insert(0, "전체"); //전체선택시 전체 데이터
             ComboBoxBinding.BindingComboBoxPart(cboPlanID, Planid, "Plan_ID");
+
         }
 
         private void popupD_Plan_Load(object sender, EventArgs e)
@@ -76,6 +79,7 @@ namespace MESForm.Han
                                     select list).Distinct().ToList();
                 custDataGridViewControl1.DataSource = null;
                 custDataGridViewControl1.DataSource = PlanIDList;
+                deList = PlanIDList;
             }
             else
             {
@@ -86,6 +90,34 @@ namespace MESForm.Han
         private void btnSave_Click(object sender, EventArgs e)
         {
             //수요계획생성
+            if(MessageBox.Show("수요계획을 생성하시겠습니까?", "수요계획저장", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                List<DemandVO> updatelist = new List<DemandVO>();
+
+                foreach (POVO i in deList)
+                {
+                    DemandVO newvo = new DemandVO
+                    {
+                        Plan_ID = i.Plan_ID,
+                        Com_Code = i.Com_Code,
+                        Com_Name = i.Com_Name,
+                        Item_Code = i.Item_Code,
+                        Item_Name = i.Item_Name,
+                        Demand_WO = i.Order_WO,
+                        Demand_FixedDate = i.Order_FixedDate,
+                        Demand_OrderAmount = i.Order_OrderAmount
+                    };
+                    updatelist.Add(newvo);
+                }
+
+                DemandService service = new DemandService();
+                foreach (DemandVO i in updatelist)
+                {
+                    service.Update(i);
+                }
+                service.Dispose();
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }

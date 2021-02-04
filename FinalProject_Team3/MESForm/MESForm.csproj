@@ -296,12 +296,6 @@
     <Compile Include="Han\popupPOUpload.Designer.cs">
       <DependentUpon>popupPOUpload.cs</DependentUpon>
     </Compile>
-    <Compile Include="Han\popupP_Plan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Han\popupP_Plan.Designer.cs">
-      <DependentUpon>popupP_Plan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Han\popupSO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,17 +470,20 @@
     <Compile Include="Services\BORService.cs" />
     <Compile Include="Services\CommonCodeService.cs" />
     <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\DemandService.cs" />
     <Compile Include="Services\FacilityService.cs" />
     <Compile Include="Services\FactoryService.cs" />
     <Compile Include="Services\ItemService.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\LogService.cs" />
     <Compile Include="Services\MaterialCostService.cs" />
+    <Compile Include="Services\MtpService.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\POPService.cs" />
     <Compile Include="Services\POService.cs" />
     <Compile Include="Services\Product_PlanService.cs" />
     <Compile Include="Services\SalesCostService.cs" />
+    <Compile Include="Services\ReOrderService.cs" />
     <Compile Include="Services\SampleService.cs" />
     <Compile Include="Services\ShiftService.cs" />
     <Compile Include="Services\SignUpService.cs" />
@@ -628,9 +625,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupPOUpload.resx">
       <DependentUpon>popupPOUpload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Han\popupP_Plan.resx">
-      <DependentUpon>popupP_Plan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupSO.resx">
       <DependentUpon>popupSO.cs</DependentUpon>

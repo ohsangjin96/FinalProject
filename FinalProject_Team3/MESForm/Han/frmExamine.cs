@@ -37,5 +37,14 @@ namespace MESForm.Han
         {
             DGVSetting();
         }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            //string sResult = ExcelExportImport.ExportToDataGridView<-->((List<-->)custDataGridViewControl1.DataSource, string.Empty);
+            //if (sResult.Length > 0)
+            //{
+            //    MessageBox.Show(sResult);
+            //}
+        }
     }
 }

@@ -74,7 +74,6 @@ namespace MESForm.Han
             Company.Insert(0, "");
             ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Type");   //고객사
 
-            //상태???
         }
 
         private void frmPO_Load(object sender, EventArgs e)
@@ -87,18 +86,18 @@ namespace MESForm.Han
         private void btnCreate_Click(object sender, EventArgs e)
         {
             popupD_Plan frm = new popupD_Plan();
-            if (frm.DialogResult == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-
+                MessageBox.Show("수요계획저장이 완료되었습니다");
             }
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
             popupSO frm = new popupSO();
-            if (frm.DialogResult == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                
+                MessageBox.Show("등록이 완료되었습니다");
             }
         }
 
@@ -118,8 +117,7 @@ namespace MESForm.Han
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
-            //조회 버튼 클릭 시 검색조건에 맞게 데이터바인딩
-
+            
         }
 
     }

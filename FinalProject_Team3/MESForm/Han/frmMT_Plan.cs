@@ -1,4 +1,5 @@
-﻿using MESForm.Utils;
+﻿using FProjectVO;
+using MESForm.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,10 +22,10 @@ namespace MESForm.Han
         private void DGVSetting()
         {
             CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "a");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "b");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "c");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "카테고리", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "ITEM_Type");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "ITEM_Name");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "Plan_ID");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "카테고리", "Mtp_Category");
         }
 
         private void frmMT_Plan_Load(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace MESForm.Han
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //string sResult = ExcelExportImport.ExportToDataGridView<MtpVO>((List<MtpVO>)custDataGridViewControl1.DataSource, string.Empty);
+            //string sResult = ExcelExportImport.ExportToDataGridView<===>((List<===>)custDataGridViewControl1.DataSource, string.Empty);
             //if (sResult.Length > 0)
             //{
             //    MessageBox.Show(sResult);

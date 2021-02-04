@@ -25,7 +25,24 @@ namespace FProjectDAC
             conn.Close();
         }
 
+        //public DataSet GetList(string from, string to)
+        //{
+        //    using (SqlCommand cmd = new SqlCommand())
+        //    {
+        //        cmd.Connection = conn;
+        //        cmd.CommandText = @"";
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+        //        cmd.Parameters.AddWithValue("@StartDate", (string.IsNullOrEmpty(from)) ? DBNull.Value : (object)from);
+        //        cmd.Parameters.AddWithValue("@EndDate", (string.IsNullOrEmpty(to)) ? DBNull.Value : (object)to);
+
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        DataSet ds = new DataSet();
+        //        da.Fill(ds, "result");
+
+        //        return ds;
+        //    }
+        //}
 
     }
 }

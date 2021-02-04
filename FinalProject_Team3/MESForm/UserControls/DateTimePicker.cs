@@ -19,7 +19,10 @@ namespace MESForm.UserControls
 
         private void DateTimePicker_Load(object sender, EventArgs e)
         {
-            dtpFrom.Value = DateTime.Now;
+            dtpFrom.Value = dtpTo.Value = DateTime.Now;
         }
+
+        public DateTime DtpFrom { get { return dtpFrom.Value; } set { dtpFrom.Value = value; } }
+        public DateTime DtpTo { get { return dtpTo.Value; } set { dtpTo.Value = value; } }
     }
 }

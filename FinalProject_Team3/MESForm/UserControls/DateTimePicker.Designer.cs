@@ -37,16 +37,16 @@ namespace MESForm.UserControls
             // dtpFrom
             // 
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(4, 4);
+            this.dtpFrom.Location = new System.Drawing.Point(0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(121, 21);
+            this.dtpFrom.Size = new System.Drawing.Size(121, 22);
             this.dtpFrom.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(133, 7);
+            this.label1.Location = new System.Drawing.Point(127, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 17);
             this.label1.TabIndex = 1;
@@ -55,20 +55,21 @@ namespace MESForm.UserControls
             // dtpTo
             // 
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(156, 4);
+            this.dtpTo.Location = new System.Drawing.Point(150, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(121, 21);
+            this.dtpTo.Size = new System.Drawing.Size(121, 22);
             this.dtpTo.TabIndex = 2;
             // 
             // DateTimePicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFrom);
+            this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "DateTimePicker";
-            this.Size = new System.Drawing.Size(281, 28);
+            this.Size = new System.Drawing.Size(272, 22);
             this.Load += new System.EventHandler(this.DateTimePicker_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
