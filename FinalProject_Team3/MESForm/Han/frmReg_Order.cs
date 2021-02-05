@@ -35,7 +35,10 @@ namespace MESForm.Han
         private void btnPopup_Click(object sender, EventArgs e)
         {
             popupOrder frm = new popupOrder();
-            frm.Show();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
