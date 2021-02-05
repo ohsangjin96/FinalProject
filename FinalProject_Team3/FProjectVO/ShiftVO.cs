@@ -12,8 +12,8 @@ namespace FProjectVO
         public string Facility_Code { get; set; } //설비코드
         public string Facility_Name { get; set; }//설비명
         public string Shift_type { get; set; }//시프트타입
-        public int Shift_StartTime { get; set; }//시작일자
-        public int Shift_EndTime { get; set; }//종료일자
+        public string Shift_StartTime { get; set; }//시작일자
+        public string Shift_EndTime { get; set; }//종료일자
         public DateTime Shift_Apply_StartDate { get; set; }//적용시작일자
         public DateTime Shift_Apply_EndDate { get; set; }//적용완료일자
         public int Shift_People { get; set; }//투입인원
