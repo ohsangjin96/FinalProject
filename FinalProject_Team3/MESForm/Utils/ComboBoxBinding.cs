@@ -50,6 +50,7 @@ namespace MESForm.Utils
         public static void ComBind(ComboBox cbo, List<CommonCodeVO> list,string Code, bool blankItem = true, string blankText = "")
         {
             list = (from a in list
+                    orderby a.Common_Name
                     where a.Common_Parent == Code  //Common_Parent의 코드명
                     select a).ToList();
 
@@ -82,7 +83,6 @@ namespace MESForm.Utils
         }
         public static void BindingComboBox<T>(ComboBox cbo, List<T> vo, string valueMember, string displayMember)
         {
-
             cbo.DisplayMember = displayMember;
             cbo.ValueMember = valueMember;
             cbo.DataSource = vo;
@@ -184,6 +184,26 @@ namespace MESForm.Utils
             cbo.ValueMember = "Code";
             cbo.DataSource = codeList;
         }
-      
+
+        public static void ItemBind(ComboBox cbo, List<ItemVO> list, bool blankItem = true, string blankText = "")
+        {
+            list = (from a in list
+                    orderby a.ITEM_Name
+                    select a).ToList();
+
+            if (blankItem)
+            {
+                ItemVO blank = new ItemVO
+                {
+                    ITEM_Code = "",
+                    ITEM_Name = blankText
+                };
+
+                list.Insert(0, blank);
+            }
+            cbo.DisplayMember = "ITEM_Name";
+            cbo.ValueMember = "ITEM_Code";
+            cbo.DataSource = list;
+        }
     }
 }

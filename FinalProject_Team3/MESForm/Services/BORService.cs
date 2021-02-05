@@ -21,5 +21,23 @@ namespace MESForm.Services
             BORDAC dac = new BORDAC();
             return dac.GetBORList();
         }
+
+        public bool InsertBOR(BORVO vo)
+        {
+            BORDAC dac = new BORDAC();
+            return dac.InsertBOR(vo);
+        }
+
+        public bool UpdateBOR(BORVO vo)
+        {
+            BORDAC dac = new BORDAC();
+            return dac.UpdateBOR(vo);
+        }
+
+        public bool DeleteBOR(string codes)
+        {
+            BORDAC dac = new BORDAC();
+            return dac.DeleteBOR(codes);
+        }
     }
 }
