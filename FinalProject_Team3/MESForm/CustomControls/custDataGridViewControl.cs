@@ -17,7 +17,8 @@ namespace MESForm.CustomControls
         {
             InitializeComponent();
 
-            CommonUtil.AddGridTextColumn(this, "No", "no", 50, true, DataGridViewContentAlignment.MiddleCenter);
+            //CommonUtil.AddGridTextColumn(this, "No", "no", 50, true, DataGridViewContentAlignment.MiddleCenter);
+            this.ColumnHeadersDefaultCellStyle.Font = new Font("나눔스퀘어OTF", 9.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             this.Font = new Font("나눔스퀘어OTF", 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             this.BackgroundColor = Color.White;
             this.Dock = DockStyle.Fill;

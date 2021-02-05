@@ -164,6 +164,12 @@
     <Compile Include="FrmMaterialCost.Designer.cs">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerformance.Designer.cs">
+      <DependentUpon>frmPerformance.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,6 +491,7 @@
     <Compile Include="Services\SalesCostService.cs" />
     <Compile Include="Services\ReOrderService.cs" />
     <Compile Include="Services\SampleService.cs" />
+    <Compile Include="Services\ShiftService.cs" />
     <Compile Include="Services\SignUpService.cs" />
     <Compile Include="ShipmentManager.cs">
       <SubType>Form</SubType>
@@ -558,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaterialCost.resx">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerformance.resx">
+      <DependentUpon>frmPerformance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductPlan.resx">
       <DependentUpon>frmProductPlan.cs</DependentUpon>

@@ -62,6 +62,7 @@
     <Compile Include="ReOrderVO.cs" />
     
     <Compile Include="SampleVO.cs" />
+    <Compile Include="ShiftVO.cs" />
     <Compile Include="SignUpVO.cs" />
     <Compile Include="WareHouseVO.cs" />
     <Compile Include="WorkRegistVO.cs" />
