@@ -33,6 +33,7 @@ namespace MESForm
 
         private void ComBind()
         {
+
             FacilityService service = new FacilityService();
             FacList = service.GetFacilityDetailList();
             service.Dispose();
@@ -46,12 +47,10 @@ namespace MESForm
                        where a.Common_Parent == "Shift000"  //Common_Parent의 코드명
                        select a).ToList();
             use.Insert(0, new CommonCodeVO { Common_Name = "전체" });
-
-           
             
             ComboBoxBinding.BindingComboBox(cboShift, use, "Common_Name", "Common_Name");
             ComboBoxBinding.BindingComboBox(cboFacCode, FacList, "Facility_Name", "Facility_Code");
-
+            
         }
 
         private void dgvSetting()
@@ -73,10 +72,12 @@ namespace MESForm
         }
         private void LoadData()
         {
+
             ShiftService service = new ShiftService();
             AllList = service.GetShiftInfo();
             service.Dispose();
             dgvShift.DataSource = AllList;
+
         }
 
         private void btnReg_Click(object sender, EventArgs e)//등록
@@ -94,7 +95,6 @@ namespace MESForm
         }
         private void btnInquiry_Click(object sender, EventArgs e)//조회
         {
-           
             if (cboShift.Text=="전체" && cboFacCode.Text=="전체")
             {
                 LoadData();
@@ -117,7 +117,6 @@ namespace MESForm
             List<ShiftVO> SList = service.GetShiftSelect(cboShift.Text, cboFacCode.Text);
             service.Dispose();
             dgvShift.DataSource = SList;
-
         }
         private void btnUpdate_Click(object sender, EventArgs e)//수정
         {
@@ -136,7 +135,7 @@ namespace MESForm
 
         private void btnRefresh_Click(object sender, EventArgs e)//새로고침
         {
-
+            LoadData();
         }
 
        
