@@ -27,7 +27,7 @@ namespace FProjectDAC
             conn.Close();
         }
 
-        public DataSet GetList(string from, string to)
+        public DataTable GetList(string from, string to)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -41,10 +41,10 @@ namespace FProjectDAC
                 //SqlDataReader reader = cmd.ExecuteReader();
                 //List<POVO> list = Helper.DataReaderMapToList<POVO>(reader);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "result");
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                return ds;
+                return dt;
             }
         }
 
