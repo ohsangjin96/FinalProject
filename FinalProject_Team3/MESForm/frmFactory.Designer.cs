@@ -31,7 +31,7 @@ namespace MESForm
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
@@ -41,6 +41,7 @@ namespace MESForm
             this.txtFactoryCodeOrName = new System.Windows.Forms.TextBox();
             this.lblFactoryGrade = new System.Windows.Forms.Label();
             this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
+            this.dgvFactory = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -86,28 +87,6 @@ namespace MESForm
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Location = new System.Drawing.Point(670, 94);
-            // 
-            // dgvFactory
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvFactory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFactory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFactory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFactory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvFactory.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dgvFactory.Location = new System.Drawing.Point(0, 0);
-            this.dgvFactory.Name = "dgvFactory";
-            this.dgvFactory.Size = new System.Drawing.Size(1226, 546);
-            this.dgvFactory.TabIndex = 0;
             // 
             // btnReg
             // 
@@ -232,6 +211,37 @@ namespace MESForm
             this.cboFactoryGrade.TabIndex = 29;
             this.cboFactoryGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
+            // dgvFactory
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvFactory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFactory.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFactory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFactory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFactory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFactory.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvFactory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvFactory.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvFactory.Location = new System.Drawing.Point(0, 0);
+            this.dgvFactory.Name = "dgvFactory";
+            this.dgvFactory.RowTemplate.Height = 23;
+            this.dgvFactory.Size = new System.Drawing.Size(1226, 546);
+            this.dgvFactory.TabIndex = 0;
+            // 
             // frmFactory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -250,8 +260,6 @@ namespace MESForm
         }
 
         #endregion
-
-        private CustomControls.custDataGridViewControl dgvFactory;
         private CustomControls.custButtonControl btnReg;
         private CustomControls.custButtonControl btnUpdate;
         private CustomControls.custButtonControl btnDelete;
@@ -261,5 +269,6 @@ namespace MESForm
         private System.Windows.Forms.Label lblFactoryGrade;
         private System.Windows.Forms.TextBox txtFactoryCodeOrName;
         private System.Windows.Forms.Label lblFactoryCode;
+        private CustomControls.custDataGridViewControl dgvFactory;
     }
 }
