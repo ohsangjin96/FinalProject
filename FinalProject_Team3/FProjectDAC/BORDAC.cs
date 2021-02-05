@@ -40,7 +40,39 @@ namespace FProjectDAC
                                            CONVERT(CHAR(19), BOR_ModdifyDate, 120) BOR_ModdifyDate, BOR_Code
                                     from BOR B inner join ITEM I on B.Item_Code = I.ITEM_Code
                                     		   inner join Facility_Detail FD on B.Facility_Code = FD.Facility_Code
-											   inner join CommonCode C on B.BOR_Route = C.Common_Code";
+											   inner join CommonCode C on B.BOR_Route = C.Common_Code
+                                    order by BOR_Route, FD.Facility_Code, BOR_ModdifyDate";
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<BORVO> list = Helper.DataReaderMapToList<BORVO>(reader);
+
+                return list;
+            }
+        }
+
+        // 데이터 검색 (조건)
+        public List<BORVO> SearchBORList(string item, string route, string facility)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select I.Item_Code, Item_Name, BOR_Route, Common_Name as BOR_RouteName, FD.Facility_Code,
+                                           Facility_Name, BOR_TactTime,
+                                           CONVERT(varchar, BOR_ReadyTime) BOR_ReadyTime, BOR_Order,
+                                           CONVERT(varchar, BOR_Transference) BOR_Transference,
+                                           BOR_Use, BOR_Note, BOR_Amender,
+                                           CONVERT(CHAR(19), BOR_ModdifyDate, 120) BOR_ModdifyDate, BOR_Code
+                                    from BOR B inner join ITEM I on B.Item_Code = I.ITEM_Code
+                                    		   inner join Facility_Detail FD on B.Facility_Code = FD.Facility_Code
+											   inner join CommonCode C on B.BOR_Route = C.Common_Code
+                                    where I.Item_Code = ISNULL(@Item_Code, I.Item_Code) and
+                                    	  BOR_Route = ISNULL(@BOR_Route, BOR_Route) and
+                                    	  FD.Facility_Code = ISNULL(@Facility_Code, FD.Facility_Code)
+                                    order by BOR_Route, FD.Facility_Code, BOR_ModdifyDate";
+
+                cmd.Parameters.AddWithValue("@Item_Code", (string.IsNullOrEmpty(item)) ? DBNull.Value : (object)item);
+                cmd.Parameters.AddWithValue("@BOR_Route", (string.IsNullOrEmpty(route)) ? DBNull.Value : (object)route);
+                cmd.Parameters.AddWithValue("@Facility_Code", (string.IsNullOrEmpty(facility)) ? DBNull.Value : (object)facility);
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<BORVO> list = Helper.DataReaderMapToList<BORVO>(reader);
 

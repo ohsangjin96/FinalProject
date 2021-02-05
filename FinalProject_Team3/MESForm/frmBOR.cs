@@ -79,8 +79,31 @@ namespace MESForm
 
         private void frmBOR_Load(object sender, EventArgs e)
         {
+            CommonCodeService commonService = new CommonCodeService();
+            List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
+            commonService.Dispose();
+            ComboBoxBinding.ComBind(cboRoute, commonList, "B-Route");
+
             DgvSetting();
             LoadData();
+        }
+
+        /// <summary>
+        /// 검색 조건에 따른 조회
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            string item = txtItem.Text;
+            string route = Convert.ToString(cboRoute.SelectedValue);
+            string facility = txtFacility.Text;
+
+            BORService service = new BORService();
+            List<BORVO> list = service.SearchBORList(item, route, facility);
+            service.Dispose();
+
+            dgvBOR.DataSource = list;
         }
 
         private void btnReg_Click(object sender, EventArgs e)

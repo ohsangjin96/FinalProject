@@ -38,12 +38,12 @@ namespace MESForm
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtItem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtFacility = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.cboRoute = new System.Windows.Forms.ComboBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,25 +52,26 @@ namespace MESForm
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.textBox9);
+            this.pnlSelect.Controls.Add(this.cboRoute);
+            this.pnlSelect.Controls.Add(this.txtFacility);
             this.pnlSelect.Controls.Add(this.label11);
-            this.pnlSelect.Controls.Add(this.textBox8);
             this.pnlSelect.Controls.Add(this.label10);
-            this.pnlSelect.Controls.Add(this.textBox7);
+            this.pnlSelect.Controls.Add(this.txtItem);
             this.pnlSelect.Controls.Add(this.label9);
             this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
             this.pnlSelect.Controls.SetChildIndex(this.label9, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox7, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtItem, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label10, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox8, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label11, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox9, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtFacility, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboRoute, 0);
             // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -208,12 +209,12 @@ namespace MESForm
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // textBox7
+            // txtItem
             // 
-            this.textBox7.Location = new System.Drawing.Point(130, 27);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(191, 22);
-            this.textBox7.TabIndex = 34;
+            this.txtItem.Location = new System.Drawing.Point(130, 27);
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Size = new System.Drawing.Size(191, 22);
+            this.txtItem.TabIndex = 34;
             // 
             // label9
             // 
@@ -225,13 +226,6 @@ namespace MESForm
             this.label9.TabIndex = 33;
             this.label9.Text = "품목";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(545, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(191, 22);
-            this.textBox8.TabIndex = 36;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -242,12 +236,12 @@ namespace MESForm
             this.label10.TabIndex = 35;
             this.label10.Text = "공정";
             // 
-            // textBox9
+            // txtFacility
             // 
-            this.textBox9.Location = new System.Drawing.Point(960, 27);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(191, 22);
-            this.textBox9.TabIndex = 38;
+            this.txtFacility.Location = new System.Drawing.Point(960, 27);
+            this.txtFacility.Name = "txtFacility";
+            this.txtFacility.Size = new System.Drawing.Size(191, 22);
+            this.txtFacility.TabIndex = 38;
             // 
             // label11
             // 
@@ -258,6 +252,14 @@ namespace MESForm
             this.label11.Size = new System.Drawing.Size(31, 14);
             this.label11.TabIndex = 37;
             this.label11.Text = "설비";
+            // 
+            // cboRoute
+            // 
+            this.cboRoute.FormattingEnabled = true;
+            this.cboRoute.Location = new System.Drawing.Point(545, 27);
+            this.cboRoute.Name = "cboRoute";
+            this.cboRoute.Size = new System.Drawing.Size(191, 22);
+            this.cboRoute.TabIndex = 39;
             // 
             // frmBOR
             // 
@@ -284,11 +286,11 @@ namespace MESForm
         private CustomControls.custButtonControl btnDelete;
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnRefresh;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtFacility;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtItem;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboRoute;
     }
 }

@@ -22,6 +22,12 @@ namespace MESForm.Services
             return dac.GetBORList();
         }
 
+        public List<BORVO> SearchBORList(string item, string route, string facility)
+        {
+            BORDAC dac = new BORDAC();
+            return dac.SearchBORList(item, route, facility);
+        }
+
         public bool InsertBOR(BORVO vo)
         {
             BORDAC dac = new BORDAC();
