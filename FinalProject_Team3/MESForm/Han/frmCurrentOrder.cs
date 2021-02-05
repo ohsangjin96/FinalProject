@@ -37,6 +37,11 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주자", "f");
         }
 
+        private void LoadData()
+        {
+            //발주테이블에서 데이터 가져오기
+        }
+
         private void frmCurrentOrder_Load(object sender, EventArgs e)
         {
             DGVSetting();

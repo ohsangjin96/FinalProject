@@ -17,7 +17,7 @@ namespace MESForm.Services
             dac.Dispose();
         }
 
-        public DataSet GetList(string from, string to)
+        public DataTable GetList(string from, string to)
         {
             DemandDAC dac = new DemandDAC();
             return dac.GetList(from, to);

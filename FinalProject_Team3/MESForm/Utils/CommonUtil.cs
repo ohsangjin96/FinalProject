@@ -38,6 +38,9 @@ namespace MESForm.Utils
             dgv.AllowUserToAddRows = false;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgv.ColumnHeadersHeight = 33;
+            CommonUtil.AddGridTextColumn(dgv, "No", "no", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         public static void AddGridTextColumn(DataGridView dgv,

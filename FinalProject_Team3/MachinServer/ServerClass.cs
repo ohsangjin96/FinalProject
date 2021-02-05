@@ -65,7 +65,7 @@ namespace MachinServer
                 tc = await listener.AcceptTcpClientAsync().ConfigureAwait(false);
                 stream = tc.GetStream();
 
-                timer1 = new Timer(200);
+                timer1 = new Timer(1200);
                 timer1.Elapsed += Timer1_Elapsed;
                 timer1.Enabled = true;
                 timer1.AutoReset = true;
@@ -87,10 +87,11 @@ namespace MachinServer
                 fail += 1;
             }
             process++;
-            string msg = $"{success},{fail},{process},";
+            string msg = $"{success}|{fail}|{process}|";
+
             byte[] buff = Encoding.Default.GetBytes(msg);
             stream.Write(buff, 0, buff.Length);
-            stream.Flush();
+            //stream.Flush();
             Console.WriteLine(msg);
             if (process >= 100)
             {

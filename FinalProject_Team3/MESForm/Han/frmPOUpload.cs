@@ -39,7 +39,6 @@ namespace MESForm.Han
         {
             CommonUtil.SetInitGridView(custDataGridViewControl1);
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanDate", "Order_Plandate");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "순번", "No");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "WorkOrderID", "Order_WO");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "업체CODE", "Com_Code");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품처", "Com_Type");

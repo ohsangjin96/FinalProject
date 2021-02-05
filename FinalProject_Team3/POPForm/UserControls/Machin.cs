@@ -39,130 +39,148 @@ namespace POPForm.UserControls
 
         #endregion
         public delegate void MachinRegistWorkRegist(object sender, WorkRegistEventArgs e);
+
         public event MachinRegistWorkRegist MachinRegist;
         LoggingUtility _logging;
         NetworkStream ns;
-        bool bflag = true;
-        TcpClient client;
-        IPEndPoint serverPoint;
-        IPEndPoint clientPoint;
-        Thread buttonClick;
-        TcpControl tcpcontrol;
+        Thread buttonClicka;
+        TcpControl tcpcontrol; 
+        ThreadPLCTask m_thread;
         int Process_ID;
-        bool ServerStop = true;
-        bool MachinActive = true;
+        
         public bool bExit = false;
         string id;
-        int i;
+        bool bflag = true;
         public Machin()
         {
             InitializeComponent();
-            buttonClick = new Thread(ButtonClick);
-           
-           
+            
         }
 
         private void ButtonClick()
         {
-            
-            while (true)
-            {
-                ns = tcpcontrol.dataStream;
-                byte[] data = new byte[20];
-                ns.Read(data, 0, data.Length);
-                string response = Encoding.Default.GetString(data, 0, data.Length);
-                string[] temp = response.Split(',');
-                Log.WriteInfo($"성공:{temp[0]} 실패:{temp[1]} 진행률:{temp[2]}%");
-                //LogService service = new LogService();
-                //service.insertLog();
-                this.BeginInvoke(new Action(() =>
+            try
+            {     
+                while (tcpcontrol.client.Available > 0)
                 {
-                    lblSuccess.Text = temp[0];
-                    lblFail.Text = temp[1];
-                    lblProgram.Text = temp[2];
-                }));
-                
-                if (Convert.ToInt32(temp[2]) >= 100)
-                {
-
-                    WorkRegistVO vo = new WorkRegistVO
-                    {
-                        Item_Code = lblName.Text,
-                        FacilityDetail_Code = this.Tag.ToString(),
-                        WorkRegist_FailQty = int.Parse(lblFail.Text),
-                        WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
-                        // WorkRegist_WorkTime = TotTime,
-                        WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
-                        WorkRegist_State = "제작완료",
-                        Plan_ID = id
-                    };
-                    this.BeginInvoke(new Action(() =>
-                    {
-                        WorkRegistEventArgs args = new WorkRegistEventArgs();
-                        args.Data = vo;
-                        MachinRegist(this, args);
-                        lblFail.Text = lblSuccess.Text = "0";
-                        lblProgram.Text = "00";
-                        bntActive.BackColor = Color.Green;
-                        bntActive.Enabled = true;
-                        button2.BackColor = Color.Silver;
-                        button2.Enabled = false;
-
-                    }));
-                    foreach (Process process in Process.GetProcesses())
-                    {
-                        if (process.Id.Equals(Process_ID))
-                        {
-                            process.Kill();
-                        }
-                    }
+                        byte[] data = new byte[tcpcontrol.client.Available];
+                        ns.Read(data, 0, data.Length);
+                        string response = Encoding.Default.GetString(data).Replace("", "").Replace("", "").Trim();
+                        string[] arrData1 = response.Split('|');
+                        if (arrData1.Length < 1) continue;
+                   
+                        
                     
-                    break;
-                }
-                
 
+                    }
             }
-
-
-
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
+                
+           
+
+
+        
         private void bntActive_Click(object sender, EventArgs e)
         {
             string server = @"C:\Users\azan0\source\repos\ohsangjin96\FinalProject\FinalProject_Team3\MachinServer\bin\Debug\MachinServer.exe";
-            Process pro = Process.Start(server, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text) + 1 }");
+            Process pro = Process.Start(server, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text)+1}");
             Process_ID = pro.Id;
-
+            if (bflag)
+            {
+                _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+                bflag = false;
+            }
             tcpcontrol = new TcpControl(lblIP.Text, int.Parse(lblPort.Text)+1);
-            //serverPoint = new IPEndPoint(IPAddress.Parse(lblIP.Text), int.Parse(lblPort.Text)+1);
-    
-            
-   
-          // tcpcontrol.client.Connect(serverPoint);
+           
 
-            buttonClick = new Thread(ButtonClick);
-          
-            
+            if (tcpcontrol.CheckClientConnection())
+            {
+                ns = tcpcontrol.dataStream;
+                Log.WriteInfo("서버 접속");
+            }
+
            bntActive.BackColor = Color.Silver;
            bntActive.Enabled = false;
            button2.Enabled = true;
            button2.BackColor = Color.Red;
-           MachinActive = false;
-           buttonClick.Start();
            
-          
-            
 
+            m_thread = new ThreadPLCTask(_logging, lblFacility.Text, lblIP.Text, int.Parse(lblPort.Text)+1,500, 10000, 500 ,lblIP.Text);
+            m_thread.ReadData += M_thread_ReadData;
+;
+            m_thread.ThreadStart();
 
         }
 
+        private void M_thread_ReadData(object sender, ReadDataEventArgs argss)
+        {
+            string info = argss.Data;
+            string[] arrData1 = info.Split('|');
+            Log.WriteInfo($"성공 : {arrData1[0]}, 실패 : {arrData1[1]}, 진행률 {arrData1[2]}%");
+            //LogService service = new LogService();
+            //service.insertLog();
+            this.Invoke(new Action(() =>
+            {
+                lblSuccess.Text = arrData1[0];
+                lblFail.Text = arrData1[1];
+                lblProgram.Text = arrData1[2];
+            }));
+
+            if (Convert.ToInt32(lblProgram.Text) >= 100)
+            {
+                WorkRegistVO vo = new WorkRegistVO
+                {
+                    Item_Code = lblName.Text,
+                    FacilityDetail_Code = this.Tag.ToString(),
+                    WorkRegist_FailQty = int.Parse(lblFail.Text),
+                    WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
+                    WorkRegist_WorkTime = int.Parse(lblProgram.Text) * 5,
+                    WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                    WorkRegist_State = "제작완료",
+                    WorkOrder_ID = id
+                };
+                this.Invoke(new Action(() =>
+                {
+                    WorkRegistEventArgs args = new WorkRegistEventArgs();
+                    args.Data = vo;
+                    MachinRegist(this, args);
+                    lblFail.Text = lblSuccess.Text = "0";
+                    lblProgram.Text = "00";
+                    bntActive.BackColor = Color.Green;
+                    bntActive.Enabled = true;
+                    button2.BackColor = Color.Silver;
+                    button2.Enabled = false;
+
+                }));
+
+                foreach (Process process in Process.GetProcesses())
+                {
+                    if (process.Id.Equals(Process_ID))
+                    {
+                        process.Kill();
+                    }
+                }
+            }
+        }
+       
+        private void ButtonClickA()
+        {
+            lock (buttonClicka)
+            {
+                ButtonClick();
+            }
+        }
         private void Machin_Load(object sender, EventArgs e)
         {
           
             bntActive.BackColor = Color.Green;
             bntActive.Enabled = true;
             button2.BackColor = Color.Silver;
-            button2.Enabled = false;
-            _logging = new LoggingUtility(lblFacility.Text, Level.Debug, 30);
+            button2.Enabled = false; 
 
         }
         
@@ -187,10 +205,10 @@ namespace POPForm.UserControls
                 FacilityDetail_Code = this.Tag.ToString(),
                 WorkRegist_FailQty = int.Parse(lblFail.Text),
                 WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
-                // WorkRegist_WorkTime = TotTime,
+                WorkRegist_WorkTime = int.Parse(lblProgram.Text)*500,
                 WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
                 WorkRegist_State = "제작완료",
-                Plan_ID = id
+                WorkOrder_ID = id
             };
 
             WorkRegistEventArgs args = new WorkRegistEventArgs();
@@ -212,8 +230,7 @@ namespace POPForm.UserControls
             }
 
             lblSuccess.Text = lblFail.Text = lblProgram.Text = "0";
-            bflag = false;
-            i = 1;
+            
 
         }
     }

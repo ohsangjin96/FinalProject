@@ -29,21 +29,17 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvWaitingWarehouse = new MESForm.CustomControls.custDataGridViewControl();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnWarehousing = new MESForm.CustomControls.custButtonControl();
             this.btnCancel = new MESForm.CustomControls.custButtonControl();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvWarehouse = new MESForm.CustomControls.custDataGridViewControl();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnSel = new MESForm.CustomControls.custButtonControl();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,7 +102,7 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(15, 135);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 135);
             this.lblFormName1.Size = new System.Drawing.Size(129, 21);
             this.lblFormName1.Text = "입고대기리스트";
             // 
@@ -144,21 +140,19 @@ namespace MESForm.Han
             // 
             // dgvWaitingWarehouse
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvWaitingWarehouse.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgvWaitingWarehouse.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvWaitingWarehouse.BackgroundColor = System.Drawing.Color.White;
             this.dgvWaitingWarehouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvWaitingWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWaitingWarehouse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWaitingWarehouse.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWaitingWarehouse.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvWaitingWarehouse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvWaitingWarehouse.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvWaitingWarehouse.Location = new System.Drawing.Point(0, 0);
@@ -166,16 +160,6 @@ namespace MESForm.Han
             this.dgvWaitingWarehouse.RowTemplate.Height = 23;
             this.dgvWaitingWarehouse.Size = new System.Drawing.Size(1226, 217);
             this.dgvWaitingWarehouse.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // panel2
             // 
@@ -231,40 +215,28 @@ namespace MESForm.Han
             // 
             // dgvWarehouse
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvWarehouse.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvWarehouse.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvWarehouse.BackgroundColor = System.Drawing.Color.White;
             this.dgvWarehouse.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWarehouse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvWarehouse.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvWarehouse.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvWarehouse.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvWarehouse.Location = new System.Drawing.Point(0, 51);
             this.dgvWarehouse.Name = "dgvWarehouse";
             this.dgvWarehouse.RowTemplate.Height = 23;
             this.dgvWarehouse.Size = new System.Drawing.Size(1226, 240);
             this.dgvWarehouse.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "no";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn2.HeaderText = "No";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
             // 
             // btnExcel
             // 
@@ -340,9 +312,12 @@ namespace MESForm.Han
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(126, 20);
+            this.dtpDate.DtpFrom = new System.DateTime(2021, 2, 5, 11, 52, 13, 208);
+            this.dtpDate.DtpTo = new System.DateTime(2021, 2, 5, 11, 52, 13, 208);
+            this.dtpDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Location = new System.Drawing.Point(130, 20);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(281, 33);
+            this.dtpDate.Size = new System.Drawing.Size(281, 38);
             this.dtpDate.TabIndex = 41;
             // 
             // btnToCompany
@@ -450,7 +425,5 @@ namespace MESForm.Han
         private System.Windows.Forms.ComboBox cboOrderState;
         private System.Windows.Forms.ComboBox btnToCompany;
         private UserControls.DateTimePicker dtpDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

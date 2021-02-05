@@ -331,7 +331,10 @@ namespace MESForm
 
         private void btnBOR_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmBOR>();
+            frmBOR frm = new frmBOR();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         #endregion
@@ -566,6 +569,11 @@ namespace MESForm
         private void timer1_Tick(object sender, EventArgs e)
         {
             tslblDateTime.Text = DateTime.Now.ToString("yyyy년 MM월 dd일 HH시 mm분 ss초");
+        }
+
+        private void btnPerformance_Click(object sender, EventArgs e)
+        {
+            OpenCreateForm<frmPerformance>();
         }
     }
 }

@@ -243,7 +243,7 @@ namespace MESForm.PopUp
             if(cboParentCode.Items.Count > 0)
             {
                 CommonCodeService service = new CommonCodeService();
-                int idx = service.GetSeqValue(cboParentCode.Text);
+                int idx = service.GetSeqValue(cboParentCode.SelectedValue.ToString());
                 service.Dispose();
                 nudSeq.Value = idx + 1;
             }
