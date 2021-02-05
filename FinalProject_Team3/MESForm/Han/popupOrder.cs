@@ -32,7 +32,14 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl2, "납기일", "g");
             CommonUtil.AddGridTextColumn(custDataGridViewControl2, "현재고", "h");
             CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주제안수량", "i");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주수량", "j");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주수량", "j");    //입력가능
+        }
+
+        private void LoadData()
+        {
+            //발주업체 -> 소요계획에 있던 업체 불러오기
+
+            //발주 -> 발주업체 목록에 있는 창고 재고와 발주제안수량 보여주기 (발주수량 입력 후 발주 버튼 클릭하면 발주신청)
         }
 
         private void popupOrder_Load(object sender, EventArgs e)

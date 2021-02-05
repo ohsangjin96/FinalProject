@@ -38,7 +38,7 @@ namespace MESForm.CustomControls
                 //탭에 텍스트 작성
                 Brush titleBrush = new SolidBrush(Color.Black);
                 string title = this.TabPages[e.Index].Text;
-                Font f = this.Font;
+                Font f = new Font("나눔스퀘어OTF", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
                 e.Graphics.DrawString(title, f, titleBrush, new Point(r.X, r.Y));
 
                 //탭에 닫기(X) 이미지 추가
