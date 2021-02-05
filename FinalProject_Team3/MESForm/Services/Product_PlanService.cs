@@ -2,6 +2,7 @@
 using FProjectVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,11 @@ namespace MESForm.Services
         {
             Product_PlanDAC dac = new Product_PlanDAC();
             return dac.GetProduct_PlanList();
+        }
+        public DataTable GetProduct_Plan()
+        {
+            Product_PlanDAC dac = new Product_PlanDAC();
+            return dac.GetProduct_Plan();
         }
     }
 }
