@@ -69,6 +69,7 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvShift, "수정자", "Shift_Last_Modifier");//11
             CommonUtil.AddGridTextColumn(dgvShift, "수정일자", "Shift_Last_Modifier_Time");//12
             CommonUtil.AddGridTextColumn(dgvShift, "비고", "Shift_Remark");//13
+            //
         }
         private void LoadData()
         {
