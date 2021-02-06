@@ -138,14 +138,14 @@ namespace FProjectDAC
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@MC_Code", vo.MC_Code);
                 cmd.Parameters.AddWithValue("@MC_IngCost", vo.MC_IngCost);
-                cmd.Parameters.AddWithValue("@MC_BeforeCost",vo.MC_BeforeCost);
+                cmd.Parameters.AddWithValue("@MC_BeforeCost", vo.MC_BeforeCost);
                 cmd.Parameters.AddWithValue("@MC_StartDate", vo.MC_StartDate);
                 cmd.Parameters.AddWithValue("@MC_Last_Modifier", vo.MC_Last_Modifier);
                 cmd.Parameters.AddWithValue("@MC_Last_Modifier_Time", vo.MC_Last_Modifier_Time);
                 cmd.Parameters.AddWithValue("@MC_USE", vo.MC_USE);
                 cmd.Parameters.AddWithValue("@MC_Remark", vo.MC_Remark);
                 cmd.Parameters.AddWithValue("@COM_Code", vo.COM_Code);
-                cmd.Parameters.AddWithValue("@ITEM_Code",vo.ITEM_Code);
+                cmd.Parameters.AddWithValue("@ITEM_Code", vo.ITEM_Code);
 
 
 
@@ -155,9 +155,9 @@ namespace FProjectDAC
             }
         }
 
-        public bool DeleteMC(int pk, string  itemCode,int  BoforeCost)
+        public bool DeleteMC(int pk, string itemCode, int BoforeCost)
         {
-            using (SqlCommand cmd= new SqlCommand())
+            using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = "SP_DeleteMC";
@@ -172,6 +172,27 @@ namespace FProjectDAC
 
                 return iRowAffect > 0;
             }
+        }
+
+        public List<MaterialCostVO> GetCostList(string item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select  MC_Code, m.COM_Code, c.Com_Name,m.ITEM_Code,i.ITEM_Name,i.ITEM_Unit_Qty,i.ITEM_Unit,
+		                                  MC_IngCost,MC_BeforeCost,Convert(Date, MC_StartDate, 23) MC_StartDate,Convert(Date, MC_EndDate, 23) MC_EndDate,
+		                                  MC_Remark,MC_USE
+		                                  from Material_Cost M inner join item  i on m.ITEM_Code=i.ITEM_Code
+						                                       inner join Company C on m.COM_Code=c.Com_Code
+										where m.ITEM_Code =@ITEM_Code";
+                cmd.Parameters.AddWithValue("@ITEM_Code", item);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<MaterialCostVO> list = Helper.DataReaderMapToList<MaterialCostVO>(reader);
+
+                return list;
+            }
+
         }
     }
 }

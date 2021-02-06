@@ -279,6 +279,7 @@
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.Size = new System.Drawing.Size(168, 22);
             this.txtStartDate.TabIndex = 207;
+            this.txtStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SorEKeyPress);
             // 
             // cboShift
             // 
@@ -308,6 +309,7 @@
             this.txtCompleteDate.Name = "txtCompleteDate";
             this.txtCompleteDate.Size = new System.Drawing.Size(168, 22);
             this.txtCompleteDate.TabIndex = 202;
+            this.txtCompleteDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SorEKeyPress);
             // 
             // cboFacCode
             // 

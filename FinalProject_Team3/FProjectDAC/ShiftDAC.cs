@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FProjectDAC
 {
-   public class ShiftDAC : ConnectionAccess, IDisposable
+    public class ShiftDAC : ConnectionAccess, IDisposable
     {
         string strConn;
         SqlConnection conn;
@@ -90,17 +90,17 @@ namespace FProjectDAC
                                     values(@Facility_Code,@Shift_type, @Shift_People, @Shift_StartTime, @Shift_EndTime,@Shift_Apply_StartDate,
 					                       @Shift_Apply_EndDate, @Shift_Use, @Shift_Last_Modifier, @Shift_Last_Modifier_Time, @Shift_Remark)";
 
-                cmd.Parameters.AddWithValue("@Facility_Code",vo.Facility_Code);
-                cmd.Parameters.AddWithValue("@Shift_type",vo.Shift_type);
-                cmd.Parameters.AddWithValue("@Shift_People",vo.Shift_People);
-                cmd.Parameters.AddWithValue("@Shift_StartTime",vo.Shift_StartTime);
-                cmd.Parameters.AddWithValue("@Shift_EndTime",vo.Shift_EndTime);
-                cmd.Parameters.AddWithValue("@Shift_Apply_StartDate",vo.Shift_Apply_StartDate);
-                cmd.Parameters.AddWithValue("@Shift_Apply_EndDate",vo.Shift_Apply_EndDate);
-                cmd.Parameters.AddWithValue("@Shift_Use",vo.Shift_Use);
-                cmd.Parameters.AddWithValue("@Shift_Last_Modifier",vo.Shift_Last_Modifier);
-                cmd.Parameters.AddWithValue("@Shift_Last_Modifier_Time",vo.Shift_Last_Modifier_Time);
-                cmd.Parameters.AddWithValue("@Shift_Remark",vo.Shift_Remark);
+                cmd.Parameters.AddWithValue("@Facility_Code", vo.Facility_Code);
+                cmd.Parameters.AddWithValue("@Shift_type", vo.Shift_type);
+                cmd.Parameters.AddWithValue("@Shift_People", vo.Shift_People);
+                cmd.Parameters.AddWithValue("@Shift_StartTime", vo.Shift_StartTime);
+                cmd.Parameters.AddWithValue("@Shift_EndTime", vo.Shift_EndTime);
+                cmd.Parameters.AddWithValue("@Shift_Apply_StartDate", vo.Shift_Apply_StartDate);
+                cmd.Parameters.AddWithValue("@Shift_Apply_EndDate", vo.Shift_Apply_EndDate);
+                cmd.Parameters.AddWithValue("@Shift_Use", vo.Shift_Use);
+                cmd.Parameters.AddWithValue("@Shift_Last_Modifier", vo.Shift_Last_Modifier);
+                cmd.Parameters.AddWithValue("@Shift_Last_Modifier_Time", vo.Shift_Last_Modifier_Time);
+                cmd.Parameters.AddWithValue("@Shift_Remark", vo.Shift_Remark);
 
                 int iRowAffect = cmd.ExecuteNonQuery();
 
@@ -125,6 +125,93 @@ namespace FProjectDAC
                     return true;
                 else
                     return false;
+            }
+        }
+
+
+        public List<ShiftVO> GetTypeSelect(string type)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Shift_Code,f.Facility_Code,Facility_Name,Shift_type,Shift_StartTime,Shift_EndTime,
+                                           Shift_Apply_StartDate,Shift_Apply_EndDate,Shift_People,Shift_Use,Shift_Last_Modifier,
+                                           Shift_Last_Modifier_Time,Shift_Remark
+                                    from [Shift] S inner join  Facility_Detail F on s.Facility_Code=f.Facility_Code
+                                    where Shift_type=@Shift_type";
+
+                cmd.Parameters.AddWithValue("@Shift_type", type);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(reader);
+
+                return list;
+            }
+        }
+
+        public List<ShiftVO> GetCodeSelect(string Code)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Shift_Code,f.Facility_Code,Facility_Name,Shift_type,Shift_StartTime,Shift_EndTime,
+                                           Shift_Apply_StartDate,Shift_Apply_EndDate,Shift_People,Shift_Use,Shift_Last_Modifier,
+                                           Shift_Last_Modifier_Time,Shift_Remark
+                                    from [Shift] S inner join  Facility_Detail F on s.Facility_Code=f.Facility_Code
+                                    where s.Facility_Code=@Facility_Code";
+
+                cmd.Parameters.AddWithValue("@Facility_Code", Code);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ShiftVO> list = Helper.DataReaderMapToList<ShiftVO>(reader);
+
+                return list;
+            }
+        }
+
+        public bool UpdateShift(ShiftVO vo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"update [Shift]
+                                    set Facility_Code=@Facility_Code, Shift_type=@Shift_type, Shift_People=@Shift_People, 
+                                        Shift_StartTime=@Shift_StartTime, Shift_EndTime=@Shift_EndTime, Shift_Apply_StartDate=@Shift_Apply_StartDate,
+                                        Shift_Apply_EndDate=@Shift_Apply_EndDate, Shift_Use=@Shift_Use,
+                                        Shift_Last_Modifier=@Shift_Last_Modifier, Shift_Last_Modifier_Time=@Shift_Last_Modifier_Time, Shift_Remark=@Shift_Remark
+                                    where Shift_Code=@Shift_Code";
+                cmd.Parameters.AddWithValue("@Facility_Code", vo.Facility_Code);
+                cmd.Parameters.AddWithValue("@Shift_type", vo.Shift_type);
+                cmd.Parameters.AddWithValue("@Shift_People", vo.Shift_People);
+                cmd.Parameters.AddWithValue("@Shift_StartTime", vo.Shift_StartTime);
+                cmd.Parameters.AddWithValue("@Shift_EndTime", vo.Shift_EndTime);
+                cmd.Parameters.AddWithValue("@Shift_Apply_StartDate", vo.Shift_Apply_StartDate);
+                cmd.Parameters.AddWithValue("@Shift_Apply_EndDate", vo.Shift_Apply_EndDate);
+                cmd.Parameters.AddWithValue("@Shift_Use", vo.Shift_Use);
+                cmd.Parameters.AddWithValue("@Shift_Last_Modifier", vo.Shift_Last_Modifier);
+                cmd.Parameters.AddWithValue("@Shift_Last_Modifier_Time", vo.Shift_Last_Modifier_Time);
+                cmd.Parameters.AddWithValue("@Shift_Remark", vo.Shift_Remark);
+                cmd.Parameters.AddWithValue("@Shift_Code", vo.Shift_Code);
+
+                int iRowAffect = cmd.ExecuteNonQuery();
+
+                return iRowAffect > 0;
+
+            }
+        }
+
+        public bool DeleteShift(int pk)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = "delete from [shift] where shift_code =@shift_code";
+                cmd.Parameters.AddWithValue("@Shift_Code", pk);
+
+                int iRowAffect = cmd.ExecuteNonQuery();
+
+                return iRowAffect > 0;
+
             }
         }
     }
