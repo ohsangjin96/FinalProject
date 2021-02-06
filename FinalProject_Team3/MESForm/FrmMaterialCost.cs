@@ -28,15 +28,15 @@ namespace MESForm
        
         private void FrmMaterialCost_Load(object sender, EventArgs e)
         {
-            this.dtpDate.Format = DateTimePickerFormat.Custom;
-            this.dtpDate.CustomFormat = " ";
+            dtpDate.ShowCheckBox = true;
             dgvSetting();
             LoadData();
-            
         }
         private void btnInquiry_Click(object sender, EventArgs e)//조회버튼
         {
-
+            MaterialCostService service = new MaterialCostService();
+            List<MaterialCostVO> list = service.GetCostList(txtItemCode.Text);
+            dgvCost.DataSource = list;
         }
         private void btnReg_Click(object sender, EventArgs e)//등록
         {
@@ -113,6 +113,8 @@ namespace MESForm
         }
         private void btnRefresh_Click(object sender, EventArgs e)//새로고침
         {
+            txtItemCode.Text = string.Empty;
+            
             LoadData();
         }
         #region 메서드

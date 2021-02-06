@@ -331,7 +331,10 @@ namespace MESForm
 
         private void btnBOR_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmBOR>();
+            frmBOR frm = new frmBOR();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         #endregion

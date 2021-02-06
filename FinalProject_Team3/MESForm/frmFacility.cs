@@ -27,7 +27,7 @@ namespace MESForm
             CommonUtil.SetInitGridView(dgvFacility);
             CommonUtil.AddGridTextColumn(dgvFacility, "설비군코드", "Facilities_Code"); //1
             CommonUtil.AddGridTextColumn(dgvFacility, "설비군명", "Facilities_Name"); //2
-            CommonUtil.AddGridTextColumn(dgvFacility, "사용유무", "Facilities_Use", 80); //3
+            CommonUtil.AddGridTextColumn(dgvFacility, "사용유무", "Facilities_Use", 80, true, DataGridViewContentAlignment.MiddleCenter); //3
             CommonUtil.AddGridTextColumn(dgvFacility, "수정자", "Facilities_Amender", 10, false); //4
             CommonUtil.AddGridTextColumn(dgvFacility, "수정날짜", "Facilities_ModdifyDate", 10, false); //5
             CommonUtil.AddGridTextColumn(dgvFacility, "설명", "Facilities_Explain", 10, false); //6
@@ -40,12 +40,12 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "양품창고", "Facility_Imported"); //5
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "불량창고", "Facility_Poor"); //6
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "MES설비", "Facility_MES", 10, false); //7
-            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "외주여부", "Facility_OutSourcing", 80); //8
-            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "사용유무", "Facility_Use", 80); //9
+            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "외주여부", "Facility_OutSourcing", 80, true, DataGridViewContentAlignment.MiddleCenter); //8
+            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "사용유무", "Facility_Use", 80, true, DataGridViewContentAlignment.MiddleCenter); //9
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "특이사항", "Facility_Note", 80); //10
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "비고", "Facility_Comment", 80); //11
-            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "수정자", "Facility_Amender", 80); //12
-            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "수정날짜", "Facility_ModdifyDate", 130); //13
+            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "수정자", "Facility_Amender", 80, true, DataGridViewContentAlignment.MiddleCenter); //12
+            CommonUtil.AddGridTextColumn(dgvFacilityDetail, "수정날짜", "Facility_ModdifyDate", 130, true, DataGridViewContentAlignment.MiddleCenter); //13
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "품목코드", "Item_Code", 10, false); //14
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "설비IP", "Facility_IP", 10, false); //15
             CommonUtil.AddGridTextColumn(dgvFacilityDetail, "설비Port", "Facility_Port", 10, false); //16

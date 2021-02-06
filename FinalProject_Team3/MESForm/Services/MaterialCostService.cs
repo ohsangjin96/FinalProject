@@ -42,5 +42,10 @@ namespace MESForm.Services
             MaterialCostDAC dac = new MaterialCostDAC();
             return dac.DeleteMC(pk, itemCode, BoforeCost);
         }
+        public List<MaterialCostVO> GetCostList(string item)
+        {
+            MaterialCostDAC dac = new MaterialCostDAC();
+            return dac.GetCostList(item);
+        }
     }
 }

@@ -169,7 +169,6 @@ namespace MESForm
                 cboItem.Items.Add(list[i].ToString());
             }
 
-            //리스트가 초기화가 됬으면 좋겠다. 물어보기
 
         }
 

@@ -29,15 +29,15 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvFactory, "상위시설", "Factory_HighRank"); // 5
             CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "Factory_Explain", 120); // 6
             CommonUtil.AddGridTextColumn(dgvFactory, "유무상구분", "Factory_Credit", 100); // 7
-            CommonUtil.AddGridTextColumn(dgvFactory, "순서", "Factory_Order", 60); // 8
-            CommonUtil.AddGridTextColumn(dgvFactory, "수요차감", "Factory_Demand", 80); // 9
-            CommonUtil.AddGridTextColumn(dgvFactory, "공정차감", "Factory_Process", 80); // 10
-            CommonUtil.AddGridTextColumn(dgvFactory, "자재차감", "Factory_Material", 80); // 11
+            CommonUtil.AddGridTextColumn(dgvFactory, "순서", "Factory_Order", 60, true, DataGridViewContentAlignment.MiddleRight); // 8
+            CommonUtil.AddGridTextColumn(dgvFactory, "수요차감", "Factory_Demand", 80, true, DataGridViewContentAlignment.MiddleCenter); // 9
+            CommonUtil.AddGridTextColumn(dgvFactory, "공정차감", "Factory_Process", 80, true, DataGridViewContentAlignment.MiddleCenter); // 10
+            CommonUtil.AddGridTextColumn(dgvFactory, "자재차감", "Factory_Material", 80, true, DataGridViewContentAlignment.MiddleCenter); // 11
             CommonUtil.AddGridTextColumn(dgvFactory, "업체", "Com_Code"); // 12
             CommonUtil.AddGridTextColumn(dgvFactory, "업체명", "Com_Name"); // 13
-            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use", 80); // 14
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "Factory_Amender"); // 15
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate", 140); // 16
+            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use", 80, true, DataGridViewContentAlignment.MiddleCenter); // 14
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "Factory_Amender", 100, true, DataGridViewContentAlignment.MiddleCenter); // 15
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate", 140, true, DataGridViewContentAlignment.MiddleCenter); // 16
             CommonUtil.AddGridTextColumn(dgvFactory, "시설ID", "Factory_ID", 100, false); // 17
         }
 
