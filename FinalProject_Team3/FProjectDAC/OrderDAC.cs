@@ -1,6 +1,7 @@
 ﻿using FProjectVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -37,5 +38,31 @@ namespace FProjectDAC
                 return list;
             }
         }
+        public DataTable GetWorkOrder()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                string date = DateTime.Now.ToShortDateString();
+                string date1 = DateTime.Now.AddDays(12).ToShortDateString();
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"SP_GetOrderInformation";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@StartDate", date);
+                    cmd.Parameters.AddWithValue("@EndDate", date1);
+
+                    //SqlDataReader reader = cmd.ExecuteReader();
+                    //List<POVO> list = Helper.DataReaderMapToList<POVO>(reader);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable ds = new DataTable();
+                    da.Fill(ds);
+
+                    return ds;
+
+                }
+            }
+        }
+
     }
-}
+

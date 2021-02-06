@@ -470,7 +470,7 @@ namespace MESForm
         #region 공정관리
         private void btnWorkOrder_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<WorkOrder>();
+            OpenCreateForm<frmWorkOrder>();
         }
 
         private void btnCurrentProcess_Click(object sender, EventArgs e)

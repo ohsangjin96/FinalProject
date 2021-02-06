@@ -2,6 +2,7 @@
 using FProjectVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,11 @@ namespace MESForm.Services
         {
             OrderDAC dac = new OrderDAC();
             return dac.GetOrderList();
+        }
+        public DataTable GetWorkOrder()
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.GetWorkOrder();
         }
     }
 }
