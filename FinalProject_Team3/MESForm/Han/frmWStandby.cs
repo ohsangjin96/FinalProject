@@ -1,4 +1,5 @@
-﻿using MESForm.Utils;
+﻿using MESForm.CustomControls;
+using MESForm.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,20 +21,20 @@ namespace MESForm.Han
 
         private void DGVSetting()
         {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주일", "a");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주업체", "b");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품업체", "c");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "d");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "e");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "규격", "f");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "단위", "g");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "검사여부", "h");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주량", "i");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "입고수량", "j");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "잔량", "k");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주유형", "l");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "비고", "m");
+            //CommonUtil.SetInitGridView(custDataGridViewControl1);
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주일", "a");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주업체", "b");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품업체", "c");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "d");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "e");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "규격", "f");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "단위", "g");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "검사여부", "h");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주량", "i");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "입고수량", "j");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "잔량", "k");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주유형", "l");
+            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "비고", "m");
 
             //CommonUtil.SetInitGridView(custDataGridViewControl2);
             //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주번호", "aa");
