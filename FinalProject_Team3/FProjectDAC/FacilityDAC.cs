@@ -171,6 +171,7 @@ namespace FProjectDAC
                                            Item_Code, Facility_IP, Facility_Port
                                     from Facility_Detail
                                     order by Facilities_Code, Facility_Name";
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<FacilityVO> list = Helper.DataReaderMapToList<FacilityVO>(reader);
 

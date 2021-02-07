@@ -499,6 +499,7 @@
     <Compile Include="Services\SampleService.cs" />
     <Compile Include="Services\ShiftService.cs" />
     <Compile Include="Services\SignUpService.cs" />
+    <Compile Include="Services\WMaterialService.cs" />
     <Compile Include="ShipmentManager.cs">
       <SubType>Form</SubType>
     </Compile>
