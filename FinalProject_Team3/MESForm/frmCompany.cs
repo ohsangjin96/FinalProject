@@ -158,7 +158,7 @@ namespace MESForm
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvCompany);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

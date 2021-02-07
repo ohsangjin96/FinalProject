@@ -131,11 +131,12 @@ namespace MESForm
                     return;
             }
 
-
+            Cursor cursor = this.Cursor;
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 bool result = service.DeleteFacilities(code);
-                service.Dispose();
 
                 if (result)
                 {
@@ -147,6 +148,11 @@ namespace MESForm
             catch(Exception err)
             {
                 MessageBox.Show(err.Message);
+            }
+            finally
+            {
+                service.Dispose();
+                this.Cursor = cursor;
             }
         }
         #endregion
@@ -238,7 +244,7 @@ namespace MESForm
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvFacilityDetail);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
