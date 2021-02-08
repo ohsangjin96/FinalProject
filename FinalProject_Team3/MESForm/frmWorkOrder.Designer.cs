@@ -35,7 +35,6 @@ namespace MESForm
             this.dgvList = new MESForm.CustomControls.custDataGridViewControl();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@ namespace MESForm
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
+            this.lblID = new System.Windows.Forms.TextBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,12 +56,12 @@ namespace MESForm
             // 
             // pnlSelect
             // 
+            this.pnlSelect.Controls.Add(this.lblID);
             this.pnlSelect.Controls.Add(this.label3);
             this.pnlSelect.Controls.Add(this.dtpto);
             this.pnlSelect.Controls.Add(this.dtpfrom);
             this.pnlSelect.Controls.Add(this.comboBox4);
             this.pnlSelect.Controls.Add(this.label6);
-            this.pnlSelect.Controls.Add(this.comboBox2);
             this.pnlSelect.Controls.Add(this.label5);
             this.pnlSelect.Controls.Add(this.comboBox1);
             this.pnlSelect.Controls.Add(this.label4);
@@ -75,12 +75,12 @@ namespace MESForm
             this.pnlSelect.Controls.SetChildIndex(this.label4, 0);
             this.pnlSelect.Controls.SetChildIndex(this.comboBox1, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label5, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox2, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label6, 0);
             this.pnlSelect.Controls.SetChildIndex(this.comboBox4, 0);
             this.pnlSelect.Controls.SetChildIndex(this.dtpfrom, 0);
             this.pnlSelect.Controls.SetChildIndex(this.dtpto, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.lblID, 0);
             // 
             // btnInquiry
             // 
@@ -150,15 +150,6 @@ namespace MESForm
             this.label6.TabIndex = 36;
             this.label6.Text = "공정";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 62);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 22);
-            this.comboBox2.TabIndex = 35;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -194,9 +185,9 @@ namespace MESForm
             this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(466, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 14);
+            this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 31;
-            this.label2.Text = "날짜";
+            this.label2.Text = "납품날짜";
             // 
             // textBox1
             // 
@@ -293,6 +284,14 @@ namespace MESForm
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
+            // lblID
+            // 
+            this.lblID.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblID.Location = new System.Drawing.Point(133, 57);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(191, 22);
+            this.lblID.TabIndex = 92;
+            // 
             // frmWorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -314,7 +313,6 @@ namespace MESForm
         private CustomControls.custDataGridViewControl dgvList;
         protected System.Windows.Forms.ComboBox comboBox4;
         protected System.Windows.Forms.Label label6;
-        protected System.Windows.Forms.ComboBox comboBox2;
         protected System.Windows.Forms.Label label5;
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.Label label4;
@@ -327,5 +325,6 @@ namespace MESForm
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl custButtonControl2;
         private CustomControls.custButtonControl btnRefresh;
+        public System.Windows.Forms.TextBox lblID;
     }
 }

@@ -35,7 +35,7 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"select  distinct(fa.Item_Code),Facility_Code,Facility_Name,Facility_IP,Facility_Port,BOM_Level
                                     from Facility_Detail fa ,BOM where BOM.Item_Code = fa.Item_Code
-                                    and fa.Item_Code in(select BOM.Item_Code from BOM where BOM.BOM_Parent_Name = @Item_Code or BOM.Item_Code = @Item_Code)";
+                                    and fa.Item_Code in(select BOM.Item_Code from BOM where fa.Item_Code = @Item_Code)";
 
                 cmd.Parameters.AddWithValue("@Item_Code", Item_Code);
                 SqlDataReader reader = cmd.ExecuteReader();

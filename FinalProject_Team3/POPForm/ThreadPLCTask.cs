@@ -113,25 +113,7 @@ namespace POPForm
             }
             else
             {
-                //Alive 체크
-                if (! m_AliveTimer.IsRunning || m_AliveTimer.Elapsed.TotalMilliseconds > timer_KEEP_ALIVE)
-                {
-                    if (!m_AliveTimer.IsRunning)
-                        m_AliveTimer.Restart();
-
-                    Log.WriteInfo("재접속을 위한 연결종료");
-                    m_ConnectionSts = false;
-                    client.client.Close();
-                    client = new TcpControl(hostIP, hostPort);
-                    if (client.client.Connected)
-                    {
-                        recvData = client.dataStream;
-                        m_ConnectionSts = true;
-                        m_AliveTimer.Restart();
-                        Log.WriteInfo("재접속 성공");
-                    }
-                }
-
+              
                 //수신 (실제 생산실적데이터)
                 OnReceive();
             }
@@ -139,11 +121,7 @@ namespace POPForm
 
         private void OnReceive()
         {
-            //STX(start of text, 0x02, 아스키 2번)
-            //ETX(end of text,  0x03, 아스키 3번)
-            //STX머신ID/제품ID/생산수량/불량수량ETXSTX머신ID/제품ID/생산수량/불량수량ETX
-            //50|2|1   50|2|0   HeartBeat 
-
+ 
             string readData;
 
             if (client.client.Available > 0)
@@ -153,9 +131,7 @@ namespace POPForm
                 recvData.Read(rcvTmp, 0, rcvTmp.Length);
                 readData = Encoding.Default.GetString(rcvTmp).Replace("","").Replace("","").Trim();
 
-                //Log.WriteInfo("데이터 수신:" + readData);
-
-                //HeartBeat 인 경우는 stopwatch만 재시작하고 빠져나간다.
+               
                 if (readData.Contains(STR_HEART_BEAT))
                 {
                     m_AliveTimer.Restart();
