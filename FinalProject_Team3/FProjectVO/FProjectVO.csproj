@@ -55,16 +55,19 @@
     <Compile Include="MtpVO.cs" />
     <Compile Include="OrderVO.cs" />
     <Compile Include="POPVO.cs" />
+    <Compile Include="POPWorkOrderVO.cs" />
     <Compile Include="POVO.cs" />
     <Compile Include="Product_PlanVO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalesCostVO.cs" />
     <Compile Include="ReOrderVO.cs" />
     <Compile Include="SampleVO.cs" />
+    <Compile Include="SeeWorkOrderVO.cs" />
     <Compile Include="ShiftVO.cs" />
     <Compile Include="SignUpVO.cs" />
     <Compile Include="WareHouseVO.cs" />
     <Compile Include="WMaterialVO.cs" />
+    <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkRegistVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

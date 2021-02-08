@@ -16,10 +16,26 @@ namespace MESForm.Services
             OrderDAC dac = new OrderDAC();
             return dac.GetOrderList();
         }
-        public DataTable GetWorkOrder()
+        public DataTable GetWorkOrder(string datefrom, string dateto)
         {
             OrderDAC dac = new OrderDAC();
-            return dac.GetWorkOrder();
+            return dac.GetWorkOrder(datefrom, dateto);
+        }
+        public List<SeeWorkOrderVO> GetWorkOrderList()
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.GetWorkOrderList();
+        }
+        public bool InsertWorkOrderList(List<SeeWorkOrderVO> list)
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.InsertWorkOrderList(list);
+        }
+        public List<POPWorkOrderVO> GetSelectWorkOrderList(string date)
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.GetSelectWorkOrderList(date);
         }
     }
 }
+

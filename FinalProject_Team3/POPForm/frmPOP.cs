@@ -56,8 +56,7 @@ namespace POPForm
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            orderlist= service.GetOrderList();
-            dgvList.DataSource = orderlist;
+            dgvList.DataSource = service.GetSelectWorkOrderList("2021-02-11");
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -23,15 +23,11 @@ namespace MESForm.CustomControls
             this.BackgroundColor = Color.White;
             this.Dock = DockStyle.Fill;
             this.BorderStyle = BorderStyle.None;
-            this.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.DataGridView_RowPostPaint);
             this.DefaultCellStyle.BackColor = Color.FromArgb(217, 248, 255);
             this.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
         }
 
-        private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            this.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }
+       
 
         protected override void OnPaint(PaintEventArgs pe)
         {
