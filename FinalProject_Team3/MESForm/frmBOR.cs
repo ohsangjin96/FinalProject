@@ -85,7 +85,7 @@ namespace MESForm
             ComboBoxBinding.ComBind(cboRoute, commonList, "B-Route");
 
             DgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         /// <summary>

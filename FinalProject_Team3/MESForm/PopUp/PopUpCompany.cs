@@ -79,6 +79,9 @@ namespace MESForm.PopUp
             ComboBoxBinding.ComBind(cboCompanyType, commonList, "ComType000", false);
             ComboBoxBinding.ComBind(cboCompanyUse, commonList, "UseYN000", false);
             ComboBoxBinding.ComBind(cboWarehouse, commonList, "UseYN000", false);
+
+            cboCompanyUse.SelectedIndex = 1;
+            cboWarehouse.SelectedIndex = 1;
         }
 
         private void PopUpCompany_Load(object sender, EventArgs e)

@@ -32,7 +32,8 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select I.Item_Code, Item_Name, BOR_Route, Common_Name as BOR_RouteName, FD.Facility_Code,
+                cmd.CommandText = @"select ROW_NUMBER() OVER(ORDER BY BOR_Route, FD.Facility_Code, BOR_ModdifyDate) RowNo,
+                                           I.Item_Code, Item_Name, BOR_Route, Common_Name as BOR_RouteName, FD.Facility_Code,
                                            Facility_Name, BOR_TactTime,
                                            CONVERT(varchar, BOR_ReadyTime) BOR_ReadyTime, BOR_Order,
                                            CONVERT(varchar, BOR_Transference) BOR_Transference,
@@ -55,7 +56,8 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select I.Item_Code, Item_Name, BOR_Route, Common_Name as BOR_RouteName, FD.Facility_Code,
+                cmd.CommandText = @"select ROW_NUMBER() OVER(ORDER BY BOR_Route, FD.Facility_Code, BOR_ModdifyDate) RowNo, 
+                                           I.Item_Code, Item_Name, BOR_Route, Common_Name as BOR_RouteName, FD.Facility_Code,
                                            Facility_Name, BOR_TactTime,
                                            CONVERT(varchar, BOR_ReadyTime) BOR_ReadyTime, BOR_Order,
                                            CONVERT(varchar, BOR_Transference) BOR_Transference,

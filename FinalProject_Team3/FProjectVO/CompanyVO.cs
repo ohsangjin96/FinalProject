@@ -8,6 +8,7 @@ namespace FProjectVO
 {
     public class CompanyVO
     {
+        public long RowNo { get; set; }
         public string Com_Code { get; set; }
         public string Com_Name { get; set; }
         public string Com_Type { get; set; }
