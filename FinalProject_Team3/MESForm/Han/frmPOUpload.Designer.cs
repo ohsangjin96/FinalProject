@@ -29,12 +29,13 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnCreate = new MESForm.CustomControls.custButtonControl();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnExcelUpload = new MESForm.CustomControls.custButtonControl();
             this.btnFrmDownload = new MESForm.CustomControls.custButtonControl();
-            this.btnInsert = new MESForm.CustomControls.custButtonControl();
+            this.btnCreate = new MESForm.CustomControls.custButtonControl();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,26 +67,26 @@ namespace MESForm.Han
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnInsert);
-            this.panel1.Controls.Add(this.btnFrmDownload);
             this.panel1.Controls.Add(this.btnCreate);
+            this.panel1.Controls.Add(this.btnFrmDownload);
+            this.panel1.Controls.Add(this.btnExcelUpload);
             this.panel1.Location = new System.Drawing.Point(670, 12);
             // 
-            // btnCreate
+            // btnExcelUpload
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnCreate.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(213, 6);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(140, 32);
-            this.btnCreate.TabIndex = 0;
-            this.btnCreate.Text = "영업마스터업로드";
-            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCreate.UseVisualStyleBackColor = false;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnExcelUpload.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnExcelUpload.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcelUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelUpload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcelUpload.ForeColor = System.Drawing.Color.Black;
+            this.btnExcelUpload.Location = new System.Drawing.Point(468, 6);
+            this.btnExcelUpload.Name = "btnExcelUpload";
+            this.btnExcelUpload.Size = new System.Drawing.Size(100, 32);
+            this.btnExcelUpload.TabIndex = 0;
+            this.btnExcelUpload.Text = "엑셀 등록";
+            this.btnExcelUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcelUpload.UseVisualStyleBackColor = false;
+            this.btnExcelUpload.Click += new System.EventHandler(this.btnExcelUpload_Click);
             // 
             // btnFrmDownload
             // 
@@ -94,7 +95,7 @@ namespace MESForm.Han
             this.btnFrmDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFrmDownload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFrmDownload.ForeColor = System.Drawing.Color.Black;
-            this.btnFrmDownload.Location = new System.Drawing.Point(359, 6);
+            this.btnFrmDownload.Location = new System.Drawing.Point(342, 6);
             this.btnFrmDownload.Name = "btnFrmDownload";
             this.btnFrmDownload.Size = new System.Drawing.Size(120, 32);
             this.btnFrmDownload.TabIndex = 1;
@@ -103,29 +104,45 @@ namespace MESForm.Han
             this.btnFrmDownload.UseVisualStyleBackColor = false;
             this.btnFrmDownload.Click += new System.EventHandler(this.btnFrmDownload_Click);
             // 
-            // btnInsert
+            // btnCreate
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnInsert.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnInsert.ForeColor = System.Drawing.Color.Black;
-            this.btnInsert.Location = new System.Drawing.Point(485, 6);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(83, 32);
-            this.btnInsert.TabIndex = 2;
-            this.btnInsert.Text = "저장";
-            this.btnInsert.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            this.btnCreate.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnCreate.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Location = new System.Drawing.Point(196, 6);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(140, 32);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "영업마스터 생성";
+            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // custDataGridViewControl1
             // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
             this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle6;
             this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
@@ -134,16 +151,6 @@ namespace MESForm.Han
             this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 628);
             this.custDataGridViewControl1.TabIndex = 0;
             this.custDataGridViewControl1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.custDataGridViewControl1_CellDoubleClick);
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "no";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn3.HeaderText = "No";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 50;
             // 
             // frmPOUpload
             // 
@@ -167,10 +174,9 @@ namespace MESForm.Han
         #endregion
 
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
-        private CustomControls.custButtonControl btnInsert;
-        private CustomControls.custButtonControl btnFrmDownload;
         private CustomControls.custButtonControl btnCreate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private CustomControls.custButtonControl btnFrmDownload;
+        private CustomControls.custButtonControl btnExcelUpload;
     }
 }
 

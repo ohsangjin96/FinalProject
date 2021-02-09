@@ -1,5 +1,6 @@
 ﻿using FProjectDAC;
 using FProjectVO;
+using MESForm.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace MESForm.Han
         public List<POVO> viewlist { get; set; }
         public DataTable uploaddt { get; set; }
         public List<POVO> uploadlist { get; set; }
-        public bool Bflag { get; set; }
+        string item_code = string.Empty;
 
         public popupPOUpload()
         {
@@ -32,6 +33,7 @@ namespace MESForm.Han
 
             txtPlanFile.Enabled = false;
             dtpPlan.Enabled = true;
+            dtpPlan.MinDate = DateTime.Now;
             txtPlanVersion.Enabled = false;
         }
 
@@ -52,14 +54,17 @@ namespace MESForm.Han
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void popupPOUpload_Load(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            txtPlanVersion.Text = planID;
+         
+            if (txtPlanVersion.Text.Length > 0)
+            {
+                oldplanID = txtPlanVersion.Text;
+                string date_tmp = null;
+                date_tmp = txtPlanVersion.Text.Substring(0, 4) + "-" + txtPlanVersion.Text.Substring(4, 2) + "-" + txtPlanVersion.Text.Substring(6, 2);
+                dtpPlan.Value = Convert.ToDateTime(date_tmp);
+            }
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -105,11 +110,47 @@ namespace MESForm.Han
                 conn.Close();
 
                 txtPlanFile.Text = dlg.FileName;
+                
+
+                //업로드한 엑셀 내용의 유효성체크
+                POService service = new POService();
+
+                string com_code, com_name, item_name;
+
+                foreach(DataRow dr in uploaddt.Rows)
+                {
+                    com_code = dr["Com_Code"].ToString();
+                    com_name = dr["Com_Name"].ToString();
+                    item_name = dr["Item_Name"].ToString();
+
+                    if(!service.ExcelCompanyCheck(com_code, com_name))
+                    {
+                        MessageBox.Show("업로드할 주문서의 업체의 정보를 다시 확인해주세요.(실패)");
+                        txtPlanFile.Text = null;
+                        return;
+                    }
+
+                    item_code = service.ExcelItemCheck(item_name);
+
+                    if (item_code == null)
+                    {
+                        MessageBox.Show("업로드할 주문서의 품목 정보를 다시 확인해주세요.(실패)");
+                        txtPlanFile.Text = null;
+                        return;
+                    }
+                }
+                service.Dispose();
             }
         }
 
         private void dtpPlan_ValueChanged(object sender, EventArgs e)   //계획일자선택
         {
+            if (dtpPlan.Value < DateTime.Now)
+            {
+                MessageBox.Show("현재날짜 이전의 날짜는 계획일자로 선택할 수 없습니다.");
+                dtpPlan.Value = DateTime.Now;
+            }
+
             if (oldplanID == null)
             {
                 txtPlanVersion.Text = dtpPlan.Value.ToString("yyyyMMdd") + "_P1";
@@ -129,13 +170,30 @@ namespace MESForm.Han
             //if 선택파일명, 계획기준버전 선택한 경우
             if (txtPlanFile.Text.Length > 0 && txtPlanVersion.Text.Length > 0)
             {
+                uploaddt.Columns.Add("Plan_ID");
+                uploaddt.Columns.Add("Order_Plandate");
+                uploaddt.Columns.Add("Item_Code");
+                uploaddt.Columns.Add("Order_Arrive");
+                uploaddt.Columns.Add("Order_Remark");
+                uploaddt.Columns.Add("Order_OrderAmount");
+
+                foreach (DataRow dr in uploaddt.Rows)
+                {
+                    dr["Plan_ID"] = txtPlanVersion.Text;
+                    dr["Order_Plandate"] = dtpPlan.Value.ToShortDateString();
+                    dr["ITEM_Code"] = item_code;
+                    dr["Order_Arrive"] = dr["Com_Code"];
+                    dr["Order_Remark"] = "";
+                    dr["Order_OrderAmount"] = dr["TotalOrderAmount"];
+                }
+
                 List<POVO> planidfind = (from id in viewlist
-                                 where id.Plan_ID.Substring(0,8) == txtPlanVersion.Text.Substring(0,8)
-                                 select id).ToList();
+                                         where id.Plan_ID.Substring(0, 8) == txtPlanVersion.Text.Substring(0, 8)
+                                         select id).ToList();
 
                 if (planidfind.Count != 0)
                     oldplanID = planidfind[0].Plan_ID;
-
+                
                 //if 계획기준버전이 존재하는 경우 파일 덮어쓰기 여부 showdialog
                 if (oldplanID!=null/*planID !=null || planidfind.Count!=0*/)
                 {
@@ -155,23 +213,9 @@ namespace MESForm.Han
                         return;
                     }
                 }
-                //업로드 성공
-                uploaddt.Columns.Add("Plan_ID");
-                uploaddt.Columns.Add("Order_Plandate");
-                uploaddt.Columns.Add("Item_Code");
-                uploaddt.Columns.Add("Order_Arrive");
-                uploaddt.Columns.Add("Order_Remark");
-                foreach(DataRow dr in uploaddt.Rows)
-                {
-                    dr["Plan_ID"] = txtPlanVersion.Text;
-                    dr["Order_Plandate"] = dtpPlan.Value;
-                    dr["Item_Code"] = "abc";
-                    dr["Order_Arrive"] = "ABC";
-                    dr["Order_Remark"] = "비고";
-                }
 
+                //업로드 성공
                 uploadlist = Helper.ConvertDataTableToList<POVO>(uploaddt);
-                
                 viewlist.AddRange(uploadlist);
 
                 this.DialogResult = DialogResult.OK;
@@ -183,17 +227,9 @@ namespace MESForm.Han
             }
         }
 
-        private void popupPOUpload_Load(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            txtPlanVersion.Text = planID;
-         
-            if (txtPlanVersion.Text.Length > 0)
-            {
-                oldplanID = txtPlanVersion.Text;
-                string date_tmp = null;
-                date_tmp = txtPlanVersion.Text.Substring(0, 4) + "-" + txtPlanVersion.Text.Substring(4, 2) + "-" + txtPlanVersion.Text.Substring(6, 2);
-                dtpPlan.Value = Convert.ToDateTime(date_tmp);
-            }
+            this.Close();
         }
     }
 }

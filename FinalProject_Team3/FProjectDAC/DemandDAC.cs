@@ -77,5 +77,38 @@ namespace FProjectDAC
                 throw new Exception(err.Message);
             }
         }
+
+        public bool DemandWOCheck(string woID)
+        {
+            using(SqlCommand cmd= new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(Demand_WO) from Demand where Demand_WO=@woID";
+
+                cmd.Parameters.AddWithValue("@Demand_WO", woID);
+
+                int iRowAffect = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (iRowAffect > 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public List<DemandVO> GetDemandAllList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Plan_ID, Com_Code, Com_Name, Item_Code, Item_Name, Demand_WO, Demand_FixedDate, Demand_OrderAmount
+                                    from Demand";
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<DemandVO> list = Helper.DataReaderMapToList<DemandVO>(reader);
+
+                return list;
+            }
+        }
     }
 }
