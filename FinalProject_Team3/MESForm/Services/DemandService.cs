@@ -28,5 +28,17 @@ namespace MESForm.Services
             DemandDAC dac = new DemandDAC();
             return dac.Update(vo);
         }
+
+        public bool DemandWOCheck(string woID)
+        {
+            DemandDAC dac = new DemandDAC();
+            return dac.DemandWOCheck(woID);
+        }
+
+        public List<DemandVO> GetDemandAllList()
+        {
+            DemandDAC dac = new DemandDAC();
+            return dac.GetDemandAllList();
+        }
     }
 }

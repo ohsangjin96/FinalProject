@@ -97,6 +97,8 @@ namespace MESForm.PopUp
             for(int i=0; i< cbArray.Length; i++)
                 ComboBoxBinding.ComBind(cbArray[i], commonList, "UseYN000");
             ComboBoxBinding.ComBind(cboFactoryUse, commonList, "UseYN000", false);
+
+            cboFactoryUse.SelectedIndex = 1;
         }
 
         private void PopUpFactory_Load(object sender, EventArgs e)

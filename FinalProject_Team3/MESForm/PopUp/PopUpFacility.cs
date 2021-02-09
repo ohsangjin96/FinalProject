@@ -63,6 +63,7 @@ namespace MESForm.PopUp
             List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
             commonService.Dispose();
             ComboBoxBinding.ComBind(cboFacilitiesUse, commonList, "UseYN000", false);
+            cboFacilitiesUse.SelectedIndex = 1;
         }
 
         private void PopUpFacility_Load(object sender, EventArgs e)

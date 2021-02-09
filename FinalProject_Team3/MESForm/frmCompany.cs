@@ -60,7 +60,7 @@ namespace MESForm
             ComboBoxBinding.ComBind(cboFactoryType, commonList, "ComType000");
 
             DgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         /// <summary>

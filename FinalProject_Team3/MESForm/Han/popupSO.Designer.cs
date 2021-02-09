@@ -29,9 +29,9 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboOrderType = new System.Windows.Forms.ComboBox();
+            this.cboGubun = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.cboItmeType = new System.Windows.Forms.ComboBox();
+            this.cboItemCode = new System.Windows.Forms.ComboBox();
             this.cboCom = new System.Windows.Forms.ComboBox();
             this.txtCancelAmount = new System.Windows.Forms.TextBox();
             this.txtOrderAmount = new System.Windows.Forms.TextBox();
@@ -69,13 +69,13 @@ namespace MESForm.Han
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(274, 405);
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Location = new System.Drawing.Point(271, 398);
+            this.btnCancel.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Location = new System.Drawing.Point(198, 405);
+            this.btnSave.Location = new System.Drawing.Point(195, 398);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
@@ -84,9 +84,9 @@ namespace MESForm.Han
             this.pnl.Controls.Add(this.cboMkt);
             this.pnl.Controls.Add(this.dtpFixedDate);
             this.pnl.Controls.Add(this.txtReleaseAmount);
-            this.pnl.Controls.Add(this.cboOrderType);
+            this.pnl.Controls.Add(this.cboGubun);
             this.pnl.Controls.Add(this.label15);
-            this.pnl.Controls.Add(this.cboItmeType);
+            this.pnl.Controls.Add(this.cboItemCode);
             this.pnl.Controls.Add(this.cboCom);
             this.pnl.Controls.Add(this.txtCancelAmount);
             this.pnl.Controls.Add(this.txtOrderAmount);
@@ -104,7 +104,7 @@ namespace MESForm.Han
             this.pnl.Controls.Add(this.label10);
             this.pnl.Controls.Add(this.label11);
             this.pnl.Controls.Add(this.label14);
-            this.pnl.Size = new System.Drawing.Size(519, 353);
+            this.pnl.Size = new System.Drawing.Size(519, 346);
             // 
             // btnClose
             // 
@@ -112,13 +112,13 @@ namespace MESForm.Han
             this.btnClose.Location = new System.Drawing.Point(503, 0);
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // cboOrderType
+            // cboGubun
             // 
-            this.cboOrderType.FormattingEnabled = true;
-            this.cboOrderType.Location = new System.Drawing.Point(118, 176);
-            this.cboOrderType.Name = "cboOrderType";
-            this.cboOrderType.Size = new System.Drawing.Size(125, 21);
-            this.cboOrderType.TabIndex = 107;
+            this.cboGubun.FormattingEnabled = true;
+            this.cboGubun.Location = new System.Drawing.Point(118, 176);
+            this.cboGubun.Name = "cboGubun";
+            this.cboGubun.Size = new System.Drawing.Size(125, 21);
+            this.cboGubun.TabIndex = 107;
             // 
             // label15
             // 
@@ -130,13 +130,14 @@ namespace MESForm.Han
             this.label15.TabIndex = 106;
             this.label15.Text = "발주구분";
             // 
-            // cboItmeType
+            // cboItemCode
             // 
-            this.cboItmeType.FormattingEnabled = true;
-            this.cboItmeType.Location = new System.Drawing.Point(365, 77);
-            this.cboItmeType.Name = "cboItmeType";
-            this.cboItmeType.Size = new System.Drawing.Size(125, 21);
-            this.cboItmeType.TabIndex = 105;
+            this.cboItemCode.FormattingEnabled = true;
+            this.cboItemCode.Location = new System.Drawing.Point(118, 77);
+            this.cboItemCode.Name = "cboItemCode";
+            this.cboItemCode.Size = new System.Drawing.Size(125, 21);
+            this.cboItemCode.TabIndex = 105;
+            this.cboItemCode.SelectedIndexChanged += new System.EventHandler(this.cboItemCode_SelectedIndexChanged);
             // 
             // cboCom
             // 
@@ -152,6 +153,7 @@ namespace MESForm.Han
             this.txtCancelAmount.Name = "txtCancelAmount";
             this.txtCancelAmount.Size = new System.Drawing.Size(125, 21);
             this.txtCancelAmount.TabIndex = 100;
+            this.txtCancelAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtOrderAmount
             // 
@@ -159,6 +161,7 @@ namespace MESForm.Han
             this.txtOrderAmount.Name = "txtOrderAmount";
             this.txtOrderAmount.Size = new System.Drawing.Size(125, 21);
             this.txtOrderAmount.TabIndex = 99;
+            this.txtOrderAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
@@ -221,7 +224,7 @@ namespace MESForm.Han
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(27, 80);
+            this.label4.Location = new System.Drawing.Point(274, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 14);
             this.label4.TabIndex = 81;
@@ -248,7 +251,7 @@ namespace MESForm.Han
             // 
             // txtItemName
             // 
-            this.txtItemName.Location = new System.Drawing.Point(118, 77);
+            this.txtItemName.Location = new System.Drawing.Point(365, 77);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(125, 21);
             this.txtItemName.TabIndex = 91;
@@ -278,7 +281,7 @@ namespace MESForm.Han
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(274, 80);
+            this.label11.Location = new System.Drawing.Point(27, 80);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 14);
             this.label11.TabIndex = 88;
@@ -300,6 +303,7 @@ namespace MESForm.Han
             this.txtReleaseAmount.Name = "txtReleaseAmount";
             this.txtReleaseAmount.Size = new System.Drawing.Size(125, 21);
             this.txtReleaseAmount.TabIndex = 108;
+            this.txtReleaseAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // dtpFixedDate
             // 
@@ -308,6 +312,7 @@ namespace MESForm.Han
             this.dtpFixedDate.Name = "dtpFixedDate";
             this.dtpFixedDate.Size = new System.Drawing.Size(125, 21);
             this.dtpFixedDate.TabIndex = 109;
+            this.dtpFixedDate.ValueChanged += new System.EventHandler(this.dtpFixedDate_ValueChanged);
             // 
             // cboMkt
             // 
@@ -332,11 +337,12 @@ namespace MESForm.Han
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 442);
+            this.ClientSize = new System.Drawing.Size(543, 450);
             this.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "popupSO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "S/O";
+            this.Load += new System.EventHandler(this.popupSO_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnl.ResumeLayout(false);
@@ -347,9 +353,9 @@ namespace MESForm.Han
 
         #endregion
 
-        protected System.Windows.Forms.ComboBox cboOrderType;
+        protected System.Windows.Forms.ComboBox cboGubun;
         protected System.Windows.Forms.Label label15;
-        protected System.Windows.Forms.ComboBox cboItmeType;
+        protected System.Windows.Forms.ComboBox cboItemCode;
         protected System.Windows.Forms.ComboBox cboCom;
         protected System.Windows.Forms.TextBox txtCancelAmount;
         protected System.Windows.Forms.TextBox txtOrderAmount;

@@ -28,7 +28,7 @@ namespace MESForm
         {
             dtpDate.ShowCheckBox = true;
             dgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         private void LoadData()
@@ -59,6 +59,11 @@ namespace MESForm
 
         private void btnInquiry_Click(object sender, EventArgs e)//조회
         {
+            if (txtItemCode.Text == string.Empty)
+            {
+                LoadData();
+                return;
+            }
             SalesCostService service = new SalesCostService();
             List<SalesCostVO> list = service.GetSelect(txtItemCode.Text);
             dgvCost.DataSource = list;

@@ -18,6 +18,7 @@ namespace MESForm.Han
     {
         List<POVO> allList;
         List<POVO> deList;
+
         public popupD_Plan()
         {
             InitializeComponent();
@@ -45,29 +46,21 @@ namespace MESForm.Han
             allList = service.GetPOList();
             service.Dispose();
             custDataGridViewControl1.DataSource = allList;
+        }
 
-            var Planid = (from list in allList
-                             where list.Plan_ID != null
-                             select list.Plan_ID).Distinct().ToList();
-            Planid.Insert(0, "전체"); //전체선택시 전체 데이터
-            ComboBoxBinding.BindingComboBoxPart(cboPlanID, Planid, "Plan_ID");
-
+        private void ComboBinding()
+        {
+            var PlanIDList = (from list in allList
+                           select list.Plan_ID).Distinct().ToList();
+            PlanIDList.Insert(0, "");
+            ComboBoxBinding.BindingComboBoxPart(cboPlanID, PlanIDList, "Plan_ID");
         }
 
         private void popupD_Plan_Load(object sender, EventArgs e)
         {
             DGVSetting();
             LoadData();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            ComboBinding();
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)
@@ -84,11 +77,24 @@ namespace MESForm.Han
             else
             {
                 MessageBox.Show("PlanID값을 선택하세요");
+                LoadData();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DemandService check = new DemandService();
+
+            foreach(POVO i in deList)
+            {
+                bool bFlag = check.DemandWOCheck(i.Order_WO);
+                if (bFlag)
+                {
+                    MessageBox.Show("이미 저장된 수요계획이 있습니다");
+                    return;
+                }
+            }
+
             //수요계획생성
             if(MessageBox.Show("수요계획을 생성하시겠습니까?", "수요계획저장", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
@@ -118,6 +124,15 @@ namespace MESForm.Han
                 service.Dispose();
                 this.DialogResult = DialogResult.OK;
             }
+            else
+            {
+                MessageBox.Show("수요계획 생성중에 문제가 발생했습니다");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

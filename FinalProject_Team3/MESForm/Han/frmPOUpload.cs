@@ -22,13 +22,13 @@ namespace MESForm.Han
 {
     public partial class frmPOUpload : BaseForms.frmBaseLists
     {
-        public string PlanID { get; set; }
-        public string OldPlanID { get; set; }
-        public List<POVO> viewlist { get; set; }
-        public List<POVO> insertlist { get; set; }
-        public List<POVO> updatelist { get; set; }
+        public string PlanID { get; set; }          //수정을 위해 선택된 셀의 planID
+        public string OldPlanID { get; set; }       //수정된 내용을 DB에 적용할 때 사용되는 planID
+        public List<POVO> viewlist { get; set; }    //현재 보이는 데이터
+        public List<POVO> insertlist { get; set; }  //새로 등록한 데이터
+        public List<POVO> updatelist { get; set; }  //변경한 데이터
         
-        List<POVO> allList;
+        List<POVO> allList;         //DB에 저장되어있는 데이터
 
         public frmPOUpload()
         {
@@ -39,7 +39,7 @@ namespace MESForm.Han
         {
             CommonUtil.SetInitGridView(custDataGridViewControl1);
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanDate", "Order_Plandate");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "WorkOrderID", "Order_WO");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객주문번호", "Order_WO");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "업체CODE", "Com_Code");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품처", "Com_Type");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "MKT", "Order_MKT");
@@ -49,12 +49,9 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "사이즈", "Order_Size");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "입고P/NO", "ITEM_Type");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "Item_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "계획수량합계", "TotalOrderAmount");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량합계", "TotalOrderAmount"); //계획수량합계
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납기일", "Order_FixedDate");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "Plan_ID");
-
-            //업체code, 납품처 => 업체관리의 업체 리스트 내용만 입력 가능
-            //입고P/NO, 품명 => 품목관리의 품목 리스트 내용만 입력 가능
         }
 
         private void LoadData()
@@ -74,22 +71,22 @@ namespace MESForm.Han
             viewlist = (List<POVO>)custDataGridViewControl1.DataSource;
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void btnExcelUpload_Click(object sender, EventArgs e)
         {
             popupPOUpload pop = new popupPOUpload(OpenMode.Register);
             pop.viewlist = viewlist;
             if (pop.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("등록이 완료되었습니다.");
+                MessageBox.Show("영업마스터가 정상적으로 생성되었습니다.");
                 custDataGridViewControl1.DataSource = null;
                 custDataGridViewControl1.DataSource = pop.viewlist;
                 custDataGridViewControl1.Update();
-                //저장버튼 클릭 시 추가 할 list
-                insertlist = pop.uploadlist;
+                
+                insertlist = pop.uploadlist;    //저장버튼 클릭 시 추가 할 list
             }
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnCreate_Click(object sender, EventArgs e)
         {
             //영업마스터 DB에 데이터 insert
             if (MessageBox.Show("변경한 내용을 저장하시겠습니까?", "영업마스터 변경", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -112,6 +109,7 @@ namespace MESForm.Han
                         {
                             service.RegPOList(i);
                         }
+                        service.Dispose();
                     }
                     else
                     {
@@ -122,12 +120,6 @@ namespace MESForm.Han
                 MessageBox.Show("저장");
             }
             LoadData();
-        }
-
-        private void btnFrmDownload_Click(object sender, EventArgs e)
-        {
-            //엑셀 양식 다운로드
-            ExcelDownload();
         }
 
         private void custDataGridViewControl1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -144,10 +136,15 @@ namespace MESForm.Han
                 custDataGridViewControl1.DataSource = null;
                 custDataGridViewControl1.DataSource = pop.viewlist;
                 custDataGridViewControl1.Update();
-                //저장버튼 클릭 시 PlanID포함한 데이터 삭제 후 추가 할 list
-                updatelist = pop.uploadlist;
+                
+                updatelist = pop.uploadlist;    //저장버튼 클릭 시 PlanID포함한 데이터 삭제 후 추가 할 list
                 OldPlanID = pop.oldplanID;
             }
+        }
+
+        private void btnFrmDownload_Click(object sender, EventArgs e)
+        {
+            ExcelDownload();
         }
 
         #region 엑셀양식
@@ -161,17 +158,16 @@ namespace MESForm.Han
                 Excel.Application xlApp = new Excel.Application();
                 Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
                 Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-                //Range range = null;
-                //range = xlWorkSheet.get_Range("A1", "M100");
 
-                // 전체  
-                //range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                xlWorkSheet.Columns.AutoFit();
 
-                // 아래,오른쪽,왼쪽,위  
-                //range.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
-                //range.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous;
-                //range.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous;
-                //range.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
+                //컬럼 테두리
+                Range range = xlWorkSheet.get_Range("A1", "M1");
+                range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                range.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
+                range.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous;
+                range.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous;
+                range.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
 
                 #region 컬럼명
                 //xlWorkSheet.Cells[1, 1] = "순번";
@@ -204,7 +200,6 @@ namespace MESForm.Han
                 xlWorkSheet.Cells[1, 13] = "TotalOrderAmount";
                 xlWorkSheet.Cells[1, 14] = "Order_FixedDate";
 
-                xlWorkSheet.Columns.AutoFit();
 
                 xlWorkBook.SaveAs(dlg.FileName, Excel.XlFileFormat.xlWorkbookNormal);
                 xlWorkBook.Close(true);
