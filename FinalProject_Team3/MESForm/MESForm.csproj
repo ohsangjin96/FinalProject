@@ -188,6 +188,12 @@
     <Compile Include="FrmShift.Designer.cs">
       <DependentUpon>FrmShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShiftSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShiftSchedule.Designer.cs">
+      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,6 +584,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShift.resx">
       <DependentUpon>FrmShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShiftSchedule.resx">
+      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>

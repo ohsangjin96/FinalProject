@@ -30,10 +30,15 @@ namespace MESForm
         {
             dtpDate.ShowCheckBox = true;
             dgvSetting();
-            LoadData();
+            //LoadData();
         }
         private void btnInquiry_Click(object sender, EventArgs e)//조회버튼
         {
+            if (txtItemCode.Text==string.Empty)
+            {
+                LoadData();
+                return;
+            }
             MaterialCostService service = new MaterialCostService();
             List<MaterialCostVO> list = service.GetCostList(txtItemCode.Text);
             dgvCost.DataSource = list;
