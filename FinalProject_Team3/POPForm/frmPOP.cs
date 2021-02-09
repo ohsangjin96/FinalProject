@@ -39,15 +39,15 @@ namespace POPForm
             label3.Text = "2021-02-11";
             CommonUtil.SetInitGridView(dgvList);
             CommonUtil.AddGridTextColumn(dgvList, "PlanID", "Plan_ID", 200);
-            CommonUtil.AddGridTextColumn(dgvList, "품목코드", "Item_Code", 165);
-            CommonUtil.AddGridTextColumn(dgvList, "품목이름", "Item_Name", 160);
+            CommonUtil.AddGridTextColumn(dgvList, "품목", "Item_Code", 165);
+            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Name", 160);
             CommonUtil.AddGridTextColumn(dgvList, "수량", "Order_OrderAmount", 100);
             CommonUtil.AddGridTextColumn(dgvList, "날짜", "Order_FixedDate", 200);
 
             CommonUtil.SetInitGridView(dgvList2);
             CommonUtil.AddGridTextColumn(dgvList2, "PlanID", "WorkOrder_ID", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜", "WorkRegist_Start", 165);
-            CommonUtil.AddGridTextColumn(dgvList2, "품목코드", "Item_Code", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "품목", "Item_Code", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "상태", "WorkRegist_State", 100);
             CommonUtil.AddGridTextColumn(dgvList2, "걸린시간", "WorkRegist_WorkTime", 120);
             CommonUtil.AddGridTextColumn(dgvList2, "양품", "WorkRegist_NomalQty", 100);
