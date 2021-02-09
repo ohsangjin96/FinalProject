@@ -187,7 +187,7 @@ namespace MESForm
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 31;
-            this.label2.Text = "납품날짜";
+            this.label2.Text = "계획날짜";
             // 
             // textBox1
             // 

@@ -28,7 +28,7 @@ namespace MESForm
         {
             ComBind();
             dgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         private void ComBind()

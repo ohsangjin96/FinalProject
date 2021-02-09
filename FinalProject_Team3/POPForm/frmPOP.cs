@@ -20,7 +20,7 @@ namespace POPForm
         Machin machin;
         delegate void EventHandler(object sender, EventArgs arg);
         public List<WorkRegistVO> curlist { get; set; }
-
+        int k = 0;
         List<POPVO> list = new List<POPVO>();
         List<OrderVO> orderlist = new List<OrderVO>();
         public frmPOP()
@@ -39,15 +39,15 @@ namespace POPForm
             label3.Text = "2021-02-11";
             CommonUtil.SetInitGridView(dgvList);
             CommonUtil.AddGridTextColumn(dgvList, "PlanID", "Plan_ID", 200);
-            CommonUtil.AddGridTextColumn(dgvList, "아이템 코드", "Item_Code", 165);
-            CommonUtil.AddGridTextColumn(dgvList, "아이템 이름", "Item_Name", 160);
+            CommonUtil.AddGridTextColumn(dgvList, "품목", "Item_Code", 165);
+            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Name", 160);
             CommonUtil.AddGridTextColumn(dgvList, "수량", "Order_OrderAmount", 100);
             CommonUtil.AddGridTextColumn(dgvList, "날짜", "Order_FixedDate", 200);
 
             CommonUtil.SetInitGridView(dgvList2);
             CommonUtil.AddGridTextColumn(dgvList2, "PlanID", "WorkOrder_ID", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜", "WorkRegist_Start", 165);
-            CommonUtil.AddGridTextColumn(dgvList2, "아이템코드", "Item_Code", 150);
+            CommonUtil.AddGridTextColumn(dgvList2, "품목", "Item_Code", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "상태", "WorkRegist_State", 100);
             CommonUtil.AddGridTextColumn(dgvList2, "걸린시간", "WorkRegist_WorkTime", 120);
             CommonUtil.AddGridTextColumn(dgvList2, "양품", "WorkRegist_NomalQty", 100);
@@ -61,39 +61,65 @@ namespace POPForm
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            splitContainer2.Panel2.Controls.Clear();
-           
-
-    
-            if (e.RowIndex >= 0)
+            string Item_Code = dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
+            if (splitContainer2.Panel1.Controls.Contains(machin))
             {
-                lblID.Text = dgvList[0, dgvList.CurrentRow.Index].Value.ToString();
-                lblItemName.Text = dgvList[2, dgvList.CurrentRow.Index].Value.ToString();
-                lblAmount.Text = dgvList[3, dgvList.CurrentRow.Index].Value.ToString();
-                DateTime Date = (DateTime)dgvList[4, dgvList.CurrentRow.Index].Value;
-                lblFixedDate.Text = Date.ToString("yyyy-MM-dd");
-                string Item_Code = dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
-                POPService service = new POPService();
-                list = service.GetPOPList(Item_Code);
-                for (int i = 0; i < list.Count; i++)
+                if(!machin.Name.Contains(Item_Code))
                 {
-                    machin = new Machin();
+                    if (e.RowIndex >= 0)
+                    {
+                        POPService service = new POPService();
+                        list = service.GetPOPList(Item_Code);
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            machin = new Machin();
+                            machin.Location = new Point(0, 83 + k * 105);
+                            machin.Facility = list[i].Facility_Name;
+                            machin.Name = list[i].Item_Code;
+                            //machin.ID = lblID.Text;
+                            machin.Tag = list[i].Facility_Code;
+                            machin.IP = list[i].Facility_IP;
+                            machin.Port = list[i].Facility_Port;
+                            machin.BOM_Level = list[i].BOM_Level.ToString();
+                            machin.MachinRegist += Machin_MachinRegist;
+                            splitContainer2.Panel1.Controls.Add(machin);
+                            k++;
+                        }
 
 
-                    machin.Location = new Point(0, 4 + i * 105);
-                    machin.Facility = list[i].Facility_Name;
-                    machin.Name = list[i].Item_Code;
-                    machin.ID = lblID.Text;
-                    machin.Tag = list[i].Facility_Code;
-                    machin.IP = list[i].Facility_IP;
-                    machin.Port = list[i].Facility_Port;
-                    machin.BOM_Level = list[i].BOM_Level.ToString();
-                    machin.MachinRegist += Machin_MachinRegist;
-                    splitContainer2.Panel2.Controls.Add(machin);
+                    }
                 }
+                else
+                {
 
-
+                }
             }
+            else
+            {
+                if (e.RowIndex >= 0)
+                {
+                    POPService service = new POPService();
+                    list = service.GetPOPList(Item_Code);
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        machin = new Machin();
+                        machin.Location = new Point(0, 83 + k * 105);
+                        machin.Facility = list[i].Facility_Name;
+                        machin.Name = list[i].Item_Code;
+                        //machin.ID = lblID.Text;
+                        machin.Tag = list[i].Facility_Code;
+                        machin.IP = list[i].Facility_IP;
+                        machin.Port = list[i].Facility_Port;
+                        machin.BOM_Level = list[i].BOM_Level.ToString();
+                        machin.MachinRegist += Machin_MachinRegist;
+                        splitContainer2.Panel1.Controls.Add(machin);
+                        k++;
+                    }
+
+
+                }
+            }
+            
 
         }
 
@@ -151,7 +177,9 @@ namespace POPForm
 
         }
 
-
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+                    }
     }
 }
 

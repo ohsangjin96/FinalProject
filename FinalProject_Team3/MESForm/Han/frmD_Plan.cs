@@ -17,6 +17,7 @@ namespace MESForm.Han
     public partial class frmD_Plan : BaseForms.frmBaseLists
     {
         List<POVO> polist;
+        List<CompanyVO> Companylist;
 
         public frmD_Plan()
         {
@@ -33,21 +34,41 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "Item_Name");
         }
 
-        private void frmD_Plan_Load(object sender, EventArgs e)
+        private void ComboBinding()
         {
-            //DGVSetting();
-
             POService service = new POService();
             polist = service.GetPOList();
             var planidlist = (from list in polist
                               select list.Plan_ID).ToList();
-            
+
+            planidlist.Insert(0, "");
             ComboBoxBinding.BindingComboBoxPart(cboPlanID, planidlist, "Plan_ID");
+
+            //고객사
+            CompanyService company = new CompanyService();
+            Companylist = company.GetCompanyList();
+
+            var Company = (from list in Companylist
+                           select list.Com_Code).Distinct().ToList();
+            Company.Insert(0, "");
+            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Code");
+
+        }
+
+        private void frmD_Plan_Load(object sender, EventArgs e)
+        {
+            //DGVSetting();
+
+            ComboBinding();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            
+            popupP_Plan frm = new popupP_Plan();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("생산계획 생성이 완료되었습니다");
+            }
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)
@@ -55,42 +76,13 @@ namespace MESForm.Han
             string dtpfrom = string.Empty;
             string dtpto = string.Empty;
             //날짜 입력만큼의 데이터 조회
-            DateTime dtpFrom = dateTimePicker1.DtpFrom;
-            DateTime dtpTo = dateTimePicker1.DtpTo;
-
-            dtpfrom = dtpFrom.ToShortDateString();
-            dtpto = dtpTo.ToShortDateString();
+            dtpfrom = dateTimePicker1.DtpFrom.ToShortDateString();
+            dtpto = dateTimePicker1.DtpTo.ToShortDateString();
 
             DemandService service = new DemandService();
             DataTable dt = service.GetList(dtpfrom, dtpto);
+            service.Dispose();
             custDataGridViewControl1.DataSource = dt;
-
-            //POService service = new POService();
-            //List<POVO> allList = service.GetPOList();
-
-
-            //var result = allList
-            //.GroupBy(c => c.Plan_ID)
-            //.Select(g => new
-            //{
-            //    Plan_ID = g.Key,
-            //    dtpfrom = g.Where(c => c.Order_FixedDate.ToShortDateString()==dtpfrom).Sum(c => c.Order_OrderAmount)
-            //});
-
-
-            //if (cboPlanID.Text.Length > 0)
-            //{
-            //    var PlanIDList = (from list in polist
-            //                      where list.Plan_ID == cboPlanID.Text
-            //                      select list.Order_WO).Distinct().ToList();
-
-            //    custDataGridViewControl1.DataSource = null;
-            //    custDataGridViewControl1.DataSource = PlanIDList;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("PlanID값을 선택하세요");
-            //}
 
         }
 

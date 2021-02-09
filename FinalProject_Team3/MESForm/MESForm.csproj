@@ -188,6 +188,12 @@
     <Compile Include="FrmShift.Designer.cs">
       <DependentUpon>FrmShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShiftSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShiftSchedule.Designer.cs">
+      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +313,12 @@
     </Compile>
     <Compile Include="Han\popupPOUpload.Designer.cs">
       <DependentUpon>popupPOUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\popupP_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupP_Plan.Designer.cs">
+      <DependentUpon>popupP_Plan.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\popupSO.cs">
       <SubType>Form</SubType>
@@ -579,6 +591,9 @@
     <EmbeddedResource Include="FrmShift.resx">
       <DependentUpon>FrmShift.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmShiftSchedule.resx">
+      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -638,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupPOUpload.resx">
       <DependentUpon>popupPOUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupP_Plan.resx">
+      <DependentUpon>popupP_Plan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupSO.resx">
       <DependentUpon>popupSO.cs</DependentUpon>

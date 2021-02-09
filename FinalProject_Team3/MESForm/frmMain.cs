@@ -385,7 +385,8 @@ namespace MESForm
         }
         private void btnShiftSchedule_Click(object sender, EventArgs e)//shift스케줄관리
         {
-          
+            FrmShiftSchedule frm = new FrmShiftSchedule();
+            MdiOpenCheck(frm);
         }
 
         #region 수주/계획관리
