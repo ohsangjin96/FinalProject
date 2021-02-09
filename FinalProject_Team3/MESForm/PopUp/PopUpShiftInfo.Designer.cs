@@ -76,6 +76,7 @@
             // 
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(229, 424);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnl
             // 
@@ -160,6 +161,7 @@
             this.txtModifier.Location = new System.Drawing.Point(107, 228);
             this.txtModifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModifier.Name = "txtModifier";
+            this.txtModifier.ReadOnly = true;
             this.txtModifier.Size = new System.Drawing.Size(168, 22);
             this.txtModifier.TabIndex = 222;
             // 
@@ -222,6 +224,7 @@
             this.txtModifierDAte.Location = new System.Drawing.Point(400, 180);
             this.txtModifierDAte.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtModifierDAte.Name = "txtModifierDAte";
+            this.txtModifierDAte.ReadOnly = true;
             this.txtModifierDAte.Size = new System.Drawing.Size(168, 22);
             this.txtModifierDAte.TabIndex = 216;
             // 
@@ -259,6 +262,7 @@
             // 
             // cboUse
             // 
+            this.cboUse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUse.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.cboUse.FormattingEnabled = true;
             this.cboUse.Location = new System.Drawing.Point(107, 180);
@@ -275,9 +279,11 @@
             this.txtStartDate.Name = "txtStartDate";
             this.txtStartDate.Size = new System.Drawing.Size(168, 22);
             this.txtStartDate.TabIndex = 207;
+            this.txtStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SorEKeyPress);
             // 
             // cboShift
             // 
+            this.cboShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboShift.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.cboShift.FormattingEnabled = true;
             this.cboShift.Location = new System.Drawing.Point(107, 56);
@@ -303,9 +309,11 @@
             this.txtCompleteDate.Name = "txtCompleteDate";
             this.txtCompleteDate.Size = new System.Drawing.Size(168, 22);
             this.txtCompleteDate.TabIndex = 202;
+            this.txtCompleteDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SorEKeyPress);
             // 
             // cboFacCode
             // 
+            this.cboFacCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFacCode.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.cboFacCode.FormattingEnabled = true;
             this.cboFacCode.Location = new System.Drawing.Point(107, 15);

@@ -25,7 +25,7 @@ namespace MESForm
             CommonUtil.SetInitGridView(dgvCompany);
             CommonUtil.AddGridTextColumn(dgvCompany, "업체코드", "COM_Code");                  //1
             CommonUtil.AddGridTextColumn(dgvCompany, "업체이름", "COM_Name", 120);             //2
-            CommonUtil.AddGridTextColumn(dgvCompany, "업체유형", "COM_Type");                  //3
+            CommonUtil.AddGridTextColumn(dgvCompany, "업체유형", "COM_Type", 100, true, DataGridViewContentAlignment.MiddleCenter);                  //3
             CommonUtil.AddGridTextColumn(dgvCompany, "대표자명", "COM_CEO");                   //4
             CommonUtil.AddGridTextColumn(dgvCompany, "사업자등록번호", "Com_CNum", 120);        //5
             CommonUtil.AddGridTextColumn(dgvCompany, "업종", "COM_Category");                  //6
@@ -37,9 +37,9 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvCompany, "전화번호", "COM_Phone", 110);            //12
             CommonUtil.AddGridTextColumn(dgvCompany, "팩스", "COM_Fax", 110);                  //13
             CommonUtil.AddGridTextColumn(dgvCompany, "창고유무", "COM_Warehouse", 10, false);  //14
-            CommonUtil.AddGridTextColumn(dgvCompany, "사용유무", "COM_Use");                   //15
-            CommonUtil.AddGridTextColumn(dgvCompany, "수정자", "COM_Amender");                 //16
-            CommonUtil.AddGridTextColumn(dgvCompany, "수정시간", "COM_ModdifyDate", 140);      //17
+            CommonUtil.AddGridTextColumn(dgvCompany, "사용유무", "COM_Use", 100, true, DataGridViewContentAlignment.MiddleCenter);                   //15
+            CommonUtil.AddGridTextColumn(dgvCompany, "수정자", "COM_Amender", 100, true, DataGridViewContentAlignment.MiddleCenter);                 //16
+            CommonUtil.AddGridTextColumn(dgvCompany, "수정시간", "COM_ModdifyDate", 140, true, DataGridViewContentAlignment.MiddleCenter);      //17
             CommonUtil.AddGridTextColumn(dgvCompany, "업체정보", "Com_Info", 10, false);       //18
         }
 
@@ -53,10 +53,39 @@ namespace MESForm
 
         private void frmCompany_Load(object sender, EventArgs e)
         {
+            CommonCodeService commonService = new CommonCodeService();
+            List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
+            commonService.Dispose();
+
+            ComboBoxBinding.ComBind(cboFactoryType, commonList, "ComType000");
+
             DgvSetting();
-            LoadData();
+            //LoadData();
         }
 
+        /// <summary>
+        /// 검색조건에 따른 조회
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            string code = txtCompanyCode.Text;
+            string name = txtCompanyName.Text;
+            string type = cboFactoryType.Text;
+            string regNum = txtComRegNum.Text;
+
+            CompanyService service = new CompanyService();
+            List<CompanyVO> list = service.SearchCompanyList(code, name, type, regNum);
+            service.Dispose();
+            dgvCompany.DataSource = list;
+        }
+
+        /// <summary>
+        /// 업체정보 등록
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReg_Click(object sender, EventArgs e)
         {
             PopUp.PopUpCompany pop = new PopUp.PopUpCompany(OpenMode.Register);
@@ -68,6 +97,11 @@ namespace MESForm
             }
         }
 
+        /// <summary>
+        /// 업체정보 수정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             int rowIdx = dgvCompany.CurrentRow.Index;
@@ -124,7 +158,7 @@ namespace MESForm
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvCompany);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

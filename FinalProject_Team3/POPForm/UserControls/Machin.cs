@@ -86,8 +86,8 @@ namespace POPForm.UserControls
         
         private void bntActive_Click(object sender, EventArgs e)
         {
-            string server = @"C:\Users\azan0\source\repos\ohsangjin96\FinalProject\FinalProject_Team3\MachinServer\bin\Debug\MachinServer.exe";
-            Process pro = Process.Start(server, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text)+1}");
+            string filePath = Application.StartupPath + @"\\MachinServer.exe";
+            Process pro = Process.Start(filePath, $"{lblFacility.Text} {lblIP.Text} {int.Parse(lblPort.Text)+1}");
             Process_ID = pro.Id;
             if (bflag)
             {

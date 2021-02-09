@@ -8,10 +8,12 @@ namespace FProjectVO
 {
     public class FactoryVO
     {
+        public long RowNo { get; set; }
         public int Factory_ID { get; set; }
         public string Factory_Grade { get; set; }
         public string Factory_Type { get; set; }
         public string Factory_Code { get; set; }
+        public string Factory_NameG { get; set; }        // 단계 구분한 시설명
         public string Factory_Name { get; set; }
         public string Factory_HighRank { get; set; }
         public string Factory_Explain { get; set; }

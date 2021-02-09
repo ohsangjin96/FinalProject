@@ -25,20 +25,21 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvFactory, "시설군", "Factory_Grade", 80); // 1
             CommonUtil.AddGridTextColumn(dgvFactory, "시설구분", "Factory_Type"); // 2
             CommonUtil.AddGridTextColumn(dgvFactory, "시설코드", "Factory_Code"); // 3
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "Factory_Name", 120); // 4
-            CommonUtil.AddGridTextColumn(dgvFactory, "상위시설", "Factory_HighRank"); // 5
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "Factory_Explain", 120); // 6
-            CommonUtil.AddGridTextColumn(dgvFactory, "유무상구분", "Factory_Credit", 100); // 7
-            CommonUtil.AddGridTextColumn(dgvFactory, "순서", "Factory_Order", 60); // 8
-            CommonUtil.AddGridTextColumn(dgvFactory, "수요차감", "Factory_Demand", 80); // 9
-            CommonUtil.AddGridTextColumn(dgvFactory, "공정차감", "Factory_Process", 80); // 10
-            CommonUtil.AddGridTextColumn(dgvFactory, "자재차감", "Factory_Material", 80); // 11
-            CommonUtil.AddGridTextColumn(dgvFactory, "업체", "Com_Code"); // 12
-            CommonUtil.AddGridTextColumn(dgvFactory, "업체명", "Com_Name"); // 13
-            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use", 80); // 14
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "Factory_Amender"); // 15
-            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate", 140); // 16
-            CommonUtil.AddGridTextColumn(dgvFactory, "시설ID", "Factory_ID", 100, false); // 17
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "Factory_NameG", 120); // 4
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설명", "Factory_Name", 120); // 5
+            CommonUtil.AddGridTextColumn(dgvFactory, "상위시설", "Factory_HighRank"); // 6
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설설명", "Factory_Explain", 120); // 7
+            CommonUtil.AddGridTextColumn(dgvFactory, "유무상구분", "Factory_Credit", 100); // 8
+            CommonUtil.AddGridTextColumn(dgvFactory, "순서", "Factory_Order", 60, true, DataGridViewContentAlignment.MiddleRight); // 9
+            CommonUtil.AddGridTextColumn(dgvFactory, "수요차감", "Factory_Demand", 80, true, DataGridViewContentAlignment.MiddleCenter); // 10
+            CommonUtil.AddGridTextColumn(dgvFactory, "공정차감", "Factory_Process", 80, true, DataGridViewContentAlignment.MiddleCenter); // 11
+            CommonUtil.AddGridTextColumn(dgvFactory, "자재차감", "Factory_Material", 80, true, DataGridViewContentAlignment.MiddleCenter); // 12
+            CommonUtil.AddGridTextColumn(dgvFactory, "업체", "Com_Code"); // 13
+            CommonUtil.AddGridTextColumn(dgvFactory, "업체명", "Com_Name"); // 14
+            CommonUtil.AddGridTextColumn(dgvFactory, "사용유무", "Factory_Use", 80, true, DataGridViewContentAlignment.MiddleCenter); // 15
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정자", "Factory_Amender", 100, true, DataGridViewContentAlignment.MiddleCenter); // 16
+            CommonUtil.AddGridTextColumn(dgvFactory, "수정시간", "Factory_ModdifyDate", 140, true, DataGridViewContentAlignment.MiddleCenter); // 17
+            CommonUtil.AddGridTextColumn(dgvFactory, "시설ID", "Factory_ID", 100, false); // 18
         }
 
         private void LoadData()
@@ -57,7 +58,7 @@ namespace MESForm
 
             ComboBoxBinding.ComBind(cboFactoryGrade, commonList, "FacGrade000", true, "전체");
             DgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         private void btnReg_Click(object sender, EventArgs e)
@@ -77,10 +78,10 @@ namespace MESForm
 
             string highRank;
 
-            if (string.IsNullOrEmpty(Convert.ToString(dgvFactory[5, rowIdx].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(dgvFactory[6, rowIdx].Value)))
                 highRank = "없음";
             else
-                highRank = Convert.ToString(dgvFactory[5, rowIdx].Value);
+                highRank = Convert.ToString(dgvFactory[6, rowIdx].Value);
 
             
 
@@ -89,19 +90,19 @@ namespace MESForm
                 Factory_Grade = dgvFactory[1, rowIdx].Value.ToString(),
                 Factory_Type = dgvFactory[2, rowIdx].Value.ToString(),
                 Factory_Code = dgvFactory[3, rowIdx].Value.ToString(),
-                Factory_Name = dgvFactory[4, dgvFactory.CurrentRow.Index].Value.ToString().Trim().Replace("L ", ""),
+                Factory_Name = dgvFactory[5, dgvFactory.CurrentRow.Index].Value.ToString(),
                 Factory_HighRank = highRank,
-                Factory_Explain = Convert.ToString(dgvFactory[6, rowIdx].Value),
-                Factory_Credit = Convert.ToString(dgvFactory[7, rowIdx].Value),
-                Factory_Order = Convert.ToInt32(dgvFactory[8, rowIdx].Value),
-                Factory_Demand = Convert.ToString(dgvFactory[9, rowIdx].Value),
-                Factory_Process = Convert.ToString(dgvFactory[10, rowIdx].Value),
-                Factory_Material = Convert.ToString(dgvFactory[11, rowIdx].Value),
-                Com_Code = Convert.ToString(dgvFactory[12, rowIdx].Value),
-                Com_Name = Convert.ToString(dgvFactory[13, rowIdx].Value),
-                Factory_Use = Convert.ToString(dgvFactory[14, rowIdx].Value),
-                Factory_Amender = Convert.ToString(dgvFactory[15, rowIdx].Value),
-                Factory_ModdifyDate = Convert.ToString(dgvFactory[16, rowIdx].Value)
+                Factory_Explain = Convert.ToString(dgvFactory[7, rowIdx].Value),
+                Factory_Credit = Convert.ToString(dgvFactory[8, rowIdx].Value),
+                Factory_Order = Convert.ToInt32(dgvFactory[9, rowIdx].Value),
+                Factory_Demand = Convert.ToString(dgvFactory[10, rowIdx].Value),
+                Factory_Process = Convert.ToString(dgvFactory[11, rowIdx].Value),
+                Factory_Material = Convert.ToString(dgvFactory[12, rowIdx].Value),
+                Com_Code = Convert.ToString(dgvFactory[13, rowIdx].Value),
+                Com_Name = Convert.ToString(dgvFactory[14, rowIdx].Value),
+                Factory_Use = Convert.ToString(dgvFactory[15, rowIdx].Value),
+                Factory_Amender = Convert.ToString(dgvFactory[16, rowIdx].Value),
+                Factory_ModdifyDate = Convert.ToString(dgvFactory[17, rowIdx].Value)
             };
             PopUp.PopUpFactory pop = new PopUp.PopUpFactory(frmMain.OpenMode.Update);
             pop.factoryVO = vo;
@@ -119,7 +120,7 @@ namespace MESForm
                 return;
             else
             {
-                string factoryName = dgvFactory[4, dgvFactory.CurrentRow.Index].Value.ToString().Trim().Replace("L ", "");
+                string factoryName = dgvFactory[5, dgvFactory.CurrentRow.Index].Value.ToString();
                 FactoryService service = new FactoryService();
                 bool result = service.DeleteFactory(factoryName);
 
@@ -133,9 +134,10 @@ namespace MESForm
             }
         }
 
-        private void custButtonControl1_Click(object sender, EventArgs e)
+        private void btnExcel_Click(object sender, EventArgs e)
         {
-
+            //ExcelExportImport.ExcelExportToDataGridView(Form, DataGridView, "제외할 헤더컬럼명 1@제외할 헤더컬럼명 2@...");
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvFactory);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

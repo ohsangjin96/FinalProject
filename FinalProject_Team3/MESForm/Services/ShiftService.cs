@@ -32,5 +32,30 @@ namespace MESForm.Services
             ShiftDAC dac = new ShiftDAC();
             return dac.GetShiftSelect(type, fac);
         }
+        public bool RegisterShift(ShiftVO vo)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.RegisterShift(vo);
+        }
+        public List<ShiftVO> GetTypeSelect(string type)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.GetTypeSelect(type);
+        }
+        public List<ShiftVO> GetCodeSelect(string Code)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.GetCodeSelect(Code);
+        }
+        public bool UpdateShift(ShiftVO vo)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.UpdateShift(vo);
+        }
+        public bool DeleteShift(int pk)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.DeleteShift(pk);
+        }
     }
 }

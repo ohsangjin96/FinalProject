@@ -1,6 +1,7 @@
 ﻿using FProjectVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,7 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"select  distinct(fa.Item_Code),Facility_Code,Facility_Name,Facility_IP,Facility_Port,BOM_Level
                                     from Facility_Detail fa ,BOM where BOM.Item_Code = fa.Item_Code
-                                    and fa.Item_Code in(select BOM.Item_Code from BOM where BOM.BOM_Parent_Name = @Item_Code or BOM.Item_Code = @Item_Code)";
+                                    and fa.Item_Code in(select BOM.Item_Code from BOM where fa.Item_Code = @Item_Code)";
 
                 cmd.Parameters.AddWithValue("@Item_Code", Item_Code);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -49,23 +50,29 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"insert into WorkRegist(WorkOrder_ID, WorkRegist_Start, Item_Code, Item_Name, WorkRegist_State, 
+                cmd.CommandText = @"insert into WorkRegist(WorkOrder_ID, WorkRegist_Start, Item_Code, WorkRegist_State, 
                                     WorkRegist_WorkTime, WorkRegist_NomalQty, WorkRegist_FailQty, FacilityDetail_Code)
-                                    values(@WorkOrder_ID, @WorkRegist_Start, @Item_Code, @Item_Name, @WorkRegist_State, 
+                                    values(@WorkOrder_ID, @WorkRegist_Start, @Item_Code, @WorkRegist_State, 
                                     @WorkRegist_WorkTime, @WorkRegist_NomalQty, @WorkRegist_FailQty, @FacilityDetail_Code)";
 
-
+                cmd.Parameters.Add("@WorkOrder_ID", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@WorkRegist_Start", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@WorkRegist_State", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@WorkRegist_WorkTime", SqlDbType.Int);
+                cmd.Parameters.Add("@WorkRegist_NomalQty", SqlDbType.Int);
+                cmd.Parameters.Add("@WorkRegist_FailQty", SqlDbType.Int);
+                cmd.Parameters.Add("@FacilityDetail_Code", SqlDbType.NVarChar);
                 for (int i = 0; i < curlist.Count; i++)
                 {
-                    cmd.Parameters.AddWithValue("@WorkOrder_ID", curlist[i].WorkOrder_ID);
-                    cmd.Parameters.AddWithValue("@WorkRegist_Start", curlist[i].WorkRegist_Start);
-                    cmd.Parameters.AddWithValue("@Item_Code", curlist[i].Item_Code);
-                    cmd.Parameters.AddWithValue("@Item_Name", curlist[i].Item_Code);
-                    cmd.Parameters.AddWithValue("@WorkRegist_State", curlist[i].WorkRegist_State);
-                    cmd.Parameters.AddWithValue("@WorkRegist_WorkTime", curlist[i].WorkRegist_WorkTime);
-                    cmd.Parameters.AddWithValue("@WorkRegist_NomalQty", curlist[i].WorkRegist_NomalQty);
-                    cmd.Parameters.AddWithValue("@WorkRegist_FailQty", curlist[i].WorkRegist_FailQty);
-                    cmd.Parameters.AddWithValue("@FacilityDetail_Code", curlist[i].FacilityDetail_Code);
+                    cmd.Parameters["@WorkOrder_ID"].Value =curlist[i].WorkOrder_ID;
+                    cmd.Parameters["@WorkRegist_Start"].Value=curlist[i].WorkRegist_Start;
+                    cmd.Parameters["@Item_Code"].Value=curlist[i].Item_Code;
+                    cmd.Parameters["@WorkRegist_State"].Value=curlist[i].WorkRegist_State;
+                    cmd.Parameters["@WorkRegist_WorkTime"].Value=curlist[i].WorkRegist_WorkTime;
+                    cmd.Parameters["@WorkRegist_NomalQty"].Value=curlist[i].WorkRegist_NomalQty;
+                    cmd.Parameters["@WorkRegist_FailQty"].Value=curlist[i].WorkRegist_FailQty;
+                    cmd.Parameters["@FacilityDetail_Code"].Value=curlist[i].FacilityDetail_Code;
                     cmd.ExecuteNonQuery();
                 }
                 if (list.Contains(0))

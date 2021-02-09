@@ -53,7 +53,7 @@ namespace MESForm
 
         private void Dgvsetting() //그리드뷰 데이터 세팅
         {
-            CommonUtil.AddGridImageColumn(dgvItem,Resources.Action_Edit_12x12, "Edit");
+          //  CommonUtil.AddGridImageColumn(dgvItem,Resources.Action_Edit_12x12, "Edit");
             CommonUtil.SetInitGridView(dgvItem);
             CommonUtil.AddGridTextColumn(dgvItem, "품목유형", "ITEM_Type");//2
             CommonUtil.AddGridTextColumn(dgvItem, "품목", "ITEM_Code");//3
@@ -141,29 +141,29 @@ namespace MESForm
         private void btnUpdate_Click(object sender, EventArgs e) //수정버튼
         {
             PopUpItem frm = new PopUpItem(frmMain.OpenMode.Update);
-            frm.ITEM_Type = dgvItem[2, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Code = dgvItem[3, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Name = dgvItem[4, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Standard = dgvItem[5, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Unit = dgvItem[6, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Unit_Qty = Convert.ToInt32(dgvItem[7, dgvItem.CurrentRow.Index].Value.ToString().Trim());
-            frm.ITEM_Import_YN = dgvItem[8, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Process_YN = dgvItem[9, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Export_YN = dgvItem[10, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Delivery_Company = dgvItem[11, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Order_Company = dgvItem[12, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_WareHouse_IN = dgvItem[13, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_WareHouse_OUT = dgvItem[14, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITME_LeadTime = Convert.ToInt32(dgvItem[15, dgvItem.CurrentRow.Index].Value.ToString().Trim());
-            frm.ITME_Min_Order_Qty = Convert.ToInt32(dgvItem[16, dgvItem.CurrentRow.Index].Value.ToString().Trim());
-            frm.ITME_Safe_Qty = Convert.ToInt32(dgvItem[17, dgvItem.CurrentRow.Index].Value.ToString().Trim());
-            frm.ITME_Manager = dgvItem[18, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITME_Use = dgvItem[19, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Discontinuance = dgvItem[20, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITEM_Delivery_Type = dgvItem[21, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITME_Last_Modifier = dgvItem[22, dgvItem.CurrentRow.Index].Value.ToString().Trim();
-            frm.ITME_Last_Modifier_Time = Convert.ToDateTime(dgvItem[23, dgvItem.CurrentRow.Index].Value.ToString().Trim());
-            frm.ITEM_Remark = dgvItem[24, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Type = dgvItem[1, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Code = dgvItem[2, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Name = dgvItem[3, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Standard = dgvItem[4, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Unit = dgvItem[5, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Unit_Qty = Convert.ToInt32(dgvItem[6, dgvItem.CurrentRow.Index].Value.ToString().Trim());
+            frm.ITEM_Import_YN = dgvItem[7, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Process_YN = dgvItem[8, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Export_YN = dgvItem[9, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Delivery_Company = dgvItem[10, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Order_Company = dgvItem[11, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_WareHouse_IN = dgvItem[12, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_WareHouse_OUT = dgvItem[13, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITME_LeadTime = Convert.ToInt32(dgvItem[14, dgvItem.CurrentRow.Index].Value.ToString().Trim());
+            frm.ITME_Min_Order_Qty = Convert.ToInt32(dgvItem[15, dgvItem.CurrentRow.Index].Value.ToString().Trim());
+            frm.ITME_Safe_Qty = Convert.ToInt32(dgvItem[16, dgvItem.CurrentRow.Index].Value.ToString().Trim());
+            frm.ITME_Manager = dgvItem[17, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITME_Use = dgvItem[18, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Discontinuance = dgvItem[19, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITEM_Delivery_Type = dgvItem[20, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITME_Last_Modifier = dgvItem[21, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+            frm.ITME_Last_Modifier_Time = Convert.ToDateTime(dgvItem[22, dgvItem.CurrentRow.Index].Value.ToString().Trim());
+            frm.ITEM_Remark = dgvItem[23, dgvItem.CurrentRow.Index].Value.ToString().Trim();
 
             frm.ShowDialog();
 
@@ -174,7 +174,7 @@ namespace MESForm
                 return;
             else
             {
-                string ItemName = dgvItem[3, dgvItem.CurrentRow.Index].Value.ToString().Trim();
+                string ItemName = dgvItem[2, dgvItem.CurrentRow.Index].Value.ToString().Trim();
                 ItemService service = new ItemService();
                 bool result = service.DeleteItem(ItemName);
 

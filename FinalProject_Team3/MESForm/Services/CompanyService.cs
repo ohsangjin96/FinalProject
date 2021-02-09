@@ -23,6 +23,14 @@ namespace MESForm.Services
             return dac.GetCompanyList();
         }
 
+        //검색
+        public List<CompanyVO> SearchCompanyList(string code, string name, string type, string regNum)
+        {
+            CompanyDAC dac = new CompanyDAC();
+            return dac.SearchCompanyList(code, name, type, regNum);
+        }
+
+
         // 등록
         public bool InsertCompany(CompanyVO vo)
         {

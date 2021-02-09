@@ -331,7 +331,10 @@ namespace MESForm
 
         private void btnBOR_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmBOR>();
+            frmBOR frm = new frmBOR();
+            frm.DeptName = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         #endregion
@@ -382,7 +385,8 @@ namespace MESForm
         }
         private void btnShiftSchedule_Click(object sender, EventArgs e)//shift스케줄관리
         {
-          
+            FrmShiftSchedule frm = new FrmShiftSchedule();
+            MdiOpenCheck(frm);
         }
 
         #region 수주/계획관리
@@ -470,7 +474,7 @@ namespace MESForm
         #region 공정관리
         private void btnWorkOrder_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<WorkOrder>();
+            OpenCreateForm<frmWorkOrder>();
         }
 
         private void btnCurrentProcess_Click(object sender, EventArgs e)

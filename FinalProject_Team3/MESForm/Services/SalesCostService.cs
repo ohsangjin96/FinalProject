@@ -42,5 +42,11 @@ namespace MESForm.Services
             SalesCostDAC dac = new SalesCostDAC();
             return dac.DeleteSC(pk, itemCode, BoforeCost);
         }
+        public List<SalesCostVO> GetSelect(string item)
+        {
+
+            SalesCostDAC dac = new SalesCostDAC();
+            return dac.GetSelect(item);
+        }
     }
 }

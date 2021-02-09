@@ -167,5 +167,27 @@ namespace FProjectDAC
                 return iRowAffect > 0;
             }
         }
+
+        public List<SalesCostVO> GetSelect(string item)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"Select SC_Code,s.COM_Code, c.Com_Name,s.ITEM_Code,i.ITEM_Name,i.ITEM_Unit_Qty,i.ITEM_Unit,
+                                           SC_IngCost,SC_BeforeCost,Convert(Date, SC_StartDate, 23) SC_StartDate,Convert(Date, SC_EndDate, 23)
+                                           SC_EndDate, SC_Remark,SC_USE
+                                    from Sale_Cost S inner join item i on s.ITEM_Code=i.ITEM_Code
+                                   				     inner join Company C on s.COM_Code=c.Com_Code
+                                    where s.ITEM_Code=@ITEM_Code";
+
+                cmd.Parameters.AddWithValue("@item_code", item);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<SalesCostVO> list = Helper.DataReaderMapToList<SalesCostVO>(reader);
+
+                return list;
+            }
+
+        }
     }
 }

@@ -29,10 +29,9 @@
 		private void InitializeComponent()
 		{
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCompany = new MESForm.CustomControls.custDataGridViewControl();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
@@ -40,11 +39,11 @@
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCompanyCode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cboFactoryGrade = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.cboFactoryType = new System.Windows.Forms.ComboBox();
+            this.txtComRegNum = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
@@ -54,29 +53,30 @@
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.textBox3);
+            this.pnlSelect.Controls.Add(this.txtComRegNum);
             this.pnlSelect.Controls.Add(this.label4);
-            this.pnlSelect.Controls.Add(this.cboFactoryGrade);
+            this.pnlSelect.Controls.Add(this.cboFactoryType);
             this.pnlSelect.Controls.Add(this.label3);
-            this.pnlSelect.Controls.Add(this.textBox2);
+            this.pnlSelect.Controls.Add(this.txtCompanyName);
             this.pnlSelect.Controls.Add(this.label2);
-            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.txtCompanyCode);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Size = new System.Drawing.Size(1226, 108);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox2, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompanyName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboFactoryGrade, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboFactoryType, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label4, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox3, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtComRegNum, 0);
             // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 62);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -105,9 +105,15 @@
             this.dgvCompany.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCompany.BackgroundColor = System.Drawing.Color.White;
             this.dgvCompany.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -122,16 +128,6 @@
             this.dgvCompany.Name = "dgvCompany";
             this.dgvCompany.Size = new System.Drawing.Size(1226, 512);
             this.dgvCompany.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // btnRefresh
             // 
@@ -238,12 +234,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "업체명";
             // 
-            // textBox1
+            // txtCompanyCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtCompanyCode.Location = new System.Drawing.Point(130, 23);
+            this.txtCompanyCode.Name = "txtCompanyCode";
+            this.txtCompanyCode.Size = new System.Drawing.Size(191, 22);
+            this.txtCompanyCode.TabIndex = 2;
             // 
             // label1
             // 
@@ -255,27 +251,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "업체코드";
             // 
-            // textBox2
+            // txtCompanyName
             // 
-            this.textBox2.Location = new System.Drawing.Point(545, 23);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 22);
-            this.textBox2.TabIndex = 4;
+            this.txtCompanyName.Location = new System.Drawing.Point(545, 23);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(191, 22);
+            this.txtCompanyName.TabIndex = 4;
             // 
-            // cboFactoryGrade
+            // cboFactoryType
             // 
-            this.cboFactoryGrade.FormattingEnabled = true;
-            this.cboFactoryGrade.Location = new System.Drawing.Point(960, 23);
-            this.cboFactoryGrade.Name = "cboFactoryGrade";
-            this.cboFactoryGrade.Size = new System.Drawing.Size(191, 22);
-            this.cboFactoryGrade.TabIndex = 30;
+            this.cboFactoryType.FormattingEnabled = true;
+            this.cboFactoryType.Location = new System.Drawing.Point(960, 23);
+            this.cboFactoryType.Name = "cboFactoryType";
+            this.cboFactoryType.Size = new System.Drawing.Size(191, 22);
+            this.cboFactoryType.TabIndex = 30;
             // 
-            // textBox3
+            // txtComRegNum
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 64);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 22);
-            this.textBox3.TabIndex = 32;
+            this.txtComRegNum.Location = new System.Drawing.Point(130, 64);
+            this.txtComRegNum.Name = "txtComRegNum";
+            this.txtComRegNum.Size = new System.Drawing.Size(191, 22);
+            this.txtComRegNum.TabIndex = 32;
             // 
             // label4
             // 
@@ -313,13 +309,12 @@
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnRefresh;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCompanyName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCompanyCode;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboFactoryGrade;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cboFactoryType;
+        private System.Windows.Forms.TextBox txtComRegNum;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

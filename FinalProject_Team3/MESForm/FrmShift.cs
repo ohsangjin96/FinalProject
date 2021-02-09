@@ -28,18 +28,19 @@ namespace MESForm
         {
             ComBind();
             dgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         private void ComBind()
         {
+
             FacilityService service = new FacilityService();
             FacList = service.GetFacilityDetailList();
             service.Dispose();
             FacList.Insert(0, new FacilityVO { Facility_Code = "전체" });
 
             CommonCodeService service1 = new CommonCodeService();
-             CommonList = service1.GetCommonCodeList();
+            CommonList = service1.GetCommonCodeList();
             service1.Dispose();
 
             var use = (from a in CommonList
@@ -47,8 +48,6 @@ namespace MESForm
                        select a).ToList();
             use.Insert(0, new CommonCodeVO { Common_Name = "전체" });
 
-           
-            
             ComboBoxBinding.BindingComboBox(cboShift, use, "Common_Name", "Common_Name");
             ComboBoxBinding.BindingComboBox(cboFacCode, FacList, "Facility_Name", "Facility_Code");
 
@@ -70,13 +69,16 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvShift, "수정자", "Shift_Last_Modifier");//11
             CommonUtil.AddGridTextColumn(dgvShift, "수정일자", "Shift_Last_Modifier_Time");//12
             CommonUtil.AddGridTextColumn(dgvShift, "비고", "Shift_Remark");//13
+            //
         }
         private void LoadData()
         {
+
             ShiftService service = new ShiftService();
             AllList = service.GetShiftInfo();
             service.Dispose();
             dgvShift.DataSource = AllList;
+
         }
 
         private void btnReg_Click(object sender, EventArgs e)//등록
@@ -94,39 +96,88 @@ namespace MESForm
         }
         private void btnInquiry_Click(object sender, EventArgs e)//조회
         {
-           
-            if (cboShift.Text=="전체" && cboFacCode.Text=="전체")
+            ShiftService service = new ShiftService();
+
+            if (cboShift.Text == "전체" && cboFacCode.Text == "전체")
             {
                 LoadData();
                 return;
             }
             if (cboShift.Text != "전체" && cboFacCode.Text == "전체")
             {
-              
-                MessageBox.Show("설비코드를 선택하여 주십시오.");
+                List<ShiftVO> TypeList = service.GetTypeSelect(cboShift.Text);
+                service.Dispose();
+                dgvShift.DataSource = TypeList;
                 return;
             }
 
             if (cboShift.Text == "전체" && cboFacCode.Text != "전체")
             {
-                MessageBox.Show("shift를 선택하여 주십시오.");
+                List<ShiftVO> CodeList = service.GetCodeSelect(cboFacCode.Text);
+                service.Dispose();
+                dgvShift.DataSource = CodeList;
                 return;
             }
 
-            ShiftService service = new ShiftService();
+
             List<ShiftVO> SList = service.GetShiftSelect(cboShift.Text, cboFacCode.Text);
             service.Dispose();
             dgvShift.DataSource = SList;
-
         }
         private void btnUpdate_Click(object sender, EventArgs e)//수정
         {
+            int rowIdx = dgvShift.CurrentRow.Index;
 
+            ShiftVO vo = new ShiftVO();
+            vo.Shift_Code= Convert.ToInt32(dgvShift[1, rowIdx].Value.ToString());
+            vo.Facility_Code = dgvShift[2, rowIdx].Value.ToString();
+            vo.Facility_Name = dgvShift[3, rowIdx].Value.ToString();
+            vo.Shift_type = dgvShift[4, rowIdx].Value.ToString();
+            vo.Shift_StartTime = dgvShift[5, rowIdx].Value.ToString();
+            vo.Shift_EndTime = dgvShift[6, rowIdx].Value.ToString();
+            vo.Shift_Apply_StartDate = Convert.ToDateTime(dgvShift[7, rowIdx].Value.ToString());
+            vo.Shift_Apply_EndDate = Convert.ToDateTime(dgvShift[8, rowIdx].Value.ToString());
+            vo.Shift_People= Convert.ToInt32(dgvShift[9, rowIdx].Value.ToString());
+            vo.Shift_Use= dgvShift[10, rowIdx].Value.ToString();
+            vo.Shift_Last_Modifier= dgvShift[11, rowIdx].Value.ToString();
+            vo.Shift_Last_Modifier_Time= Convert.ToDateTime(dgvShift[12, rowIdx].Value.ToString());
+            vo.Shift_Remark= dgvShift[13, rowIdx].Value.ToString();
+
+            PopUpShiftInfo pop = new PopUpShiftInfo(frmMain.OpenMode.Update);
+            pop.UList = vo;
+            pop.Uname = DeptName;
+            pop.comList = CommonList;
+            pop.FacList = FacList;
+            if (pop.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(Properties.Resources.SaveSuccess);
+                LoadData();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)//삭제
         {
+            int rowIdx = dgvShift.CurrentRow.Index;
+            if (MessageBox.Show(Properties.Resources.DeleteCheck, "삭제 확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+            else
+            {
+                int pk = Convert.ToInt32(dgvShift[1, rowIdx].Value.ToString());
 
+                ShiftService service = new ShiftService();
+
+                bool bFlag = service.DeleteShift(pk);
+                if (bFlag)
+                {
+                    MessageBox.Show(Properties.Resources.DeleteSuccess);
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("삭제 도중 오류가 발생하였습니다.");
+                }
+            }
+            
         }
 
         private void btnExcel_Click(object sender, EventArgs e)//엑셀
@@ -136,9 +187,9 @@ namespace MESForm
 
         private void btnRefresh_Click(object sender, EventArgs e)//새로고침
         {
-
+            LoadData();
         }
 
-       
+
     }
 }

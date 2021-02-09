@@ -188,6 +188,18 @@
     <Compile Include="FrmShift.Designer.cs">
       <DependentUpon>FrmShift.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShiftSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShiftSchedule.Designer.cs">
+      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkOrder.Designer.cs">
+      <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Han\frmCurrentOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -499,6 +511,7 @@
     <Compile Include="Services\SampleService.cs" />
     <Compile Include="Services\ShiftService.cs" />
     <Compile Include="Services\SignUpService.cs" />
+    <Compile Include="Services\WMaterialService.cs" />
     <Compile Include="ShipmentManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,12 +534,6 @@
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\ExcelExportImport.cs" />
     <Compile Include="Utils\LoggingUtility.cs" />
-    <Compile Include="WorkOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WorkOrder.Designer.cs">
-      <DependentUpon>WorkOrder.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BaseForms\frmBaseList.resx">
       <DependentUpon>frmBaseList.cs</DependentUpon>
     </EmbeddedResource>
@@ -583,6 +590,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShift.resx">
       <DependentUpon>FrmShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShiftSchedule.resx">
+      <DependentUpon>FrmShiftSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkOrder.resx">
+      <DependentUpon>frmWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmCurrentOrder.resx">
       <DependentUpon>frmCurrentOrder.cs</DependentUpon>
@@ -746,9 +759,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\NewDataGridViewControl.resx">
       <DependentUpon>NewDataGridViewControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WorkOrder.resx">
-      <DependentUpon>WorkOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

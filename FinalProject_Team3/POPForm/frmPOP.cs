@@ -20,15 +20,15 @@ namespace POPForm
         Machin machin;
         delegate void EventHandler(object sender, EventArgs arg);
         public List<WorkRegistVO> curlist { get; set; }
-        
+
         List<POPVO> list = new List<POPVO>();
         List<OrderVO> orderlist = new List<OrderVO>();
         public frmPOP()
         {
             InitializeComponent();
-            curlist = new List<WorkRegistVO>();         
+            curlist = new List<WorkRegistVO>();
         }
-        
+
         private void button10_Click(object sender, EventArgs e)
         {
             ResultCheck frm = new ResultCheck();
@@ -36,6 +36,7 @@ namespace POPForm
         }
         private void frmPOP_Load(object sender, EventArgs e)
         {
+            label3.Text = "2021-02-11";
             CommonUtil.SetInitGridView(dgvList);
             CommonUtil.AddGridTextColumn(dgvList, "PlanID", "Plan_ID", 200);
             CommonUtil.AddGridTextColumn(dgvList, "아이템 코드", "Item_Code", 165);
@@ -56,26 +57,29 @@ namespace POPForm
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            orderlist= service.GetOrderList();
-            dgvList.DataSource = orderlist;
+            dgvList.DataSource = service.GetSelectWorkOrderList("2021-02-11");
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            splitContainer2.Panel2.Controls.Clear();
+           
+
+    
             if (e.RowIndex >= 0)
             {
                 lblID.Text = dgvList[0, dgvList.CurrentRow.Index].Value.ToString();
                 lblItemName.Text = dgvList[2, dgvList.CurrentRow.Index].Value.ToString();
                 lblAmount.Text = dgvList[3, dgvList.CurrentRow.Index].Value.ToString();
-                DateTime date = (DateTime)dgvList[4, dgvList.CurrentRow.Index].Value;
-                lblFixedDate.Text = date.ToString("yyyy-MM-dd");
-                string Item_Code =dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
+                DateTime Date = (DateTime)dgvList[4, dgvList.CurrentRow.Index].Value;
+                lblFixedDate.Text = Date.ToString("yyyy-MM-dd");
+                string Item_Code = dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
                 POPService service = new POPService();
-                list = service.GetPOPList(Item_Code); 
-                for (int i=0; i<list.Count; i++)
+                list = service.GetPOPList(Item_Code);
+                for (int i = 0; i < list.Count; i++)
                 {
                     machin = new Machin();
-                
-                    
+
+
                     machin.Location = new Point(0, 4 + i * 105);
                     machin.Facility = list[i].Facility_Name;
                     machin.Name = list[i].Item_Code;
@@ -87,28 +91,15 @@ namespace POPForm
                     machin.MachinRegist += Machin_MachinRegist;
                     splitContainer2.Panel2.Controls.Add(machin);
                 }
-                
+
 
             }
-            
+
         }
 
         private void Machin_MachinRegist(object sender, WorkRegistEventArgs e)
         {
-            bool bbflag = true;
-            foreach(var temp in curlist)
-            {
-                if (temp.Item_Code == e.Data.Item_Code)
-                {
-                    temp.WorkRegist_NomalQty += temp.WorkRegist_NomalQty + e.Data.WorkRegist_NomalQty;
-                    temp.WorkRegist_FailQty += temp.WorkRegist_FailQty + e.Data.WorkRegist_FailQty;
-                    bbflag = false;
-                }
-            }
-            if (bbflag)
-            {
-                curlist.Add(e.Data);
-            }
+            curlist.Add(e.Data);
             dgvList2.DataSource = null;
             dgvList2.DataSource = curlist;
             btnRegist.BackColor = SystemColors.Highlight;
@@ -117,18 +108,18 @@ namespace POPForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-           foreach(var temp in splitContainer2.Panel2.Controls)
+            foreach (var temp in splitContainer2.Panel2.Controls)
             {
                 if (temp is Machin machins)
                 {
-                    for(int i =0; i<list.Count; i++)
+                    for (int i = 0; i < list.Count; i++)
                     {
                         if (machins.Name == list[i].Item_Code)
                         {
-                            if(machins.BOM_Level=="2")
+
                             machins.bntActive.PerformClick();
                         }
-                    
+
                     }
 
                 }
@@ -145,29 +136,22 @@ namespace POPForm
                 curlist.Clear();
                 btnRegist.Enabled = false;
                 btnRegist.BackColor = Color.Silver;
-                
+
             }
-            else if(curlist == null)
+            else if (curlist == null)
             {
                 MessageBox.Show("기계를 먼저 돌려주세요");
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            DateTime Dtpfrom = dtpfrom.Value;
-            DateTime Dtpto = dtpto.Value;
-            var selectlist = (from info in orderlist
-                              where info.Order_FixedDate > Dtpfrom && info.Order_FixedDate < Dtpto
-                              select info).ToList();
-            dgvList.DataSource = selectlist;
-        }
+
     }
 }
+

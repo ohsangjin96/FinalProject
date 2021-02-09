@@ -35,7 +35,7 @@ namespace MESForm
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
+            this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
             this.lblFactoryCode = new System.Windows.Forms.Label();
             this.txtFactoryCodeOrName = new System.Windows.Forms.TextBox();
@@ -84,7 +84,7 @@ namespace MESForm
             this.panel1.Controls.Add(this.btnReg);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnDelete);
-            this.panel1.Controls.Add(this.custButtonControl1);
+            this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Location = new System.Drawing.Point(670, 94);
             // 
@@ -139,22 +139,22 @@ namespace MESForm
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // custButtonControl1
+            // btnExcel
             // 
-            this.custButtonControl1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.custButtonControl1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(396, 3);
-            this.custButtonControl1.Name = "custButtonControl1";
-            this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl1.TabIndex = 6;
-            this.custButtonControl1.Text = "엑셀";
-            this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl1.UseVisualStyleBackColor = false;
-            this.custButtonControl1.Click += new System.EventHandler(this.custButtonControl1_Click);
+            this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExcel.Location = new System.Drawing.Point(396, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(83, 32);
+            this.btnExcel.TabIndex = 6;
+            this.btnExcel.Text = "엑셀";
+            this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnRefresh
             // 
@@ -263,7 +263,7 @@ namespace MESForm
         private CustomControls.custButtonControl btnReg;
         private CustomControls.custButtonControl btnUpdate;
         private CustomControls.custButtonControl btnDelete;
-        private CustomControls.custButtonControl custButtonControl1;
+        private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnRefresh;
         private System.Windows.Forms.ComboBox cboFactoryGrade;
         private System.Windows.Forms.Label lblFactoryGrade;
