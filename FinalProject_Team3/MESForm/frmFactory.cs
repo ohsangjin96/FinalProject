@@ -58,7 +58,7 @@ namespace MESForm
 
             ComboBoxBinding.ComBind(cboFactoryGrade, commonList, "FacGrade000", true, "전체");
             DgvSetting();
-            LoadData();
+            //LoadData();
         }
 
         private void btnReg_Click(object sender, EventArgs e)

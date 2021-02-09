@@ -51,6 +51,7 @@ namespace MESForm.PopUp
             commonService.Dispose();
             ComboBoxBinding.ComBind(cboFacilityUse, commonList, "UseYN000", false);
             ComboBoxBinding.ComBind(cboOutSourcing, commonList, "UseYN000", false);
+            cboFacilityUse.SelectedIndex = 1;
 
             //공장관리
             FactoryService factoryService = new FactoryService();

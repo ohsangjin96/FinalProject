@@ -8,6 +8,7 @@ namespace FProjectVO
 {
     public class BORVO
     {
+        public long RowNo { get; set; }
         public string Item_Code { get; set; }
         public string Item_Name { get; set; }
         public string BOR_Route { get; set; }
