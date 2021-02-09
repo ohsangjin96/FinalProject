@@ -144,7 +144,13 @@ namespace MESForm
         private void btnRefresh_Click(object sender, EventArgs e)//새로고침
         {
             txtItemCode.Text = string.Empty;
+            dtpDate.Checked = true;
             LoadData();
+        }
+
+        private void txtItemCode_TextChanged(object sender, EventArgs e)
+        {
+            dtpDate.Checked = false;
         }
     }
 }
