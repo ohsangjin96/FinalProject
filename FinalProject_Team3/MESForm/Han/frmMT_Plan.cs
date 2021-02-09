@@ -22,20 +22,26 @@ namespace MESForm.Han
         private void DGVSetting()
         {
             CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "ITEM_Type");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목유형", "ITEM_Type");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "ITEM_Name");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "Plan_ID");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "카테고리", "Mtp_Category");
         }
 
+        private void LoadData()
+        {
+
+        }
+
         private void frmMT_Plan_Load(object sender, EventArgs e)
         {
             DGVSetting();
+            LoadData();
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //string sResult = ExcelExportImport.ExportToDataGridView<===>((List<===>)custDataGridViewControl1.DataSource, string.Empty);
+            //string sResult = ExcelExportImport.ExportToDataGridView<string>((List<string>)custDataGridViewControl1.DataSource, string.Empty);
             //if (sResult.Length > 0)
             //{
             //    MessageBox.Show(sResult);

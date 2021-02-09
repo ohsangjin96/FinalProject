@@ -314,6 +314,12 @@
     <Compile Include="Han\popupPOUpload.Designer.cs">
       <DependentUpon>popupPOUpload.cs</DependentUpon>
     </Compile>
+    <Compile Include="Han\popupP_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\popupP_Plan.Designer.cs">
+      <DependentUpon>popupP_Plan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Han\popupSO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupPOUpload.resx">
       <DependentUpon>popupPOUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Han\popupP_Plan.resx">
+      <DependentUpon>popupP_Plan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\popupSO.resx">
       <DependentUpon>popupSO.cs</DependentUpon>

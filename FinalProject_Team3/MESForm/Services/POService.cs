@@ -22,6 +22,18 @@ namespace MESForm.Services
             return dac.GetPOList();
         }
 
+        public bool ExcelCompanyCheck(string com_code, string com_name)
+        {
+            PODAC dac = new PODAC();
+            return dac.ExcelCompanyCheck(com_code, com_name);
+        }
+
+        public string ExcelItemCheck(string item_name)
+        {
+            PODAC dac = new PODAC();
+            return dac.ExcelItemCheck(item_name);
+        }
+
         public bool RegPOList(POVO vo)
         {
             PODAC dac = new PODAC();
@@ -32,6 +44,18 @@ namespace MESForm.Services
         {
             PODAC dac = new PODAC();
             return dac.DelPOList(planID);
+        }
+
+        public List<POVO> GetPOList(string woID)
+        {
+            PODAC dac = new PODAC();
+            return dac.GetPOList(woID);
+        }
+
+        public bool UpdatePOList(POVO vo)
+        {
+            PODAC dac = new PODAC();
+            return dac.UpdatePOList(vo);
         }
     }
 }

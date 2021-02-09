@@ -62,7 +62,7 @@ namespace MESForm.Han
             this.pnl.Controls.Add(this.txtPlanFile);
             this.pnl.Location = new System.Drawing.Point(12, 46);
             this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(278, 160);
+            this.pnl.Size = new System.Drawing.Size(278, 152);
             this.pnl.TabIndex = 64;
             // 
             // dtpPlan
@@ -152,13 +152,13 @@ namespace MESForm.Han
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(184, 212);
+            this.btnCancel.Location = new System.Drawing.Point(184, 204);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 23);
             this.btnCancel.TabIndex = 66;
             this.btnCancel.Text = "취소";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnUpload
             // 
@@ -168,7 +168,7 @@ namespace MESForm.Han
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(42, 212);
+            this.btnUpload.Location = new System.Drawing.Point(42, 204);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(136, 23);
             this.btnUpload.TabIndex = 65;
@@ -218,7 +218,7 @@ namespace MESForm.Han
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 246);
+            this.ClientSize = new System.Drawing.Size(302, 259);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpload);
