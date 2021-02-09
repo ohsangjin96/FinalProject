@@ -16,10 +16,16 @@ namespace MESForm.Services
             dac.Dispose();
         }
 
-        public List<WMaterialVO> GetWMaterialList()
+        public List<WMaterialVO> GetWMaterialList(string sDate, string eDate, string orderState, string itemCode, string comName, string inComName)
         {
             WMaterialDAC dac = new WMaterialDAC();
-            return dac.GetWMaterialList();
+            return dac.GetWMaterialList(sDate, eDate, orderState, itemCode, comName, inComName);
+        }
+
+        public bool InsertWareHouse(List<WMaterialVO> list)
+        {
+            WMaterialDAC dac = new WMaterialDAC();
+            return dac.InsertWareHouse(list);
         }
     }
 }

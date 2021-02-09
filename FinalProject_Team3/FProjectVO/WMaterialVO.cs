@@ -27,7 +27,12 @@ namespace FProjectVO
 
         public string ITEM_WareHouse_IN { get; set; }
         public int MC_IngCost { get; set; }
-        public string Factory_Code { get; set; }
+        public string Warehouse_Date { get; set; }
         public string Warehouse_Note { get; set; }
+
+        public string Factory_Code { get; set; }
+        public int Warehouse_StockQty { get; set; }
+        public int InQty { get; set; }
+
     }
 }

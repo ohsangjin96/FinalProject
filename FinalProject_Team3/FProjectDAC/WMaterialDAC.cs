@@ -26,7 +26,9 @@ namespace FProjectDAC
             conn.Close();
         }
 
-        public List<WMaterialVO> GetWMaterialList()
+        #region 입고처리
+        //입고대기리스트 목록
+        public List<WMaterialVO> GetWMaterialList(string sDate, string eDate, string orderState, string itemCode, string comName, string inComName)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
@@ -40,12 +42,64 @@ namespace FProjectDAC
                                     			   join PO P on R.Plan_ID = P.Plan_ID
 			                                       join Material_Cost MC on I.ITEM_Code = MC.ITEM_Code
 			                                       join Factory F on F.Factory_Name = I.ITEM_WareHouse_IN
-                                    where MC_BeforeCost = 0";
-                                    
+                                    where MC_BeforeCost = 0 and Reorder_State != '입고완료' and
+                                          Order_FixedDate between @dtpFrom and @dtpEnd and
+										  Reorder_State = ISNULL(@Reorder_State, Reorder_State) and
+										  I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code) and
+										  C.Com_Name = ISNULL(@Com_Name, C.Com_Name) and
+										  ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company)";
+
+                cmd.Parameters.AddWithValue("@dtpFrom", sDate);
+                cmd.Parameters.AddWithValue("@dtpEnd", eDate);
+                cmd.Parameters.AddWithValue("@Reorder_State", (string.IsNullOrEmpty(orderState)) ? DBNull.Value : (object)orderState);
+                cmd.Parameters.AddWithValue("@ITEM_Code", (string.IsNullOrEmpty(itemCode)) ? DBNull.Value : (object)itemCode);
+                cmd.Parameters.AddWithValue("@Com_Name", (string.IsNullOrEmpty(comName)) ? DBNull.Value : (object)comName);
+                cmd.Parameters.AddWithValue("@ITEM_Delivery_Company", (string.IsNullOrEmpty(inComName)) ? DBNull.Value : (object)inComName);
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WMaterialVO> list = Helper.DataReaderMapToList<WMaterialVO>(reader);
 
                 return list;
+            }
+        }
+
+        //입고처리
+        #endregion
+        public bool InsertWareHouse(List<WMaterialVO> list)
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_InsertWareHouse";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    int iRowAffect = 0;
+                    for (int i=0; i<list.Count; i++)
+                    {
+                        cmd.Parameters.Clear();
+
+                        cmd.Parameters.AddWithValue("@ITEM_Code", list[i].ITEM_Code);
+                        cmd.Parameters.AddWithValue("@Reorder_Number", list[i].Reorder_Number);
+                        cmd.Parameters.AddWithValue("@Com_Name", list[i].Com_Name);
+                        cmd.Parameters.AddWithValue("@Factory_Code", list[i].Factory_Code);
+                        //cmd.Parameters.AddWithValue("@Warehouse_StockQty", list[i].Warehouse_StockQty);
+                        //cmd.Parameters.AddWithValue("@Warehouse_date", list[i].Warehouse_Date);
+                        cmd.Parameters.AddWithValue("@Warehouse_Note", (list[i].Warehouse_Note == "") ? DBNull.Value : (object)list[i].Warehouse_Note);
+                        cmd.Parameters.AddWithValue("@Reorder_Amount", list[i].Reorder_Amount);
+                        cmd.Parameters.AddWithValue("@InQty", list[i].InQty);
+                        iRowAffect = cmd.ExecuteNonQuery();
+                    }
+
+                    //int iRowAffect = cmd.ExecuteNonQuery();
+
+                    return iRowAffect > 0;
+                }
+            }
+            catch (Exception err)
+            {
+                throw new Exception(err.Message);
             }
         }
     }
