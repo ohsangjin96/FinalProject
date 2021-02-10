@@ -505,7 +505,6 @@
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\POPService.cs" />
     <Compile Include="Services\POService.cs" />
-    <Compile Include="Services\Product_PlanService.cs" />
     <Compile Include="Services\SalesCostService.cs" />
     <Compile Include="Services\ReOrderService.cs" />
     <Compile Include="Services\SampleService.cs" />

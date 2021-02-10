@@ -12,7 +12,7 @@ namespace MESForm
 {
     public partial class frmWorkOrder : MESForm.BaseForms.frmBaseLists
     {
-        List<SeeWorkOrderVO> list;
+        List<WorkOrderVO> list;
         public frmWorkOrder()
         {
             InitializeComponent();
@@ -20,14 +20,18 @@ namespace MESForm
 
         private void frmWorkOrder_Load(object sender, EventArgs e)
         {
-
+            OrderService service = new OrderService();
+            string from = DateTime.Now.ToString("yyyyMMdd");
+            string to = DateTime.Now.AddDays(12).ToString("yyyyMMdd");
+            dgvList.DataSource = service.GetWorkOrder(from, to);
+            list = service.GetWorkOrderList(from, to);
         }
         private void custButtonControl3_Click(object sender, EventArgs e)
         {
             OrderService service = new OrderService();
-            list = service.GetWorkOrderList();
-            bool bflag = service.InsertWorkOrderList(list);
-            if (!bflag)
+           // list = service.GetWorkOrderList();
+            //bool bflag = service.InsertWorkOrderList(list);
+            //if (!bflag)
             {
                 MessageBox.Show("작업지시확정에 실패했습니다.");
             }
@@ -38,7 +42,7 @@ namespace MESForm
             OrderService service = new OrderService();
             string datefrom = dtpfrom.Value.ToString("yyyyMMdd");
             string dateto = dtpto.Value.ToString("yyyyMMdd");
-            dgvList.DataSource = service.GetWorkOrder(datefrom, dateto);
+           // dgvList.DataSource = service.GetWorkOrder(datefrom, dateto);
         }
     }
 }
