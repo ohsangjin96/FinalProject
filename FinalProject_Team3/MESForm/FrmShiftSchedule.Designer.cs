@@ -67,6 +67,7 @@
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -119,6 +120,7 @@
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cboFacCode
             // 
@@ -158,8 +160,8 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 9, 40, 16, 862);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 9, 40, 16, 862);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 14, 41, 15, 608);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 14, 41, 15, 608);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(91, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -213,6 +215,7 @@
             this.ClientSize = new System.Drawing.Size(1250, 700);
             this.Name = "FrmShiftSchedule";
             this.Text = "Shift 스케줄관리";
+            this.Load += new System.EventHandler(this.FrmShiftSchedule_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.pnlItem.ResumeLayout(false);

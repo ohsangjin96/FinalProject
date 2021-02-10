@@ -18,10 +18,6 @@ namespace MESWebAPI
 
             EncrytLibrary.AES aes = new EncrytLibrary.AES();
             strConn = aes.AESDecrypt256(strConn);
-
-            //UserDAC.strConn = strConn;
-
-            GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }

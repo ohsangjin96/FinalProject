@@ -494,6 +494,8 @@
     <Compile Include="Services\BORService.cs" />
     <Compile Include="Services\CommonCodeService.cs" />
     <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\CurrentWMaterialService.cs" />
+    <Compile Include="Services\CurrentWStockService.cs" />
     <Compile Include="Services\DemandService.cs" />
     <Compile Include="Services\FacilityService.cs" />
     <Compile Include="Services\FactoryService.cs" />
