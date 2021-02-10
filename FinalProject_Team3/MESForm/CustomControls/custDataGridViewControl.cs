@@ -25,6 +25,7 @@ namespace MESForm.CustomControls
             this.BorderStyle = BorderStyle.None;
             this.DefaultCellStyle.BackColor = Color.FromArgb(217, 248, 255);
             this.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+            this.AllowUserToAddRows = false;
         }
 
        

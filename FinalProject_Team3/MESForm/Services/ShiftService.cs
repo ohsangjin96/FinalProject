@@ -2,6 +2,7 @@
 using FProjectVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,11 @@ namespace MESForm.Services
         {
             ShiftDAC dac = new ShiftDAC();
             return dac.DeleteShift(pk);
+        }
+        public DataTable GetList(string from, string to, string type, string name)
+        {
+            ShiftDAC dac = new ShiftDAC();
+            return dac.GetList(from, to, type, name);
         }
     }
 }
