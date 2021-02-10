@@ -23,6 +23,7 @@ namespace POPForm
         int k = 0;
         List<POPVO> list = new List<POPVO>();
         List<OrderVO> orderlist = new List<OrderVO>();
+        List<string> FindList = new List<string>();
         public frmPOP()
         {
             InitializeComponent();
@@ -61,67 +62,62 @@ namespace POPForm
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string Item_Code = dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
-            if (splitContainer2.Panel1.Controls.Contains(machin))
+            if (e.RowIndex >= 0) 
             {
-                if(!machin.Name.Contains(Item_Code))
+                string Item_Code = dgvList[1, dgvList.CurrentRow.Index].Value.ToString();
+                POPService service = new POPService();
+                list = service.GetPOPList(Item_Code);
+                
+                if (splitContainer2.Panel1.Controls.Contains(machin))
                 {
-                    if (e.RowIndex >= 0)
+                    if (!FindList.Contains(Item_Code))
                     {
-                        POPService service = new POPService();
-                        list = service.GetPOPList(Item_Code);
                         for (int i = 0; i < list.Count; i++)
                         {
                             machin = new Machin();
                             machin.Location = new Point(0, 83 + k * 105);
                             machin.Facility = list[i].Facility_Name;
                             machin.Name = list[i].Item_Code;
-                            //machin.ID = lblID.Text;
                             machin.Tag = list[i].Facility_Code;
                             machin.IP = list[i].Facility_IP;
                             machin.Port = list[i].Facility_Port;
                             machin.BOM_Level = list[i].BOM_Level.ToString();
                             machin.MachinRegist += Machin_MachinRegist;
+                            FindList.Add(machin.Name);
                             splitContainer2.Panel1.Controls.Add(machin);
                             k++;
                         }
-
-
                     }
+           
+                    
                 }
                 else
                 {
-
-                }
-            }
-            else
-            {
-                if (e.RowIndex >= 0)
-                {
-                    POPService service = new POPService();
-                    list = service.GetPOPList(Item_Code);
+                   
                     for (int i = 0; i < list.Count; i++)
                     {
                         machin = new Machin();
                         machin.Location = new Point(0, 83 + k * 105);
                         machin.Facility = list[i].Facility_Name;
                         machin.Name = list[i].Item_Code;
-                        //machin.ID = lblID.Text;
                         machin.Tag = list[i].Facility_Code;
                         machin.IP = list[i].Facility_IP;
                         machin.Port = list[i].Facility_Port;
                         machin.BOM_Level = list[i].BOM_Level.ToString();
                         machin.MachinRegist += Machin_MachinRegist;
+                        FindList.Add(machin.Name);
                         splitContainer2.Panel1.Controls.Add(machin);
                         k++;
                     }
-
-
                 }
             }
-            
+            else
+            {
 
+            }
         }
+    
+            
 
         private void Machin_MachinRegist(object sender, WorkRegistEventArgs e)
         {
@@ -134,20 +130,11 @@ namespace POPForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach (var temp in splitContainer2.Panel2.Controls)
+            foreach (var temp in splitContainer2.Panel1.Controls)
             {
                 if (temp is Machin machins)
                 {
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        if (machins.Name == list[i].Item_Code)
-                        {
-
-                            machins.bntActive.PerformClick();
-                        }
-
-                    }
-
+                 machins.bntActive.PerformClick();
                 }
             }
         }

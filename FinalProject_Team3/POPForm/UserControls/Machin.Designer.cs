@@ -87,6 +87,7 @@ namespace POPForm.UserControls
             this.lblLevel.Size = new System.Drawing.Size(38, 12);
             this.lblLevel.TabIndex = 60;
             this.lblLevel.Text = "label2";
+            this.lblLevel.Visible = false;
             // 
             // lblPort
             // 
@@ -96,6 +97,7 @@ namespace POPForm.UserControls
             this.lblPort.Size = new System.Drawing.Size(38, 12);
             this.lblPort.TabIndex = 59;
             this.lblPort.Text = "label3";
+            this.lblPort.Visible = false;
             // 
             // lblIP
             // 
@@ -105,6 +107,7 @@ namespace POPForm.UserControls
             this.lblIP.Size = new System.Drawing.Size(38, 12);
             this.lblIP.TabIndex = 58;
             this.lblIP.Text = "label2";
+            this.lblIP.Visible = false;
             // 
             // lblName
             // 
