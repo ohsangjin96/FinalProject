@@ -31,13 +31,10 @@ namespace FProjectDAC
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select ROW_NUMBER() OVER (Order by MAX(Warehouse_ID) desc) RowNo, Factory_Code,
+                cmd.CommandText = @"select ROW_NUMBER() OVER (Order by Warehouse_ID desc) RowNo, Factory_Code,  
                                            ITEM_WareHouse_IN, W.ITEM_Code, ITEM_Name, ITEM_Type, ITEM_Standard,
-	                                       SUM(Warehouse_StockQty) Warehouse_StockQty, ITEM_Unit, Reorder_Note
-                                    from Warehouse W join Reorder R on W.Reorder_Number = R.Reorder_Number
-				                                     join ITEM I on W.ITEM_Code = I.ITEM_Code
-                                    group by Factory_Code, ITEM_WareHouse_IN, W.ITEM_Code, ITEM_Name,
-                                             ITEM_Type, ITEM_Standard, ITEM_Unit, Reorder_Note";
+	                                       Warehouse_StockQty, ITEM_Unit, ITEM_Remark
+                                    from Warehouse W join ITEM I on W.ITEM_Code = I.ITEM_Code";
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<CurrentWStockVO> list = Helper.DataReaderMapToList<CurrentWStockVO>(reader);

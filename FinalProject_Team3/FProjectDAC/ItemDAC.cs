@@ -45,6 +45,21 @@ namespace FProjectDAC
             }
         }
 
+        //입고창고, 납품업체 리스트 가져오기
+        public List<ItemVO> GetWarehouseDeliveryCompanyList()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                //cmd.CommandText = @"select distinct ITEM_WareHouse_IN from ITEM";
+                cmd.CommandText = "select ITEM_WareHouse_IN, ITEM_Delivery_Company from ITEM";
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ItemVO> list = Helper.DataReaderMapToList<ItemVO>(reader);
+
+                return list;
+            }
+        }
+
         public bool ItemCheck(string item) //품목이름 중복 확인
         {
             using (SqlCommand cmd = new SqlCommand())
