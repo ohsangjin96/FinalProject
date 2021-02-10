@@ -16,10 +16,16 @@ namespace MESForm.Services
             dac.Dispose();
         }
 
-        public List<CurrentWMaterialVO> GetCurrentWMaterialList()
+        public List<CurrentWMaterialVO> GetCurrentWMaterialList(CurrentWMaterialVO vo)
         {
             CurrentWMaterialDAC dac = new CurrentWMaterialDAC();
-            return dac.GetCurrentWMaterialList();
+            return dac.GetCurrentWMaterialList(vo);
+        }
+
+        public bool CancelWearing(List<CurrentWMaterialVO> list)
+        {
+            CurrentWMaterialDAC dac = new CurrentWMaterialDAC();
+            return dac.CancelWearing(list);
         }
     }
 }

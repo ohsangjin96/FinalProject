@@ -21,5 +21,11 @@ namespace FProjectVO
         public int Reorder_Balance { get; set; }
         public string Com_Name { get; set; }
         public string ITEM_Delivery_Company { get; set; }
+
+        public string FromDate { get; set; }
+        public string ToDate { get; set; }
+
+        public int Reorder_Number { get; set; }
+        public string IsCancel { get; set; }
     }
 }
