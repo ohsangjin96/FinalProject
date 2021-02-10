@@ -123,7 +123,6 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"SP_GetWorkOrderList";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
                 cmd.Parameters.AddWithValue("@StartDate", datefrom);
                 cmd.Parameters.AddWithValue("@EndDate", dateto);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -132,13 +131,13 @@ namespace FProjectDAC
             }
         }
 
-        public bool InsertWorkOrderList(List<SeeWorkOrderVO> list)
+        public bool InsertWorkOrderList(List<WorkOrderVO> list)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"insert into WorkOrder (Item_Code, Item_Name, Facility_Code, Facility_Name, Order_OrderAmount, Order_FixedDate, TackTime, Plan_ID, Com_Code, Com_Name, BOR_Order)
-                                   values(@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @Order_OrderAmount, @Order_FixedDate, @TackTime, @Plan_ID, @Com_Code, @Com_Name, @BOR_Order)";
+                cmd.CommandText = @"insert into WorkOrder(Item_Code, Item_Name, Facility_Code, Facility_Name, OrderAmount, FixDate, TackTime, Plan_ID, Com_Code, Com_Name)
+                                    values (@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @OrderAmount, @FixDate, @TackTime, @Plan_ID, @Com_Code, @Com_Name)";
                 cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Item_Name", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Facility_Code", SqlDbType.NVarChar);
@@ -146,10 +145,9 @@ namespace FProjectDAC
                 cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Com_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Com_Name", SqlDbType.NVarChar);
-                cmd.Parameters.Add("@Order_OrderAmount", SqlDbType.Int);
-                cmd.Parameters.Add("@BOR_Order", SqlDbType.Int);
+                cmd.Parameters.Add("@OrderAmount", SqlDbType.Int);
                 cmd.Parameters.Add("@TackTime", SqlDbType.Int);
-                cmd.Parameters.Add("@Order_FixedDate", SqlDbType.DateTime);
+                cmd.Parameters.Add("@FixDate", SqlDbType.DateTime);
                 for (int i = 0; i < list.Count; i++)
                 {
                     cmd.Parameters["@Item_Code"].Value = list[i].Item_Code;
@@ -159,10 +157,9 @@ namespace FProjectDAC
                     cmd.Parameters["@Plan_ID"].Value = list[i].Plan_ID;
                     cmd.Parameters["@Com_Code"].Value = list[i].Com_Code;
                     cmd.Parameters["@Com_Name"].Value = list[i].Com_Name;
-                    cmd.Parameters["@Order_OrderAmount"].Value = list[i].Order_OrderAmount;
-                    cmd.Parameters["@BOR_Order"].Value = list[i].BOR_Order;
+                    cmd.Parameters["@OrderAmount"].Value = list[i].OrderAmount;
                     cmd.Parameters["@TackTime"].Value = list[i].TackTime;
-                    cmd.Parameters["@Order_FixedDate"].Value = list[i].Order_FixedDate;
+                    cmd.Parameters["@FixDate"].Value = list[i].FixDate;
 
                     int k = cmd.ExecuteNonQuery();
                     if (k < 0)
@@ -170,6 +167,10 @@ namespace FProjectDAC
                         return false;
                     }
                 }
+                cmd.CommandText = @"Update Product_Plan set PP_State = '지시확정' where Product_Plan.Plan_ID = @Plan_ID";
+                int a = cmd.ExecuteNonQuery();
+                if (a < 0)
+                    return false;
                 return true;
 
             }

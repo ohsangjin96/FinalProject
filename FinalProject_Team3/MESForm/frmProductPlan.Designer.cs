@@ -30,17 +30,19 @@ namespace MESForm
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboFacility = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpto = new System.Windows.Forms.DateTimePicker();
+            this.dtpfrom = new System.Windows.Forms.DateTimePicker();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,24 +51,28 @@ namespace MESForm
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.textBox2);
-            this.pnlSelect.Controls.Add(this.dateTimePicker1);
+            this.pnlSelect.Controls.Add(this.label3);
+            this.pnlSelect.Controls.Add(this.dtpto);
+            this.pnlSelect.Controls.Add(this.dtpfrom);
+            this.pnlSelect.Controls.Add(this.txtID);
             this.pnlSelect.Controls.Add(this.label5);
-            this.pnlSelect.Controls.Add(this.comboBox1);
+            this.pnlSelect.Controls.Add(this.cboFacility);
             this.pnlSelect.Controls.Add(this.label4);
             this.pnlSelect.Controls.Add(this.label2);
-            this.pnlSelect.Controls.Add(this.textBox1);
+            this.pnlSelect.Controls.Add(this.txtName);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Size = new System.Drawing.Size(1226, 148);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtName, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label4, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.comboBox1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.cboFacility, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label5, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.dateTimePicker1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox2, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtID, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.dtpfrom, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.dtpto, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
             // 
             // btnInquiry
             // 
@@ -101,14 +107,14 @@ namespace MESForm
             this.label5.TabIndex = 23;
             this.label5.Text = "생산계획ID";
             // 
-            // comboBox1
+            // cboFacility
             // 
-            this.comboBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(963, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(191, 22);
-            this.comboBox1.TabIndex = 22;
+            this.cboFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.cboFacility.FormattingEnabled = true;
+            this.cboFacility.Location = new System.Drawing.Point(963, 18);
+            this.cboFacility.Name = "cboFacility";
+            this.cboFacility.Size = new System.Drawing.Size(191, 22);
+            this.cboFacility.TabIndex = 22;
             // 
             // label4
             // 
@@ -130,13 +136,13 @@ namespace MESForm
             this.label2.TabIndex = 17;
             this.label2.Text = "계획날짜";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(133, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 22);
-            this.textBox1.TabIndex = 16;
+            this.txtName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtName.Location = new System.Drawing.Point(133, 18);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(191, 22);
+            this.txtName.TabIndex = 16;
             // 
             // label1
             // 
@@ -161,23 +167,13 @@ namespace MESForm
             this.dgvList.Size = new System.Drawing.Size(1226, 509);
             this.dgvList.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // txtID
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 18, 40, 55, 26);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 18, 40, 55, 26);
-            this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(545, 16);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 31);
-            this.dateTimePicker1.TabIndex = 27;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(133, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 22);
-            this.textBox2.TabIndex = 28;
+            this.txtID.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtID.Location = new System.Drawing.Point(133, 62);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(191, 22);
+            this.txtID.TabIndex = 28;
             // 
             // btnExcel
             // 
@@ -229,6 +225,35 @@ namespace MESForm
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(650, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 30);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "~";
+            // 
+            // dtpto
+            // 
+            this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpto.Location = new System.Drawing.Point(692, 18);
+            this.dtpto.Name = "dtpto";
+            this.dtpto.Size = new System.Drawing.Size(101, 22);
+            this.dtpto.TabIndex = 93;
+            // 
+            // dtpfrom
+            // 
+            this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfrom.Location = new System.Drawing.Point(536, 18);
+            this.dtpfrom.Name = "dtpfrom";
+            this.dtpfrom.Size = new System.Drawing.Size(101, 22);
+            this.dtpfrom.TabIndex = 92;
+            // 
             // frmProductPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -248,16 +273,18 @@ namespace MESForm
 
         #endregion
         protected System.Windows.Forms.Label label5;
-        protected System.Windows.Forms.ComboBox comboBox1;
+        protected System.Windows.Forms.ComboBox cboFacility;
         protected System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dgvList;
-        private UserControls.DateTimePicker dateTimePicker1;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtID;
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl custButtonControl2;
         private CustomControls.custButtonControl btnRefresh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpto;
+        private System.Windows.Forms.DateTimePicker dtpfrom;
     }
 }

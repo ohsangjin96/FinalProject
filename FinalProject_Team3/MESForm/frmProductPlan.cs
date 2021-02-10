@@ -16,6 +16,67 @@ namespace MESForm
         public frmProductPlan()
         {
             InitializeComponent();
+            txtName.TextChanged += txtName_Change;
+            txtID.TextChanged += txtID_Change;
+            cboFacility.SelectedIndexChanged += cboFacility_SelectIndex;
+            
+        }
+
+        private void cboFacility_SelectIndex(object sender, EventArgs e)
+        {
+            if (cboFacility.SelectedIndex > 0)
+            {
+                txtID.Enabled = false;
+                txtName.Enabled = false;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+            }
+            else
+            {
+                txtID.Enabled = true;
+                txtName.Enabled = true;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+            }
+        }
+
+        private void txtID_Change(object sender, EventArgs e)
+        {
+            if (txtID.Text != "")
+            {
+                txtName.Enabled = false;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+                cboFacility.Enabled = false;
+
+            }
+            else
+            {
+                txtName.Enabled = true;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+                cboFacility.Enabled = true;
+            }
+
+        }
+
+        private void txtName_Change(object sender, EventArgs e)
+        {
+            if (txtName.Text != "")
+            {
+                txtID.Enabled = false;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+                cboFacility.Enabled = false;
+               
+            }
+            else
+            {
+                txtID.Enabled = true;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+                cboFacility.Enabled = true;
+            }
         }
 
         List<Product_PlanVO> list = new List<Product_PlanVO>();
@@ -41,5 +102,7 @@ namespace MESForm
             dgvList.DataSource = Data;
 
         }
+
+       
     }
 }

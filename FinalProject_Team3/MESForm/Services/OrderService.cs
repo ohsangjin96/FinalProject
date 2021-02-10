@@ -26,7 +26,7 @@ namespace MESForm.Services
             OrderDAC dac = new OrderDAC();
             return dac.GetProductPlanList(datefrom, dateto);
         }
-        public bool InsertWorkOrderList(List<SeeWorkOrderVO> list)
+        public bool InsertWorkOrderList(List<WorkOrderVO> list)
         {
             OrderDAC dac = new OrderDAC();
             return dac.InsertWorkOrderList(list);

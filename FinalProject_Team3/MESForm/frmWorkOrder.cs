@@ -44,5 +44,11 @@ namespace MESForm
             string dateto = dtpto.Value.ToString("yyyyMMdd");
            // dgvList.DataSource = service.GetWorkOrder(datefrom, dateto);
         }
+
+        private void custButtonControl2_Click(object sender, EventArgs e)
+        {
+            OrderService service = new OrderService();
+            service.InsertWorkOrderList(list);
+        }
     }
 }
