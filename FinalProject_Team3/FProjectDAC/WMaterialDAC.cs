@@ -33,10 +33,10 @@ namespace FProjectDAC
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select C.Com_Name, ITEM_Delivery_Company, R.ITEM_Code, I.ITEM_Name, ITEM_Standard,
+                cmd.CommandText = @"select ROW_NUMBER() OVER (Order by Reorder_Number desc) RowNo, C.Com_Name, ITEM_Delivery_Company, R.ITEM_Code, I.ITEM_Name, ITEM_Standard,
                                            ITEM_Type, ITEM_Unit, Reorder_InspYN, Reorder_Amount, Reorder_InAmount,
                                            Reorder_Balance , Order_FixedDate, Reorder_State, Reorder_Number,
-                                           ITEM_WareHouse_IN, MC_IngCost, Factory_Code
+                                           ITEM_WareHouse_IN, MC_IngCost, Factory_Code, Reorder_Note
                                     from Reorder R join Company C on R.Com_Code = C.Com_Code
                                     			   join ITEM I on R.ITEM_Code = I.ITEM_Code
                                     			   join PO P on R.Plan_ID = P.Plan_ID
@@ -84,9 +84,6 @@ namespace FProjectDAC
                         cmd.Parameters.AddWithValue("@Reorder_Number", list[i].Reorder_Number);
                         cmd.Parameters.AddWithValue("@Com_Name", list[i].Com_Name);
                         cmd.Parameters.AddWithValue("@Factory_Code", list[i].Factory_Code);
-                        //cmd.Parameters.AddWithValue("@Warehouse_StockQty", list[i].Warehouse_StockQty);
-                        //cmd.Parameters.AddWithValue("@Warehouse_date", list[i].Warehouse_Date);
-                        cmd.Parameters.AddWithValue("@Warehouse_Note", (list[i].Warehouse_Note == "") ? DBNull.Value : (object)list[i].Warehouse_Note);
                         cmd.Parameters.AddWithValue("@Reorder_Amount", list[i].Reorder_Amount);
                         cmd.Parameters.AddWithValue("@InQty", list[i].InQty);
                         iRowAffect = cmd.ExecuteNonQuery();

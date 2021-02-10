@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="BOMVO.cs" />
     <Compile Include="BORVO.cs" />
+    <Compile Include="CurrentWMaterialVO.cs" />
     <Compile Include="CommonCodeVO.cs" />
     <Compile Include="CompanyVO.cs" />
+    <Compile Include="CurrentWStockVO.cs" />
     <Compile Include="DemandVO.cs" />
     <Compile Include="FacilityVO.cs" />
     <Compile Include="FactoryVO.cs" />

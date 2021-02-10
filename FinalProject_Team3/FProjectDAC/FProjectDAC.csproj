@@ -51,6 +51,8 @@
     <Compile Include="CommonCodeDAC.cs" />
     <Compile Include="CompanyDAC.cs" />
     <Compile Include="ConnectionAccess.cs" />
+    <Compile Include="CurrentWMaterialDAC.cs" />
+    <Compile Include="CurrentWStockDAC.cs" />
     <Compile Include="DemandDAC.cs" />
     <Compile Include="FacilityDAC.cs" />
     <Compile Include="FactoryDAC.cs" />

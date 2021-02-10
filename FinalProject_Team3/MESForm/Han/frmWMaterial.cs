@@ -84,10 +84,9 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고창고", "ITEM_WareHouse_IN");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고량", "InQty", 100, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvWarehouse, "단가", "MC_IngCost", 100, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "Warehouse_Note");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "Reorder_Note");
 
             dgvWarehouse.Columns["InQty"].ReadOnly = false;
-            dgvWarehouse.Columns["Warehouse_Note"].ReadOnly = false;
         }
 
         #region 헤더 체크박스
@@ -200,7 +199,6 @@ namespace MESForm.Han
                     #endregion
 
                     inList.Add(newList[i]);
-                    inList[i].Warehouse_Note = Convert.ToString(dgvWarehouse["Warehouse_Note", i].Value);
                 }
             }
 
