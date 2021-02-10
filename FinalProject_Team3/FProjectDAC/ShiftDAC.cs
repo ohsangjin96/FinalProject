@@ -1,6 +1,7 @@
 ﻿using FProjectVO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -213,6 +214,41 @@ namespace FProjectDAC
                 return iRowAffect > 0;
 
             }
+        }
+
+        public DataTable GetList(string from, string to,string type,string name)
+        {
+            //using (SqlCommand cmd = new SqlCommand())
+            //{
+            //    cmd.Connection = conn;
+            //    cmd.CommandText = @"SP_ShiftDay";
+            //    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            //    cmd.Parameters.AddWithValue("@Start_DT", (string.IsNullOrEmpty(from)) ? DBNull.Value : (object)from);
+            //    cmd.Parameters.AddWithValue("@End_DT", (string.IsNullOrEmpty(to)) ? DBNull.Value : (object)to);
+            //    cmd.Parameters.AddWithValue("@Shift_type", (string.IsNullOrEmpty(type)) ? DBNull.Value : (object)type);
+            //    cmd.Parameters.AddWithValue("@Machine_name", (string.IsNullOrEmpty(name)) ? DBNull.Value : (object)name);
+
+
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    DataTable dt = new DataTable();
+            //    da.Fill(dt);
+
+            //    return dt;
+            //}
+
+            string sql = "SP_ShiftDay";
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.AddWithValue("@Start_DT", from);
+            da.SelectCommand.Parameters.AddWithValue("@End_DT", to);
+            da.SelectCommand.Parameters.AddWithValue("@Shift_type", type);
+            da.SelectCommand.Parameters.AddWithValue("@Machine_name", name);
+
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
         }
     }
 }

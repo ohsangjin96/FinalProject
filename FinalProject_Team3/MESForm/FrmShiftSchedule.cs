@@ -43,7 +43,7 @@ namespace MESForm
             var use = (from a in CommonList
                        where a.Common_Parent == "Shift000"  //Common_Parent의 코드명
                        select a).ToList();
-            use.Insert(0, new CommonCodeVO { Common_Name = "전체" });
+            
 
             //쉬프트 이름 
             ShiftService service = new ShiftService();
@@ -65,6 +65,26 @@ namespace MESForm
             cboFacCode.SelectedIndex = 0;
             cboShift.SelectedIndex = 0;
             dateTimePicker1.RefreshDate();
+        }
+
+        private void btnInquiry_Click(object sender, EventArgs e) //조회
+        {
+            string dtpfrom = string.Empty;
+            string dtpto = string.Empty;
+            //날짜 입력만큼의 데이터 조회
+            dtpfrom = dateTimePicker1.DtpFrom.ToShortDateString();
+            dtpto = dateTimePicker1.DtpTo.ToShortDateString();
+
+            ShiftService service = new ShiftService();
+            DataTable dt = service.GetList(dtpfrom, dtpto,cboShift.Text,cboFacCode.Text);
+            service.Dispose();
+            dgvShift.DataSource = dt;
+
+
+            dgvShift.Columns[1].HeaderText = "Shift";
+            dgvShift.Columns[2].Visible = false;
+            dgvShift.Columns[4].Visible = false;
+
         }
     }
 }

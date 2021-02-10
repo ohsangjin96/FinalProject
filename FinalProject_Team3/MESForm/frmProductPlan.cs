@@ -18,26 +18,28 @@ namespace MESForm
             InitializeComponent();
         }
 
-
-     
+        List<Product_PlanVO> list = new List<Product_PlanVO>();
+        DataTable Data = new DataTable();
         private void frmProductPlan_Load(object sender, EventArgs e)
         {
-            //CommonUtil.SetInitGridView(dgvList);
-            //CommonUtil.AddGridTextColumn(dgvList, "공정", "Process_Code", 110);
-            //CommonUtil.AddGridTextColumn(dgvList, "품목코드", "ITEM_Code", 100);
-            //CommonUtil.AddGridTextColumn(dgvList, "설비코드", "Facility_Code", 100);
-
-            //for (int i = 0; i < 12; i++)
-            //{
-            //    CommonUtil.AddGridTextColumn(dgvList, $"{DateTime.Now.AddDays(i).ToString("yyyy-MM-dd")}", "PP_date", 100);
-            //}
-            //Product_PlanService service = new Product_PlanService();
-            //List<Product_PlanVO> list = service.GetProduct_PlanList();
-            //dgvList.Columns.Contains(list[2].ToString());
-            Product_PlanService service = new Product_PlanService();
-            dgvList.DataSource = service.GetProduct_Plan();
+            OrderService service = new OrderService();
+            string from = DateTime.Now.ToString("yyyyMMdd");
+            string to = DateTime.Now.AddDays(12).ToString("yyyyMMdd");
+            Data= service.GetProductPlan(from,to);
+            dgvList.DataSource = Data;
+            list = service.GetProductPlanList(from, to);
         }
-       
-       
+
+        private void custButtonControl2_Click(object sender, EventArgs e)
+        {
+            OrderService service = new OrderService();
+            service.InsertProductPlanList(list);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvList.DataSource = Data;
+
+        }
     }
 }

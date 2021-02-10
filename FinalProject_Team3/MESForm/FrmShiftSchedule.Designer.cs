@@ -67,6 +67,7 @@
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -159,8 +160,8 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 13, 10, 47, 517);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 13, 10, 47, 517);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 14, 41, 15, 608);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 14, 41, 15, 608);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(91, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
