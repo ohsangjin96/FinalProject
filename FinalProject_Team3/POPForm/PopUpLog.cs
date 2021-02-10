@@ -27,7 +27,7 @@ namespace POPForm
         
             lblIP.Text = ip;
             lblPort.Text = port;
-            string path = $@"C:\Users\azan0\Source\Repos\ohsangjin96\FinalProject\FinalProject_Team3\POPForm\bin\Debug\Logs\{facility}.log";
+            string path = Application.StartupPath + $@"\\Logs\{facility}.log";
             StreamReader SR = new StreamReader(path, Encoding.Default);    
             string result = "";                                     
             result = SR.ReadToEnd();                               

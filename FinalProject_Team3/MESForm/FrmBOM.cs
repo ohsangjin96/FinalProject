@@ -205,11 +205,7 @@ namespace MESForm
 
         private void btnExcel_Click(object sender, EventArgs e)//엑셀버튼
         {
-            string sResult = ExcelExportImport.ExportToDataGridView<BOMVO>((List<BOMVO>)dgvBom.DataSource, "Gubun,Code,BOM_Amender");
-            if (sResult.Length > 0)
-            {
-                MessageBox.Show(sResult);
-            }
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvBom);
         }
     }
 }

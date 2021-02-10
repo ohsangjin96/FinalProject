@@ -212,11 +212,7 @@ namespace MESForm
 
         private void btnExcel_Click(object sender, EventArgs e)//엑셀버튼
         {
-            string sResult = ExcelExportImport.ExportToDataGridView<ItemVO>((List<ItemVO>)dgvItem.DataSource,"");
-            if (sResult.Length > 0)
-            {
-                MessageBox.Show(sResult);
-            }
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvItem);
         }
 
        
