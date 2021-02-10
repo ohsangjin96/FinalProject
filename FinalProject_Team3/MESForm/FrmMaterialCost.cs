@@ -109,12 +109,7 @@ namespace MESForm
         }
         private void btnExcel_Click(object sender, EventArgs e)//엑셀
         {
-            string sResult = ExcelExportImport.ExportToDataGridView<MaterialCostVO>((List<MaterialCostVO>)dgvCost.DataSource, "MC_Last_Modifier");
-
-            if (sResult.Length > 0)
-            {
-                MessageBox.Show(sResult);
-            }
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvCost);
         }
         private void btnRefresh_Click(object sender, EventArgs e)//새로고침
         {

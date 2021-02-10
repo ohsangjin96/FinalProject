@@ -39,11 +39,11 @@
             this.lblFactoryCode = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.dgvShift = new MESForm.CustomControls.custDataGridViewControl();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -76,7 +76,7 @@
             // 
             // pnlItem
             // 
-            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
+            this.pnlItem.Controls.Add(this.dgvShift);
             this.pnlItem.Location = new System.Drawing.Point(12, 141);
             this.pnlItem.Size = new System.Drawing.Size(1226, 546);
             // 
@@ -102,6 +102,7 @@
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnRefresh
             // 
@@ -157,8 +158,8 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 9, 10, 23, 46, 160);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 9, 10, 23, 46, 160);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 9, 40, 16, 862);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 9, 40, 16, 862);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(91, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -175,12 +176,12 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "적용 일자";
             // 
-            // custDataGridViewControl1
+            // dgvShift
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvShift.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvShift.BackgroundColor = System.Drawing.Color.White;
+            this.dgvShift.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -188,8 +189,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShift.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -197,14 +198,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 546);
-            this.custDataGridViewControl1.TabIndex = 0;
+            this.dgvShift.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvShift.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvShift.Location = new System.Drawing.Point(0, 0);
+            this.dgvShift.Name = "dgvShift";
+            this.dgvShift.RowTemplate.Height = 23;
+            this.dgvShift.Size = new System.Drawing.Size(1226, 546);
+            this.dgvShift.TabIndex = 0;
             // 
             // FrmShiftSchedule
             // 
@@ -216,7 +217,7 @@
             this.pnlSelect.PerformLayout();
             this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShift)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,6 +233,6 @@
         private System.Windows.Forms.Label lblFactoryCode;
         private UserControls.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private CustomControls.custDataGridViewControl dgvShift;
     }
 }
