@@ -437,7 +437,7 @@ namespace MESForm
 
         private void btnExamine_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<Han.frmExamine>();
+            OpenCreateForm<Han.frmInspection>();
         }
 
         private void btnWMaterial_Click(object sender, EventArgs e)

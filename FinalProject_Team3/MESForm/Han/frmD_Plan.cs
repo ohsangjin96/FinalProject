@@ -24,16 +24,6 @@ namespace MESForm.Han
             InitializeComponent();
         }
 
-        private void DGVSetting()
-        {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사코드", "Com_Code");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사설비", "Com_Type");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사명", "Com_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객주문번호", "Order_WO");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "Item_Name");
-        }
-
         private void ComboBinding()
         {
             POService service = new POService();
@@ -49,16 +39,14 @@ namespace MESForm.Han
             Companylist = company.GetCompanyList();
 
             var Company = (from list in Companylist
-                           select list.Com_Code).Distinct().ToList();
+                           select list.Com_Name).Distinct().ToList();
             Company.Insert(0, "");
-            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Code");
+            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Name");
 
         }
 
         private void frmD_Plan_Load(object sender, EventArgs e)
         {
-            //DGVSetting();
-
             ComboBinding();
         }
 
@@ -73,26 +61,25 @@ namespace MESForm.Han
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
-            string dtpfrom = string.Empty;
-            string dtpto = string.Empty;
+            //함수로 조회조건 정리
+
             //날짜 입력만큼의 데이터 조회
-            dtpfrom = dateTimePicker1.DtpFrom.ToShortDateString();
-            dtpto = dateTimePicker1.DtpTo.ToShortDateString();
+            string dtpfrom = dateTimePicker1.DtpFrom.ToShortDateString();
+            string dtpto = dateTimePicker1.DtpTo.ToShortDateString();
 
             DemandService service = new DemandService();
             DataTable dt = service.GetList(dtpfrom, dtpto);
             service.Dispose();
             custDataGridViewControl1.DataSource = dt;
-
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //string sResult = ExcelExportImport.ExportToDataGridView<===>((List<===>)custDataGridViewControl1.DataSource, string.Empty);
-            //if (sResult.Length > 0)
-            //{
-            //    MessageBox.Show(sResult);
-            //}
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, string.Empty);
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
+            }
         }
     }
 }

@@ -236,11 +236,11 @@
     <Compile Include="Han\frmD_Plan.Designer.cs">
       <DependentUpon>frmD_Plan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Han\frmExamine.cs">
+    <Compile Include="Han\frmInspection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Han\frmExamine.Designer.cs">
-      <DependentUpon>frmExamine.cs</DependentUpon>
+    <Compile Include="Han\frmInspection.Designer.cs">
+      <DependentUpon>frmInspection.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmMRelease.cs">
       <SubType>Form</SubType>
@@ -615,8 +615,8 @@
     <EmbeddedResource Include="Han\frmD_Plan.resx">
       <DependentUpon>frmD_Plan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Han\frmExamine.resx">
-      <DependentUpon>frmExamine.cs</DependentUpon>
+    <EmbeddedResource Include="Han\frmInspection.resx">
+      <DependentUpon>frmInspection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmMRelease.resx">
       <DependentUpon>frmMRelease.cs</DependentUpon>
