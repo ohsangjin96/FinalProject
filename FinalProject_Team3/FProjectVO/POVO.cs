@@ -26,6 +26,7 @@ namespace FProjectVO
         public string Order_Arrive { get; set; }
         public string Order_Remark { get; set; }
         public string Plan_ID { get; set; }
+        public string PO_State { get; set; }
 
         public string Com_Name { get; set; }
         public string ITEM_Type { get; set; }
