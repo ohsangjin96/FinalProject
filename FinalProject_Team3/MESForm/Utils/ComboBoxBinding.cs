@@ -87,6 +87,7 @@ namespace MESForm.Utils
             cbo.ValueMember = valueMember;
             cbo.DataSource = vo;
         }
+
         public static void CompanyBind(ComboBox cbo, List<CompanyVO> list, bool blankItem = true, string blankText = "")
         {
             if (blankItem)

@@ -49,13 +49,11 @@ namespace MESForm.Han
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpDate = new MESForm.UserControls.DateTimePicker();
-            this.btnToCompany = new System.Windows.Forms.ComboBox();
             this.cboOrderState = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
-            this.txtToCode = new System.Windows.Forms.TextBox();
-            this.cboCompany = new System.Windows.Forms.ComboBox();
+            this.txtInCompany = new System.Windows.Forms.TextBox();
+            this.txtCompany = new System.Windows.Forms.TextBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,13 +68,11 @@ namespace MESForm.Han
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.cboCompany);
-            this.pnlSelect.Controls.Add(this.txtToCode);
+            this.pnlSelect.Controls.Add(this.txtCompany);
+            this.pnlSelect.Controls.Add(this.txtInCompany);
             this.pnlSelect.Controls.Add(this.txtItem);
-            this.pnlSelect.Controls.Add(this.label7);
             this.pnlSelect.Controls.Add(this.label6);
             this.pnlSelect.Controls.Add(this.cboOrderState);
-            this.pnlSelect.Controls.Add(this.btnToCompany);
             this.pnlSelect.Controls.Add(this.dtpDate);
             this.pnlSelect.Controls.Add(this.label4);
             this.pnlSelect.Controls.Add(this.label3);
@@ -88,19 +84,18 @@ namespace MESForm.Han
             this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label4, 0);
             this.pnlSelect.Controls.SetChildIndex(this.dtpDate, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.btnToCompany, 0);
             this.pnlSelect.Controls.SetChildIndex(this.cboOrderState, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label6, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.label7, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtItem, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.txtToCode, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboCompany, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtInCompany, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtCompany, 0);
             // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 62);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
@@ -213,6 +208,7 @@ namespace MESForm.Han
             this.btnCancel.Text = "취소";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -272,6 +268,7 @@ namespace MESForm.Han
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnSel
             // 
@@ -332,21 +329,13 @@ namespace MESForm.Han
             // 
             // dtpDate
             // 
-            this.dtpDate.DtpFrom = new System.DateTime(2021, 2, 7, 22, 1, 5, 520);
-            this.dtpDate.DtpTo = new System.DateTime(2021, 2, 7, 22, 1, 5, 520);
+            this.dtpDate.DtpFrom = new System.DateTime(2021, 2, 10, 0, 0, 49, 433);
+            this.dtpDate.DtpTo = new System.DateTime(2021, 2, 10, 0, 0, 49, 433);
             this.dtpDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDate.Location = new System.Drawing.Point(130, 20);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(281, 38);
             this.dtpDate.TabIndex = 41;
-            // 
-            // btnToCompany
-            // 
-            this.btnToCompany.FormattingEnabled = true;
-            this.btnToCompany.Location = new System.Drawing.Point(545, 64);
-            this.btnToCompany.Name = "btnToCompany";
-            this.btnToCompany.Size = new System.Drawing.Size(191, 22);
-            this.btnToCompany.TabIndex = 42;
             // 
             // cboOrderState
             // 
@@ -366,16 +355,6 @@ namespace MESForm.Han
             this.label6.TabIndex = 44;
             this.label6.Text = "납품업체";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(860, 67);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 14);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "납품번호";
-            // 
             // txtItem
             // 
             this.txtItem.Location = new System.Drawing.Point(960, 23);
@@ -383,20 +362,19 @@ namespace MESForm.Han
             this.txtItem.Size = new System.Drawing.Size(191, 22);
             this.txtItem.TabIndex = 47;
             // 
-            // txtToCode
+            // txtInCompany
             // 
-            this.txtToCode.Location = new System.Drawing.Point(960, 64);
-            this.txtToCode.Name = "txtToCode";
-            this.txtToCode.Size = new System.Drawing.Size(191, 22);
-            this.txtToCode.TabIndex = 48;
+            this.txtInCompany.Location = new System.Drawing.Point(545, 64);
+            this.txtInCompany.Name = "txtInCompany";
+            this.txtInCompany.Size = new System.Drawing.Size(191, 22);
+            this.txtInCompany.TabIndex = 50;
             // 
-            // cboCompany
+            // txtCompany
             // 
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(130, 64);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(191, 22);
-            this.cboCompany.TabIndex = 49;
+            this.txtCompany.Location = new System.Drawing.Point(130, 64);
+            this.txtCompany.Name = "txtCompany";
+            this.txtCompany.Size = new System.Drawing.Size(191, 22);
+            this.txtCompany.TabIndex = 51;
             // 
             // frmWMaterial
             // 
@@ -437,13 +415,11 @@ namespace MESForm.Han
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.TextBox txtToCode;
         private System.Windows.Forms.TextBox txtItem;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboOrderState;
-        private System.Windows.Forms.ComboBox btnToCompany;
         private UserControls.DateTimePicker dtpDate;
+        private System.Windows.Forms.TextBox txtCompany;
+        private System.Windows.Forms.TextBox txtInCompany;
     }
 }

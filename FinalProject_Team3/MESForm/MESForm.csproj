@@ -164,12 +164,6 @@
     <Compile Include="FrmMaterialCost.Designer.cs">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPerformance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPerformance.Designer.cs">
-      <DependentUpon>frmPerformance.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmProductPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +193,12 @@
     </Compile>
     <Compile Include="frmWorkOrder.Designer.cs">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkRegist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkRegist.Designer.cs">
+      <DependentUpon>frmWorkRegist.cs</DependentUpon>
     </Compile>
     <Compile Include="Han\frmCurrentOrder.cs">
       <SubType>Form</SubType>
@@ -494,6 +494,8 @@
     <Compile Include="Services\BORService.cs" />
     <Compile Include="Services\CommonCodeService.cs" />
     <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\CurrentWMaterialService.cs" />
+    <Compile Include="Services\CurrentWStockService.cs" />
     <Compile Include="Services\DemandService.cs" />
     <Compile Include="Services\FacilityService.cs" />
     <Compile Include="Services\FactoryService.cs" />
@@ -505,7 +507,6 @@
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\POPService.cs" />
     <Compile Include="Services\POService.cs" />
-    <Compile Include="Services\Product_PlanService.cs" />
     <Compile Include="Services\SalesCostService.cs" />
     <Compile Include="Services\ReOrderService.cs" />
     <Compile Include="Services\SampleService.cs" />
@@ -579,9 +580,6 @@
     <EmbeddedResource Include="FrmMaterialCost.resx">
       <DependentUpon>FrmMaterialCost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPerformance.resx">
-      <DependentUpon>frmPerformance.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmProductPlan.resx">
       <DependentUpon>frmProductPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -596,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkOrder.resx">
       <DependentUpon>frmWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkRegist.resx">
+      <DependentUpon>frmWorkRegist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Han\frmCurrentOrder.resx">
       <DependentUpon>frmCurrentOrder.cs</DependentUpon>

@@ -574,7 +574,26 @@ namespace MESForm
 
         private void btnPerformance_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmPerformance>();
+            OpenCreateForm<frmWorkRegist>();
+        }
+
+
+        private void Button_MouseUp(object sender, MouseEventArgs e)
+        {
+            foreach (var pnl in pnlMenu.Controls)
+            {
+                if(pnl is Panel)
+                {
+                    foreach (var ctrl in ((Panel)pnl).Controls)
+                    {
+                        ((Button)ctrl).BackColor = Color.White;
+                        if (((Button)sender).BackColor == Color.White)
+                        {
+                            ((Button)sender).BackColor = Color.FromArgb(214, 227, 245);
+                        }
+                    }
+                }
+            }
         }
     }
 }

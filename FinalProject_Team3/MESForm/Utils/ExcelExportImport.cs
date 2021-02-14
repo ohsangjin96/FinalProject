@@ -89,7 +89,7 @@ namespace MESForm.Utils
                 range.Interior.Color = ColorTranslator.ToOle(Color.FromArgb(142, 169, 219));
                 range.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-                for (int row = 0; row < dgv.Rows.Count - 1; row++)
+                for (int row = 0; row < dgv.Rows.Count; row++)
                 {
                     rowIndex++;
                     columnIndex = 1;

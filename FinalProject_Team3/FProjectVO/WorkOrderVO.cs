@@ -14,9 +14,8 @@ namespace FProjectVO
        public string WorkOrder_State { get; set; }
        public string Facility_Code { get; set; }
        public string Facility_Name { get; set; }
-       public int Order_OrderAmount { get; set; }
-       public int BOR_Order { get; set; }
-        public DateTime Order_FixedDate { get; set; }
+       public int OrderAmount { get; set; }
+       public DateTime FixDate { get; set; }
        public int TackTime { get; set; }
        public string Plan_ID { get; set; }
        public string Com_Code { get; set; }

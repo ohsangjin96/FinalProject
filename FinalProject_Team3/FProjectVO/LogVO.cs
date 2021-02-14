@@ -8,11 +8,11 @@ namespace FProjectVO
 {
     public class LogVO
     {
-        public int LogNumber { get; set; }
         public string LogFacility { get; set; }
         public int LogSuccess { get; set; }
         public int LogFail { get; set; }
         public int LogProgram { get; set; }
+        public int WorkOrderID { get; set; }
         public DateTime LogDate { get; set; }
 
     }

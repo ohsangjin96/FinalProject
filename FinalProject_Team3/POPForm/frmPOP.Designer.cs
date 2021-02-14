@@ -37,27 +37,19 @@ namespace POPForm
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnRegist = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblFixedDate = new System.Windows.Forms.Label();
-            this.lblItemName = new System.Windows.Forms.Label();
-            this.lblAmount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblID1 = new System.Windows.Forms.Label();
-            this.lblFixedDate1 = new System.Windows.Forms.Label();
-            this.lblItemName1 = new System.Windows.Forms.Label();
-            this.lblAmount1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblLogout = new System.Windows.Forms.LinkLabel();
+            this.lblName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -69,23 +61,21 @@ namespace POPForm
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvList
             // 
-            this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvList.GridColor = System.Drawing.Color.DimGray;
-            this.dgvList.Location = new System.Drawing.Point(0, 129);
+            this.dgvList.Location = new System.Drawing.Point(0, 128);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(868, 286);
+            this.dgvList.Size = new System.Drawing.Size(868, 283);
             this.dgvList.TabIndex = 2;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             // 
@@ -104,8 +94,8 @@ namespace POPForm
             // 
             // dgvList2
             // 
-            this.dgvList2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvList2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvList2.BackgroundColor = System.Drawing.Color.White;
             this.dgvList2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -119,7 +109,7 @@ namespace POPForm
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.splitContainer1.Location = new System.Drawing.Point(0, 71);
             this.splitContainer1.Name = "splitContainer1";
@@ -157,31 +147,28 @@ namespace POPForm
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(0, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(868, 54);
             this.panel1.TabIndex = 43;
             // 
-            // button2
+            // label3
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(758, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 35);
-            this.button2.TabIndex = 85;
-            this.button2.Text = "초기화";
-            this.button2.UseVisualStyleBackColor = false;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(83, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 23);
+            this.label3.TabIndex = 86;
+            this.label3.Text = "날짜";
             // 
             // label21
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -191,21 +178,6 @@ namespace POPForm
             this.label21.Size = new System.Drawing.Size(64, 23);
             this.label21.TabIndex = 83;
             this.label21.Text = "날짜 : ";
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(634, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 35);
-            this.button4.TabIndex = 80;
-            this.button4.Text = "조회";
-            this.button4.UseVisualStyleBackColor = false;
-
             // 
             // btnRegist
             // 
@@ -263,7 +235,7 @@ namespace POPForm
             // 
             // label41
             // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label41.BackColor = System.Drawing.Color.White;
             this.label41.Font = new System.Drawing.Font("굴림", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -276,8 +248,8 @@ namespace POPForm
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.Location = new System.Drawing.Point(868, 71);
             this.splitContainer2.Name = "splitContainer2";
@@ -285,19 +257,32 @@ namespace POPForm
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button3);
-            this.splitContainer2.Panel1.Controls.Add(this.lblID);
-            this.splitContainer2.Panel1.Controls.Add(this.lblFixedDate);
-            this.splitContainer2.Panel1.Controls.Add(this.lblItemName);
-            this.splitContainer2.Panel1.Controls.Add(this.lblAmount);
+            this.splitContainer2.Panel1.AutoScroll = true;
+            this.splitContainer2.Panel1.Controls.Add(this.lblLogout);
+            this.splitContainer2.Panel1.Controls.Add(this.lblName);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
-            this.splitContainer2.Panel1.Controls.Add(this.lblID1);
-            this.splitContainer2.Panel1.Controls.Add(this.lblFixedDate1);
-            this.splitContainer2.Panel1.Controls.Add(this.lblItemName1);
-            this.splitContainer2.Panel1.Controls.Add(this.lblAmount1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.button3);
             this.splitContainer2.Size = new System.Drawing.Size(597, 847);
-            this.splitContainer2.SplitterDistance = 402;
+            this.splitContainer2.SplitterDistance = 790;
             this.splitContainer2.TabIndex = 58;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(-1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(598, 85);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "●설비현황판";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button3
             // 
@@ -305,7 +290,7 @@ namespace POPForm
             this.button3.BackColor = System.Drawing.SystemColors.Highlight;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(456, 357);
+            this.button3.Location = new System.Drawing.Point(460, 10);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 40);
             this.button3.TabIndex = 55;
@@ -313,143 +298,41 @@ namespace POPForm
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // lblID
-            // 
-            this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblID.Location = new System.Drawing.Point(147, 104);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(70, 23);
-            this.lblID.TabIndex = 77;
-            this.lblID.Text = "PlanID";
-            // 
-            // lblFixedDate
-            // 
-            this.lblFixedDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblFixedDate.AutoSize = true;
-            this.lblFixedDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFixedDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblFixedDate.Location = new System.Drawing.Point(147, 174);
-            this.lblFixedDate.Name = "lblFixedDate";
-            this.lblFixedDate.Size = new System.Drawing.Size(67, 23);
-            this.lblFixedDate.TabIndex = 76;
-            this.lblFixedDate.Text = "납품일";
-            // 
-            // lblItemName
-            // 
-            this.lblItemName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblItemName.AutoSize = true;
-            this.lblItemName.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblItemName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblItemName.Location = new System.Drawing.Point(147, 244);
-            this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(67, 23);
-            this.lblItemName.TabIndex = 75;
-            this.lblItemName.Text = "상품명";
-            // 
-            // lblAmount
-            // 
-            this.lblAmount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblAmount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAmount.Location = new System.Drawing.Point(147, 315);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(67, 23);
-            this.lblAmount.TabIndex = 74;
-            this.lblAmount.Text = "생산량";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(595, 85);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "●업무상세보기";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblID1
-            // 
-            this.lblID1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblID1.AutoSize = true;
-            this.lblID1.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblID1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblID1.Location = new System.Drawing.Point(16, 104);
-            this.lblID1.Name = "lblID1";
-            this.lblID1.Size = new System.Drawing.Size(81, 23);
-            this.lblID1.TabIndex = 73;
-            this.lblID1.Text = "PlanID :";
-            // 
-            // lblFixedDate1
-            // 
-            this.lblFixedDate1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblFixedDate1.AutoSize = true;
-            this.lblFixedDate1.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFixedDate1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblFixedDate1.Location = new System.Drawing.Point(16, 174);
-            this.lblFixedDate1.Name = "lblFixedDate1";
-            this.lblFixedDate1.Size = new System.Drawing.Size(78, 23);
-            this.lblFixedDate1.TabIndex = 72;
-            this.lblFixedDate1.Text = "납품일 :";
-            // 
-            // lblItemName1
-            // 
-            this.lblItemName1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblItemName1.AutoSize = true;
-            this.lblItemName1.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblItemName1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblItemName1.Location = new System.Drawing.Point(16, 244);
-            this.lblItemName1.Name = "lblItemName1";
-            this.lblItemName1.Size = new System.Drawing.Size(78, 23);
-            this.lblItemName1.TabIndex = 71;
-            this.lblItemName1.Text = "상품명 :";
-            // 
-            // lblAmount1
-            // 
-            this.lblAmount1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblAmount1.AutoSize = true;
-            this.lblAmount1.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblAmount1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblAmount1.Location = new System.Drawing.Point(16, 314);
-            this.lblAmount1.Name = "lblAmount1";
-            this.lblAmount1.Size = new System.Drawing.Size(78, 23);
-            this.lblAmount1.TabIndex = 69;
-            this.lblAmount1.Text = "생산량 :";
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "다운로드-_1_.jpg");
             // 
-            // label3
+            // lblLogout
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("나눔스퀘어OTF", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(83, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 23);
-            this.label3.TabIndex = 86;
-            this.label3.Text = "날짜";
+            this.lblLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.lblLogout.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblLogout.ForeColor = System.Drawing.Color.Magenta;
+            this.lblLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblLogout.LinkColor = System.Drawing.Color.Violet;
+            this.lblLogout.Location = new System.Drawing.Point(539, 3);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(55, 14);
+            this.lblLogout.TabIndex = 72;
+            this.lblLogout.TabStop = true;
+            this.lblLogout.Text = "로그아웃";
+            this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.lblName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(312, 3);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(221, 15);
+            this.lblName.TabIndex = 71;
+            this.lblName.Text = "이름";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmPOP
             // 
@@ -476,6 +359,7 @@ namespace POPForm
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -490,27 +374,19 @@ namespace POPForm
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblFixedDate;
-        private System.Windows.Forms.Label lblItemName;
-        private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblID1;
-        private System.Windows.Forms.Label lblFixedDate1;
-        private System.Windows.Forms.Label lblItemName1;
-        private System.Windows.Forms.Label lblAmount1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnRegist;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.DataGridView dgvList2;
         protected System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel lblLogout;
+        private System.Windows.Forms.Label lblName;
     }
 }
 
