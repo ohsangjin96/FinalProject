@@ -85,7 +85,7 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"select count(Demand_WO) from Demand where Demand_WO=@woID";
 
-                cmd.Parameters.AddWithValue("@Demand_WO", woID);
+                cmd.Parameters.AddWithValue("@woID", woID);
 
                 int iRowAffect = Convert.ToInt32(cmd.ExecuteScalar());
 
