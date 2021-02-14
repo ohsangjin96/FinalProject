@@ -1,5 +1,6 @@
 ﻿using FProjectVO;
 using log4net.Core;
+using MESForm.Services;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -35,7 +36,6 @@ namespace POPForm.UserControls
         Thread buttonClicka;
         TcpControl tcpcontrol;
         ThreadPLCTask m_thread;
-        int workorder_ID;
         int Process_ID;
         string plan_ID;
         int qty;
@@ -112,8 +112,14 @@ namespace POPForm.UserControls
             string info = argss.Data;
             string[] arrData1 = info.Split('|');
             Log.WriteInfo($"성공 : {arrData1[0]}, 실패 : {arrData1[1]}, 진행률 {arrData1[2]}");
-            //LogService service = new LogService();
-            //service.insertLog();
+            LogService service = new LogService();
+            LogVO log = new LogVO();
+            log.LogFacility = lblFacility.Text;
+            log.LogSuccess = Convert.ToInt32(arrData1[0]);
+            log.LogFail = Convert.ToInt32(arrData1[1]);
+            log.LogProgram = Convert.ToInt32(arrData1[2]);
+            log.WorkOrderID = WorkOrder_ID;
+            service.insertLog(log);
             this.Invoke(new Action(() =>
             {
                 lblSuccess.Text = arrData1[0];
@@ -130,6 +136,7 @@ namespace POPForm.UserControls
                     WorkRegist_FailQty = int.Parse(lblFail.Text),
                     WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
                     WorkRegist_WorkTime = int.Parse(lblProgram.Text) * 5,
+                    WorkRegistID = WorkOrder_ID,
                     WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
                     WorkRegist_State = "제작완료",
 
@@ -174,7 +181,7 @@ namespace POPForm.UserControls
             button2.Enabled = false;
             lblqty.Text = $"/{Qty}개";
             plan_ID = Plan_ID;
-            workorder_ID = WorkOrder_ID;
+            label2.Text = WorkOrder_ID.ToString();
             qty = Qty;
         }
 
@@ -201,6 +208,7 @@ namespace POPForm.UserControls
                 WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
                 WorkRegist_WorkTime = int.Parse(lblProgram.Text) * 500,
                 WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                WorkRegistID = WorkOrder_ID,
                 Plan_ID = plan_ID,
                 WorkRegist_State = "제작완료",
 

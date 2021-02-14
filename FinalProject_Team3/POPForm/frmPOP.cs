@@ -40,7 +40,7 @@ namespace POPForm
         }
         private void frmPOP_Load(object sender, EventArgs e)
         {
-            lblName.Text = Vo.User_Name;
+            lblName.Text =$"{Vo.User_Dept}-{Vo.User_Name}";
            
             label3.Text = "2021-02-11";
             CommonUtil.SetInitGridView(dgvList);
@@ -49,22 +49,22 @@ namespace POPForm
             CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Name", 160);
             CommonUtil.AddGridTextColumn(dgvList, "수량", "OrderAmount", 100);
             CommonUtil.AddGridTextColumn(dgvList, "날짜", "FixDate", 200);
-            CommonUtil.AddGridTextColumn(dgvList, "날짜", "Plan_ID", 200,false);
+            CommonUtil.AddGridTextColumn(dgvList, "Plan_ID", "Plan_ID", 200,false);
             CommonUtil.SetInitGridView(dgvList2);
-            
-            CommonUtil.AddGridTextColumn(dgvList2, "작업시작날짜", "WorkRegist_Start", 165);
+            CommonUtil.AddGridTextColumn(dgvList2, "주문지시번호", "WorkRegistID", 165);
+            CommonUtil.AddGridTextColumn(dgvList2, "작업완료날짜", "WorkRegist_Start", 165);
             CommonUtil.AddGridTextColumn(dgvList2, "품목", "Item_Code", 150);
             CommonUtil.AddGridTextColumn(dgvList2, "상태", "WorkRegist_State", 100);
             CommonUtil.AddGridTextColumn(dgvList2, "걸린시간", "WorkRegist_WorkTime", 120);
             CommonUtil.AddGridTextColumn(dgvList2, "양품", "WorkRegist_NomalQty", 100);
             CommonUtil.AddGridTextColumn(dgvList2, "불량", "WorkRegist_FailQty", 100);
             CommonUtil.AddGridTextColumn(dgvList2, "설비코드", "FacilityDetail_Code", 120);
-           
+            CommonUtil.AddGridTextColumn(dgvList, "Plan_ID", "Plan_ID", 200, false);
             this.dgvList.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            dgvList.DataSource = service.GetSelectWorkOrderList("2021-02-11",Vo.User_Dept);
+            dgvList.DataSource = service.GetSelectWorkOrderList("2021-02-17",Vo.User_Dept);
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
