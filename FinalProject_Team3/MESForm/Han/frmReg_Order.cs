@@ -24,7 +24,8 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "a");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "b");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "c");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "카테고리", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주수량", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수령날짜", "d");
         }
 
         private void frmReg_Order_Load(object sender, EventArgs e)
