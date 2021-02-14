@@ -59,10 +59,6 @@ namespace POPForm.UserControls
                     string response = Encoding.Default.GetString(data).Replace("", "").Replace("", "").Trim();
                     string[] arrData1 = response.Split('|');
                     if (arrData1.Length < 1) continue;
-
-
-
-
                 }
             }
             catch (Exception err)
@@ -113,6 +109,12 @@ namespace POPForm.UserControls
             string[] arrData1 = info.Split('|');
             Log.WriteInfo($"성공 : {arrData1[0]}, 실패 : {arrData1[1]}, 진행률 {arrData1[2]}");
             LogService service = new LogService();
+            this.Invoke(new Action(() =>
+            {
+                lblSuccess.Text = arrData1[0];
+                lblFail.Text = arrData1[1];
+                lblProgram.Text = arrData1[2];
+            }));
             LogVO log = new LogVO();
             log.LogFacility = lblFacility.Text;
             log.LogSuccess = Convert.ToInt32(arrData1[0]);
@@ -120,13 +122,6 @@ namespace POPForm.UserControls
             log.LogProgram = Convert.ToInt32(arrData1[2]);
             log.WorkOrderID = WorkOrder_ID;
             service.insertLog(log);
-            this.Invoke(new Action(() =>
-            {
-                lblSuccess.Text = arrData1[0];
-                lblFail.Text = arrData1[1];
-                lblProgram.Text = arrData1[2];
-            }));
-
             if (Convert.ToInt32(lblProgram.Text) >= 100)
             {
                 WorkRegistVO vo = new WorkRegistVO
@@ -181,7 +176,7 @@ namespace POPForm.UserControls
             button2.Enabled = false;
             lblqty.Text = $"/{Qty}개";
             plan_ID = Plan_ID;
-            label2.Text = WorkOrder_ID.ToString();
+            label2.Text = $"지시번호:({WorkOrder_ID})";
             qty = Qty;
         }
 

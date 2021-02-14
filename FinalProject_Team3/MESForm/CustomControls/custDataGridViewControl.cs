@@ -26,9 +26,13 @@ namespace MESForm.CustomControls
             this.DefaultCellStyle.BackColor = Color.FromArgb(217, 248, 255);
             this.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             this.AllowUserToAddRows = false;
+            this.RowPostPaint += CustDataGridViewControl_RowPostPaint;
         }
 
-       
+        private void CustDataGridViewControl_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
 
         protected override void OnPaint(PaintEventArgs pe)
         {
