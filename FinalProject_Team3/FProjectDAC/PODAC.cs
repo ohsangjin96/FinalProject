@@ -44,6 +44,24 @@ namespace FProjectDAC
             }
         }
 
+        public bool ExcelWOCheck(string order_wo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select count(Order_WO) from PO where Order_WO=@Order_WO";
+
+                cmd.Parameters.AddWithValue("@Order_WO", order_wo);
+
+                int iRowAffect = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (iRowAffect > 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
         public bool ExcelCompanyCheck(string com_code, string com_name)
         {
             using(SqlCommand cmd = new SqlCommand())
@@ -204,5 +222,6 @@ namespace FProjectDAC
                 throw new Exception(err.Message);
             }
         }
+
     }
 }

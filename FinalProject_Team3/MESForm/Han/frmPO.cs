@@ -21,7 +21,6 @@ namespace MESForm.Han
         List<POVO> allList;
         List<CompanyVO> Companylist;
 
-
         public frmPO()
         {
             InitializeComponent();
@@ -60,7 +59,7 @@ namespace MESForm.Han
             
             var Company = (from list in Companylist
                            select list.Com_Name).Distinct().ToList();
-            Company.Insert(0, "");
+            Company.Insert(0, "전체");
             ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Name");   
         }
 
@@ -69,6 +68,7 @@ namespace MESForm.Han
             DGVSetting();
             LoadData();
             ComboBinding();
+            dtpOrder.Enabled = false;
         }
 
         private void btnDPCreate_Click(object sender, EventArgs e)
@@ -107,10 +107,41 @@ namespace MESForm.Han
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
-            
+            List<POVO> searchList = new List<POVO>();
+
+            foreach (var i in allList)
+            {
+                if (i.Order_FixedDate >= dateTimePicker1.DtpFrom && i.Order_FixedDate <= dateTimePicker1.DtpTo)
+                {
+                    if (cboCompany.Text != "전체" && chkPlanDate.Checked == false)
+                    {
+                        if (i.Com_Name == cboCompany.Text)
+                        {
+                            searchList.Add(i);
+                        }
+                    }
+                    else if (cboCompany.Text != "전체" && chkPlanDate.Checked == true)
+                    {
+                        if (i.Order_Plandate == dtpOrder.Value && i.Com_Name == cboCompany.Text)
+                        {
+                            searchList.Add(i);
+                        }
+                    }
+                    else if (cboCompany.Text == "전체" && chkPlanDate.Checked == true)
+                    {
+                        if (i.Order_Plandate.Date == dtpOrder.Value.Date)
+                        {
+                            searchList.Add(i);
+                        }
+                    }
+                    else
+                        searchList.Add(i);
+                }
+            }
+            custDataGridViewControl1.DataSource = searchList;
         }
 
-        private void custDataGridViewControl1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void custDataGridViewControl1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //선택한 데이터의 woid 넘기기
             WOID = this.custDataGridViewControl1.CurrentRow.Cells["Order_WO"].Value.ToString();
@@ -124,6 +155,14 @@ namespace MESForm.Han
                 custDataGridViewControl1.DataSource = null;
                 LoadData();
             }
+        }
+
+        private void chkPlanDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPlanDate.Checked)
+                dtpOrder.Enabled = true;
+            else
+                dtpOrder.Enabled = false;
         }
     }
 }

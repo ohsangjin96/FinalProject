@@ -43,6 +43,7 @@ namespace MESForm.Han
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpOrder = new System.Windows.Forms.DateTimePicker();
+            this.chkPlanDate = new System.Windows.Forms.CheckBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -51,6 +52,7 @@ namespace MESForm.Han
             // 
             // pnlSelect
             // 
+            this.pnlSelect.Controls.Add(this.chkPlanDate);
             this.pnlSelect.Controls.Add(this.dtpOrder);
             this.pnlSelect.Controls.Add(this.label2);
             this.pnlSelect.Controls.Add(this.dateTimePicker1);
@@ -66,6 +68,7 @@ namespace MESForm.Han
             this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
             this.pnlSelect.Controls.SetChildIndex(this.dtpOrder, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.chkPlanDate, 0);
             // 
             // btnInquiry
             // 
@@ -118,14 +121,14 @@ namespace MESForm.Han
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(28, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 14);
+            this.label1.Size = new System.Drawing.Size(43, 14);
             this.label1.TabIndex = 1;
-            this.label1.Text = "고객납기일";
+            this.label1.Text = "납기일";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 12, 17, 8, 23, 239);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 12, 17, 8, 23, 239);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 14, 22, 44, 3, 6);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 14, 22, 44, 3, 6);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(128, 33);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -198,6 +201,7 @@ namespace MESForm.Han
             // 
             // custDataGridViewControl1
             // 
+            this.custDataGridViewControl1.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
@@ -226,7 +230,7 @@ namespace MESForm.Han
             this.custDataGridViewControl1.RowTemplate.Height = 23;
             this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 526);
             this.custDataGridViewControl1.TabIndex = 0;
-            this.custDataGridViewControl1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.custDataGridViewControl1_CellContentClick);
+            this.custDataGridViewControl1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.custDataGridViewControl1_CellDoubleClick);
             // 
             // label2
             // 
@@ -245,6 +249,16 @@ namespace MESForm.Han
             this.dtpOrder.Name = "dtpOrder";
             this.dtpOrder.Size = new System.Drawing.Size(191, 22);
             this.dtpOrder.TabIndex = 23;
+            // 
+            // chkPlanDate
+            // 
+            this.chkPlanDate.AutoSize = true;
+            this.chkPlanDate.Location = new System.Drawing.Point(915, 37);
+            this.chkPlanDate.Name = "chkPlanDate";
+            this.chkPlanDate.Size = new System.Drawing.Size(15, 14);
+            this.chkPlanDate.TabIndex = 24;
+            this.chkPlanDate.UseVisualStyleBackColor = true;
+            this.chkPlanDate.CheckedChanged += new System.EventHandler(this.chkPlanDate_CheckedChanged);
             // 
             // frmPO
             // 
@@ -278,6 +292,7 @@ namespace MESForm.Han
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
         private System.Windows.Forms.DateTimePicker dtpOrder;
         protected System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkPlanDate;
     }
 }
 
