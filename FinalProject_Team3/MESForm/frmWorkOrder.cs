@@ -179,6 +179,7 @@ namespace MESForm
         {
             if (checkBox1.Checked)
             {
+                txtID.Enabled = false;
                 txtFa.Enabled = false;
                 txtName.Enabled = false;
                 dtpfrom.Enabled = true;
@@ -186,6 +187,7 @@ namespace MESForm
             }
             else
             {
+                txtID.Enabled = true;
                 txtFa.Enabled = true;
                 txtName.Enabled = true;
                 dtpfrom.Enabled = false;
