@@ -10,7 +10,6 @@ namespace FProjectVO
     {
         public string Item_Code { get; set; }
         public string Item_Name { get; set; }
-        public string WorkOrder_State { get; set; }
         public string Facility_Code { get; set; }
         public string Facility_Name { get; set; }
         public int OrderAmount { get; set; }

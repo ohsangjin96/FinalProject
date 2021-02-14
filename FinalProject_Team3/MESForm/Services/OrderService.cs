@@ -11,6 +11,11 @@ namespace MESForm.Services
 {
     public class OrderService
     {
+        public List<POPWorkOrderVO> GetSelectWorkOrderList(string date, string dtp)
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.GetSelectWorkOrderList(date, dtp);
+        }
         public List<OrderVO> GetOrderList()
         {
             OrderDAC dac = new OrderDAC();
@@ -41,10 +46,20 @@ namespace MESForm.Services
             OrderDAC dac = new OrderDAC();
             return dac.GetWorkOrder(datefrom, dateto);
         }
-            public bool InsertProductPlanList(List<Product_PlanVO> list)
+        public bool InsertProductPlanList(List<Product_PlanVO> list)
         {
             OrderDAC dac = new OrderDAC();
             return dac.InsertProductPlanList(list);
+        }
+        public DataTable SelectProductPlan(string datefrom, string dateto, string index)
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.SelectProductPlan(datefrom, dateto, index);
+        }
+        public DataTable SelectWorkOrder(string datefrom, string dateto, string index)
+        {
+            OrderDAC dac = new OrderDAC();
+            return dac.SelectWorkOrder(datefrom, dateto, index);
         }
     }
 }

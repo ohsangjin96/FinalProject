@@ -80,8 +80,8 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"insert into Product_Plan(Item_Code, Item_Name, Facility_Code, Facility_Name,OrderAmount, FixDate, Com_Code, Com_Name,Plan_ID)
-                                   values(@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @OrderAmount, @FixDate, @Com_Code, @Com_Name,@Plan_ID)";
+                cmd.CommandText = @"insert into Product_Plan(Item_Code, Item_Name, Facility_Code, Facility_Name,OrderAmount, FixDate, Com_Code,Com_Name,Plan_ID)
+                                   values(@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @OrderAmount, @FixDate, @Com_Code,@Com_Name,@Plan_ID)";
                 cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Item_Name", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Facility_Code", SqlDbType.NVarChar);
@@ -108,11 +108,11 @@ namespace FProjectDAC
                         return false;
                     }
                 }
-                cmd.CommandText = @"Update PO set State = '생산확정' where PO.Plan_ID = @Plan_ID";
+                cmd.CommandText = @"Update PO set PO_State = '생산확정' where PO.Plan_ID = @Plan_ID";
                 int a = cmd.ExecuteNonQuery();
                 if (a < 0)
                     return false;
-  
+
                 return true;
             }
         }
@@ -123,6 +123,7 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"SP_GetWorkOrderList";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
                 cmd.Parameters.AddWithValue("@StartDate", datefrom);
                 cmd.Parameters.AddWithValue("@EndDate", dateto);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -136,8 +137,8 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"insert into WorkOrder(Item_Code, Item_Name, Facility_Code, Facility_Name, OrderAmount, FixDate, TackTime, Plan_ID, Com_Code, Com_Name)
-                                    values (@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @OrderAmount, @FixDate, @TackTime, @Plan_ID, @Com_Code, @Com_Name)";
+                cmd.CommandText = @"insert into WorkOrder (Item_Code, Item_Name, Facility_Code, Facility_Name, OrderAmount,FixDate, TackTime, Plan_ID, Com_Code, Com_Name)
+                                   values(@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @OrderAmount, @FixDate, @TackTime, @Plan_ID, @Com_Code, @Com_Name)";
                 cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Item_Name", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Facility_Code", SqlDbType.NVarChar);
@@ -167,10 +168,6 @@ namespace FProjectDAC
                         return false;
                     }
                 }
-                cmd.CommandText = @"Update Product_Plan set PP_State = '지시확정' where Product_Plan.Plan_ID = @Plan_ID";
-                int a = cmd.ExecuteNonQuery();
-                if (a < 0)
-                    return false;
                 return true;
 
             }
@@ -197,18 +194,65 @@ namespace FProjectDAC
 
             }
         }
-        public List<POPWorkOrderVO> GetSelectWorkOrderList(string date)
+
+        public List<POPWorkOrderVO> GetSelectWorkOrderList(string date, string dtp)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select distinct(Item_Code), Item_Name,Order_OrderAmount, Plan_ID, Order_FixedDate from WorkOrder where Order_FixedDate =@date";
+                cmd.CommandText = @" select distinct(Item_Code), Item_Name,OrderAmount, Plan_ID,FixDate from WorkOrder 
+                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where FixDate ='2021-02-17' and Item_Code like LEFT(@dtp,9))";
                 cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@dtp", dtp);
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<POPWorkOrderVO> list = Helper.DataReaderMapToList<POPWorkOrderVO>(reader);
                 return list;
             }
 
+        }
+        public DataTable SelectProductPlan(string datefrom, string dateto, string index)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+
+                cmd.Connection = conn;
+                cmd.CommandText = @"SP_SelectPPlan";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@StartDate", datefrom);
+                cmd.Parameters.AddWithValue("@EndDate", dateto);
+                cmd.Parameters.AddWithValue("@index", index);
+
+                //SqlDataReader reader = cmd.ExecuteReader();
+                //List<POVO> list = Helper.DataReaderMapToList<POVO>(reader);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+
+                return ds;
+
+            }
+        }
+        public DataTable SelectWorkOrder(string datefrom, string dateto, string index)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"SP_SelectWorkOrder";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@StartDate", datefrom);
+                cmd.Parameters.AddWithValue("@EndDate", dateto);
+                cmd.Parameters.AddWithValue("@index", index);
+
+                //SqlDataReader reader = cmd.ExecuteReader();
+                //List<POVO> list = Helper.DataReaderMapToList<POVO>(reader);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable ds = new DataTable();
+                da.Fill(ds);
+
+                return ds;
+            }
         }
     }
 }
