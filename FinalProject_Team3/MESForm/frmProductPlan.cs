@@ -20,9 +20,8 @@ namespace MESForm
             InitializeComponent();
 
             txtName.TextChanged += txtName_Textchange;
-            txtFa.TextChanged += txtFA_Textchange;
             txtID.TextChanged += txtID_Textchange;
-
+            txtFa.TextChanged += txtFA_Textchange;
 
 
         }

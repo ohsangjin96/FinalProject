@@ -8,10 +8,10 @@ namespace FProjectVO
 {
     public class MtpVO
     {
-        public int Mtp_ID { get; set; }
         public string ITEM_Code { get; set; }
-        public DateTime Mtp_Date { get; set; }
+        public DateTime Plan_Date { get; set; }
         public string ITEM_Name { get; set; }
         public string Plan_ID { get; set; }
+        public int Amount { get; set; }
     }
 }

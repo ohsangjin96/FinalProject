@@ -68,8 +68,14 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Demand_OrderAmount", vo.Demand_OrderAmount);
 
                     int iRowAffect = cmd.ExecuteNonQuery();
-
-                    return iRowAffect > 0;
+                    if (iRowAffect < 0)
+                        return false;
+                    cmd.CommandText = @"Update PO set PO_State = '수요계획' where Plan_ID = @Plan_IDD";
+                    cmd.Parameters.AddWithValue("@Plan_IDD", vo.Plan_ID);
+                    iRowAffect = cmd.ExecuteNonQuery();
+                    if (iRowAffect < 0)
+                        return false;
+                    return true;
                 }
             }
             catch (Exception err)
