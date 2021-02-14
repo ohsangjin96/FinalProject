@@ -1,4 +1,5 @@
 ﻿using FProjectDAC;
+using FProjectVO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,16 @@ namespace MESForm.Services
         {
             MtpDAC dac = new MtpDAC();
             dac.Dispose();
+        }
+        public List<MtpVO> GetMtp()
+        {
+            MtpDAC dac = new MtpDAC();
+            return dac.GetMtp();
+        }
+        public bool InsertMtp(List<MtpVO> list)
+        {
+            MtpDAC dac = new MtpDAC();
+            return dac.InsertMtp(list);
         }
     }
 }

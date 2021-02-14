@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmProcessMove : Form
+    public partial class frmProcessMove : BaseForms.frmBaseLists
     {
         public frmProcessMove()
         {

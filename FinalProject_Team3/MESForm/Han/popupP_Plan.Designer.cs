@@ -29,16 +29,16 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.btnInquiry = new MESForm.CustomControls.custButtonControl();
-            this.cboPlanID = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPlanAmount = new System.Windows.Forms.Label();
             this.lblWriteAmount = new System.Windows.Forms.Label();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.txtPlanID = new System.Windows.Forms.TextBox();
             this.pnlTop.SuspendLayout();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
@@ -67,11 +67,11 @@ namespace MESForm.Han
             // 
             // pnl
             // 
+            this.pnl.Controls.Add(this.txtPlanID);
             this.pnl.Controls.Add(this.custDataGridViewControl1);
             this.pnl.Controls.Add(this.lblWriteAmount);
             this.pnl.Controls.Add(this.lblPlanAmount);
             this.pnl.Controls.Add(this.label3);
-            this.pnl.Controls.Add(this.cboPlanID);
             this.pnl.Controls.Add(this.btnInquiry);
             this.pnl.Controls.Add(this.label2);
             this.pnl.Size = new System.Drawing.Size(549, 525);
@@ -108,14 +108,6 @@ namespace MESForm.Han
             this.btnInquiry.UseVisualStyleBackColor = false;
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
-            // cboPlanID
-            // 
-            this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(86, 22);
-            this.cboPlanID.Name = "cboPlanID";
-            this.cboPlanID.Size = new System.Drawing.Size(191, 22);
-            this.cboPlanID.TabIndex = 2;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -147,36 +139,44 @@ namespace MESForm.Han
             // 
             // custDataGridViewControl1
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.custDataGridViewControl1.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.custDataGridViewControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
             this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle3;
             this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custDataGridViewControl1.Location = new System.Drawing.Point(27, 95);
             this.custDataGridViewControl1.Name = "custDataGridViewControl1";
             this.custDataGridViewControl1.RowTemplate.Height = 23;
             this.custDataGridViewControl1.Size = new System.Drawing.Size(495, 412);
             this.custDataGridViewControl1.TabIndex = 6;
+            // 
+            // txtPlanID
+            // 
+            this.txtPlanID.Location = new System.Drawing.Point(90, 22);
+            this.txtPlanID.Name = "txtPlanID";
+            this.txtPlanID.Size = new System.Drawing.Size(195, 22);
+            this.txtPlanID.TabIndex = 7;
             // 
             // popupP_Plan
             // 
@@ -202,8 +202,8 @@ namespace MESForm.Han
         private System.Windows.Forms.Label lblWriteAmount;
         private System.Windows.Forms.Label lblPlanAmount;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboPlanID;
         private CustomControls.custButtonControl btnInquiry;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPlanID;
     }
 }

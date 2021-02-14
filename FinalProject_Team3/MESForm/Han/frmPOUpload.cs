@@ -47,9 +47,9 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "GROUP", "Order_Group");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "구분", "Order_Gubun");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "사이즈", "Order_Size");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "입고P/NO", "ITEM_Type");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목유형", "ITEM_Type");    //입고P/NO
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "Item_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량합계", "TotalOrderAmount"); //계획수량합계
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량합계", "Order_OrderAmount"); //계획수량합계
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납기일", "Order_FixedDate");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "Plan_ID");
         }
@@ -197,7 +197,7 @@ namespace MESForm.Han
                 xlWorkSheet.Cells[1, 10] ="Order_Size";
                 xlWorkSheet.Cells[1, 11] = "ITEM_Type";
                 xlWorkSheet.Cells[1, 12] = "Item_Name";
-                xlWorkSheet.Cells[1, 13] = "TotalOrderAmount";
+                xlWorkSheet.Cells[1, 13] = "Order_OrderAmount";
                 xlWorkSheet.Cells[1, 14] = "Order_FixedDate";
 
 

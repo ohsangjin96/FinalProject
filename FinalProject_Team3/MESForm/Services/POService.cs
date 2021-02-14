@@ -22,6 +22,12 @@ namespace MESForm.Services
             return dac.GetPOList();
         }
 
+        public bool ExcelWOCheck(string order_wo)
+        {
+            PODAC dac = new PODAC();
+            return dac.ExcelWOCheck(order_wo);
+        }
+
         public bool ExcelCompanyCheck(string com_code, string com_name)
         {
             PODAC dac = new PODAC();

@@ -52,13 +52,13 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"insert into WorkRegist(WorkRegistID,WorkRegist_Start, Item_Code, WorkRegist_State,Plan_ID,
+                cmd.CommandText = @"insert into WorkRegist(WorkRegist_Start, Item_Code, WorkRegist_State,Plan_ID,
                                     WorkRegist_WorkTime, WorkRegist_NomalQty, WorkRegist_FailQty, FacilityDetail_Code)
-                                    values(@WorkRegistID,@WorkRegist_Start, @Item_Code, @WorkRegist_State,@Plan_ID,
+                                    values(@WorkRegist_Start, @Item_Code, @WorkRegist_State,@Plan_ID,
                                     @WorkRegist_WorkTime, @WorkRegist_NomalQty, @WorkRegist_FailQty, @FacilityDetail_Code)";
 
 
-                cmd.Parameters.Add("@WorkRegistID", SqlDbType.Int);
+                
                 cmd.Parameters.Add("@WorkRegist_Start", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@WorkRegist_State", SqlDbType.NVarChar);
@@ -69,7 +69,7 @@ namespace FProjectDAC
                 cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
                 for (int i = 0; i < curlist.Count; i++)
                 {
-                    cmd.Parameters["@WorkRegistID"].Value = curlist[i].WorkRegistID;
+                    
                     cmd.Parameters["@WorkRegist_Start"].Value = curlist[i].WorkRegist_Start;
                     cmd.Parameters["@Item_Code"].Value = curlist[i].Item_Code;
                     cmd.Parameters["@WorkRegist_State"].Value = curlist[i].WorkRegist_State;
