@@ -17,7 +17,6 @@ namespace MESForm.CustomControls
         {
             InitializeComponent();
 
-            //CommonUtil.AddGridTextColumn(this, "No", "no", 50, true, DataGridViewContentAlignment.MiddleCenter);
             this.ColumnHeadersDefaultCellStyle.Font = new Font("나눔스퀘어OTF", 9.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             this.Font = new Font("나눔스퀘어OTF", 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(129)));
             this.BackgroundColor = Color.White;
@@ -26,9 +25,22 @@ namespace MESForm.CustomControls
             this.DefaultCellStyle.BackColor = Color.FromArgb(217, 248, 255);
             this.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             this.AllowUserToAddRows = false;
+            this.DataBindingComplete += CustDataGridViewControl_DataBindingComplete;
         }
 
-       
+        private void CustDataGridViewControl_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridView gridView = sender as DataGridView;
+            if (gridView.Columns.Count < 1)
+                return;
+            if (null != gridView)
+            {
+                foreach (DataGridViewRow r in gridView.Rows)
+                {
+                    gridView.Rows[r.Index].Cells[0].Value = (r.Index + 1).ToString();
+                }
+            }
+        }
 
         protected override void OnPaint(PaintEventArgs pe)
         {

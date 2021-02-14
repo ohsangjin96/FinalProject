@@ -72,6 +72,7 @@
     <Compile Include="ShiftDAC.cs" />
     <Compile Include="SignUpDAC.cs" />
     <Compile Include="WMaterialDAC.cs" />
+    <Compile Include="WStandbyDAC.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FProjectVO\FProjectVO.csproj">

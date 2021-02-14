@@ -57,7 +57,7 @@ namespace MESForm.Han
             hearderCheckBox2.Location = new Point(headerCellLocation2.X + 8, headerCellLocation2.Y + 10);
             hearderCheckBox2.BackColor = Color.White;
             hearderCheckBox2.Size = new Size(13, 13);
-            hearderCheckBox2.Click += HearderCheckBox2_Click; ;
+            hearderCheckBox2.Click += HearderCheckBox2_Click;
             dgvWarehouse.Controls.Add(hearderCheckBox2);
             #endregion
 

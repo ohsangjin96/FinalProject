@@ -22,6 +22,8 @@ namespace MESForm.Han
         public frmD_Plan()
         {
             InitializeComponent();
+
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void ComboBinding()

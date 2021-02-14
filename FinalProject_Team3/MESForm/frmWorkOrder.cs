@@ -24,6 +24,8 @@ namespace MESForm
             txtName.TextChanged += txtName_Textchange;
             txtFa.TextChanged += txtFa_Textchange;
             txtID.TextChanged += txtID_Textchange;
+
+            CommonUtil.AddGridTextColumn(dgvList, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void txtID_Textchange(object sender, EventArgs e)

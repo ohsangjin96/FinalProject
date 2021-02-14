@@ -74,6 +74,7 @@
     <Compile Include="WMaterialVO.cs" />
     <Compile Include="WorkOrderVO.cs" />
     <Compile Include="WorkRegistVO.cs" />
+    <Compile Include="WStandbyVO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
