@@ -151,13 +151,23 @@ namespace MESForm
                                       select selected).ToList();
                     selectlist = selectdata;
                 }
-                else
+                else if(txtFa.Enabled)
                 {
                     string from = DateTime.Now.ToString("yyyyMMdd");
                     string to = DateTime.Now.AddDays(12).ToString("yyyyMMdd");
                     dgvList.DataSource = service.SelectWorkOrder(from, to, txtFa.Text);
                     var selectdata = (from selected in list
                                       where selected.Facility_Name == txtFa.Text
+                                      select selected).ToList();
+                    selectlist = selectdata;
+                }
+                else
+                {
+                    string from = DateTime.Now.ToString("yyyyMMdd");
+                    string to = DateTime.Now.AddDays(12).ToString("yyyyMMdd");
+                    dgvList.DataSource = service.SelectWorkOrder(from, to, txtID.Text);
+                    var selectdata = (from selected in list
+                                      where selected.Plan_ID == txtID.Text
                                       select selected).ToList();
                     selectlist = selectdata;
                 }

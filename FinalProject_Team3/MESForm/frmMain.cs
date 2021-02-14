@@ -185,35 +185,6 @@ namespace MESForm
             pnlShipment.Visible = false;
         }
 
-        #region 버튼 클릭 색상 변경
-        private void SelectButtonBackColor(Panel btn)
-        {
-            //if (btn.BackColor == Color.White)
-            //{
-            //    HideSubMenu();
-            //    btn.BackColor = Color.FromArgb(184, 197, 245);
-            //}
-            //else
-            //    btn.BackColor = Color.White;
-            foreach(var ctrl in pnlMenu.Controls)
-            {
-                if (ctrl is Button)
-                {
-                    if (((Button)ctrl).BackColor == Color.FromArgb(144, 157, 245))
-                        continue;
-                    if (((Button)ctrl).BackColor == Color.White)
-                    {
-                        ((Button)ctrl).BackColor = Color.FromArgb(184, 197, 245);
-                    }
-                    else
-                    {
-                        ((Button)ctrl).BackColor = Color.White;
-                    }
-                }
-            }
-        }
-        #endregion
-
         // 선택한 메뉴의 하위메뉴 보이기
         private void ShowSubMenu(Panel subMenu)
         {
@@ -603,8 +574,9 @@ namespace MESForm
 
         private void btnPerformance_Click(object sender, EventArgs e)
         {
-           
+            OpenCreateForm<frmWorkRegist>();
         }
+
 
         private void Button_MouseUp(object sender, MouseEventArgs e)
         {

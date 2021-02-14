@@ -48,6 +48,8 @@ namespace POPForm
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.lblLogout = new System.Windows.Forms.LinkLabel();
+            this.lblName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -256,12 +258,13 @@ namespace POPForm
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.AutoScroll = true;
+            this.splitContainer2.Panel1.Controls.Add(this.lblLogout);
+            this.splitContainer2.Panel1.Controls.Add(this.lblName);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.button3);
-            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(597, 847);
             this.splitContainer2.SplitterDistance = 790;
             this.splitContainer2.TabIndex = 58;
@@ -301,6 +304,36 @@ namespace POPForm
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "다운로드-_1_.jpg");
             // 
+            // lblLogout
+            // 
+            this.lblLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.lblLogout.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblLogout.ForeColor = System.Drawing.Color.Magenta;
+            this.lblLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lblLogout.LinkColor = System.Drawing.Color.Violet;
+            this.lblLogout.Location = new System.Drawing.Point(539, 3);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(55, 14);
+            this.lblLogout.TabIndex = 72;
+            this.lblLogout.TabStop = true;
+            this.lblLogout.Text = "로그아웃";
+            this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.lblName.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(312, 3);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(221, 15);
+            this.lblName.TabIndex = 71;
+            this.lblName.Text = "이름";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmPOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -325,6 +358,7 @@ namespace POPForm
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
@@ -351,6 +385,8 @@ namespace POPForm
         protected System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel lblLogout;
+        private System.Windows.Forms.Label lblName;
     }
 }
 

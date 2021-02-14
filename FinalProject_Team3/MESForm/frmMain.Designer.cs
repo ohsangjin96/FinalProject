@@ -141,6 +141,7 @@ namespace MESForm
             this.lblLogout.TabStop = true;
             this.lblLogout.Text = "로그아웃";
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // lblName

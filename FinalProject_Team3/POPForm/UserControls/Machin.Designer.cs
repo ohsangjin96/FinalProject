@@ -37,7 +37,6 @@ namespace POPForm.UserControls
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.lblProgram = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,21 +48,22 @@ namespace POPForm.UserControls
             this.label10 = new System.Windows.Forms.Label();
             this.lblFacility = new System.Windows.Forms.Label();
             this.timer_Conn = new System.Windows.Forms.Timer(this.components);
+            this.lblqty = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.Info;
+            this.panel4.Controls.Add(this.lblqty);
             this.panel4.Controls.Add(this.lblLevel);
             this.panel4.Controls.Add(this.lblPort);
             this.panel4.Controls.Add(this.lblIP);
             this.panel4.Controls.Add(this.lblName);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.button11);
-            this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.lblProgram);
             this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.button2);
@@ -75,48 +75,46 @@ namespace POPForm.UserControls
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.lblFacility);
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1047, 105);
+            this.panel4.Size = new System.Drawing.Size(1197, 131);
             this.panel4.TabIndex = 58;
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(554, 81);
+            this.lblLevel.Location = new System.Drawing.Point(633, 101);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(38, 12);
+            this.lblLevel.Size = new System.Drawing.Size(45, 15);
             this.lblLevel.TabIndex = 60;
             this.lblLevel.Text = "label2";
-            this.lblLevel.Visible = false;
             // 
             // lblPort
             // 
             this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(457, 80);
+            this.lblPort.Location = new System.Drawing.Point(522, 100);
             this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(38, 12);
+            this.lblPort.Size = new System.Drawing.Size(45, 15);
             this.lblPort.TabIndex = 59;
             this.lblPort.Text = "label3";
-            this.lblPort.Visible = false;
             // 
             // lblIP
             // 
             this.lblIP.AutoSize = true;
-            this.lblIP.Location = new System.Drawing.Point(368, 80);
+            this.lblIP.Location = new System.Drawing.Point(421, 100);
             this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(38, 12);
+            this.lblIP.Size = new System.Drawing.Size(45, 15);
             this.lblIP.TabIndex = 58;
             this.lblIP.Text = "label2";
-            this.lblIP.Visible = false;
             // 
             // lblName
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblName.Location = new System.Drawing.Point(176, 18);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblName.Location = new System.Drawing.Point(201, 22);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(63, 30);
+            this.lblName.Size = new System.Drawing.Size(67, 39);
             this.lblName.TabIndex = 57;
             this.lblName.Text = "이름";
             // 
@@ -124,10 +122,10 @@ namespace POPForm.UserControls
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(146, 18);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(167, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 30);
+            this.label1.Size = new System.Drawing.Size(26, 39);
             this.label1.TabIndex = 56;
             this.label1.Text = "/";
             // 
@@ -136,35 +134,25 @@ namespace POPForm.UserControls
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.BackColor = System.Drawing.SystemColors.Highlight;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.Location = new System.Drawing.Point(949, 63);
+            this.button11.Location = new System.Drawing.Point(1085, 79);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(91, 40);
+            this.button11.Size = new System.Drawing.Size(104, 50);
             this.button11.TabIndex = 55;
             this.button11.Text = "로그";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label20.Location = new System.Drawing.Point(185, 64);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(36, 30);
-            this.label20.TabIndex = 54;
-            this.label20.Text = "%";
-            // 
             // lblProgram
             // 
             this.lblProgram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblProgram.AutoSize = true;
-            this.lblProgram.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblProgram.Location = new System.Drawing.Point(119, 63);
+            this.lblProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblProgram.Location = new System.Drawing.Point(136, 79);
             this.lblProgram.Name = "lblProgram";
-            this.lblProgram.Size = new System.Drawing.Size(45, 30);
+            this.lblProgram.Size = new System.Drawing.Size(55, 39);
             this.lblProgram.TabIndex = 53;
             this.lblProgram.Text = "00";
             // 
@@ -172,10 +160,10 @@ namespace POPForm.UserControls
             // 
             this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(20, 63);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label19.Location = new System.Drawing.Point(23, 79);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 30);
+            this.label19.Size = new System.Drawing.Size(92, 39);
             this.label19.TabIndex = 52;
             this.label19.Text = "진행률";
             // 
@@ -184,11 +172,12 @@ namespace POPForm.UserControls
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(850, 63);
+            this.button2.Location = new System.Drawing.Point(971, 79);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 40);
+            this.button2.Size = new System.Drawing.Size(106, 50);
             this.button2.TabIndex = 51;
             this.button2.Text = "중지";
             this.button2.UseVisualStyleBackColor = false;
@@ -199,11 +188,12 @@ namespace POPForm.UserControls
             this.bntActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bntActive.BackColor = System.Drawing.Color.Green;
             this.bntActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntActive.Font = new System.Drawing.Font("나눔스퀘어OTF", 15F);
+            this.bntActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.bntActive.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bntActive.Location = new System.Drawing.Point(755, 62);
+            this.bntActive.Location = new System.Drawing.Point(863, 78);
+            this.bntActive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bntActive.Name = "bntActive";
-            this.bntActive.Size = new System.Drawing.Size(89, 40);
+            this.bntActive.Size = new System.Drawing.Size(102, 50);
             this.bntActive.TabIndex = 50;
             this.bntActive.Text = "가동";
             this.bntActive.UseVisualStyleBackColor = false;
@@ -214,9 +204,9 @@ namespace POPForm.UserControls
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.Location = new System.Drawing.Point(875, 18);
+            this.label14.Location = new System.Drawing.Point(1000, 22);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(23, 27);
+            this.label14.Size = new System.Drawing.Size(29, 34);
             this.label14.TabIndex = 5;
             this.label14.Text = "/";
             // 
@@ -224,10 +214,10 @@ namespace POPForm.UserControls
             // 
             this.lblFail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFail.AutoSize = true;
-            this.lblFail.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFail.Location = new System.Drawing.Point(988, 18);
+            this.lblFail.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFail.Location = new System.Drawing.Point(1129, 22);
             this.lblFail.Name = "lblFail";
-            this.lblFail.Size = new System.Drawing.Size(45, 30);
+            this.lblFail.Size = new System.Drawing.Size(55, 39);
             this.lblFail.TabIndex = 4;
             this.lblFail.Text = "00";
             // 
@@ -235,10 +225,10 @@ namespace POPForm.UserControls
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(904, 18);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(1033, 22);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 30);
+            this.label12.Size = new System.Drawing.Size(67, 39);
             this.label12.TabIndex = 3;
             this.label12.Text = "실패";
             // 
@@ -246,10 +236,10 @@ namespace POPForm.UserControls
             // 
             this.lblSuccess.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSuccess.AutoSize = true;
-            this.lblSuccess.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSuccess.Location = new System.Drawing.Point(818, 18);
+            this.lblSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSuccess.Location = new System.Drawing.Point(935, 22);
             this.lblSuccess.Name = "lblSuccess";
-            this.lblSuccess.Size = new System.Drawing.Size(45, 30);
+            this.lblSuccess.Size = new System.Drawing.Size(55, 39);
             this.lblSuccess.TabIndex = 2;
             this.lblSuccess.Text = "00";
             // 
@@ -257,30 +247,42 @@ namespace POPForm.UserControls
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(734, 18);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Location = new System.Drawing.Point(839, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 30);
+            this.label10.Size = new System.Drawing.Size(67, 39);
             this.label10.TabIndex = 1;
             this.label10.Text = "성공";
             // 
             // lblFacility
             // 
             this.lblFacility.AutoSize = true;
-            this.lblFacility.Font = new System.Drawing.Font("나눔스퀘어OTF", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFacility.Location = new System.Drawing.Point(20, 18);
+            this.lblFacility.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblFacility.Location = new System.Drawing.Point(23, 22);
             this.lblFacility.Name = "lblFacility";
-            this.lblFacility.Size = new System.Drawing.Size(120, 30);
+            this.lblFacility.Size = new System.Drawing.Size(126, 39);
             this.lblFacility.TabIndex = 0;
             this.lblFacility.Text = "설비 이름";
             // 
+            // lblqty
+            // 
+            this.lblqty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblqty.AutoSize = true;
+            this.lblqty.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblqty.Location = new System.Drawing.Point(197, 79);
+            this.lblqty.Name = "lblqty";
+            this.lblqty.Size = new System.Drawing.Size(55, 39);
+            this.lblqty.TabIndex = 61;
+            this.lblqty.Text = "00";
+            // 
             // Machin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel4);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Machin";
-            this.Size = new System.Drawing.Size(1050, 110);
+            this.Size = new System.Drawing.Size(1200, 138);
             this.Load += new System.EventHandler(this.Machin_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -292,7 +294,6 @@ namespace POPForm.UserControls
 
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblProgram;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button2;
@@ -309,5 +310,6 @@ namespace POPForm.UserControls
         private System.Windows.Forms.Label lblIP;
         private System.Windows.Forms.Timer timer_Conn;
         private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.Label lblqty;
     }
 }
