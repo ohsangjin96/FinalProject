@@ -44,6 +44,7 @@ namespace MESForm
             this.btnProcessMove = new System.Windows.Forms.Button();
             this.btnProcessRegister = new System.Windows.Forms.Button();
             this.pnlProcess = new System.Windows.Forms.Panel();
+            this.btnPerformance = new System.Windows.Forms.Button();
             this.btnCurrentProcess = new System.Windows.Forms.Button();
             this.btnWorkOrder = new System.Windows.Forms.Button();
             this.btnProcess = new System.Windows.Forms.Button();
@@ -94,7 +95,6 @@ namespace MESForm
             this.tslblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.custTab = new MESForm.CustomControls.custTabControl();
-            this.btnPerformance = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -141,6 +141,7 @@ namespace MESForm
             this.lblLogout.TabStop = true;
             this.lblLogout.Text = "로그아웃";
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // lblName
@@ -322,6 +323,19 @@ namespace MESForm
             this.pnlProcess.Name = "pnlProcess";
             this.pnlProcess.Size = new System.Drawing.Size(221, 130);
             this.pnlProcess.TabIndex = 14;
+            // 
+            // btnPerformance
+            // 
+            this.btnPerformance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPerformance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerformance.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPerformance.Location = new System.Drawing.Point(0, 86);
+            this.btnPerformance.Name = "btnPerformance";
+            this.btnPerformance.Size = new System.Drawing.Size(221, 43);
+            this.btnPerformance.TabIndex = 4;
+            this.btnPerformance.Text = "실적확인";
+            this.btnPerformance.UseVisualStyleBackColor = true;
+            this.btnPerformance.Click += new System.EventHandler(this.btnPerformance_Click);
             // 
             // btnCurrentProcess
             // 
@@ -931,19 +945,6 @@ namespace MESForm
             this.custTab.TabIndex = 4;
             this.custTab.SelectedIndexChanged += new System.EventHandler(this.tabForms_SelectedIndexChanged);
             this.custTab.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabForms_MouseDown);
-            // 
-            // btnPerformance
-            // 
-            this.btnPerformance.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPerformance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPerformance.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPerformance.Location = new System.Drawing.Point(0, 86);
-            this.btnPerformance.Name = "btnPerformance";
-            this.btnPerformance.Size = new System.Drawing.Size(221, 43);
-            this.btnPerformance.TabIndex = 4;
-            this.btnPerformance.Text = "실적확인";
-            this.btnPerformance.UseVisualStyleBackColor = true;
-            this.btnPerformance.Click += new System.EventHandler(this.btnPerformance_Click);
             // 
             // frmMain
             // 

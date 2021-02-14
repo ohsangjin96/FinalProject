@@ -574,7 +574,9 @@ namespace MESForm
 
         private void btnPerformance_Click(object sender, EventArgs e)
         {
-           
+            OpenCreateForm<frmWorkRegist>();
         }
+
+       
     }
 }
