@@ -45,7 +45,6 @@ namespace MESForm.Han
             POService service = new POService();
             allList = service.GetPOList();
             service.Dispose();
-            custDataGridViewControl1.DataSource = allList;
         }
 
         private void ComboBinding()
@@ -77,7 +76,7 @@ namespace MESForm.Han
             else
             {
                 MessageBox.Show("PlanID값을 선택하세요");
-                LoadData();
+                custDataGridViewControl1.DataSource = null;
             }
         }
 

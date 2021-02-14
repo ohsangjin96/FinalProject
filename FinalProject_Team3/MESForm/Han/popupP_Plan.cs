@@ -28,7 +28,17 @@ namespace MESForm.Han
         {
             CommonUtil.SetInitGridView(custDataGridViewControl1);
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "날짜", "selectDate",200);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량", "writeAmount",200);
+
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.Name = "writeAmount";
+            col.HeaderText = "수량";
+            col.DataPropertyName = "writeAmount";
+            col.Width = 200;
+            col.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            col.Visible = true;
+            col.ReadOnly = false;
+
+            custDataGridViewControl1.Columns.Add(col);
         }
 
         private void LoadData()

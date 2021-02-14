@@ -59,10 +59,9 @@ namespace MESForm.Han
             Companylist = company.GetCompanyList();
             
             var Company = (from list in Companylist
-                           where list.Com_Code!= null
-                           select list.Com_Code).Distinct().ToList();
+                           select list.Com_Name).Distinct().ToList();
             Company.Insert(0, "");
-            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Code");   
+            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Name");   
         }
 
         private void frmPO_Load(object sender, EventArgs e)
@@ -90,9 +89,9 @@ namespace MESForm.Han
             }
         }
 
-        private void btnExcel_Click(object sender, EventArgs e) //T 타입 어떤 것??
+        private void btnExcel_Click(object sender, EventArgs e)
         {
-            string sResult = ExcelExportImport.ExportToDataGridView<string>((List<string>)custDataGridViewControl1.DataSource,string.Empty);
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, string.Empty);
             if (sResult.Length > 0)
             {
                 MessageBox.Show(sResult);
