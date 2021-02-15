@@ -1,4 +1,6 @@
-﻿using MESForm.CustomControls;
+﻿using FProjectVO;
+using MESForm.CustomControls;
+using MESForm.Services;
 using MESForm.Utils;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,11 @@ namespace MESForm.Han
 {
     public partial class frmWStandby : BaseForms.frmBaseLists
     {
+        CheckBox hearderCheckBox = new CheckBox(); //헤더체크박스
+        CheckBox hearderCheckBox2 = new CheckBox();
+        List<WStandbyVO> list;
+        List<WStandbyVO> newList;
+
         public frmWStandby()
         {
             InitializeComponent();
@@ -21,39 +28,244 @@ namespace MESForm.Han
 
         private void DGVSetting()
         {
-            //CommonUtil.SetInitGridView(custDataGridViewControl1);
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주일", "a");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주업체", "b");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품업체", "c");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "d");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "e");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "규격", "f");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "단위", "g");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "검사여부", "h");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주량", "i");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "입고수량", "j");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "잔량", "k");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주유형", "l");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl1, "비고", "m");
+            CommonUtil.SetInitGridView(dgvWaitingWarehouse);
+            CommonUtil.SetInitGridView(dgvWarehouse);
 
-            //CommonUtil.SetInitGridView(custDataGridViewControl2);
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주번호", "aa");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "품목", "ab");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "규격", "ac");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "단위", "ad");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주수량", "ae");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "잔여수량", "af");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "입고수량", "ag");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주유형", "ah");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "입고일자", "ai");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "발주일자", "aj");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "검사유무", "ak");
-            //CommonUtil.AddGridTextColumn(custDataGridViewControl2, "비고", "al");
+            #region 체크박스 //1
+            //입고대기리스트
+            DataGridViewCheckBoxColumn chkCol = new DataGridViewCheckBoxColumn();
+            chkCol.Name = "chk";
+            chkCol.HeaderText = "";
+            chkCol.Width = 30;
+            dgvWaitingWarehouse.Columns.Add(chkCol);
+
+            Point headerCellLocation = dgvWaitingWarehouse.GetCellDisplayRectangle(1, -1, true).Location;
+
+            hearderCheckBox.Location = new Point(headerCellLocation.X + 8, headerCellLocation.Y + 10);
+            hearderCheckBox.BackColor = Color.White;
+            hearderCheckBox.Size = new Size(13, 13);
+            hearderCheckBox.Click += HearderCheckBox_Click; ;
+            dgvWaitingWarehouse.Controls.Add(hearderCheckBox);
+
+            //자재입고
+            DataGridViewCheckBoxColumn chkCol2 = new DataGridViewCheckBoxColumn();
+            chkCol2.Name = "chk2";
+            chkCol2.HeaderText = "";
+            chkCol2.Width = 30;
+            dgvWarehouse.Columns.Add(chkCol2);
+
+            Point headerCellLocation2 = dgvWarehouse.GetCellDisplayRectangle(1, -1, true).Location;
+
+            hearderCheckBox2.Location = new Point(headerCellLocation2.X + 8, headerCellLocation2.Y + 10);
+            hearderCheckBox2.BackColor = Color.White;
+            hearderCheckBox2.Size = new Size(13, 13);
+            hearderCheckBox2.Click += HearderCheckBox2_Click;
+            dgvWarehouse.Controls.Add(hearderCheckBox2);
+            #endregion
+
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주일", "Reorder_OrderDate");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주업체", "b");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "납품업체", "Com_Name");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품목", "ITEM_Code");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품명", "ITEM_Name");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "규격", "ITEM_Standard");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "단위", "ITEM_Unit");
+            //CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "검사여부", "");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주량", "Reorder_Amount");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "입고수량", "Reorder_InAmount");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "잔량", "Reorder_Balance");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주유형", "Order_FixedDate");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "비고", "Reorder_Note");
+
+            //CommonUtil.AddGridTextColumn(dgvWarehouse, "발주번호", "aa");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "품목", "ITEM_Code");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "품명", "ITEM_Name");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "규격", "ITEM_Standard");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "단위", "ITEM_Unit");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "발주수량", "Reorder_Amount");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "잔여수량", "Reorder_Balance");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "입고수량", "InQty");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "입고일자", "InDate");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "발주일자", "Reorder_OrderDate");
+            //CommonUtil.AddGridTextColumn(dgvWarehouse, "검사유무", "ak");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "Reorder_Note");
+
+            dgvWarehouse.Columns["InQty"].ReadOnly = false;
+            dgvWarehouse.Columns["InDate"].ReadOnly = false;
+        }
+
+        #region 헤더체크박스
+        private void HearderCheckBox_Click(object sender, EventArgs e)
+        {
+            dgvWaitingWarehouse.EndEdit();
+
+            foreach (DataGridViewRow row in dgvWaitingWarehouse.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                chk.Value = hearderCheckBox.Checked;
+            }
+        }
+
+        private void HearderCheckBox2_Click(object sender, EventArgs e)
+        {
+            dgvWarehouse.EndEdit();
+
+            foreach (DataGridViewRow row in dgvWarehouse.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk2"];
+                chk.Value = hearderCheckBox2.Checked;
+            }
+        }
+        #endregion
+
+        private void CheckedFalse(DataGridView dgv, string chkCell)
+        {
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[chkCell];
+                chk.Value = false;
+            }
+            if (hearderCheckBox.Checked)
+                hearderCheckBox.Checked = false;
+            else if (hearderCheckBox2.Checked)
+                hearderCheckBox2.Checked = false;
+        }
+
+        private void LoadData()
+        {
+            WStandbyService service = new WStandbyService();
+            list = service.GetWStandbyList();
+            service.Dispose();
+            dgvWaitingWarehouse.DataSource = list;
         }
 
         private void frmWStandby_Load(object sender, EventArgs e)
         {
             DGVSetting();
+            //LoadData();
+        }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnSel_Click(object sender, EventArgs e)
+        {
+            newList = new List<WStandbyVO>();
+            for (int i = 0; i < dgvWaitingWarehouse.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dgvWaitingWarehouse["chk", i].Value))
+                {
+                    newList.Add(list[i]);
+                }
+            }
+
+            if (newList.Count < 1)
+            {
+                MessageBox.Show("선택한 품목이 없습니다.");
+                return;
+            }
+
+            dgvWarehouse.DataSource = newList;
+            CheckedFalse(dgvWaitingWarehouse, "chk");
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvWaitingWarehouse);
+        }
+
+        private void btnWarehousing_Click(object sender, EventArgs e)
+        {
+            List<WStandbyVO> inList = new List<WStandbyVO>();
+
+            for (int i = 0; i < dgvWarehouse.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dgvWarehouse["chk2", i].Value))
+                {
+                    #region 유효성 체크
+                    int inAmount = Convert.ToInt32(dgvWarehouse["InQty", i].Value);
+                    int rbAmount = Convert.ToInt32(dgvWaitingWarehouse["Reorder_Balance", i].Value);
+                    string inDate = Convert.ToString(dgvWarehouse["InDate", i].Value);
+                    if (inAmount < 1)
+                    {
+                        MessageBox.Show($"최소 1개의 수량을 입력해주세요.");
+                        return;
+                    }
+                    if (rbAmount < inAmount)
+                    {
+                        MessageBox.Show($"입력한 입고량이 현재 잔량보다 많습니다.");
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(inDate))
+                    {
+                        MessageBox.Show($"납기일을 입력해주세요.");
+                        return;
+                    }
+                    #endregion
+
+                    inList.Add(newList[i]);
+                }
+            }
+
+            if (inList.Count < 1)
+            {
+                MessageBox.Show("선택한 품목이 없습니다.");
+                return;
+            }
+
+
+            WStandbyService service = new WStandbyService();
+            bool result = service.InsertWarehouseWaiting(inList);
+            service.Dispose();
+
+            if (result)
+            {
+                MessageBox.Show("입고대기처리가 완료되었습니다.");
+
+                CheckedFalse(dgvWarehouse, "chk2");
+                dgvWarehouse.DataSource = null;
+                LoadData();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            #region 유효성 체크
+            List<WStandbyVO> chkList = new List<WStandbyVO>();
+            for (int i = 0; i < dgvWarehouse.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dgvWarehouse["chk2", i].Value))
+                {
+                    chkList.Add(newList[i]);
+                }
+            }
+
+            if (newList == null || newList.Count < 1)
+            {
+                MessageBox.Show("입고대기처리 중인 데이터가 없습니다.");
+                return;
+            }
+
+            if (chkList.Count < 1)
+            {
+                MessageBox.Show("선택한 품목이 없습니다.");
+                return;
+            }
+            #endregion
+
+            for (int i = 0; i < dgvWarehouse.RowCount; i++)
+            {
+                if (Convert.ToBoolean(dgvWarehouse["chk2", i].Value))
+                {
+                    newList.Remove(chkList[i]);
+                }
+            }
+            CheckedFalse(dgvWarehouse, "chk2");
+
+            dgvWarehouse.DataSource = null;
+            dgvWarehouse.DataSource = newList;
         }
     }
 }

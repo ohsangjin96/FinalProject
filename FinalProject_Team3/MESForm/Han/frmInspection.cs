@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MESForm.Han
 {
-    public partial class frmExamine : BaseForms.frmBaseLists
+    public partial class frmInspection : BaseForms.frmBaseLists
     {
-        public frmExamine()
+        public frmInspection()
         {
             InitializeComponent();
         }
@@ -40,11 +40,11 @@ namespace MESForm.Han
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //string sResult = ExcelExportImport.ExportToDataGridView<-->((List<-->)custDataGridViewControl1.DataSource, string.Empty);
-            //if (sResult.Length > 0)
-            //{
-            //    MessageBox.Show(sResult);
-            //}
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, "");
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
+            }
         }
     }
 }

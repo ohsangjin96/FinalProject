@@ -68,7 +68,7 @@ namespace POPForm
                     }
                     MessageBox.Show($"{Info.User_Name}님 환영합니다.");
 
-                    frmPOP frm = new frmPOP();
+                    frmPOP frm = new frmPOP(Info);
                     frm.Show();
                     this.Hide();
                 }

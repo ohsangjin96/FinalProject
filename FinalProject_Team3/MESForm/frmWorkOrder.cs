@@ -24,6 +24,8 @@ namespace MESForm
             txtName.TextChanged += txtName_Textchange;
             txtFa.TextChanged += txtFa_Textchange;
             txtID.TextChanged += txtID_Textchange;
+
+            CommonUtil.AddGridTextColumn(dgvList, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void txtID_Textchange(object sender, EventArgs e)
@@ -179,6 +181,7 @@ namespace MESForm
         {
             if (checkBox1.Checked)
             {
+                txtID.Enabled = false;
                 txtFa.Enabled = false;
                 txtName.Enabled = false;
                 dtpfrom.Enabled = true;
@@ -186,6 +189,7 @@ namespace MESForm
             }
             else
             {
+                txtID.Enabled = true;
                 txtFa.Enabled = true;
                 txtName.Enabled = true;
                 dtpfrom.Enabled = false;

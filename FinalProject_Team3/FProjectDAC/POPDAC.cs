@@ -52,12 +52,13 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"insert into WorkRegist(WorkRegist_Start, Item_Code, WorkRegist_State, 
+                cmd.CommandText = @"insert into WorkRegist(WorkRegist_Start, Item_Code, WorkRegist_State,Plan_ID,
                                     WorkRegist_WorkTime, WorkRegist_NomalQty, WorkRegist_FailQty, FacilityDetail_Code)
-                                    values(@WorkRegist_Start, @Item_Code, @WorkRegist_State, 
+                                    values(@WorkRegist_Start, @Item_Code, @WorkRegist_State,@Plan_ID,
                                     @WorkRegist_WorkTime, @WorkRegist_NomalQty, @WorkRegist_FailQty, @FacilityDetail_Code)";
 
 
+                
                 cmd.Parameters.Add("@WorkRegist_Start", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@WorkRegist_State", SqlDbType.NVarChar);
@@ -65,9 +66,10 @@ namespace FProjectDAC
                 cmd.Parameters.Add("@WorkRegist_NomalQty", SqlDbType.Int);
                 cmd.Parameters.Add("@WorkRegist_FailQty", SqlDbType.Int);
                 cmd.Parameters.Add("@FacilityDetail_Code", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
                 for (int i = 0; i < curlist.Count; i++)
                 {
-
+                    
                     cmd.Parameters["@WorkRegist_Start"].Value = curlist[i].WorkRegist_Start;
                     cmd.Parameters["@Item_Code"].Value = curlist[i].Item_Code;
                     cmd.Parameters["@WorkRegist_State"].Value = curlist[i].WorkRegist_State;
@@ -75,6 +77,7 @@ namespace FProjectDAC
                     cmd.Parameters["@WorkRegist_NomalQty"].Value = curlist[i].WorkRegist_NomalQty;
                     cmd.Parameters["@WorkRegist_FailQty"].Value = curlist[i].WorkRegist_FailQty;
                     cmd.Parameters["@FacilityDetail_Code"].Value = curlist[i].FacilityDetail_Code;
+                    cmd.Parameters["@Plan_ID"].Value = curlist[i].Plan_ID;
                     cmd.ExecuteNonQuery();
                 }
                 if (list.Contains(0))

@@ -115,13 +115,14 @@ namespace MESForm.Han
                 //업로드한 엑셀 내용의 유효성체크
                 POService service = new POService();
 
-                string com_code, com_name, item_name;
+                string com_code, com_name, item_name, order_wo;
 
                 foreach(DataRow dr in uploaddt.Rows)
                 {
                     com_code = dr["Com_Code"].ToString();
                     com_name = dr["Com_Name"].ToString();
                     item_name = dr["Item_Name"].ToString();
+                    order_wo = dr["Order_WO"].ToString();
 
                     if(!service.ExcelCompanyCheck(com_code, com_name))
                     {
@@ -138,6 +139,25 @@ namespace MESForm.Han
                         txtPlanFile.Text = null;
                         return;
                     }
+
+                    if (service.ExcelWOCheck(order_wo))
+                    {
+                        MessageBox.Show("업로드할 주문서의 고객주문번호를 다시 확인해주세요.(실패)");
+                        txtPlanFile.Text = null;
+                        return;
+                    }
+
+                    foreach(var i in viewlist)
+                    {
+                        if (i.Order_WO == order_wo)
+                        {
+                            MessageBox.Show("업로드할 주문서의 고객주문번호를 다시 확인해주세요.(실패)");
+                            txtPlanFile.Text = null;
+                            return;
+                        }
+                    }
+
+
                 }
                 service.Dispose();
             }
@@ -153,7 +173,7 @@ namespace MESForm.Han
 
             if (oldplanID == null)
             {
-                txtPlanVersion.Text = dtpPlan.Value.ToString("yyyyMMdd") + "_P1";
+                txtPlanVersion.Text = dtpPlan.Value.ToString("yyyyMMdd") + "_" + DateTime.Now.ToString("mmss");
             }
         }
 
@@ -175,7 +195,6 @@ namespace MESForm.Han
                 uploaddt.Columns.Add("Item_Code");
                 uploaddt.Columns.Add("Order_Arrive");
                 uploaddt.Columns.Add("Order_Remark");
-                uploaddt.Columns.Add("Order_OrderAmount");
 
                 foreach (DataRow dr in uploaddt.Rows)
                 {
@@ -184,7 +203,6 @@ namespace MESForm.Han
                     dr["ITEM_Code"] = item_code;
                     dr["Order_Arrive"] = dr["Com_Code"];
                     dr["Order_Remark"] = "";
-                    dr["Order_OrderAmount"] = dr["TotalOrderAmount"];
                 }
 
                 List<POVO> planidfind = (from id in viewlist
@@ -203,9 +221,8 @@ namespace MESForm.Han
                         viewlist.RemoveAll(i => i.Plan_ID.Equals(planID));
 
                         //planid 업데이트
-                        string[] str_tmp = planID.Split('P');
-                        int int_tmp = Convert.ToInt32(str_tmp[1]);
-                        planID = str_tmp[0] + "P" + (int_tmp + 1).ToString();
+                        string[] str_tmp = planID.Split('_');
+                        planID = str_tmp[0] + "_" + DateTime.Now.ToString("mmss");
                         txtPlanVersion.Text = planID;
                     }
                     else

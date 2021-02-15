@@ -133,5 +133,31 @@ namespace MESForm
         {
             dgvList.DataSource = list;
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtFa.Enabled = false;
+                txtName.Enabled = false;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+            }
+            else
+            {
+                txtFa.Enabled = true;
+                txtName.Enabled = true;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+            }
+        }
+
+        private void custButtonControl2_Click(object sender, EventArgs e)
+        {
+            if (bflag)
+            {
+
+            }
+        }
     }
 }

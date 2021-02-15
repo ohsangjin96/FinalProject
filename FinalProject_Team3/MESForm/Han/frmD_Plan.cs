@@ -22,43 +22,25 @@ namespace MESForm.Han
         public frmD_Plan()
         {
             InitializeComponent();
-        }
 
-        private void DGVSetting()
-        {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사코드", "Com_Code");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사설비", "Com_Type");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사명", "Com_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객주문번호", "Order_WO");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "Item_Name");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void ComboBinding()
         {
-            POService service = new POService();
-            polist = service.GetPOList();
-            var planidlist = (from list in polist
-                              select list.Plan_ID).ToList();
-
-            planidlist.Insert(0, "");
-            ComboBoxBinding.BindingComboBoxPart(cboPlanID, planidlist, "Plan_ID");
-
             //고객사
             CompanyService company = new CompanyService();
             Companylist = company.GetCompanyList();
 
             var Company = (from list in Companylist
-                           select list.Com_Code).Distinct().ToList();
-            Company.Insert(0, "");
-            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Code");
+                           select list.Com_Name).Distinct().ToList();
+            Company.Insert(0, "전체");
+            ComboBoxBinding.BindingComboBoxPart(cboCompany, Company, "Com_Name");
 
         }
 
         private void frmD_Plan_Load(object sender, EventArgs e)
         {
-            //DGVSetting();
-
             ComboBinding();
         }
 
@@ -73,26 +55,98 @@ namespace MESForm.Han
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
-            string dtpfrom = string.Empty;
-            string dtpto = string.Empty;
             //날짜 입력만큼의 데이터 조회
-            dtpfrom = dateTimePicker1.DtpFrom.ToShortDateString();
-            dtpto = dateTimePicker1.DtpTo.ToShortDateString();
+            string dtpfrom = dateTimePicker1.DtpFrom.ToString("yyyyMMdd");
+            string dtpto = dateTimePicker1.DtpTo.ToString("yyyyMMdd");
 
             DemandService service = new DemandService();
             DataTable dt = service.GetList(dtpfrom, dtpto);
             service.Dispose();
-            custDataGridViewControl1.DataSource = dt;
+            //custDataGridViewControl1.DataSource = dt;
 
+            DataTable searchdt = new DataTable();
+
+            searchdt = dt.Clone();
+
+            string com_name, item_name, demandID;
+            foreach (DataRow dr in dt.Rows)
+            {
+                com_name = dr["고객사명"].ToString();
+                item_name = dr["품명"].ToString();
+                demandID = dr["고객주문번호"].ToString();
+
+                if (cboCompany.Text == "전체")
+                {
+                    if (txtPlanID.Text == "")
+                    {
+                        if (txtItem.Text == "")
+                        {
+                            searchdt = dt;
+                            break;
+                        }
+                        else
+                        {
+                            if (item_name == txtItem.Text)
+                                searchdt.ImportRow(dr);
+                        }
+                    }
+                    else
+                    {
+                        if (txtItem.Text == "")
+                        {
+                            if (demandID == txtPlanID.Text)
+                                searchdt.ImportRow(dr);
+                        }
+                        else
+                        {
+                            if (demandID == txtPlanID.Text && item_name == txtItem.Text)
+                                searchdt.ImportRow(dr);
+                        }
+                    }
+                }
+                else
+                {
+                    if (com_name == cboCompany.Text)
+                    {
+                        if (txtPlanID.Text == "")
+                        {
+                            if (txtItem.Text == "")
+                            {
+                                searchdt = dt;
+                                break;
+                            }
+                            else
+                            {
+                                if (item_name == txtItem.Text)
+                                    searchdt.ImportRow(dr);
+                            }
+                        }
+                        else
+                        {
+                            if (txtItem.Text == "")
+                            {
+                                if (demandID == txtPlanID.Text)
+                                    searchdt.ImportRow(dr);
+                            }
+                            else
+                            {
+                                if (demandID == txtPlanID.Text && item_name == txtItem.Text)
+                                    searchdt.ImportRow(dr);
+                            }
+                        }
+                    }
+                }
+            }
+            custDataGridViewControl1.DataSource = searchdt;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //string sResult = ExcelExportImport.ExportToDataGridView<===>((List<===>)custDataGridViewControl1.DataSource, string.Empty);
-            //if (sResult.Length > 0)
-            //{
-            //    MessageBox.Show(sResult);
-            //}
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, string.Empty);
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
+            }
         }
     }
 }

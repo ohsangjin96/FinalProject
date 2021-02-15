@@ -24,7 +24,8 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "a");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "b");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "c");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "카테고리", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주수량", "d");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수령날짜", "d");
         }
 
         private void frmReg_Order_Load(object sender, EventArgs e)
@@ -43,11 +44,11 @@ namespace MESForm.Han
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            //string sResult = ExcelExportImport.ExportToDataGridView<-->((List<-->)custDataGridViewControl1.DataSource, string.Empty);
-            //if (sResult.Length > 0)
-            //{
-            //    MessageBox.Show(sResult);
-            //}
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, "");
+            if (sResult.Length > 0)
+            {
+                MessageBox.Show(sResult);
+            }
         }
     }
 }

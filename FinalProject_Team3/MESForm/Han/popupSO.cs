@@ -139,6 +139,18 @@ namespace MESForm.Han
                 comtype = i.Com_Type;
             }
 
+            POService poservice = new POService();
+            List<POVO> poList = poservice.GetPOList();
+            foreach(var i in poList)
+            {
+                if(i.Order_WO==txtWO.Text)
+                {
+                    MessageBox.Show("입력한 고객주문번호와 일치하는 번호가 존재합니다.");
+                    return;
+                }
+            }
+            poservice.Dispose();
+
             //planid..?
             POVO vo = new POVO()
             {
@@ -164,7 +176,7 @@ namespace MESForm.Han
                 vo.Order_Group = "123";
                 vo.Order_Gubun = "양산";
                 vo.Order_Size = 321;
-                vo.Plan_ID = DateTime.Now.ToString("yyyyMMdd_HHmmssff");
+                vo.Plan_ID = DateTime.Now.ToString("yyyyMMdd_mmss");
                 vo.Order_Plandate = DateTime.Now;
 
                 bool bFlag = service.RegPOList(vo);

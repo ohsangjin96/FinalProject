@@ -28,7 +28,17 @@ namespace MESForm.Han
         {
             CommonUtil.SetInitGridView(custDataGridViewControl1);
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "날짜", "selectDate",200);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량", "writeAmount",200);
+
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.Name = "writeAmount";
+            col.HeaderText = "수량";
+            col.DataPropertyName = "writeAmount";
+            col.Width = 200;
+            col.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            col.Visible = true;
+            col.ReadOnly = false;
+
+            custDataGridViewControl1.Columns.Add(col);
         }
 
         private void LoadData()
@@ -48,16 +58,10 @@ namespace MESForm.Han
                     selectDate = addDate.ToShortDateString()
                 };
                 selectData.Add(select);
-                addDate.AddDays(1);
+                addDate = addDate.AddDays(1);
             }
-        }
 
-        private void ComboBinding()
-        {
-            var PlanIDList = (from list in allList
-                              select list.Plan_ID).Distinct().ToList();
-            PlanIDList.Insert(0, "");
-            ComboBoxBinding.BindingComboBoxPart(cboPlanID, PlanIDList, "Plan_ID");
+            custDataGridViewControl1.DataSource = selectData;
         }
 
         private void popupP_Plan_Load(object sender, EventArgs e)
@@ -69,15 +73,14 @@ namespace MESForm.Han
             lblPlanAmount.Text = lblWriteAmount.Text = "0";
 
             DGVSetting();
-            ComboBinding();
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)
         {
-            if (cboPlanID.Text.Length > 0)
+            if (txtPlanID.Text.Length > 0)
             {
                 var PlanIDList = (from list in allList
-                                  where list.Plan_ID == cboPlanID.Text
+                                  where list.Plan_ID == txtPlanID.Text
                                   select list).Distinct().ToList();
 
                 int amount = 0;
@@ -95,7 +98,7 @@ namespace MESForm.Han
             }
             else
             {
-                MessageBox.Show("PlanID값을 선택하세요");
+                MessageBox.Show("PlanID값을 입력하세요");
             }
         }
 

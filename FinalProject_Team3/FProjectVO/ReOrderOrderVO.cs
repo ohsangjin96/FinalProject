@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace FProjectVO
 {
-    public class MtpVO
+    public class ReOrderOrderVO
     {
-        public string ITEM_Code { get; set; }
-        public DateTime Plan_Date { get; set; }
-        public string ITEM_Name { get; set; }
+        public string Item_Name { get; set; }
         public string Plan_ID { get; set; }
+        public string Item_Code { get; set; }
         public int Amount { get; set; }
+
     }
 }
