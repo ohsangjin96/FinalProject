@@ -65,10 +65,11 @@ namespace MESForm.Han
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 102);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 179);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 175);
             this.lblFormName1.Size = new System.Drawing.Size(78, 21);
             this.lblFormName1.Text = "정규발주";
             // 
@@ -108,8 +109,8 @@ namespace MESForm.Han
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 1, 32, 7, 99);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 1, 32, 7, 99);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 4, 16, 59, 999);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 4, 16, 59, 999);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(545, 27);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -123,7 +124,7 @@ namespace MESForm.Han
             this.btnPopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPopup.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPopup.ForeColor = System.Drawing.Color.Black;
-            this.btnPopup.Location = new System.Drawing.Point(269, 6);
+            this.btnPopup.Location = new System.Drawing.Point(307, 3);
             this.btnPopup.Name = "btnPopup";
             this.btnPopup.Size = new System.Drawing.Size(83, 32);
             this.btnPopup.TabIndex = 0;
@@ -139,7 +140,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(375, 6);
+            this.btnExcel.Location = new System.Drawing.Point(396, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 1;
@@ -187,7 +188,7 @@ namespace MESForm.Han
             this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(477, 6);
+            this.custButtonControl1.Location = new System.Drawing.Point(485, 3);
             this.custButtonControl1.Name = "custButtonControl1";
             this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
             this.custButtonControl1.TabIndex = 2;
@@ -202,7 +203,7 @@ namespace MESForm.Han
             this.custButtonControl2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl2.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl2.Location = new System.Drawing.Point(161, 6);
+            this.custButtonControl2.Location = new System.Drawing.Point(218, 3);
             this.custButtonControl2.Name = "custButtonControl2";
             this.custButtonControl2.Size = new System.Drawing.Size(83, 32);
             this.custButtonControl2.TabIndex = 3;

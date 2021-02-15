@@ -17,11 +17,16 @@ namespace MESForm.Services
             dac.Dispose();
         }
         
-        public List<ReOrderOrderVO> SelectOrder(DateTime date)
+        public List<ReOrderVO> SelectOrder(DateTime date)
         {
             ReOrderDAC dac = new ReOrderDAC();
             return dac.SelectOrder(date);
         }
-       
+
+        public bool InsertReOrder(List<ReOrderVO> list)
+        {
+            ReOrderDAC dac = new ReOrderDAC();
+            return dac.InsertReOrder(list);
+        }
     }
 }

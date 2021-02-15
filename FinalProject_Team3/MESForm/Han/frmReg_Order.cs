@@ -63,5 +63,10 @@ namespace MESForm.Han
         {
             
         }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

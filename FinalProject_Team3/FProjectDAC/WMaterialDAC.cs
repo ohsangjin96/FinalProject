@@ -36,17 +36,15 @@ namespace FProjectDAC
                 cmd.CommandText = @"select distinct C.Com_Name, ITEM_Delivery_Company, WT.ITEM_Code, I.ITEM_Name,
                                            ITEM_Standard, ITEM_Type, ITEM_Unit, Reorder_Amount, Reorder_InAmount,
                                            Reorder_Balance , Reorder_State, WT.Reorder_Number,
-                                           Warehousing_Date, Warehousing_Note, (Order_FixedDate - BOR_ReadyTime) Order_FixedDate,
+                                           Warehousing_Date, Warehousing_Note, Mtp_Date as Order_FixedDate,
 										   ITEM_WareHouse_IN, MC_IngCost, Factory_Code
 									from Warehousing WT join Company C on WT.Com_Code = C.Com_Code
 									                          join ITEM I on WT.ITEM_Code = I.ITEM_Code
 															  join Reorder R on WT.Reorder_Number = R.Reorder_Number
 														      join Material_Cost MC on WT.ITEM_Code = MC.ITEM_Code
-                                    						  join PO P on R.Plan_ID = P.Plan_ID
-															  join BOR B on WT.ITEM_Code = B.Item_Code
 															  join Factory F on F.Factory_Name = I.ITEM_WareHouse_IN
 									where MC_BeforeCost = 0 and Reorder_State != '입고완료' and
-                                          Order_FixedDate between @dtpFrom and @dtpEnd and
+                                          Mtp_Date between @dtpFrom and @dtpEnd and
                                           I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code) and
                                           C.Com_Name = ISNULL(@Com_Name, C.Com_Name) and
                                           ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company)";
