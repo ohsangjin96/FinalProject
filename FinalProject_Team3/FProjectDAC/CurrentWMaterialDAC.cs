@@ -33,18 +33,18 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select ROW_NUMBER() OVER (Order by Reorder_His_No desc) RowNo, Reorder_His_No,
-                                           RH.Reorder_Number, Reorder_InDate, Reorder_InType, ITEM_WareHouse_IN,
-                                           I.ITEM_Code, ITEM_Name, ITEM_Standard, ITEM_Unit, RH.Reorder_InAmount, 
-                                           RH.Reorder_Cancel, Reorder_Balance, Com_Name, ITEM_Delivery_Company,
-                                           IsCancel
-                                    from Reorder_His RH join Reorder R on RH.Reorder_Number = R.Reorder_Number
-					                                    join ITEM I on RH.ITEM_Code = I.ITEM_Code
-									where Reorder_InDate between @FromDate and @ToDate and
+                cmd.CommandText = @"select Warehousing_His_No,
+                                           WH.Reorder_Number, Warehousing_Date, Reorder_InType, ITEM_WareHouse_IN,
+                                           I.ITEM_Code, ITEM_Name, ITEM_Standard, ITEM_Unit, Warehousing_InAmount,
+                                           WH.Reorder_Cancel, Reorder_Balance, Com_Name, ITEM_Delivery_Company
+                                    from Warehousing_His WH join Reorder R on WH.Reorder_Number = R.Reorder_Number
+															join ITEM I on WH.ITEM_Code = I.ITEM_Code
+									where Warehousing_Date between @FromDate and @ToDate and
 										  ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company) and
 										  ITEM_WareHouse_IN = ISNULL(@ITEM_WareHouse_IN, ITEM_WareHouse_IN) and
 										  I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code)
-                                    order by Reorder_His_No desc";
+                                    order by Warehousing_His_No desc";
+
                 cmd.Parameters.AddWithValue("@FromDate", vo.FromDate);
                 cmd.Parameters.AddWithValue("@ToDate", vo.ToDate);
                 cmd.Parameters.AddWithValue("@ITEM_Delivery_Company", (string.IsNullOrEmpty(vo.ITEM_Delivery_Company)) ? DBNull.Value : (object)vo.ITEM_Delivery_Company);
@@ -73,11 +73,11 @@ namespace FProjectDAC
                     {
                         cmd.Parameters.Clear();
 
-                        cmd.Parameters.AddWithValue("@Reorder_His_No", list[i].Reorder_His_No);
+                        cmd.Parameters.AddWithValue("@Reorder_His_No", list[i].Warehousing_His_No);
                         cmd.Parameters.AddWithValue("@Reorder_Number", list[i].Reorder_Number);
                         cmd.Parameters.AddWithValue("@ITEM_Code", list[i].ITEM_Code);
                         cmd.Parameters.AddWithValue("@Com_Name", list[i].Com_Name);
-                        cmd.Parameters.AddWithValue("@Reorder_Cancel", list[i].Reorder_InAmount);
+                        cmd.Parameters.AddWithValue("@Reorder_Cancel", list[i].Warehousing_InAmount);
                         iRowAffect = cmd.ExecuteNonQuery();
                     }
 

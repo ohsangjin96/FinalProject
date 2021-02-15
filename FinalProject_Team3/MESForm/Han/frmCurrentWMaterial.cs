@@ -41,15 +41,15 @@ namespace MESForm.Han
             hearderCheckBox.Click += HearderCheckBox_Click;
             dgvWMaterialList.Controls.Add(hearderCheckBox);
 
-            CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고번호", "Reorder_His_No");
+            CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고번호", "Warehousing_His_No");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "발주번호", "Reorder_Number", 10, false);
-            CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고일", "Reorder_InDate");
+            CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고일", "Warehousing_Date");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고창고", "ITEM_WareHouse_IN");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "품목", "ITEM_Code");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "품명", "ITEM_Name");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "규격", "ITEM_Standard");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "단위", "ITEM_Unit");
-            CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고량", "Reorder_InAmount");
+            CommonUtil.AddGridTextColumn(dgvWMaterialList, "입고량", "Warehousing_InAmount");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "취소량", "Reorder_Cancel");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "잔량", "Reorder_Balance");
             CommonUtil.AddGridTextColumn(dgvWMaterialList, "업체", "Com_Name");
@@ -104,7 +104,7 @@ namespace MESForm.Han
 
             for (int i = 0; i < list.Count; i++)
             {
-                if(list[i].IsCancel == "Y")
+                if(list[i].Warehousing_InAmount == 0)
                 {
                     dgvWMaterialList.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 204, 204);
                 }
@@ -138,16 +138,6 @@ namespace MESForm.Han
                 if (Convert.ToBoolean(dgvWMaterialList["chk", i].Value))
                 {
                     chkList.Add(list[i]);
-                }
-            }
-
-            for(int i = 0; i < chkList.Count; i++)
-            {
-                if(chkList[i].IsCancel == "Y")
-                {
-                    MessageBox.Show("선택된 항목 중 이미 취소 처리가 되었거나 취소된 항목이 있습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    CheckedFalse();
-                    return;
                 }
             }
 
