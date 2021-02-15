@@ -8,7 +8,6 @@ namespace FProjectVO
 {
     public class FactoryVO
     {
-        public long RowNo { get; set; }
         public int Factory_ID { get; set; }
         public string Factory_Grade { get; set; }
         public string Factory_Type { get; set; }

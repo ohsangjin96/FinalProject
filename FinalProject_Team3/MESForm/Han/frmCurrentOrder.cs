@@ -20,21 +20,21 @@ namespace MESForm.Han
 
         private void DGVSetting()
         {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주번호", "Order_ID");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품업체", "DCom_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "주문상태", "Order_State");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "Item_Code");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "Item_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "규격", "Item_Standard");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "단위", "Item_Unit");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납기일", "Order_FixedDate");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주량", "a");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "입고량", "b");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "취소량", "c");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "취소가능량", "d");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주일", "e");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주자", "f");
+            CommonUtil.SetInitGridView(dgvReorderList);
+            CommonUtil.AddGridTextColumn(dgvReorderList, "발주번호", "Order_ID");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "납품업체", "DCom_Name");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "주문상태", "Order_State");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "품목", "Item_Code");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "품명", "Item_Name");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "규격", "Item_Standard");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "단위", "Item_Unit");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "납기일", "Order_FixedDate");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "발주량", "a");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "입고량", "b");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "취소량", "c");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "취소가능량", "d");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "발주일", "e");
+            CommonUtil.AddGridTextColumn(dgvReorderList, "담당자", "f");
         }
 
         private void LoadData()

@@ -33,8 +33,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select ROW_NUMBER() OVER(ORDER BY Facilities_Code, Facilities_Name) RowNo, 
-                                           Facilities_Code, Facilities_Name, Facilities_Use, Facilities_Amender,
+                cmd.CommandText = @"select Facilities_Code, Facilities_Name, Facilities_Use, Facilities_Amender,
                                            CONVERT(CHAR(19), Facilities_ModdifyDate, 120) Facilities_ModdifyDate,
                                            Facilities_Explain
                                     from Facility
@@ -166,8 +165,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select ROW_NUMBER() OVER(ORDER BY Facilities_Code, Facility_Name) RowNo, Facility_Code, 
-                                           Facilities_Code, Facility_Name, Facility_Exhaustion,
+                cmd.CommandText = @"select Facility_Code, Facilities_Code, Facility_Name, Facility_Exhaustion,
                                            Facility_Imported, Facility_Poor, Facility_MES, Facility_OutSourcing,
                                            Facility_Amender, 
                                            CONVERT(CHAR(19), Facility_ModdifyDate, 120) Facility_ModdifyDate,

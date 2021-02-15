@@ -66,7 +66,6 @@ namespace POPForm
                         Info.User_Email = item.User_Email;
                         Info.User_Dept = item.User_Dept;
                     }
-                    MessageBox.Show($"{Info.User_Name}님 환영합니다.");
 
                     frmPOP frm = new frmPOP(Info);
                     frm.Show();

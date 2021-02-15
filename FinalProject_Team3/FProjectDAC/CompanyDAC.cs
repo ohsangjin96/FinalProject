@@ -32,8 +32,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select ROW_NUMBER() OVER(ORDER BY Com_code, Com_Name) RowNo, Com_Code, Com_Name,
-                                           Com_Type, Com_CEO, Com_CNum, Com_Category, Com_Conditions,
+                cmd.CommandText = @"select Com_Code, Com_Name, Com_Type, Com_CEO, Com_CNum, Com_Category, Com_Conditions,
                                            Com_Charge, Com_Email, CONVERT(CHAR(10), Com_StartDate, 23) Com_StartDate,
                                            CONVERT(CHAR(10), Com_EndDate, 23) Com_EndDate, Com_Phone, Com_Fax,
                                            Com_Warehouse, Com_Use, Com_Amender,

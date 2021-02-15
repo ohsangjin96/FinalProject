@@ -61,14 +61,13 @@ namespace MESForm.Han
             dgvWarehouse.Controls.Add(hearderCheckBox2);
             #endregion
 
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "업체", "Com_Name", 150);
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "납품업체", "ITEM_Delivery_Company", 150);
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품목", "ITEM_Code", 130);
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "업체", "Com_Name", 180);
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "납품업체", "ITEM_Delivery_Company", 180);
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품목", "ITEM_Code", 150);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품명", "ITEM_Name", 180);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "규격", "ITEM_Standard");
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품목유형", "ITEM_Type", 80, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품목유형", "ITEM_Type", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "단위", "ITEM_Unit", 80, true, DataGridViewContentAlignment.MiddleCenter);
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "검사여부", "Reorder_InspYN", 100, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주수량", "Reorder_Amount", 100, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "입고량", "Reorder_InAmount", 100, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "잔량", "Reorder_Balance", 100, true, DataGridViewContentAlignment.MiddleRight);
@@ -82,9 +81,10 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(dgvWarehouse, "품목유형", "ITEM_Type", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWarehouse, "단위", "ITEM_Unit", 80, true, DataGridViewContentAlignment.MiddleCenter);
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고창고", "ITEM_WareHouse_IN");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "입고일자", "Warehousing_Date");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "입고량", "InQty", 100, true, DataGridViewContentAlignment.MiddleRight);
             CommonUtil.AddGridTextColumn(dgvWarehouse, "단가", "MC_IngCost", 100, true, DataGridViewContentAlignment.MiddleRight);
-            CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "Reorder_Note");
+            CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "Warehousing_Note");
 
             dgvWarehouse.Columns["InQty"].ReadOnly = false;
         }
@@ -115,24 +115,25 @@ namespace MESForm.Han
 
         private void ComboBoxBind()
         {
-            CommonCodeService commonService = new CommonCodeService();
-            List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
-            commonService.Dispose();
+            CompanyService companyService = new CompanyService();
+            List<CompanyVO> companyList = companyService.GetCompanyList();
+            List<CompanyVO> companyList2 = companyService.GetCompanyList();
+            companyService.Dispose();
 
-            ComboBoxBinding.ComBind(cboOrderState, commonList, "OrderState000");
+            ComboBoxBinding.CompanyBind(cboCompany, companyList);
+            ComboBoxBinding.CompanyBind(cboInCompany, companyList2);
         }
 
         private void LoadData()
         {
             string sDate = dtpDate.DtpFrom.ToShortDateString();
             string eDate = dtpDate.DtpTo.ToShortDateString();
-            string orderState = cboOrderState.Text;
             string itemCode = txtItem.Text;
-            string comName = txtCompany.Text;
-            string inComName = txtInCompany.Text;
+            string comName = cboCompany.Text;
+            string inComName = cboInCompany.Text;
 
             WMaterialService service = new WMaterialService();
-            list = service.GetWMaterialList(sDate, eDate, orderState, itemCode, comName, inComName);
+            list = service.GetWMaterialList(sDate, eDate, itemCode, comName, inComName);
 
             dgvWaitingWarehouse.DataSource = list;
         }
@@ -141,7 +142,6 @@ namespace MESForm.Han
         {
             ComboBoxBind();
             DgvSetting();
-            //LoadData();
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)
@@ -157,6 +157,7 @@ namespace MESForm.Han
                 if (Convert.ToBoolean(dgvWaitingWarehouse["chk", i].Value))
                 {
                     newList.Add(list[i]);
+                    newList[i].InQty = Convert.ToInt32(dgvWaitingWarehouse["Reorder_Amount", i].Value);
                 }
             }
 
@@ -188,12 +189,12 @@ namespace MESForm.Han
                     int inAmount = Convert.ToInt32(dgvWarehouse["InQty", i].Value);
                     if (inAmount < 1)
                     {
-                        MessageBox.Show($"최소 1개의 수량을 입력해주세요.");
+                        MessageBox.Show($"수량을 입력하지 않은 품목이 있습니다.");
                         return;
                     }
                     if (rbAmount < inAmount)
                     {
-                        MessageBox.Show($"입력한 입고량이 현재 잔량보다 많습니다.");
+                        MessageBox.Show($"입력한 입고량이 현재 잔량보다 많은 품목이 있습니다.");
                         return;
                     }
                     #endregion
@@ -272,6 +273,5 @@ namespace MESForm.Han
             else if (hearderCheckBox2.Checked)
                 hearderCheckBox2.Checked = false;
         }
-
     }
 }

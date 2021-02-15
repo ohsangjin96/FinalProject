@@ -8,7 +8,6 @@ namespace FProjectVO
 {
     public class FacilityVO
     {
-        public long RowNo { get; set; }
         //설비군
         public string Facilities_Code { get; set; }         //설비군코드
         public string Facilities_Name { get; set; }         //설비군명

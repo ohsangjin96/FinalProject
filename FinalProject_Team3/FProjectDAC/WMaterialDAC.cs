@@ -28,47 +28,31 @@ namespace FProjectDAC
 
         #region 입고처리
         //입고대기리스트 목록
-        public List<WMaterialVO> GetWMaterialList(string sDate, string eDate, string orderState, string itemCode, string comName, string inComName)
+        public List<WMaterialVO> GetWMaterialList(string sDate, string eDate, string itemCode, string comName, string inComName)
         {
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                //    cmd.CommandText = @"select ROW_NUMBER() OVER (Order by Reorder_Number desc) RowNo, C.Com_Name, ITEM_Delivery_Company, R.ITEM_Code, I.ITEM_Name, ITEM_Standard,
-                //                               ITEM_Type, ITEM_Unit, Reorder_InspYN, Reorder_Amount, Reorder_InAmount,
-                //                               Reorder_Balance , Order_FixedDate, Reorder_State, Reorder_Number,
-                //                               ITEM_WareHouse_IN, MC_IngCost, Factory_Code, Reorder_Note
-                //                        from Reorder R join Company C on R.Com_Code = C.Com_Code
-                //                        			   join ITEM I on R.ITEM_Code = I.ITEM_Code
-                //                        			   join PO P on R.Plan_ID = P.Plan_ID
-                //                              join Material_Cost MC on I.ITEM_Code = MC.ITEM_Code
-                //                              join Factory F on F.Factory_Name = I.ITEM_WareHouse_IN
-                //                        where MC_BeforeCost = 0 and Reorder_State != '입고완료' and
-                //                              Order_FixedDate between @dtpFrom and @dtpEnd and
-                //Reorder_State = ISNULL(@Reorder_State, Reorder_State) and
-                //I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code) and
-                //C.Com_Name = ISNULL(@Com_Name, C.Com_Name) and
-                //ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company)";
-
-                cmd.CommandText = @"select distinct Com_Name, ITEM_Delivery_Company, WT.ITEM_Code, I.ITEM_Name,
-                                           ITEM_Standard, ITEM_Type, ITEM_Unit, Reorder_Amount, Waiting_Amount,
+                cmd.CommandText = @"select distinct C.Com_Name, ITEM_Delivery_Company, WT.ITEM_Code, I.ITEM_Name,
+                                           ITEM_Standard, ITEM_Type, ITEM_Unit, Reorder_Amount, Reorder_InAmount,
                                            Reorder_Balance , Reorder_State, WT.Reorder_Number,
-                                           Waiting_Date, Waiting_Note, (Order_FixedDate - BOR_ReadyTime) Order_FixedDate
-									from Warehouse_Waiting WT join Company C on WT.Com_Code = C.Com_Code
+                                           Warehousing_Date, Warehousing_Note, (Order_FixedDate - BOR_ReadyTime) Order_FixedDate,
+										   ITEM_WareHouse_IN, MC_IngCost, Factory_Code
+									from Warehousing WT join Company C on WT.Com_Code = C.Com_Code
 									                          join ITEM I on WT.ITEM_Code = I.ITEM_Code
 															  join Reorder R on WT.Reorder_Number = R.Reorder_Number
 														      join Material_Cost MC on WT.ITEM_Code = MC.ITEM_Code
                                     						  join PO P on R.Plan_ID = P.Plan_ID
 															  join BOR B on WT.ITEM_Code = B.Item_Code
+															  join Factory F on F.Factory_Name = I.ITEM_WareHouse_IN
 									where MC_BeforeCost = 0 and Reorder_State != '입고완료' and
                                           Order_FixedDate between @dtpFrom and @dtpEnd and
-                                          Reorder_State = ISNULL(@Reorder_State, Reorder_State) and
                                           I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code) and
                                           C.Com_Name = ISNULL(@Com_Name, C.Com_Name) and
                                           ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company)";
 
                 cmd.Parameters.AddWithValue("@dtpFrom", sDate);
                 cmd.Parameters.AddWithValue("@dtpEnd", eDate);
-                cmd.Parameters.AddWithValue("@Reorder_State", (string.IsNullOrEmpty(orderState)) ? DBNull.Value : (object)orderState);
                 cmd.Parameters.AddWithValue("@ITEM_Code", (string.IsNullOrEmpty(itemCode)) ? DBNull.Value : (object)itemCode);
                 cmd.Parameters.AddWithValue("@Com_Name", (string.IsNullOrEmpty(comName)) ? DBNull.Value : (object)comName);
                 cmd.Parameters.AddWithValue("@ITEM_Delivery_Company", (string.IsNullOrEmpty(inComName)) ? DBNull.Value : (object)inComName);
@@ -103,6 +87,7 @@ namespace FProjectDAC
                         cmd.Parameters.AddWithValue("@Factory_Code", list[i].Factory_Code);
                         cmd.Parameters.AddWithValue("@Reorder_Amount", list[i].Reorder_Amount);
                         cmd.Parameters.AddWithValue("@InQty", list[i].InQty);
+                        cmd.Parameters.AddWithValue("@Warehousing_Date", list[i].Warehousing_Date);
                         iRowAffect = cmd.ExecuteNonQuery();
                     }
 
