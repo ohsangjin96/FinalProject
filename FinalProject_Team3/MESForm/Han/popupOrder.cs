@@ -30,11 +30,11 @@ namespace MESForm.Han
             CommonUtil.SetInitGridView(dgvOrder);
             CommonUtil.AddGridTextColumn(dgvOrder, "PlanID", "Plan_ID");
             CommonUtil.AddGridTextColumn(dgvOrder, "품명", "Item_Name",80);
-            CommonUtil.AddGridTextColumn(dgvOrder, "코드", "Item_Code",80);
-            CommonUtil.AddGridTextColumn(dgvOrder, "수량", "Amount",80);
-            CommonUtil.AddGridTextColumn(dgvOrder, "입고창고", "ITEM_WareHouse_IN", 80);
-            CommonUtil.AddGridTextColumn(dgvOrder, "발주업체", "ITEM_Order_Company", 80);
-            CommonUtil.AddGridTextColumn(dgvOrder, "업체코드", "Com_Code", 80);
+            CommonUtil.AddGridTextColumn(dgvOrder, "코드", "Item_Code",80, false);
+            CommonUtil.AddGridTextColumn(dgvOrder, "수량", "Amount",80, false);
+            CommonUtil.AddGridTextColumn(dgvOrder, "입고창고", "ITEM_WareHouse_IN", 80, false);
+            CommonUtil.AddGridTextColumn(dgvOrder, "발주업체", "ITEM_Order_Company", 80, false);
+            CommonUtil.AddGridTextColumn(dgvOrder, "업체코드", "Com_Code", 80, false);
             CommonUtil.SetInitGridView(dgvReOrder);
 
             CommonUtil.AddGridTextColumn(dgvReOrder, "품명", "ITEM_Code");
@@ -72,35 +72,9 @@ namespace MESForm.Han
         {
             this.Close();
         }
-        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtDate.Text = dgvOrder.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtItem.Text = dgvOrder.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtAmount.Text = dgvOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtComName.Text = dgvOrder.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtWareHouse.Text = dgvOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
-            label2.Text = dgvOrder.Rows[e.RowIndex].Cells[7].Value.ToString();
-        }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            //dgvReOrder.DataSource = null;
-            //string date = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            //ReOrderVO vo = new ReOrderVO
-            //{
-            //    Com_Code = label2.Text,
-            //    Reorder_Amount = Convert.ToInt32(txtAmount.Text),
-            //    ReOrder_FixDate = date,
-            //    ITEM_Code = txtItem.Text,
-            //    Reorder_Balance = Convert.ToInt32(txtAmount.Text),
-            //    Plan_ID = txtDate.Text,
-            //    WareHouse_In = txtWareHouse.Text,
-            //    Reorder_CanCancel = Convert.ToInt32(txtAmount.Text),
-            //    Note = Convert.ToString(dgvReOrder["Note", 1].Value)
-            //};
-            //list.Add(vo);
-            //dgvReOrder.DataSource = list;
-
             ReOrderService service = new ReOrderService();
             bool result = service.InsertReOrder(newList);
             service.Dispose();
