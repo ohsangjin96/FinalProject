@@ -29,67 +29,62 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cboPlanID = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
             this.btnPopup = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvList = new MESForm.CustomControls.custDataGridViewControl();
+            this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
+            this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
             // 
+            this.pnlSelect.Controls.Add(this.textBox1);
             this.pnlSelect.Controls.Add(this.dateTimePicker1);
-            this.pnlSelect.Controls.Add(this.cboPlanID);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.label8);
             this.pnlSelect.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 148);
             this.pnlSelect.Controls.SetChildIndex(this.label8, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.cboPlanID, 0);
             this.pnlSelect.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.textBox1, 0);
             // 
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 102);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 117);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 179);
             this.lblFormName1.Size = new System.Drawing.Size(78, 21);
             this.lblFormName1.Text = "정규발주";
             // 
             // pnlItem
             // 
-            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
-            this.pnlItem.Location = new System.Drawing.Point(12, 141);
-            this.pnlItem.Size = new System.Drawing.Size(1226, 546);
+            this.pnlItem.Controls.Add(this.dgvList);
+            this.pnlItem.Location = new System.Drawing.Point(12, 217);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 470);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.custButtonControl2);
+            this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnPopup);
-            this.panel1.Location = new System.Drawing.Point(670, 94);
-            // 
-            // cboPlanID
-            // 
-            this.cboPlanID.FormattingEnabled = true;
-            this.cboPlanID.Location = new System.Drawing.Point(130, 27);
-            this.cboPlanID.Name = "cboPlanID";
-            this.cboPlanID.Size = new System.Drawing.Size(121, 22);
-            this.cboPlanID.TabIndex = 16;
+            this.panel1.Location = new System.Drawing.Point(670, 168);
             // 
             // label8
             // 
@@ -113,8 +108,8 @@ namespace MESForm.Han
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 3, 11, 6, 0, 911);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 3, 11, 6, 0, 897);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 1, 32, 7, 99);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 1, 32, 7, 99);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(545, 27);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -128,7 +123,7 @@ namespace MESForm.Han
             this.btnPopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPopup.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPopup.ForeColor = System.Drawing.Color.Black;
-            this.btnPopup.Location = new System.Drawing.Point(396, 6);
+            this.btnPopup.Location = new System.Drawing.Point(269, 6);
             this.btnPopup.Name = "btnPopup";
             this.btnPopup.Size = new System.Drawing.Size(83, 32);
             this.btnPopup.TabIndex = 0;
@@ -144,7 +139,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(485, 6);
+            this.btnExcel.Location = new System.Drawing.Point(375, 6);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 1;
@@ -153,40 +148,75 @@ namespace MESForm.Han
             this.btnExcel.UseVisualStyleBackColor = false;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
-            // custDataGridViewControl1
+            // dgvList
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.custDataGridViewControl1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 546);
-            this.custDataGridViewControl1.TabIndex = 0;
+            this.dgvList.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(1226, 470);
+            this.dgvList.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
+            // custButtonControl1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "no";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
+            this.custButtonControl1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.custButtonControl1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
+            this.custButtonControl1.Location = new System.Drawing.Point(477, 6);
+            this.custButtonControl1.Name = "custButtonControl1";
+            this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
+            this.custButtonControl1.TabIndex = 2;
+            this.custButtonControl1.Text = "새로고침";
+            this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.custButtonControl1.UseVisualStyleBackColor = false;
+            // 
+            // custButtonControl2
+            // 
+            this.custButtonControl2.BackColor = System.Drawing.Color.LightSlateGray;
+            this.custButtonControl2.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.custButtonControl2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custButtonControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custButtonControl2.ForeColor = System.Drawing.Color.Black;
+            this.custButtonControl2.Location = new System.Drawing.Point(161, 6);
+            this.custButtonControl2.Name = "custButtonControl2";
+            this.custButtonControl2.Size = new System.Drawing.Size(83, 32);
+            this.custButtonControl2.TabIndex = 3;
+            this.custButtonControl2.Text = "발주확정";
+            this.custButtonControl2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.custButtonControl2.UseVisualStyleBackColor = false;
+            this.custButtonControl2.Click += new System.EventHandler(this.custButtonControl2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(163, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(189, 22);
+            this.textBox1.TabIndex = 18;
             // 
             // frmReg_Order
             // 
@@ -202,7 +232,7 @@ namespace MESForm.Han
             this.pnlSelect.PerformLayout();
             this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,13 +240,14 @@ namespace MESForm.Han
 
         #endregion
         protected System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboPlanID;
         protected System.Windows.Forms.Label label8;
         private UserControls.DateTimePicker dateTimePicker1;
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnPopup;
-        private CustomControls.custDataGridViewControl custDataGridViewControl1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private CustomControls.custDataGridViewControl dgvList;
+        private CustomControls.custButtonControl custButtonControl1;
+        private System.Windows.Forms.TextBox textBox1;
+        private CustomControls.custButtonControl custButtonControl2;
     }
 }
 

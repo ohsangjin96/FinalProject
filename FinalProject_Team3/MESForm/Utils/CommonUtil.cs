@@ -40,7 +40,7 @@ namespace MESForm.Utils
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dgv.ColumnHeadersHeight = 33;
-            CommonUtil.AddGridTextColumn(dgv, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
+            AddGridTextColumn(dgv, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         public static void AddGridTextColumn(DataGridView dgv,

@@ -78,6 +78,7 @@ namespace MESForm.Han
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInquiry.Location = new System.Drawing.Point(1154, 62);
+            this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 

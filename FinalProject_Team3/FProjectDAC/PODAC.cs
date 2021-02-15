@@ -33,7 +33,7 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"select Order_Plandate, Order_WO, P.Com_Code, C.Com_Type,C.Com_Name, Order_MKT, Order_OrderType, Order_Group, Order_Gubun,
                                            Order_Size, I.Item_Code, I.ITEM_Type ,I.Item_Name, Order_FixedDate, Order_RelaseAmount, Order_OrderAmount,
-                                           Order_CancelAmount, Order_Arrive, Order_Remark, Plan_ID
+                                           Order_CancelAmount, Order_Arrive, Order_Remark, Plan_ID, PO_State
                                     from PO P left outer join Company C on P.Com_Code = C.Com_Code
 		                                      left outer join ITEM I on P.Item_Code = I.Item_Code";
 

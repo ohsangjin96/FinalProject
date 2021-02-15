@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using MESForm.Services;
 using FProjectVO;
+using MESForm.Han;
 
 namespace MESForm
 {
@@ -422,7 +423,10 @@ namespace MESForm
         #region 구매관리
         private void btnROrder_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<Han.frmReg_Order>();
+            frmReg_Order frm = new frmReg_Order();
+            frm.Name = DeptInfo.User_Name;
+
+            MdiOpenCheck(frm);
         }
 
         private void btnCurrentOrder_Click(object sender, EventArgs e)

@@ -20,6 +20,8 @@ namespace MESForm.Han
             InitializeComponent();
         }
         List<MtpVO> list;
+        List<MtpVO> selectlist;
+        bool aflag = true;
         private void DGVSetting()
         {
             CommonUtil.SetInitGridView(dgvList);
@@ -59,7 +61,7 @@ namespace MESForm.Han
                 txtName.Enabled = false;
                 dtpfrom.Enabled = false;
                 dtpto.Enabled = false;
-                txtName.Text = "";
+                
             }
         }
 
@@ -99,25 +101,80 @@ namespace MESForm.Han
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            string sResult = ExcelExportImport.ExportToDataGridView<string>((List<string>)dgvList.DataSource, string.Empty);
-            if (sResult.Length > 0)
-            {
-                MessageBox.Show(sResult);
-            }
+            ExcelExportImport.ExcelExportToDataGridView(this, dgvList);
         }
 
         private void custButtonControl1_Click(object sender, EventArgs e)
         {
             MtpService service = new MtpService();
-            bool bflag = service.InsertMtp(list);
-            if (bflag)
+           
+            if (aflag)
             {
-                MessageBox.Show("저장되었습니다");
+                bool bflag = service.InsertMtp(list);
+                if (bflag)
+                {
+                    MessageBox.Show("저장되었습니다");
+                }
+                else
+                {
+                    MessageBox.Show("실패했습니다");
+                }
             }
             else
             {
-                MessageBox.Show("실패했습니다");
+                bool bflag = service.InsertMtp(selectlist);
+                if (bflag)
+                {
+                    MessageBox.Show("저장되었습니다");
+                }
+                else
+                {
+                    MessageBox.Show("실패했습니다");
+                }
             }
+        }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                if (dtpfrom.Value < dtpto.Value)
+                {
+                    var selectdata = (from selected in list
+                                      where selected.Plan_Date > Convert.ToDateTime(dtpfrom) && selected.Plan_Date < Convert.ToDateTime(dtpto)
+                                      select selected).ToList();
+                    selectlist = selectdata;
+                    dgvList.DataSource = selectlist;
+                }
+                else
+                {
+                    MessageBox.Show("날짜를 다시 결정해주세요");
+                }
+
+            }
+            else
+            {
+                if (txtName.Enabled)
+                {
+                   
+                    var selectdata = (from selected in list
+                                      where selected.ITEM_Name == txtName.Text
+                                      select selected).ToList();
+                    selectlist = selectdata;
+                    dgvList.DataSource = selectlist;
+                }
+                
+                else
+                {
+                 
+                    var selectdata = (from selected in list
+                                      where selected.Plan_ID == txtID.Text
+                                      select selected).ToList();
+                    selectlist = selectdata;
+                    dgvList.DataSource = selectlist;
+                }
+            }
+            aflag = false;
         }
     }
 }

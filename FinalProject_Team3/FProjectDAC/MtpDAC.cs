@@ -31,10 +31,11 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select demand.Plan_ID,BOM.Item_Code,BOM.Item_name,sum(BOM_Spend*Demand.Demand_OrderAmount) AS Amount, CONVERT(datetime,Left(demand.Plan_ID,8)) AS Plan_Date
-                                    from demand,BOM,PO where BOM.BOM_Parent_Name in(select BOM.Item_Code from BOM,PO where BOM.Item_Code in (select BOM.Item_Code from PO,BOM where PO.Item_Code = BOM_Parent_Name))
-                                    and PO.PO_State='수요계획'
-                                    group by demand.Plan_ID,BOM.Item_Code,BOM.Item_name";
+                cmd.CommandText = @"select demand.Plan_ID,BOM.Item_Code,BOM.Item_name,sum(BOM_Spend*Demand_OrderAmount+BOM_Spend*Demand_OrderAmount*5/100) AS Amount, CONVERT(datetime,Left(demand.Plan_ID,8)) AS Plan_Date
+                                    from demand,BOM
+									where BOM_Parent_Name in (select  distinct(BOM.Item_Code) from BOM,PO where BOM.Item_Code in (select distinct(BOM.Item_Code) from PO,BOM where PO.Item_Code = BOM_Parent_Name))
+                                    and Demand_Stated='수요계획확정'
+									group by demand.Plan_ID,BOM.Item_Code,BOM.Item_name";
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<MtpVO> list = Helper.DataReaderMapToList<MtpVO>(reader);
@@ -65,7 +66,7 @@ namespace FProjectDAC
                     if (Cont < 0)
                         return false;
                 }
-                cmd.CommandText = @"update PO set PO_State = '자재소요계획확정' where Plan_ID = @Plan_ID";
+                cmd.CommandText = @"update Demand set Demand_Stated = '자재소요계획확정' where Plan_ID = @Plan_ID";
                 for (int i = 0; i < list.Count; i++)
                 {
                     cmd.Parameters["@Plan_ID"].Value = list[i].Plan_ID;

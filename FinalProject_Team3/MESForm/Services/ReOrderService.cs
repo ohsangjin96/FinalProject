@@ -1,5 +1,6 @@
 ﻿using FProjectDAC;
 using FProjectVO;
+using MESForm.Han;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,20 +16,12 @@ namespace MESForm.Services
             ReOrderDAC dac = new ReOrderDAC();
             dac.Dispose();
         }
-        public List<ReOrderFactoryVO> SelectFactory()
+        
+        public List<ReOrderOrderVO> SelectOrder(DateTime date)
         {
             ReOrderDAC dac = new ReOrderDAC();
-            return dac.SelectFactory();
+            return dac.SelectOrder(date);
         }
-        public List<ReOrderOrderVO> SelectOrder()
-        {
-            ReOrderDAC dac = new ReOrderDAC();
-            return dac.SelectOrder();
-        }
-        public List<string> SelectHouse()
-        {
-            ReOrderDAC dac = new ReOrderDAC();
-            return dac.SelectHouse();
-        }
+       
     }
 }

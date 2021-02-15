@@ -53,7 +53,6 @@ namespace MESForm
             if (txtFa.TextLength == 0)
             {
                 txtID.Enabled = true;
-                txtFa.Enabled = true;
                 txtName.Enabled = true;
                 dtpfrom.Enabled = true;
                 dtpto.Enabled = true;
@@ -62,7 +61,6 @@ namespace MESForm
             else
             {
                 txtID.Enabled = false;
-                txtFa.Enabled = false;
                 txtName.Enabled = false;
                 dtpfrom.Enabled = false;
                 dtpto.Enabled = false;
@@ -76,7 +74,6 @@ namespace MESForm
             {
                 txtID.Enabled = true;
                 txtFa.Enabled = true;
-                txtFa.Enabled = true;
                 dtpfrom.Enabled = true;
                 dtpto.Enabled = true;
             }
@@ -84,10 +81,9 @@ namespace MESForm
             {
                 txtID.Enabled = false;
                 txtFa.Enabled = false;
-                txtFa.Enabled = false;
                 dtpfrom.Enabled = false;
                 dtpto.Enabled = false;
-                txtFa.Text = "";
+               
             }
 
         }
@@ -113,6 +109,12 @@ namespace MESForm
                 {
                     MessageBox.Show("작업지시확정에 실패했습니다.");
                 }
+                else
+                {
+                    MessageBox.Show("작업지시확정에 성공했습니다.");
+                    dgvList.DataSource = null;
+                }
+                
             }
             else
             {
@@ -121,6 +123,12 @@ namespace MESForm
                 {
                     MessageBox.Show("작업지시확정에 실패했습니다.");
                 }
+                else
+                {
+                    MessageBox.Show("작업지시확정에 성공했습니다.");
+                    dgvList.DataSource = null;
+                }
+              
             }
         }
 
