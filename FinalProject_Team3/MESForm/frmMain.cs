@@ -341,7 +341,7 @@ namespace MESForm
 
         private void btnAuthority_Click(object sender, EventArgs e)
         {
-            OpenCreateForm<frmAuthority>();
+            
         }
 
         private void button9_Click(object sender, EventArgs e)//bom
