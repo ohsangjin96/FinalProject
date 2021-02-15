@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace MESForm
 {
+   
     public partial class PopUpUserAuthority : MESForm.BaseForms.frmPopup
     {
         public PopUpUserAuthority()
