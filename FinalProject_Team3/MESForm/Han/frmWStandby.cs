@@ -94,6 +94,16 @@ namespace MESForm.Han
         }
 
         #region 헤더체크박스
+        private void HearderCheckBox_Click(object sender, EventArgs e)
+        {
+            dgvWaitingWarehouse.EndEdit();
+
+            foreach (DataGridViewRow row in dgvWaitingWarehouse.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells["chk"];
+                chk.Value = hearderCheckBox.Checked;
+            }
+        }
 
         private void HearderCheckBox2_Click(object sender, EventArgs e)
         {
