@@ -460,9 +460,10 @@ namespace MESForm
             OpenCreateForm<Han.frmCurrentSR>();
         }
 
-        private void btnMC_Request_Click(object sender, EventArgs e)
+        private void btnMC_Request_Click(object sender, EventArgs e)//자재불출요청
         {
-            OpenCreateForm<Han.frmMR_Request>();
+            FrmMRequest frm = new FrmMRequest();
+            MdiOpenCheck(frm);
         }
 
         private void btnMConfine_Click(object sender, EventArgs e)

@@ -35,7 +35,8 @@ namespace FProjectDAC
                                     ITEM_WareHouse_OUT, ITME_LeadTime, ITME_Min_Order_Qty, ITME_Safe_Qty, ITME_Manager, ITME_Last_Modifier,
                                     Convert(Date, ITME_Last_Modifier_Time, 23) ITME_Last_Modifier_Time, ITME_Use, 
                                     ITEM_Discontinuance, ITEM_Delivery_Type, ITEM_Remark
-                                    from ITEM";
+                                    from ITEM
+                                    order by ITEM_Type desc";
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ItemVO> list = Helper.DataReaderMapToList<ItemVO>(reader);
 
