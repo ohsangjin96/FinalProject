@@ -70,8 +70,11 @@ namespace FProjectDAC
                     if (cul < 0)
                         return false; 
                 }
+                cmd.CommandText = @"update Demand set Demand_Stated = '발주완료' where Plan_ID = @Plan_ID";
+                int cull = cmd.ExecuteNonQuery();
+                if (cull < 0)
+                    return false;
                 return true;
-                cmd.CommandText = @"update Demand set Demand_State = '발주완료' where Plan_ID = @Plan_ID";
             }
 
         }
