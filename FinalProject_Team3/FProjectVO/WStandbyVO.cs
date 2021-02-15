@@ -21,11 +21,9 @@ namespace FProjectVO
         public int Reorder_Balance { get; set; }
         public string Order_FixedDate { get; set; }
         public string Reorder_Note { get; set; }
-        public string Reorder_InDate { get; set; }
 
         public int Reorder_Number { get; set; }
         public int InQty { get; set; }
         public string InDate { get; set; }
-        //public string Warehouse_Note { get; set; }
     }
 }

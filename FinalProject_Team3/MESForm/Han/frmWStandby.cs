@@ -74,7 +74,7 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주량", "Reorder_Amount");
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "입고수량", "Reorder_InAmount");
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "잔량", "Reorder_Balance");
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주유형", "Order_FixedDate");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "납기일자", "Order_FixedDate");
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "비고", "Reorder_Note");
 
             //CommonUtil.AddGridTextColumn(dgvWarehouse, "발주번호", "aa");
@@ -90,7 +90,6 @@ namespace MESForm.Han
             //CommonUtil.AddGridTextColumn(dgvWarehouse, "검사유무", "ak");
             CommonUtil.AddGridTextColumn(dgvWarehouse, "비고", "Reorder_Note");
 
-            dgvWarehouse.Columns["InQty"].ReadOnly = false;
             dgvWarehouse.Columns["InDate"].ReadOnly = false;
         }
 
@@ -185,22 +184,10 @@ namespace MESForm.Han
                 if (Convert.ToBoolean(dgvWarehouse["chk2", i].Value))
                 {
                     #region 유효성 체크
-                    int inAmount = Convert.ToInt32(dgvWarehouse["InQty", i].Value);
-                    int rbAmount = Convert.ToInt32(dgvWaitingWarehouse["Reorder_Balance", i].Value);
                     string inDate = Convert.ToString(dgvWarehouse["InDate", i].Value);
-                    if (inAmount < 1)
-                    {
-                        MessageBox.Show($"최소 1개의 수량을 입력해주세요.");
-                        return;
-                    }
-                    if (rbAmount < inAmount)
-                    {
-                        MessageBox.Show($"입력한 입고량이 현재 잔량보다 많습니다.");
-                        return;
-                    }
                     if (string.IsNullOrEmpty(inDate))
                     {
-                        MessageBox.Show($"납기일을 입력해주세요.");
+                        MessageBox.Show($"납기일을 입력하지 않은 품목이 있습니다.");
                         return;
                     }
                     #endregion

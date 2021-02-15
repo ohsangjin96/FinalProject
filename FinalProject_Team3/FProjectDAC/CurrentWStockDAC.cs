@@ -31,10 +31,10 @@ namespace FProjectDAC
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select ROW_NUMBER() OVER (Order by Warehouse_ID desc) RowNo, Factory_Code,  
-                                           ITEM_WareHouse_IN, W.ITEM_Code, ITEM_Name, ITEM_Type, ITEM_Standard,
-	                                       Warehouse_StockQty, ITEM_Unit, ITEM_Remark
-                                    from Warehouse W join ITEM I on W.ITEM_Code = I.ITEM_Code";
+                cmd.CommandText = @"select Factory_Code, ITEM_WareHouse_IN, W.ITEM_Code, ITEM_Name, ITEM_Type,
+                                           ITEM_Standard, Warehouse_StockQty, ITEM_Unit, ITEM_Remark
+                                    from Warehouse W join ITEM I on W.ITEM_Code = I.ITEM_Code
+									where Warehouse_StockQty != 0";
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<CurrentWStockVO> list = Helper.DataReaderMapToList<CurrentWStockVO>(reader);

@@ -18,7 +18,6 @@ namespace FProjectVO
         public string ITEM_Standard { get; set; }
         public string ITEM_Type { get; set; }
         public string ITEM_Unit { get; set; }
-        public string Reorder_InspYN { get; set; }
         public int Reorder_Amount { get; set; }
         public int Reorder_InAmount { get; set; }
         public int Reorder_Balance { get; set; }
@@ -28,8 +27,8 @@ namespace FProjectVO
 
         public string ITEM_WareHouse_IN { get; set; }
         public int MC_IngCost { get; set; }
-        public string Warehouse_Date { get; set; }
-        public string Reorder_Note { get; set; }
+        public DateTime Warehousing_Date { get; set; }
+        public string Warehousing_Note { get; set; }
 
         public string Factory_Code { get; set; }
         public int Warehouse_StockQty { get; set; }
