@@ -64,8 +64,8 @@ namespace MESForm.Han
             #endregion
 
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주일", "Reorder_OrderDate");
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주업체", "b");
-            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "납품업체", "Com_Name");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "발주업체", "Com_Name");
+            CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "납품업체", "ITEM_Delivery_Company");
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품목", "ITEM_Code");
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "품명", "ITEM_Name");
             CommonUtil.AddGridTextColumn(dgvWaitingWarehouse, "규격", "ITEM_Standard");
@@ -130,18 +130,35 @@ namespace MESForm.Han
                 hearderCheckBox2.Checked = false;
         }
 
+        private void ComboBoxBind()
+        {
+            CompanyService companyService = new CompanyService();
+            List<CompanyVO> companyList = companyService.GetCompanyList();
+            List<CompanyVO> companyList2 = companyService.GetCompanyList();
+            companyService.Dispose();
+
+            ComboBoxBinding.CompanyBind(cboCompany, companyList);
+            ComboBoxBinding.CompanyBind(cboInCompany, companyList2);
+        }
+
         private void LoadData()
         {
+            string sDate = dtpDate.DtpFrom.ToShortDateString();
+            string eDate = dtpDate.DtpTo.ToShortDateString();
+            string itemCode = txtItem.Text;
+            string comName = cboCompany.Text;
+            string inComName = cboInCompany.Text;
+
             WStandbyService service = new WStandbyService();
-            list = service.GetWStandbyList();
+            list = service.GetWStandbyList(sDate, eDate, itemCode, comName, inComName);
             service.Dispose();
             dgvWaitingWarehouse.DataSource = list;
         }
 
         private void frmWStandby_Load(object sender, EventArgs e)
         {
+            ComboBoxBind();
             DGVSetting();
-            //LoadData();
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)

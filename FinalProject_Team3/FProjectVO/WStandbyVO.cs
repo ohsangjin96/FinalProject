@@ -9,8 +9,8 @@ namespace FProjectVO
     public class WStandbyVO
     {
         public string Reorder_OrderDate { get; set; }
-        //public string 발주업체  { get; set; }
         public string Com_Code { get; set; }
+        public string ITEM_Delivery_Company { get; set; }
         public string Com_Name { get; set; }
         public string ITEM_Code { get; set; }
         public string ITEM_Name { get; set; }

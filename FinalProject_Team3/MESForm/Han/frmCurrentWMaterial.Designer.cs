@@ -160,8 +160,8 @@ namespace MESForm.Han
             // 
             // dtpDate
             // 
-            this.dtpDate.DtpFrom = new System.DateTime(2021, 2, 10, 17, 2, 20, 275);
-            this.dtpDate.DtpTo = new System.DateTime(2021, 2, 10, 17, 2, 20, 275);
+            this.dtpDate.DtpFrom = new System.DateTime(2021, 2, 15, 22, 24, 29, 732);
+            this.dtpDate.DtpTo = new System.DateTime(2021, 2, 15, 22, 24, 29, 732);
             this.dtpDate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDate.Location = new System.Drawing.Point(130, 20);
             this.dtpDate.Name = "dtpDate";
@@ -202,6 +202,7 @@ namespace MESForm.Han
             // 
             // dgvWMaterialList
             // 
+            this.dgvWMaterialList.AllowUserToAddRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvWMaterialList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvWMaterialList.BackgroundColor = System.Drawing.Color.White;

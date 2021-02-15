@@ -115,11 +115,13 @@ namespace MESForm.Han
 
         private void ComboBoxBind()
         {
-            CommonCodeService commonService = new CommonCodeService();
-            List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
-            commonService.Dispose();
+            CompanyService companyService = new CompanyService();
+            List<CompanyVO> companyList = companyService.GetCompanyList();
+            List<CompanyVO> companyList2 = companyService.GetCompanyList();
+            companyService.Dispose();
 
-            //ComboBoxBinding.ComBind(cboOrderState, commonList, "OrderState000");
+            ComboBoxBinding.CompanyBind(cboCompany, companyList);
+            ComboBoxBinding.CompanyBind(cboInCompany, companyList2);
         }
 
         private void LoadData()
@@ -127,8 +129,8 @@ namespace MESForm.Han
             string sDate = dtpDate.DtpFrom.ToShortDateString();
             string eDate = dtpDate.DtpTo.ToShortDateString();
             string itemCode = txtItem.Text;
-            string comName = txtCompany.Text;
-            string inComName = txtInCompany.Text;
+            string comName = cboCompany.Text;
+            string inComName = cboInCompany.Text;
 
             WMaterialService service = new WMaterialService();
             list = service.GetWMaterialList(sDate, eDate, itemCode, comName, inComName);
@@ -138,9 +140,8 @@ namespace MESForm.Han
 
         private void frmWMaterial2_Load(object sender, EventArgs e)
         {
-            //ComboBoxBind();
+            ComboBoxBind();
             DgvSetting();
-            //LoadData();
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)

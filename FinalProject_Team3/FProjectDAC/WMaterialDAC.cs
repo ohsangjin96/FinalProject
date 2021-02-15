@@ -33,22 +33,6 @@ namespace FProjectDAC
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                //    cmd.CommandText = @"select ROW_NUMBER() OVER (Order by Reorder_Number desc) RowNo, C.Com_Name, ITEM_Delivery_Company, R.ITEM_Code, I.ITEM_Name, ITEM_Standard,
-                //                               ITEM_Type, ITEM_Unit, Reorder_InspYN, Reorder_Amount, Reorder_InAmount,
-                //                               Reorder_Balance , Order_FixedDate, Reorder_State, Reorder_Number,
-                //                               ITEM_WareHouse_IN, MC_IngCost, Factory_Code, Reorder_Note
-                //                        from Reorder R join Company C on R.Com_Code = C.Com_Code
-                //                        			   join ITEM I on R.ITEM_Code = I.ITEM_Code
-                //                        			   join PO P on R.Plan_ID = P.Plan_ID
-                //                              join Material_Cost MC on I.ITEM_Code = MC.ITEM_Code
-                //                              join Factory F on F.Factory_Name = I.ITEM_WareHouse_IN
-                //                        where MC_BeforeCost = 0 and Reorder_State != '입고완료' and
-                //                              Order_FixedDate between @dtpFrom and @dtpEnd and
-                //Reorder_State = ISNULL(@Reorder_State, Reorder_State) and
-                //I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code) and
-                //C.Com_Name = ISNULL(@Com_Name, C.Com_Name) and
-                //ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company)";
-
                 cmd.CommandText = @"select distinct C.Com_Name, ITEM_Delivery_Company, WT.ITEM_Code, I.ITEM_Name,
                                            ITEM_Standard, ITEM_Type, ITEM_Unit, Reorder_Amount, Reorder_InAmount,
                                            Reorder_Balance , Reorder_State, WT.Reorder_Number,

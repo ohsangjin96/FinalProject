@@ -16,10 +16,10 @@ namespace MESForm.Services
             dac.Dispose();
         }
 
-        public List<WStandbyVO> GetWStandbyList()
+        public List<WStandbyVO> GetWStandbyList(string sDate, string eDate, string itemCode, string comName, string inComName)
         {
             WStandbyDAC dac = new WStandbyDAC();
-            return dac.GetWStandbyList();
+            return dac.GetWStandbyList(sDate, eDate, itemCode, comName, inComName);
         }
 
         public bool InsertWarehouseWaiting(List<WStandbyVO> list)

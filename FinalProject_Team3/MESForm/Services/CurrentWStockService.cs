@@ -16,10 +16,10 @@ namespace MESForm.Services
             dac.Dispose();
         }
 
-        public List<CurrentWStockVO> GetCurrentWStockList()
+        public List<CurrentWStockVO> GetCurrentWStockList(string itemCode, string itemType, string warehouse)
         {
             CurrentWStockDAC dac = new CurrentWStockDAC();
-            return dac.GetCurrentWStockList();
+            return dac.GetCurrentWStockList(itemCode, itemType, warehouse);
         }
     }
 }

@@ -26,22 +26,32 @@ namespace FProjectDAC
             conn.Dispose();
         }
 
-        public List<WStandbyVO> GetWStandbyList()
+        public List<WStandbyVO> GetWStandbyList(string sDate, string eDate, string itemCode, string comName, string inComName)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"select distinct Reorder_Number,
                                            Convert(nvarchar(10), Reorder_OrderDate, 23) Reorder_OrderDate, 
-	                                       R.Com_Code, C.Com_Name, R.ITEM_Code, I.ITEM_Name, ITEM_Standard, ITEM_Unit,
-                                           Reorder_Amount, Reorder_InAmount, Reorder_Balance,
+	                                       R.Com_Code, Com_Name, ITEM_Delivery_Company, R.ITEM_Code, I.ITEM_Name,
+                                           ITEM_Standard, ITEM_Unit, Reorder_Amount, Reorder_InAmount, Reorder_Balance,
 	                                       Convert(nvarchar(10), (Order_FixedDate - BOR_ReadyTime), 23) Order_FixedDate
                                     from Reorder R join Company C on R.Com_Code = C.Com_Code
                                     			   join ITEM I on R.ITEM_Code = I.ITEM_Code 
                                     			   join PO P on R.Plan_ID = P.Plan_ID
 												   join BOR B on R.ITEM_Code = B.Item_Code
-                                    where Reorder_State = '발주상태'";
-                                    
+                                    where Reorder_State = '발주상태' and
+										  Order_FixedDate between @dtpFrom and @dtpEnd and
+                                          Com_Name = ISNULL(@Com_Name, C.Com_Name) and
+                                          ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company) and
+                                          I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code)";
+
+                cmd.Parameters.AddWithValue("@dtpFrom", sDate);
+                cmd.Parameters.AddWithValue("@dtpEnd", eDate);
+                cmd.Parameters.AddWithValue("@ITEM_Code", (string.IsNullOrEmpty(itemCode)) ? DBNull.Value : (object)itemCode);
+                cmd.Parameters.AddWithValue("@Com_Name", (string.IsNullOrEmpty(comName)) ? DBNull.Value : (object)comName);
+                cmd.Parameters.AddWithValue("@ITEM_Delivery_Company", (string.IsNullOrEmpty(inComName)) ? DBNull.Value : (object)inComName);
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WStandbyVO> list = Helper.DataReaderMapToList<WStandbyVO>(reader);
 
