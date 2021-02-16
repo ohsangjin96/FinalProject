@@ -33,7 +33,7 @@ namespace FProjectDAC
             using(SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select distinct C.Com_Name, ITEM_Delivery_Company, WT.ITEM_Code, I.ITEM_Name,
+                cmd.CommandText = @"select C.Com_Name, ITEM_Delivery_Company, WT.ITEM_Code, I.ITEM_Name,
                                            ITEM_Standard, ITEM_Type, ITEM_Unit, Reorder_Amount, Reorder_InAmount,
                                            Reorder_Balance , Reorder_State, WT.Reorder_Number,
                                            Warehousing_Date, Warehousing_Note, Mtp_Date as Order_FixedDate,
