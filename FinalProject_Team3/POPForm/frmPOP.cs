@@ -42,7 +42,7 @@ namespace POPForm
         {
             lblName.Text =$"{Vo.User_Dept}-{Vo.User_Name}";
            
-            label3.Text = "2021-02-11";
+            label3.Text = "2021-02-17";
             CommonUtil.SetInitGridView(dgvList);
             
             CommonUtil.AddGridTextColumn(dgvList, "품목", "Item_Code", 165);

@@ -91,10 +91,8 @@ namespace MESForm
             {
                 if (dtpfrom.Value < dtpto.Value)
                 {
-                    string datefrom = dtpfrom.Value.ToString("yyyyMMdd");
-                    string dateto = dtpto.Value.ToString("yyyyMMdd");
                     var selectdata = (from selected in list
-                                      where int.Parse(selected.WorkRegist_Start) > int.Parse(datefrom) && int.Parse(selected.WorkRegist_Start) < int.Parse(dateto)
+                                      where int.Parse(selected.WorkRegist_Start) > int.Parse(dtpfrom.Value.ToString()) && int.Parse(selected.WorkRegist_Start) < int.Parse(dtpto.Value.ToString())
                                       select selected).ToList();
                     selectlist = selectdata;
 
@@ -154,9 +152,13 @@ namespace MESForm
 
         private void custButtonControl2_Click(object sender, EventArgs e)
         {
-            if (bflag)
+            POPService service = new POPService();
+            List<WorkRegistVO> shiplist = service.GetShipment();
+            List<WorkRegistVO> selectlist = new List<WorkRegistVO>();
+            for(int i = 1; i< shiplist.Count; i++)
             {
-
+                shiplist[0].Plan_ID = selectlist[0].Plan_ID;
+                
             }
         }
     }

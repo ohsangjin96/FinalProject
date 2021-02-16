@@ -34,8 +34,7 @@ namespace FProjectDAC
                 cmd.CommandText = @"select Factory_Code, ITEM_WareHouse_IN, W.ITEM_Code, ITEM_Name, ITEM_Type,
                                            ITEM_Standard, Warehouse_StockQty, ITEM_Unit, ITEM_Remark
                                     from Warehouse W join ITEM I on W.ITEM_Code = I.ITEM_Code
-									where Warehouse_StockQty != 0 and
-										  W.ITEM_Code = ISNULL(@ITEM_Code, W.ITEM_Code) and
+									where W.ITEM_Code = ISNULL(@ITEM_Code, W.ITEM_Code) and
 										  ITEM_Type = ISNULL(@ITEM_Type, ITEM_Type) and
 										  ITEM_WareHouse_IN = ISNULL(@ITEM_WareHouse_IN, ITEM_WareHouse_IN)";
 

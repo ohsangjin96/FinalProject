@@ -25,5 +25,10 @@ namespace MESForm.Services
             POPDAC dac = new POPDAC();
             return dac.GetWorkRegist();
         }
+        public List<WorkRegistVO> GetShipment()
+        {
+            POPDAC dac = new POPDAC();
+            return dac.GetShipment();
+        }
     }
 }

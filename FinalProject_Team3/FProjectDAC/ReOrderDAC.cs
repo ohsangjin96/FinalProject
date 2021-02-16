@@ -72,6 +72,8 @@ namespace FProjectDAC
                         cmd.Parameters.AddWithValue("@WareHouse_In", list[i].ITEM_WareHouse_IN);
                         iRowAffect = cmd.ExecuteNonQuery();
                     }
+                    cmd.CommandText = @"Update Material_Take_Plan set Mtp_State = '발주완료' where Plan_ID=@Plan_ID";
+                    iRowAffect = cmd.ExecuteNonQuery();
                     return iRowAffect > 0;
                 }
             }
