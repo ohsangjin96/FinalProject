@@ -40,7 +40,7 @@ namespace MESForm.PopUp
             list = service.GetCommonCodeList();
             dgvCommonCode.DataSource = list;
 
-            ComboBoxBinding.CommonCodeBind(cboParentCode, list, "Common_Code", true, "선택");
+            ComboBoxBinding.CommonCodeParentBind(cboParentCode, list, "Common_Code", true, "선택");
         }
 
         private void CommonCodePopUp_Load(object sender, EventArgs e)
@@ -181,6 +181,8 @@ namespace MESForm.PopUp
                     {
                         MessageBox.Show(Properties.Resources.DeleteSuccess);
                         LoadData();
+                        txtCode.Text = txtCodeName.Text = string.Empty;
+                        cboParentCode.SelectedIndex = 0;
                     }
                     else
                         MessageBox.Show(Properties.Resources.ErrDeleteFailed);
@@ -251,6 +253,20 @@ namespace MESForm.PopUp
 
         private void dgvCommonCode_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(pnl.Size.Height != 329)
+            {
+                txtCode.Enabled = true;
+                btnCodeVal.Visible = true;
+                updateMode = false;
+
+                gboInsert.Visible = true;
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                pnl.Location = new Point(12, 308);
+                pnl.Size = new Size(491, 329);
+                bRegCheck = false;
+            }
+
             txtCode.Text = dgvCommonCode[1, e.RowIndex].Value.ToString();
             txtCodeName.Text = dgvCommonCode[2, e.RowIndex].Value.ToString();
 

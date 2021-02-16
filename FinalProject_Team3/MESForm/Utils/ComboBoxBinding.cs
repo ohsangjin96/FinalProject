@@ -18,7 +18,7 @@ namespace MESForm.Utils
         /// <param name="displayMember">보여줄 내용</param>
         /// <param name="blankItem">맨 위줄 빈칸 생성</param>
         /// <param name="blankText">빈 칸의 내용</param>
-        public static void CommonCodeBind(ComboBox cbo, List<CommonCodeVO> list, string displayMember, bool blankItem = true, string blankText = "")
+        public static void CommonCodeParentBind(ComboBox cbo, List<CommonCodeVO> list, string displayMember, bool blankItem = true, string blankText = "")
         {
             list = (from a in list
                     where a.Common_Parent == null
@@ -58,7 +58,7 @@ namespace MESForm.Utils
             {
                 CommonCodeVO blank = new CommonCodeVO
                 {
-                    //Common_Code = "",
+                    Common_Code = "",
                     Common_Name = blankText // [선택,전체] 둘 중 하나 사용
                 };
 
@@ -66,6 +66,27 @@ namespace MESForm.Utils
             }
             cbo.DisplayMember = "Common_Name";
             cbo.ValueMember =  "Common_code";
+            cbo.DataSource = list;
+        }
+        public static void CommonCodeBind(ComboBox cbo, List<CommonCodeVO> list, string Code, bool blankItem = true, string blankText = "")
+        {
+            list = (from a in list
+                    orderby a.Common_Name
+                    where a.Common_Parent == Code  //Common_Parent의 코드명
+                    select a).ToList();
+
+            if (blankItem)
+            {
+                CommonCodeVO blank = new CommonCodeVO
+                {
+                    Common_Code = blankText,
+                    Common_Name = "" // [선택,전체] 둘 중 하나 사용
+                };
+
+                list.Insert(0, blank);
+            }
+            cbo.DisplayMember = "Common_code";
+            cbo.ValueMember = "Common_Name";
             cbo.DataSource = list;
         }
         /// <summary>
