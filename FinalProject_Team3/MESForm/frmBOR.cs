@@ -74,6 +74,7 @@ namespace MESForm
             BORService service = new BORService();
             List<BORVO> list = service.GetBORList();
             service.Dispose();
+
             dgvBOR.DataSource = list;
         }
 
@@ -82,10 +83,9 @@ namespace MESForm
             CommonCodeService commonService = new CommonCodeService();
             List<CommonCodeVO> commonList = commonService.GetCommonCodeList();
             commonService.Dispose();
-            ComboBoxBinding.ComBind(cboRoute, commonList, "B-Route");
+            ComboBoxBinding.CommonCodeBind(cboRoute, commonList, "B-Route");
 
             DgvSetting();
-            //LoadData();
         }
 
         /// <summary>
