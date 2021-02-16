@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
@@ -46,7 +41,6 @@
             this.txtItemCodeOrName = new System.Windows.Forms.TextBox();
             this.lblFactoryCode = new System.Windows.Forms.Label();
             this.dgvBom = new MESForm.CustomControls.custDataGridViewControl();
-           
             this.cboUseYN = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btncopy = new MESForm.CustomControls.custButtonControl();
@@ -64,7 +58,8 @@
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
             this.pnlSelect.Controls.Add(this.txtItemCodeOrName);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
-            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
+            this.pnlSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSelect.Size = new System.Drawing.Size(1576, 95);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtItemCodeOrName, 0);
@@ -76,20 +71,23 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Location = new System.Drawing.Point(1484, 36);
+            this.btnInquiry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 114);
-            this.lblFormName1.Size = new System.Drawing.Size(51, 21);
+            this.lblFormName1.Location = new System.Drawing.Point(15, 147);
+            this.lblFormName1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFormName1.Size = new System.Drawing.Size(64, 27);
             this.lblFormName1.Text = "BOM";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvBom);
-            this.pnlItem.Location = new System.Drawing.Point(12, 141);
-            this.pnlItem.Size = new System.Drawing.Size(1226, 581);
+            this.pnlItem.Location = new System.Drawing.Point(15, 181);
+            this.pnlItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlItem.Size = new System.Drawing.Size(1576, 747);
             // 
             // panel1
             // 
@@ -99,8 +97,9 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
-            this.panel1.Location = new System.Drawing.Point(689, 94);
-            this.panel1.Size = new System.Drawing.Size(549, 41);
+            this.panel1.Location = new System.Drawing.Point(886, 121);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Size = new System.Drawing.Size(706, 53);
             // 
             // btnReg
             // 
@@ -110,9 +109,10 @@
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReg.ForeColor = System.Drawing.Color.Black;
-            this.btnReg.Location = new System.Drawing.Point(14, 3);
+            this.btnReg.Location = new System.Drawing.Point(18, 4);
+            this.btnReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(83, 32);
+            this.btnReg.Size = new System.Drawing.Size(107, 41);
             this.btnReg.TabIndex = 14;
             this.btnReg.Text = "등록";
             this.btnReg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -127,9 +127,10 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(192, 3);
+            this.btnUpdate.Location = new System.Drawing.Point(247, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(83, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(107, 41);
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -144,9 +145,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(281, 3);
+            this.btnDelete.Location = new System.Drawing.Point(361, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(83, 32);
+            this.btnDelete.Size = new System.Drawing.Size(107, 41);
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -161,9 +163,10 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(372, 3);
+            this.btnExcel.Location = new System.Drawing.Point(478, 4);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(83, 32);
+            this.btnExcel.Size = new System.Drawing.Size(107, 41);
             this.btnExcel.TabIndex = 11;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -178,9 +181,10 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(461, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(593, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(83, 32);
+            this.btnRefresh.Size = new System.Drawing.Size(107, 41);
             this.btnRefresh.TabIndex = 10;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,79 +195,94 @@
             // 
             this.cboItemType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboItemType.FormattingEnabled = true;
-            this.cboItemType.Location = new System.Drawing.Point(499, 27);
+            this.cboItemType.Location = new System.Drawing.Point(642, 35);
+            this.cboItemType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboItemType.Name = "cboItemType";
-            this.cboItemType.Size = new System.Drawing.Size(191, 22);
+            this.cboItemType.Size = new System.Drawing.Size(244, 26);
             this.cboItemType.TabIndex = 33;
             // 
             // lblFactoryGrade
             // 
             this.lblFactoryGrade.AutoSize = true;
             this.lblFactoryGrade.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryGrade.Location = new System.Drawing.Point(380, 30);
+            this.lblFactoryGrade.Location = new System.Drawing.Point(489, 39);
+            this.lblFactoryGrade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFactoryGrade.Name = "lblFactoryGrade";
-            this.lblFactoryGrade.Size = new System.Drawing.Size(55, 14);
+            this.lblFactoryGrade.Size = new System.Drawing.Size(69, 19);
             this.lblFactoryGrade.TabIndex = 32;
             this.lblFactoryGrade.Text = "품목유형";
             // 
             // txtItemCodeOrName
             // 
-            this.txtItemCodeOrName.Location = new System.Drawing.Point(125, 27);
+            this.txtItemCodeOrName.Location = new System.Drawing.Point(161, 35);
+            this.txtItemCodeOrName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtItemCodeOrName.Name = "txtItemCodeOrName";
-            this.txtItemCodeOrName.Size = new System.Drawing.Size(191, 22);
+            this.txtItemCodeOrName.Size = new System.Drawing.Size(244, 26);
             this.txtItemCodeOrName.TabIndex = 31;
             // 
             // lblFactoryCode
             // 
             this.lblFactoryCode.AutoSize = true;
             this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryCode.Location = new System.Drawing.Point(30, 30);
+            this.lblFactoryCode.Location = new System.Drawing.Point(39, 39);
+            this.lblFactoryCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFactoryCode.Name = "lblFactoryCode";
-            this.lblFactoryCode.Size = new System.Drawing.Size(49, 14);
+            this.lblFactoryCode.Size = new System.Drawing.Size(61, 19);
             this.lblFactoryCode.TabIndex = 30;
             this.lblFactoryCode.Text = "품목/명";
             // 
             // dgvBom
             // 
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.dgvBom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvBom.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvBom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBom.BackgroundColor = System.Drawing.Color.White;
             this.dgvBom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBom.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBom.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBom.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvBom.Location = new System.Drawing.Point(0, 0);
+            this.dgvBom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvBom.Name = "dgvBom";
+            this.dgvBom.RowHeadersWidth = 51;
             this.dgvBom.RowTemplate.Height = 23;
-            this.dgvBom.Size = new System.Drawing.Size(1226, 581);
+            this.dgvBom.Size = new System.Drawing.Size(1576, 747);
             this.dgvBom.TabIndex = 0;
-           
             // 
             // cboUseYN
             // 
             this.cboUseYN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUseYN.FormattingEnabled = true;
-            this.cboUseYN.Location = new System.Drawing.Point(873, 27);
+            this.cboUseYN.Location = new System.Drawing.Point(1122, 35);
+            this.cboUseYN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboUseYN.Name = "cboUseYN";
-            this.cboUseYN.Size = new System.Drawing.Size(191, 22);
+            this.cboUseYN.Size = new System.Drawing.Size(244, 26);
             this.cboUseYN.TabIndex = 35;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(754, 30);
+            this.label1.Location = new System.Drawing.Point(969, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 14);
+            this.label1.Size = new System.Drawing.Size(69, 19);
             this.label1.TabIndex = 34;
             this.label1.Text = "사용유무";
             // 
@@ -275,9 +294,10 @@
             this.btncopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncopy.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btncopy.ForeColor = System.Drawing.Color.Black;
-            this.btncopy.Location = new System.Drawing.Point(103, 3);
+            this.btncopy.Location = new System.Drawing.Point(132, 4);
+            this.btncopy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btncopy.Name = "btncopy";
-            this.btncopy.Size = new System.Drawing.Size(83, 32);
+            this.btncopy.Size = new System.Drawing.Size(107, 41);
             this.btncopy.TabIndex = 15;
             this.btncopy.Text = "복사";
             this.btncopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -286,8 +306,9 @@
             // 
             // FrmBOM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(1250, 700);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.ClientSize = new System.Drawing.Size(1607, 900);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmBOM";
             this.Text = "BOM";
             this.Load += new System.EventHandler(this.FrmBOM_Load);

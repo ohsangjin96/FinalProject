@@ -61,6 +61,7 @@
     <Compile Include="LogDAC.cs" />
     <Compile Include="LoginDAC.cs" />
     <Compile Include="MaterialCostDAC.cs" />
+    <Compile Include="MReleaseDAC.cs" />
     <Compile Include="MRequestDAC.cs" />
     <Compile Include="MtpDAC.cs" />
     <Compile Include="OrderDAC.cs" />
