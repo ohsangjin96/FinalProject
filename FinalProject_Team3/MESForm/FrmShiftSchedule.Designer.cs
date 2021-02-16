@@ -54,7 +54,8 @@
             this.pnlSelect.Controls.Add(this.cboShift);
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
-            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
+            this.pnlSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSelect.Size = new System.Drawing.Size(1576, 95);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryGrade, 0);
@@ -66,27 +67,31 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
+            this.btnInquiry.Location = new System.Drawing.Point(1484, 36);
+            this.btnInquiry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 108);
-            this.lblFormName1.Size = new System.Drawing.Size(78, 21);
+            this.lblFormName1.Location = new System.Drawing.Point(15, 139);
+            this.lblFormName1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFormName1.Size = new System.Drawing.Size(100, 27);
             this.lblFormName1.Text = "일별조회";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvShift);
-            this.pnlItem.Location = new System.Drawing.Point(12, 141);
-            this.pnlItem.Size = new System.Drawing.Size(1226, 546);
+            this.pnlItem.Location = new System.Drawing.Point(15, 181);
+            this.pnlItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlItem.Size = new System.Drawing.Size(1576, 702);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
-            this.panel1.Location = new System.Drawing.Point(1053, 94);
-            this.panel1.Size = new System.Drawing.Size(185, 41);
+            this.panel1.Location = new System.Drawing.Point(1354, 121);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Size = new System.Drawing.Size(238, 53);
             // 
             // btnExcel
             // 
@@ -96,9 +101,10 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(8, 3);
+            this.btnExcel.Location = new System.Drawing.Point(10, 4);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(83, 32);
+            this.btnExcel.Size = new System.Drawing.Size(107, 41);
             this.btnExcel.TabIndex = 23;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -113,9 +119,10 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(97, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(125, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(83, 32);
+            this.btnRefresh.Size = new System.Drawing.Size(107, 41);
             this.btnRefresh.TabIndex = 22;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -125,26 +132,29 @@
             // cboFacCode
             // 
             this.cboFacCode.FormattingEnabled = true;
-            this.cboFacCode.Location = new System.Drawing.Point(836, 25);
+            this.cboFacCode.Location = new System.Drawing.Point(1075, 32);
+            this.cboFacCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboFacCode.Name = "cboFacCode";
-            this.cboFacCode.Size = new System.Drawing.Size(191, 22);
+            this.cboFacCode.Size = new System.Drawing.Size(244, 26);
             this.cboFacCode.TabIndex = 42;
             // 
             // cboShift
             // 
             this.cboShift.FormattingEnabled = true;
-            this.cboShift.Location = new System.Drawing.Point(516, 25);
+            this.cboShift.Location = new System.Drawing.Point(663, 32);
+            this.cboShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(191, 22);
+            this.cboShift.Size = new System.Drawing.Size(244, 26);
             this.cboShift.TabIndex = 41;
             // 
             // lblFactoryGrade
             // 
             this.lblFactoryGrade.AutoSize = true;
             this.lblFactoryGrade.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryGrade.Location = new System.Drawing.Point(756, 28);
+            this.lblFactoryGrade.Location = new System.Drawing.Point(972, 36);
+            this.lblFactoryGrade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFactoryGrade.Name = "lblFactoryGrade";
-            this.lblFactoryGrade.Size = new System.Drawing.Size(31, 14);
+            this.lblFactoryGrade.Size = new System.Drawing.Size(39, 19);
             this.lblFactoryGrade.TabIndex = 40;
             this.lblFactoryGrade.Text = "설비";
             // 
@@ -152,34 +162,38 @@
             // 
             this.lblFactoryCode.AutoSize = true;
             this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryCode.Location = new System.Drawing.Point(431, 28);
+            this.lblFactoryCode.Location = new System.Drawing.Point(554, 36);
+            this.lblFactoryCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFactoryCode.Name = "lblFactoryCode";
-            this.lblFactoryCode.Size = new System.Drawing.Size(36, 14);
+            this.lblFactoryCode.Size = new System.Drawing.Size(47, 19);
             this.lblFactoryCode.TabIndex = 39;
             this.lblFactoryCode.Text = "Shift";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 10, 14, 41, 15, 608);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 10, 14, 41, 15, 608);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 17, 12, 25, 886);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 17, 12, 25, 886);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(91, 25);
+            this.dateTimePicker1.Location = new System.Drawing.Point(117, 32);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(272, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(350, 28);
             this.dateTimePicker1.TabIndex = 43;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(3, 28);
+            this.label1.Location = new System.Drawing.Point(4, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 14);
+            this.label1.Size = new System.Drawing.Size(73, 19);
             this.label1.TabIndex = 44;
             this.label1.Text = "적용 일자";
             // 
             // dgvShift
             // 
+            this.dgvShift.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvShift.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShift.BackgroundColor = System.Drawing.Color.White;
@@ -204,15 +218,18 @@
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShift.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvShift.Location = new System.Drawing.Point(0, 0);
+            this.dgvShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvShift.Name = "dgvShift";
+            this.dgvShift.RowHeadersWidth = 51;
             this.dgvShift.RowTemplate.Height = 23;
-            this.dgvShift.Size = new System.Drawing.Size(1226, 546);
+            this.dgvShift.Size = new System.Drawing.Size(1576, 702);
             this.dgvShift.TabIndex = 0;
             // 
             // FrmShiftSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(1250, 700);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.ClientSize = new System.Drawing.Size(1607, 900);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmShiftSchedule";
             this.Text = "Shift 스케줄관리";
             this.Load += new System.EventHandler(this.FrmShiftSchedule_Load);

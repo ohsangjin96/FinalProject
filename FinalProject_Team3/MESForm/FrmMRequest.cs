@@ -24,6 +24,9 @@ namespace MESForm
 
         private void FrmMRequest_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.DtpTo = DateTime.Now.AddDays(5);
+
+            label4.Visible = false;
             ShiftService service = new ShiftService();
             fList = service.GetShiftInfo();
             service.Dispose();
@@ -52,15 +55,17 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvList1, "일자", "FixDate");//10
             CommonUtil.AddGridTextColumn(dgvList1, "소요시간", "TackTime");//2
             CommonUtil.AddGridTextColumn(dgvList1, "Plan_ID", "Plan_ID");//2
+            CommonUtil.AddGridTextColumn(dgvList1, "요청상태", "MR_State");//2
 
             CommonUtil.SetInitGridView(dgvList2);
             CommonUtil.AddGridTextColumn(dgvList2, "품목", "Item_Code",140);//2
             CommonUtil.AddGridTextColumn(dgvList2, "품명", "Item_Name");//2
             CommonUtil.AddGridTextColumn(dgvList2, "규격", "ITEM_Standard");//2
             CommonUtil.AddGridTextColumn(dgvList2, "단위", "ITEM_Unit");//2
-            CommonUtil.AddGridTextColumn(dgvList2, "요청창고", "ITEM_Order_Company");//2
+            CommonUtil.AddGridTextColumn(dgvList2, "요청업체", "ITEM_Order_Company");//2
             CommonUtil.AddGridTextColumn(dgvList2, "요청수량", "Qty");//2
-            CommonUtil.AddGridTextColumn(dgvList2, "일자", "FixDate");//2
+            CommonUtil.AddGridTextColumn(dgvList2, "일자", "ReqDate");//2
+            CommonUtil.AddGridTextColumn(dgvList2, "요청업체", "ITEM_WareHouse_IN");//2
         }
 
         private void btnInquiry_Click(object sender, EventArgs e)
@@ -85,14 +90,14 @@ namespace MESForm
         private void dgvList1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIdx = dgvList1.CurrentRow.Index;
-
-            string code = dgvList1[4, rowIdx].Value.ToString();
-            int qty =    Convert.ToInt32( dgvList1[9, rowIdx].Value.ToString());
-            DateTime date = Convert.ToDateTime( dgvList1[10, rowIdx].Value.ToString());
-
+            
+            string code = dgvList1[4, rowIdx].Value.ToString();//품목
+            int qty =    Convert.ToInt32( dgvList1[9, rowIdx].Value.ToString());//수량
+            string date =  dgvList1[10, rowIdx].Value.ToString();//일자
+            label4.Text= dgvList1[13, rowIdx].Value.ToString();//일자
             List<MRequestVO> List2;
             MRequestService service = new MRequestService();
-            List2 = service.GetList(code,qty);
+            List2 = service.GetList(code,qty, date);
             service.Dispose();
             dgvList2.DataSource = List2;
         }
@@ -105,6 +110,47 @@ namespace MESForm
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExcelExportImport.ExcelExportToDataGridView(this, dgvList2);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)//저장 버튼
+        {
+            int rowIdx1 = dgvList1.CurrentRow.Index;
+            int rowIdx2 = dgvList2.CurrentRow.Index;
+
+            int WCode = Convert.ToInt32(dgvList1[1, rowIdx1].Value.ToString());
+
+            string code = dgvList2[1, rowIdx2].Value.ToString();
+            string name = dgvList2[2, rowIdx2].Value.ToString();
+            string standard = dgvList2[3, rowIdx2].Value.ToString();
+            string unit = dgvList2[4, rowIdx2].Value.ToString();
+            string company = dgvList2[5, rowIdx2].Value.ToString();
+            int qty = Convert.ToInt32( dgvList2[6, rowIdx2].Value.ToString());
+            DateTime date =Convert.ToDateTime( dgvList2[7, rowIdx2].Value.ToString());
+           
+
+            MRequestService service = new MRequestService();
+            try
+            {
+                bool bFlag = service.SaveMR(code, name, standard, unit, company, qty, date, WCode);
+
+                if (label4.Text=="I")
+                {
+                    MessageBox.Show("이미 요청된 자재 입니다.");
+                    return;
+                }
+
+                if (bFlag)
+                {
+                    MessageBox.Show(Properties.Resources.SaveSuccess + "새로고침 하십시오.");
+                }
+               
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+            }
+            
         }
     }
 }

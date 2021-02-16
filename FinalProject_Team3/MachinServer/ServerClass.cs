@@ -21,6 +21,7 @@ namespace MachinServer
             service.taskID = args[0];
             service.hostIP = args[1];
             service.hostPort = int.Parse(args[2]);
+            service.qty = int.Parse(args[3]);
             service.OnStart();
 
             Console.ReadLine();
@@ -32,7 +33,7 @@ namespace MachinServer
         LoggingUtility loggingUtility;
         TcpListener listener;
         Timer timer1;
-        int success= 0;
+        int success = 0;
         int fail = 0;
         int process = 0;
         TcpClient tc;
@@ -43,12 +44,13 @@ namespace MachinServer
         public string taskID { get; set; }
         public string hostIP { get; set; }
         public int hostPort { get; set; }
+        public int qty { get; set; }
 
         public void OnStart()
         {
 
             Console.WriteLine("서비스 시작");
-            
+
 
             if (listener == null)
             {
@@ -93,7 +95,7 @@ namespace MachinServer
             stream.Write(buff, 0, buff.Length);
             //stream.Flush();
             Console.WriteLine(msg);
-            if (process >= 100)
+            if (success >= qty)
             {
                 timer1.Stop();
                 success = fail = process = 0;

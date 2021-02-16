@@ -21,6 +21,8 @@ namespace MESForm
         public FrmShiftSchedule()
         {
             InitializeComponent();
+            CommonUtil.AddGridTextColumn(dgvShift, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleLeft);
+          
         }
 
         private void btnExcel_Click(object sender, EventArgs e)

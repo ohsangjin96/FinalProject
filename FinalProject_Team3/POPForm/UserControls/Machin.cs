@@ -113,7 +113,7 @@ namespace POPForm.UserControls
             {
                 lblSuccess.Text = arrData1[0];
                 lblFail.Text = arrData1[1];
-                lblProgram.Text = arrData1[2];
+                lblProgram.Text = arrData1[0];
             }));
             LogVO log = new LogVO();
             log.LogFacility = lblFacility.Text;
@@ -122,7 +122,7 @@ namespace POPForm.UserControls
             log.LogProgram = Convert.ToInt32(arrData1[2]);
             log.WorkOrderID = WorkOrder_ID;
             service.insertLog(log);
-            if (Convert.ToInt32(lblProgram.Text) >= 100)
+            if (Convert.ToInt32(lblProgram.Text) >= Qty)
             {
                 WorkRegistVO vo = new WorkRegistVO
                 {
@@ -130,9 +130,10 @@ namespace POPForm.UserControls
                     FacilityDetail_Code = this.Tag.ToString(),
                     WorkRegist_FailQty = int.Parse(lblFail.Text),
                     WorkRegist_NomalQty = int.Parse(lblSuccess.Text),
-                    WorkRegist_WorkTime = int.Parse(lblProgram.Text) * 5,
-                    WorkRegistID = WorkOrder_ID,
+                    WorkRegist_WorkTime = int.Parse(lblProgram.Text) * 500,
                     WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
+                    WorkRegistID = WorkOrder_ID,
+                    Plan_ID = plan_ID,
                     WorkRegist_State = "제작완료",
 
                 };

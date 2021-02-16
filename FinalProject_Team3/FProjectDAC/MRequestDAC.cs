@@ -33,9 +33,9 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"SELECT [WorkOrder_ID],[Com_Code] ,[Com_Name]  ,[Item_Code],[Item_Name]
 		                                  ,[WorkOrder_State],[Facility_Code],[Facility_Name],[OrderAmount]
-		                                  ,[FixDate],[TackTime],[Plan_ID]
+		                                  ,[FixDate],[TackTime],[Plan_ID],MR_State
                                     FROM WorkOrder
-                                    where WorkOrder_State='지시확정' and FixDate>=@FixDateA  and FixDate<=@FixDateB
+                                    where WorkOrder_State='지시확정' and FixDate>=@FixDateA  and FixDate<=@FixDateB and MR_State='B' or MR_State='I'
                                  		  and Item_Code= isnull(@Item_Code,Item_Code) and WorkOrder_ID=ISNULL(@WorkOrder_ID,WorkOrder_ID) and
                                  		  Facility_Name=isnull(@Facility_Name,Facility_Name)";
 
@@ -52,7 +52,7 @@ namespace FProjectDAC
             }
         }
 
-        public List<MRequestVO> GetList(string code,int qty)
+        public List<MRequestVO> GetList(string code,int qty,string date)
         {
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -62,7 +62,7 @@ namespace FProjectDAC
 
                 cmd.Parameters.AddWithValue("@item_code", code);
                 cmd.Parameters.AddWithValue("@qty", qty);
-               
+                cmd.Parameters.AddWithValue("@reqDate", date);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<MRequestVO> list = Helper.DataReaderMapToList<MRequestVO>(reader);
@@ -70,5 +70,36 @@ namespace FProjectDAC
                 return list;
             }
         }
+
+        public bool SaveMR(string code, string name, string standard, string unit, string company, int qty, DateTime date,int WCode)
+        {
+
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"SP_InsUpMR";
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Item_Code",code);
+                cmd.Parameters.AddWithValue("@Item_name",name);
+                cmd.Parameters.AddWithValue("@Item_Standard",standard);
+                cmd.Parameters.AddWithValue("@Item_Unit",unit);
+                cmd.Parameters.AddWithValue("@item_Order_Company",company);
+                cmd.Parameters.AddWithValue("@Qty",qty);
+                cmd.Parameters.AddWithValue("@RegDate",date);
+                cmd.Parameters.AddWithValue("@WCode",WCode);
+
+                int iRowAffect = cmd.ExecuteNonQuery();
+
+                if (iRowAffect > 0)
+                    return true;
+                else
+                    return false;
+
+            }
+
+        }
+        
     }
 }

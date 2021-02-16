@@ -119,5 +119,25 @@ namespace FProjectDAC
 
             }
         }
+        public List<WorkRegistVO> GetShipment()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Plan_ID, Item_Code, FacilityDetail_Code, WorkRegist_NomalQty, WorkRegist_FailQty, WorkRegist_WorkTime, WorkRegist_Start, WorkRegist_State
+                                    from WorkRegist
+                                    where FacilityDetail_Code
+                                    in(
+                                    select Distinct(Facility_Code)
+                                    from BOR,BOM 
+                                    where BOR.Item_Code in (select distinct(Item_Code) from BOM where BOM_Level=1)
+                                    and LEFT(Facility_Code,8)='Painting')";
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkRegistVO> list = Helper.DataReaderMapToList<WorkRegistVO>(reader);
+
+                return list;
+            }
+        }
     }
 }

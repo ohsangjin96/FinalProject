@@ -511,6 +511,7 @@
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\LogService.cs" />
     <Compile Include="Services\MaterialCostService.cs" />
+    <Compile Include="Services\MRealeaseService.cs" />
     <Compile Include="Services\MRequestService.cs" />
     <Compile Include="Services\MtpService.cs" />
     <Compile Include="Services\OrderService.cs" />
@@ -752,7 +753,6 @@
     <EmbeddedResource Include="PopUp\frmUserAuthorityPopUp.resx">
       <DependentUpon>frmUserAuthorityPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

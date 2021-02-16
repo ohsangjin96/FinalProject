@@ -20,10 +20,13 @@ namespace FProjectVO
         public DateTime FixDate { get; set; }
         public int TackTime { get; set; }
         public string Plan_ID { get; set; }
+        public string MR_State { get; set; }
         public string ITEM_Standard { get; set; }
         public string ITEM_Unit { get; set; }
         public string ITEM_Order_Company { get; set; }
         public int Qty { get; set; }
+        public string ReqDate { get; set; }
+        public string ITEM_WareHouse_IN { get; set; }
 
     }
 }
