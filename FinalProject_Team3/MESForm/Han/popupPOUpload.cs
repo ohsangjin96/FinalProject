@@ -188,15 +188,18 @@ namespace MESForm.Han
 
         private void dtpPlan_ValueChanged(object sender, EventArgs e)   //계획일자선택
         {
-            if (dtpPlan.Value < DateTime.Now)
+            if (dtpPlan.Value.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("현재날짜 이전의 날짜는 계획일자로 선택할 수 없습니다.");
-                dtpPlan.Value = DateTime.Now;
+                dtpPlan.Value = DateTime.Now.Date;
+                txtPlanVersion.Text = "";
             }
-
-            if (oldplanID == null)
+            else
             {
-                txtPlanVersion.Text = dtpPlan.Value.ToString("yyyyMMdd") + "_" + DateTime.Now.ToString("mmss");
+                if (oldplanID == null)
+                {
+                    txtPlanVersion.Text = dtpPlan.Value.ToString("yyyyMMdd") + "_" + DateTime.Now.ToString("mmss");
+                }
             }
         }
 
@@ -250,6 +253,8 @@ namespace MESForm.Han
                     }
                     else
                     {
+                        txtPlanVersion.Text = "";
+                        oldplanID = null;
                         return;
                     }
                 }
