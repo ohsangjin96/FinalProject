@@ -40,14 +40,14 @@ namespace MESForm.Han
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.btnRefresh = new MESForm.CustomControls.custButtonControl();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.dgvPO = new MESForm.CustomControls.custDataGridViewControl();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpOrder = new System.Windows.Forms.DateTimePicker();
             this.chkPlanDate = new System.Windows.Forms.CheckBox();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPO)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -84,7 +84,7 @@ namespace MESForm.Han
             // 
             // pnlItem
             // 
-            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
+            this.pnlItem.Controls.Add(this.dgvPO);
             this.pnlItem.Location = new System.Drawing.Point(12, 161);
             this.pnlItem.Size = new System.Drawing.Size(1226, 526);
             // 
@@ -127,8 +127,8 @@ namespace MESForm.Han
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 14, 22, 44, 3, 6);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 14, 22, 44, 3, 6);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 13, 55, 9, 300);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 13, 55, 9, 300);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(128, 33);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -199,13 +199,13 @@ namespace MESForm.Han
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // custDataGridViewControl1
+            // dgvPO
             // 
-            this.custDataGridViewControl1.AllowUserToAddRows = false;
+            this.dgvPO.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPO.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPO.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPO.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -213,8 +213,8 @@ namespace MESForm.Han
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPO.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -222,15 +222,15 @@ namespace MESForm.Han
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 526);
-            this.custDataGridViewControl1.TabIndex = 0;
-            this.custDataGridViewControl1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.custDataGridViewControl1_CellDoubleClick);
+            this.dgvPO.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPO.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPO.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvPO.Location = new System.Drawing.Point(0, 0);
+            this.dgvPO.Name = "dgvPO";
+            this.dgvPO.RowTemplate.Height = 23;
+            this.dgvPO.Size = new System.Drawing.Size(1226, 526);
+            this.dgvPO.TabIndex = 0;
+            this.dgvPO.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.custDataGridViewControl1_CellDoubleClick);
             // 
             // label2
             // 
@@ -274,7 +274,7 @@ namespace MESForm.Han
             this.pnlSelect.PerformLayout();
             this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +289,7 @@ namespace MESForm.Han
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnReg;
         private CustomControls.custButtonControl btnDPCreate;
-        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private CustomControls.custDataGridViewControl dgvPO;
         private System.Windows.Forms.DateTimePicker dtpOrder;
         protected System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkPlanDate;

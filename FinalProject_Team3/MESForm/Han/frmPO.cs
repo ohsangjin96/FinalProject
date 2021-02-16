@@ -28,18 +28,18 @@ namespace MESForm.Han
 
         private void DGVSetting()
         {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객주문번호", "Order_WO");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사코드", "Com_Code");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사명", "Com_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "도착지", "Order_Arrive");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "주문유형", "Order_OrderType");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목유형", "ITEM_Type");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "Item_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "생산납기일", "Order_FixedDate");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "주문수량", "Order_OrderAmount");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "출고수량", "Order_RelaseAmount");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "취소수량", "Order_CancelAmount");
+            CommonUtil.SetInitGridView(dgvPO);
+            CommonUtil.AddGridTextColumn(dgvPO, "고객주문번호", "Order_WO");
+            CommonUtil.AddGridTextColumn(dgvPO, "고객사코드", "Com_Code");
+            CommonUtil.AddGridTextColumn(dgvPO, "고객사명", "Com_Name");
+            CommonUtil.AddGridTextColumn(dgvPO, "도착지", "Order_Arrive");
+            CommonUtil.AddGridTextColumn(dgvPO, "주문유형", "Order_OrderType");
+            CommonUtil.AddGridTextColumn(dgvPO, "품목유형", "ITEM_Type");
+            CommonUtil.AddGridTextColumn(dgvPO, "품명", "Item_Name");
+            CommonUtil.AddGridTextColumn(dgvPO, "생산납기일", "Order_FixedDate");
+            CommonUtil.AddGridTextColumn(dgvPO, "주문수량", "Order_OrderAmount");
+            CommonUtil.AddGridTextColumn(dgvPO, "출고수량", "Order_RelaseAmount");
+            CommonUtil.AddGridTextColumn(dgvPO, "취소수량", "Order_CancelAmount");
         }
 
         private void LoadData()
@@ -48,7 +48,7 @@ namespace MESForm.Han
             allList = service.GetPOList();
             service.Dispose();
 
-            custDataGridViewControl1.DataSource = allList;
+            dgvPO.DataSource = allList;
         }
 
         private void ComboBinding()
@@ -91,7 +91,7 @@ namespace MESForm.Han
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, string.Empty);
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, dgvPO, string.Empty);
             if (sResult.Length > 0)
             {
                 MessageBox.Show(sResult);
@@ -138,13 +138,13 @@ namespace MESForm.Han
                         searchList.Add(i);
                 }
             }
-            custDataGridViewControl1.DataSource = searchList;
+            dgvPO.DataSource = searchList;
         }
 
         private void custDataGridViewControl1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //선택한 데이터의 woid 넘기기
-            WOID = this.custDataGridViewControl1.CurrentRow.Cells["Order_WO"].Value.ToString();
+            WOID = this.dgvPO.CurrentRow.Cells["Order_WO"].Value.ToString();
 
             popupSO pop = new popupSO(OpenMode.Update);
             pop.WOID = WOID;
@@ -152,7 +152,7 @@ namespace MESForm.Han
             {
                 MessageBox.Show("수정이 완료되었습니다.");
 
-                custDataGridViewControl1.DataSource = null;
+                dgvPO.DataSource = null;
                 LoadData();
             }
         }

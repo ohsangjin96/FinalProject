@@ -23,7 +23,7 @@ namespace MESForm.Han
         {
             InitializeComponent();
 
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
+            CommonUtil.AddGridTextColumn(dgvList, "No", "RowNo", 50, true, DataGridViewContentAlignment.MiddleCenter);
         }
 
         private void ComboBinding()
@@ -137,12 +137,12 @@ namespace MESForm.Han
                     }
                 }
             }
-            custDataGridViewControl1.DataSource = searchdt;
+            dgvList.DataSource = searchdt;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, custDataGridViewControl1, string.Empty);
+            string sResult = ExcelExportImport.ExcelExportToDataGridView(this, dgvList, string.Empty);
             if (sResult.Length > 0)
             {
                 MessageBox.Show(sResult);

@@ -101,7 +101,7 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Factory_Type", vo.Factory_Type);
                     cmd.Parameters.AddWithValue("@Factory_Code", vo.Factory_Code);
                     cmd.Parameters.AddWithValue("@Factory_Name", vo.Factory_Name);
-                    cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "없음") ? DBNull.Value : (object)vo.Factory_HighRank);
+                    cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "") ? DBNull.Value : (object)vo.Factory_HighRank);
                     cmd.Parameters.AddWithValue("@Factory_Explain", (vo.Factory_Explain == "") ? DBNull.Value : (object)vo.Factory_Explain);
                     cmd.Parameters.AddWithValue("@Factory_Credit", (vo.Factory_Credit == "") ? DBNull.Value : (object)vo.Factory_Credit);
                     cmd.Parameters.AddWithValue("@Factory_Order", (vo.Factory_Order == -1) ? DBNull.Value : (object)vo.Factory_Order);
@@ -144,7 +144,7 @@ namespace FProjectDAC
                     cmd.Parameters.AddWithValue("@Factory_Grade", vo.Factory_Grade);
                     cmd.Parameters.AddWithValue("@Factory_Type", vo.Factory_Type);
                     cmd.Parameters.AddWithValue("@Factory_Code", vo.Factory_Code);
-                    cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "없음") ? DBNull.Value : (object)vo.Factory_HighRank);
+                    cmd.Parameters.AddWithValue("@Factory_HighRank", (vo.Factory_HighRank == "") ? DBNull.Value : (object)vo.Factory_HighRank);
                     cmd.Parameters.AddWithValue("@Factory_Explain", (vo.Factory_Explain == "") ? DBNull.Value : (object)vo.Factory_Explain);
                     cmd.Parameters.AddWithValue("@Factory_Credit", (vo.Factory_Credit == "") ? DBNull.Value : (object)vo.Factory_Credit);
                     cmd.Parameters.AddWithValue("@Factory_Order", (vo.Factory_Order == -1) ? DBNull.Value : (object)vo.Factory_Order);
