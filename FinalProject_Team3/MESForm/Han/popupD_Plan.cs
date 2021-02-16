@@ -26,18 +26,18 @@ namespace MESForm.Han
 
         private void DGVSetting()
         {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "Plan_ID");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객WO", "Order_WO");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사코드", "Com_Code");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객사명", "Com_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "도착지", "Order_Arrive");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목", "ITEM_Type");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "Item_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "생산납기일", "Order_FixedDate");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "주문수량", "Order_OrderAmount");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "출고수량", "Order_RelaseAmount");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "취소수량", "Order_CancelAmount");
+            CommonUtil.SetInitGridView(dgvList);
+            CommonUtil.AddGridTextColumn(dgvList, "PlanID", "Plan_ID");
+            CommonUtil.AddGridTextColumn(dgvList, "고객WO", "Order_WO");
+            CommonUtil.AddGridTextColumn(dgvList, "고객사코드", "Com_Code");
+            CommonUtil.AddGridTextColumn(dgvList, "고객사명", "Com_Name");
+            CommonUtil.AddGridTextColumn(dgvList, "도착지", "Order_Arrive");
+            CommonUtil.AddGridTextColumn(dgvList, "품목", "ITEM_Type");
+            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Name");
+            CommonUtil.AddGridTextColumn(dgvList, "생산납기일", "Order_FixedDate");
+            CommonUtil.AddGridTextColumn(dgvList, "주문수량", "Order_OrderAmount");
+            CommonUtil.AddGridTextColumn(dgvList, "출고수량", "Order_RelaseAmount");
+            CommonUtil.AddGridTextColumn(dgvList, "취소수량", "Order_CancelAmount");
         }
 
         private void LoadData()
@@ -69,14 +69,14 @@ namespace MESForm.Han
                 var PlanIDList = (from list in allList
                                     where list.Plan_ID == cboPlanID.Text
                                     select list).Distinct().ToList();
-                custDataGridViewControl1.DataSource = null;
-                custDataGridViewControl1.DataSource = PlanIDList;
+                dgvList.DataSource = null;
+                dgvList.DataSource = PlanIDList;
                 deList = PlanIDList;
             }
             else
             {
                 MessageBox.Show("PlanID값을 선택하세요");
-                custDataGridViewControl1.DataSource = null;
+                dgvList.DataSource = null;
             }
         }
 

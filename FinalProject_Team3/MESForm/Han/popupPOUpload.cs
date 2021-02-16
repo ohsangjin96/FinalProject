@@ -130,7 +130,7 @@ namespace MESForm.Han
                 //업로드한 엑셀 내용의 유효성체크
                 POService service = new POService();
 
-                string com_code, com_name, item_name, order_wo;
+                string com_code, com_name, item_name, order_wo, mkt;
 
                 foreach(DataRow dr in uploaddt.Rows)
                 {
@@ -138,6 +138,7 @@ namespace MESForm.Han
                     com_name = dr["Com_Name"].ToString();
                     item_name = dr["Item_Name"].ToString();
                     order_wo = dr["Order_WO"].ToString();
+                    mkt = dr["Order_MKT"].ToString();
 
                     if(!service.ExcelCompanyCheck(com_code, com_name))
                     {
@@ -151,6 +152,13 @@ namespace MESForm.Han
                     if (item_code == null)
                     {
                         MessageBox.Show("업로드할 주문서의 품목 정보를 다시 확인해주세요.(실패)");
+                        txtPlanFile.Text = null;
+                        return;
+                    }
+
+                    if (mkt != "수출" && mkt != "내수" && mkt != "수입")
+                    {
+                        MessageBox.Show("업로드할 주문서의 Market정보를\n[수출] [내수] [수입] 중 하나로 선택하여 작성해주세요.(실패)");
                         txtPlanFile.Text = null;
                         return;
                     }
