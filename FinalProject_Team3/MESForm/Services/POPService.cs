@@ -30,5 +30,10 @@ namespace MESForm.Services
             POPDAC dac = new POPDAC();
             return dac.GetShipment();
         }
+        public bool SaveShipment(string Plan_ID)
+        {
+            POPDAC dac = new POPDAC();
+            return dac.SaveShipment(Plan_ID);
+        }
     }
 }

@@ -141,7 +141,6 @@ namespace MESForm
             this.lblLogout.TabStop = true;
             this.lblLogout.Text = "로그아웃";
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-         
             this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
             // 
             // lblName
@@ -261,7 +260,6 @@ namespace MESForm
             this.btnShipmentManager.TabIndex = 17;
             this.btnShipmentManager.Text = "제품 출하 및 마감";
             this.btnShipmentManager.UseVisualStyleBackColor = true;
-            this.btnShipmentManager.Click += new System.EventHandler(this.btnShipmentManager_Click);
             this.btnShipmentManager.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_MouseUp);
             // 
             // btnShipment
@@ -349,7 +347,7 @@ namespace MESForm
             this.btnCurrentProcess.Name = "btnCurrentProcess";
             this.btnCurrentProcess.Size = new System.Drawing.Size(221, 43);
             this.btnCurrentProcess.TabIndex = 3;
-            this.btnCurrentProcess.Text = "공정재고현황";
+            this.btnCurrentProcess.Text = "제품이동현황";
             this.btnCurrentProcess.UseVisualStyleBackColor = true;
             this.btnCurrentProcess.Click += new System.EventHandler(this.btnCurrentProcess_Click);
             this.btnCurrentProcess.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_MouseUp);

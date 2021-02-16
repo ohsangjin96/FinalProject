@@ -134,6 +134,7 @@ namespace POPForm.UserControls
                     WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
                     WorkRegistID = WorkOrder_ID,
                     Plan_ID = plan_ID,
+                    WorkRegist_OrderAmount = Qty,
                     WorkRegist_State = "제작완료",
 
                 };
@@ -206,6 +207,7 @@ namespace POPForm.UserControls
                 WorkRegist_Start = DateTime.Now.ToString("yyyy-MM-dd"),
                 WorkRegistID = WorkOrder_ID,
                 Plan_ID = plan_ID,
+                WorkRegist_OrderAmount = Qty,
                 WorkRegist_State = "제작완료",
 
             };

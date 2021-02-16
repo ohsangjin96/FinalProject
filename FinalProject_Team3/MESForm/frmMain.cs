@@ -495,16 +495,13 @@ namespace MESForm
         }
         #endregion
 
-        #region 출하관리
-        private void btnShipmentManager_Click(object sender, EventArgs e)
-        {
-            OpenCreateForm<ShipmentManager>();
-        }
+      
+        
 
 
 
 
-        #endregion
+      
 
         //x 누르면 프로그램 종료
 

@@ -15,6 +15,7 @@ namespace FProjectVO
         public int WorkRegist_WorkTime { get; set; }
         public int WorkRegist_NomalQty { get; set; }
         public int WorkRegist_FailQty { get; set; }
+        public int WorkRegist_OrderAmount { get; set; }
         public string FacilityDetail_Code { get; set; }
         public string Plan_ID { get; set; }
     }

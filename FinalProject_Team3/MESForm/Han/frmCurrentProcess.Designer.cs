@@ -29,6 +29,9 @@ namespace MESForm.Han
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboGrade = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboStock = new System.Windows.Forms.ComboBox();
@@ -42,7 +45,6 @@ namespace MESForm.Han
             this.dtpS_R = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
-            this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
@@ -86,9 +88,9 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(15, 151);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 145);
             this.lblFormName1.Size = new System.Drawing.Size(78, 21);
-            this.lblFormName1.Text = "공정현황";
+            this.lblFormName1.Text = "제품이동";
             // 
             // pnlItem
             // 
@@ -99,7 +101,6 @@ namespace MESForm.Han
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExcel);
-            this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Location = new System.Drawing.Point(670, 128);
             // 
             // cboGrade
@@ -217,9 +218,28 @@ namespace MESForm.Han
             // 
             // custDataGridViewControl1
             // 
+            this.custDataGridViewControl1.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
             this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle3;
             this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
@@ -228,21 +248,6 @@ namespace MESForm.Han
             this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 512);
             this.custDataGridViewControl1.TabIndex = 0;
             // 
-            // custButtonControl1
-            // 
-            this.custButtonControl1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl1.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(379, 6);
-            this.custButtonControl1.Name = "custButtonControl1";
-            this.custButtonControl1.Size = new System.Drawing.Size(100, 32);
-            this.custButtonControl1.TabIndex = 0;
-            this.custButtonControl1.Text = "이력조회";
-            this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl1.UseVisualStyleBackColor = false;
-            // 
             // btnExcel
             // 
             this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
@@ -250,7 +255,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(485, 6);
+            this.btnExcel.Location = new System.Drawing.Point(477, 6);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 1;
@@ -293,6 +298,5 @@ namespace MESForm.Han
         protected System.Windows.Forms.Label label2;
         private CustomControls.custDataGridViewControl custDataGridViewControl1;
         private CustomControls.custButtonControl btnExcel;
-        private CustomControls.custButtonControl custButtonControl1;
     }
 }

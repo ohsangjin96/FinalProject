@@ -15,8 +15,6 @@ namespace MESForm
     public partial class frmWorkRegist : MESForm.BaseForms.frmBaseLists
     {
         List<WorkRegistVO> list;
-        List<WorkRegistVO> selectlist;
-        bool bflag = true;
         public frmWorkRegist()
         {
             InitializeComponent();
@@ -94,7 +92,7 @@ namespace MESForm
                     var selectdata = (from selected in list
                                       where int.Parse(selected.WorkRegist_Start) > int.Parse(dtpfrom.Value.ToString()) && int.Parse(selected.WorkRegist_Start) < int.Parse(dtpto.Value.ToString())
                                       select selected).ToList();
-                    selectlist = selectdata;
+                    dgvList.DataSource = selectdata;
 
                 }
                 else
@@ -111,7 +109,7 @@ namespace MESForm
                     var selectdata = (from selected in list
                                       where selected.Item_Code == txtName.Text
                                       select selected).ToList();
-                    selectlist = selectdata;
+                    dgvList.DataSource = selectdata;
                 }
                 else
                 {
@@ -120,10 +118,10 @@ namespace MESForm
                     var selectdata = (from selected in list
                                       where selected.FacilityDetail_Code == txtFa.Text
                                       select selected).ToList();
-                    selectlist = selectdata;
+                    dgvList.DataSource = selectdata;
                 }
                 
-                bflag = false;
+               
             }
         }
 
@@ -154,12 +152,16 @@ namespace MESForm
         {
             POPService service = new POPService();
             List<WorkRegistVO> shiplist = service.GetShipment();
-            List<WorkRegistVO> selectlist = new List<WorkRegistVO>();
-            for(int i = 1; i< shiplist.Count; i++)
+            for (int i = 0; i<shiplist.Count; i++)
             {
-                shiplist[0].Plan_ID = selectlist[0].Plan_ID;
-                
+                if (shiplist[i].WorkRegist_NomalQty > shiplist[i].WorkRegist_OrderAmount)
+                {
+                    service.SaveShipment(shiplist[i].Plan_ID);
+                    
+                }
             }
+            dgvList.DataSource = list;
+            
         }
     }
 }

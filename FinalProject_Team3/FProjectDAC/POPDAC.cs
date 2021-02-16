@@ -53,9 +53,9 @@ namespace FProjectDAC
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @"insert into WorkRegist(WorkRegist_Start, Item_Code, WorkRegist_State,Plan_ID,
-                                    WorkRegist_WorkTime, WorkRegist_NomalQty, WorkRegist_FailQty, FacilityDetail_Code)
+                                    WorkRegist_WorkTime, WorkRegist_NomalQty, WorkRegist_FailQty, FacilityDetail_Code,WorkRegist_OrderAmount)
                                     values(@WorkRegist_Start, @Item_Code, @WorkRegist_State,@Plan_ID,
-                                    @WorkRegist_WorkTime, @WorkRegist_NomalQty, @WorkRegist_FailQty, @FacilityDetail_Code)";
+                                    @WorkRegist_WorkTime, @WorkRegist_NomalQty, @WorkRegist_FailQty, @FacilityDetail_Code,@WorkRegist_OrderAmount)";
 
 
                 
@@ -67,6 +67,7 @@ namespace FProjectDAC
                 cmd.Parameters.Add("@WorkRegist_FailQty", SqlDbType.Int);
                 cmd.Parameters.Add("@FacilityDetail_Code", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@WorkRegist_OrderAmount", SqlDbType.Int);
                 for (int i = 0; i < curlist.Count; i++)
                 {
                     
@@ -78,6 +79,7 @@ namespace FProjectDAC
                     cmd.Parameters["@WorkRegist_FailQty"].Value = curlist[i].WorkRegist_FailQty;
                     cmd.Parameters["@FacilityDetail_Code"].Value = curlist[i].FacilityDetail_Code;
                     cmd.Parameters["@Plan_ID"].Value = curlist[i].Plan_ID;
+                    cmd.Parameters["@WorkRegist_OrderAmount"].Value = curlist[i].WorkRegist_OrderAmount;
                     cmd.ExecuteNonQuery();
                 }
                 if (list.Contains(0))
@@ -101,42 +103,39 @@ namespace FProjectDAC
                 return list;
             }
         }
-        public bool UpdateWork(List<WorkRegistVO> list)
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.Connection = conn;
-                cmd.CommandText = @"Update WorkRegist WorkRegist_State = '출하완료' where WorkRegistID = @WorkRegistID";
-                cmd.Parameters.Add("WorkRegistID", SqlDbType.Int);
-                for (int i = 0; i < list.Count; i++)
-                {
-                    cmd.Parameters["@WorkRegistID"].Value = list[i].WorkRegistID;
-                    int a = cmd.ExecuteNonQuery();
-                    if (a < 0)
-                        return false;
-                }
-                return true;
-
-            }
-        }
+       
         public List<WorkRegistVO> GetShipment()
         {
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select Plan_ID, Item_Code, FacilityDetail_Code, WorkRegist_NomalQty, WorkRegist_FailQty, WorkRegist_WorkTime, WorkRegist_Start, WorkRegist_State
+                cmd.CommandText = @"select WorkRegist.Plan_ID,Sum(WorkRegist_NomalQty) AS WorkRegist_NomalQty,Sum(WorkRegist_FailQty) AS WorkRegist_FailQty,WorkRegist_OrderAmount
                                     from WorkRegist
                                     where FacilityDetail_Code
                                     in(
                                     select Distinct(Facility_Code)
-                                    from BOR,BOM 
+                                    from BOR,BOM
                                     where BOR.Item_Code in (select distinct(Item_Code) from BOM where BOM_Level=1)
-                                    and LEFT(Facility_Code,8)='Painting')";
+                                    and LEFT(Facility_Code,8)='Painting')
+                                    group by WorkRegist.Plan_ID,WorkRegist_OrderAmount";
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WorkRegistVO> list = Helper.DataReaderMapToList<WorkRegistVO>(reader);
 
                 return list;
+            }
+        }
+        public bool SaveShipment(string Plan_ID)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"Update WorkRegist set WorkRegist_State = '출하완료' where Plan_ID = @Plan_ID";
+                cmd.Parameters.AddWithValue("@Plan_ID", Plan_ID);
+                int i = cmd.ExecuteNonQuery();
+                if (i < 0)
+                    return false;
+                return true;
             }
         }
     }
