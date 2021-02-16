@@ -28,5 +28,10 @@ namespace MESForm.Services
             ReOrderDAC dac = new ReOrderDAC();
             return dac.InsertReOrder(list);
         }
+        public List<ReOrderVO> selectReOrder()
+        {
+            ReOrderDAC dac = new ReOrderDAC();
+            return dac.selectReOrder();
+        }
     }
 }

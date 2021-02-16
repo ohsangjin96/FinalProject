@@ -81,6 +81,17 @@ namespace FProjectDAC
             }
 
         }
+        public List<ReOrderVO> selectReOrder()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select Reorder_Number, Com_Code, ITEM_Code, Reorder_Amount, Reorder_InAmount, Reorder_Balance, Reorder_State, Reorder_OrderDate, Reorder_Cancel, Reorder_CanCancel, Plan_ID, Reorder_Note, WareHouse_In from ReOrder";
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<ReOrderVO> list = Helper.DataReaderMapToList<ReOrderVO>(reader);
+                return list;
+            }
+        }
         public void Dispose()
         {
             conn.Close();

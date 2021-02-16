@@ -75,7 +75,7 @@ namespace MESForm.Han
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            ReOrderService service = new ReOrderService();
+             ReOrderService service = new ReOrderService();
             bool result = service.InsertReOrder(newList);
             service.Dispose();
 
@@ -92,6 +92,8 @@ namespace MESForm.Han
             dgvReOrder.DataSource = null;
             dgvReOrder.DataSource = newList;
         }
+
+        
     }
     
 }

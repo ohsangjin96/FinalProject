@@ -8,7 +8,7 @@ namespace FProjectVO
 {
     public class ReOrderVO
     {
-        public string ReOrder_FixDate { get; set; }
+        public DateTime ReOrder_OrderDate { get; set; }
         public string ITEM_Code { get; set; }
         public int Reorder_Amount { get; set; }
         public string Com_Code { get; set; }
@@ -17,7 +17,7 @@ namespace FProjectVO
         public string Plan_ID { get; set; }
         public string WareHouse_In { get; set; }
         public string Note { get; set; }
-
+        public string ReOrder_State { get; set; }
         public string Item_Name { get; set; }
         public int Amount { get; set; }
         public string ITEM_WareHouse_IN { get; set; }

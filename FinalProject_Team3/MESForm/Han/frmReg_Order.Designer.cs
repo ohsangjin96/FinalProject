@@ -32,25 +32,39 @@ namespace MESForm.Han
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new MESForm.UserControls.DateTimePicker();
             this.btnPopup = new MESForm.CustomControls.custButtonControl();
             this.btnExcel = new MESForm.CustomControls.custButtonControl();
             this.dgvList = new MESForm.CustomControls.custDataGridViewControl();
             this.custButtonControl1 = new MESForm.CustomControls.custButtonControl();
-            this.custButtonControl2 = new MESForm.CustomControls.custButtonControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.CboState = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpto = new System.Windows.Forms.DateTimePicker();
+            this.dtpfrom = new System.Windows.Forms.DateTimePicker();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
             // 
-            this.pnlSelect.Controls.Add(this.textBox1);
-            this.pnlSelect.Controls.Add(this.dateTimePicker1);
+            this.pnlSelect.Controls.Add(this.checkBox1);
+            this.pnlSelect.Controls.Add(this.label3);
+            this.pnlSelect.Controls.Add(this.dtpto);
+            this.pnlSelect.Controls.Add(this.dtpfrom);
+            this.pnlSelect.Controls.Add(this.CboState);
+            this.pnlSelect.Controls.Add(this.label2);
+            this.pnlSelect.Controls.Add(this.txtID);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Controls.Add(this.label8);
             this.pnlSelect.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -58,8 +72,13 @@ namespace MESForm.Han
             this.pnlSelect.Controls.SetChildIndex(this.label8, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.dateTimePicker1, 0);
-            this.pnlSelect.Controls.SetChildIndex(this.textBox1, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.txtID, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label2, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.CboState, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.dtpfrom, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.dtpto, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.label3, 0);
+            this.pnlSelect.Controls.SetChildIndex(this.checkBox1, 0);
             // 
             // btnInquiry
             // 
@@ -75,13 +94,13 @@ namespace MESForm.Han
             // 
             // pnlItem
             // 
+            this.pnlItem.Controls.Add(this.custDataGridViewControl1);
             this.pnlItem.Controls.Add(this.dgvList);
             this.pnlItem.Location = new System.Drawing.Point(12, 217);
             this.pnlItem.Size = new System.Drawing.Size(1226, 470);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.custButtonControl2);
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnPopup);
@@ -103,19 +122,9 @@ namespace MESForm.Han
             this.label1.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(445, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 14);
+            this.label1.Size = new System.Drawing.Size(55, 14);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 4, 16, 59, 999);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 4, 16, 59, 999);
-            this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(545, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(281, 30);
-            this.dateTimePicker1.TabIndex = 17;
+            this.label1.Text = "신청날짜";
             // 
             // btnPopup
             // 
@@ -124,7 +133,7 @@ namespace MESForm.Han
             this.btnPopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPopup.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPopup.ForeColor = System.Drawing.Color.Black;
-            this.btnPopup.Location = new System.Drawing.Point(307, 3);
+            this.btnPopup.Location = new System.Drawing.Point(290, 3);
             this.btnPopup.Name = "btnPopup";
             this.btnPopup.Size = new System.Drawing.Size(83, 32);
             this.btnPopup.TabIndex = 0;
@@ -140,7 +149,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(396, 3);
+            this.btnExcel.Location = new System.Drawing.Point(387, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 1;
@@ -188,7 +197,7 @@ namespace MESForm.Han
             this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(485, 3);
+            this.custButtonControl1.Location = new System.Drawing.Point(484, 3);
             this.custButtonControl1.Name = "custButtonControl1";
             this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
             this.custButtonControl1.TabIndex = 2;
@@ -196,28 +205,107 @@ namespace MESForm.Han
             this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.custButtonControl1.UseVisualStyleBackColor = false;
             // 
-            // custButtonControl2
+            // txtID
             // 
-            this.custButtonControl2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.custButtonControl2.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
-            this.custButtonControl2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custButtonControl2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custButtonControl2.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl2.Location = new System.Drawing.Point(218, 3);
-            this.custButtonControl2.Name = "custButtonControl2";
-            this.custButtonControl2.Size = new System.Drawing.Size(83, 32);
-            this.custButtonControl2.TabIndex = 3;
-            this.custButtonControl2.Text = "발주확정";
-            this.custButtonControl2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.custButtonControl2.UseVisualStyleBackColor = false;
-            this.custButtonControl2.Click += new System.EventHandler(this.custButtonControl2_Click);
+            this.txtID.Location = new System.Drawing.Point(164, 26);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(189, 22);
+            this.txtID.TabIndex = 18;
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 22);
-            this.textBox1.TabIndex = 18;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(880, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 14);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "발주상태";
+            // 
+            // custDataGridViewControl1
+            // 
+            this.custDataGridViewControl1.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
+            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.custDataGridViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
+            this.custDataGridViewControl1.RowTemplate.Height = 23;
+            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 470);
+            this.custDataGridViewControl1.TabIndex = 19;
+            // 
+            // CboState
+            // 
+            this.CboState.FormattingEnabled = true;
+            this.CboState.Items.AddRange(new object[] {
+            "",
+            "발주완료",
+            "입고대기",
+            "입고완료"});
+            this.CboState.Location = new System.Drawing.Point(1011, 26);
+            this.CboState.Name = "CboState";
+            this.CboState.Size = new System.Drawing.Size(189, 22);
+            this.CboState.TabIndex = 22;
+            this.CboState.SelectedIndexChanged += new System.EventHandler(this.CboState_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(528, 30);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 98;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(663, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 30);
+            this.label3.TabIndex = 97;
+            this.label3.Text = "~";
+            // 
+            // dtpto
+            // 
+            this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpto.Location = new System.Drawing.Point(705, 25);
+            this.dtpto.Name = "dtpto";
+            this.dtpto.Size = new System.Drawing.Size(101, 22);
+            this.dtpto.TabIndex = 96;
+            // 
+            // dtpfrom
+            // 
+            this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfrom.Location = new System.Drawing.Point(549, 25);
+            this.dtpfrom.Name = "dtpfrom";
+            this.dtpfrom.Size = new System.Drawing.Size(101, 22);
+            this.dtpfrom.TabIndex = 95;
             // 
             // frmReg_Order
             // 
@@ -234,6 +322,7 @@ namespace MESForm.Han
             this.pnlItem.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,13 +331,18 @@ namespace MESForm.Han
         #endregion
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Label label8;
-        private UserControls.DateTimePicker dateTimePicker1;
         private CustomControls.custButtonControl btnExcel;
         private CustomControls.custButtonControl btnPopup;
         private CustomControls.custDataGridViewControl dgvList;
         private CustomControls.custButtonControl custButtonControl1;
-        private System.Windows.Forms.TextBox textBox1;
-        private CustomControls.custButtonControl custButtonControl2;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ComboBox CboState;
+        protected System.Windows.Forms.Label label2;
+        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpto;
+        private System.Windows.Forms.DateTimePicker dtpfrom;
     }
 }
 

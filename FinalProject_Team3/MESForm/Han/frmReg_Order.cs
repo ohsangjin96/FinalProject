@@ -1,4 +1,5 @@
 ﻿using FProjectVO;
+using MESForm.Services;
 using MESForm.Utils;
 using System;
 using System.Collections.Generic;
@@ -24,29 +25,56 @@ namespace MESForm.Han
         private void DGVSetting()
         {
             CommonUtil.SetInitGridView(dgvList);
-            CommonUtil.AddGridTextColumn(dgvList, "납기일", "Reorder_date",200);
+            CommonUtil.AddGridTextColumn(dgvList, "발주신청일", "Reorder_Orderdate",200);
             CommonUtil.AddGridTextColumn(dgvList, "품명", "ITEM_Code",200);
+            CommonUtil.AddGridTextColumn(dgvList, "회사코드", "Com_Code", 200);
             CommonUtil.AddGridTextColumn(dgvList, "수량", "Reorder_Amount");
-            CommonUtil.AddGridTextColumn(dgvList, "회사코드", "Com_Code",200);
+            CommonUtil.AddGridTextColumn(dgvList, "발주상태", "ReOrder_State", 200);
             CommonUtil.AddGridTextColumn(dgvList, "잔량", "Reorder_Balance");
             CommonUtil.AddGridTextColumn(dgvList, "취소가능량", "Reorder_CanCancel");
             CommonUtil.AddGridTextColumn(dgvList, "PlanID", "Plan_ID",200);
             CommonUtil.AddGridTextColumn(dgvList, "입고창고", "WareHouse_In",200);
+            
+        }
 
+        private void txtID_Textchange(object sender, EventArgs e)
+        {
+            if (txtID.TextLength == 0)
+            {
+                CboState.Enabled = true;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+
+            }
+            else
+            {
+                CboState.Enabled = false;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+              
+            }
         }
 
         private void frmReg_Order_Load(object sender, EventArgs e)
         {
             DGVSetting();
+            ReOrderService service = new ReOrderService();
+            list = service.selectReOrder();
+            dgvList.DataSource = list;
+            txtID.TextChanged += txtID_Textchange;
+            dtpfrom.Enabled = false;
+            dtpto.Enabled = false;
         }
 
         private void btnPopup_Click(object sender, EventArgs e)
         {
+            
             popupOrder frm = new popupOrder();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                list = frm.Curlist;
-                dgvList.DataSource = list;
+                ReOrderService service = new ReOrderService();
+                list = service.selectReOrder();
+                dgvList.DataSource = list;  
             }
         }
 
@@ -59,14 +87,74 @@ namespace MESForm.Han
             }
         }
 
-        private void custButtonControl2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnInquiry_Click(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                if (dtpfrom.Value < dtpto.Value)
+                {
+                    var selectdata = (from selected in list
+                                      where selected.ReOrder_OrderDate > Convert.ToDateTime(dtpfrom) && selected.ReOrder_OrderDate < Convert.ToDateTime(dtpto)
+                                      select selected).ToList();
+                    
+                    dgvList.DataSource = selectdata;
+                }
+                else
+                {
+                    MessageBox.Show("날짜를 다시 결정해주세요");
+                }
+            }
+            else
+            {
+                if (txtID.Enabled)
+                {
+                    var selectdata = (from selected in list
+                                      where selected.Plan_ID == txtID.Text
+                                      select selected).ToList();
+                    dgvList.DataSource = selectdata;
+                }
+                else
+                {
+                    var selectdata = (from selected in list
+                                      where selected.ReOrder_State == CboState.Text
+                                      select selected).ToList();
+                    dgvList.DataSource = selectdata;
+                }
+            }
+        }
 
+        private void CboState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(CboState.SelectedIndex == 0)
+            {
+                txtID.Enabled = true;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+            }
+            else
+            {
+                txtID.Enabled = false;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtID.Enabled = false;
+                CboState.Enabled = false;
+                dtpfrom.Enabled = true;
+                dtpto.Enabled = true;
+            }
+            else
+            {
+                txtID.Enabled = true;
+                CboState.Enabled = true;
+                dtpfrom.Enabled = false;
+                dtpto.Enabled = false;
+            }
         }
     }
 }
