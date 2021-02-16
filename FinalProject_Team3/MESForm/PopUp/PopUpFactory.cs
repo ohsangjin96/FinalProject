@@ -90,7 +90,7 @@ namespace MESForm.PopUp
 
             ComboBoxBinding.ComBind(cboFactoryGrade, commonList, "FacGrade000", false);
             ComboBoxBinding.ComBind(cboFactoryType, commonList, "FAC000", false);
-            ComboBoxBinding.FactoryGradeBind(cboFactoryHighRank, factoryList, true, "없음");
+            ComboBoxBinding.FactoryGradeBind(cboFactoryHighRank, factoryList);
             ComboBoxBinding.ComBind(cboFactoryCredit, commonList, "FreeOffer000");
             ComboBoxBinding.CompanyBind(cboComCode, companyList);
             ComboBox[] cbArray = { cboFactoryDemand, cboFactoryProcess, cboFactoryMaterial };
