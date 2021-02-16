@@ -43,7 +43,7 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "업체CODE", "Com_Code");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품처", "Com_Type");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "MKT", "Order_MKT");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "발주구분", "Order_OrderType");
+            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "주문유형", "Order_OrderType");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "GROUP", "Order_Group");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "구분", "Order_Gubun");
             CommonUtil.AddGridTextColumn(custDataGridViewControl1, "사이즈", "Order_Size");
@@ -162,43 +162,44 @@ namespace MESForm.Han
                 xlWorkSheet.Columns.AutoFit();
 
                 //컬럼 테두리
-                Range range = xlWorkSheet.get_Range("A1", "M1");
+                Range range = xlWorkSheet.get_Range("A1", "N1");
                 range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
                 range.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
                 range.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous;
                 range.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous;
                 range.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
 
+                xlWorkSheet.Cells[1, 1] = "순번";
+                xlWorkSheet.Cells[1, 2] = "고객주문번호";
+                xlWorkSheet.Cells[1, 3] = "업체CODE";
+                xlWorkSheet.Cells[1, 4] = "납품처";
+                xlWorkSheet.Cells[1, 5] = "회사유형";
+                xlWorkSheet.Cells[1, 6] = "MKT";
+                xlWorkSheet.Cells[1, 7] = "주문유형";
+                xlWorkSheet.Cells[1, 8] = "GROUP";
+                xlWorkSheet.Cells[1, 9] = "구분";
+                xlWorkSheet.Cells[1, 10] = "사이즈";
+                xlWorkSheet.Cells[1, 11] = "품목유형";
+                xlWorkSheet.Cells[1, 12] = "품명";
+                xlWorkSheet.Cells[1, 13] = "계획수량합계";
+                xlWorkSheet.Cells[1, 14] = "납기일";
+
                 #region 컬럼명
                 //xlWorkSheet.Cells[1, 1] = "순번";
-                //xlWorkSheet.Cells[1, 2] = "WorkOrderID";
-                //xlWorkSheet.Cells[1, 3] = "업체CODE";
-                //xlWorkSheet.Cells[1, 4] = "납품처";
-                //xlWorkSheet.Cells[1, 5] = "회사유형";
-                //xlWorkSheet.Cells[1, 6] = "MKT";
-                //xlWorkSheet.Cells[1, 7] = "발주구분";
-                //xlWorkSheet.Cells[1, 8] = "GROUP";
-                //xlWorkSheet.Cells[1, 9] = "구분";
-                //xlWorkSheet.Cells[1, 10] = "사이즈";
-                //xlWorkSheet.Cells[1, 11] = "입고P/NO";
-                //xlWorkSheet.Cells[1, 12] = "품명";
-                //xlWorkSheet.Cells[1, 13] = "계획수량합계";
-                //xlWorkSheet.Cells[1, 14] = "납기일";
+                //xlWorkSheet.Cells[1, 2] = "Order_WO";
+                //xlWorkSheet.Cells[1, 3] = "Com_Code";
+                //xlWorkSheet.Cells[1, 4] = "Com_Name";
+                //xlWorkSheet.Cells[1, 5] = "Com_Type";
+                //xlWorkSheet.Cells[1, 6] = "Order_MKT";
+                //xlWorkSheet.Cells[1, 7] = "Order_OrderType";
+                //xlWorkSheet.Cells[1, 8] = "Order_Group";
+                //xlWorkSheet.Cells[1, 9] = "Order_Gubun";
+                //xlWorkSheet.Cells[1, 10] ="Order_Size";
+                //xlWorkSheet.Cells[1, 11] = "ITEM_Type";
+                //xlWorkSheet.Cells[1, 12] = "Item_Name";
+                //xlWorkSheet.Cells[1, 13] = "Order_OrderAmount";
+                //xlWorkSheet.Cells[1, 14] = "Order_FixedDate";
                 #endregion
-                xlWorkSheet.Cells[1, 1] = "순번";
-                xlWorkSheet.Cells[1, 2] = "Order_WO";
-                xlWorkSheet.Cells[1, 3] = "Com_Code";
-                xlWorkSheet.Cells[1, 4] = "Com_Name";
-                xlWorkSheet.Cells[1, 5] = "Com_Type";
-                xlWorkSheet.Cells[1, 6] = "Order_MKT";
-                xlWorkSheet.Cells[1, 7] = "Order_OrderType";
-                xlWorkSheet.Cells[1, 8] = "Order_Group";
-                xlWorkSheet.Cells[1, 9] = "Order_Gubun";
-                xlWorkSheet.Cells[1, 10] ="Order_Size";
-                xlWorkSheet.Cells[1, 11] = "ITEM_Type";
-                xlWorkSheet.Cells[1, 12] = "Item_Name";
-                xlWorkSheet.Cells[1, 13] = "Order_OrderAmount";
-                xlWorkSheet.Cells[1, 14] = "Order_FixedDate";
 
 
                 xlWorkBook.SaveAs(dlg.FileName, Excel.XlFileFormat.xlWorkbookNormal);

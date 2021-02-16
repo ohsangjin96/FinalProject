@@ -108,7 +108,22 @@ namespace MESForm.Han
                 uploaddt = new DataTable();
                 oda.Fill(uploaddt);
                 conn.Close();
-
+                if (uploaddt.Columns.Count > 0)
+                {
+                    uploaddt.Columns[1].ColumnName = "Order_WO";
+                    uploaddt.Columns[2].ColumnName = "Com_Code";
+                    uploaddt.Columns[3].ColumnName = "Com_Name";
+                    uploaddt.Columns[4].ColumnName = "Com_Type";
+                    uploaddt.Columns[5].ColumnName = "Order_MKT";
+                    uploaddt.Columns[6].ColumnName = "Order_OrderType";
+                    uploaddt.Columns[7].ColumnName = "Order_Group";
+                    uploaddt.Columns[8].ColumnName = "Order_Gubun";
+                    uploaddt.Columns[9].ColumnName = "Order_Size";
+                    uploaddt.Columns[10].ColumnName ="ITEM_Type";
+                    uploaddt.Columns[11].ColumnName ="Item_Name";
+                    uploaddt.Columns[12].ColumnName ="Order_OrderAmount";
+                    uploaddt.Columns[13].ColumnName = "Order_FixedDate";
+                }
                 txtPlanFile.Text = dlg.FileName;
                 
 
