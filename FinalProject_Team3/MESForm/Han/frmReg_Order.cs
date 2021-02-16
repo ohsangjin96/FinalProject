@@ -94,7 +94,7 @@ namespace MESForm.Han
                 if (dtpfrom.Value < dtpto.Value)
                 {
                     var selectdata = (from selected in list
-                                      where selected.ReOrder_OrderDate > Convert.ToDateTime(dtpfrom) && selected.ReOrder_OrderDate < Convert.ToDateTime(dtpto)
+                                      where selected.ReOrder_OrderDate > dtpfrom.Value && selected.ReOrder_OrderDate < dtpto.Value
                                       select selected).ToList();
                     
                     dgvList.DataSource = selectdata;
@@ -155,6 +155,11 @@ namespace MESForm.Han
                 dtpfrom.Enabled = false;
                 dtpto.Enabled = false;
             }
+        }
+
+        private void custButtonControl1_Click(object sender, EventArgs e)
+        {
+            dgvList.DataSource = list;
         }
     }
 }

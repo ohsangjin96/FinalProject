@@ -204,7 +204,8 @@ namespace FProjectDAC
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @" select distinct(Item_Code), Item_Name,OrderAmount, Plan_ID,FixDate from WorkOrder 
-                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where FixDate ='2021-02-17' and Item_Code like LEFT(@dtp,9))";
+                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where FixDate ='2021-02-19' and Item_Code like LEFT(@dtp,9))
+                                     and WorkOrder_State ='지시확정'";
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@dtp", dtp);
                 SqlDataReader reader = cmd.ExecuteReader();
