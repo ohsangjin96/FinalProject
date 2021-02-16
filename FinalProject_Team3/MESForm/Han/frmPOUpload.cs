@@ -37,21 +37,21 @@ namespace MESForm.Han
 
         private void DGVSetting()
         {
-            CommonUtil.SetInitGridView(custDataGridViewControl1);
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanDate", "Order_Plandate");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "고객주문번호", "Order_WO");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "업체CODE", "Com_Code");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납품처", "Com_Type");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "MKT", "Order_MKT");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "주문유형", "Order_OrderType");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "GROUP", "Order_Group");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "구분", "Order_Gubun");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "사이즈", "Order_Size");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품목유형", "ITEM_Type");    //입고P/NO
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "품명", "Item_Name");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "수량합계", "Order_OrderAmount"); //계획수량합계
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "납기일", "Order_FixedDate");
-            CommonUtil.AddGridTextColumn(custDataGridViewControl1, "PlanID", "Plan_ID");
+            CommonUtil.SetInitGridView(dgvPO);
+            CommonUtil.AddGridTextColumn(dgvPO, "PlanDate", "Order_Plandate");
+            CommonUtil.AddGridTextColumn(dgvPO, "고객주문번호", "Order_WO");
+            CommonUtil.AddGridTextColumn(dgvPO, "업체CODE", "Com_Code");
+            CommonUtil.AddGridTextColumn(dgvPO, "납품처", "Com_Type");
+            CommonUtil.AddGridTextColumn(dgvPO, "MKT", "Order_MKT");
+            CommonUtil.AddGridTextColumn(dgvPO, "주문유형", "Order_OrderType");
+            CommonUtil.AddGridTextColumn(dgvPO, "GROUP", "Order_Group");
+            CommonUtil.AddGridTextColumn(dgvPO, "구분", "Order_Gubun");
+            CommonUtil.AddGridTextColumn(dgvPO, "사이즈", "Order_Size");
+            CommonUtil.AddGridTextColumn(dgvPO, "품목유형", "ITEM_Type");    //입고P/NO
+            CommonUtil.AddGridTextColumn(dgvPO, "품명", "Item_Name");
+            CommonUtil.AddGridTextColumn(dgvPO, "수량합계", "Order_OrderAmount"); //계획수량합계
+            CommonUtil.AddGridTextColumn(dgvPO, "납기일", "Order_FixedDate");
+            CommonUtil.AddGridTextColumn(dgvPO, "PlanID", "Plan_ID");
         }
 
         private void LoadData()
@@ -60,7 +60,7 @@ namespace MESForm.Han
             allList = service.GetPOList();
             service.Dispose();
 
-            custDataGridViewControl1.DataSource = allList;
+            dgvPO.DataSource = allList;
         }
 
         private void frmPOUpload_Load(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace MESForm.Han
             DGVSetting();
             LoadData();
 
-            viewlist = (List<POVO>)custDataGridViewControl1.DataSource;
+            viewlist = (List<POVO>)dgvPO.DataSource;
         }
 
         private void btnExcelUpload_Click(object sender, EventArgs e)
@@ -78,9 +78,9 @@ namespace MESForm.Han
             if (pop.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("영업마스터가 정상적으로 생성되었습니다.");
-                custDataGridViewControl1.DataSource = null;
-                custDataGridViewControl1.DataSource = pop.viewlist;
-                custDataGridViewControl1.Update();
+                dgvPO.DataSource = null;
+                dgvPO.DataSource = pop.viewlist;
+                dgvPO.Update();
                 
                 insertlist = pop.uploadlist;    //저장버튼 클릭 시 추가 할 list
             }
@@ -125,7 +125,7 @@ namespace MESForm.Han
         private void custDataGridViewControl1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //선택한 데이터의 planID 넘기기
-            PlanID = this.custDataGridViewControl1.CurrentRow.Cells["Plan_ID"].Value.ToString();
+            PlanID = this.dgvPO.CurrentRow.Cells["Plan_ID"].Value.ToString();
 
             popupPOUpload pop = new popupPOUpload(OpenMode.Update);
             pop.viewlist = viewlist;
@@ -133,9 +133,9 @@ namespace MESForm.Han
             if (pop.ShowDialog() == DialogResult.OK)
             {                
                 MessageBox.Show("수정이 완료되었습니다.");
-                custDataGridViewControl1.DataSource = null;
-                custDataGridViewControl1.DataSource = pop.viewlist;
-                custDataGridViewControl1.Update();
+                dgvPO.DataSource = null;
+                dgvPO.DataSource = pop.viewlist;
+                dgvPO.Update();
                 
                 updatelist = pop.uploadlist;    //저장버튼 클릭 시 PlanID포함한 데이터 삭제 후 추가 할 list
                 OldPlanID = pop.oldplanID;
@@ -155,6 +155,7 @@ namespace MESForm.Han
             dlg.Title = "양식 다운로드";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
+                this.Cursor = Cursors.WaitCursor;
                 Excel.Application xlApp = new Excel.Application();
                 Excel.Workbook xlWorkBook = xlApp.Workbooks.Add();
                 Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
@@ -174,7 +175,7 @@ namespace MESForm.Han
                 xlWorkSheet.Cells[1, 3] = "업체CODE";
                 xlWorkSheet.Cells[1, 4] = "납품처";
                 xlWorkSheet.Cells[1, 5] = "회사유형";
-                xlWorkSheet.Cells[1, 6] = "MKT";
+                xlWorkSheet.Cells[1, 6] = "Market";
                 xlWorkSheet.Cells[1, 7] = "주문유형";
                 xlWorkSheet.Cells[1, 8] = "GROUP";
                 xlWorkSheet.Cells[1, 9] = "구분";
@@ -211,6 +212,7 @@ namespace MESForm.Han
                 releaseObject(xlApp);
 
                 MessageBox.Show("양식 다운로드가 완료되었습니다.");
+                this.Cursor = Cursors.Default;
             }
         }
         private void releaseObject(object obj)

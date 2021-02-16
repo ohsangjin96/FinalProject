@@ -12,7 +12,7 @@ namespace FProjectVO
         public string Order_WO { get; set; }
         public string Com_Code { get; set; }
         public string Com_Type { get; set; }
-        public int Order_MKT { get; set; }
+        public string Order_MKT { get; set; }
         public string Order_OrderType { get; set; }
         public string Order_Group { get; set; }
         public string Order_Gubun { get; set; }

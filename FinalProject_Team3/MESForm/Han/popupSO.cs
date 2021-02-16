@@ -104,7 +104,7 @@ namespace MESForm.Han
             txtOrderAmount.Text = getList[0].Order_OrderAmount.ToString();
             txtCancelAmount.Text = getList[0].Order_CancelAmount.ToString();
             txtReleaseAmount.Text = getList[0].Order_RelaseAmount.ToString();
-            cboMkt.Text = getList[0].Order_MKT.ToString();
+            cboMkt.Text = getList[0].Order_MKT;
             cboGubun.Text = getList[0].Order_OrderType;
             txtRemark.Text = getList[0].Order_Remark;
         }
@@ -157,7 +157,7 @@ namespace MESForm.Han
                 Order_WO = txtWO.Text,
                 Com_Code = cboCom.Text,
                 Com_Type = comtype,
-                Order_MKT = Convert.ToInt32(cboMkt.Text),
+                Order_MKT = cboMkt.Text,
                 Order_OrderType = cboGubun.Text,
                 Item_Code = cboItemCode.Text,
                 Item_Name = txtItemName.Text,
@@ -173,7 +173,7 @@ namespace MESForm.Han
 
             if (WOID == null)
             {
-                vo.Order_Group = "123";
+                vo.Order_Group = "";
                 vo.Order_Gubun = "양산";
                 vo.Order_Size = 321;
                 vo.Plan_ID = DateTime.Now.ToString("yyyyMMdd_mmss");
