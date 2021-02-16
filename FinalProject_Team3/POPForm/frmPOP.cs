@@ -42,7 +42,7 @@ namespace POPForm
         {
             lblName.Text =$"{Vo.User_Dept}-{Vo.User_Name}";
            
-            label3.Text = "2021-02-17";
+            label3.Text = DateTime.Now.ToString("yyyy-MM-dd");
             CommonUtil.SetInitGridView(dgvList);
             
             CommonUtil.AddGridTextColumn(dgvList, "품목", "Item_Code", 165);
@@ -64,7 +64,7 @@ namespace POPForm
             this.dgvList2.Font = new Font("나눔스퀘어OTF", 15, FontStyle.Regular);
 
             OrderService service = new OrderService();
-            dgvList.DataSource = service.GetSelectWorkOrderList("2021-02-17",Vo.User_Dept);
+            dgvList.DataSource = service.GetSelectWorkOrderList(label3.Text,Vo.User_Dept);
         }
         private void dgvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -232,6 +232,7 @@ namespace MESForm
             this.dtpto.Name = "dtpto";
             this.dtpto.Size = new System.Drawing.Size(101, 22);
             this.dtpto.TabIndex = 93;
+            this.dtpto.Value = new System.DateTime(2021, 3, 2, 0, 0, 0, 0);
             // 
             // dtpfrom
             // 

@@ -108,7 +108,7 @@ namespace FProjectDAC
                         return false;
                     }
                 }
-                cmd.CommandText = @"Update PO set PO_State = '생산확정' where PO.Plan_ID = @Plan_ID";
+                cmd.CommandText = @"Update Demand set Demand_ProductState = '생산계획확정' where Plan_ID = @Plan_ID";
                 int a = cmd.ExecuteNonQuery();
                 if (a < 0)
                     return false;
@@ -204,7 +204,7 @@ namespace FProjectDAC
             {
                 cmd.Connection = conn;
                 cmd.CommandText = @" select distinct(Item_Code), Item_Name,OrderAmount, Plan_ID,FixDate from WorkOrder 
-                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where FixDate ='2021-02-19' and Item_Code like LEFT(@dtp,9))
+                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where FixDate =@date and Item_Code like LEFT(@dtp,9))
                                      and WorkOrder_State ='지시확정'";
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@dtp", dtp);
