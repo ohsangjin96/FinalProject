@@ -152,12 +152,14 @@ namespace MESForm.Han
         private void btnSel_Click(object sender, EventArgs e)
         {
             newList = new List<WMaterialVO>();
+            int cnt = 0;
             for (int i = 0; i < dgvWaitingWarehouse.RowCount; i++)
             {
                 if (Convert.ToBoolean(dgvWaitingWarehouse["chk", i].Value))
                 {
                     newList.Add(list[i]);
-                    newList[i].InQty = Convert.ToInt32(dgvWaitingWarehouse["Reorder_Amount", i].Value);
+                    newList[cnt].InQty = Convert.ToInt32(dgvWaitingWarehouse["Reorder_Amount", i].Value);
+                    cnt++;
                 }
             }
 
@@ -179,7 +181,6 @@ namespace MESForm.Han
         private void btnWarehousing_Click(object sender, EventArgs e)
         {
             List<WMaterialVO> inList = new List<WMaterialVO>();
-
             for (int i = 0; i < dgvWarehouse.RowCount; i++)
             {
                 if (Convert.ToBoolean(dgvWarehouse["chk2", i].Value))

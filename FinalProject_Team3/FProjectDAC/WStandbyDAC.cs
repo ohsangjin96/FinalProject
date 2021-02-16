@@ -35,13 +35,14 @@ namespace FProjectDAC
                                            Convert(nvarchar(10), Reorder_OrderDate, 23) Reorder_OrderDate, 
 	                                       R.Com_Code, Com_Name, ITEM_Delivery_Company, R.ITEM_Code, I.ITEM_Name,
                                            ITEM_Standard, ITEM_Unit, Reorder_Amount, Reorder_InAmount, Reorder_Balance,
-	                                       Convert(nvarchar(10), (Order_FixedDate - BOR_ReadyTime), 23) Order_FixedDate
+										   Convert(nvarchar(10), (Mtp_Date - BOR_ReadyTime), 23) Order_FixedDate
                                     from Reorder R join Company C on R.Com_Code = C.Com_Code
                                     			   join ITEM I on R.ITEM_Code = I.ITEM_Code 
-                                    			   join PO P on R.Plan_ID = P.Plan_ID
-												   join BOR B on R.ITEM_Code = B.Item_Code
-                                    where Reorder_State = '발주상태' and
-										  Order_FixedDate between @dtpFrom and @dtpEnd and
+												   join Material_Take_Plan MP on R.Plan_ID = MP.Plan_ID
+												   join BOM BM on BM.Item_Code = R.ITEM_Code
+												   join BOR BR on BM.BOM_Parent_Name = BR.Item_Code
+									where R.ITEM_Code = MP.ITEM_Code and Reorder_State = '발주상태' and
+										  Convert(nvarchar(10), Mtp_Date, 23) between @dtpFrom and @dtpEnd and
                                           Com_Name = ISNULL(@Com_Name, C.Com_Name) and
                                           ITEM_Delivery_Company = ISNULL(@ITEM_Delivery_Company, ITEM_Delivery_Company) and
                                           I.ITEM_Code = ISNULL(@ITEM_Code, I.ITEM_Code)";
@@ -80,6 +81,7 @@ namespace FProjectDAC
                         cmd.Parameters.AddWithValue("@ITEM_Code", list[i].ITEM_Code);
                         cmd.Parameters.AddWithValue("@Warehousing_Date", Convert.ToDateTime(list[i].InDate));
                         cmd.Parameters.AddWithValue("@Warehousing_Note", (string.IsNullOrEmpty(list[i].Reorder_Note)) ? DBNull.Value : (object)list[i].Reorder_Note);
+                        cmd.Parameters.AddWithValue("@Order_FixedDate", Convert.ToDateTime(list[i].Order_FixedDate));
                         iRowAffect = cmd.ExecuteNonQuery();
                     }
 

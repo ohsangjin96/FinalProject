@@ -18,6 +18,9 @@ namespace FProjectVO
         public string WareHouse_In { get; set; }
         public string Note { get; set; }
 
-
+        public string Item_Name { get; set; }
+        public int Amount { get; set; }
+        public string ITEM_WareHouse_IN { get; set; }
+        public string ITEM_Order_Company { get; set; }
     }
 }
