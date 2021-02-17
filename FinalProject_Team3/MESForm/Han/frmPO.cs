@@ -29,6 +29,7 @@ namespace MESForm.Han
         private void DGVSetting()
         {
             CommonUtil.SetInitGridView(dgvPO);
+            CommonUtil.AddGridTextColumn(dgvPO, "PlanID", "Plan_ID");
             CommonUtil.AddGridTextColumn(dgvPO, "고객주문번호", "Order_WO");
             CommonUtil.AddGridTextColumn(dgvPO, "고객사코드", "Com_Code");
             CommonUtil.AddGridTextColumn(dgvPO, "고객사명", "Com_Name");
@@ -48,7 +49,9 @@ namespace MESForm.Han
             allList = service.GetPOList();
             service.Dispose();
 
-            dgvPO.DataSource = allList;
+            dgvPO.DataSource = (from i in allList
+                                where i.PO_State == "PO확정"
+                                select i).ToList();
         }
 
         private void ComboBinding()
@@ -78,6 +81,8 @@ namespace MESForm.Han
             {
                 MessageBox.Show("수요계획 생성이 완료되었습니다");
             }
+
+            btnRefresh.PerformClick();
         }
 
         private void btnReg_Click(object sender, EventArgs e)
