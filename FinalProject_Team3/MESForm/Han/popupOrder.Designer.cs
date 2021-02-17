@@ -219,6 +219,7 @@ namespace MESForm.Han
             this.dgvReOrder.RowTemplate.Height = 23;
             this.dgvReOrder.Size = new System.Drawing.Size(757, 530);
             this.dgvReOrder.TabIndex = 0;
+            this.dgvReOrder.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReOrder_CellDoubleClick);
             // 
             // popupOrder
             // 

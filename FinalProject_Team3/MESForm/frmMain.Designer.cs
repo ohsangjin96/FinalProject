@@ -533,7 +533,7 @@ namespace MESForm
             this.btnROrder.Name = "btnROrder";
             this.btnROrder.Size = new System.Drawing.Size(221, 43);
             this.btnROrder.TabIndex = 1;
-            this.btnROrder.Text = "정규발주";
+            this.btnROrder.Text = "발주";
             this.btnROrder.UseVisualStyleBackColor = true;
             this.btnROrder.Click += new System.EventHandler(this.btnROrder_Click);
             this.btnROrder.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_MouseUp);

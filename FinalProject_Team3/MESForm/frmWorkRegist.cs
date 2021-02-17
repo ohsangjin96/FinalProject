@@ -154,7 +154,7 @@ namespace MESForm
             List<WorkRegistVO> shiplist = service.GetShipment();
             for (int i = 0; i<shiplist.Count; i++)
             {
-                if (shiplist[i].WorkRegist_NomalQty > shiplist[i].WorkRegist_OrderAmount)
+                if (shiplist[i].WorkRegist_NomalQty >= shiplist[i].WorkRegist_OrderAmount)
                 {
                     service.SaveShipment(shiplist[i].Plan_ID);
                     
