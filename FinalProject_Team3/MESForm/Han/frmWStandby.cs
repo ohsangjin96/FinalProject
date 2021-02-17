@@ -204,7 +204,7 @@ namespace MESForm.Han
                     string inDate = Convert.ToString(dgvWarehouse["InDate", i].Value);
                     if (string.IsNullOrEmpty(inDate))
                     {
-                        MessageBox.Show($"납기일을 입력하지 않은 품목이 있습니다.");
+                        MessageBox.Show($"입고일을 입력하지 않은 품목이 있습니다.");
                         return;
                     }
                     #endregion
