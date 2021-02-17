@@ -78,7 +78,7 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 137);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 124);
             this.lblFormName1.Size = new System.Drawing.Size(95, 21);
             this.lblFormName1.Text = "영업마스터";
             // 
@@ -127,8 +127,8 @@ namespace MESForm.Han
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 13, 55, 9, 300);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 13, 55, 9, 300);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 17, 23, 18, 31, 774);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 17, 23, 18, 31, 774);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(128, 33);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -142,7 +142,7 @@ namespace MESForm.Han
             this.btnDPCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDPCreate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDPCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnDPCreate.Location = new System.Drawing.Point(70, 6);
+            this.btnDPCreate.Location = new System.Drawing.Point(71, 3);
             this.btnDPCreate.Name = "btnDPCreate";
             this.btnDPCreate.Size = new System.Drawing.Size(120, 32);
             this.btnDPCreate.TabIndex = 0;
@@ -158,7 +158,7 @@ namespace MESForm.Han
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReg.ForeColor = System.Drawing.Color.Black;
-            this.btnReg.Location = new System.Drawing.Point(196, 6);
+            this.btnReg.Location = new System.Drawing.Point(197, 3);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(83, 32);
             this.btnReg.TabIndex = 1;
@@ -174,7 +174,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(285, 6);
+            this.btnExcel.Location = new System.Drawing.Point(286, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 3;
@@ -190,7 +190,7 @@ namespace MESForm.Han
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(374, 6);
+            this.btnRefresh.Location = new System.Drawing.Point(375, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 32);
             this.btnRefresh.TabIndex = 4;

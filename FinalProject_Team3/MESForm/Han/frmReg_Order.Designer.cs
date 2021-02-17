@@ -127,7 +127,7 @@ namespace MESForm.Han
             this.btnPopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPopup.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPopup.ForeColor = System.Drawing.Color.Black;
-            this.btnPopup.Location = new System.Drawing.Point(290, 3);
+            this.btnPopup.Location = new System.Drawing.Point(307, 3);
             this.btnPopup.Name = "btnPopup";
             this.btnPopup.Size = new System.Drawing.Size(83, 32);
             this.btnPopup.TabIndex = 0;
@@ -143,7 +143,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(387, 3);
+            this.btnExcel.Location = new System.Drawing.Point(396, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 1;
@@ -191,7 +191,7 @@ namespace MESForm.Han
             this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(484, 3);
+            this.custButtonControl1.Location = new System.Drawing.Point(485, 3);
             this.custButtonControl1.Name = "custButtonControl1";
             this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
             this.custButtonControl1.TabIndex = 2;

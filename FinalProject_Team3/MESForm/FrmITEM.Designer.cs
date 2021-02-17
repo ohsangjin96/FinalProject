@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReg = new MESForm.CustomControls.custButtonControl();
             this.btnUpdate = new MESForm.CustomControls.custButtonControl();
             this.btnDelete = new MESForm.CustomControls.custButtonControl();
@@ -78,7 +78,8 @@
             this.pnlSelect.Controls.Add(this.txtItem);
             this.pnlSelect.Controls.Add(this.label1);
             this.pnlSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.pnlSelect.Size = new System.Drawing.Size(1581, 190);
+            this.pnlSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSelect.Size = new System.Drawing.Size(1230, 148);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label1, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtItem, 0);
@@ -100,20 +101,23 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1500, 138);
+            this.btnInquiry.Location = new System.Drawing.Point(1167, 107);
+            this.btnInquiry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 216);
-            this.lblFormName1.Size = new System.Drawing.Size(100, 27);
+            this.lblFormName1.Location = new System.Drawing.Point(5, 168);
+            this.lblFormName1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFormName1.Size = new System.Drawing.Size(78, 21);
             this.lblFormName1.Text = "품목관리";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvItem);
-            this.pnlItem.Location = new System.Drawing.Point(12, 261);
-            this.pnlItem.Size = new System.Drawing.Size(1581, 600);
+            this.pnlItem.Location = new System.Drawing.Point(9, 203);
+            this.pnlItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlItem.Size = new System.Drawing.Size(1230, 467);
             // 
             // panel1
             // 
@@ -122,8 +126,9 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
-            this.panel1.Location = new System.Drawing.Point(753, 209);
-            this.panel1.Size = new System.Drawing.Size(840, 46);
+            this.panel1.Location = new System.Drawing.Point(586, 163);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Size = new System.Drawing.Size(653, 36);
             // 
             // btnReg
             // 
@@ -131,11 +136,12 @@
             this.btnReg.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnReg.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnReg.ForeColor = System.Drawing.Color.Black;
-            this.btnReg.Location = new System.Drawing.Point(263, 1);
+            this.btnReg.Location = new System.Drawing.Point(205, 1);
+            this.btnReg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(107, 42);
+            this.btnReg.Size = new System.Drawing.Size(83, 33);
             this.btnReg.TabIndex = 9;
             this.btnReg.Text = "등록";
             this.btnReg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -148,11 +154,12 @@
             this.btnUpdate.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(378, 1);
+            this.btnUpdate.Location = new System.Drawing.Point(294, 1);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(107, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 33);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -165,11 +172,12 @@
             this.btnDelete.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDelete.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(493, 1);
+            this.btnDelete.Location = new System.Drawing.Point(383, 1);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(107, 42);
+            this.btnDelete.Size = new System.Drawing.Size(83, 33);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -182,11 +190,12 @@
             this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(610, 1);
+            this.btnExcel.Location = new System.Drawing.Point(474, 1);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(107, 42);
+            this.btnExcel.Size = new System.Drawing.Size(83, 33);
             this.btnExcel.TabIndex = 6;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -199,11 +208,12 @@
             this.btnRefresh.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRefresh.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(724, 1);
+            this.btnRefresh.Location = new System.Drawing.Point(563, 1);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(107, 42);
+            this.btnRefresh.Size = new System.Drawing.Size(83, 33);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -213,60 +223,64 @@
             // dgvItem
             // 
             this.dgvItem.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItem.BackgroundColor = System.Drawing.Color.White;
             this.dgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItem.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvItem.Location = new System.Drawing.Point(0, 0);
+            this.dgvItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.RowHeadersWidth = 51;
-            this.dgvItem.Size = new System.Drawing.Size(1581, 600);
+            this.dgvItem.Size = new System.Drawing.Size(1230, 467);
             this.dgvItem.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(573, 24);
+            this.label4.Location = new System.Drawing.Point(446, 19);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(52, 16);
             this.label4.TabIndex = 39;
             this.label4.Text = "사용여부";
             // 
             // cboWareHouseOUT
             // 
             this.cboWareHouseOUT.FormattingEnabled = true;
-            this.cboWareHouseOUT.Location = new System.Drawing.Point(701, 72);
+            this.cboWareHouseOUT.Location = new System.Drawing.Point(545, 56);
+            this.cboWareHouseOUT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboWareHouseOUT.Name = "cboWareHouseOUT";
-            this.cboWareHouseOUT.Size = new System.Drawing.Size(245, 25);
+            this.cboWareHouseOUT.Size = new System.Drawing.Size(191, 21);
             this.cboWareHouseOUT.TabIndex = 38;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(1106, 24);
+            this.label3.Location = new System.Drawing.Point(860, 19);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 20);
+            this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 37;
             this.label3.Text = "발주업체";
             // 
@@ -274,84 +288,94 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(573, 75);
+            this.label2.Location = new System.Drawing.Point(446, 58);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 35;
             this.label2.Text = "출고창고";
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(168, 19);
+            this.txtItem.Location = new System.Drawing.Point(131, 15);
+            this.txtItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(245, 23);
+            this.txtItem.Size = new System.Drawing.Size(191, 20);
             this.txtItem.TabIndex = 34;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(38, 24);
+            this.label1.Location = new System.Drawing.Point(30, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 20);
+            this.label1.Size = new System.Drawing.Size(30, 16);
             this.label1.TabIndex = 33;
             this.label1.Text = "품목";
             // 
             // cboItemType
             // 
             this.cboItemType.FormattingEnabled = true;
-            this.cboItemType.Location = new System.Drawing.Point(701, 125);
+            this.cboItemType.Location = new System.Drawing.Point(545, 97);
+            this.cboItemType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboItemType.Name = "cboItemType";
-            this.cboItemType.Size = new System.Drawing.Size(245, 25);
+            this.cboItemType.Size = new System.Drawing.Size(191, 21);
             this.cboItemType.TabIndex = 41;
             // 
             // cboWareHouseIN
             // 
             this.cboWareHouseIN.FormattingEnabled = true;
-            this.cboWareHouseIN.Location = new System.Drawing.Point(168, 72);
+            this.cboWareHouseIN.Location = new System.Drawing.Point(131, 56);
+            this.cboWareHouseIN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboWareHouseIN.Name = "cboWareHouseIN";
-            this.cboWareHouseIN.Size = new System.Drawing.Size(245, 25);
+            this.cboWareHouseIN.Size = new System.Drawing.Size(191, 21);
             this.cboWareHouseIN.TabIndex = 42;
             // 
             // cboOrderCompany
             // 
             this.cboOrderCompany.FormattingEnabled = true;
-            this.cboOrderCompany.Location = new System.Drawing.Point(1234, 19);
+            this.cboOrderCompany.Location = new System.Drawing.Point(960, 15);
+            this.cboOrderCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboOrderCompany.Name = "cboOrderCompany";
-            this.cboOrderCompany.Size = new System.Drawing.Size(245, 25);
+            this.cboOrderCompany.Size = new System.Drawing.Size(191, 21);
             this.cboOrderCompany.TabIndex = 43;
             // 
             // cboUseYN
             // 
             this.cboUseYN.FormattingEnabled = true;
-            this.cboUseYN.Location = new System.Drawing.Point(701, 19);
+            this.cboUseYN.Location = new System.Drawing.Point(545, 15);
+            this.cboUseYN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboUseYN.Name = "cboUseYN";
-            this.cboUseYN.Size = new System.Drawing.Size(245, 25);
+            this.cboUseYN.Size = new System.Drawing.Size(191, 21);
             this.cboUseYN.TabIndex = 44;
             // 
             // cboManager
             // 
             this.cboManager.FormattingEnabled = true;
-            this.cboManager.Location = new System.Drawing.Point(168, 125);
+            this.cboManager.Location = new System.Drawing.Point(131, 97);
+            this.cboManager.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboManager.Name = "cboManager";
-            this.cboManager.Size = new System.Drawing.Size(245, 25);
+            this.cboManager.Size = new System.Drawing.Size(191, 21);
             this.cboManager.TabIndex = 45;
             // 
             // cboDelCompany
             // 
             this.cboDelCompany.FormattingEnabled = true;
-            this.cboDelCompany.Location = new System.Drawing.Point(1239, 73);
+            this.cboDelCompany.Location = new System.Drawing.Point(964, 57);
+            this.cboDelCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboDelCompany.Name = "cboDelCompany";
-            this.cboDelCompany.Size = new System.Drawing.Size(245, 25);
+            this.cboDelCompany.Size = new System.Drawing.Size(191, 21);
             this.cboDelCompany.TabIndex = 46;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(38, 75);
+            this.label5.Location = new System.Drawing.Point(30, 58);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 20);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 47;
             this.label5.Text = "입고창고";
             // 
@@ -359,9 +383,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(38, 128);
+            this.label6.Location = new System.Drawing.Point(30, 100);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 20);
+            this.label6.Size = new System.Drawing.Size(41, 16);
             this.label6.TabIndex = 48;
             this.label6.Text = "담당자";
             // 
@@ -369,9 +394,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(573, 128);
+            this.label7.Location = new System.Drawing.Point(446, 100);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.Size = new System.Drawing.Size(52, 16);
             this.label7.TabIndex = 49;
             this.label7.Text = "품목유형";
             // 
@@ -379,16 +405,18 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(1106, 75);
+            this.label9.Location = new System.Drawing.Point(860, 58);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 20);
+            this.label9.Size = new System.Drawing.Size(52, 16);
             this.label9.TabIndex = 51;
             this.label9.Text = "납품업체";
             // 
             // FrmITEM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.ClientSize = new System.Drawing.Size(1608, 900);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(1251, 700);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmITEM";
             this.Text = "품목관리";
             this.Load += new System.EventHandler(this.FrmITEM_Load);

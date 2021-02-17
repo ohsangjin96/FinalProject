@@ -69,29 +69,28 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 135);
-            this.lblFormName1.Size = new System.Drawing.Size(122, 27);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 106);
+            this.lblFormName1.Size = new System.Drawing.Size(95, 21);
             this.lblFormName1.Text = "원자재불출";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvList);
-            this.pnlItem.Location = new System.Drawing.Point(0, 174);
-            this.pnlItem.Size = new System.Drawing.Size(1238, 523);
+            this.pnlItem.Location = new System.Drawing.Point(0, 146);
+            this.pnlItem.Size = new System.Drawing.Size(1238, 551);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRelease);
-            this.panel1.Location = new System.Drawing.Point(663, 121);
-            this.panel1.Size = new System.Drawing.Size(575, 47);
+            this.panel1.Location = new System.Drawing.Point(670, 99);
             // 
             // cboItemType
             // 
             this.cboItemType.FormattingEnabled = true;
             this.cboItemType.Location = new System.Drawing.Point(604, 15);
             this.cboItemType.Name = "cboItemType";
-            this.cboItemType.Size = new System.Drawing.Size(191, 28);
+            this.cboItemType.Size = new System.Drawing.Size(191, 24);
             this.cboItemType.TabIndex = 26;
             // 
             // label9
@@ -100,7 +99,7 @@ namespace MESForm.Han
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(504, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(57, 20);
+            this.label9.Size = new System.Drawing.Size(52, 16);
             this.label9.TabIndex = 25;
             this.label9.Text = "품목유형";
             // 
@@ -110,14 +109,14 @@ namespace MESForm.Han
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(30, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "요청일";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 17, 14, 11, 521);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 17, 14, 11, 521);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 17, 23, 19, 22, 156);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 17, 23, 19, 22, 156);
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(130, 15);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -129,9 +128,9 @@ namespace MESForm.Han
             this.btnRelease.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnRelease.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelease.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnRelease.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnRelease.ForeColor = System.Drawing.Color.Black;
-            this.btnRelease.Location = new System.Drawing.Point(396, 6);
+            this.btnRelease.Location = new System.Drawing.Point(403, 3);
             this.btnRelease.Name = "btnRelease";
             this.btnRelease.Size = new System.Drawing.Size(83, 32);
             this.btnRelease.TabIndex = 0;
@@ -145,9 +144,9 @@ namespace MESForm.Han
             this.btnExcel.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnExcel.FlatAppearance.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F);
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(485, 6);
+            this.btnExcel.Location = new System.Drawing.Point(492, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 1;
@@ -186,12 +185,12 @@ namespace MESForm.Han
             this.dgvList.Name = "dgvList";
             this.dgvList.RowHeadersWidth = 51;
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1238, 523);
+            this.dgvList.Size = new System.Drawing.Size(1238, 551);
             this.dgvList.TabIndex = 0;
             // 
             // frmMRelease
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1250, 700);

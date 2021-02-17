@@ -53,8 +53,7 @@
             this.pnlSelect.Controls.Add(this.cboShift);
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
-            this.pnlSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlSelect.Size = new System.Drawing.Size(1576, 95);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryGrade, 0);
@@ -64,23 +63,20 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1484, 36);
-            this.btnInquiry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(15, 150);
-            this.lblFormName1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFormName1.Size = new System.Drawing.Size(109, 27);
+            this.lblFormName1.Location = new System.Drawing.Point(12, 102);
+            this.lblFormName1.Size = new System.Drawing.Size(86, 21);
             this.lblFormName1.Text = "Shift관리";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvShift);
-            this.pnlItem.Location = new System.Drawing.Point(15, 181);
-            this.pnlItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlItem.Size = new System.Drawing.Size(1576, 702);
+            this.pnlItem.Location = new System.Drawing.Point(12, 141);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 546);
             // 
             // panel1
             // 
@@ -89,18 +85,16 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
-            this.panel1.Location = new System.Drawing.Point(1005, 121);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Size = new System.Drawing.Size(586, 53);
+            this.panel1.Location = new System.Drawing.Point(782, 94);
+            this.panel1.Size = new System.Drawing.Size(456, 41);
             // 
             // lblFactoryGrade
             // 
             this.lblFactoryGrade.AutoSize = true;
             this.lblFactoryGrade.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryGrade.Location = new System.Drawing.Point(654, 36);
-            this.lblFactoryGrade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFactoryGrade.Location = new System.Drawing.Point(509, 28);
             this.lblFactoryGrade.Name = "lblFactoryGrade";
-            this.lblFactoryGrade.Size = new System.Drawing.Size(39, 19);
+            this.lblFactoryGrade.Size = new System.Drawing.Size(31, 14);
             this.lblFactoryGrade.TabIndex = 36;
             this.lblFactoryGrade.Text = "설비";
             // 
@@ -108,29 +102,26 @@
             // 
             this.lblFactoryCode.AutoSize = true;
             this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryCode.Location = new System.Drawing.Point(77, 36);
-            this.lblFactoryCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFactoryCode.Location = new System.Drawing.Point(60, 28);
             this.lblFactoryCode.Name = "lblFactoryCode";
-            this.lblFactoryCode.Size = new System.Drawing.Size(47, 19);
+            this.lblFactoryCode.Size = new System.Drawing.Size(36, 14);
             this.lblFactoryCode.TabIndex = 34;
             this.lblFactoryCode.Text = "Shift";
             // 
             // cboShift
             // 
             this.cboShift.FormattingEnabled = true;
-            this.cboShift.Location = new System.Drawing.Point(156, 32);
-            this.cboShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboShift.Location = new System.Drawing.Point(121, 25);
             this.cboShift.Name = "cboShift";
-            this.cboShift.Size = new System.Drawing.Size(244, 26);
+            this.cboShift.Size = new System.Drawing.Size(191, 22);
             this.cboShift.TabIndex = 37;
             // 
             // cboFacCode
             // 
             this.cboFacCode.FormattingEnabled = true;
-            this.cboFacCode.Location = new System.Drawing.Point(739, 32);
-            this.cboFacCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboFacCode.Location = new System.Drawing.Point(575, 25);
             this.cboFacCode.Name = "cboFacCode";
-            this.cboFacCode.Size = new System.Drawing.Size(244, 26);
+            this.cboFacCode.Size = new System.Drawing.Size(191, 22);
             this.cboFacCode.TabIndex = 38;
             // 
             // btnUpdate
@@ -141,10 +132,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(126, 4);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(98, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(107, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 32);
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,10 +149,9 @@
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReg.ForeColor = System.Drawing.Color.Black;
-            this.btnReg.Location = new System.Drawing.Point(12, 4);
-            this.btnReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReg.Location = new System.Drawing.Point(9, 3);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(107, 41);
+            this.btnReg.Size = new System.Drawing.Size(83, 32);
             this.btnReg.TabIndex = 23;
             this.btnReg.Text = "등록";
             this.btnReg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -177,10 +166,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(240, 5);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(187, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(107, 41);
+            this.btnDelete.Size = new System.Drawing.Size(83, 32);
             this.btnDelete.TabIndex = 22;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,10 +183,9 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(355, 5);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcel.Location = new System.Drawing.Point(276, 4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(107, 41);
+            this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 21;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -213,10 +200,9 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(469, 5);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Location = new System.Drawing.Point(365, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(107, 41);
+            this.btnRefresh.Size = new System.Drawing.Size(83, 32);
             this.btnRefresh.TabIndex = 20;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -250,18 +236,16 @@
             this.dgvShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvShift.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvShift.Location = new System.Drawing.Point(0, 0);
-            this.dgvShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvShift.Name = "dgvShift";
             this.dgvShift.RowHeadersWidth = 51;
             this.dgvShift.RowTemplate.Height = 23;
-            this.dgvShift.Size = new System.Drawing.Size(1576, 702);
+            this.dgvShift.Size = new System.Drawing.Size(1226, 546);
             this.dgvShift.TabIndex = 0;
             // 
             // FrmShift
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.ClientSize = new System.Drawing.Size(1607, 900);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(1250, 700);
             this.Name = "FrmShift";
             this.Text = "Shift기준정보";
             this.Load += new System.EventHandler(this.FrmShift_Load);

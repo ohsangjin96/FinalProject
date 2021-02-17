@@ -74,8 +74,8 @@
             this.pnlSelect.Controls.Add(this.cboFacility);
             this.pnlSelect.Controls.Add(this.label9);
             this.pnlSelect.Controls.Add(this.label6);
-            this.pnlSelect.Location = new System.Drawing.Point(16, 18);
-            this.pnlSelect.Size = new System.Drawing.Size(1576, 115);
+            this.pnlSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 89);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label6, 0);
             this.pnlSelect.Controls.SetChildIndex(this.label9, 0);
@@ -89,13 +89,15 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1484, 55);
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 43);
+            this.btnInquiry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(28, 149);
-            this.lblFormName1.Size = new System.Drawing.Size(144, 27);
+            this.lblFormName1.Location = new System.Drawing.Point(11, 115);
+            this.lblFormName1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFormName1.Size = new System.Drawing.Size(112, 21);
             this.lblFormName1.Text = "작업지시조회";
             // 
             // pnlItem
@@ -103,23 +105,26 @@
             this.pnlItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlItem.Controls.Add(this.dgvList1);
-            this.pnlItem.Location = new System.Drawing.Point(20, 196);
-            this.pnlItem.Size = new System.Drawing.Size(1576, 398);
+            this.pnlItem.Location = new System.Drawing.Point(16, 152);
+            this.pnlItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 310);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.custButtonControl1);
             this.panel1.Controls.Add(this.btnExcel1);
-            this.panel1.Location = new System.Drawing.Point(688, 145);
-            this.panel1.Size = new System.Drawing.Size(12, 19);
+            this.panel1.Location = new System.Drawing.Point(535, 113);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Size = new System.Drawing.Size(9, 15);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(15, 616);
+            this.label1.Location = new System.Drawing.Point(12, 479);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 29);
+            this.label1.Size = new System.Drawing.Size(100, 24);
             this.label1.TabIndex = 22;
             this.label1.Text = "자재불출요청";
             // 
@@ -131,9 +136,10 @@
             this.btnExcel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel1.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel1.Location = new System.Drawing.Point(-213, 6);
+            this.btnExcel1.Location = new System.Drawing.Point(-166, 5);
+            this.btnExcel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcel1.Name = "btnExcel1";
-            this.btnExcel1.Size = new System.Drawing.Size(107, 42);
+            this.btnExcel1.Size = new System.Drawing.Size(83, 33);
             this.btnExcel1.TabIndex = 5;
             this.btnExcel1.Text = "엑셀";
             this.btnExcel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,18 +147,20 @@
             // 
             // txtWOID
             // 
-            this.txtWOID.Location = new System.Drawing.Point(1177, 18);
+            this.txtWOID.Location = new System.Drawing.Point(915, 14);
+            this.txtWOID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtWOID.Name = "txtWOID";
-            this.txtWOID.Size = new System.Drawing.Size(245, 26);
+            this.txtWOID.Size = new System.Drawing.Size(191, 22);
             this.txtWOID.TabIndex = 28;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(37, 18);
+            this.label2.Location = new System.Drawing.Point(29, 14);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 26;
             this.label2.Text = "시작일자";
             // 
@@ -160,34 +168,38 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(568, 21);
+            this.label3.Location = new System.Drawing.Point(442, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 20);
+            this.label3.Size = new System.Drawing.Size(30, 16);
             this.label3.TabIndex = 27;
             this.label3.Text = "품목";
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(696, 18);
+            this.txtItem.Location = new System.Drawing.Point(541, 14);
+            this.txtItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtItem.Name = "txtItem";
-            this.txtItem.Size = new System.Drawing.Size(245, 26);
+            this.txtItem.Size = new System.Drawing.Size(191, 22);
             this.txtItem.TabIndex = 30;
             // 
             // cboFacility
             // 
             this.cboFacility.FormattingEnabled = true;
-            this.cboFacility.Location = new System.Drawing.Point(161, 66);
+            this.cboFacility.Location = new System.Drawing.Point(125, 51);
+            this.cboFacility.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboFacility.Name = "cboFacility";
-            this.cboFacility.Size = new System.Drawing.Size(245, 26);
+            this.cboFacility.Size = new System.Drawing.Size(191, 22);
             this.cboFacility.TabIndex = 32;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(37, 71);
+            this.label9.Location = new System.Drawing.Point(29, 55);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 20);
+            this.label9.Size = new System.Drawing.Size(30, 16);
             this.label9.TabIndex = 31;
             this.label9.Text = "설비";
             // 
@@ -195,20 +207,22 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(1047, 21);
+            this.label6.Location = new System.Drawing.Point(814, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 29;
             this.label6.Text = "작업지시ID";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 17, 5, 29, 981);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 17, 5, 29, 981);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 17, 23, 21, 59, 117);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 17, 23, 21, 59, 117);
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 11);
+            this.dateTimePicker1.Location = new System.Drawing.Point(125, 9);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(401, 28);
+            this.dateTimePicker1.Size = new System.Drawing.Size(312, 22);
             this.dateTimePicker1.TabIndex = 33;
             // 
             // custButtonControl1
@@ -219,9 +233,10 @@
             this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(-98, 6);
+            this.custButtonControl1.Location = new System.Drawing.Point(-76, 5);
+            this.custButtonControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.custButtonControl1.Name = "custButtonControl1";
-            this.custButtonControl1.Size = new System.Drawing.Size(107, 42);
+            this.custButtonControl1.Size = new System.Drawing.Size(83, 33);
             this.custButtonControl1.TabIndex = 8;
             this.custButtonControl1.Text = "추가";
             this.custButtonControl1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -233,9 +248,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.btnSave);
             this.panel4.Controls.Add(this.btnExcel);
-            this.panel4.Location = new System.Drawing.Point(1253, 600);
+            this.panel4.Location = new System.Drawing.Point(975, 467);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(343, 53);
+            this.panel4.Size = new System.Drawing.Size(267, 41);
             this.panel4.TabIndex = 23;
             // 
             // btnSave
@@ -246,9 +262,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(123, 3);
+            this.btnSave.Location = new System.Drawing.Point(96, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 42);
+            this.btnSave.Size = new System.Drawing.Size(83, 33);
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "저장";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -263,9 +280,10 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(236, 3);
+            this.btnExcel.Location = new System.Drawing.Point(184, 2);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(107, 42);
+            this.btnExcel.Size = new System.Drawing.Size(83, 33);
             this.btnExcel.TabIndex = 15;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -277,9 +295,10 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.custButtonControl4);
-            this.panel3.Location = new System.Drawing.Point(1253, 145);
+            this.panel3.Location = new System.Drawing.Point(975, 113);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(343, 53);
+            this.panel3.Size = new System.Drawing.Size(267, 41);
             this.panel3.TabIndex = 24;
             // 
             // custButtonControl4
@@ -290,9 +309,10 @@
             this.custButtonControl4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl4.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl4.Location = new System.Drawing.Point(236, 3);
+            this.custButtonControl4.Location = new System.Drawing.Point(184, 2);
+            this.custButtonControl4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.custButtonControl4.Name = "custButtonControl4";
-            this.custButtonControl4.Size = new System.Drawing.Size(107, 42);
+            this.custButtonControl4.Size = new System.Drawing.Size(83, 33);
             this.custButtonControl4.TabIndex = 15;
             this.custButtonControl4.Text = "엑셀";
             this.custButtonControl4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -305,9 +325,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.dgvList2);
-            this.panel2.Location = new System.Drawing.Point(12, 659);
+            this.panel2.Location = new System.Drawing.Point(9, 513);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1584, 182);
+            this.panel2.Size = new System.Drawing.Size(1232, 142);
             this.panel2.TabIndex = 0;
             // 
             // dgvList2
@@ -337,10 +358,11 @@
             this.dgvList2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvList2.Location = new System.Drawing.Point(0, 0);
+            this.dgvList2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvList2.Name = "dgvList2";
             this.dgvList2.RowHeadersWidth = 51;
             this.dgvList2.RowTemplate.Height = 23;
-            this.dgvList2.Size = new System.Drawing.Size(1584, 182);
+            this.dgvList2.Size = new System.Drawing.Size(1232, 142);
             this.dgvList2.TabIndex = 0;
             // 
             // dgvList1
@@ -370,31 +392,34 @@
             this.dgvList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvList1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvList1.Location = new System.Drawing.Point(0, 0);
+            this.dgvList1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvList1.Name = "dgvList1";
             this.dgvList1.RowHeadersWidth = 51;
             this.dgvList1.RowTemplate.Height = 23;
-            this.dgvList1.Size = new System.Drawing.Size(1576, 398);
+            this.dgvList1.Size = new System.Drawing.Size(1226, 310);
             this.dgvList1.TabIndex = 0;
             this.dgvList1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList1_CellDoubleClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(871, 162);
+            this.label4.Location = new System.Drawing.Point(677, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 19);
+            this.label4.Size = new System.Drawing.Size(43, 14);
             this.label4.TabIndex = 25;
             this.label4.Text = "label4";
             // 
             // FrmMRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.ClientSize = new System.Drawing.Size(1608, 853);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(1251, 663);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmMRequest";
             this.Text = "자재불출요청";
             this.Load += new System.EventHandler(this.FrmMRequest_Load);

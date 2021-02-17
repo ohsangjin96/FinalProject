@@ -55,8 +55,7 @@
             this.pnlSelect.Controls.Add(this.lblFactoryGrade);
             this.pnlSelect.Controls.Add(this.txtItemCode);
             this.pnlSelect.Controls.Add(this.lblFactoryCode);
-            this.pnlSelect.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlSelect.Size = new System.Drawing.Size(1576, 95);
+            this.pnlSelect.Size = new System.Drawing.Size(1226, 74);
             this.pnlSelect.Controls.SetChildIndex(this.btnInquiry, 0);
             this.pnlSelect.Controls.SetChildIndex(this.lblFactoryCode, 0);
             this.pnlSelect.Controls.SetChildIndex(this.txtItemCode, 0);
@@ -66,23 +65,20 @@
             // btnInquiry
             // 
             this.btnInquiry.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnInquiry.Location = new System.Drawing.Point(1484, 36);
-            this.btnInquiry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInquiry.Location = new System.Drawing.Point(1154, 28);
             this.btnInquiry.Click += new System.EventHandler(this.btnInquiry_Click);
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(15, 131);
-            this.lblFormName1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFormName1.Size = new System.Drawing.Size(144, 27);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 101);
+            this.lblFormName1.Size = new System.Drawing.Size(112, 21);
             this.lblFormName1.Text = "자재단가관리";
             // 
             // pnlItem
             // 
             this.pnlItem.Controls.Add(this.dgvCost);
-            this.pnlItem.Location = new System.Drawing.Point(15, 175);
-            this.pnlItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlItem.Size = new System.Drawing.Size(1576, 688);
+            this.pnlItem.Location = new System.Drawing.Point(12, 136);
+            this.pnlItem.Size = new System.Drawing.Size(1226, 535);
             // 
             // panel1
             // 
@@ -91,9 +87,8 @@
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnExcel);
             this.panel1.Controls.Add(this.btnRefresh);
-            this.panel1.Location = new System.Drawing.Point(1003, 121);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Size = new System.Drawing.Size(589, 53);
+            this.panel1.Location = new System.Drawing.Point(780, 94);
+            this.panel1.Size = new System.Drawing.Size(458, 41);
             // 
             // btnReg
             // 
@@ -103,10 +98,9 @@
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnReg.ForeColor = System.Drawing.Color.Black;
-            this.btnReg.Location = new System.Drawing.Point(15, 4);
-            this.btnReg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReg.Location = new System.Drawing.Point(12, 3);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(107, 41);
+            this.btnReg.Size = new System.Drawing.Size(83, 32);
             this.btnReg.TabIndex = 18;
             this.btnReg.Text = "등록";
             this.btnReg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -121,10 +115,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(244, 5);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(190, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(107, 41);
+            this.btnDelete.Size = new System.Drawing.Size(83, 32);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "삭제";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -139,10 +132,9 @@
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(359, 5);
-            this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcel.Location = new System.Drawing.Point(279, 4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(107, 41);
+            this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 16;
             this.btnExcel.Text = "엑셀";
             this.btnExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -157,10 +149,9 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
-            this.btnRefresh.Location = new System.Drawing.Point(473, 5);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Location = new System.Drawing.Point(368, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(107, 41);
+            this.btnRefresh.Size = new System.Drawing.Size(83, 32);
             this.btnRefresh.TabIndex = 15;
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -171,19 +162,17 @@
             // 
             this.lblFactoryGrade.AutoSize = true;
             this.lblFactoryGrade.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryGrade.Location = new System.Drawing.Point(598, 36);
-            this.lblFactoryGrade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFactoryGrade.Location = new System.Drawing.Point(465, 28);
             this.lblFactoryGrade.Name = "lblFactoryGrade";
-            this.lblFactoryGrade.Size = new System.Drawing.Size(69, 19);
+            this.lblFactoryGrade.Size = new System.Drawing.Size(55, 14);
             this.lblFactoryGrade.TabIndex = 32;
             this.lblFactoryGrade.Text = "기준일자";
             // 
             // txtItemCode
             // 
-            this.txtItemCode.Location = new System.Drawing.Point(193, 32);
-            this.txtItemCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtItemCode.Location = new System.Drawing.Point(150, 25);
             this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.Size = new System.Drawing.Size(244, 26);
+            this.txtItemCode.Size = new System.Drawing.Size(191, 22);
             this.txtItemCode.TabIndex = 31;
             this.txtItemCode.TextChanged += new System.EventHandler(this.txtItemCode_TextChanged);
             // 
@@ -191,10 +180,9 @@
             // 
             this.lblFactoryCode.AutoSize = true;
             this.lblFactoryCode.Font = new System.Drawing.Font("나눔스퀘어OTF Bold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblFactoryCode.Location = new System.Drawing.Point(64, 36);
-            this.lblFactoryCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFactoryCode.Location = new System.Drawing.Point(50, 28);
             this.lblFactoryCode.Name = "lblFactoryCode";
-            this.lblFactoryCode.Size = new System.Drawing.Size(39, 19);
+            this.lblFactoryCode.Size = new System.Drawing.Size(31, 14);
             this.lblFactoryCode.TabIndex = 30;
             this.lblFactoryCode.Text = "품목";
             // 
@@ -202,10 +190,9 @@
             // 
             this.dtpDate.CustomFormat = "";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(698, 32);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDate.Location = new System.Drawing.Point(543, 25);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(256, 26);
+            this.dtpDate.Size = new System.Drawing.Size(200, 22);
             this.dtpDate.TabIndex = 33;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             this.dtpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpDate_KeyPress);
@@ -218,10 +205,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(130, 4);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(101, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(107, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(83, 32);
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "수정";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -255,11 +241,10 @@
             this.dgvCost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCost.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dgvCost.Location = new System.Drawing.Point(0, 0);
-            this.dgvCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCost.Name = "dgvCost";
             this.dgvCost.RowHeadersWidth = 51;
             this.dgvCost.RowTemplate.Height = 23;
-            this.dgvCost.Size = new System.Drawing.Size(1576, 688);
+            this.dgvCost.Size = new System.Drawing.Size(1226, 535);
             this.dgvCost.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -275,9 +260,8 @@
             // 
             // FrmMaterialCost
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.ClientSize = new System.Drawing.Size(1607, 879);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.ClientSize = new System.Drawing.Size(1250, 684);
             this.Name = "FrmMaterialCost";
             this.Text = "자재단가관리";
             this.Load += new System.EventHandler(this.FrmMaterialCost_Load);

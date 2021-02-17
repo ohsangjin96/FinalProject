@@ -82,7 +82,7 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 145);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 135);
             this.lblFormName1.Size = new System.Drawing.Size(112, 21);
             this.lblFormName1.Text = "자재소요계획";
             // 
@@ -142,7 +142,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(477, 6);
+            this.btnExcel.Location = new System.Drawing.Point(485, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 0;
@@ -236,7 +236,7 @@ namespace MESForm.Han
             this.custButtonControl1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custButtonControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.custButtonControl1.ForeColor = System.Drawing.Color.Black;
-            this.custButtonControl1.Location = new System.Drawing.Point(365, 6);
+            this.custButtonControl1.Location = new System.Drawing.Point(396, 3);
             this.custButtonControl1.Name = "custButtonControl1";
             this.custButtonControl1.Size = new System.Drawing.Size(83, 32);
             this.custButtonControl1.TabIndex = 1;

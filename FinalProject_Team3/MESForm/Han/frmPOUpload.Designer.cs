@@ -55,7 +55,7 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 35);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 18);
             this.lblFormName1.Size = new System.Drawing.Size(183, 21);
             this.lblFormName1.Text = "영업마스터업로드(PO)";
             // 
@@ -79,7 +79,7 @@ namespace MESForm.Han
             this.btnExcelUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcelUpload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcelUpload.ForeColor = System.Drawing.Color.Black;
-            this.btnExcelUpload.Location = new System.Drawing.Point(468, 6);
+            this.btnExcelUpload.Location = new System.Drawing.Point(468, 2);
             this.btnExcelUpload.Name = "btnExcelUpload";
             this.btnExcelUpload.Size = new System.Drawing.Size(100, 32);
             this.btnExcelUpload.TabIndex = 0;
@@ -95,7 +95,7 @@ namespace MESForm.Han
             this.btnFrmDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFrmDownload.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnFrmDownload.ForeColor = System.Drawing.Color.Black;
-            this.btnFrmDownload.Location = new System.Drawing.Point(342, 6);
+            this.btnFrmDownload.Location = new System.Drawing.Point(342, 2);
             this.btnFrmDownload.Name = "btnFrmDownload";
             this.btnFrmDownload.Size = new System.Drawing.Size(120, 32);
             this.btnFrmDownload.TabIndex = 1;
@@ -111,7 +111,7 @@ namespace MESForm.Han
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(196, 6);
+            this.btnCreate.Location = new System.Drawing.Point(196, 3);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(140, 32);
             this.btnCreate.TabIndex = 2;

@@ -92,7 +92,7 @@ namespace MESForm.Han
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 151);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 135);
             this.lblFormName1.Size = new System.Drawing.Size(78, 21);
             this.lblFormName1.Text = "발주현황";
             // 
@@ -252,7 +252,7 @@ namespace MESForm.Han
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPrint.ForeColor = System.Drawing.Color.Black;
-            this.btnPrint.Location = new System.Drawing.Point(137, 6);
+            this.btnPrint.Location = new System.Drawing.Point(137, 3);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(110, 32);
             this.btnPrint.TabIndex = 0;
@@ -267,7 +267,7 @@ namespace MESForm.Han
             this.btnDateChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDateChange.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDateChange.ForeColor = System.Drawing.Color.Black;
-            this.btnDateChange.Location = new System.Drawing.Point(253, 6);
+            this.btnDateChange.Location = new System.Drawing.Point(253, 3);
             this.btnDateChange.Name = "btnDateChange";
             this.btnDateChange.Size = new System.Drawing.Size(120, 32);
             this.btnDateChange.TabIndex = 1;
@@ -282,7 +282,7 @@ namespace MESForm.Han
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(379, 6);
+            this.btnCancel.Location = new System.Drawing.Point(379, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 32);
             this.btnCancel.TabIndex = 2;
@@ -297,7 +297,7 @@ namespace MESForm.Han
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnExcel.ForeColor = System.Drawing.Color.Black;
-            this.btnExcel.Location = new System.Drawing.Point(485, 6);
+            this.btnExcel.Location = new System.Drawing.Point(485, 3);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(83, 32);
             this.btnExcel.TabIndex = 3;
@@ -308,8 +308,8 @@ namespace MESForm.Han
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 16, 1, 31, 49, 645);
-            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 16, 1, 31, 49, 645);
+            this.dateTimePicker1.DtpFrom = new System.DateTime(2021, 2, 17, 23, 20, 38, 703);
+            this.dateTimePicker1.DtpTo = new System.DateTime(2021, 2, 17, 23, 20, 38, 703);
             this.dateTimePicker1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dateTimePicker1.Location = new System.Drawing.Point(130, 23);
             this.dateTimePicker1.Name = "dateTimePicker1";

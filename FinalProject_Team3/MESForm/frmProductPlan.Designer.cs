@@ -88,7 +88,7 @@ namespace MESForm
             // 
             // lblFormName1
             // 
-            this.lblFormName1.Location = new System.Drawing.Point(12, 172);
+            this.lblFormName1.Location = new System.Drawing.Point(8, 175);
             this.lblFormName1.Size = new System.Drawing.Size(78, 21);
             this.lblFormName1.Text = "생산계획";
             // 
