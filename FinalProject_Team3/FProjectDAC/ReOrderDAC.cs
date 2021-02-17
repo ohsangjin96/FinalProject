@@ -26,20 +26,16 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select Distinct(BOM.Item_Code),Demand.Plan_ID, BOM.Item_name,
-                                           sum(BOM_Spend*PO.Order_OrderAmount) Amount, ITEM_WareHouse_IN,
-                                           Item.ITEM_Order_Company, Company.Com_Code
-                                    from PO, BOM,Item, Company, Demand
-                                    where BOM.BOM_Parent_Name in
-                                             (select Distinct(BOM.Item_Code) from BOM,PO where BOM.Item_Code in
-                                                 (select Distinct(BOM.Item_Code) from PO,BOM
-                                                  where PO.Item_Code = BOM_Parent_Name))
+                cmd.CommandText = @"select Distinct(BOM.Item_Code),Demand.Plan_ID, BOM.Item_name,Mtp_Amount, ITEM_WareHouse_IN, ITEM_Order_Company, Company.Com_Code
+                                    from Material_Take_Plan MT,BOM,Item, Company, Demand
+                                    where BOM_Parent_Name in
+                                    (select Distinct(BOM.Item_Code) from Demand,BOM
+                                      where Demand.Item_Code = BOM_Parent_Name)
 										  and Item.ITEM_Code = BOM.Item_Code
-										  and PO.Order_Plandate >= @Order_Plandate
+										  and  Mt.Mtp_Date >= '2021-02-17'
 										  and Item.ITEM_Order_Company = Company.Com_Name
-										  and Demand_stated ='자재소요계획확정'
-                                    group by Demand.Plan_ID, BOM.Item_Code, BOM.Item_name, ITEM.ITEM_WareHouse_IN,
-                                             Item.ITEM_Order_Company, Item.ITEM_Order_Company, Company.Com_Code";
+										  and MT.ITEM_Code = BOM.Item_Code
+										  and Demand_stated ='자재소요계획확정'";
                 cmd.Parameters.AddWithValue("@Order_Plandate", date.ToShortDateString());
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ReOrderVO> list = Helper.DataReaderMapToList<ReOrderVO>(reader);
