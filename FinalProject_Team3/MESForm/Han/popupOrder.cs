@@ -36,7 +36,6 @@ namespace MESForm.Han
             CommonUtil.AddGridTextColumn(dgvOrder, "발주업체", "ITEM_Order_Company", 80, false);
             CommonUtil.AddGridTextColumn(dgvOrder, "업체코드", "Com_Code", 80, false);
             CommonUtil.SetInitGridView(dgvReOrder);
-
             CommonUtil.AddGridTextColumn(dgvReOrder, "품명", "ITEM_Code");
             CommonUtil.AddGridTextColumn(dgvReOrder, "수량", "Amount");
             CommonUtil.AddGridTextColumn(dgvReOrder, "업체코드", "Com_Code");
@@ -91,9 +90,21 @@ namespace MESForm.Han
             newList.Add(list[e.RowIndex]);
             dgvReOrder.DataSource = null;
             dgvReOrder.DataSource = newList;
+            list.RemoveAt(e.RowIndex);
+            dgvOrder.DataSource = null;
+            dgvOrder.DataSource = list;
         }
 
-        
+        private void dgvReOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            list.Add(newList[e.RowIndex]);
+            dgvOrder.DataSource = null;
+            dgvOrder.DataSource = list;
+
+            newList.RemoveAt(e.RowIndex);
+            dgvReOrder.DataSource = null;
+            dgvReOrder.DataSource = newList;
+        }
     }
     
 }

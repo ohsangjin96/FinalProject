@@ -327,6 +327,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmWorkRegist";
             this.Text = "작업실적";
+            this.Load += new System.EventHandler(this.frmWorkRegist_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
             this.pnlItem.ResumeLayout(false);

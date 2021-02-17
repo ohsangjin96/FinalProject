@@ -92,23 +92,48 @@ namespace MESForm
         DataTable Data = new DataTable();
         private void frmProductPlan_Load(object sender, EventArgs e)
         {
+            GetData();
+            dtpfrom.Enabled = false;
+            dtpto.Enabled = false;
+        }
+        public void GetData()
+        {
             OrderService service = new OrderService();
             string from = DateTime.Now.ToString("yyyyMMdd");
             string to = DateTime.Now.AddDays(12).ToString("yyyyMMdd");
             Data = service.GetProductPlan(from, to);
             dgvList.DataSource = Data;
             list = service.GetProductPlanList(from, to);
-            dtpfrom.Enabled = false;
-            dtpto.Enabled = false;
         }
-
         private void custButtonControl2_Click(object sender, EventArgs e)
         {
             OrderService service = new OrderService();
             if (bflag)
-                service.InsertProductPlanList(list);
+            {
+                bool aflag = service.InsertProductPlanList(list);
+                if (aflag)
+                {
+                    MessageBox.Show("완료되었습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("실패했습니다.");
+                }
+            }
             else
-                service.InsertProductPlanList(selectlist);
+            {
+                bool aflag = service.InsertProductPlanList(selectlist);
+                if (aflag)
+                {
+                    MessageBox.Show("완료되었습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("실패했습니다.");
+                }
+            }
+
+            GetData();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

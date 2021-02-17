@@ -21,21 +21,15 @@ namespace MESForm
             txtName.TextChanged += txtName_Textchange;
             txtFa.TextChanged += txtFa_Textchange;
          
-            CommonUtil.SetInitGridView(dgvList);
-            CommonUtil.AddGridTextColumn(dgvList, "실적번호", "WorkRegistID");
-            CommonUtil.AddGridTextColumn(dgvList, "시작날짜", "WorkRegist_Start");
-            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Code");
-            CommonUtil.AddGridTextColumn(dgvList, "설비", "FacilityDetail_Code");
-            CommonUtil.AddGridTextColumn(dgvList, "양품", "WorkRegist_NomalQty");
-            CommonUtil.AddGridTextColumn(dgvList, "불량", "WorkRegist_FailQty");
-            CommonUtil.AddGridTextColumn(dgvList, "공정시간", "WorkRegist_WorkTime");
-            CommonUtil.AddGridTextColumn(dgvList, "상태", "WorkRegist_State");
-            CommonUtil.AddGridTextColumn(dgvList, "Plan_ID", "Plan_ID");
+            
+           
+        }
+        public void GetData()
+        {
             POPService service = new POPService();
             list = service.GetWorkRegist();
             dgvList.DataSource = list;
         }
-
        
 
         private void txtFa_Textchange(object sender, EventArgs e)
@@ -154,14 +148,30 @@ namespace MESForm
             List<WorkRegistVO> shiplist = service.GetShipment();
             for (int i = 0; i<shiplist.Count; i++)
             {
-                if (shiplist[i].WorkRegist_NomalQty > shiplist[i].WorkRegist_OrderAmount)
+                if (shiplist[i].WorkRegist_NomalQty >= shiplist[i].WorkRegist_OrderAmount)
                 {
                     service.SaveShipment(shiplist[i].Plan_ID);
                     
                 }
             }
-            dgvList.DataSource = list;
+            GetData();
             
+        }
+
+        private void frmWorkRegist_Load(object sender, EventArgs e)
+        {
+            CommonUtil.SetInitGridView(dgvList);
+            CommonUtil.AddGridTextColumn(dgvList, "실적번호", "WorkRegistID");
+            CommonUtil.AddGridTextColumn(dgvList, "시작날짜", "WorkRegist_Start");
+            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Code");
+            CommonUtil.AddGridTextColumn(dgvList, "설비", "FacilityDetail_Code");
+            CommonUtil.AddGridTextColumn(dgvList, "양품", "WorkRegist_NomalQty");
+            CommonUtil.AddGridTextColumn(dgvList, "불량", "WorkRegist_FailQty");
+            CommonUtil.AddGridTextColumn(dgvList, "공정시간", "WorkRegist_WorkTime");
+            CommonUtil.AddGridTextColumn(dgvList, "상태", "WorkRegist_State");
+            CommonUtil.AddGridTextColumn(dgvList, "Plan_ID", "Plan_ID");
+
+            GetData();
         }
     }
 }
