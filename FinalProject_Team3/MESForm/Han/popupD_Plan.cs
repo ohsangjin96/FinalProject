@@ -50,6 +50,7 @@ namespace MESForm.Han
         private void ComboBinding()
         {
             var PlanIDList = (from list in allList
+                              where list.PO_State=="PO확정"
                            select list.Plan_ID).Distinct().ToList();
             PlanIDList.Insert(0, "");
             ComboBoxBinding.BindingComboBoxPart(cboPlanID, PlanIDList, "Plan_ID");

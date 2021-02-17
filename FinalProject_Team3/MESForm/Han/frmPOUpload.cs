@@ -60,7 +60,9 @@ namespace MESForm.Han
             allList = service.GetPOList();
             service.Dispose();
 
-            dgvPO.DataSource = allList;
+            dgvPO.DataSource = (from i in allList
+                                where i.PO_State == "PO확정"
+                                select i).ToList();
         }
 
         private void frmPOUpload_Load(object sender, EventArgs e)
