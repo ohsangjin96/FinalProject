@@ -55,7 +55,7 @@ namespace FProjectDAC
                 cmd.Parameters.Add("@Mtp_Amount", SqlDbType.Int);
                 cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
                 cmd.Parameters.Add("@Mtp_Date", SqlDbType.DateTime);
-                for(int i = 0; i<list.Count; i++)
+                for (int i = 0; i < list.Count; i++)
                 {
                     cmd.Parameters["@ITEM_Code"].Value = list[i].ITEM_Code;
                     cmd.Parameters["@ITEM_Name"].Value = list[i].ITEM_Name;
@@ -74,7 +74,7 @@ namespace FProjectDAC
                     if (Cont < 0)
                         return false;
                 }
-                    return true;
+                return true;
             }
         }
     }

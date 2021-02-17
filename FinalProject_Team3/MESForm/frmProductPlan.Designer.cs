@@ -90,7 +90,7 @@ namespace MESForm
             // 
             this.lblFormName1.Location = new System.Drawing.Point(12, 172);
             this.lblFormName1.Size = new System.Drawing.Size(78, 21);
-            this.lblFormName1.Text = "생성계획";
+            this.lblFormName1.Text = "생산계획";
             // 
             // pnlItem
             // 
@@ -297,7 +297,7 @@ namespace MESForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(1250, 737);
             this.Name = "frmProductPlan";
-            this.Text = "생성계획";
+            this.Text = "생산계획";
             this.Load += new System.EventHandler(this.frmProductPlan_Load);
             this.pnlSelect.ResumeLayout(false);
             this.pnlSelect.PerformLayout();
