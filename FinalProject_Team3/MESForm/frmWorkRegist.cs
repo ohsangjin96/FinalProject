@@ -15,6 +15,7 @@ namespace MESForm
     public partial class frmWorkRegist : MESForm.BaseForms.frmBaseLists
     {
         List<WorkRegistVO> list;
+        List<WorkRegistVO> comlist;
         public frmWorkRegist()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace MESForm
             POPService service = new POPService();
             list = service.GetWorkRegist();
             dgvList.DataSource = list;
+            comlist = service.GetEndWorkRegist();
+            dgvEnd.DataSource = comlist;
         }
        
 
@@ -163,7 +166,8 @@ namespace MESForm
             CommonUtil.SetInitGridView(dgvList);
             CommonUtil.AddGridTextColumn(dgvList, "실적번호", "WorkRegistID");
             CommonUtil.AddGridTextColumn(dgvList, "시작날짜", "WorkRegist_Start");
-            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Code");
+            CommonUtil.AddGridTextColumn(dgvList, "품목", "Item_Code");
+            CommonUtil.AddGridTextColumn(dgvList, "품명", "Item_Name");
             CommonUtil.AddGridTextColumn(dgvList, "설비", "FacilityDetail_Code");
             CommonUtil.AddGridTextColumn(dgvList, "양품", "WorkRegist_NomalQty");
             CommonUtil.AddGridTextColumn(dgvList, "불량", "WorkRegist_FailQty");
@@ -171,6 +175,17 @@ namespace MESForm
             CommonUtil.AddGridTextColumn(dgvList, "상태", "WorkRegist_State");
             CommonUtil.AddGridTextColumn(dgvList, "Plan_ID", "Plan_ID");
 
+            CommonUtil.SetInitGridView(dgvEnd);
+            CommonUtil.AddGridTextColumn(dgvEnd, "실적번호", "WorkRegistID");
+            CommonUtil.AddGridTextColumn(dgvEnd, "시작날짜", "WorkRegist_Start");
+            CommonUtil.AddGridTextColumn(dgvEnd, "품목", "Item_Code");
+            CommonUtil.AddGridTextColumn(dgvEnd,"품명", "Item_Name");
+            CommonUtil.AddGridTextColumn(dgvEnd, "설비", "FacilityDetail_Code");
+            CommonUtil.AddGridTextColumn(dgvEnd, "양품", "WorkRegist_NomalQty");
+            CommonUtil.AddGridTextColumn(dgvEnd, "불량", "WorkRegist_FailQty");
+            CommonUtil.AddGridTextColumn(dgvEnd, "공정시간", "WorkRegist_WorkTime");
+            CommonUtil.AddGridTextColumn(dgvEnd, "상태", "WorkRegist_State");
+            CommonUtil.AddGridTextColumn(dgvEnd, "Plan_ID", "Plan_ID");
             GetData();
         }
     }

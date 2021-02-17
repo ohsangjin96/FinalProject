@@ -35,5 +35,10 @@ namespace MESForm.Services
             POPDAC dac = new POPDAC();
             return dac.SaveShipment(Plan_ID);
         }
+        public List<WorkRegistVO> GetEndWorkRegist()
+        {
+            POPDAC dac = new POPDAC();
+            return dac.GetEndWorkRegist();
+        }
     }
 }

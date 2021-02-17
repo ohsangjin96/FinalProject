@@ -96,9 +96,10 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select WorkRegistID,Item_Code, FacilityDetail_Code, WorkRegist_NomalQty,Plan_ID,
+                cmd.CommandText = @"select WorkRegistID, W.Item_Code, ITEM_Name FacilityDetail_Code, WorkRegist_NomalQty,Plan_ID,
                                         WorkRegist_FailQty, WorkRegist_WorkTime, WorkRegist_Start, WorkRegist_State
-                                        from WorkRegist where WorkRegist_State='제작완료'";
+                                        from WorkRegist W join ITEM I on W.Item_Code = I.ITEM_Code
+                                        where WorkRegist_State='제작완료'";
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<WorkRegistVO> list = Helper.DataReaderMapToList<WorkRegistVO>(reader);
@@ -106,7 +107,23 @@ namespace FProjectDAC
                 return list;
             }
         }
-       
+        public List<WorkRegistVO> GetEndWorkRegist()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = conn;
+                cmd.CommandText = @"select WorkRegistID,WorkRegist.Item_Code,BOM.Item_name, FacilityDetail_Code, WorkRegist_NomalQty,Plan_ID,
+                                    WorkRegist_FailQty, WorkRegist_WorkTime, WorkRegist_Start, WorkRegist_State
+                                    from WorkRegist,BOM 
+	                                where WorkRegist_State='출하완료' and BOM.BOM_Level=1 and WorkRegist.Item_Code = BOM.Item_Code";
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                List<WorkRegistVO> list = Helper.DataReaderMapToList<WorkRegistVO>(reader);
+
+                return list;
+            }
+        }
+
         public List<WorkRegistVO> GetShipment()
         {
             using (SqlCommand cmd = new SqlCommand())

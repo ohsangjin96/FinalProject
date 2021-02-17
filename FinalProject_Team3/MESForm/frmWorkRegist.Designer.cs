@@ -47,7 +47,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvList = new MESForm.CustomControls.custDataGridViewControl();
-            this.custDataGridViewControl1 = new MESForm.CustomControls.custDataGridViewControl();
+            this.dgvEnd = new MESForm.CustomControls.custDataGridViewControl();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlSelect.SuspendLayout();
             this.pnlItem.SuspendLayout();
@@ -57,7 +57,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnd)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSelect
@@ -238,7 +238,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.custDataGridViewControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvEnd);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Size = new System.Drawing.Size(1226, 484);
             this.splitContainer1.SplitterDistance = 156;
@@ -276,16 +276,16 @@
             this.dgvList.Size = new System.Drawing.Size(1226, 156);
             this.dgvList.TabIndex = 0;
             // 
-            // custDataGridViewControl1
+            // dgvEnd
             // 
-            this.custDataGridViewControl1.AllowUserToAddRows = false;
+            this.dgvEnd.AllowUserToAddRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.custDataGridViewControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEnd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEnd.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.custDataGridViewControl1.BackgroundColor = System.Drawing.Color.White;
-            this.custDataGridViewControl1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEnd.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEnd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("나눔스퀘어OTF", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -293,8 +293,8 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.custDataGridViewControl1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.custDataGridViewControl1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvEnd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(248)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -302,13 +302,13 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.custDataGridViewControl1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.custDataGridViewControl1.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.custDataGridViewControl1.Location = new System.Drawing.Point(0, 46);
-            this.custDataGridViewControl1.Name = "custDataGridViewControl1";
-            this.custDataGridViewControl1.RowTemplate.Height = 23;
-            this.custDataGridViewControl1.Size = new System.Drawing.Size(1226, 278);
-            this.custDataGridViewControl1.TabIndex = 1;
+            this.dgvEnd.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvEnd.Font = new System.Drawing.Font("나눔스퀘어OTF", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dgvEnd.Location = new System.Drawing.Point(-8, 46);
+            this.dgvEnd.Name = "dgvEnd";
+            this.dgvEnd.RowTemplate.Height = 23;
+            this.dgvEnd.Size = new System.Drawing.Size(1226, 278);
+            this.dgvEnd.TabIndex = 1;
             // 
             // label4
             // 
@@ -318,7 +318,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 21);
             this.label4.TabIndex = 0;
-            this.label4.Text = "출하현황";
+            this.label4.Text = "출하확인";
             // 
             // frmWorkRegist
             // 
@@ -338,7 +338,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.custDataGridViewControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +358,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private CustomControls.custDataGridViewControl dgvList;
-        private CustomControls.custDataGridViewControl custDataGridViewControl1;
+        private CustomControls.custDataGridViewControl dgvEnd;
         private System.Windows.Forms.Label label4;
     }
 }
