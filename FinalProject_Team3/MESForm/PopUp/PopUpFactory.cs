@@ -148,7 +148,7 @@ namespace MESForm.PopUp
                     Factory_Code = txtFactoryCode.Text,
                     Factory_Credit = cboFactoryCredit.Text,
                     Factory_Order = factoryOrder,
-                    Com_Code = cboComCode.SelectedValue.ToString(),
+                    Com_Code = Convert.ToString(cboComCode.SelectedValue),
                     Com_Name = cboComCode.Text,
                     Factory_Demand = cboFactoryDemand.Text,
                     Factory_Process = cboFactoryProcess.Text,
