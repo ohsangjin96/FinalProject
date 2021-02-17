@@ -31,7 +31,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select demand.Plan_ID,BOM.Item_Code,BOM.Item_name,sum((BOM_Spend*Demand_OrderAmount)+(BOM_Spend*Demand_OrderAmount*10/100)) AS Amount, CONVERT(datetime,Left(demand.Plan_ID,8)) AS Plan_Date
+                cmd.CommandText = @"select demand.Plan_ID,BOM.Item_Code,BOM.Item_name,sum((BOM_Spend*Demand_OrderAmount)+CEILING(BOM_Spend*Demand_OrderAmount*0.1)) AS Amount, CONVERT(datetime,Left(demand.Plan_ID,8)) AS Plan_Date
                                     from demand,BOM
 									where BOM_Parent_Name in (select  distinct(BOM.Item_Code) from BOM,PO where BOM.Item_Code in (select distinct(BOM.Item_Code) from PO,BOM where PO.Item_Code = BOM_Parent_Name))
                                     and Demand_Stated='수요계획확정'

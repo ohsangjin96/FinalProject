@@ -151,7 +151,7 @@ namespace MESForm
                 if (shiplist[i].WorkRegist_NomalQty >= shiplist[i].WorkRegist_OrderAmount)
                 {
                     service.SaveShipment(shiplist[i].Plan_ID);
-                    
+                    MessageBox.Show("출하 완료되었습니다.");
                 }
             }
             GetData();

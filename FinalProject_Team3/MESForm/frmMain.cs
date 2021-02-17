@@ -160,15 +160,9 @@ namespace MESForm
             ShowSubMenu(pnlProcess);
         }
 
-        private void btnProcessRegister_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlProcessRegister);
-        }
+      
 
-        private void btnShipment_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(pnlShipment);
-        }
+      
         #endregion
 
         #region 하위메뉴 숨기기
@@ -182,8 +176,7 @@ namespace MESForm
             pnlOrderProduction.Visible = false;
             pnlPurchase.Visible = false;
             pnlProcess.Visible = false;
-            pnlProcessRegister.Visible = false;
-            pnlShipment.Visible = false;
+          
         }
 
         // 선택한 메뉴의 하위메뉴 보이기

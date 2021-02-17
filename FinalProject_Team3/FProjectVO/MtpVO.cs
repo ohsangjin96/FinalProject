@@ -12,6 +12,6 @@ namespace FProjectVO
         public DateTime Plan_Date { get; set; }
         public string ITEM_Name { get; set; }
         public string Plan_ID { get; set; }
-        public int Amount { get; set; }
+        public Decimal Amount { get; set; }
     }
 }
