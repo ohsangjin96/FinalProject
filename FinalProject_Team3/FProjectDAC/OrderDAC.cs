@@ -139,21 +139,19 @@ namespace FProjectDAC
                 cmd.Connection = conn;
                 cmd.CommandText = @"insert into WorkOrder (Item_Code, Item_Name, Facility_Code, Facility_Name, OrderAmount,FixDate, TackTime, Plan_ID, Com_Code, Com_Name)
                                    values(@Item_Code, @Item_Name, @Facility_Code, @Facility_Name, @OrderAmount, @FixDate, @TackTime, @Plan_ID, @Com_Code, @Com_Name)";
+
+                cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Item_Name", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Facility_Code", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Facility_Name", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Com_Code", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@Com_Name", SqlDbType.NVarChar);
+                cmd.Parameters.Add("@OrderAmount", SqlDbType.Int);
+                cmd.Parameters.Add("@TackTime", SqlDbType.Int);
+                cmd.Parameters.Add("@FixDate", SqlDbType.DateTime);
                 for (int i = 0; i < list.Count; i++)
                 {
-                    cmd.Parameters.Clear();
-
-                    cmd.Parameters.Add("@Item_Code", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@Item_Name", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@Facility_Code", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@Facility_Name", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@Plan_ID", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@Com_Code", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@Com_Name", SqlDbType.NVarChar);
-                    cmd.Parameters.Add("@OrderAmount", SqlDbType.Int);
-                    cmd.Parameters.Add("@TackTime", SqlDbType.Int);
-                    cmd.Parameters.Add("@FixDate", SqlDbType.DateTime);
-
                     cmd.Parameters["@Item_Code"].Value = list[i].Item_Code;
                     cmd.Parameters["@Item_Name"].Value = list[i].Item_Name;
                     cmd.Parameters["@Facility_Code"].Value = list[i].Facility_Code;
@@ -203,9 +201,10 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @" select distinct(Item_Code), Item_Name,OrderAmount, Plan_ID,FixDate from WorkOrder 
-                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where FixDate =@date and Item_Code like LEFT(@dtp,9))
-                                     and WorkOrder_State ='지시확정'";
+                cmd.CommandText = @"select distinct(Item_Code), Item_Name,OrderAmount, Plan_ID,FixDate from WorkOrder 
+                                     where Plan_ID in (select distinct(Plan_ID) from WorkOrder where Item_Code like Left(@dtp,9)
+                                     and WorkOrder_State ='지시확정')
+									 and FixDate = @date";
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@dtp", dtp);
                 SqlDataReader reader = cmd.ExecuteReader();
