@@ -35,11 +35,12 @@ namespace FProjectDAC
                                                  (select Distinct(BOM.Item_Code) from PO,BOM
                                                   where PO.Item_Code = BOM_Parent_Name))
 										  and Item.ITEM_Code = BOM.Item_Code
-										  and PO.Order_Plandate = '2021-02-13'
+										  and PO.Order_Plandate >= @Order_Plandate
 										  and Item.ITEM_Order_Company = Company.Com_Name
 										  and Demand_stated ='자재소요계획확정'
                                     group by Demand.Plan_ID, BOM.Item_Code, BOM.Item_name, ITEM.ITEM_WareHouse_IN,
                                              Item.ITEM_Order_Company, Item.ITEM_Order_Company, Company.Com_Code";
+                cmd.Parameters.AddWithValue("@Order_Plandate", date.ToShortDateString());
                 SqlDataReader reader = cmd.ExecuteReader();
                 List<ReOrderVO> list = Helper.DataReaderMapToList<ReOrderVO>(reader);
                 return list;
