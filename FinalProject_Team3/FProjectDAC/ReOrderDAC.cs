@@ -32,7 +32,7 @@ namespace FProjectDAC
                                     (select Distinct(BOM.Item_Code) from Demand,BOM
                                       where Demand.Item_Code = BOM_Parent_Name)
 										  and Item.ITEM_Code = BOM.Item_Code
-										  and  Mt.Mtp_Date >= '2021-02-17'
+										  and  Mt.Mtp_Date >= @Order_Plandate
 										  and Item.ITEM_Order_Company = Company.Com_Name
 										  and MT.ITEM_Code = BOM.Item_Code
 										  and Demand_stated ='자재소요계획확정'";
