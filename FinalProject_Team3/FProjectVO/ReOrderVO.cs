@@ -10,6 +10,7 @@ namespace FProjectVO
     {
         public DateTime ReOrder_OrderDate { get; set; }
         public string ITEM_Code { get; set; }
+        public int Mtp_Amount { get; set; }
         public int Reorder_Amount { get; set; }
         public string Com_Code { get; set; }
         public int Reorder_Balance { get; set; }

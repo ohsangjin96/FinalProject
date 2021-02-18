@@ -66,7 +66,7 @@ namespace MESForm.Han
             // btnCancel
             // 
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancel.Location = new System.Drawing.Point(515, 638);
+            this.btnCancel.Location = new System.Drawing.Point(559, 638);
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
@@ -74,7 +74,6 @@ namespace MESForm.Han
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
             this.btnSave.Location = new System.Drawing.Point(483, 638);
-            this.btnSave.Visible = false;
             // 
             // pnl
             // 

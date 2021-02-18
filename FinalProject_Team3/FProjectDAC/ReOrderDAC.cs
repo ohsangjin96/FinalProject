@@ -61,9 +61,9 @@ namespace FProjectDAC
 
                         cmd.Parameters.AddWithValue("@Com_Code", list[i].Com_Code);
                         cmd.Parameters.AddWithValue("@ITEM_Code", list[i].ITEM_Code);
-                        cmd.Parameters.AddWithValue("@Reorder_Amount", list[i].Amount);
-                        cmd.Parameters.AddWithValue("@Reorder_Balance", list[i].Amount);
-                        cmd.Parameters.AddWithValue("@Reorder_CanCancel", list[i].Amount);
+                        cmd.Parameters.AddWithValue("@Reorder_Amount", list[i].Mtp_Amount);
+                        cmd.Parameters.AddWithValue("@Reorder_Balance", list[i].Mtp_Amount);
+                        cmd.Parameters.AddWithValue("@Reorder_CanCancel", list[i].Mtp_Amount);
                         cmd.Parameters.AddWithValue("@Plan_ID", list[i].Plan_ID);
                         cmd.Parameters.AddWithValue("@Reorder_Note", (string.IsNullOrEmpty(list[i].Note)) ? DBNull.Value : (object)list[i].Note);
                         cmd.Parameters.AddWithValue("@WareHouse_In", list[i].ITEM_WareHouse_IN);

@@ -96,7 +96,7 @@ namespace FProjectDAC
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = conn;
-                cmd.CommandText = @"select WorkRegistID, W.Item_Code, ITEM_Name FacilityDetail_Code, WorkRegist_NomalQty,Plan_ID,
+                cmd.CommandText = @"select WorkRegistID, W.Item_Code, ITEM_Name,FacilityDetail_Code, WorkRegist_NomalQty,Plan_ID,
                                         WorkRegist_FailQty, WorkRegist_WorkTime, WorkRegist_Start, WorkRegist_State
                                         from WorkRegist W join ITEM I on W.Item_Code = I.ITEM_Code
                                         where WorkRegist_State='제작완료'";
